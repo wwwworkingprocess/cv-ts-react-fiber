@@ -1,0 +1,3026 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome!",
+                "03:30",
+                "1.1",
+                210,
+                1
+            ],
+            [
+                "What is React Native?",
+                "04:22",
+                "1.2",
+                262,
+                2
+            ],
+            [
+                "Join our Online Learning Community",
+                "00:21",
+                "1.3",
+                21,
+                3
+            ],
+            [
+                "How React Native Works",
+                "06:15",
+                "1.4",
+                375,
+                4
+            ],
+            [
+                "Expo vs React Native CLI",
+                "06:06",
+                "1.5",
+                366,
+                5
+            ],
+            [
+                "Node.js Download",
+                "00:15",
+                "1.6",
+                15,
+                6
+            ],
+            [
+                "Creating Our First React Native App",
+                "07:47",
+                "1.7",
+                467,
+                7
+            ],
+            [
+                "Working on Our First App",
+                "09:42",
+                "1.8",
+                582,
+                8
+            ],
+            [
+                "React Native Apps Are Hard Work!",
+                "02:53",
+                "1.9",
+                173,
+                9
+            ],
+            [
+                "React Native Alternatives",
+                "04:51",
+                "1.10",
+                291,
+                10
+            ],
+            [
+                "Course Requirements",
+                "01:26",
+                "1.11",
+                86,
+                11
+            ],
+            [
+                "Course Requirement Refreshers",
+                "00:18",
+                "1.12",
+                18,
+                12
+            ],
+            [
+                "Running the App on an Android Emulator",
+                "08:36",
+                "1.13",
+                516,
+                13
+            ],
+            [
+                "Running the App on an iOS Simulator",
+                "03:15",
+                "1.14",
+                195,
+                14
+            ],
+            [
+                "Course Outline",
+                "07:41",
+                "1.15",
+                461,
+                15
+            ],
+            [
+                "How to get the Most out of This Course",
+                "03:53",
+                "1.16",
+                233,
+                16
+            ],
+            [
+                "Useful Resources & Links",
+                "00:02",
+                "1.17",
+                2,
+                17
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Getting Started",
+        "durs": [
+            210,
+            262,
+            21,
+            375,
+            366,
+            15,
+            467,
+            582,
+            173,
+            291,
+            86,
+            18,
+            516,
+            195,
+            461,
+            233,
+            2
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:33",
+                "2.1",
+                33,
+                18
+            ],
+            [
+                "How to work with React Native Components",
+                "02:45",
+                "2.2",
+                165,
+                19
+            ],
+            [
+                "Setting Up A New Project",
+                "03:04",
+                "2.3",
+                184,
+                20
+            ],
+            [
+                "Planning the App",
+                "01:42",
+                "2.4",
+                102,
+                21
+            ],
+            [
+                "Working with Core Components",
+                "04:56",
+                "2.5",
+                296,
+                22
+            ],
+            [
+                "Getting Started with Styles",
+                "07:52",
+                "2.6",
+                472,
+                23
+            ],
+            [
+                "Flexbox & Layouts (Intro)",
+                "03:54",
+                "2.7",
+                234,
+                24
+            ],
+            [
+                "React Native Flexbox Deep Dive",
+                "12:19",
+                "2.8",
+                739,
+                25
+            ],
+            [
+                "Inline Styles & StyleSheet Objects",
+                "05:12",
+                "2.9",
+                312,
+                26
+            ],
+            [
+                "Components, Styles, Layouts",
+                "8 questions",
+                "",
+                0,
+                27
+            ],
+            [
+                "Working with State & Events",
+                "09:44",
+                "2.10",
+                584,
+                27
+            ],
+            [
+                "Outputting a List of Items",
+                "03:51",
+                "2.11",
+                231,
+                28
+            ],
+            [
+                "Styling List Items",
+                "03:21",
+                "2.12",
+                201,
+                29
+            ],
+            [
+                "Making it Scrollable with ScrollView!",
+                "03:48",
+                "2.13",
+                228,
+                30
+            ],
+            [
+                "A Better List: FlatList",
+                "07:20",
+                "2.14",
+                440,
+                31
+            ],
+            [
+                "More Components & Lists",
+                "3 questions",
+                "",
+                0,
+                32
+            ],
+            [
+                "Splitting the App Into Components",
+                "04:34",
+                "2.15",
+                274,
+                32
+            ],
+            [
+                "Passing Data Between Components",
+                "06:48",
+                "2.16",
+                408,
+                33
+            ],
+            [
+                "Working with Touchable Components",
+                "08:39",
+                "2.17",
+                519,
+                34
+            ],
+            [
+                "Deleting Items",
+                "04:57",
+                "2.18",
+                297,
+                35
+            ],
+            [
+                "Adding a Modal Overlay",
+                "06:06",
+                "2.19",
+                366,
+                36
+            ],
+            [
+                "More Flexbox Styling",
+                "03:49",
+                "2.20",
+                229,
+                37
+            ],
+            [
+                "Closing the Modal & Clearing Input",
+                "06:45",
+                "2.21",
+                405,
+                38
+            ],
+            [
+                "Finishing the Modal Styling",
+                "05:08",
+                "2.22",
+                308,
+                39
+            ],
+            [
+                "Wrap Up",
+                "02:29",
+                "2.23",
+                149,
+                40
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "2.24",
+                8,
+                41
+            ]
+        ],
+        "total": "2hr",
+        "duration": 7200,
+        "name": "Diving into the Basics [COURSE GOALS APP]",
+        "durs": [
+            33,
+            165,
+            184,
+            102,
+            296,
+            472,
+            234,
+            739,
+            312,
+            0,
+            584,
+            231,
+            201,
+            228,
+            440,
+            0,
+            274,
+            408,
+            519,
+            297,
+            366,
+            229,
+            405,
+            308,
+            149,
+            8
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:32",
+                "3.1",
+                32,
+                42
+            ],
+            [
+                "What To Debug & How To Debug?",
+                "06:18",
+                "3.2",
+                378,
+                43
+            ],
+            [
+                "Running the App on a Real Device & Debugging",
+                "00:33",
+                "3.3",
+                33,
+                44
+            ],
+            [
+                "Handling Error Messages",
+                "05:26",
+                "3.4",
+                326,
+                45
+            ],
+            [
+                "Understanding Code Flow with console.log()",
+                "04:06",
+                "3.5",
+                246,
+                46
+            ],
+            [
+                "Using the Remote Debugger & Breakpoints",
+                "04:03",
+                "3.6",
+                243,
+                47
+            ],
+            [
+                "Working with the Device DevTools Overlay",
+                "02:17",
+                "3.7",
+                137,
+                48
+            ],
+            [
+                "Debugging the UI & Using React Native Debugger",
+                "07:25",
+                "3.8",
+                445,
+                49
+            ],
+            [
+                "Wrap Up",
+                "01:02",
+                "3.9",
+                62,
+                50
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "3.10",
+                8,
+                51
+            ]
+        ],
+        "total": "32min",
+        "duration": 1920,
+        "name": "Debugging React Native Apps",
+        "durs": [
+            32,
+            378,
+            33,
+            326,
+            246,
+            243,
+            137,
+            445,
+            62,
+            8
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Module Introduction",
+                "02:33",
+                "4.1",
+                153,
+                52
+            ],
+            [
+                "Setup & App Planning",
+                "03:25",
+                "4.2",
+                205,
+                53
+            ],
+            [
+                "Adding a Custom Header Component",
+                "07:54",
+                "4.3",
+                474,
+                54
+            ],
+            [
+                "Adding a Screen Component",
+                "05:32",
+                "4.4",
+                332,
+                55
+            ],
+            [
+                "Working on the Layout",
+                "07:03",
+                "4.5",
+                423,
+                56
+            ],
+            [
+                "Styling a View as a \"Card\" Container (with Drop Shadows & Rounded Corners)",
+                "07:03",
+                "4.6",
+                423,
+                57
+            ],
+            [
+                "React Native Styling vs CSS Styling",
+                "00:46",
+                "4.7",
+                46,
+                58
+            ],
+            [
+                "Extracting a Card Component (Presentational Component)",
+                "05:57",
+                "4.8",
+                357,
+                59
+            ],
+            [
+                "Components & Styling",
+                "4 questions",
+                "",
+                0,
+                60
+            ],
+            [
+                "Color Theming with Constants",
+                "06:03",
+                "4.9",
+                363,
+                60
+            ],
+            [
+                "Configuring & Styling a TextInput",
+                "10:19",
+                "4.10",
+                619,
+                61
+            ],
+            [
+                "Cleaning User Input & Controlling the Soft Keyboard",
+                "05:23",
+                "4.11",
+                323,
+                62
+            ],
+            [
+                "Resetting & Confirming User Input",
+                "08:28",
+                "4.12",
+                508,
+                63
+            ],
+            [
+                "Configuring Components",
+                "2 questions",
+                "",
+                0,
+                64
+            ],
+            [
+                "Showing an Alert",
+                "02:50",
+                "4.13",
+                170,
+                64
+            ],
+            [
+                "Time to Finish the \"Confirmation Box\"",
+                "07:44",
+                "4.14",
+                464,
+                65
+            ],
+            [
+                "Adding Random Number Generation",
+                "06:34",
+                "4.15",
+                394,
+                66
+            ],
+            [
+                "Switching Between Multiple \"Screens\"",
+                "10:41",
+                "4.16",
+                641,
+                67
+            ],
+            [
+                "Adding Game Features: Hints & Validation",
+                "11:02",
+                "4.17",
+                662,
+                68
+            ],
+            [
+                "Checking the \"Win\" Condition with useEffect()",
+                "10:11",
+                "4.18",
+                611,
+                69
+            ],
+            [
+                "Finishing the Game Logic",
+                "05:17",
+                "4.19",
+                317,
+                70
+            ],
+            [
+                "Adding AppLoading",
+                "00:12",
+                "4.20",
+                12,
+                71
+            ],
+            [
+                "Adding Custom Fonts",
+                "09:50",
+                "4.21",
+                590,
+                72
+            ],
+            [
+                "Installing expo-font",
+                "00:43",
+                "4.22",
+                43,
+                73
+            ],
+            [
+                "A Synthetic Style \"Cascade\": Custom Wrapper Components & Global Styles",
+                "10:34",
+                "4.23",
+                634,
+                74
+            ],
+            [
+                "Adding Local Images",
+                "04:56",
+                "4.24",
+                296,
+                75
+            ],
+            [
+                "Styling Images",
+                "06:07",
+                "4.25",
+                367,
+                76
+            ],
+            [
+                "Working with Network (Web) Images",
+                "02:51",
+                "4.26",
+                171,
+                77
+            ],
+            [
+                "A Closer Look at the \"Text\" Component (and what you can do with it)",
+                "09:09",
+                "4.27",
+                549,
+                78
+            ],
+            [
+                "<View> vs <Text> - A Summary",
+                "01:30",
+                "4.28",
+                90,
+                79
+            ],
+            [
+                "Building a Custom Button Component",
+                "11:41",
+                "4.29",
+                701,
+                80
+            ],
+            [
+                "Adding Icons",
+                "04:43",
+                "4.30",
+                283,
+                81
+            ],
+            [
+                "Exploring UI Libraries",
+                "02:58",
+                "4.31",
+                178,
+                82
+            ],
+            [
+                "Managing Past Guesses as a List",
+                "07:56",
+                "4.32",
+                476,
+                83
+            ],
+            [
+                "Styling List Items & Lists",
+                "08:54",
+                "4.33",
+                534,
+                84
+            ],
+            [
+                "ScrollView & Flexbox (Yes, that works!)",
+                "07:20",
+                "4.34",
+                440,
+                85
+            ],
+            [
+                "Using FlatList Instead of ScrollView",
+                "09:50",
+                "4.35",
+                590,
+                86
+            ],
+            [
+                "Wrap Up",
+                "05:14",
+                "4.36",
+                314,
+                87
+            ],
+            [
+                "Useful Resources & Links",
+                "00:05",
+                "4.37",
+                5,
+                88
+            ]
+        ],
+        "total": "3hr 49min",
+        "duration": 13740,
+        "name": "Components, Styling, Layouts - Building Real Apps [GUESS A NUMBER APP]",
+        "durs": [
+            153,
+            205,
+            474,
+            332,
+            423,
+            423,
+            46,
+            357,
+            0,
+            363,
+            619,
+            323,
+            508,
+            0,
+            170,
+            464,
+            394,
+            641,
+            662,
+            611,
+            317,
+            12,
+            590,
+            43,
+            634,
+            296,
+            367,
+            171,
+            549,
+            90,
+            701,
+            283,
+            178,
+            476,
+            534,
+            440,
+            590,
+            314,
+            5
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Module Introduction",
+                "02:26",
+                "5.1",
+                146,
+                89
+            ],
+            [
+                "Finding Improvement Opportunities",
+                "03:51",
+                "5.2",
+                231,
+                90
+            ],
+            [
+                "Working with More Flexible Styling Rules",
+                "03:08",
+                "5.3",
+                188,
+                91
+            ],
+            [
+                "Introducing the Dimensions API",
+                "03:50",
+                "5.4",
+                230,
+                92
+            ],
+            [
+                "Using Dimensions in \"if\" Checks",
+                "07:51",
+                "5.5",
+                471,
+                93
+            ],
+            [
+                "Calculating Sizes Dynamically",
+                "05:22",
+                "5.6",
+                322,
+                94
+            ],
+            [
+                "Problems with Different Device Orientations",
+                "03:11",
+                "5.7",
+                191,
+                95
+            ],
+            [
+                "Controlling Orientation & Using the KeyboardAvoidingView",
+                "03:49",
+                "5.8",
+                229,
+                96
+            ],
+            [
+                "Listening to Orientation Changes",
+                "05:31",
+                "5.9",
+                331,
+                97
+            ],
+            [
+                "Rendering Different Layouts",
+                "07:09",
+                "5.10",
+                429,
+                98
+            ],
+            [
+                "Fixing the GameOver Screen",
+                "02:09",
+                "5.11",
+                129,
+                99
+            ],
+            [
+                "Updating All Code to Update Dynamically",
+                "01:33",
+                "5.12",
+                93,
+                100
+            ],
+            [
+                "The Dimensions API & Responsive UIs",
+                "3 questions",
+                "",
+                0,
+                101
+            ],
+            [
+                "Expo's ScreenOrientation API",
+                "03:42",
+                "5.13",
+                222,
+                101
+            ],
+            [
+                "Introducing the Platform API",
+                "04:25",
+                "5.14",
+                265,
+                102
+            ],
+            [
+                "Working with Platform.select() and Platform in \"if\" Checks",
+                "07:04",
+                "5.15",
+                424,
+                103
+            ],
+            [
+                "Using Platform-specific Code Files",
+                "03:32",
+                "5.16",
+                212,
+                104
+            ],
+            [
+                "The Platform API",
+                "4 questions",
+                "",
+                0,
+                105
+            ],
+            [
+                "Using the SafeAreaView",
+                "05:55",
+                "5.17",
+                355,
+                105
+            ],
+            [
+                "Wrap Up",
+                "01:37",
+                "5.18",
+                97,
+                106
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "5.19",
+                8,
+                107
+            ]
+        ],
+        "total": "1hr 16min",
+        "duration": 4560,
+        "name": "Responsive & Adaptive User Interfaces and Apps",
+        "durs": [
+            146,
+            231,
+            188,
+            230,
+            471,
+            322,
+            191,
+            229,
+            331,
+            429,
+            129,
+            93,
+            0,
+            222,
+            265,
+            424,
+            212,
+            0,
+            355,
+            97,
+            8
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:14",
+                "6.1",
+                74,
+                108
+            ],
+            [
+                "Planning the App",
+                "05:46",
+                "6.2",
+                346,
+                109
+            ],
+            [
+                "Adding Screens",
+                "06:31",
+                "6.3",
+                391,
+                110
+            ],
+            [
+                "Adding AppLoading",
+                "00:18",
+                "6.4",
+                18,
+                111
+            ],
+            [
+                "Adding Fonts",
+                "03:54",
+                "6.5",
+                234,
+                112
+            ],
+            [
+                "React Navigation Docs",
+                "00:07",
+                "6.6",
+                7,
+                113
+            ],
+            [
+                "Installing React Navigation & Adding Navigation to the App",
+                "06:44",
+                "6.7",
+                404,
+                114
+            ],
+            [
+                "MUST READ: Installing Different Navigators",
+                "00:28",
+                "6.8",
+                28,
+                115
+            ],
+            [
+                "Creating a StackNavigator",
+                "10:38",
+                "6.9",
+                638,
+                116
+            ],
+            [
+                "React Navigation & Code Attachments",
+                "00:46",
+                "6.10",
+                46,
+                117
+            ],
+            [
+                "Navigating Between Screens",
+                "06:50",
+                "6.11",
+                410,
+                118
+            ],
+            [
+                "Alternative Navigation Syntax",
+                "00:16",
+                "6.12",
+                16,
+                119
+            ],
+            [
+                "Navigation Basics",
+                "2 questions",
+                "",
+                0,
+                120
+            ],
+            [
+                "Navigation to the \"Meal Details\" Screen",
+                "01:10",
+                "6.13",
+                70,
+                120
+            ],
+            [
+                "Pushing, Popping & Replacing",
+                "07:35",
+                "6.14",
+                455,
+                121
+            ],
+            [
+                "Outputting a Grid of Categories",
+                "07:55",
+                "6.15",
+                475,
+                122
+            ],
+            [
+                "Configuring the Header with Navigation Options",
+                "07:58",
+                "6.16",
+                478,
+                123
+            ],
+            [
+                "Passing & Reading Params Upon Navigation",
+                "04:29",
+                "6.17",
+                269,
+                124
+            ],
+            [
+                "Setting Dynamic Navigation Options",
+                "05:47",
+                "6.18",
+                347,
+                125
+            ],
+            [
+                "Default Navigation Options & Config",
+                "10:09",
+                "6.19",
+                609,
+                126
+            ],
+            [
+                "Navigation Params & Configuration",
+                "3 questions",
+                "",
+                0,
+                127
+            ],
+            [
+                "Grid Styling & Some Refactoring",
+                "12:15",
+                "6.20",
+                735,
+                127
+            ],
+            [
+                "Adding Meal Models & Data",
+                "03:46",
+                "6.21",
+                226,
+                128
+            ],
+            [
+                "Loading Meals for Categories",
+                "04:34",
+                "6.22",
+                274,
+                129
+            ],
+            [
+                "Rendering a Meals List",
+                "18:04",
+                "6.23",
+                1084,
+                130
+            ],
+            [
+                "Passing Data to the Meal Detail Screen",
+                "05:20",
+                "6.24",
+                320,
+                131
+            ],
+            [
+                "Header Buttons: Using the Correct Version",
+                "00:11",
+                "6.25",
+                11,
+                132
+            ],
+            [
+                "Adding Header Buttons",
+                "11:22",
+                "6.26",
+                682,
+                133
+            ],
+            [
+                "Fixing the Shadows",
+                "02:51",
+                "6.27",
+                171,
+                134
+            ],
+            [
+                "Adding Tabs-based Navigation",
+                "06:10",
+                "6.28",
+                370,
+                135
+            ],
+            [
+                "Setting Icons and Configuring Tabs",
+                "08:08",
+                "6.29",
+                488,
+                136
+            ],
+            [
+                "navigationOptions inside of a Navigator",
+                "00:39",
+                "6.30",
+                39,
+                137
+            ],
+            [
+                "Adding MaterialBottomTabs",
+                "09:24",
+                "6.31",
+                564,
+                138
+            ],
+            [
+                "Adding a Favorites Stack",
+                "13:29",
+                "6.32",
+                809,
+                139
+            ],
+            [
+                "Adding a Menu Button & Drawer Navigation",
+                "10:05",
+                "6.33",
+                605,
+                140
+            ],
+            [
+                "Configuring the Drawer",
+                "06:33",
+                "6.34",
+                393,
+                141
+            ],
+            [
+                "More Navigation Config & Styling",
+                "06:28",
+                "6.35",
+                388,
+                142
+            ],
+            [
+                "Adding a DefaultText Component",
+                "03:08",
+                "6.36",
+                188,
+                143
+            ],
+            [
+                "Adding the MealDetail Screen Content",
+                "11:17",
+                "6.37",
+                677,
+                144
+            ],
+            [
+                "Time for the \"Filters\" Screen Content!",
+                "11:57",
+                "6.38",
+                717,
+                145
+            ],
+            [
+                "Passing Data Between Component & Navigation Options (Header)",
+                "13:07",
+                "6.39",
+                787,
+                146
+            ],
+            [
+                "[React Refresher] useEffect() & useCallback()",
+                "02:00",
+                "6.40",
+                120,
+                147
+            ],
+            [
+                "Wrap Up",
+                "00:46",
+                "6.41",
+                46,
+                148
+            ],
+            [
+                "Useful Resources & Links",
+                "00:07",
+                "6.42",
+                7,
+                149
+            ]
+        ],
+        "total": "4hr 10min",
+        "duration": 15000,
+        "name": "Navigation with React Navigation [THE MEALS APP]",
+        "durs": [
+            74,
+            346,
+            391,
+            18,
+            234,
+            7,
+            404,
+            28,
+            638,
+            46,
+            410,
+            16,
+            0,
+            70,
+            455,
+            475,
+            478,
+            269,
+            347,
+            609,
+            0,
+            735,
+            226,
+            274,
+            1084,
+            320,
+            11,
+            682,
+            171,
+            370,
+            488,
+            39,
+            564,
+            809,
+            605,
+            393,
+            388,
+            188,
+            677,
+            717,
+            787,
+            120,
+            46,
+            7
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:04",
+                "7.1",
+                64,
+                150
+            ],
+            [
+                "What is State & What is Redux?",
+                "04:08",
+                "7.2",
+                248,
+                151
+            ],
+            [
+                "Redux & Store Setup",
+                "10:58",
+                "7.3",
+                658,
+                152
+            ],
+            [
+                "Selecting State Slices",
+                "08:30",
+                "7.4",
+                510,
+                153
+            ],
+            [
+                "Redux Data & Navigation Options",
+                "05:04",
+                "7.5",
+                304,
+                154
+            ],
+            [
+                "Dispatching Actions & Reducer Logic",
+                "13:55",
+                "7.6",
+                835,
+                155
+            ],
+            [
+                "Switching the Favorites Icon",
+                "07:09",
+                "7.7",
+                429,
+                156
+            ],
+            [
+                "Rendering a Fallback Text",
+                "02:43",
+                "7.8",
+                163,
+                157
+            ],
+            [
+                "Adding Filtering Logic",
+                "06:16",
+                "7.9",
+                376,
+                158
+            ],
+            [
+                "Dispatching Filter Actions",
+                "06:08",
+                "7.10",
+                368,
+                159
+            ],
+            [
+                "Debugging Redux in React Native Apps",
+                "00:26",
+                "7.11",
+                26,
+                160
+            ],
+            [
+                "Wrap Up",
+                "01:33",
+                "7.12",
+                93,
+                161
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "7.13",
+                8,
+                162
+            ]
+        ],
+        "total": "1hr 8min",
+        "duration": 4080,
+        "name": "State Management & Redux",
+        "durs": [
+            64,
+            248,
+            658,
+            510,
+            304,
+            835,
+            429,
+            163,
+            376,
+            368,
+            26,
+            93,
+            8
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:34",
+                "8.1",
+                94,
+                163
+            ],
+            [
+                "Planning the App",
+                "10:42",
+                "8.2",
+                642,
+                164
+            ],
+            [
+                "Creating the Basic Project Setup",
+                "06:08",
+                "8.3",
+                368,
+                165
+            ],
+            [
+                "The Products Overview Screen",
+                "09:49",
+                "8.4",
+                589,
+                166
+            ],
+            [
+                "Setting Up a Navigator",
+                "10:41",
+                "8.5",
+                641,
+                167
+            ],
+            [
+                "Styling the Product Items",
+                "19:15",
+                "8.6",
+                1155,
+                168
+            ],
+            [
+                "Adding Touchable Components",
+                "12:26",
+                "8.7",
+                746,
+                169
+            ],
+            [
+                "Working on the Product Details Screen",
+                "05:56",
+                "8.8",
+                356,
+                170
+            ],
+            [
+                "Using Custom Fonts",
+                "05:10",
+                "8.9",
+                310,
+                171
+            ],
+            [
+                "Adding Items to the Cart",
+                "21:08",
+                "8.10",
+                1268,
+                172
+            ],
+            [
+                "Implementing Header Buttons",
+                "18:29",
+                "8.11",
+                1109,
+                173
+            ],
+            [
+                "Outputting Cart Items",
+                "11:48",
+                "8.12",
+                708,
+                174
+            ],
+            [
+                "Adding Logic to Delete Items",
+                "10:33",
+                "8.13",
+                633,
+                175
+            ],
+            [
+                "Adding Redux Logic for Orders",
+                "09:09",
+                "8.14",
+                549,
+                176
+            ],
+            [
+                "SideDrawer & The Orders Screen",
+                "13:07",
+                "8.15",
+                787,
+                177
+            ],
+            [
+                "Clearing the Cart",
+                "01:43",
+                "8.16",
+                103,
+                178
+            ],
+            [
+                "Styling Order Items",
+                "12:43",
+                "8.17",
+                763,
+                179
+            ],
+            [
+                "Making the \"Show Details\" Button Work",
+                "08:55",
+                "8.18",
+                535,
+                180
+            ],
+            [
+                "Building the \"User Products\" Screen",
+                "09:36",
+                "8.19",
+                576,
+                181
+            ],
+            [
+                "Reorganizing the ProductItem Component",
+                "05:29",
+                "8.20",
+                329,
+                182
+            ],
+            [
+                "Deleting Items",
+                "07:57",
+                "8.21",
+                477,
+                183
+            ],
+            [
+                "Adding Basic Editing & Navigation Logic",
+                "06:37",
+                "8.22",
+                397,
+                184
+            ],
+            [
+                "Handling User Input",
+                "12:05",
+                "8.23",
+                725,
+                185
+            ],
+            [
+                "Using Params to Submit User Input",
+                "02:16",
+                "8.24",
+                136,
+                186
+            ],
+            [
+                "Dispatching Actions for Creating & Updating",
+                "15:34",
+                "8.25",
+                934,
+                187
+            ],
+            [
+                "Time to Improve the App!",
+                "09:22",
+                "8.26",
+                562,
+                188
+            ],
+            [
+                "Wrap Up",
+                "01:12",
+                "8.27",
+                72,
+                189
+            ],
+            [
+                "Useful Resources & Links",
+                "00:05",
+                "8.28",
+                5,
+                190
+            ]
+        ],
+        "total": "4hr 19min",
+        "duration": 15540,
+        "name": "Time to Practice - THE SHOP APP",
+        "durs": [
+            94,
+            642,
+            368,
+            589,
+            641,
+            1155,
+            746,
+            356,
+            310,
+            1268,
+            1109,
+            708,
+            633,
+            549,
+            787,
+            103,
+            763,
+            535,
+            576,
+            329,
+            477,
+            397,
+            725,
+            136,
+            934,
+            562,
+            72,
+            5
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:59",
+                "9.1",
+                59,
+                191
+            ],
+            [
+                "Configuring TextInputs",
+                "08:21",
+                "9.2",
+                501,
+                192
+            ],
+            [
+                "Adding Basic Validation",
+                "05:45",
+                "9.3",
+                345,
+                193
+            ],
+            [
+                "Getting Started with useReducer()",
+                "12:12",
+                "9.4",
+                732,
+                194
+            ],
+            [
+                "Finishing the Merged Form & Input Management",
+                "12:59",
+                "9.5",
+                779,
+                195
+            ],
+            [
+                "Moving Input Logic Into A Separate Component",
+                "11:18",
+                "9.6",
+                678,
+                196
+            ],
+            [
+                "Connecting Input Component & Form",
+                "14:47",
+                "9.7",
+                887,
+                197
+            ],
+            [
+                "Tweaking Styles & Handling the Soft Keyboard",
+                "05:28",
+                "9.8",
+                328,
+                198
+            ],
+            [
+                "Alternatives & Wrap Up",
+                "02:06",
+                "9.9",
+                126,
+                199
+            ],
+            [
+                "Useful Resources & Links",
+                "00:07",
+                "9.10",
+                7,
+                200
+            ]
+        ],
+        "total": "1hr 14min",
+        "duration": 4440,
+        "name": "Handling User Input",
+        "durs": [
+            59,
+            501,
+            345,
+            732,
+            779,
+            678,
+            887,
+            328,
+            126,
+            7
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:03",
+                "10.1",
+                63,
+                201
+            ],
+            [
+                "Setup & How To Send Requests",
+                "03:27",
+                "10.2",
+                207,
+                202
+            ],
+            [
+                "Installing Redux Thunk",
+                "02:03",
+                "10.3",
+                123,
+                203
+            ],
+            [
+                "Storing Products on a Server",
+                "09:05",
+                "10.4",
+                545,
+                204
+            ],
+            [
+                "Fetching Products from the Server",
+                "07:53",
+                "10.5",
+                473,
+                205
+            ],
+            [
+                "Displaying a Loading Spinner & Handling Errors",
+                "13:03",
+                "10.6",
+                783,
+                206
+            ],
+            [
+                "Setting Up a Navigation Listener",
+                "05:15",
+                "10.7",
+                315,
+                207
+            ],
+            [
+                "Updating & Deleting Products",
+                "04:47",
+                "10.8",
+                287,
+                208
+            ],
+            [
+                "Handling Additional Errors",
+                "09:31",
+                "10.9",
+                571,
+                209
+            ],
+            [
+                "Storing Orders",
+                "04:34",
+                "10.10",
+                274,
+                210
+            ],
+            [
+                "Displaying an ActivityIndicator",
+                "03:12",
+                "10.11",
+                192,
+                211
+            ],
+            [
+                "Fetching Stored Orders",
+                "08:15",
+                "10.12",
+                495,
+                212
+            ],
+            [
+                "Adding \"Pull to Refresh\"",
+                "04:12",
+                "10.13",
+                252,
+                213
+            ],
+            [
+                "Wrap Up",
+                "01:07",
+                "10.14",
+                67,
+                214
+            ],
+            [
+                "Useful Resources & Links",
+                "00:07",
+                "10.15",
+                7,
+                215
+            ]
+        ],
+        "total": "1hr 18min",
+        "duration": 4680,
+        "name": "Http Requests & Adding a Web Server + Database",
+        "durs": [
+            63,
+            207,
+            123,
+            545,
+            473,
+            783,
+            315,
+            287,
+            571,
+            274,
+            192,
+            495,
+            252,
+            67,
+            7
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:44",
+                "11.1",
+                44,
+                216
+            ],
+            [
+                "How Authentication Works",
+                "03:36",
+                "11.2",
+                216,
+                217
+            ],
+            [
+                "Implementing a Basic Login Screen",
+                "14:57",
+                "11.3",
+                897,
+                218
+            ],
+            [
+                "Adding User Signup",
+                "12:44",
+                "11.4",
+                764,
+                219
+            ],
+            [
+                "Logging Users In",
+                "06:26",
+                "11.5",
+                386,
+                220
+            ],
+            [
+                "Managing the Loading State & Errors",
+                "09:01",
+                "11.6",
+                541,
+                221
+            ],
+            [
+                "Using the Token",
+                "11:04",
+                "11.7",
+                664,
+                222
+            ],
+            [
+                "Mapping Orders to Users",
+                "07:42",
+                "11.8",
+                462,
+                223
+            ],
+            [
+                "Improved Mapping (Scoping)",
+                "01:14",
+                "11.9",
+                74,
+                224
+            ],
+            [
+                "Implementing \"Auto Login\"",
+                "16:50",
+                "11.10",
+                1010,
+                225
+            ],
+            [
+                "Adding Logout",
+                "07:20",
+                "11.11",
+                440,
+                226
+            ],
+            [
+                "Implementing \"Auto Logout\"",
+                "15:26",
+                "11.12",
+                926,
+                227
+            ],
+            [
+                "Auto-Logout & Android (Warning)",
+                "00:26",
+                "11.13",
+                26,
+                228
+            ],
+            [
+                "Wrap Up",
+                "01:03",
+                "11.14",
+                63,
+                229
+            ],
+            [
+                "Useful Resources & Links",
+                "00:07",
+                "11.15",
+                7,
+                230
+            ]
+        ],
+        "total": "1hr 49min",
+        "duration": 6540,
+        "name": "User Authentication",
+        "durs": [
+            44,
+            216,
+            897,
+            764,
+            386,
+            541,
+            664,
+            462,
+            74,
+            1010,
+            440,
+            926,
+            26,
+            63,
+            7
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:13",
+                "12.1",
+                73,
+                231
+            ],
+            [
+                "Planning the App",
+                "04:00",
+                "12.2",
+                240,
+                232
+            ],
+            [
+                "Navigation Setup in Next Lecture",
+                "00:17",
+                "12.3",
+                17,
+                233
+            ],
+            [
+                "Screen & Navigation Setup",
+                "13:27",
+                "12.4",
+                807,
+                234
+            ],
+            [
+                "Getting Started with the Form",
+                "05:36",
+                "12.5",
+                336,
+                235
+            ],
+            [
+                "Redux & Adding Places",
+                "07:29",
+                "12.6",
+                449,
+                236
+            ],
+            [
+                "Outputting a List of Places",
+                "06:36",
+                "12.7",
+                396,
+                237
+            ],
+            [
+                "Accessing the Device Camera",
+                "17:26",
+                "12.8",
+                1046,
+                238
+            ],
+            [
+                "Configuring the Camera Access",
+                "05:10",
+                "12.9",
+                310,
+                239
+            ],
+            [
+                "Using the Picked Image",
+                "04:59",
+                "12.10",
+                299,
+                240
+            ],
+            [
+                "Storing the Image on the Filesystem",
+                "08:29",
+                "12.11",
+                509,
+                241
+            ],
+            [
+                "Changed SQLite Import",
+                "00:09",
+                "12.12",
+                9,
+                242
+            ],
+            [
+                "Diving into SQLite for Permanent Data Storage",
+                "10:24",
+                "12.13",
+                624,
+                243
+            ],
+            [
+                "Storing Data in the Local Database",
+                "07:53",
+                "12.14",
+                473,
+                244
+            ],
+            [
+                "Fetching Data from the Local Database",
+                "07:00",
+                "12.15",
+                420,
+                245
+            ],
+            [
+                "Getting the User Location",
+                "11:00",
+                "12.16",
+                660,
+                246
+            ],
+            [
+                "Showing a Map Preview of the Location",
+                "13:24",
+                "12.17",
+                804,
+                247
+            ],
+            [
+                "More on Environment Variables",
+                "00:36",
+                "12.18",
+                36,
+                248
+            ],
+            [
+                "Displaying an Interactive Map",
+                "08:31",
+                "12.19",
+                511,
+                249
+            ],
+            [
+                "Adding a Marker",
+                "05:27",
+                "12.20",
+                327,
+                250
+            ],
+            [
+                "Making the Picked Location \"Saveable\"",
+                "07:22",
+                "12.21",
+                442,
+                251
+            ],
+            [
+                "Storing Picked Places",
+                "02:50",
+                "12.22",
+                170,
+                252
+            ],
+            [
+                "Updating the Location Screen When the Location Changes",
+                "04:25",
+                "12.23",
+                265,
+                253
+            ],
+            [
+                "Storing the Address",
+                "07:33",
+                "12.24",
+                453,
+                254
+            ],
+            [
+                "Displaying the \"Details\" Screen",
+                "06:28",
+                "12.25",
+                388,
+                255
+            ],
+            [
+                "Finishing the \"Map\" Screen",
+                "06:19",
+                "12.26",
+                379,
+                256
+            ],
+            [
+                "Running the App on iOS",
+                "03:05",
+                "12.27",
+                185,
+                257
+            ],
+            [
+                "Running the App on Android",
+                "01:21",
+                "12.28",
+                81,
+                258
+            ],
+            [
+                "Wrap Up",
+                "01:35",
+                "12.29",
+                95,
+                259
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "12.30",
+                8,
+                260
+            ]
+        ],
+        "total": "3hr",
+        "duration": 10800,
+        "name": "Native Device Features (Camera, Maps, Location, SQLite, ...) [GREAT PLACES APP]",
+        "durs": [
+            73,
+            240,
+            17,
+            807,
+            336,
+            449,
+            396,
+            1046,
+            310,
+            299,
+            509,
+            9,
+            624,
+            473,
+            420,
+            660,
+            804,
+            36,
+            511,
+            327,
+            442,
+            170,
+            265,
+            453,
+            388,
+            379,
+            185,
+            81,
+            95,
+            8
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Module Introduction",
+                "03:32",
+                "13.1",
+                212,
+                261
+            ],
+            [
+                "Alternatives to Expo",
+                "06:01",
+                "13.2",
+                361,
+                262
+            ],
+            [
+                "Building Apps with Just the React Native CLI",
+                "09:26",
+                "13.3",
+                566,
+                263
+            ],
+            [
+                "Live Reload and RN CLI Apps",
+                "00:13",
+                "13.4",
+                13,
+                264
+            ],
+            [
+                "Important: Using React Native Image Picker",
+                "00:06",
+                "13.5",
+                6,
+                265
+            ],
+            [
+                "Adding Native Modules to Non-Expo Apps",
+                "08:55",
+                "13.6",
+                535,
+                266
+            ],
+            [
+                "Understanding Expo's \"Bare Workflow\"",
+                "08:35",
+                "13.7",
+                515,
+                267
+            ],
+            [
+                "Ejecting from Expo's \"Managed Workflow\"",
+                "10:59",
+                "13.8",
+                659,
+                268
+            ],
+            [
+                "When To Use Which?",
+                "05:29",
+                "13.9",
+                329,
+                269
+            ],
+            [
+                "Useful Resources & Links",
+                "00:03",
+                "13.10",
+                3,
+                270
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Building Apps Without Expo",
+        "durs": [
+            212,
+            361,
+            566,
+            13,
+            6,
+            535,
+            515,
+            659,
+            329,
+            3
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:41",
+                "14.1",
+                41,
+                271
+            ],
+            [
+                "Deployment Steps",
+                "04:31",
+                "14.2",
+                271,
+                272
+            ],
+            [
+                "Configuring the App & Publishing",
+                "08:09",
+                "14.3",
+                489,
+                273
+            ],
+            [
+                "Configuring Icons & The Splash Screen",
+                "09:13",
+                "14.4",
+                553,
+                274
+            ],
+            [
+                "Working with Offline Asset Bundles",
+                "03:03",
+                "14.5",
+                183,
+                275
+            ],
+            [
+                "Using \"Over the Air Updates\" (OTA Updates)",
+                "07:43",
+                "14.6",
+                463,
+                276
+            ],
+            [
+                "Building the Apps for Deployment (iOS & Android)",
+                "19:07",
+                "14.7",
+                1147,
+                277
+            ],
+            [
+                "Publishing iOS Apps without Expo",
+                "10:23",
+                "14.8",
+                623,
+                278
+            ],
+            [
+                "Publishing Android Apps without Expo",
+                "07:21",
+                "14.9",
+                441,
+                279
+            ],
+            [
+                "Configuring Android Apps",
+                "00:21",
+                "14.10",
+                21,
+                280
+            ],
+            [
+                "Useful Resources & Links",
+                "00:05",
+                "14.11",
+                5,
+                281
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Publishing React Native Apps",
+        "durs": [
+            41,
+            271,
+            489,
+            553,
+            183,
+            463,
+            1147,
+            623,
+            441,
+            21,
+            5
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:07",
+                "15.1",
+                67,
+                282
+            ],
+            [
+                "What Changed?",
+                "03:55",
+                "15.2",
+                235,
+                283
+            ],
+            [
+                "Preparing the Project",
+                "04:02",
+                "15.3",
+                242,
+                284
+            ],
+            [
+                "More Information & Updating the Project Dependencies",
+                "02:08",
+                "15.4",
+                128,
+                285
+            ],
+            [
+                "Moving from the \"Registry-like\" to the \"Component-based\" Navigation Config",
+                "10:35",
+                "15.5",
+                635,
+                286
+            ],
+            [
+                "First Migration Steps",
+                "11:37",
+                "15.6",
+                697,
+                287
+            ],
+            [
+                "Converting More Stack Navigators to the New Config",
+                "06:49",
+                "15.7",
+                409,
+                288
+            ],
+            [
+                "Migrating the Drawer Navigation",
+                "08:12",
+                "15.8",
+                492,
+                289
+            ],
+            [
+                "Replacing the \"Switch\" Navigator & Auth Flow",
+                "12:50",
+                "15.9",
+                770,
+                290
+            ],
+            [
+                "Logout & Further Fixes/ Adjustments",
+                "04:57",
+                "15.10",
+                297,
+                291
+            ],
+            [
+                "Extracting Screen Params",
+                "07:47",
+                "15.11",
+                467,
+                292
+            ],
+            [
+                "Setting Screen Options Dynamically",
+                "03:02",
+                "15.12",
+                182,
+                293
+            ],
+            [
+                "Remaining Migration Steps & Roundup",
+                "03:02",
+                "15.13",
+                182,
+                294
+            ],
+            [
+                "A Summary Of All Important Changes",
+                "05:47",
+                "15.14",
+                347,
+                295
+            ],
+            [
+                "Useful Resources & Links",
+                "00:09",
+                "15.15",
+                9,
+                296
+            ]
+        ],
+        "total": "1hr 26min",
+        "duration": 5160,
+        "name": "Updating to React Navigation 5+",
+        "durs": [
+            67,
+            235,
+            242,
+            128,
+            635,
+            697,
+            409,
+            492,
+            770,
+            297,
+            467,
+            182,
+            182,
+            347,
+            9
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:18",
+                "16.1",
+                78,
+                297
+            ],
+            [
+                "Understanding Notifications",
+                "03:36",
+                "16.2",
+                216,
+                298
+            ],
+            [
+                "Sending Local Notifications",
+                "08:16",
+                "16.3",
+                496,
+                299
+            ],
+            [
+                "Getting Permissions",
+                "07:35",
+                "16.4",
+                455,
+                300
+            ],
+            [
+                "Controlling How Notifications Are Displayed",
+                "03:36",
+                "16.5",
+                216,
+                301
+            ],
+            [
+                "Reacting to Foreground Notifications",
+                "04:26",
+                "16.6",
+                266,
+                302
+            ],
+            [
+                "Reacting to Background Notifications",
+                "04:13",
+                "16.7",
+                253,
+                303
+            ],
+            [
+                "How Push Notifications Work",
+                "03:40",
+                "16.8",
+                220,
+                304
+            ],
+            [
+                "Expo & Push Notifications",
+                "06:45",
+                "16.9",
+                405,
+                305
+            ],
+            [
+                "Getting a Push Token",
+                "04:44",
+                "16.10",
+                284,
+                306
+            ],
+            [
+                "Sending Push Notifications",
+                "02:59",
+                "16.11",
+                179,
+                307
+            ],
+            [
+                "Using Expo's Push Server",
+                "04:29",
+                "16.12",
+                269,
+                308
+            ],
+            [
+                "More on Push Tokens",
+                "05:49",
+                "16.13",
+                349,
+                309
+            ],
+            [
+                "Adding Push Notifications to the Shop App (1/3)",
+                "10:06",
+                "16.14",
+                606,
+                310
+            ],
+            [
+                "Adding Push Notifications to the Shop App (2/3)",
+                "14:13",
+                "16.15",
+                853,
+                311
+            ],
+            [
+                "Adding Push Notifications to the Shop App (3/3)",
+                "02:37",
+                "16.16",
+                157,
+                312
+            ],
+            [
+                "Push Notifications in non-Expo Managed Apps",
+                "00:11",
+                "16.17",
+                11,
+                313
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "16.18",
+                6,
+                314
+            ]
+        ],
+        "total": "1hr 29min",
+        "duration": 5340,
+        "name": "Push Notifications",
+        "durs": [
+            78,
+            216,
+            496,
+            455,
+            216,
+            266,
+            253,
+            220,
+            405,
+            284,
+            179,
+            269,
+            349,
+            606,
+            853,
+            157,
+            11,
+            6
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Roundup & Next Steps",
+                "03:52",
+                "17.1",
+                232,
+                315
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Course Roundup & Next Steps",
+        "durs": [
+            232
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:36",
+                "18.1",
+                96,
+                316
+            ],
+            [
+                "JavaScript - A Summary",
+                "02:35",
+                "18.2",
+                155,
+                317
+            ],
+            [
+                "Project Setup",
+                "00:07",
+                "18.3",
+                7,
+                318
+            ],
+            [
+                "Core Syntax Refresher",
+                "04:34",
+                "18.4",
+                274,
+                319
+            ],
+            [
+                "let & const",
+                "02:27",
+                "18.5",
+                147,
+                320
+            ],
+            [
+                "Arrow Functions",
+                "05:17",
+                "18.6",
+                317,
+                321
+            ],
+            [
+                "Objects: Properties & Methods",
+                "03:19",
+                "18.7",
+                199,
+                322
+            ],
+            [
+                "Arrays & Array Methods",
+                "04:16",
+                "18.8",
+                256,
+                323
+            ],
+            [
+                "Arrays, Objects & Reference Types",
+                "02:13",
+                "18.9",
+                133,
+                324
+            ],
+            [
+                "Spread Operator & Rest Parameters",
+                "06:40",
+                "18.10",
+                400,
+                325
+            ],
+            [
+                "Destructuring",
+                "05:37",
+                "18.11",
+                337,
+                326
+            ],
+            [
+                "Async Code & Promises",
+                "10:28",
+                "18.12",
+                628,
+                327
+            ],
+            [
+                "Wrap Up",
+                "00:50",
+                "18.13",
+                50,
+                328
+            ],
+            [
+                "Module Resources",
+                "00:02",
+                "18.14",
+                2,
+                329
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Bonus: JavaScript Refresher",
+        "durs": [
+            96,
+            155,
+            7,
+            274,
+            147,
+            317,
+            199,
+            256,
+            133,
+            400,
+            337,
+            628,
+            50,
+            2
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:12",
+                "19.1",
+                72,
+                330
+            ],
+            [
+                "What is React",
+                "03:13",
+                "19.2",
+                193,
+                331
+            ],
+            [
+                "A Starting Project",
+                "04:03",
+                "19.3",
+                243,
+                332
+            ],
+            [
+                "Understanding JSX",
+                "05:31",
+                "19.4",
+                331,
+                333
+            ],
+            [
+                "Understanding Components",
+                "02:50",
+                "19.5",
+                170,
+                334
+            ],
+            [
+                "Working with Multiple Components",
+                "07:04",
+                "19.6",
+                424,
+                335
+            ],
+            [
+                "Working with Props",
+                "06:52",
+                "19.7",
+                412,
+                336
+            ],
+            [
+                "Rendering Lists of Data",
+                "04:30",
+                "19.8",
+                270,
+                337
+            ],
+            [
+                "Handling Events",
+                "07:24",
+                "19.9",
+                444,
+                338
+            ],
+            [
+                "Parent-Child Communication",
+                "04:38",
+                "19.10",
+                278,
+                339
+            ],
+            [
+                "Managing State",
+                "05:54",
+                "19.11",
+                354,
+                340
+            ],
+            [
+                "More on State",
+                "04:20",
+                "19.12",
+                260,
+                341
+            ],
+            [
+                "User Input & Two-Way Binding",
+                "05:52",
+                "19.13",
+                352,
+                342
+            ],
+            [
+                "Wrap Up",
+                "02:11",
+                "19.14",
+                131,
+                343
+            ],
+            [
+                "Module Resources",
+                "00:02",
+                "19.15",
+                2,
+                344
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Bonus: React.js Refresher",
+        "durs": [
+            72,
+            193,
+            243,
+            331,
+            170,
+            424,
+            412,
+            270,
+            444,
+            278,
+            354,
+            260,
+            352,
+            131,
+            2
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "Bonus: More Content!",
+                "00:20",
+                "20.1",
+                20,
+                345
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Bonus",
+        "durs": [
+            20
+        ]
+    }
+]

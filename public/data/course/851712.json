@@ -1,0 +1,1182 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Course Structure and Projects",
+                "05:25",
+                "1.1",
+                325,
+                1
+            ],
+            [
+                "Watch Before You Start!",
+                "06:09",
+                "1.2",
+                369,
+                2
+            ],
+            [
+                "Read Before You Start!",
+                "00:41",
+                "1.3",
+                41,
+                3
+            ],
+            [
+                "Migration Guide to v2 + Old Course",
+                "02:09",
+                "1.4",
+                129,
+                4
+            ],
+            [
+                "Setting Up Our Code Editor",
+                "08:23",
+                "1.5",
+                503,
+                5
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Welcome, Welcome, Welcome!",
+        "durs": [
+            325,
+            369,
+            41,
+            129,
+            503
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:53",
+                "2.1",
+                53,
+                6
+            ],
+            [
+                "Hello World!",
+                "05:57",
+                "2.2",
+                357,
+                7
+            ],
+            [
+                "A Brief Introduction to JavaScript",
+                "11:18",
+                "2.3",
+                678,
+                8
+            ],
+            [
+                "Linking a JavaScript File",
+                "15:55",
+                "2.4",
+                955,
+                9
+            ],
+            [
+                "Values and Variables",
+                "16:05",
+                "2.5",
+                965,
+                10
+            ],
+            [
+                "Practice Assignments",
+                "00:23",
+                "2.6",
+                23,
+                11
+            ],
+            [
+                "Data Types",
+                "19:19",
+                "2.7",
+                1159,
+                12
+            ],
+            [
+                "let, const and var",
+                "09:58",
+                "2.8",
+                598,
+                13
+            ],
+            [
+                "Basic Operators",
+                "19:31",
+                "2.9",
+                1171,
+                14
+            ],
+            [
+                "Operator Precedence",
+                "11:19",
+                "2.10",
+                679,
+                15
+            ],
+            [
+                "Coding Challenge #1",
+                "10:28",
+                "2.11",
+                628,
+                16
+            ],
+            [
+                "Strings and Template Literals",
+                "10:57",
+                "2.12",
+                657,
+                17
+            ],
+            [
+                "Taking Decisions: if / else Statements",
+                "12:50",
+                "2.13",
+                770,
+                18
+            ],
+            [
+                "Coding Challenge #2",
+                "06:21",
+                "2.14",
+                381,
+                19
+            ],
+            [
+                "Type Conversion and Coercion",
+                "17:16",
+                "2.15",
+                1036,
+                20
+            ],
+            [
+                "Truthy and Falsy Values",
+                "10:03",
+                "2.16",
+                603,
+                21
+            ],
+            [
+                "Equality Operators: == vs. ===",
+                "15:41",
+                "2.17",
+                941,
+                22
+            ],
+            [
+                "Boolean Logic",
+                "08:30",
+                "2.18",
+                510,
+                23
+            ],
+            [
+                "Logical Operators",
+                "10:37",
+                "2.19",
+                637,
+                24
+            ],
+            [
+                "Coding Challenge #3",
+                "15:07",
+                "2.20",
+                907,
+                25
+            ],
+            [
+                "The switch Statement",
+                "13:10",
+                "2.21",
+                790,
+                26
+            ],
+            [
+                "Statements and Expressions",
+                "06:08",
+                "2.22",
+                368,
+                27
+            ],
+            [
+                "The Conditional (Ternary) Operator",
+                "10:02",
+                "2.23",
+                602,
+                28
+            ],
+            [
+                "Coding Challenge #4",
+                "09:11",
+                "2.24",
+                551,
+                29
+            ],
+            [
+                "JavaScript Releases: ES5, ES6+ and ESNext",
+                "14:19",
+                "2.25",
+                859,
+                30
+            ]
+        ],
+        "total": "4hr 41min",
+        "duration": 16860,
+        "name": "JavaScript Fundamentals – Part 1",
+        "durs": [
+            53,
+            357,
+            678,
+            955,
+            965,
+            23,
+            1159,
+            598,
+            1171,
+            679,
+            628,
+            657,
+            770,
+            381,
+            1036,
+            603,
+            941,
+            510,
+            637,
+            907,
+            790,
+            368,
+            602,
+            551,
+            859
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:36",
+                "3.1",
+                36,
+                31
+            ],
+            [
+                "Activating Strict Mode",
+                "10:27",
+                "3.2",
+                627,
+                32
+            ],
+            [
+                "Functions",
+                "19:08",
+                "3.3",
+                1148,
+                33
+            ],
+            [
+                "Function Declarations vs. Expressions",
+                "10:39",
+                "3.4",
+                639,
+                34
+            ],
+            [
+                "Arrow Functions",
+                "09:52",
+                "3.5",
+                592,
+                35
+            ],
+            [
+                "Functions Calling Other Functions",
+                "10:07",
+                "3.6",
+                607,
+                36
+            ],
+            [
+                "Reviewing Functions",
+                "15:37",
+                "3.7",
+                937,
+                37
+            ],
+            [
+                "Coding Challenge #1",
+                "18:12",
+                "3.8",
+                1092,
+                38
+            ],
+            [
+                "Introduction to Arrays",
+                "21:34",
+                "3.9",
+                1294,
+                39
+            ],
+            [
+                "Basic Array Operations (Methods)",
+                "12:52",
+                "3.10",
+                772,
+                40
+            ],
+            [
+                "Coding Challenge #2",
+                "09:36",
+                "3.11",
+                576,
+                41
+            ],
+            [
+                "Introduction to Objects",
+                "06:08",
+                "3.12",
+                368,
+                42
+            ],
+            [
+                "Dot vs. Bracket Notation",
+                "19:21",
+                "3.13",
+                1161,
+                43
+            ],
+            [
+                "Object Methods",
+                "23:04",
+                "3.14",
+                1384,
+                44
+            ],
+            [
+                "Coding Challenge #3",
+                "12:58",
+                "3.15",
+                778,
+                45
+            ],
+            [
+                "Iteration: The for Loop",
+                "11:11",
+                "3.16",
+                671,
+                46
+            ],
+            [
+                "Looping Arrays, Breaking and Continuing",
+                "22:02",
+                "3.17",
+                1322,
+                47
+            ],
+            [
+                "Looping Backwards and Loops in Loops",
+                "11:53",
+                "3.18",
+                713,
+                48
+            ],
+            [
+                "The while Loop",
+                "11:52",
+                "3.19",
+                712,
+                49
+            ],
+            [
+                "Coding Challenge #4",
+                "15:35",
+                "3.20",
+                935,
+                50
+            ]
+        ],
+        "total": "4hr 33min",
+        "duration": 16380,
+        "name": "JavaScript Fundamentals – Part 2",
+        "durs": [
+            36,
+            627,
+            1148,
+            639,
+            592,
+            607,
+            937,
+            1092,
+            1294,
+            772,
+            576,
+            368,
+            1161,
+            1384,
+            778,
+            671,
+            1322,
+            713,
+            712,
+            935
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Pathways and Section Roadmaps",
+                "04:08",
+                "4.1",
+                248,
+                51
+            ],
+            [
+                "Course Pathways",
+                "00:07",
+                "4.2",
+                7,
+                52
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "How to Navigate This Course",
+        "durs": [
+            248,
+            7
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:39",
+                "5.1",
+                39,
+                53
+            ],
+            [
+                "Section Roadmap",
+                "00:22",
+                "5.2",
+                22,
+                54
+            ],
+            [
+                "Setting up Prettier and VS Code",
+                "16:22",
+                "5.3",
+                982,
+                55
+            ],
+            [
+                "Installing Node.js and Setting Up a Dev Environment",
+                "11:32",
+                "5.4",
+                692,
+                56
+            ],
+            [
+                "Learning How to Code",
+                "17:42",
+                "5.5",
+                1062,
+                57
+            ],
+            [
+                "How to Think Like a Developer: Become a Problem Solver!",
+                "10:53",
+                "5.6",
+                653,
+                58
+            ],
+            [
+                "Using Google, StackOverflow and MDN",
+                "26:36",
+                "5.7",
+                1596,
+                59
+            ],
+            [
+                "Debugging (Fixing Errors)",
+                "05:09",
+                "5.8",
+                309,
+                60
+            ],
+            [
+                "Debugging with the Console and Breakpoints",
+                "19:25",
+                "5.9",
+                1165,
+                61
+            ],
+            [
+                "Coding Challenge #1",
+                "15:24",
+                "5.10",
+                924,
+                62
+            ]
+        ],
+        "total": "2hr 4min",
+        "duration": 7440,
+        "name": "Developer Skills & Editor Setup",
+        "durs": [
+            39,
+            22,
+            982,
+            692,
+            1062,
+            653,
+            1596,
+            309,
+            1165,
+            924
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:40",
+                "6.1",
+                40,
+                63
+            ],
+            [
+                "Basic HTML Structure and Elements",
+                "09:32",
+                "6.2",
+                572,
+                64
+            ],
+            [
+                "Attributes, Classes and IDs",
+                "13:09",
+                "6.3",
+                789,
+                65
+            ],
+            [
+                "Basic Styling with CSS",
+                "12:00",
+                "6.4",
+                720,
+                66
+            ],
+            [
+                "Introduction to the CSS Box Model",
+                "20:57",
+                "6.5",
+                1257,
+                67
+            ]
+        ],
+        "total": "56min",
+        "duration": 3360,
+        "name": "[OPTIONAL] HTML & CSS Crash Course",
+        "durs": [
+            40,
+            572,
+            789,
+            720,
+            1257
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:49",
+                "7.1",
+                49,
+                68
+            ],
+            [
+                "Section Roadmap",
+                "00:29",
+                "7.2",
+                29,
+                69
+            ],
+            [
+                "PROJECT #1: Guess My Number!",
+                "08:47",
+                "7.3",
+                527,
+                70
+            ],
+            [
+                "What's the DOM and DOM Manipulation",
+                "06:48",
+                "7.4",
+                408,
+                71
+            ],
+            [
+                "Selecting and Manipulating Elements",
+                "08:22",
+                "7.5",
+                502,
+                72
+            ],
+            [
+                "Handling Click Events",
+                "12:50",
+                "7.6",
+                770,
+                73
+            ],
+            [
+                "Implementing the Game Logic",
+                "19:33",
+                "7.7",
+                1173,
+                74
+            ],
+            [
+                "Manipulating CSS Styles",
+                "08:17",
+                "7.8",
+                497,
+                75
+            ],
+            [
+                "Coding Challenge #1",
+                "11:40",
+                "7.9",
+                700,
+                76
+            ],
+            [
+                "Implementing Highscores",
+                "07:47",
+                "7.10",
+                467,
+                77
+            ],
+            [
+                "Refactoring Our Code: The DRY Principle",
+                "15:05",
+                "7.11",
+                905,
+                78
+            ],
+            [
+                "PROJECT #2: Modal Window",
+                "13:21",
+                "7.12",
+                801,
+                79
+            ],
+            [
+                "Working With Classes",
+                "16:55",
+                "7.13",
+                1015,
+                80
+            ],
+            [
+                "Handling an \"Esc\" Keypress Event",
+                "14:11",
+                "7.14",
+                851,
+                81
+            ],
+            [
+                "PROJECT #3: Pig Game",
+                "17:08",
+                "7.15",
+                1028,
+                82
+            ],
+            [
+                "Rolling the Dice",
+                "15:58",
+                "7.16",
+                958,
+                83
+            ],
+            [
+                "Switching the Active Player",
+                "15:16",
+                "7.17",
+                916,
+                84
+            ],
+            [
+                "Holding Current Score",
+                "24:55",
+                "7.18",
+                1495,
+                85
+            ],
+            [
+                "Resetting the Game",
+                "15:38",
+                "7.19",
+                938,
+                86
+            ]
+        ],
+        "total": "3hr 54min",
+        "duration": 14040,
+        "name": "JavaScript in the Browser: DOM and Events Fundamentals",
+        "durs": [
+            49,
+            29,
+            527,
+            408,
+            502,
+            770,
+            1173,
+            497,
+            700,
+            467,
+            905,
+            801,
+            1015,
+            851,
+            1028,
+            958,
+            916,
+            1495,
+            938
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Section Intro",
+                "01:31",
+                "8.1",
+                91,
+                87
+            ],
+            [
+                "Section Roadmap",
+                "00:30",
+                "8.2",
+                30,
+                88
+            ],
+            [
+                "An High-Level Overview of JavaScript",
+                "12:11",
+                "8.3",
+                731,
+                89
+            ],
+            [
+                "The JavaScript Engine and Runtime",
+                "13:47",
+                "8.4",
+                827,
+                90
+            ],
+            [
+                "Execution Contexts and The Call Stack",
+                "17:45",
+                "8.5",
+                1065,
+                91
+            ],
+            [
+                "Scope and The Scope Chain",
+                "25:37",
+                "8.6",
+                1537,
+                92
+            ],
+            [
+                "Scoping in Practice",
+                "21:13",
+                "8.7",
+                1273,
+                93
+            ],
+            [
+                "Variable Environment: Hoisting and The TDZ",
+                "11:00",
+                "8.8",
+                660,
+                94
+            ],
+            [
+                "Hoisting and TDZ in Practice",
+                "14:42",
+                "8.9",
+                882,
+                95
+            ],
+            [
+                "The this Keyword",
+                "06:30",
+                "8.10",
+                390,
+                96
+            ],
+            [
+                "The this Keyword in Practice",
+                "13:11",
+                "8.11",
+                791,
+                97
+            ],
+            [
+                "Regular Functions vs. Arrow Functions",
+                "18:04",
+                "8.12",
+                1084,
+                98
+            ],
+            [
+                "Primitives vs. Objects (Primitive vs. Reference Types)",
+                "16:06",
+                "8.13",
+                966,
+                99
+            ],
+            [
+                "Primitives vs. Objects in Practice",
+                "14:57",
+                "8.14",
+                897,
+                100
+            ]
+        ],
+        "total": "3hr 7min",
+        "duration": 11220,
+        "name": "How JavaScript Works Behind the Scenes",
+        "durs": [
+            91,
+            30,
+            731,
+            827,
+            1065,
+            1537,
+            1273,
+            660,
+            882,
+            390,
+            791,
+            1084,
+            966,
+            897
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:53",
+                "9.1",
+                53,
+                101
+            ],
+            [
+                "Section Roadmap",
+                "00:22",
+                "9.2",
+                22,
+                102
+            ],
+            [
+                "Destructuring Arrays",
+                "19:33",
+                "9.3",
+                1173,
+                103
+            ],
+            [
+                "Destructuring Objects",
+                "19:46",
+                "9.4",
+                1186,
+                104
+            ],
+            [
+                "The Spread Operator (...)",
+                "21:26",
+                "9.5",
+                1286,
+                105
+            ],
+            [
+                "Rest Pattern and Parameters",
+                "19:01",
+                "9.6",
+                1141,
+                106
+            ],
+            [
+                "Short Circuiting (&& and ||)",
+                "15:55",
+                "9.7",
+                955,
+                107
+            ],
+            [
+                "The Nullish Coalescing Operator (??)",
+                "03:32",
+                "9.8",
+                212,
+                108
+            ],
+            [
+                "Coding Challenge #1",
+                "14:57",
+                "9.9",
+                897,
+                109
+            ],
+            [
+                "Looping Arrays: The for-of Loop",
+                "07:20",
+                "9.10",
+                440,
+                110
+            ],
+            [
+                "Enhanced Object Literals",
+                "07:02",
+                "9.11",
+                422,
+                111
+            ],
+            [
+                "Optional Chaining (?.)",
+                "16:10",
+                "9.12",
+                970,
+                112
+            ],
+            [
+                "Looping Objects: Object Keys, Values, and Entries",
+                "10:09",
+                "9.13",
+                609,
+                113
+            ],
+            [
+                "Coding Challenge #2",
+                "14:30",
+                "9.14",
+                870,
+                114
+            ],
+            [
+                "Sets",
+                "13:18",
+                "9.15",
+                798,
+                115
+            ],
+            [
+                "Maps: Fundamentals",
+                "14:03",
+                "9.16",
+                843,
+                116
+            ],
+            [
+                "Maps: Iteration",
+                "12:41",
+                "9.17",
+                761,
+                117
+            ],
+            [
+                "Summary: Which Data Structure to Use?",
+                "09:40",
+                "9.18",
+                580,
+                118
+            ],
+            [
+                "Coding Challenge #3",
+                "09:37",
+                "9.19",
+                577,
+                119
+            ],
+            [
+                "Working With Strings - Part 1",
+                "16:53",
+                "9.20",
+                1013,
+                120
+            ],
+            [
+                "Working With Strings - Part 2",
+                "21:45",
+                "9.21",
+                1305,
+                121
+            ],
+            [
+                "Working With Strings - Part 3",
+                "21:41",
+                "9.22",
+                1301,
+                122
+            ],
+            [
+                "Coding Challenge #4",
+                "15:15",
+                "9.23",
+                915,
+                123
+            ],
+            [
+                "String Methods Practice",
+                "16:36",
+                "9.24",
+                996,
+                124
+            ]
+        ],
+        "total": "5hr 22min",
+        "duration": 19320,
+        "name": "Data Structures, Modern Operators and Strings",
+        "durs": [
+            53,
+            22,
+            1173,
+            1186,
+            1286,
+            1141,
+            955,
+            212,
+            897,
+            440,
+            422,
+            970,
+            609,
+            870,
+            798,
+            843,
+            761,
+            580,
+            577,
+            1013,
+            1305,
+            1301,
+            915,
+            996
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Section Intro",
+                "00:48",
+                "10.1",
+                48,
+                125
+            ],
+            [
+                "Section Roadmap",
+                "00:22",
+                "10.2",
+                22,
+                126
+            ],
+            [
+                "Default Parameters",
+                "09:34",
+                "10.3",
+                574,
+                127
+            ],
+            [
+                "How Passing Arguments Works: Value vs. Reference",
+                "13:36",
+                "10.4",
+                816,
+                128
+            ],
+            [
+                "First-Class and Higher-Order Functions",
+                "05:24",
+                "10.5",
+                324,
+                129
+            ],
+            [
+                "Functions Accepting Callback Functions",
+                "15:20",
+                "10.6",
+                920,
+                130
+            ],
+            [
+                "Functions Returning Functions",
+                "06:36",
+                "10.7",
+                396,
+                131
+            ],
+            [
+                "The call and apply Methods",
+                "16:51",
+                "10.8",
+                1011,
+                132
+            ],
+            [
+                "The bind Method",
+                "21:33",
+                "10.9",
+                1293,
+                133
+            ],
+            [
+                "Coding Challenge #1",
+                "18:47",
+                "10.10",
+                1127,
+                134
+            ],
+            [
+                "Immediately Invoked Fun",
+                null,
+                "",
+                0,
+                135
+            ]
+        ],
+        "total": "2hr 37min",
+        "duration": 9420,
+        "name": "A Closer Look at Functions",
+        "durs": [
+            48,
+            22,
+            574,
+            816,
+            324,
+            920,
+            396,
+            1011,
+            1293,
+            1127,
+            0
+        ]
+    }
+]

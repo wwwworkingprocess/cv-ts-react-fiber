@@ -1,0 +1,5472 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Course introduction",
+                "06:44",
+                "1.1",
+                404,
+                1
+            ],
+            [
+                "Setting up the developer environment",
+                "05:36",
+                "1.2",
+                336,
+                2
+            ],
+            [
+                "VS Code extensions",
+                "05:59",
+                "1.3",
+                359,
+                3
+            ],
+            [
+                "Source code and Resources used on this course",
+                "01:57",
+                "1.4",
+                117,
+                4
+            ]
+        ],
+        "total": "20min",
+        "duration": 1200,
+        "name": "Introduction",
+        "durs": [
+            404,
+            336,
+            359,
+            117
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Introduction",
+                "07:51",
+                "2.1",
+                471,
+                5
+            ],
+            [
+                "Creating the .Net projects and references",
+                "09:41",
+                "2.2",
+                581,
+                6
+            ],
+            [
+                "Reviewing the project files and startup",
+                "11:53",
+                "2.3",
+                713,
+                7
+            ],
+            [
+                "The API controller and using postman",
+                "06:06",
+                "2.4",
+                366,
+                8
+            ],
+            [
+                "Creating a domain entity",
+                "04:41",
+                "2.5",
+                281,
+                9
+            ],
+            [
+                "Adding an Entity Framework Db Context",
+                "13:41",
+                "2.6",
+                821,
+                10
+            ],
+            [
+                "Creating an Entity Framework code first migration",
+                "07:38",
+                "2.7",
+                458,
+                11
+            ],
+            [
+                "Creating the database",
+                "08:07",
+                "2.8",
+                487,
+                12
+            ],
+            [
+                "Seeding data to the Database",
+                "07:14",
+                "2.9",
+                434,
+                13
+            ],
+            [
+                "Adding an API controller",
+                "10:16",
+                "2.10",
+                616,
+                14
+            ],
+            [
+                "Saving changes into source control",
+                "07:34",
+                "2.11",
+                454,
+                15
+            ],
+            [
+                "Summary of Section 2",
+                "07:26",
+                "2.12",
+                446,
+                16
+            ]
+        ],
+        "total": "1hr 42min",
+        "duration": 6120,
+        "name": "Walking Skeleton Part 1 - API",
+        "durs": [
+            471,
+            581,
+            713,
+            366,
+            281,
+            821,
+            458,
+            487,
+            434,
+            616,
+            454,
+            446
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Introduction",
+                "03:30",
+                "3.1",
+                210,
+                17
+            ],
+            [
+                "Creating the React project",
+                "07:07",
+                "3.2",
+                427,
+                18
+            ],
+            [
+                "Reviewing the React project files",
+                "10:05",
+                "3.3",
+                605,
+                19
+            ],
+            [
+                "Why React?",
+                "02:46",
+                "3.4",
+                166,
+                20
+            ],
+            [
+                "React Components",
+                "07:33",
+                "3.5",
+                453,
+                21
+            ],
+            [
+                "Typescript concepts",
+                "07:09",
+                "3.6",
+                429,
+                22
+            ],
+            [
+                "Typescript demo",
+                "11:12",
+                "3.7",
+                672,
+                23
+            ],
+            [
+                "Using Typescript with React",
+                "11:03",
+                "3.8",
+                663,
+                24
+            ],
+            [
+                "React dev tools",
+                "03:34",
+                "3.9",
+                214,
+                25
+            ],
+            [
+                "Fetching data from the API",
+                "10:10",
+                "3.10",
+                610,
+                26
+            ],
+            [
+                "CORS Policy",
+                "04:59",
+                "3.11",
+                299,
+                27
+            ],
+            [
+                "Semantic UI React",
+                "11:19",
+                "3.12",
+                679,
+                28
+            ],
+            [
+                "Summary of section 3",
+                "04:47",
+                "3.13",
+                287,
+                29
+            ]
+        ],
+        "total": "1hr 35min",
+        "duration": 5700,
+        "name": "Walking Skeleton Part 2 - Client",
+        "durs": [
+            210,
+            427,
+            605,
+            166,
+            453,
+            429,
+            672,
+            663,
+            214,
+            610,
+            299,
+            679,
+            287
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Introduction",
+                "04:12",
+                "4.1",
+                252,
+                30
+            ],
+            [
+                "Clean Architecture",
+                "09:33",
+                "4.2",
+                573,
+                31
+            ],
+            [
+                "CQRS",
+                "04:00",
+                "4.3",
+                240,
+                32
+            ],
+            [
+                "Creating our first Query handler",
+                "09:40",
+                "4.4",
+                580,
+                33
+            ],
+            [
+                "Thin controllers in the API",
+                "03:47",
+                "4.5",
+                227,
+                34
+            ],
+            [
+                "Adding a Details handler",
+                "03:47",
+                "4.6",
+                227,
+                35
+            ],
+            [
+                "Adding a Create handler",
+                "09:11",
+                "4.7",
+                551,
+                36
+            ],
+            [
+                "Adding an Edit handler",
+                "06:52",
+                "4.8",
+                412,
+                37
+            ],
+            [
+                "Adding AutoMapper",
+                "06:21",
+                "4.9",
+                381,
+                38
+            ],
+            [
+                "Adding a Delete handler",
+                "06:12",
+                "4.10",
+                372,
+                39
+            ],
+            [
+                "Startup class housekeeping",
+                "05:34",
+                "4.11",
+                334,
+                40
+            ],
+            [
+                "Cancellation tokens",
+                "07:46",
+                "4.12",
+                466,
+                41
+            ],
+            [
+                "Using the debugger in VS Code",
+                "08:06",
+                "4.13",
+                486,
+                42
+            ],
+            [
+                "Summary of section 4",
+                "03:06",
+                "4.14",
+                186,
+                43
+            ]
+        ],
+        "total": "1hr 28min",
+        "duration": 5280,
+        "name": "Creating a CRUD application using the CQRS + Mediator pattern",
+        "durs": [
+            252,
+            573,
+            240,
+            580,
+            227,
+            227,
+            551,
+            412,
+            381,
+            372,
+            334,
+            466,
+            486,
+            186
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Introduction",
+                "02:42",
+                "5.1",
+                162,
+                44
+            ],
+            [
+                "Folder structure in React",
+                "05:34",
+                "5.2",
+                334,
+                45
+            ],
+            [
+                "Adding an Activity interface",
+                "06:41",
+                "5.3",
+                401,
+                46
+            ],
+            [
+                "Adding a Nav bar",
+                "04:37",
+                "5.4",
+                277,
+                47
+            ],
+            [
+                "Adding some style to the nav bar",
+                "08:04",
+                "5.5",
+                484,
+                48
+            ],
+            [
+                "Creating an activity dashboard",
+                "06:20",
+                "5.6",
+                380,
+                49
+            ],
+            [
+                "Creating an activity list",
+                "06:19",
+                "5.7",
+                379,
+                50
+            ],
+            [
+                "Creating a details view",
+                "09:05",
+                "5.8",
+                545,
+                51
+            ],
+            [
+                "Creating an Activity form",
+                "03:19",
+                "5.9",
+                199,
+                52
+            ],
+            [
+                "Selecting an activity to view",
+                "12:04",
+                "5.10",
+                724,
+                53
+            ],
+            [
+                "Displaying the create/edit form",
+                "09:32",
+                "5.11",
+                572,
+                54
+            ],
+            [
+                "Editing an activity and form basics in React",
+                "10:31",
+                "5.12",
+                631,
+                55
+            ],
+            [
+                "Handle create and edit submission",
+                "05:53",
+                "5.13",
+                353,
+                56
+            ],
+            [
+                "Using a GUID for the activity id",
+                "05:31",
+                "5.14",
+                331,
+                57
+            ],
+            [
+                "Deleting an activity",
+                "03:47",
+                "5.15",
+                227,
+                58
+            ],
+            [
+                "Summary of section 5",
+                "02:40",
+                "5.16",
+                160,
+                59
+            ]
+        ],
+        "total": "1hr 43min",
+        "duration": 6180,
+        "name": "Creating a CRUD application in React",
+        "durs": [
+            162,
+            334,
+            401,
+            277,
+            484,
+            380,
+            379,
+            545,
+            199,
+            724,
+            572,
+            631,
+            353,
+            331,
+            227,
+            160
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Introduction",
+                "02:28",
+                "6.1",
+                148,
+                60
+            ],
+            [
+                "Setting up axios",
+                "06:13",
+                "6.2",
+                373,
+                61
+            ],
+            [
+                "Axios types",
+                "07:01",
+                "6.3",
+                421,
+                62
+            ],
+            [
+                "Adding loading indicators",
+                "07:23",
+                "6.4",
+                443,
+                63
+            ],
+            [
+                "Posting data to the server",
+                "08:17",
+                "6.5",
+                497,
+                64
+            ],
+            [
+                "Deleting activity on the server",
+                "06:31",
+                "6.6",
+                391,
+                65
+            ],
+            [
+                "Summary of section 6",
+                "01:57",
+                "6.7",
+                117,
+                66
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Axios",
+        "durs": [
+            148,
+            373,
+            421,
+            443,
+            497,
+            391,
+            117
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Introduction",
+                "02:23",
+                "7.1",
+                143,
+                67
+            ],
+            [
+                "What is MobX?",
+                "09:47",
+                "7.2",
+                587,
+                68
+            ],
+            [
+                "Setting up MobX",
+                "07:55",
+                "7.3",
+                475,
+                69
+            ],
+            [
+                "MobX actions",
+                "05:02",
+                "7.4",
+                302,
+                70
+            ],
+            [
+                "Refactoring the app to use MobX",
+                "07:52",
+                "7.5",
+                472,
+                71
+            ],
+            [
+                "MobX strict mode",
+                "04:48",
+                "7.6",
+                288,
+                72
+            ],
+            [
+                "Selecting an Activity using MobX",
+                "13:23",
+                "7.7",
+                803,
+                73
+            ],
+            [
+                "Creating an Activity using MobX",
+                "10:03",
+                "7.8",
+                603,
+                74
+            ],
+            [
+                "Deleting an activity using MobX",
+                "07:31",
+                "7.9",
+                451,
+                75
+            ],
+            [
+                "Using a Javascript map object to store the activities",
+                "08:53",
+                "7.10",
+                533,
+                76
+            ],
+            [
+                "Summary of section 7",
+                "03:04",
+                "7.11",
+                184,
+                77
+            ]
+        ],
+        "total": "1hr 21min",
+        "duration": 4860,
+        "name": "MobX",
+        "durs": [
+            143,
+            587,
+            475,
+            302,
+            472,
+            288,
+            803,
+            603,
+            451,
+            533,
+            184
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Introduction",
+                "05:17",
+                "8.1",
+                317,
+                78
+            ],
+            [
+                "Installing React Router",
+                "04:23",
+                "8.2",
+                263,
+                79
+            ],
+            [
+                "Adding routes",
+                "06:05",
+                "8.3",
+                365,
+                80
+            ],
+            [
+                "Adding nav links",
+                "03:13",
+                "8.4",
+                193,
+                81
+            ],
+            [
+                "Adding a details link",
+                "03:36",
+                "8.5",
+                216,
+                82
+            ],
+            [
+                "Getting an individual activity",
+                "07:54",
+                "8.6",
+                474,
+                83
+            ],
+            [
+                "Using route parameters",
+                "07:38",
+                "8.7",
+                458,
+                84
+            ],
+            [
+                "Adding the edit activity route",
+                "10:36",
+                "8.8",
+                636,
+                85
+            ],
+            [
+                "Adding a key to the route",
+                "06:43",
+                "8.9",
+                403,
+                86
+            ],
+            [
+                "Redirect after submission",
+                "06:03",
+                "8.10",
+                363,
+                87
+            ],
+            [
+                "Moving the home page outside of nav",
+                "03:34",
+                "8.11",
+                214,
+                88
+            ],
+            [
+                "Cleaning up unused code",
+                "05:49",
+                "8.12",
+                349,
+                89
+            ],
+            [
+                "Summary of section 8",
+                "00:58",
+                "8.13",
+                58,
+                90
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Routing",
+        "durs": [
+            317,
+            263,
+            365,
+            193,
+            216,
+            474,
+            458,
+            636,
+            403,
+            363,
+            214,
+            349,
+            58
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Introduction",
+                "02:40",
+                "9.1",
+                160,
+                91
+            ],
+            [
+                "Styling the activity list",
+                "05:17",
+                "9.2",
+                317,
+                92
+            ],
+            [
+                "Grouping the activities by date",
+                "08:13",
+                "9.3",
+                493,
+                93
+            ],
+            [
+                "Styling the list items",
+                "06:15",
+                "9.4",
+                375,
+                94
+            ],
+            [
+                "Activity details page",
+                "04:38",
+                "9.5",
+                278,
+                95
+            ],
+            [
+                "Populating the detailed components",
+                "06:35",
+                "9.6",
+                395,
+                96
+            ],
+            [
+                "Adding the activity filter component",
+                "07:40",
+                "9.7",
+                460,
+                97
+            ],
+            [
+                "Styling the home page",
+                "05:51",
+                "9.8",
+                351,
+                98
+            ],
+            [
+                "Summary of section 9",
+                "01:44",
+                "9.9",
+                104,
+                99
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "Styling the User Interface",
+        "durs": [
+            160,
+            317,
+            493,
+            375,
+            278,
+            395,
+            460,
+            351,
+            104
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Introduction",
+                "07:19",
+                "10.1",
+                439,
+                100
+            ],
+            [
+                "Validation with data annotations",
+                "04:50",
+                "10.2",
+                290,
+                101
+            ],
+            [
+                "Fluent Validation",
+                "08:37",
+                "10.3",
+                517,
+                102
+            ],
+            [
+                "Handling API Error responses",
+                "06:10",
+                "10.4",
+                370,
+                103
+            ],
+            [
+                "Handling API Error responses part 2",
+                "08:58",
+                "10.5",
+                538,
+                104
+            ],
+            [
+                "Handling API Error responses part 3",
+                "05:16",
+                "10.6",
+                316,
+                105
+            ],
+            [
+                "Handling API Error responses part 4",
+                "07:24",
+                "10.7",
+                444,
+                106
+            ],
+            [
+                "Handling exceptions",
+                "12:42",
+                "10.8",
+                762,
+                107
+            ],
+            [
+                "Preparing for setting up error handling in the client app",
+                "07:42",
+                "10.9",
+                462,
+                108
+            ],
+            [
+                "Using an interceptor to handle API error responses",
+                "04:04",
+                "10.10",
+                244,
+                109
+            ],
+            [
+                "Adding a not found component",
+                "07:30",
+                "10.11",
+                450,
+                110
+            ],
+            [
+                "Handling 400 errors",
+                "08:02",
+                "10.12",
+                482,
+                111
+            ],
+            [
+                "Handling 500 errors on the client",
+                "08:33",
+                "10.13",
+                513,
+                112
+            ],
+            [
+                "Handling the validation error from an invalid GUID",
+                "06:45",
+                "10.14",
+                405,
+                113
+            ],
+            [
+                "Summary of section 10",
+                "04:06",
+                "10.15",
+                246,
+                114
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "Error handling",
+        "durs": [
+            439,
+            290,
+            517,
+            370,
+            538,
+            316,
+            444,
+            762,
+            462,
+            244,
+            450,
+            482,
+            513,
+            405,
+            246
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Introduction",
+                "03:31",
+                "11.1",
+                211,
+                115
+            ],
+            [
+                "Setting up Formik",
+                "09:24",
+                "11.2",
+                564,
+                116
+            ],
+            [
+                "Formik with less code",
+                "04:28",
+                "11.3",
+                268,
+                117
+            ],
+            [
+                "Validation in Formik",
+                "05:54",
+                "11.4",
+                354,
+                118
+            ],
+            [
+                "Creating a reusable text input",
+                "09:41",
+                "11.5",
+                581,
+                119
+            ],
+            [
+                "Creating a reusable text area",
+                "01:39",
+                "11.6",
+                99,
+                120
+            ],
+            [
+                "Creating a reusable select input",
+                "06:56",
+                "11.7",
+                416,
+                121
+            ],
+            [
+                "Creating a reusable date input",
+                "09:41",
+                "11.8",
+                581,
+                122
+            ],
+            [
+                "The date strategy",
+                "06:21",
+                "11.9",
+                381,
+                123
+            ],
+            [
+                "Using Date-FNS",
+                "06:23",
+                "11.10",
+                383,
+                124
+            ],
+            [
+                "Hooking up the form submission to Formik",
+                "05:42",
+                "11.11",
+                342,
+                125
+            ],
+            [
+                "Summary of section 11",
+                "02:43",
+                "11.12",
+                163,
+                126
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Forms",
+        "durs": [
+            211,
+            564,
+            268,
+            354,
+            581,
+            99,
+            416,
+            581,
+            381,
+            383,
+            342,
+            163
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Introduction",
+                "08:53",
+                "12.1",
+                533,
+                127
+            ],
+            [
+                "Adding a user entity",
+                "05:20",
+                "12.2",
+                320,
+                128
+            ],
+            [
+                "Adding an IdentityDbContext",
+                "03:14",
+                "12.3",
+                194,
+                129
+            ],
+            [
+                "Configuring Identity in the Startup class",
+                "04:52",
+                "12.4",
+                292,
+                130
+            ],
+            [
+                "Adding seed users",
+                "06:21",
+                "12.5",
+                381,
+                131
+            ],
+            [
+                "Creating the user DTOs",
+                "04:21",
+                "12.6",
+                261,
+                132
+            ],
+            [
+                "Adding an account controller",
+                "08:38",
+                "12.7",
+                518,
+                133
+            ],
+            [
+                "JSON Web Tokens",
+                "07:22",
+                "12.8",
+                442,
+                134
+            ],
+            [
+                "Creating a token service",
+                "10:28",
+                "12.9",
+                628,
+                135
+            ],
+            [
+                "Authenticating to the app",
+                "07:19",
+                "12.10",
+                439,
+                136
+            ],
+            [
+                "Storing secrets in development",
+                "05:57",
+                "12.11",
+                357,
+                137
+            ],
+            [
+                "Creating an auth policy",
+                "02:53",
+                "12.12",
+                173,
+                138
+            ],
+            [
+                "Registering new users",
+                "04:33",
+                "12.13",
+                273,
+                139
+            ],
+            [
+                "Validating the registration of users",
+                "04:00",
+                "12.14",
+                240,
+                140
+            ],
+            [
+                "Getting the current user",
+                "04:54",
+                "12.15",
+                294,
+                141
+            ],
+            [
+                "Summary of section 12",
+                "04:17",
+                "12.16",
+                257,
+                142
+            ]
+        ],
+        "total": "1hr 33min",
+        "duration": 5580,
+        "name": "Identity",
+        "durs": [
+            533,
+            320,
+            194,
+            292,
+            381,
+            261,
+            518,
+            442,
+            628,
+            439,
+            357,
+            173,
+            273,
+            240,
+            294,
+            257
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Introduction",
+                "02:39",
+                "13.1",
+                159,
+                143
+            ],
+            [
+                "Creating a login form",
+                "06:12",
+                "13.2",
+                372,
+                144
+            ],
+            [
+                "Creating the interfaces and methods",
+                "03:39",
+                "13.3",
+                219,
+                145
+            ],
+            [
+                "Creating a user store",
+                "04:49",
+                "13.4",
+                289,
+                146
+            ],
+            [
+                "Displaying errors in the form",
+                "03:26",
+                "13.5",
+                206,
+                147
+            ],
+            [
+                "Setting the token upon login",
+                "04:28",
+                "13.6",
+                268,
+                148
+            ],
+            [
+                "Updating the home page and nav bar",
+                "08:09",
+                "13.7",
+                489,
+                149
+            ],
+            [
+                "Persisting the login",
+                "06:45",
+                "13.8",
+                405,
+                150
+            ],
+            [
+                "Sending up the token with the request",
+                "03:10",
+                "13.9",
+                190,
+                151
+            ],
+            [
+                "Adding Modals",
+                "08:42",
+                "13.10",
+                522,
+                152
+            ],
+            [
+                "Adding the register form",
+                "06:31",
+                "13.11",
+                391,
+                153
+            ],
+            [
+                "Handling validation errors in the register form",
+                "08:27",
+                "13.12",
+                507,
+                154
+            ],
+            [
+                "Summary of section 13",
+                "03:53",
+                "13.13",
+                233,
+                155
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Client side login and registration",
+        "durs": [
+            159,
+            372,
+            219,
+            289,
+            206,
+            268,
+            489,
+            405,
+            190,
+            522,
+            391,
+            507,
+            233
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Introduction",
+                "09:04",
+                "14.1",
+                544,
+                156
+            ],
+            [
+                "Configuring the new relationship",
+                "09:31",
+                "14.2",
+                571,
+                157
+            ],
+            [
+                "Adding an infrastructure project",
+                "07:24",
+                "14.3",
+                444,
+                158
+            ],
+            [
+                "Updating the create activity handler",
+                "02:37",
+                "14.4",
+                157,
+                159
+            ],
+            [
+                "Testing the create activity",
+                "06:57",
+                "14.5",
+                417,
+                160
+            ],
+            [
+                "Loading related data",
+                "05:04",
+                "14.6",
+                304,
+                161
+            ],
+            [
+                "Shaping the related data",
+                "06:29",
+                "14.7",
+                389,
+                162
+            ],
+            [
+                "Configuring AutoMapper profiles",
+                "10:35",
+                "14.8",
+                635,
+                163
+            ],
+            [
+                "Adding the attendance handler",
+                "14:09",
+                "14.9",
+                849,
+                164
+            ],
+            [
+                "Adding a custom auth policy",
+                "10:57",
+                "14.10",
+                657,
+                165
+            ],
+            [
+                "Resolving the bug with with the edit handler",
+                "05:48",
+                "14.11",
+                348,
+                166
+            ],
+            [
+                "Updating the seed data",
+                "03:21",
+                "14.12",
+                201,
+                167
+            ],
+            [
+                "Summary of section 14",
+                "02:25",
+                "14.13",
+                145,
+                168
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Entity Framework Relationships",
+        "durs": [
+            544,
+            571,
+            444,
+            157,
+            417,
+            304,
+            389,
+            635,
+            849,
+            657,
+            348,
+            201,
+            145
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Introduction",
+                "02:10",
+                "15.1",
+                130,
+                169
+            ],
+            [
+                "Adding the attendees component",
+                "07:20",
+                "15.2",
+                440,
+                170
+            ],
+            [
+                "Updating the details component",
+                "03:46",
+                "15.3",
+                226,
+                171
+            ],
+            [
+                "Conditionally rendering the buttons",
+                "10:55",
+                "15.4",
+                655,
+                172
+            ],
+            [
+                "Adding the store methods to attend",
+                "09:40",
+                "15.5",
+                580,
+                173
+            ],
+            [
+                "Updating the create and edit methods",
+                "14:04",
+                "15.6",
+                844,
+                174
+            ],
+            [
+                "Adding a cancel activity method",
+                "07:39",
+                "15.7",
+                459,
+                175
+            ],
+            [
+                "Adding a popover for attendees",
+                "05:54",
+                "15.8",
+                354,
+                176
+            ],
+            [
+                "Summary of section 15",
+                "00:49",
+                "15.9",
+                49,
+                177
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Feature - Client side attendance",
+        "durs": [
+            130,
+            440,
+            226,
+            655,
+            580,
+            844,
+            459,
+            354,
+            49
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Introduction",
+                "05:47",
+                "16.1",
+                347,
+                178
+            ],
+            [
+                "Adding Cloudinary",
+                "07:44",
+                "16.2",
+                464,
+                179
+            ],
+            [
+                "Adding the Cloudinary interfaces",
+                "03:31",
+                "16.3",
+                211,
+                180
+            ],
+            [
+                "Adding the add photo logic",
+                "08:05",
+                "16.4",
+                485,
+                181
+            ],
+            [
+                "Adding the Photo entity",
+                "03:33",
+                "16.5",
+                213,
+                182
+            ],
+            [
+                "Adding the Add photo handler",
+                "06:03",
+                "16.6",
+                363,
+                183
+            ],
+            [
+                "Adding a photos controller",
+                "04:20",
+                "16.7",
+                260,
+                184
+            ],
+            [
+                "Deleting photos",
+                "09:18",
+                "16.8",
+                558,
+                185
+            ],
+            [
+                "Setting the main photo",
+                "06:20",
+                "16.9",
+                380,
+                186
+            ],
+            [
+                "Returning user profiles",
+                "06:57",
+                "16.10",
+                417,
+                187
+            ],
+            [
+                "Updating the mapping configuration",
+                "05:36",
+                "16.11",
+                336,
+                188
+            ],
+            [
+                "Returning an attendee DTO",
+                "07:09",
+                "16.12",
+                429,
+                189
+            ],
+            [
+                "Summary of section 16",
+                "02:12",
+                "16.13",
+                132,
+                190
+            ]
+        ],
+        "total": "1hr 17min",
+        "duration": 4620,
+        "name": "API Image upload",
+        "durs": [
+            347,
+            464,
+            211,
+            485,
+            213,
+            363,
+            260,
+            558,
+            380,
+            417,
+            336,
+            429,
+            132
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Introduction",
+                "02:28",
+                "17.1",
+                148,
+                191
+            ],
+            [
+                "Creating a profile page",
+                "04:16",
+                "17.2",
+                256,
+                192
+            ],
+            [
+                "Adding a profile header",
+                "06:12",
+                "17.3",
+                372,
+                193
+            ],
+            [
+                "Adding the profile content",
+                "03:32",
+                "17.4",
+                212,
+                194
+            ],
+            [
+                "Getting the profile data",
+                "04:53",
+                "17.5",
+                293,
+                195
+            ],
+            [
+                "Getting the profile data part 2",
+                "04:31",
+                "17.6",
+                271,
+                196
+            ],
+            [
+                "Displaying the photos",
+                "05:54",
+                "17.7",
+                354,
+                197
+            ],
+            [
+                "Conditionally rendering the photo widget",
+                "06:01",
+                "17.8",
+                361,
+                198
+            ],
+            [
+                "Creating a photo upload widget",
+                "03:31",
+                "17.9",
+                211,
+                199
+            ],
+            [
+                "Adding a Dropzone",
+                "04:14",
+                "17.10",
+                254,
+                200
+            ],
+            [
+                "Styling the Dropzone",
+                "09:27",
+                "17.11",
+                567,
+                201
+            ],
+            [
+                "Adding a react cropper",
+                "14:09",
+                "17.12",
+                849,
+                202
+            ],
+            [
+                "Adding the photo upload method",
+                "11:00",
+                "17.13",
+                660,
+                203
+            ],
+            [
+                "Setting the main photo",
+                "08:13",
+                "17.14",
+                493,
+                204
+            ],
+            [
+                "Deleting photos",
+                "06:40",
+                "17.15",
+                400,
+                205
+            ],
+            [
+                "Summary of section 17",
+                "02:11",
+                "17.16",
+                131,
+                206
+            ]
+        ],
+        "total": "1hr 37min",
+        "duration": 5820,
+        "name": "Client image upload",
+        "durs": [
+            148,
+            256,
+            372,
+            212,
+            293,
+            271,
+            354,
+            361,
+            211,
+            254,
+            567,
+            849,
+            660,
+            493,
+            400,
+            131
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Challenge introduction",
+                "03:39",
+                "18.1",
+                219,
+                207
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Challenge",
+        "durs": [
+            219
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Introduction",
+                "06:46",
+                "19.1",
+                406,
+                208
+            ],
+            [
+                "Setting up the comment entity",
+                "06:13",
+                "19.2",
+                373,
+                209
+            ],
+            [
+                "Adding a comment DTO and mapping",
+                "02:38",
+                "19.3",
+                158,
+                210
+            ],
+            [
+                "Adding the create handler",
+                "05:59",
+                "19.4",
+                359,
+                211
+            ],
+            [
+                "Adding a list handler",
+                "04:15",
+                "19.5",
+                255,
+                212
+            ],
+            [
+                "Adding a SignalR Hub",
+                "09:43",
+                "19.6",
+                583,
+                213
+            ],
+            [
+                "Authenticating to SignalR",
+                "03:27",
+                "19.7",
+                207,
+                214
+            ],
+            [
+                "Adding SignalR to the client",
+                "09:53",
+                "19.8",
+                593,
+                215
+            ],
+            [
+                "Connecting to the hub",
+                "07:35",
+                "19.9",
+                455,
+                216
+            ],
+            [
+                "Sending comments",
+                "07:10",
+                "19.10",
+                430,
+                217
+            ],
+            [
+                "Adding validation and fix issues",
+                "05:26",
+                "19.11",
+                326,
+                218
+            ],
+            [
+                "Resolving UTC dates",
+                "10:58",
+                "19.12",
+                658,
+                219
+            ],
+            [
+                "Summary of section 19",
+                "03:34",
+                "19.13",
+                214,
+                220
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "SignalR",
+        "durs": [
+            406,
+            373,
+            158,
+            359,
+            255,
+            583,
+            207,
+            593,
+            455,
+            430,
+            326,
+            658,
+            214
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "Introduction",
+                "03:26",
+                "20.1",
+                206,
+                221
+            ],
+            [
+                "Adding a join entity",
+                "06:36",
+                "20.2",
+                396,
+                222
+            ],
+            [
+                "Adding a handler for following",
+                "06:16",
+                "20.3",
+                376,
+                223
+            ],
+            [
+                "Adding the controller",
+                "04:00",
+                "20.4",
+                240,
+                224
+            ],
+            [
+                "Update the profile class",
+                "02:41",
+                "20.5",
+                161,
+                225
+            ],
+            [
+                "Return a list of followers",
+                "11:26",
+                "20.6",
+                686,
+                226
+            ],
+            [
+                "Adding the following property to the mapping configuration",
+                "04:16",
+                "20.7",
+                256,
+                227
+            ],
+            [
+                "Updating the other handlers with the following property",
+                "07:24",
+                "20.8",
+                444,
+                228
+            ],
+            [
+                "Adding the UI for followers",
+                "05:04",
+                "20.9",
+                304,
+                229
+            ],
+            [
+                "Adding methods to follow and unfollow",
+                "11:13",
+                "20.10",
+                673,
+                230
+            ],
+            [
+                "Making the follow button a component",
+                "08:15",
+                "20.11",
+                495,
+                231
+            ],
+            [
+                "Getting a list of followings",
+                "10:04",
+                "20.12",
+                604,
+                232
+            ],
+            [
+                "Using MobX Reactions",
+                "13:19",
+                "20.13",
+                799,
+                233
+            ],
+            [
+                "Summary of section 20",
+                "01:30",
+                "20.14",
+                90,
+                234
+            ]
+        ],
+        "total": "1hr 36min",
+        "duration": 5760,
+        "name": "Followers / Following feature",
+        "durs": [
+            206,
+            396,
+            376,
+            240,
+            161,
+            686,
+            256,
+            444,
+            304,
+            673,
+            495,
+            604,
+            799,
+            90
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "Introduction",
+                "05:11",
+                "21.1",
+                311,
+                235
+            ],
+            [
+                "Adding a PagedList class",
+                "08:05",
+                "21.2",
+                485,
+                236
+            ],
+            [
+                "Adding application layer pagination logic",
+                "07:57",
+                "21.3",
+                477,
+                237
+            ],
+            [
+                "Adding a pagination header",
+                "09:20",
+                "21.4",
+                560,
+                238
+            ],
+            [
+                "Adding client side pagination",
+                "08:07",
+                "21.5",
+                487,
+                239
+            ],
+            [
+                "Adding pagination parameters",
+                "05:43",
+                "21.6",
+                343,
+                240
+            ],
+            [
+                "Adding vertical paging",
+                "06:21",
+                "21.7",
+                381,
+                241
+            ],
+            [
+                "Adding infinite scrolling",
+                "05:23",
+                "21.8",
+                323,
+                242
+            ],
+            [
+                "Adding filtering in the API",
+                "07:28",
+                "21.9",
+                448,
+                243
+            ],
+            [
+                "Client side filtering",
+                "08:57",
+                "21.10",
+                537,
+                244
+            ],
+            [
+                "Updating the filter component",
+                "04:21",
+                "21.11",
+                261,
+                245
+            ],
+            [
+                "Adding placeholders",
+                "04:20",
+                "21.12",
+                260,
+                246
+            ],
+            [
+                "Adding a user profile activities component + challenge",
+                "05:44",
+                "21.13",
+                344,
+                247
+            ],
+            [
+                "Challenge solution",
+                "11:26",
+                "21.14",
+                686,
+                248
+            ],
+            [
+                "Summary of section 21",
+                "01:27",
+                "21.15",
+                87,
+                249
+            ]
+        ],
+        "total": "1hr 40min",
+        "duration": 6000,
+        "name": "Paging, Sorting and Filtering",
+        "durs": [
+            311,
+            485,
+            477,
+            560,
+            487,
+            343,
+            381,
+            323,
+            448,
+            537,
+            261,
+            260,
+            344,
+            686,
+            87
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Introduction",
+                "02:55",
+                "22.1",
+                175,
+                250
+            ],
+            [
+                "Adding Scroll to top for our routes",
+                "03:23",
+                "22.2",
+                203,
+                251
+            ],
+            [
+                "Adding private routes",
+                "07:04",
+                "22.3",
+                424,
+                252
+            ],
+            [
+                "Prepping the client app for production",
+                "07:23",
+                "22.4",
+                443,
+                253
+            ],
+            [
+                "Building the production build of the react app",
+                "07:06",
+                "22.5",
+                426,
+                254
+            ],
+            [
+                "Running the client app on the dotnet Kestrel server",
+                "06:15",
+                "22.6",
+                375,
+                255
+            ],
+            [
+                "Adding PostGresQL",
+                "04:23",
+                "22.7",
+                263,
+                256
+            ],
+            [
+                "Switching to PostGresQL",
+                "11:37",
+                "22.8",
+                697,
+                257
+            ],
+            [
+                "Setting up Heroku",
+                "09:17",
+                "22.9",
+                557,
+                258
+            ],
+            [
+                "Deploying the app to Heroku",
+                "09:36",
+                "22.10",
+                576,
+                259
+            ],
+            [
+                "Security tightening",
+                "09:01",
+                "22.11",
+                541,
+                260
+            ],
+            [
+                "Content security policies",
+                "12:05",
+                "22.12",
+                725,
+                261
+            ],
+            [
+                "End of course summary",
+                "04:17",
+                "22.13",
+                257,
+                262
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Finishing touches and publishing",
+        "durs": [
+            175,
+            203,
+            424,
+            443,
+            426,
+            375,
+            263,
+            697,
+            557,
+            576,
+            541,
+            725,
+            257
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "Introduction",
+                "03:36",
+                "23.1",
+                216,
+                263
+            ],
+            [
+                "Setting up Facebook login",
+                "05:36",
+                "23.2",
+                336,
+                264
+            ],
+            [
+                "Connecting Heroku to GitHub",
+                "02:07",
+                "23.3",
+                127,
+                265
+            ],
+            [
+                "Adding the Facebook JS SDK",
+                "09:39",
+                "23.4",
+                579,
+                266
+            ],
+            [
+                "Configuring the API endpoint",
+                "10:35",
+                "23.5",
+                635,
+                267
+            ],
+            [
+                "Debugging the Facebook info",
+                "11:37",
+                "23.6",
+                697,
+                268
+            ],
+            [
+                "Facebook login finishing touches",
+                "07:34",
+                "23.7",
+                454,
+                269
+            ],
+            [
+                "Redeploying the app to Heroku",
+                "11:45",
+                "23.8",
+                705,
+                270
+            ],
+            [
+                "Introduction to Refresh Tokens",
+                "03:19",
+                "23.9",
+                199,
+                271
+            ],
+            [
+                "Adding the Refresh token domain entity",
+                "06:05",
+                "23.10",
+                365,
+                272
+            ],
+            [
+                "Updating the JWT token parameters",
+                "03:14",
+                "23.11",
+                194,
+                273
+            ],
+            [
+                "Updating the account controller",
+                "08:28",
+                "23.12",
+                508,
+                274
+            ],
+            [
+                "Testing in Postman",
+                "04:39",
+                "23.13",
+                279,
+                275
+            ],
+            [
+                "Client side configuration",
+                "09:58",
+                "23.14",
+                598,
+                276
+            ],
+            [
+                "Testing the refresh token in the client",
+                "05:53",
+                "23.15",
+                353,
+                277
+            ],
+            [
+                "Redeploying the app to Heroku",
+                "06:22",
+                "23.16",
+                382,
+                278
+            ],
+            [
+                "Introduction to Email verification",
+                "02:38",
+                "23.17",
+                158,
+                279
+            ],
+            [
+                "Setting up SendGrid",
+                "09:25",
+                "23.18",
+                565,
+                280
+            ],
+            [
+                "Require a confirmed email to sign in",
+                "04:25",
+                "23.19",
+                265,
+                281
+            ],
+            [
+                "Updating the register method",
+                "07:31",
+                "23.20",
+                451,
+                282
+            ],
+            [
+                "Adding the confirm email endpoint",
+                "04:57",
+                "23.21",
+                297,
+                283
+            ],
+            [
+                "Testing in Postman",
+                "03:45",
+                "23.22",
+                225,
+                284
+            ],
+            [
+                "Setting up the client for email confirmation",
+                "09:32",
+                "23.23",
+                572,
+                285
+            ],
+            [
+                "Adding a verify email component",
+                "08:13",
+                "23.24",
+                493,
+                286
+            ],
+            [
+                "Finishing up and testing",
+                "04:32",
+                "23.25",
+                272,
+                287
+            ],
+            [
+                "Redeploying the app to Heroku",
+                "07:17",
+                "23.26",
+                437,
+                288
+            ]
+        ],
+        "total": "2hr 53min",
+        "duration": 10380,
+        "name": "Bonus section - Identity Cookbook",
+        "durs": [
+            216,
+            336,
+            127,
+            579,
+            635,
+            697,
+            454,
+            705,
+            199,
+            365,
+            194,
+            508,
+            279,
+            598,
+            353,
+            382,
+            158,
+            565,
+            265,
+            451,
+            297,
+            225,
+            572,
+            493,
+            272,
+            437
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "Course Introduction",
+                "05:58",
+                "24.1",
+                358,
+                289
+            ],
+            [
+                "Setting up the dev environment",
+                "07:37",
+                "24.2",
+                457,
+                290
+            ],
+            [
+                "Visual Studio Code extensions",
+                "08:42",
+                "24.3",
+                522,
+                291
+            ],
+            [
+                "Source code and resources for this course",
+                "02:34",
+                "24.4",
+                154,
+                292
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "Introduction (Legacy)",
+        "durs": [
+            358,
+            457,
+            522,
+            154
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "Section 2 introduction",
+                "05:38",
+                "25.1",
+                338,
+                293
+            ],
+            [
+                "Creating the ASP.NET Core solutions and projects using the DotNet CLI",
+                "07:32",
+                "25.2",
+                452,
+                294
+            ],
+            [
+                "Creating the project references using the DotNet CLI",
+                "05:30",
+                "25.3",
+                330,
+                295
+            ],
+            [
+                "Reviewing the Project files",
+                "15:27",
+                "25.4",
+                927,
+                296
+            ],
+            [
+                "Running the application",
+                "07:45",
+                "25.5",
+                465,
+                297
+            ],
+            [
+                "Creating a Domain entity",
+                "02:40",
+                "25.6",
+                160,
+                298
+            ],
+            [
+                "Creating the DbContext and service",
+                "10:12",
+                "25.7",
+                612,
+                299
+            ],
+            [
+                "Adding our first Entity Framework code first migration",
+                "05:52",
+                "25.8",
+                352,
+                300
+            ],
+            [
+                "Creating the database",
+                "07:25",
+                "25.9",
+                445,
+                301
+            ],
+            [
+                "Seeding data using Entity Framework fluent configuration",
+                "05:06",
+                "25.10",
+                306,
+                302
+            ],
+            [
+                "Using Dependancy Injection",
+                "08:54",
+                "25.11",
+                534,
+                303
+            ],
+            [
+                "Introduction to Postman",
+                "03:07",
+                "25.12",
+                187,
+                304
+            ],
+            [
+                "Saving our changes into Source control using Git",
+                "07:29",
+                "25.13",
+                449,
+                305
+            ],
+            [
+                "Section 2 summary",
+                "06:37",
+                "25.14",
+                397,
+                306
+            ]
+        ],
+        "total": "1hr 39min",
+        "duration": 5940,
+        "name": "Walking Skeleton Part 1 - API (Legacy)",
+        "durs": [
+            338,
+            452,
+            330,
+            927,
+            465,
+            160,
+            612,
+            352,
+            445,
+            306,
+            534,
+            187,
+            449,
+            397
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "Section 3 introduction",
+                "01:12",
+                "26.1",
+                72,
+                307
+            ],
+            [
+                "Using create-react-app to create our React application",
+                "04:17",
+                "26.2",
+                257,
+                308
+            ],
+            [
+                "Reviewing the React project files",
+                "07:13",
+                "26.3",
+                433,
+                309
+            ],
+            [
+                "Introduction to React - Concepts",
+                "04:52",
+                "26.4",
+                292,
+                310
+            ],
+            [
+                "Introduction to React - Components",
+                "04:57",
+                "26.5",
+                297,
+                311
+            ],
+            [
+                "Introduction to Typescript",
+                "04:31",
+                "26.6",
+                271,
+                312
+            ],
+            [
+                "Typescript basics demo",
+                "09:02",
+                "26.7",
+                542,
+                313
+            ],
+            [
+                "Using Typescript with React",
+                "11:10",
+                "26.8",
+                670,
+                314
+            ],
+            [
+                "Adding React dev tools",
+                "04:25",
+                "26.9",
+                265,
+                315
+            ],
+            [
+                "React Class Components",
+                "03:20",
+                "26.10",
+                200,
+                316
+            ],
+            [
+                "Using React State",
+                "05:24",
+                "26.11",
+                324,
+                317
+            ],
+            [
+                "Fetching data from the API",
+                "07:42",
+                "26.12",
+                462,
+                318
+            ],
+            [
+                "Adding CORS support to the API",
+                "05:40",
+                "26.13",
+                340,
+                319
+            ],
+            [
+                "Adding Semantic UI to our app",
+                "07:47",
+                "26.14",
+                467,
+                320
+            ],
+            [
+                "Clean up and saving our code to source control",
+                "03:57",
+                "26.15",
+                237,
+                321
+            ],
+            [
+                "Summary of section 3",
+                "03:12",
+                "26.16",
+                192,
+                322
+            ]
+        ],
+        "total": "1hr 29min",
+        "duration": 5340,
+        "name": "Walking Skeleton Part 2 - Client (Legacy)",
+        "durs": [
+            72,
+            257,
+            433,
+            292,
+            297,
+            271,
+            542,
+            670,
+            265,
+            200,
+            324,
+            462,
+            340,
+            467,
+            237,
+            192
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "Section 4 introduction",
+                "02:42",
+                "27.1",
+                162,
+                323
+            ],
+            [
+                "Adding the Activity entity",
+                "06:28",
+                "27.2",
+                388,
+                324
+            ],
+            [
+                "Seeding Activity data",
+                "08:13",
+                "27.3",
+                493,
+                325
+            ],
+            [
+                "Commands and Queries - CQRS",
+                "07:12",
+                "27.4",
+                432,
+                326
+            ],
+            [
+                "Introduction to MediatR",
+                "04:49",
+                "27.5",
+                289,
+                327
+            ],
+            [
+                "Creating our first Query handler",
+                "07:19",
+                "27.6",
+                439,
+                328
+            ],
+            [
+                "Creating the Activities API Controller",
+                "09:31",
+                "27.7",
+                571,
+                329
+            ],
+            [
+                "Adding the Details Handler",
+                "06:49",
+                "27.8",
+                409,
+                330
+            ],
+            [
+                "Cancellation Tokens",
+                "09:55",
+                "27.9",
+                595,
+                331
+            ],
+            [
+                "Adding the Create handler",
+                "12:18",
+                "27.10",
+                738,
+                332
+            ],
+            [
+                "Dealing with boilerplate code in our handlers",
+                "05:45",
+                "27.11",
+                345,
+                333
+            ],
+            [
+                "Adding an Edit handler",
+                "10:26",
+                "27.12",
+                626,
+                334
+            ],
+            [
+                "Adding a Delete handler",
+                "07:24",
+                "27.13",
+                444,
+                335
+            ],
+            [
+                "Summary of section 4",
+                "01:55",
+                "27.14",
+                115,
+                336
+            ]
+        ],
+        "total": "1hr 41min",
+        "duration": 6060,
+        "name": "Building a CRUD application in .Net Core using the CQRS + Mediator (Legacy)",
+        "durs": [
+            162,
+            388,
+            493,
+            432,
+            289,
+            439,
+            571,
+            409,
+            595,
+            738,
+            345,
+            626,
+            444,
+            115
+        ]
+    },
+    {
+        "idx": 27,
+        "lectures": [
+            [
+                "Section 5 introduction",
+                "02:58",
+                "28.1",
+                178,
+                337
+            ],
+            [
+                "Introduction to React Hooks",
+                "07:02",
+                "28.2",
+                422,
+                338
+            ],
+            [
+                "Folder structure in React",
+                "05:00",
+                "28.3",
+                300,
+                339
+            ],
+            [
+                "Getting a list of activities from the API",
+                "02:34",
+                "28.4",
+                154,
+                340
+            ],
+            [
+                "Adding an Activity interface in Typescript",
+                "08:25",
+                "28.5",
+                505,
+                341
+            ],
+            [
+                "Refactoring our class component to use React Hooks",
+                "11:25",
+                "28.6",
+                685,
+                342
+            ],
+            [
+                "Adding the Navigation bar",
+                "08:17",
+                "28.7",
+                497,
+                343
+            ],
+            [
+                "Styling React components",
+                "06:52",
+                "28.8",
+                412,
+                344
+            ],
+            [
+                "Adding the Activity Dashboard",
+                "05:25",
+                "28.9",
+                325,
+                345
+            ],
+            [
+                "Creating the Activity List",
+                "08:02",
+                "28.10",
+                482,
+                346
+            ],
+            [
+                "Adding the Activity Details component",
+                "04:42",
+                "28.11",
+                282,
+                347
+            ],
+            [
+                "Adding the Activity Form component",
+                "04:21",
+                "28.12",
+                261,
+                348
+            ],
+            [
+                "Selecting an individual Activity",
+                "13:57",
+                "28.13",
+                837,
+                349
+            ],
+            [
+                "Adding an edit mode to display the form",
+                "04:07",
+                "28.14",
+                247,
+                350
+            ],
+            [
+                "Adding a create activity mode",
+                "07:50",
+                "28.15",
+                470,
+                351
+            ],
+            [
+                "Initialising the form with data",
+                "07:50",
+                "28.16",
+                470,
+                352
+            ],
+            [
+                "Controlled components in React",
+                "10:53",
+                "28.17",
+                653,
+                353
+            ],
+            [
+                "Handling form submission",
+                "14:18",
+                "28.18",
+                858,
+                354
+            ],
+            [
+                "Fixing issues with the dates in the form",
+                "07:28",
+                "28.19",
+                448,
+                355
+            ],
+            [
+                "Adding the delete functionality",
+                "05:18",
+                "28.20",
+                318,
+                356
+            ],
+            [
+                "Summary of section 5",
+                "01:24",
+                "28.21",
+                84,
+                357
+            ]
+        ],
+        "total": "2hr 28min",
+        "duration": 8880,
+        "name": "Building a CRUD application in React (Legacy)",
+        "durs": [
+            178,
+            422,
+            300,
+            154,
+            505,
+            685,
+            497,
+            412,
+            325,
+            482,
+            282,
+            261,
+            837,
+            247,
+            470,
+            470,
+            653,
+            858,
+            448,
+            318,
+            84
+        ]
+    },
+    {
+        "idx": 28,
+        "lectures": [
+            [
+                "Section 6 introduction",
+                "03:10",
+                "29.1",
+                190,
+                358
+            ],
+            [
+                "Setting up the agent.ts file",
+                "07:16",
+                "29.2",
+                436,
+                359
+            ],
+            [
+                "Listing our activities",
+                "03:45",
+                "29.3",
+                225,
+                360
+            ],
+            [
+                "Updating an Activity",
+                "05:09",
+                "29.4",
+                309,
+                361
+            ],
+            [
+                "Adding a delay to our API methods",
+                "03:44",
+                "29.5",
+                224,
+                362
+            ],
+            [
+                "Adding a loading component",
+                "05:00",
+                "29.6",
+                300,
+                363
+            ],
+            [
+                "Adding a loading indicator for submitting data",
+                "05:14",
+                "29.7",
+                314,
+                364
+            ],
+            [
+                "Isolating the loading indicator on the delete button",
+                "09:18",
+                "29.8",
+                558,
+                365
+            ],
+            [
+                "Summary of section 6",
+                "00:51",
+                "29.9",
+                51,
+                366
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Axios (Legacy)",
+        "durs": [
+            190,
+            436,
+            225,
+            309,
+            224,
+            300,
+            314,
+            558,
+            51
+        ]
+    },
+    {
+        "idx": 29,
+        "lectures": [
+            [
+                "Section 7 introduction",
+                "01:51",
+                "30.1",
+                111,
+                367
+            ],
+            [
+                "Introduction to MobX",
+                "09:49",
+                "30.2",
+                589,
+                368
+            ],
+            [
+                "Setting up a MobX store",
+                "09:33",
+                "30.3",
+                573,
+                369
+            ],
+            [
+                "Refactoring the activity list to use the store",
+                "13:20",
+                "30.4",
+                800,
+                370
+            ],
+            [
+                "Refactoring the select activity function",
+                "13:59",
+                "30.5",
+                839,
+                371
+            ],
+            [
+                "Using Async Await in our methods",
+                "06:22",
+                "30.6",
+                382,
+                372
+            ],
+            [
+                "Refactoring the create activity method",
+                "08:21",
+                "30.7",
+                501,
+                373
+            ],
+            [
+                "MobX computed properties",
+                "03:48",
+                "30.8",
+                228,
+                374
+            ],
+            [
+                "Using an Observable Map",
+                "04:55",
+                "30.9",
+                295,
+                375
+            ],
+            [
+                "Adding the edit activity action",
+                "11:27",
+                "30.10",
+                687,
+                376
+            ],
+            [
+                "Adding the delete activity action",
+                "05:44",
+                "30.11",
+                344,
+                377
+            ],
+            [
+                "Cleaning up our code",
+                "02:53",
+                "30.12",
+                173,
+                378
+            ],
+            [
+                "Enabling MobX strict mode",
+                "10:27",
+                "30.13",
+                627,
+                379
+            ],
+            [
+                "Adding MobX dev tools",
+                "04:25",
+                "30.14",
+                265,
+                380
+            ],
+            [
+                "Summary of section 7",
+                "01:55",
+                "30.15",
+                115,
+                381
+            ]
+        ],
+        "total": "1hr 49min",
+        "duration": 6540,
+        "name": "MobX (Legacy)",
+        "durs": [
+            111,
+            589,
+            573,
+            800,
+            839,
+            382,
+            501,
+            228,
+            295,
+            687,
+            344,
+            173,
+            627,
+            265,
+            115
+        ]
+    },
+    {
+        "idx": 30,
+        "lectures": [
+            [
+                "Section 8 introduction",
+                "02:56",
+                "31.1",
+                176,
+                382
+            ],
+            [
+                "Setting up React Router",
+                "04:20",
+                "31.2",
+                260,
+                383
+            ],
+            [
+                "Setting up our Routes",
+                "04:48",
+                "31.3",
+                288,
+                384
+            ],
+            [
+                "Adding Links and NavLinks",
+                "04:20",
+                "31.4",
+                260,
+                385
+            ],
+            [
+                "Adding the Details link",
+                "02:23",
+                "31.5",
+                143,
+                386
+            ],
+            [
+                "Getting an Activity from the API",
+                "09:09",
+                "31.6",
+                549,
+                387
+            ],
+            [
+                "Using Route params",
+                "09:48",
+                "31.7",
+                588,
+                388
+            ],
+            [
+                "Navigating via code",
+                "03:21",
+                "31.8",
+                201,
+                389
+            ],
+            [
+                "Routing to the edit form",
+                "10:05",
+                "31.9",
+                605,
+                390
+            ],
+            [
+                "Using a Fully Uncontrolled Component with a key to reset component state",
+                "12:48",
+                "31.10",
+                768,
+                391
+            ],
+            [
+                "Navigating after submission",
+                "09:14",
+                "31.11",
+                554,
+                392
+            ],
+            [
+                "Moving the home page outside of our navigation routes",
+                "04:08",
+                "31.12",
+                248,
+                393
+            ],
+            [
+                "Scrolling to the top of the page on navigation",
+                "04:30",
+                "31.13",
+                270,
+                394
+            ],
+            [
+                "More code clean up",
+                "09:39",
+                "31.14",
+                579,
+                395
+            ],
+            [
+                "Summary of section 8",
+                "00:33",
+                "31.15",
+                33,
+                396
+            ]
+        ],
+        "total": "1hr 32min",
+        "duration": 5520,
+        "name": "React Router (Legacy)",
+        "durs": [
+            176,
+            260,
+            288,
+            260,
+            143,
+            549,
+            588,
+            201,
+            605,
+            768,
+            554,
+            248,
+            270,
+            579,
+            33
+        ]
+    },
+    {
+        "idx": 31,
+        "lectures": [
+            [
+                "Section 9 introduction",
+                "01:30",
+                "32.1",
+                90,
+                397
+            ],
+            [
+                "Styling the activity list",
+                "04:50",
+                "32.2",
+                290,
+                398
+            ],
+            [
+                "Grouping activities by date",
+                "14:41",
+                "32.3",
+                881,
+                399
+            ],
+            [
+                "Styling the activity list items",
+                "05:48",
+                "32.4",
+                348,
+                400
+            ],
+            [
+                "Creating the Activity Details page",
+                "03:34",
+                "32.5",
+                214,
+                401
+            ],
+            [
+                "Styling the Activity Detailed Page Header",
+                "07:24",
+                "32.6",
+                444,
+                402
+            ],
+            [
+                "Styling the Activity Detailed Info",
+                "02:22",
+                "32.7",
+                142,
+                403
+            ],
+            [
+                "Styling the Activity Detailed Chat and Sidebar components",
+                "03:00",
+                "32.8",
+                180,
+                404
+            ],
+            [
+                "Styling the Activity Form",
+                "02:02",
+                "32.9",
+                122,
+                405
+            ],
+            [
+                "Styling the Home page",
+                "02:41",
+                "32.10",
+                161,
+                406
+            ],
+            [
+                "Section 9 summary",
+                "00:32",
+                "32.11",
+                32,
+                407
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Adding some style (Legacy)",
+        "durs": [
+            90,
+            290,
+            881,
+            348,
+            214,
+            444,
+            142,
+            180,
+            122,
+            161,
+            32
+        ]
+    },
+    {
+        "idx": 32,
+        "lectures": [
+            [
+                "Section 10 introduction",
+                "02:39",
+                "33.1",
+                159,
+                408
+            ],
+            [
+                "Introduction to validation in the API",
+                "02:43",
+                "33.2",
+                163,
+                409
+            ],
+            [
+                "Adding validation in the API using Data Annotations",
+                "10:39",
+                "33.3",
+                639,
+                410
+            ],
+            [
+                "Adding validation in the API using Fluent Validation",
+                "13:10",
+                "33.4",
+                790,
+                411
+            ],
+            [
+                "Error handling concepts in our application",
+                "06:18",
+                "33.5",
+                378,
+                412
+            ],
+            [
+                "Error handling strategy",
+                "05:40",
+                "33.6",
+                340,
+                413
+            ],
+            [
+                "Creating a derived Exception class for Rest exceptions",
+                "05:26",
+                "33.7",
+                326,
+                414
+            ],
+            [
+                "Adding Error handling middleware",
+                "09:12",
+                "33.8",
+                552,
+                415
+            ],
+            [
+                "Using our Error handling middleware",
+                "05:05",
+                "33.9",
+                305,
+                416
+            ],
+            [
+                "Using Axios interceptors to catch errors",
+                "06:55",
+                "33.10",
+                415,
+                417
+            ],
+            [
+                "Throwing errors in the client",
+                "06:10",
+                "33.11",
+                370,
+                418
+            ],
+            [
+                "Adding routing functionality to Axios",
+                "05:47",
+                "33.12",
+                347,
+                419
+            ],
+            [
+                "Handling an invalid GUID on a get request",
+                "04:27",
+                "33.13",
+                267,
+                420
+            ],
+            [
+                "Adding toast notifications",
+                "06:33",
+                "33.14",
+                393,
+                421
+            ],
+            [
+                "Handling network errors in Axios",
+                "05:31",
+                "33.15",
+                331,
+                422
+            ],
+            [
+                "Summary of section 10",
+                "01:33",
+                "33.16",
+                93,
+                423
+            ]
+        ],
+        "total": "1hr 38min",
+        "duration": 5880,
+        "name": "Error handling and validation (Legacy)",
+        "durs": [
+            159,
+            163,
+            639,
+            790,
+            378,
+            340,
+            326,
+            552,
+            305,
+            415,
+            370,
+            347,
+            267,
+            393,
+            331,
+            93
+        ]
+    },
+    {
+        "idx": 33,
+        "lectures": [
+            [
+                "Section 11 introduction",
+                "03:30",
+                "34.1",
+                210,
+                424
+            ],
+            [
+                "Setting up React Final Form",
+                "08:46",
+                "34.2",
+                526,
+                425
+            ],
+            [
+                "Creating a reusable Text input field",
+                "07:46",
+                "34.3",
+                466,
+                426
+            ],
+            [
+                "Refactoring the form to use React Final Form",
+                "02:18",
+                "34.4",
+                138,
+                427
+            ],
+            [
+                "Creating a reusable Text Area Input field",
+                "03:42",
+                "34.5",
+                222,
+                428
+            ],
+            [
+                "Creating a reusable Select input field",
+                "06:04",
+                "34.6",
+                364,
+                429
+            ],
+            [
+                "Setting up React Widgets",
+                "10:30",
+                "34.7",
+                630,
+                430
+            ],
+            [
+                "Creating a reusable Date Input field",
+                "10:08",
+                "34.8",
+                608,
+                431
+            ],
+            [
+                "Formatting the dates using Date-FNS",
+                "09:55",
+                "34.9",
+                595,
+                432
+            ],
+            [
+                "Creating separate Date and Time fields",
+                "09:49",
+                "34.10",
+                589,
+                433
+            ],
+            [
+                "Combining Date and Time inputs",
+                "07:50",
+                "34.11",
+                470,
+                434
+            ],
+            [
+                "Initialising the form with data",
+                "15:22",
+                "34.12",
+                922,
+                435
+            ],
+            [
+                "Submitting data to the server",
+                "09:21",
+                "34.13",
+                561,
+                436
+            ],
+            [
+                "Form error handling",
+                "04:50",
+                "34.14",
+                290,
+                437
+            ],
+            [
+                "Form validation",
+                "13:09",
+                "34.15",
+                789,
+                438
+            ],
+            [
+                "Summary of section 11",
+                "01:51",
+                "34.16",
+                111,
+                439
+            ]
+        ],
+        "total": "2hr 5min",
+        "duration": 7500,
+        "name": "Forms (Legacy)",
+        "durs": [
+            210,
+            526,
+            466,
+            138,
+            222,
+            364,
+            630,
+            608,
+            595,
+            589,
+            470,
+            922,
+            561,
+            290,
+            789,
+            111
+        ]
+    },
+    {
+        "idx": 34,
+        "lectures": [
+            [
+                "Section 12 introduction",
+                "02:32",
+                "35.1",
+                152,
+                440
+            ],
+            [
+                "Introduction to ASP.NET Core Identity",
+                "05:50",
+                "35.2",
+                350,
+                441
+            ],
+            [
+                "Adding the Identity User Entity",
+                "08:36",
+                "35.3",
+                516,
+                442
+            ],
+            [
+                "Configuring Identity in our startup class",
+                "05:43",
+                "35.4",
+                343,
+                443
+            ],
+            [
+                "Seeding users to the database",
+                "10:06",
+                "35.5",
+                606,
+                444
+            ],
+            [
+                "Adding a Login Handler",
+                "07:50",
+                "35.6",
+                470,
+                445
+            ],
+            [
+                "Adding a Base API controller",
+                "05:15",
+                "35.7",
+                315,
+                446
+            ],
+            [
+                "Adding a User API controller",
+                "05:35",
+                "35.8",
+                335,
+                447
+            ],
+            [
+                "Adding a User object",
+                "04:16",
+                "35.9",
+                256,
+                448
+            ],
+            [
+                "JSON Web Tokens introduction",
+                "07:02",
+                "35.10",
+                422,
+                449
+            ],
+            [
+                "Adding the Infrastructure project",
+                "02:54",
+                "35.11",
+                174,
+                450
+            ],
+            [
+                "Adding the JWT Generator interface and class",
+                "03:57",
+                "35.12",
+                237,
+                451
+            ],
+            [
+                "Generating a JWT Token",
+                "09:47",
+                "35.13",
+                587,
+                452
+            ],
+            [
+                "Returning the JWT Token on successful login",
+                "05:43",
+                "35.14",
+                343,
+                453
+            ],
+            [
+                "Securing our app with Authorization",
+                "09:34",
+                "35.15",
+                574,
+                454
+            ],
+            [
+                "Dotnet user secrets",
+                "08:17",
+                "35.16",
+                497,
+                455
+            ],
+            [
+                "Adding an authorisation policy",
+                "03:25",
+                "35.17",
+                205,
+                456
+            ],
+            [
+                "Adding a Register Handler",
+                "10:01",
+                "35.18",
+                601,
+                457
+            ],
+            [
+                "Testing user registration",
+                "05:15",
+                "35.19",
+                315,
+                458
+            ],
+            [
+                "Adding a Fluent Validator extension for password validation",
+                "08:23",
+                "35.20",
+                503,
+                459
+            ],
+            [
+                "Retrieving the Username from the token in the Http Context",
+                "04:37",
+                "35.21",
+                277,
+                460
+            ],
+            [
+                "Getting the currently logged in user",
+                "08:17",
+                "35.22",
+                497,
+                461
+            ],
+            [
+                "Summary of section 12",
+                "01:03",
+                "35.23",
+                63,
+                462
+            ]
+        ],
+        "total": "2hr 24min",
+        "duration": 8640,
+        "name": "ASP.NET Core Identity (Legacy)",
+        "durs": [
+            152,
+            350,
+            516,
+            343,
+            606,
+            470,
+            315,
+            335,
+            256,
+            422,
+            174,
+            237,
+            587,
+            343,
+            574,
+            497,
+            205,
+            601,
+            315,
+            503,
+            277,
+            497,
+            63
+        ]
+    },
+    {
+        "idx": 35,
+        "lectures": [
+            [
+                "Section 13 introduction",
+                "02:55",
+                "36.1",
+                175,
+                463
+            ],
+            [
+                "Creating the Typescript interfaces and Axios methods",
+                "04:15",
+                "36.2",
+                255,
+                464
+            ],
+            [
+                "Creating a Mobx user store",
+                "04:35",
+                "36.3",
+                275,
+                465
+            ],
+            [
+                "Creating a MobX root store",
+                "10:11",
+                "36.4",
+                611,
+                466
+            ],
+            [
+                "Creating the Login form",
+                "04:16",
+                "36.5",
+                256,
+                467
+            ],
+            [
+                "Hooking up the Login form to the API",
+                "05:20",
+                "36.6",
+                320,
+                468
+            ],
+            [
+                "Dealing with submission errors",
+                "10:49",
+                "36.7",
+                649,
+                469
+            ],
+            [
+                "Adding home page and NavBar user information",
+                "06:44",
+                "36.8",
+                404,
+                470
+            ],
+            [
+                "Creating a MobX common store",
+                "07:10",
+                "36.9",
+                430,
+                471
+            ],
+            [
+                "Using Axios request interceptor to automatically send the JWT token",
+                "03:32",
+                "36.10",
+                212,
+                472
+            ],
+            [
+                "Persisting login on refresh",
+                "09:17",
+                "36.11",
+                557,
+                473
+            ],
+            [
+                "Adding Modals to our application",
+                "13:37",
+                "36.12",
+                817,
+                474
+            ],
+            [
+                "Adding better error messages to our form",
+                "05:01",
+                "36.13",
+                301,
+                475
+            ],
+            [
+                "Adding a Register form",
+                "07:57",
+                "36.14",
+                477,
+                476
+            ],
+            [
+                "Displaying server validation errors in our form",
+                "08:15",
+                "36.15",
+                495,
+                477
+            ],
+            [
+                "Summary of section 13",
+                "03:23",
+                "36.16",
+                203,
+                478
+            ]
+        ],
+        "total": "1hr 47min",
+        "duration": 6420,
+        "name": "Client side login and register (Legacy)",
+        "durs": [
+            175,
+            255,
+            275,
+            611,
+            256,
+            320,
+            649,
+            404,
+            430,
+            212,
+            557,
+            817,
+            301,
+            477,
+            495,
+            203
+        ]
+    },
+    {
+        "idx": 36,
+        "lectures": [
+            [
+                "Section 14 introduction",
+                "04:23",
+                "37.1",
+                263,
+                479
+            ],
+            [
+                "Adding a class to join our Users and Activities",
+                "09:13",
+                "37.2",
+                553,
+                480
+            ],
+            [
+                "Updating the Create Activity handler",
+                "04:08",
+                "37.3",
+                248,
+                481
+            ],
+            [
+                "Testing in Postman",
+                "05:56",
+                "37.4",
+                356,
+                482
+            ],
+            [
+                "Loading related data using Eager loading",
+                "05:54",
+                "37.5",
+                354,
+                483
+            ],
+            [
+                "Adding DTOs to shape our data",
+                "03:58",
+                "37.6",
+                238,
+                484
+            ],
+            [
+                "Adding AutoMapper",
+                "04:33",
+                "37.7",
+                273,
+                485
+            ],
+            [
+                "Adding AutoMapper profiles",
+                "08:02",
+                "37.8",
+                482,
+                486
+            ],
+            [
+                "Configuring AutoMapper mappings",
+                "04:59",
+                "37.9",
+                299,
+                487
+            ],
+            [
+                "Using Lazy Loading to load related data",
+                "05:04",
+                "37.10",
+                304,
+                488
+            ],
+            [
+                "Adding the Join activity feature",
+                "10:22",
+                "37.11",
+                622,
+                489
+            ],
+            [
+                "Adding the remove attendance feature",
+                "07:18",
+                "37.12",
+                438,
+                490
+            ],
+            [
+                "Creating a custom Auth policy",
+                "17:55",
+                "37.13",
+                1075,
+                491
+            ],
+            [
+                "Updating our Seed data",
+                "04:08",
+                "37.14",
+                248,
+                492
+            ],
+            [
+                "Section 14 summary",
+                "01:26",
+                "37.15",
+                86,
+                493
+            ]
+        ],
+        "total": "1hr 37min",
+        "duration": 5820,
+        "name": "Entity Framework Core Relationships (Legacy)",
+        "durs": [
+            263,
+            553,
+            248,
+            356,
+            354,
+            238,
+            273,
+            482,
+            299,
+            304,
+            622,
+            438,
+            1075,
+            248,
+            86
+        ]
+    },
+    {
+        "idx": 37,
+        "lectures": [
+            [
+                "Section 15 introduction",
+                "01:45",
+                "38.1",
+                105,
+                494
+            ],
+            [
+                "Adding attendees to our list items",
+                "07:39",
+                "38.2",
+                459,
+                495
+            ],
+            [
+                "Adding attendees to the Detailed view sidebar",
+                "05:45",
+                "38.3",
+                345,
+                496
+            ],
+            [
+                "Adding the IsGoing and IsHost properties to the Activity interface",
+                "11:12",
+                "38.4",
+                672,
+                497
+            ],
+            [
+                "Conditionally rendering the activity detailed header buttons",
+                "02:32",
+                "38.5",
+                152,
+                498
+            ],
+            [
+                "Adding the cancel attendance function",
+                "07:59",
+                "38.6",
+                479,
+                499
+            ],
+            [
+                "Hooking it all up to the API",
+                "07:31",
+                "38.7",
+                451,
+                500
+            ],
+            [
+                "Loose ends",
+                "06:06",
+                "38.8",
+                366,
+                501
+            ],
+            [
+                "Summary of section 15",
+                "00:36",
+                "38.9",
+                36,
+                502
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Adding Client side attendances (Legacy)",
+        "durs": [
+            105,
+            459,
+            345,
+            672,
+            152,
+            479,
+            451,
+            366,
+            36
+        ]
+    },
+    {
+        "idx": 38,
+        "lectures": [
+            [
+                "Section 16 introduction",
+                "05:33",
+                "39.1",
+                333,
+                503
+            ],
+            [
+                "Cloudinary settings",
+                "07:32",
+                "39.2",
+                452,
+                504
+            ],
+            [
+                "Adding the interface and class for our Photo Accessor",
+                "04:59",
+                "39.3",
+                299,
+                505
+            ],
+            [
+                "Adding the AddPhoto handler",
+                "05:54",
+                "39.4",
+                354,
+                506
+            ],
+            [
+                "Adding the Domain Entity",
+                "04:12",
+                "39.5",
+                252,
+                507
+            ],
+            [
+                "Adding the Add Photo Handler",
+                "07:38",
+                "39.6",
+                458,
+                508
+            ],
+            [
+                "Adding the Photo API Controller",
+                "10:19",
+                "39.7",
+                619,
+                509
+            ],
+            [
+                "Adding User Profiles feature",
+                "07:18",
+                "39.8",
+                438,
+                510
+            ],
+            [
+                "Adding the Delete photo handler",
+                "10:54",
+                "39.9",
+                654,
+                511
+            ],
+            [
+                "Adding the set main photo functionality",
+                "06:36",
+                "39.10",
+                396,
+                512
+            ],
+            [
+                "Adding the Mapping Profile configuration for User images",
+                "04:56",
+                "39.11",
+                296,
+                513
+            ],
+            [
+                "Summary of section 16",
+                "01:09",
+                "39.12",
+                69,
+                514
+            ]
+        ],
+        "total": "1hr 17min",
+        "duration": 4620,
+        "name": "Photo Upload Part 1 - API (Legacy)",
+        "durs": [
+            333,
+            452,
+            299,
+            354,
+            252,
+            458,
+            619,
+            438,
+            654,
+            396,
+            296,
+            69
+        ]
+    },
+    {
+        "idx": 39,
+        "lectures": [
+            [
+                "Section 17 introduction",
+                "02:39",
+                "40.1",
+                159,
+                515
+            ],
+            [
+                "Adding links and a profile page component",
+                "06:46",
+                "40.2",
+                406,
+                516
+            ],
+            [
+                "Adding the Profile Header component",
+                "04:37",
+                "40.3",
+                277,
+                517
+            ],
+            [
+                "Adding the Profile content component",
+                "04:19",
+                "40.4",
+                259,
+                518
+            ],
+            [
+                "Getting the profile data from the API",
+                "13:57",
+                "40.5",
+                837,
+                519
+            ],
+            [
+                "Displaying User images on the profile page",
+                "06:32",
+                "40.6",
+                392,
+                520
+            ],
+            [
+                "Conditionally rendering the Photo Upload Widget",
+                "09:36",
+                "40.7",
+                576,
+                521
+            ],
+            [
+                "Creating a Photo Upload Widget",
+                "04:03",
+                "40.8",
+                243,
+                522
+            ],
+            [
+                "React Dropzone",
+                "10:41",
+                "40.9",
+                641,
+                523
+            ],
+            [
+                "Styling our Dropzone",
+                "08:35",
+                "40.10",
+                515,
+                524
+            ],
+            [
+                "React Cropper Part 1",
+                "12:45",
+                "40.11",
+                765,
+                525
+            ],
+            [
+                "React Cropper Part 2",
+                "12:27",
+                "40.12",
+                747,
+                526
+            ],
+            [
+                "Adding the Photo Upload methods to the store",
+                "06:50",
+                "40.13",
+                410,
+                527
+            ],
+            [
+                "Adding the photo upload functionality to the Profile component",
+                "06:58",
+                "40.14",
+                418,
+                528
+            ],
+            [
+                "Adding the set main photo functionality",
+                "07:10",
+                "40.15",
+                430,
+                529
+            ],
+            [
+                "Isolating our loading indicators",
+                "02:58",
+                "40.16",
+                178,
+                530
+            ],
+            [
+                "Adding Delete photo functionality",
+                "07:09",
+                "40.17",
+                429,
+                531
+            ],
+            [
+                "Summary of section 17",
+                "00:59",
+                "40.18",
+                59,
+                532
+            ]
+        ],
+        "total": "2hr 9min",
+        "duration": 7740,
+        "name": "Photo Upload Part 2 - Client (Legacy)",
+        "durs": [
+            159,
+            406,
+            277,
+            259,
+            837,
+            392,
+            576,
+            243,
+            641,
+            515,
+            765,
+            747,
+            410,
+            418,
+            430,
+            178,
+            429,
+            59
+        ]
+    },
+    {
+        "idx": 40,
+        "lectures": [
+            [
+                "Challenge Introduction",
+                "05:34",
+                "41.1",
+                334,
+                533
+            ],
+            [
+                "Challenge Solution",
+                "10:43",
+                "41.2",
+                643,
+                534
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Challenge (Legacy)",
+        "durs": [
+            334,
+            643
+        ]
+    },
+    {
+        "idx": 41,
+        "lectures": [
+            [
+                "Section 19 Introduction",
+                "03:08",
+                "42.1",
+                188,
+                535
+            ],
+            [
+                "Adding the Comment entity",
+                "04:40",
+                "42.2",
+                280,
+                536
+            ],
+            [
+                "Adding the Comment DTO and mapping",
+                "04:34",
+                "42.3",
+                274,
+                537
+            ],
+            [
+                "Adding the Create comment handler",
+                "06:15",
+                "42.4",
+                375,
+                538
+            ],
+            [
+                "Adding a SignalR hub",
+                "07:26",
+                "42.5",
+                446,
+                539
+            ],
+            [
+                "Configuring Auth for SignalR",
+                "03:23",
+                "42.6",
+                203,
+                540
+            ],
+            [
+                "Adding the SignalR hub connection to the client",
+                "09:17",
+                "42.7",
+                557,
+                541
+            ],
+            [
+                "Connecting to the SignalR hub from our client",
+                "06:44",
+                "42.8",
+                404,
+                542
+            ],
+            [
+                "Adding the Comment functionality to the client",
+                "08:16",
+                "42.9",
+                496,
+                543
+            ],
+            [
+                "Formatting Dates in words using Date-FNS",
+                "03:46",
+                "42.10",
+                226,
+                544
+            ],
+            [
+                "Using SignalR Groups in the API",
+                "04:07",
+                "42.11",
+                247,
+                545
+            ],
+            [
+                "Using SignalR Groups in the client",
+                "05:59",
+                "42.12",
+                359,
+                546
+            ],
+            [
+                "Section 19 summary",
+                "00:50",
+                "42.13",
+                50,
+                547
+            ]
+        ],
+        "total": "1hr 8min",
+        "duration": 4080,
+        "name": "SignalR (Legacy)",
+        "durs": [
+            188,
+            280,
+            274,
+            375,
+            446,
+            203,
+            557,
+            404,
+            496,
+            226,
+            247,
+            359,
+            50
+        ]
+    },
+    {
+        "idx": 42,
+        "lectures": [
+            [
+                "Section 20 introduction",
+                "02:27",
+                "43.1",
+                147,
+                548
+            ],
+            [
+                "Adding the UserFollower Entity",
+                "08:08",
+                "43.2",
+                488,
+                549
+            ],
+            [
+                "Adding the Add Follower handler",
+                "06:07",
+                "43.3",
+                367,
+                550
+            ],
+            [
+                "Adding the Delete Following handler",
+                "02:20",
+                "43.4",
+                140,
+                551
+            ],
+            [
+                "Adding a Following API Controller",
+                "05:53",
+                "43.5",
+                353,
+                552
+            ],
+            [
+                "Adding a Profile reader helper class and interface",
+                "10:33",
+                "43.6",
+                633,
+                553
+            ],
+            [
+                "Getting a List of Followings for a user",
+                "10:11",
+                "43.7",
+                611,
+                554
+            ],
+            [
+                "Adding a Custom value resolver for AutoMapper",
+                "08:31",
+                "43.8",
+                511,
+                555
+            ],
+            [
+                "Adding the UI components to show followed users",
+                "06:18",
+                "43.9",
+                378,
+                556
+            ],
+            [
+                "Adding the Follow / Unfollow methods",
+                "04:19",
+                "43.10",
+                259,
+                557
+            ],
+            [
+                "Adding the Follow / Unfollow UI components",
+                "08:02",
+                "43.11",
+                482,
+                558
+            ],
+            [
+                "Getting a list of followings from the API",
+                "11:08",
+                "43.12",
+                668,
+                559
+            ],
+            [
+                "Using MobX reactions to get followers or followings on tab change",
+                "10:44",
+                "43.13",
+                644,
+                560
+            ],
+            [
+                "Section 20 summary",
+                "00:38",
+                "43.14",
+                38,
+                561
+            ]
+        ],
+        "total": "1hr 35min",
+        "duration": 5700,
+        "name": "Following/Follower feature (Legacy)",
+        "durs": [
+            147,
+            488,
+            367,
+            140,
+            353,
+            633,
+            611,
+            511,
+            378,
+            259,
+            482,
+            668,
+            644,
+            38
+        ]
+    },
+    {
+        "idx": 43,
+        "lectures": [
+            [
+                "Section 21 introduction",
+                "04:22",
+                "44.1",
+                262,
+                562
+            ],
+            [
+                "Paging our Activity list",
+                "09:28",
+                "44.2",
+                568,
+                563
+            ],
+            [
+                "Refactoring the Activity store list method for paging",
+                "07:49",
+                "44.3",
+                469,
+                564
+            ],
+            [
+                "Adding vertical paging to our activity dashboard",
+                "05:23",
+                "44.4",
+                323,
+                565
+            ],
+            [
+                "Adding infinite scrolling to our activity dashboard",
+                "05:01",
+                "44.5",
+                301,
+                566
+            ],
+            [
+                "Updating the dashboard with Filter component",
+                "03:26",
+                "44.6",
+                206,
+                567
+            ],
+            [
+                "Filtering our Activity List in the API",
+                "10:35",
+                "44.7",
+                635,
+                568
+            ],
+            [
+                "Adding the Filtering methods in the client",
+                "09:34",
+                "44.8",
+                574,
+                569
+            ],
+            [
+                "Updating the Activity Filters UI to allow filtering",
+                "07:00",
+                "44.9",
+                420,
+                570
+            ],
+            [
+                "Adding User Activities filter in the API",
+                "07:28",
+                "44.10",
+                448,
+                571
+            ],
+            [
+                "Adding User Activities filter in the client",
+                "09:37",
+                "44.11",
+                577,
+                572
+            ],
+            [
+                "Summary of section 21",
+                "00:29",
+                "44.12",
+                29,
+                573
+            ]
+        ],
+        "total": "1hr 20min",
+        "duration": 4800,
+        "name": "Paging, Sorting and Filtering (Legacy)",
+        "durs": [
+            262,
+            568,
+            469,
+            323,
+            301,
+            206,
+            635,
+            574,
+            420,
+            448,
+            577,
+            29
+        ]
+    },
+    {
+        "idx": 44,
+        "lectures": [
+            [
+                "Section 22 introduction",
+                "06:56",
+                "45.1",
+                416,
+                574
+            ],
+            [
+                "Swapping our loading indicator for Placeholders",
+                "05:49",
+                "45.2",
+                349,
+                575
+            ],
+            [
+                "Adding a loading indicator to index.html",
+                "02:49",
+                "45.3",
+                169,
+                576
+            ],
+            [
+                "Adding private routes on the client",
+                "06:45",
+                "45.4",
+                405,
+                577
+            ],
+            [
+                "Adding logout for token expiry",
+                "10:18",
+                "45.5",
+                618,
+                578
+            ],
+            [
+                "Safari bug fix",
+                "09:15",
+                "45.6",
+                555,
+                579
+            ],
+            [
+                "Preparing the client application for publishing",
+                "07:30",
+                "45.7",
+                450,
+                580
+            ],
+            [
+                "Building a production version of the React app",
+                "03:01",
+                "45.8",
+                181,
+                581
+            ],
+            [
+                "Serving the production React app from the API server",
+                "09:52",
+                "45.9",
+                592,
+                582
+            ],
+            [
+                "Adding MySQL and configuring a user",
+                "06:40",
+                "45.10",
+                400,
+                583
+            ],
+            [
+                "Adding additional DB providers for Entity Framework",
+                "06:32",
+                "45.11",
+                392,
+                584
+            ],
+            [
+                "Swapping the DB for MySQL",
+                "11:22",
+                "45.12",
+                682,
+                585
+            ],
+            [
+                "Publishing the app to Linux - Part 1",
+                "10:59",
+                "45.13",
+                659,
+                586
+            ],
+            [
+                "Publishing the app to Linux - Part 2",
+                "17:00",
+                "45.14",
+                1020,
+                587
+            ],
+            [
+                "Configuring Apache to use an HTTPS SSL certificate",
+                "08:42",
+                "45.15",
+                522,
+                588
+            ],
+            [
+                "Adding Security headers to our API",
+                "10:25",
+                "45.16",
+                625,
+                589
+            ],
+            [
+                "Adding Content Security Policy to our API",
+                "17:04",
+                "45.17",
+                1024,
+                590
+            ],
+            [
+                "Getting an A rating from a SecurityHeaders site scan",
+                "03:05",
+                "45.18",
+                185,
+                591
+            ],
+            [
+                "Setting up Azure for publishing our app",
+                "08:14",
+                "45.19",
+                494,
+                592
+            ],
+            [
+                "Publishing our App to Azure",
+                "10:03",
+                "45.20",
+                603,
+                593
+            ],
+            [
+                "Tweaking the Azure deployment",
+                "07:00",
+                "45.21",
+                420,
+                594
+            ],
+            [
+                "End of course summary",
+                "02:17",
+                "45.22",
+                137,
+                595
+            ]
+        ],
+        "total": "3hr 2min",
+        "duration": 10920,
+        "name": "Final touches and publishing (Legacy)",
+        "durs": [
+            416,
+            349,
+            169,
+            405,
+            618,
+            555,
+            450,
+            181,
+            592,
+            400,
+            392,
+            682,
+            659,
+            1020,
+            522,
+            625,
+            1024,
+            185,
+            494,
+            603,
+            420,
+            137
+        ]
+    },
+    {
+        "idx": 45,
+        "lectures": [
+            [
+                "Intro to the bonus section",
+                "03:00",
+                "46.1",
+                180,
+                596
+            ],
+            [
+                "FB Login - Setting up the app in Facebook",
+                "02:29",
+                "46.2",
+                149,
+                597
+            ],
+            [
+                "FB Login - Creating a new Git branch to work from",
+                "06:29",
+                "46.3",
+                389,
+                598
+            ],
+            [
+                "FB Login - Adding a Facebook login button to the client app",
+                "15:03",
+                "46.4",
+                903,
+                599
+            ],
+            [
+                "FB Login - Adding the API configuration to user secrets",
+                "04:11",
+                "46.5",
+                251,
+                600
+            ],
+            [
+                "FB Login - Adding a facebook accessor service to the infrastructure project",
+                "16:33",
+                "46.6",
+                993,
+                601
+            ],
+            [
+                "FB Login - Adding the Facebook login handler",
+                "11:49",
+                "46.7",
+                709,
+                602
+            ],
+            [
+                "FB Login - Adding the API Controller method and tying it together with the clien",
+                "09:41",
+                "46.8",
+                581,
+                603
+            ],
+            [
+                "FB Login - Adding loading indicator and merging changes with master branch",
+                "06:03",
+                "46.9",
+                363,
+                604
+            ],
+            [
+                "Refresh Tokens - Introduction",
+                "04:49",
+                "46.10",
+                289,
+                605
+            ],
+            [
+                "Refresh Tokens - Updaing the Domain and adding a new Migration",
+                "05:58",
+                "46.11",
+                358,
+                606
+            ],
+            [
+                "Refresh Tokens - Updating the Token Validation Expriry",
+                "04:17",
+                "46.12",
+                257,
+                607
+            ],
+            [
+                "Refresh Tokens - Updating the Application layer classes",
+                "09:36",
+                "46.13",
+                576,
+                608
+            ],
+            [
+                "Refresh Tokens - Adding the Refresh Token Handler",
+                "06:03",
+                "46.14",
+                363,
+                609
+            ],
+            [
+                "Refresh Tokens - Adding the API Endpoint",
+                "05:57",
+                "46.15",
+                357,
+                610
+            ],
+            [
+                "Refresh Tokens - Testing in Postman",
+                "04:01",
+                "46.16",
+                241,
+                611
+            ],
+            [
+                "Refresh Token - Updating the MobX Stores",
+                "08:12",
+                "46.17",
+                492,
+                612
+            ],
+            [
+                "Refresh Tokens - Testing it works",
+                "05:41",
+                "46.18",
+                341,
+                613
+            ],
+            [
+                "Email Verification - Introduction",
+                "03:06",
+                "46.19",
+                186,
+                614
+            ],
+            [
+                "Email Verification - Setting up SendGrid",
+                "11:10",
+                "46.20",
+                670,
+                615
+            ],
+            [
+                "Email verification - Identity settings",
+                "05:24",
+                "46.21",
+                324,
+                616
+            ],
+            [
+                "Email verification - Updating the register handler",
+                "09:47",
+                "46.22",
+                587,
+                617
+            ],
+            [
+                "Email verification - Adding a confirm email handler",
+                "06:36",
+                "46.23",
+                396,
+                618
+            ],
+            [
+                "Email verification - Testing email verification in postman",
+                "05:17",
+                "46.24",
+                317,
+                619
+            ],
+            [
+                "Email verification - Resend verification email handler",
+                "08:12",
+                "46.25",
+                492,
+                620
+            ],
+            [
+                "Email verification - Client agent methods",
+                "04:20",
+                "46.26",
+                260,
+                621
+            ],
+            [
+                "Email Verification - Create a register success component",
+                "05:54",
+                "46.27",
+                354,
+                622
+            ],
+            [
+                "Email verification - creating a verify email component",
+                "09:31",
+                "46.28",
+                571,
+                623
+            ],
+            [
+                "Email verification - making sure it works",
+                "05:25",
+                "46.29",
+                325,
+                624
+            ]
+        ],
+        "total": "3hr 25min",
+        "duration": 12300,
+        "name": "Bonus - Identity Cookbook (Legacy)",
+        "durs": [
+            180,
+            149,
+            389,
+            903,
+            251,
+            993,
+            709,
+            581,
+            363,
+            289,
+            358,
+            257,
+            576,
+            363,
+            357,
+            241,
+            492,
+            341,
+            186,
+            670,
+            324,
+            587,
+            396,
+            317,
+            492,
+            260,
+            354,
+            571,
+            325
+        ]
+    },
+    {
+        "idx": 46,
+        "lectures": [
+            [
+                "Updating the client packages",
+                "17:49",
+                "47.1",
+                1069,
+                625
+            ]
+        ],
+        "total": "18min",
+        "duration": 1080,
+        "name": "Bonus - Updating the React client packages to latest versions (Legacy)",
+        "durs": [
+            1069
+        ]
+    }
+]

@@ -1,0 +1,1600 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction to the Course",
+                "03:33",
+                "1.1",
+                213,
+                1
+            ],
+            [
+                "Course Help and Welcome",
+                "00:36",
+                "1.2",
+                36,
+                2
+            ],
+            [
+                "Course FAQs",
+                "03:02",
+                "1.3",
+                182,
+                3
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Course Introduction",
+        "durs": [
+            213,
+            36,
+            182
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Python Environment Setup",
+                "11:14",
+                "2.1",
+                674,
+                4
+            ]
+        ],
+        "total": "11min",
+        "duration": 660,
+        "name": "Environment Set-Up",
+        "durs": [
+            674
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Updates to Notebook Zip",
+                "00:09",
+                "3.1",
+                9,
+                5
+            ],
+            [
+                "Jupyter Notebooks",
+                "13:48",
+                "3.2",
+                828,
+                6
+            ],
+            [
+                "Optional: Virtual Environments",
+                "09:51",
+                "3.3",
+                591,
+                7
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Jupyter Overview",
+        "durs": [
+            9,
+            828,
+            591
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Welcome to the Python Crash Course Section!",
+                "00:17",
+                "4.1",
+                17,
+                8
+            ],
+            [
+                "Introduction to Python Crash Course",
+                "01:26",
+                "4.2",
+                86,
+                9
+            ],
+            [
+                "Python Crash Course - Part 1",
+                "19:29",
+                "4.3",
+                1169,
+                10
+            ],
+            [
+                "Python Crash Course - Part 2",
+                "15:14",
+                "4.4",
+                914,
+                11
+            ],
+            [
+                "Python Crash Course - Part 3",
+                "16:39",
+                "4.5",
+                999,
+                12
+            ],
+            [
+                "Python Crash Course - Part 4",
+                "15:37",
+                "4.6",
+                937,
+                13
+            ],
+            [
+                "Python Crash Course Exercises - Overview",
+                "03:35",
+                "4.7",
+                215,
+                14
+            ],
+            [
+                "Python Crash Course Exercises - Solutions",
+                "11:56",
+                "4.8",
+                716,
+                15
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "Python Crash Course",
+        "durs": [
+            17,
+            86,
+            1169,
+            914,
+            999,
+            937,
+            215,
+            716
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Welcome to the NumPy Section!",
+                "00:10",
+                "5.1",
+                10,
+                16
+            ],
+            [
+                "Introduction to Numpy",
+                "02:12",
+                "5.2",
+                132,
+                17
+            ],
+            [
+                "Numpy Arrays",
+                "16:49",
+                "5.3",
+                1009,
+                18
+            ],
+            [
+                "Quick Note on Array Indexing",
+                "00:48",
+                "5.4",
+                48,
+                19
+            ],
+            [
+                "Numpy Array Indexing",
+                "18:23",
+                "5.5",
+                1103,
+                20
+            ],
+            [
+                "Numpy Operations",
+                "07:04",
+                "5.6",
+                424,
+                21
+            ],
+            [
+                "Numpy Exercises Overview",
+                "02:46",
+                "5.7",
+                166,
+                22
+            ],
+            [
+                "Numpy Exercises Solutions",
+                "15:31",
+                "5.8",
+                931,
+                23
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Python for Data Analysis - NumPy",
+        "durs": [
+            10,
+            132,
+            1009,
+            48,
+            1103,
+            424,
+            166,
+            931
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Welcome to the Pandas Section!",
+                "00:14",
+                "6.1",
+                14,
+                24
+            ],
+            [
+                "Introduction to Pandas",
+                "01:44",
+                "6.2",
+                104,
+                25
+            ],
+            [
+                "Series",
+                "10:39",
+                "6.3",
+                639,
+                26
+            ],
+            [
+                "DataFrames - Part 1",
+                "15:31",
+                "6.4",
+                931,
+                27
+            ],
+            [
+                "DataFrames - Part 2",
+                "17:10",
+                "6.5",
+                1030,
+                28
+            ],
+            [
+                "DataFrames - Part 3",
+                "09:12",
+                "6.6",
+                552,
+                29
+            ],
+            [
+                "Missing Data",
+                "06:19",
+                "6.7",
+                379,
+                30
+            ],
+            [
+                "Groupby",
+                "06:48",
+                "6.8",
+                408,
+                31
+            ],
+            [
+                "Merging Joining and Concatenating",
+                "08:55",
+                "6.9",
+                535,
+                32
+            ],
+            [
+                "Operations",
+                "12:04",
+                "6.10",
+                724,
+                33
+            ],
+            [
+                "Data Input and Output",
+                "14:00",
+                "6.11",
+                840,
+                34
+            ]
+        ],
+        "total": "1hr 43min",
+        "duration": 6180,
+        "name": "Python for Data Analysis - Pandas",
+        "durs": [
+            14,
+            104,
+            639,
+            931,
+            1030,
+            552,
+            379,
+            408,
+            535,
+            724,
+            840
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Note on SF Salary Exercise",
+                "00:22",
+                "7.1",
+                22,
+                35
+            ],
+            [
+                "SF Salaries Exercise Overview",
+                "01:55",
+                "7.2",
+                115,
+                36
+            ],
+            [
+                "SF Salaries Solutions",
+                "15:25",
+                "7.3",
+                925,
+                37
+            ],
+            [
+                "Ecommerce Purchases Exercise Overview",
+                "02:11",
+                "7.4",
+                131,
+                38
+            ],
+            [
+                "Ecommerce Purchases Exercise Solutions",
+                "15:12",
+                "7.5",
+                912,
+                39
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Python for Data Analysis - Pandas Exercises",
+        "durs": [
+            22,
+            115,
+            925,
+            131,
+            912
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Welcome to the Data Visualization Section!",
+                "00:22",
+                "8.1",
+                22,
+                40
+            ],
+            [
+                "Introduction to Matplotlib",
+                "03:02",
+                "8.2",
+                182,
+                41
+            ],
+            [
+                "Matplotlib Part 1",
+                "16:57",
+                "8.3",
+                1017,
+                42
+            ],
+            [
+                "Matplotlib Part 2",
+                "15:51",
+                "8.4",
+                951,
+                43
+            ],
+            [
+                "Matplotlib Part 3",
+                "11:51",
+                "8.5",
+                711,
+                44
+            ],
+            [
+                "Matplotlib Exercises Overview",
+                "01:46",
+                "8.6",
+                106,
+                45
+            ],
+            [
+                "Matplotlib Exercises - Solutions",
+                "10:19",
+                "8.7",
+                619,
+                46
+            ]
+        ],
+        "total": "1hr",
+        "duration": 3600,
+        "name": "Python for Data Visualization - Matplotlib",
+        "durs": [
+            22,
+            182,
+            1017,
+            951,
+            711,
+            106,
+            619
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Introduction to Seaborn",
+                "02:58",
+                "9.1",
+                178,
+                47
+            ],
+            [
+                "Distribution Plots",
+                "18:20",
+                "9.2",
+                1100,
+                48
+            ],
+            [
+                "Categorical Plots",
+                "17:17",
+                "9.3",
+                1037,
+                49
+            ],
+            [
+                "Matrix Plots",
+                "10:14",
+                "9.4",
+                614,
+                50
+            ],
+            [
+                "Grids",
+                "08:30",
+                "9.5",
+                510,
+                51
+            ],
+            [
+                "Regression Plots",
+                "07:13",
+                "9.6",
+                433,
+                52
+            ],
+            [
+                "Style and Color",
+                "08:21",
+                "9.7",
+                501,
+                53
+            ],
+            [
+                "Seaborn Exercise Overview",
+                "01:53",
+                "9.8",
+                113,
+                54
+            ],
+            [
+                "Seaborn Exercise Solutions",
+                "07:08",
+                "9.9",
+                428,
+                55
+            ]
+        ],
+        "total": "1hr 22min",
+        "duration": 4920,
+        "name": "Python for Data Visualization - Seaborn",
+        "durs": [
+            178,
+            1100,
+            1037,
+            614,
+            510,
+            433,
+            501,
+            113,
+            428
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Pandas Built-in Data Visualization",
+                "13:27",
+                "10.1",
+                807,
+                56
+            ],
+            [
+                "Pandas Data Visualization Exercise",
+                "01:22",
+                "10.2",
+                82,
+                57
+            ],
+            [
+                "Pandas Data Visualization Exercise- Solutions",
+                "08:55",
+                "10.3",
+                535,
+                58
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Python for Data Visualization - Pandas Built-in Data Visualization",
+        "durs": [
+            807,
+            82,
+            535
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Introduction to Plotly and Cufflinks",
+                "03:22",
+                "11.1",
+                202,
+                59
+            ],
+            [
+                "READ ME FIRST BEFORE PLOTLY PLEASE!",
+                "00:53",
+                "11.2",
+                53,
+                60
+            ],
+            [
+                "Plotly and Cufflinks",
+                "18:38",
+                "11.3",
+                1118,
+                61
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Python for Data Visualization - Plotly and Cufflinks",
+        "durs": [
+            202,
+            53,
+            1118
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Introduction to Geographical Plotting",
+                "00:58",
+                "12.1",
+                58,
+                62
+            ],
+            [
+                "Choropleth Maps - Part 1 - USA",
+                "19:26",
+                "12.2",
+                1166,
+                63
+            ],
+            [
+                "Choropleth Maps - Part 2 - World",
+                "06:53",
+                "12.3",
+                413,
+                64
+            ],
+            [
+                "Choropleth Exercises",
+                "03:11",
+                "12.4",
+                191,
+                65
+            ],
+            [
+                "Choropleth Exercises - Solutions",
+                "10:01",
+                "12.5",
+                601,
+                66
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Python for Data Visualization - Geographical Plotting",
+        "durs": [
+            58,
+            1166,
+            413,
+            191,
+            601
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Welcome to the Data Capstone Projects!",
+                "00:17",
+                "13.1",
+                17,
+                67
+            ],
+            [
+                "911 Calls Project Overview",
+                "02:07",
+                "13.2",
+                127,
+                68
+            ],
+            [
+                "911 Calls Solutions - Part 1",
+                "14:29",
+                "13.3",
+                869,
+                69
+            ],
+            [
+                "911 Calls Solutions - Part 2",
+                "17:37",
+                "13.4",
+                1057,
+                70
+            ],
+            [
+                "Bank Data",
+                "00:11",
+                "13.5",
+                11,
+                71
+            ],
+            [
+                "Finance Data Project Overview",
+                "03:06",
+                "13.6",
+                186,
+                72
+            ],
+            [
+                "Finance Project - Solutions Part 1",
+                "16:13",
+                "13.7",
+                973,
+                73
+            ],
+            [
+                "Finance Project - Solutions Part 2",
+                "18:11",
+                "13.8",
+                1091,
+                74
+            ],
+            [
+                "Finance Project - Solutions Part 3",
+                "06:23",
+                "13.9",
+                383,
+                75
+            ]
+        ],
+        "total": "1hr 19min",
+        "duration": 4740,
+        "name": "Data Capstone Project",
+        "durs": [
+            17,
+            127,
+            869,
+            1057,
+            11,
+            186,
+            973,
+            1091,
+            383
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Welcome to Machine Learning. Here are a few resources to get you started!",
+                "00:21",
+                "14.1",
+                21,
+                76
+            ],
+            [
+                "Welcome to the Machine Learning Section!",
+                "00:31",
+                "14.2",
+                31,
+                77
+            ],
+            [
+                "Supervised Learning Overview",
+                "08:21",
+                "14.3",
+                501,
+                78
+            ],
+            [
+                "Evaluating Performance - Classification Error Metrics",
+                "16:37",
+                "14.4",
+                997,
+                79
+            ],
+            [
+                "Evaluating Performance - Regression Error Metrics",
+                "05:36",
+                "14.5",
+                336,
+                80
+            ],
+            [
+                "Machine Learning with Python",
+                "09:27",
+                "14.6",
+                567,
+                81
+            ]
+        ],
+        "total": "41min",
+        "duration": 2460,
+        "name": "Introduction to Machine Learning",
+        "durs": [
+            21,
+            31,
+            501,
+            997,
+            336,
+            567
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Linear Regression Theory",
+                "04:33",
+                "15.1",
+                273,
+                82
+            ],
+            [
+                "model_selection Updates for SciKit Learn 0.18",
+                "00:26",
+                "15.2",
+                26,
+                83
+            ],
+            [
+                "Linear Regression with Python - Part 1",
+                "18:16",
+                "15.3",
+                1096,
+                84
+            ],
+            [
+                "Linear Regression with Python - Part 2",
+                "07:05",
+                "15.4",
+                425,
+                85
+            ],
+            [
+                "Linear Regression Project Overview",
+                "02:31",
+                "15.5",
+                151,
+                86
+            ],
+            [
+                "Linear Regression Project Solution",
+                "18:43",
+                "15.6",
+                1123,
+                87
+            ]
+        ],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Linear Regression",
+        "durs": [
+            273,
+            26,
+            1096,
+            425,
+            151,
+            1123
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Bias Variance Trade-Off",
+                "06:25",
+                "16.1",
+                385,
+                88
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Cross Validation and Bias-Variance Trade-Off",
+        "durs": [
+            385
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Logistic Regression Theory",
+                "11:53",
+                "17.1",
+                713,
+                89
+            ],
+            [
+                "Logistic Regression with Python - Part 1",
+                "17:43",
+                "17.2",
+                1063,
+                90
+            ],
+            [
+                "Logistic Regression with Python - Part 2",
+                "16:57",
+                "17.3",
+                1017,
+                91
+            ],
+            [
+                "Logistic Regression with Python - Part 3",
+                "08:15",
+                "17.4",
+                495,
+                92
+            ],
+            [
+                "Logistic Regression Project Overview",
+                "01:36",
+                "17.5",
+                96,
+                93
+            ],
+            [
+                "Logistic Regression Project Solutions",
+                "11:05",
+                "17.6",
+                665,
+                94
+            ]
+        ],
+        "total": "1hr 7min",
+        "duration": 4020,
+        "name": "Logistic Regression",
+        "durs": [
+            713,
+            1063,
+            1017,
+            495,
+            96,
+            665
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "KNN Theory",
+                "05:38",
+                "18.1",
+                338,
+                95
+            ],
+            [
+                "KNN with Python",
+                "19:39",
+                "18.2",
+                1179,
+                96
+            ],
+            [
+                "KNN Project Overview",
+                "01:11",
+                "18.3",
+                71,
+                97
+            ],
+            [
+                "KNN Project Solutions",
+                "14:14",
+                "18.4",
+                854,
+                98
+            ]
+        ],
+        "total": "41min",
+        "duration": 2460,
+        "name": "K Nearest Neighbors",
+        "durs": [
+            338,
+            1179,
+            71,
+            854
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Introduction to Tree Methods",
+                "06:52",
+                "19.1",
+                412,
+                99
+            ],
+            [
+                "Decision Trees and Random Forest with Python",
+                "13:57",
+                "19.2",
+                837,
+                100
+            ],
+            [
+                "Decision Trees and Random Forest Project Overview",
+                "03:10",
+                "19.3",
+                190,
+                101
+            ],
+            [
+                "Decision Trees and Random Forest Solutions Part 1",
+                "12:13",
+                "19.4",
+                733,
+                102
+            ],
+            [
+                "Decision Trees and Random Forest Solutions Part 2",
+                "08:46",
+                "19.5",
+                526,
+                103
+            ]
+        ],
+        "total": "45min",
+        "duration": 2700,
+        "name": "Decision Trees and Random Forests",
+        "durs": [
+            412,
+            837,
+            190,
+            733,
+            526
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "SVM Theory",
+                "04:36",
+                "20.1",
+                276,
+                104
+            ],
+            [
+                "Support Vector Machines with Python",
+                "17:52",
+                "20.2",
+                1072,
+                105
+            ],
+            [
+                "SVM Project Overview",
+                "02:21",
+                "20.3",
+                141,
+                106
+            ],
+            [
+                "SVM Project Solutions",
+                "10:09",
+                "20.4",
+                609,
+                107
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Support Vector Machines",
+        "durs": [
+            276,
+            1072,
+            141,
+            609
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "K Means Algorithm Theory",
+                "05:15",
+                "21.1",
+                315,
+                108
+            ],
+            [
+                "K Means with Python",
+                "12:35",
+                "21.2",
+                755,
+                109
+            ],
+            [
+                "K Means Project Overview",
+                "02:53",
+                "21.3",
+                173,
+                110
+            ],
+            [
+                "K Means Project Solutions",
+                "16:38",
+                "21.4",
+                998,
+                111
+            ]
+        ],
+        "total": "37min",
+        "duration": 2220,
+        "name": "K Means Clustering",
+        "durs": [
+            315,
+            755,
+            173,
+            998
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Principal Component Analysis",
+                "03:26",
+                "22.1",
+                206,
+                112
+            ],
+            [
+                "PCA with Python",
+                "16:58",
+                "22.2",
+                1018,
+                113
+            ]
+        ],
+        "total": "20min",
+        "duration": 1200,
+        "name": "Principal Component Analysis",
+        "durs": [
+            206,
+            1018
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "Recommender Systems",
+                "04:13",
+                "23.1",
+                253,
+                114
+            ],
+            [
+                "Recommender Systems with Python - Part 1",
+                "13:36",
+                "23.2",
+                816,
+                115
+            ],
+            [
+                "Recommender Systems with Python - Part 2",
+                "13:21",
+                "23.3",
+                801,
+                116
+            ]
+        ],
+        "total": "31min",
+        "duration": 1860,
+        "name": "Recommender Systems",
+        "durs": [
+            253,
+            816,
+            801
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "Natural Language Processing Theory",
+                "05:06",
+                "24.1",
+                306,
+                117
+            ],
+            [
+                "NLP with Python - Part 1",
+                "16:02",
+                "24.2",
+                962,
+                118
+            ],
+            [
+                "NLP with Python - Part 2",
+                "18:46",
+                "24.3",
+                1126,
+                119
+            ],
+            [
+                "NLP with Python - Part 3",
+                "17:30",
+                "24.4",
+                1050,
+                120
+            ],
+            [
+                "NLP Project Overview",
+                "02:04",
+                "24.5",
+                124,
+                121
+            ],
+            [
+                "NLP Project Solutions",
+                "19:26",
+                "24.6",
+                1166,
+                122
+            ]
+        ],
+        "total": "1hr 19min",
+        "duration": 4740,
+        "name": "Natural Language Processing",
+        "durs": [
+            306,
+            962,
+            1126,
+            1050,
+            124,
+            1166
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "Download TensorFlow Notebooks Here",
+                "00:02",
+                "25.1",
+                2,
+                123
+            ],
+            [
+                "Quick Check for Notes",
+                "1 question",
+                "",
+                0,
+                124
+            ],
+            [
+                "Welcome to the Deep Learning Section!",
+                "00:21",
+                "25.2",
+                21,
+                124
+            ],
+            [
+                "Introduction to Artificial Neural Networks (ANN)",
+                "02:15",
+                "25.3",
+                135,
+                125
+            ],
+            [
+                "Installing Tensorflow",
+                "00:06",
+                "25.4",
+                6,
+                126
+            ],
+            [
+                "Perceptron Model",
+                "10:39",
+                "25.5",
+                639,
+                127
+            ],
+            [
+                "Neural Networks",
+                "07:19",
+                "25.6",
+                439,
+                128
+            ],
+            [
+                "Activation Functions",
+                "10:39",
+                "25.7",
+                639,
+                129
+            ],
+            [
+                "Multi-Class Classification Considerations",
+                "10:34",
+                "25.8",
+                634,
+                130
+            ],
+            [
+                "Cost Functions and Gradient Descent",
+                "18:13",
+                "25.9",
+                1093,
+                131
+            ],
+            [
+                "Backpropagation",
+                "14:47",
+                "25.10",
+                887,
+                132
+            ],
+            [
+                "TensorFlow vs Keras",
+                "02:13",
+                "25.11",
+                133,
+                133
+            ],
+            [
+                "TF Syntax Basics - Part One - Preparing the Data",
+                "10:49",
+                "25.12",
+                649,
+                134
+            ],
+            [
+                "TF Syntax Basics - Part Two - Creating and Training the Model",
+                "13:59",
+                "25.13",
+                839,
+                135
+            ],
+            [
+                "TF Syntax Basics - Part Three - Model Evaluation",
+                "12:56",
+                "25.14",
+                776,
+                136
+            ],
+            [
+                "TF Regression Code Along - Exploratory Data Analysis",
+                "18:50",
+                "25.15",
+                1130,
+                137
+            ],
+            [
+                "TF Regression Code Along - Exploratory Data Analysis - Continued",
+                "13:15",
+                "25.16",
+                795,
+                138
+            ],
+            [
+                "TF Regression Code Along - Data Preprocessing and Creating a Model",
+                "08:42",
+                "25.17",
+                522,
+                139
+            ],
+            [
+                "TF Regression Code Along - Model Evaluation and Predictions",
+                "11:23",
+                "25.18",
+                683,
+                140
+            ],
+            [
+                "TF Classification Code Along - EDA and Preprocessing",
+                "08:05",
+                "25.19",
+                485,
+                141
+            ],
+            [
+                "TF Classification - Dealing with Overfitting and Evaluation",
+                "16:50",
+                "25.20",
+                1010,
+                142
+            ],
+            [
+                "TensorFlow 2.0 Project Options Overview",
+                "01:40",
+                "25.21",
+                100,
+                143
+            ],
+            [
+                "TensorFlow 2.0 Project Notebook Overview",
+                "07:41",
+                "25.22",
+                461,
+                144
+            ],
+            [
+                "Keras Project Solutions - Dealing with Missing Data",
+                "20:35",
+                "25.23",
+                1235,
+                145
+            ],
+            [
+                "Keras Project Solutions - Dealing with Missing Data - Part Two",
+                "14:46",
+                "25.24",
+                886,
+                146
+            ],
+            [
+                "Keras Project Solutions - Categorical Data",
+                "12:02",
+                "25.25",
+                722,
+                147
+            ],
+            [
+                "Keras Project Solutions - Data PreProcessing",
+                "17:23",
+                "25.26",
+                1043,
+                148
+            ],
+            [
+                "Keras Project Solutions - Data PreProcessing",
+                "03:45",
+                "25.27",
+                225,
+                149
+            ],
+            [
+                "Keras Project Solutions - Creating and Training a Model",
+                "03:57",
+                "25.28",
+                237,
+                150
+            ],
+            [
+                "Keras Project Solutions - Model Evaluation",
+                "09:42",
+                "25.29",
+                582,
+                151
+            ],
+            [
+                "Tensorboard",
+                "18:22",
+                "25.30",
+                1102,
+                152
+            ]
+        ],
+        "total": "5hr 2min",
+        "duration": 18120,
+        "name": "Neural Nets and Deep Learning",
+        "durs": [
+            2,
+            0,
+            21,
+            135,
+            6,
+            639,
+            439,
+            639,
+            634,
+            1093,
+            887,
+            133,
+            649,
+            839,
+            776,
+            1130,
+            795,
+            522,
+            683,
+            485,
+            1010,
+            100,
+            461,
+            1235,
+            886,
+            722,
+            1043,
+            225,
+            237,
+            582,
+            1102
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "Welcome to the Big Data Section!",
+                "00:23",
+                "26.1",
+                23,
+                153
+            ],
+            [
+                "Big Data Overview",
+                "05:31",
+                "26.2",
+                331,
+                154
+            ],
+            [
+                "Spark Overview",
+                "08:59",
+                "26.3",
+                539,
+                155
+            ],
+            [
+                "Local Spark Set-Up",
+                "00:59",
+                "26.4",
+                59,
+                156
+            ],
+            [
+                "AWS Account Set-Up",
+                "04:13",
+                "26.5",
+                253,
+                157
+            ],
+            [
+                "Quick Note on AWS Security",
+                "00:16",
+                "26.6",
+                16,
+                158
+            ],
+            [
+                "EC2 Instance Set-Up",
+                "16:18",
+                "26.7",
+                978,
+                159
+            ],
+            [
+                "SSH with Mac or Linux",
+                "04:49",
+                "26.8",
+                289,
+                160
+            ],
+            [
+                "PySpark Setup",
+                "23:48",
+                "26.9",
+                1428,
+                161
+            ],
+            [
+                "Lambda Expressions Review",
+                "05:26",
+                "26.10",
+                326,
+                162
+            ],
+            [
+                "Introduction to Spark and Python",
+                "08:16",
+                "26.11",
+                496,
+                163
+            ],
+            [
+                "RDD Transformations and Actions",
+                "23:08",
+                "26.12",
+                1388,
+                164
+            ]
+        ],
+        "total": "1hr 42min",
+        "duration": 6120,
+        "name": "Big Data and Spark with Python",
+        "durs": [
+            23,
+            331,
+            539,
+            59,
+            253,
+            16,
+            978,
+            289,
+            1428,
+            326,
+            496,
+            1388
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "Bonus Lecture",
+                "00:10",
+                "27.1",
+                10,
+                165
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "BONUS SECTION: THANK YOU!",
+        "durs": [
+            10
+        ]
+    }
+]

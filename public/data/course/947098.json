@@ -1,0 +1,166 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome to the Course!",
+                "01:55",
+                "1.1",
+                115,
+                1
+            ],
+            [
+                "What Is TypeScript & Why Should You Use It?",
+                "04:33",
+                "1.2",
+                273,
+                2
+            ],
+            [
+                "Join Our Learning Community",
+                "00:20",
+                "1.3",
+                20,
+                3
+            ],
+            [
+                "Installing & Using TypeScript",
+                "13:22",
+                "1.4",
+                802,
+                4
+            ],
+            [
+                "TypeScript Advantages - Overview",
+                "03:05",
+                "1.5",
+                185,
+                5
+            ],
+            [
+                "Course Outline",
+                "04:17",
+                "1.6",
+                257,
+                6
+            ],
+            [
+                "How To Get The Most Out Of The Course",
+                "03:13",
+                "1.7",
+                193,
+                7
+            ],
+            [
+                "Setting Up A Code Editor / IDE",
+                "03:06",
+                "1.8",
+                186,
+                8
+            ],
+            [
+                "The Course Project Setup",
+                "07:20",
+                "1.9",
+                440,
+                9
+            ]
+        ],
+        "total": "41min",
+        "duration": 2460,
+        "name": "Getting Started",
+        "durs": [
+            115,
+            273,
+            20,
+            802,
+            185,
+            257,
+            193,
+            186,
+            440
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [],
+        "total": "1hr 41min",
+        "duration": 6060,
+        "name": "TypeScript Basics & Basic Types",
+        "durs": []
+    },
+    {
+        "idx": 2,
+        "lectures": [],
+        "total": "55min",
+        "duration": 3300,
+        "name": "The TypeScript Compiler (and its Configuration)",
+        "durs": []
+    },
+    {
+        "idx": 3,
+        "lectures": [],
+        "total": "32min",
+        "duration": 1920,
+        "name": "Next-generation JavaScript & TypeScript",
+        "durs": []
+    },
+    {
+        "idx": 4,
+        "lectures": [],
+        "total": "1hr 36min",
+        "duration": 5760,
+        "name": "Classes & Interfaces",
+        "durs": []
+    },
+    {
+        "idx": 5,
+        "lectures": [],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Advanced Types",
+        "durs": []
+    },
+    {
+        "idx": 6,
+        "lectures": [],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Generics",
+        "durs": []
+    },
+    {
+        "idx": 7,
+        "lectures": [],
+        "total": "1hr 17min",
+        "duration": 4620,
+        "name": "Decorators",
+        "durs": []
+    },
+    {
+        "idx": 8,
+        "lectures": [],
+        "total": "2hr 41min",
+        "duration": 9660,
+        "name": "Practice Time! Let's build a Drag & Drop Project",
+        "durs": []
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "6 more sections",
+                null,
+                "",
+                0,
+                10
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Modules & Namespaces",
+        "durs": [
+            0
+        ]
+    }
+]

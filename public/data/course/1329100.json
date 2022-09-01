@@ -1,0 +1,1838 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "About this Course",
+                "02:06",
+                "1.1",
+                126,
+                1
+            ],
+            [
+                "What are Progressive Web Apps?",
+                "03:24",
+                "1.2",
+                204,
+                2
+            ],
+            [
+                "Join our Online Learning Community",
+                "00:21",
+                "1.3",
+                21,
+                3
+            ],
+            [
+                "PWAs vs Native Mobile Apps",
+                "06:07",
+                "1.4",
+                367,
+                4
+            ],
+            [
+                "Node.js Download",
+                "00:05",
+                "1.5",
+                5,
+                5
+            ],
+            [
+                "A Demo PWA & What We'll Build in this Course",
+                "06:24",
+                "1.6",
+                384,
+                6
+            ],
+            [
+                "Our First Progressive Web App",
+                "06:27",
+                "1.7",
+                387,
+                7
+            ],
+            [
+                "PWA Core Building Blocks",
+                "03:19",
+                "1.8",
+                199,
+                8
+            ],
+            [
+                "Comparing PWAs and SPAs",
+                "03:17",
+                "1.9",
+                197,
+                9
+            ],
+            [
+                "What is \"Progressive Enhancement\"?",
+                "03:23",
+                "1.10",
+                203,
+                10
+            ],
+            [
+                "Course Outline",
+                "04:24",
+                "1.11",
+                264,
+                11
+            ],
+            [
+                "Course Project Setup",
+                "06:10",
+                "1.12",
+                370,
+                12
+            ],
+            [
+                "How to get the Most out of this Course",
+                "02:11",
+                "1.13",
+                131,
+                13
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Getting Started",
+        "durs": [
+            126,
+            204,
+            21,
+            367,
+            5,
+            384,
+            387,
+            199,
+            197,
+            203,
+            264,
+            370,
+            131
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:01",
+                "2.1",
+                61,
+                14
+            ],
+            [
+                "Using an App Manifest to Make your App Installable",
+                "01:36",
+                "2.2",
+                96,
+                15
+            ],
+            [
+                "Adding the Manifest",
+                "03:40",
+                "2.3",
+                220,
+                16
+            ],
+            [
+                "Understanding App Manifest Properties",
+                "09:43",
+                "2.4",
+                583,
+                17
+            ],
+            [
+                "Adding Properties to the App Manifest",
+                "09:44",
+                "2.5",
+                584,
+                18
+            ],
+            [
+                "PWAs and Browser Support",
+                "02:16",
+                "2.6",
+                136,
+                19
+            ],
+            [
+                "Using the Chrome Developer Tools",
+                "01:35",
+                "2.7",
+                95,
+                20
+            ],
+            [
+                "Simulating the Web App on an Emulator",
+                "04:37",
+                "2.8",
+                277,
+                21
+            ],
+            [
+                "Preparing the Emulated Device for ALL PWA Features",
+                "00:49",
+                "2.9",
+                49,
+                22
+            ],
+            [
+                "Installing the Web App - Prerequisites",
+                "02:30",
+                "2.10",
+                150,
+                23
+            ],
+            [
+                "Understanding manifest.json",
+                "4 questions",
+                "",
+                0,
+                24
+            ],
+            [
+                "Adding Properties for Safari",
+                "05:50",
+                "2.11",
+                350,
+                24
+            ],
+            [
+                "Adding Properties for the Internet Explorer",
+                "02:30",
+                "2.12",
+                150,
+                25
+            ],
+            [
+                "Wrap Up",
+                "00:28",
+                "2.13",
+                28,
+                26
+            ],
+            [
+                "Useful Resources & Links",
+                "00:09",
+                "2.14",
+                9,
+                27
+            ]
+        ],
+        "total": "46min",
+        "duration": 2760,
+        "name": "Understanding the App Manifest",
+        "durs": [
+            61,
+            96,
+            220,
+            583,
+            584,
+            136,
+            95,
+            277,
+            49,
+            150,
+            0,
+            350,
+            150,
+            28,
+            9
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:40",
+                "3.1",
+                40,
+                28
+            ],
+            [
+                "Why Service Workers Are Amazing!",
+                "04:40",
+                "3.2",
+                280,
+                29
+            ],
+            [
+                "Understanding Service Worker Events",
+                "06:18",
+                "3.3",
+                378,
+                30
+            ],
+            [
+                "The Service Worker Lifecycle",
+                "05:20",
+                "3.4",
+                320,
+                31
+            ],
+            [
+                "Service Worker Browser Support",
+                "01:24",
+                "3.5",
+                84,
+                32
+            ],
+            [
+                "Registering a Service Worker",
+                "09:26",
+                "3.6",
+                566,
+                33
+            ],
+            [
+                "Reacting to Incoming Events (in SW)",
+                "05:39",
+                "3.7",
+                339,
+                34
+            ],
+            [
+                "Updating & Activating Service Workers",
+                "03:00",
+                "3.8",
+                180,
+                35
+            ],
+            [
+                "Non-Lifecycle Events",
+                "04:50",
+                "3.9",
+                290,
+                36
+            ],
+            [
+                "The App Install Banner & Chrome 68+",
+                "00:28",
+                "3.10",
+                28,
+                37
+            ],
+            [
+                "Getting that \"App Install Banner\"",
+                "02:40",
+                "3.11",
+                160,
+                38
+            ],
+            [
+                "Connecting Chrome Developer Tools to a Real/ Emulated Device",
+                "00:15",
+                "3.12",
+                15,
+                39
+            ],
+            [
+                "Testing the App on Real Device (and Installing the App!)",
+                "03:42",
+                "3.13",
+                222,
+                40
+            ],
+            [
+                "Deferring the App Install Banner",
+                "06:43",
+                "3.14",
+                403,
+                41
+            ],
+            [
+                "Wrap Up",
+                "01:20",
+                "3.15",
+                80,
+                42
+            ],
+            [
+                "Service Worker FAQ",
+                "01:13",
+                "3.16",
+                73,
+                43
+            ],
+            [
+                "Useful Resources & Links",
+                "00:09",
+                "3.17",
+                9,
+                44
+            ]
+        ],
+        "total": "58min",
+        "duration": 3480,
+        "name": "The Service Workers",
+        "durs": [
+            40,
+            280,
+            378,
+            320,
+            84,
+            566,
+            339,
+            180,
+            290,
+            28,
+            160,
+            15,
+            222,
+            403,
+            80,
+            73,
+            9
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:49",
+                "4.1",
+                49,
+                45
+            ],
+            [
+                "Async Code in JavaScript",
+                "03:54",
+                "4.2",
+                234,
+                46
+            ],
+            [
+                "Promises - Basics",
+                "04:40",
+                "4.3",
+                280,
+                47
+            ],
+            [
+                "Rejecting Promises",
+                "04:05",
+                "4.4",
+                245,
+                48
+            ],
+            [
+                "Where we Use Promises in our Project",
+                "02:25",
+                "4.5",
+                145,
+                49
+            ],
+            [
+                "Fetch - Basics",
+                "06:11",
+                "4.6",
+                371,
+                50
+            ],
+            [
+                "Sending Post Requests via Fetch",
+                "04:22",
+                "4.7",
+                262,
+                51
+            ],
+            [
+                "Fetch and CORS",
+                "03:12",
+                "4.8",
+                192,
+                52
+            ],
+            [
+                "Comparing Fetch and Ajax",
+                "03:04",
+                "4.9",
+                184,
+                53
+            ],
+            [
+                "Adding Polyfills (for Legacy Browser Support)",
+                "03:29",
+                "4.10",
+                209,
+                54
+            ],
+            [
+                "Fetch & Service Workers",
+                "02:05",
+                "4.11",
+                125,
+                55
+            ],
+            [
+                "Time to Practice - Promises & Fetch API",
+                "1 question",
+                "",
+                0,
+                56
+            ],
+            [
+                "[OPTIONAL] Assignment Solution",
+                "08:03",
+                "4.12",
+                483,
+                56
+            ],
+            [
+                "Wrap Up",
+                "00:56",
+                "4.13",
+                56,
+                57
+            ],
+            [
+                "Useful Resources & Links",
+                "00:09",
+                "4.14",
+                9,
+                58
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Promise and Fetch",
+        "durs": [
+            49,
+            234,
+            280,
+            245,
+            145,
+            371,
+            262,
+            192,
+            184,
+            209,
+            125,
+            0,
+            483,
+            56,
+            9
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:43",
+                "5.1",
+                43,
+                59
+            ],
+            [
+                "Why Caching?",
+                "03:06",
+                "5.2",
+                186,
+                60
+            ],
+            [
+                "Understanding the Cache API",
+                "04:00",
+                "5.3",
+                240,
+                61
+            ],
+            [
+                "Browser Support",
+                "01:49",
+                "5.4",
+                109,
+                62
+            ],
+            [
+                "Adjusting the Course Project",
+                "02:53",
+                "5.5",
+                173,
+                63
+            ],
+            [
+                "Identifying (Pre-)Cacheable Items",
+                "03:07",
+                "5.6",
+                187,
+                64
+            ],
+            [
+                "Static Caching/ Precaching",
+                "11:04",
+                "5.7",
+                664,
+                65
+            ],
+            [
+                "Retrieving Items from the Cache",
+                "04:55",
+                "5.8",
+                295,
+                66
+            ],
+            [
+                "Adding & Retrieving Multiple Files (to/ from Cache)",
+                "03:06",
+                "5.9",
+                186,
+                67
+            ],
+            [
+                "Cache Multiple Files with addAll",
+                "09:10",
+                "5.10",
+                550,
+                68
+            ],
+            [
+                "Dynamic Caching - The Basics",
+                "01:54",
+                "5.11",
+                114,
+                69
+            ],
+            [
+                "Implementing Dynamic Caching",
+                "07:19",
+                "5.12",
+                439,
+                70
+            ],
+            [
+                "Handling Errors",
+                "02:13",
+                "5.13",
+                133,
+                71
+            ],
+            [
+                "Adding Cache Versioning",
+                "06:56",
+                "5.14",
+                416,
+                72
+            ],
+            [
+                "Different Cache Versions & Cleanup",
+                "06:37",
+                "5.15",
+                397,
+                73
+            ],
+            [
+                "Optimizing Cache Management",
+                "02:42",
+                "5.16",
+                162,
+                74
+            ],
+            [
+                "Time to Practice: Service Workers & Caching",
+                "1 question",
+                "",
+                0,
+                75
+            ],
+            [
+                "[OPTIONAL] Assignment Solution",
+                "21:51",
+                "5.17",
+                1311,
+                75
+            ],
+            [
+                "Wrap Up",
+                "00:35",
+                "5.18",
+                35,
+                76
+            ],
+            [
+                "Useful Resources & Links",
+                "00:04",
+                "5.19",
+                4,
+                77
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Service Workers - Caching",
+        "durs": [
+            43,
+            186,
+            240,
+            109,
+            173,
+            187,
+            664,
+            295,
+            186,
+            550,
+            114,
+            439,
+            133,
+            416,
+            397,
+            162,
+            0,
+            1311,
+            35,
+            4
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:12",
+                "6.1",
+                72,
+                78
+            ],
+            [
+                "Module Preparation: Adding a Button",
+                "04:04",
+                "6.2",
+                244,
+                79
+            ],
+            [
+                "Offering \"Cache on Demand\"",
+                "06:51",
+                "6.3",
+                411,
+                80
+            ],
+            [
+                "Providing an Offline Fallback Page",
+                "06:21",
+                "6.4",
+                381,
+                81
+            ],
+            [
+                "Strategy: Cache with Network Fallback",
+                "01:43",
+                "6.5",
+                103,
+                82
+            ],
+            [
+                "Strategy: Cache Only",
+                "03:06",
+                "6.6",
+                186,
+                83
+            ],
+            [
+                "Strategy: Network Only",
+                "01:57",
+                "6.7",
+                117,
+                84
+            ],
+            [
+                "Strategy: Network with Cache Fallback",
+                "06:21",
+                "6.8",
+                381,
+                85
+            ],
+            [
+                "Strategy: Cache then Network",
+                "09:05",
+                "6.9",
+                545,
+                86
+            ],
+            [
+                "Cache then Network & Dynamic Caching",
+                "05:11",
+                "6.10",
+                311,
+                87
+            ],
+            [
+                "Cache then Network with Offline Support",
+                "05:59",
+                "6.11",
+                359,
+                88
+            ],
+            [
+                "Cache Strategies & \"Routing\"",
+                "03:09",
+                "6.12",
+                189,
+                89
+            ],
+            [
+                "Applying Cache Only",
+                "05:45",
+                "6.13",
+                345,
+                90
+            ],
+            [
+                "Time to Practice - Advanced Caching",
+                "1 question",
+                "",
+                0,
+                91
+            ],
+            [
+                "[OPTIONAL] Assignment Solution",
+                "25:52",
+                "6.14",
+                1552,
+                91
+            ],
+            [
+                "A Better Way Of Parsing Static Cache URLs",
+                "02:40",
+                "6.15",
+                160,
+                92
+            ],
+            [
+                "Making Route Matching More Precise",
+                "00:39",
+                "6.16",
+                39,
+                93
+            ],
+            [
+                "A Better Way Of Serving Fallback Files",
+                "02:57",
+                "6.17",
+                177,
+                94
+            ],
+            [
+                "Post Request and Cache API",
+                "03:18",
+                "6.18",
+                198,
+                95
+            ],
+            [
+                "Cleaning/ Trimming the Cache",
+                "06:06",
+                "6.19",
+                366,
+                96
+            ],
+            [
+                "Getting Rid of a Service Worker",
+                "03:49",
+                "6.20",
+                229,
+                97
+            ],
+            [
+                "Preparing the Project for the Next Steps",
+                "00:29",
+                "6.21",
+                29,
+                98
+            ],
+            [
+                "Wrap Up",
+                "00:57",
+                "6.22",
+                57,
+                99
+            ],
+            [
+                "Useful Resources & Links",
+                "00:03",
+                "6.23",
+                3,
+                100
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "Service Workers - Advanced Caching",
+        "durs": [
+            72,
+            244,
+            411,
+            381,
+            103,
+            186,
+            117,
+            381,
+            545,
+            311,
+            359,
+            189,
+            345,
+            0,
+            1552,
+            160,
+            39,
+            177,
+            198,
+            366,
+            229,
+            29,
+            57,
+            3
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:01",
+                "7.1",
+                61,
+                101
+            ],
+            [
+                "Understanding the Basics",
+                "01:12",
+                "7.2",
+                72,
+                102
+            ],
+            [
+                "Changed Firebase Console Layout",
+                "00:18",
+                "7.3",
+                18,
+                103
+            ],
+            [
+                "Setting Up Firebase",
+                "07:19",
+                "7.4",
+                439,
+                104
+            ],
+            [
+                "Connecting Frontend to Backend",
+                "08:31",
+                "7.5",
+                511,
+                105
+            ],
+            [
+                "Dynamic Caching vs. Caching Dynamic Content",
+                "04:51",
+                "7.6",
+                291,
+                106
+            ],
+            [
+                "Introducing IndexedDB",
+                "03:34",
+                "7.7",
+                214,
+                107
+            ],
+            [
+                "IndexedDB Browser Support",
+                "00:38",
+                "7.8",
+                38,
+                108
+            ],
+            [
+                "Adding the IDB File",
+                "02:31",
+                "7.9",
+                151,
+                109
+            ],
+            [
+                "Storing Fetched Posts in IndexedDB",
+                "13:11",
+                "7.10",
+                791,
+                110
+            ],
+            [
+                "Using IndexedDB in the Service Worker",
+                "03:56",
+                "7.11",
+                236,
+                111
+            ],
+            [
+                "Reading Data from IDB",
+                "06:40",
+                "7.12",
+                400,
+                112
+            ],
+            [
+                "Clearing IDB & Handling Server-Client Mismatch",
+                "03:40",
+                "7.13",
+                220,
+                113
+            ],
+            [
+                "Implementing the Clear Database Method",
+                "03:58",
+                "7.14",
+                238,
+                114
+            ],
+            [
+                "Deleting Single Items from the Database",
+                "04:05",
+                "7.15",
+                245,
+                115
+            ],
+            [
+                "IndexedDB and Caching Strategies",
+                "01:33",
+                "7.16",
+                93,
+                116
+            ],
+            [
+                "Wrap Up",
+                "00:45",
+                "7.17",
+                45,
+                117
+            ],
+            [
+                "Useful Resources & Links",
+                "00:04",
+                "7.18",
+                4,
+                118
+            ]
+        ],
+        "total": "1hr 8min",
+        "duration": 4080,
+        "name": "IndexedDB and Dynamic Data",
+        "durs": [
+            61,
+            72,
+            18,
+            439,
+            511,
+            291,
+            214,
+            38,
+            151,
+            791,
+            236,
+            400,
+            220,
+            238,
+            245,
+            93,
+            45,
+            4
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:18",
+                "8.1",
+                78,
+                119
+            ],
+            [
+                "Responsive Design in this Course",
+                "02:51",
+                "8.2",
+                171,
+                120
+            ],
+            [
+                "Understanding Responsive Design in our Project",
+                "03:30",
+                "8.3",
+                210,
+                121
+            ],
+            [
+                "CSS and Media Queries",
+                "09:46",
+                "8.4",
+                586,
+                122
+            ],
+            [
+                "Want to see more of your Images?",
+                "00:36",
+                "8.5",
+                36,
+                123
+            ],
+            [
+                "Using Images in a Responsive Way",
+                "08:52",
+                "8.6",
+                532,
+                124
+            ],
+            [
+                "Adding Animations",
+                "08:29",
+                "8.7",
+                509,
+                125
+            ],
+            [
+                "The Viewport & Scaling",
+                "01:46",
+                "8.8",
+                106,
+                126
+            ],
+            [
+                "Wrap Up",
+                "00:46",
+                "8.9",
+                46,
+                127
+            ],
+            [
+                "Useful Resources & Links",
+                "00:07",
+                "8.10",
+                7,
+                128
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Creating a Responsive User Interface (UI)",
+        "durs": [
+            78,
+            171,
+            210,
+            586,
+            36,
+            532,
+            509,
+            106,
+            46,
+            7
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:04",
+                "9.1",
+                64,
+                129
+            ],
+            [
+                "How does Background Sync Work?",
+                "03:33",
+                "9.2",
+                213,
+                130
+            ],
+            [
+                "Adding the Basic Setup to our Project",
+                "04:04",
+                "9.3",
+                244,
+                131
+            ],
+            [
+                "Registering a Synchronization Task",
+                "04:37",
+                "9.4",
+                277,
+                132
+            ],
+            [
+                "Storing our Post in IndexedDB",
+                "06:00",
+                "9.5",
+                360,
+                133
+            ],
+            [
+                "Adding a Fallback",
+                "04:12",
+                "9.6",
+                252,
+                134
+            ],
+            [
+                "Syncing Data in the Service Worker",
+                "15:52",
+                "9.7",
+                952,
+                135
+            ],
+            [
+                "Understanding Periodic Sync",
+                "02:16",
+                "9.8",
+                136,
+                136
+            ],
+            [
+                "MUST READ: Firebase Cloud Functions & Billing",
+                "00:56",
+                "9.9",
+                56,
+                137
+            ],
+            [
+                "Adding Server Side Code",
+                "15:11",
+                "9.10",
+                911,
+                138
+            ],
+            [
+                "Fixing Errors",
+                "05:21",
+                "9.11",
+                321,
+                139
+            ],
+            [
+                "Wrap Up",
+                "00:49",
+                "9.12",
+                49,
+                140
+            ],
+            [
+                "Useful Resources & Links",
+                "00:04",
+                "9.13",
+                4,
+                141
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Background Sync",
+        "durs": [
+            64,
+            213,
+            244,
+            277,
+            360,
+            252,
+            952,
+            136,
+            56,
+            911,
+            321,
+            49,
+            4
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:04",
+                "10.1",
+                64,
+                142
+            ],
+            [
+                "Why we need Web Push Notifications",
+                "01:56",
+                "10.2",
+                116,
+                143
+            ],
+            [
+                "How Push & Notifications Work",
+                "09:04",
+                "10.3",
+                544,
+                144
+            ],
+            [
+                "Displaying Notifications - Some Theory First",
+                "01:52",
+                "10.4",
+                112,
+                145
+            ],
+            [
+                "Browser Support",
+                "02:02",
+                "10.5",
+                122,
+                146
+            ],
+            [
+                "Requesting Permissions",
+                "08:07",
+                "10.6",
+                487,
+                147
+            ],
+            [
+                "Displaying Notifications",
+                "03:38",
+                "10.7",
+                218,
+                148
+            ],
+            [
+                "Notifications from Within the Service Worker",
+                "03:33",
+                "10.8",
+                213,
+                149
+            ],
+            [
+                "Understanding Notifications' Options",
+                "08:49",
+                "10.9",
+                529,
+                150
+            ],
+            [
+                "Advanced Options",
+                "02:58",
+                "10.10",
+                178,
+                151
+            ],
+            [
+                "Adding Actions to Notifications",
+                "02:23",
+                "10.11",
+                143,
+                152
+            ],
+            [
+                "Reacting to Notification Interaction - Clicks",
+                "05:21",
+                "10.12",
+                321,
+                153
+            ],
+            [
+                "Reacting to Notification Interaction - Closing",
+                "02:36",
+                "10.13",
+                156,
+                154
+            ],
+            [
+                "From Notifications to Push Messages",
+                "06:36",
+                "10.14",
+                396,
+                155
+            ],
+            [
+                "Creating a Push Subscription",
+                "04:32",
+                "10.15",
+                272,
+                156
+            ],
+            [
+                "Storing Subscriptions",
+                "10:50",
+                "10.16",
+                650,
+                157
+            ],
+            [
+                "Connecting Server & Client (PWA)",
+                "01:45",
+                "10.17",
+                105,
+                158
+            ],
+            [
+                "Sending Push Messages from the Server",
+                "09:55",
+                "10.18",
+                595,
+                159
+            ],
+            [
+                "Listening to Push Messages",
+                "07:39",
+                "10.19",
+                459,
+                160
+            ],
+            [
+                "Displaying Push Notifications on a Real Device",
+                "02:03",
+                "10.20",
+                123,
+                161
+            ],
+            [
+                "Opening a Page upon User Interaction",
+                "05:45",
+                "10.21",
+                345,
+                162
+            ],
+            [
+                "Improving our Code",
+                "04:28",
+                "10.22",
+                268,
+                163
+            ],
+            [
+                "Wrap Up",
+                "01:16",
+                "10.23",
+                76,
+                164
+            ],
+            [
+                "Useful Resources & Links",
+                "00:08",
+                "10.24",
+                8,
+                165
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "Web Push Notifications",
+        "durs": [
+            64,
+            116,
+            544,
+            112,
+            122,
+            487,
+            218,
+            213,
+            529,
+            178,
+            143,
+            321,
+            156,
+            396,
+            272,
+            650,
+            105,
+            595,
+            459,
+            123,
+            345,
+            268,
+            76,
+            8
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:55",
+                "11.1",
+                55,
+                166
+            ],
+            [
+                "Preparing the Project",
+                "07:28",
+                "11.2",
+                448,
+                167
+            ],
+            [
+                "Getting DOM Access",
+                "04:35",
+                "11.3",
+                275,
+                168
+            ],
+            [
+                "Creating our own Polyfills",
+                "08:04",
+                "11.4",
+                484,
+                169
+            ],
+            [
+                "Getting the Video Image",
+                "07:25",
+                "11.5",
+                445,
+                170
+            ],
+            [
+                "Hooking Up the Capture Button",
+                "06:25",
+                "11.6",
+                385,
+                171
+            ],
+            [
+                "Storing the Image on a Server",
+                "08:40",
+                "11.7",
+                520,
+                172
+            ],
+            [
+                "Accepting File Upload Example with Firebase",
+                "14:36",
+                "11.8",
+                876,
+                173
+            ],
+            [
+                "MUST READ: Required Changes to Cloud Function Code",
+                "00:58",
+                "11.9",
+                58,
+                174
+            ],
+            [
+                "Testing the Camera & Upload",
+                "04:51",
+                "11.10",
+                291,
+                175
+            ],
+            [
+                "Implementing a Fallback",
+                "02:30",
+                "11.11",
+                150,
+                176
+            ],
+            [
+                "Getting the User Position",
+                "16:38",
+                "11.12",
+                998,
+                177
+            ],
+            [
+                "Fixing Bugs",
+                "08:46",
+                "11.13",
+                526,
+                178
+            ],
+            [
+                "Testing the App on a Real Device",
+                "01:43",
+                "11.14",
+                103,
+                179
+            ],
+            [
+                "Wrap Up",
+                "00:47",
+                "11.15",
+                47,
+                180
+            ],
+            [
+                "Useful Resources & Links",
+                "00:04",
+                "11.16",
+                4,
+                181
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Native Device Features",
+        "durs": [
+            55,
+            448,
+            275,
+            484,
+            445,
+            385,
+            520,
+            876,
+            58,
+            291,
+            150,
+            998,
+            526,
+            103,
+            47,
+            4
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:01",
+                "12.1",
+                61,
+                182
+            ],
+            [
+                "Understanding the Basics",
+                "00:55",
+                "12.2",
+                55,
+                183
+            ],
+            [
+                "The Workbox Version Used In This Course",
+                "00:16",
+                "12.3",
+                16,
+                184
+            ],
+            [
+                "Installing Workbox & Using It",
+                "06:56",
+                "12.4",
+                416,
+                185
+            ],
+            [
+                "Configuring Workbox Precaching",
+                "05:02",
+                "12.5",
+                302,
+                186
+            ],
+            [
+                "Customizing the Service Worker",
+                "04:45",
+                "12.6",
+                285,
+                187
+            ],
+            [
+                "Implementing Routing with the Workbox Router",
+                "06:41",
+                "12.7",
+                401,
+                188
+            ],
+            [
+                "Expanding Dynamic Caching",
+                "03:31",
+                "12.8",
+                211,
+                189
+            ],
+            [
+                "Options and Setting Up Strategies",
+                "06:09",
+                "12.9",
+                369,
+                190
+            ],
+            [
+                "Custom Handlers (Example: For IndexedDB)",
+                "03:45",
+                "12.10",
+                225,
+                191
+            ],
+            [
+                "Providing an Offline HTML Fallback",
+                "06:47",
+                "12.11",
+                407,
+                192
+            ],
+            [
+                "Handling Background Synchronisation and Push Notifications",
+                "03:26",
+                "12.12",
+                206,
+                193
+            ],
+            [
+                "Understanding the Workbox Documentation",
+                "05:17",
+                "12.13",
+                317,
+                194
+            ],
+            [
+                "Enhancing the Build Workflow",
+                "06:30",
+                "12.14",
+                390,
+                195
+            ],
+            [
+                "Running our App on a Real Server",
+                "03:56",
+                "12.15",
+                236,
+                196
+            ],
+            [
+                "Auditing our Webpage with Lighthouse",
+                "04:24",
+                "12.16",
+                264,
+                197
+            ],
+            [
+                "Wrap Up",
+                "01:11",
+                "12.17",
+                71,
+                198
+            ],
+            [
+                "Useful Resources & Links",
+                "00:04",
+                "12.18",
+                4,
+                199
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Service Worker Management with Workbox",
+        "durs": [
+            61,
+            55,
+            16,
+            416,
+            302,
+            285,
+            401,
+            211,
+            369,
+            225,
+            407,
+            206,
+            317,
+            390,
+            236,
+            264,
+            71,
+            4
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:18",
+                "13.1",
+                78,
+                200
+            ],
+            [
+                "React with create-react-app",
+                "09:29",
+                "13.2",
+                569,
+                201
+            ],
+            [
+                "A General Note about SPAs and PWAs",
+                "01:28",
+                "13.3",
+                88,
+                202
+            ],
+            [
+                "Angular with the CLI",
+                "14:39",
+                "13.4",
+                879,
+                203
+            ],
+            [
+                "Vue with Vue CLI",
+                "06:49",
+                "13.5",
+                409,
+                204
+            ],
+            [
+                "Wrap Up",
+                "01:00",
+                "13.6",
+                60,
+                205
+            ],
+            [
+                "Useful Resources & Links",
+                "00:19",
+                "13.7",
+                19,
+                206
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "SPAs and PWAs",
+        "durs": [
+            78,
+            569,
+            88,
+            879,
+            409,
+            60,
+            19
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Course Roundup",
+                "03:21",
+                "14.1",
+                201,
+                207
+            ],
+            [
+                "Bonus: More Content!",
+                "00:20",
+                "14.2",
+                20,
+                208
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Course Roundup",
+        "durs": [
+            201,
+            20
+        ]
+    }
+]

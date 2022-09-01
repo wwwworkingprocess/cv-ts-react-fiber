@@ -1,0 +1,584 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "08:26",
+                "1.1",
+                506,
+                1
+            ],
+            [
+                "Setting up Your Environment",
+                "03:03",
+                "1.2",
+                183,
+                2
+            ],
+            [
+                "Setting up an IDE on Windows",
+                "05:58",
+                "1.3",
+                358,
+                3
+            ],
+            [
+                "Install the Bracket Pair Colorizer Extension",
+                "02:16",
+                "1.4",
+                136,
+                4
+            ]
+        ],
+        "total": "20min",
+        "duration": 1200,
+        "name": "Introduction and Setup",
+        "durs": [
+            506,
+            183,
+            358,
+            136
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Your First F# Program",
+                "02:42",
+                "2.1",
+                162,
+                5
+            ],
+            [
+                "Viewing Source Files with VS Code",
+                "07:25",
+                "2.2",
+                445,
+                6
+            ],
+            [
+                "Your First F# Program and Viewing Source Files Recap",
+                "02:04",
+                "2.3",
+                124,
+                7
+            ],
+            [
+                "Running and Debugging Programs",
+                "09:37",
+                "2.4",
+                577,
+                8
+            ]
+        ],
+        "total": "22min",
+        "duration": 1320,
+        "name": "Start F# Programming",
+        "durs": [
+            162,
+            445,
+            124,
+            577
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Conditional Branching with If/Else",
+                "12:25",
+                "3.1",
+                745,
+                9
+            ],
+            [
+                "Conditional Branching with If/Else - Recap",
+                "02:00",
+                "3.2",
+                120,
+                10
+            ],
+            [
+                "Loops and Iteration",
+                "09:35",
+                "3.3",
+                575,
+                11
+            ],
+            [
+                "Loops and Iteration - Recap",
+                "01:16",
+                "3.4",
+                76,
+                12
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "Control Flow",
+        "durs": [
+            745,
+            120,
+            575,
+            76
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Forward Piping",
+                "07:24",
+                "4.1",
+                444,
+                13
+            ],
+            [
+                "Forward Piping - Recap",
+                "00:49",
+                "4.2",
+                49,
+                14
+            ]
+        ],
+        "total": "8min",
+        "duration": 480,
+        "name": "Forward Piping",
+        "durs": [
+            444,
+            49
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Collection Functions Part 1",
+                "20:32",
+                "5.1",
+                1232,
+                15
+            ],
+            [
+                "Collection Functions Part 1 - Recap",
+                "02:25",
+                "5.2",
+                145,
+                16
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Collection Functions",
+        "durs": [
+            1232,
+            145
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Record Types",
+                "09:35",
+                "6.1",
+                575,
+                17
+            ],
+            [
+                "Record Types - Recap",
+                "01:29",
+                "6.2",
+                89,
+                18
+            ]
+        ],
+        "total": "11min",
+        "duration": 660,
+        "name": "Record Types",
+        "durs": [
+            575,
+            89
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Missing Data",
+                "10:52",
+                "7.1",
+                652,
+                19
+            ],
+            [
+                "Missing Data - Recap",
+                "01:21",
+                "7.2",
+                81,
+                20
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Missing Data",
+        "durs": [
+            652,
+            81
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Arguments and Parameters",
+                "15:33",
+                "8.1",
+                933,
+                21
+            ],
+            [
+                "Arguments and Parameters - Recap",
+                "02:23",
+                "8.2",
+                143,
+                22
+            ]
+        ],
+        "total": "18min",
+        "duration": 1080,
+        "name": "Arguments and Parameters",
+        "durs": [
+            933,
+            143
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Organizing Projects into Files",
+                "05:11",
+                "9.1",
+                311,
+                23
+            ],
+            [
+                "Organizing Projects into Files - Recap",
+                "01:19",
+                "9.2",
+                79,
+                24
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Project Organization",
+        "durs": [
+            311,
+            79
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Discriminated Unions",
+                "11:18",
+                "10.1",
+                678,
+                25
+            ],
+            [
+                "Discriminated Unions - Recap",
+                "01:55",
+                "10.2",
+                115,
+                26
+            ],
+            [
+                "Pattern Matching",
+                "12:49",
+                "10.3",
+                769,
+                27
+            ],
+            [
+                "Pattern Matching - Recap",
+                "01:26",
+                "10.4",
+                86,
+                28
+            ]
+        ],
+        "total": "27min",
+        "duration": 1620,
+        "name": "Discriminated Unions and Pattern Matching",
+        "durs": [
+            678,
+            115,
+            769,
+            86
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Handling Exceptions",
+                "06:40",
+                "11.1",
+                400,
+                29
+            ],
+            [
+                "Handling Exceptions - Recap",
+                "00:55",
+                "11.2",
+                55,
+                30
+            ]
+        ],
+        "total": "8min",
+        "duration": 480,
+        "name": "Error Handling",
+        "durs": [
+            400,
+            55
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Generics",
+                "11:08",
+                "12.1",
+                668,
+                31
+            ],
+            [
+                "Generics - Recap",
+                "01:02",
+                "12.2",
+                62,
+                32
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Generics",
+        "durs": [
+            668,
+            62
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Collection Functions Part 2",
+                "14:24",
+                "13.1",
+                864,
+                33
+            ],
+            [
+                "Collection Functions Part 2 - Recap",
+                "01:47",
+                "13.2",
+                107,
+                34
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "More on Collection Functions",
+        "durs": [
+            864,
+            107
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Creating and Populating Arrays",
+                "11:12",
+                "14.1",
+                672,
+                35
+            ],
+            [
+                "Creating and Populating Arrays - Recap",
+                "02:04",
+                "14.2",
+                124,
+                36
+            ]
+        ],
+        "total": "13min",
+        "duration": 780,
+        "name": "Arrays",
+        "durs": [
+            672,
+            124
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Sequences",
+                "10:30",
+                "15.1",
+                630,
+                37
+            ],
+            [
+                "Sequences - Recap",
+                "02:09",
+                "15.2",
+                129,
+                38
+            ],
+            [
+                "Creating Sequences",
+                "14:53",
+                "15.3",
+                893,
+                39
+            ],
+            [
+                "Creating Sequences - Recap",
+                "02:37",
+                "15.4",
+                157,
+                40
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Sequences",
+        "durs": [
+            630,
+            129,
+            893,
+            157
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Dictionaries",
+                "12:13",
+                "16.1",
+                733,
+                41
+            ],
+            [
+                "Dictionaries - Recap",
+                "01:35",
+                "16.2",
+                95,
+                42
+            ],
+            [
+                "F# Maps",
+                "12:13",
+                "16.3",
+                733,
+                43
+            ],
+            [
+                "F# Maps - Recap",
+                "01:33",
+                "16.4",
+                93,
+                44
+            ]
+        ],
+        "total": "28min",
+        "duration": 1680,
+        "name": "Lookups",
+        "durs": [
+            733,
+            95,
+            733,
+            93
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Object Orientation and Classes",
+                "14:55",
+                "17.1",
+                895,
+                45
+            ],
+            [
+                "Object Orientation and Classes - Recap",
+                "01:52",
+                "17.2",
+                112,
+                46
+            ]
+        ],
+        "total": "17min",
+        "duration": 1020,
+        "name": "Object Orientation",
+        "durs": [
+            895,
+            112
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "F# Lists",
+                "12:46",
+                "18.1",
+                766,
+                47
+            ],
+            [
+                "F# Lists - Recap",
+                "02:18",
+                "18.2",
+                138,
+                48
+            ]
+        ],
+        "total": "15min",
+        "duration": 900,
+        "name": "F# Lists",
+        "durs": [
+            766,
+            138
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Conclusion",
+                "03:01",
+                "19.1",
+                181,
+                49
+            ]
+        ],
+        "total": "3min",
+        "duration": 180,
+        "name": "Conclusion",
+        "durs": [
+            181
+        ]
+    }
+]

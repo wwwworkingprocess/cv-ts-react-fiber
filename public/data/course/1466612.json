@@ -1,0 +1,2074 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "03:44",
+                "1.1",
+                224,
+                1
+            ],
+            [
+                "Link to Completed Code on Github",
+                "00:04",
+                "1.2",
+                4,
+                2
+            ],
+            [
+                "A Short History Lesson",
+                "04:13",
+                "1.3",
+                253,
+                3
+            ],
+            [
+                "Link to Original Bitcoin White Paper",
+                "00:07",
+                "1.4",
+                7,
+                4
+            ],
+            [
+                "What is Ethereum?",
+                "04:16",
+                "1.5",
+                256,
+                5
+            ],
+            [
+                "Interfacing with Ethereum Networks",
+                "03:14",
+                "1.6",
+                194,
+                6
+            ],
+            [
+                "Metamask Setup",
+                "05:24",
+                "1.7",
+                324,
+                7
+            ],
+            [
+                "Ethereum Accounts",
+                "05:28",
+                "1.8",
+                328,
+                8
+            ],
+            [
+                "Receiving Ether",
+                "03:34",
+                "1.9",
+                214,
+                9
+            ],
+            [
+                "What's a Transaction?",
+                "07:43",
+                "1.10",
+                463,
+                10
+            ],
+            [
+                "Why'd We Wait?",
+                "05:00",
+                "1.11",
+                300,
+                11
+            ],
+            [
+                "A Quick Note",
+                "00:16",
+                "1.12",
+                16,
+                12
+            ],
+            [
+                "Basic Blockchains",
+                "17:49",
+                "1.13",
+                1069,
+                13
+            ],
+            [
+                "Block Time",
+                "10:49",
+                "1.14",
+                649,
+                14
+            ],
+            [
+                "Smart Contracts",
+                "06:55",
+                "1.15",
+                415,
+                15
+            ],
+            [
+                "The Solidity Programming Language",
+                "05:03",
+                "1.16",
+                303,
+                16
+            ],
+            [
+                "Our First Contract",
+                "05:41",
+                "1.17",
+                341,
+                17
+            ],
+            [
+                "Quick Note - Remix Deprecation Warnings",
+                "00:21",
+                "1.18",
+                21,
+                18
+            ],
+            [
+                "Contract Structure",
+                "05:39",
+                "1.19",
+                339,
+                19
+            ],
+            [
+                "Function Declarations",
+                "08:59",
+                "1.20",
+                539,
+                20
+            ],
+            [
+                "Testing with Remix",
+                "10:57",
+                "1.21",
+                657,
+                21
+            ],
+            [
+                "Redeploying Contracts",
+                "02:34",
+                "1.22",
+                154,
+                22
+            ],
+            [
+                "Behind the Scenes of Deployment",
+                "05:43",
+                "1.23",
+                343,
+                23
+            ],
+            [
+                "More on Running Functions Than You Want to Know",
+                "14:15",
+                "1.24",
+                855,
+                24
+            ],
+            [
+                "Wei vs Ether",
+                "04:07",
+                "1.25",
+                247,
+                25
+            ],
+            [
+                "Gas and Transactions",
+                "11:24",
+                "1.26",
+                684,
+                26
+            ],
+            [
+                "Mnemonic Phrases",
+                "11:28",
+                "1.27",
+                688,
+                27
+            ],
+            [
+                "Getting More Ether",
+                "04:17",
+                "1.28",
+                257,
+                28
+            ]
+        ],
+        "total": "2hr 49min",
+        "duration": 10140,
+        "name": "What is Ethereum?",
+        "durs": [
+            224,
+            4,
+            253,
+            7,
+            256,
+            194,
+            324,
+            328,
+            214,
+            463,
+            300,
+            16,
+            1069,
+            649,
+            415,
+            303,
+            341,
+            21,
+            339,
+            539,
+            657,
+            154,
+            343,
+            855,
+            247,
+            684,
+            688,
+            257
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Don't Skip! Node JS Versioning",
+                "00:16",
+                "2.1",
+                16,
+                29
+            ],
+            [
+                "Contract Deployment",
+                "05:31",
+                "2.2",
+                331,
+                30
+            ],
+            [
+                "Boilerplate Requirements",
+                "05:09",
+                "2.3",
+                309,
+                31
+            ],
+            [
+                "Project File Walkthrough",
+                "04:32",
+                "2.4",
+                272,
+                32
+            ],
+            [
+                "Syntax Highlighters",
+                "00:23",
+                "2.5",
+                23,
+                33
+            ],
+            [
+                "Solidity \"AssertionError [ERR_ASSERTION]: Invalid callback specified\" errors",
+                "00:30",
+                "2.6",
+                30,
+                34
+            ],
+            [
+                "Compiling Solidity",
+                "06:22",
+                "2.7",
+                382,
+                35
+            ],
+            [
+                "The Compile Script",
+                "06:09",
+                "2.8",
+                369,
+                36
+            ],
+            [
+                "Testing Architecture",
+                "03:48",
+                "2.9",
+                228,
+                37
+            ],
+            [
+                "Web3 Install Issues on Windows",
+                "00:58",
+                "2.10",
+                58,
+                38
+            ],
+            [
+                "Installing Modules",
+                "04:15",
+                "2.11",
+                255,
+                39
+            ],
+            [
+                "Web3 Versioning",
+                "04:18",
+                "2.12",
+                258,
+                40
+            ],
+            [
+                "Web3 Providers",
+                "04:47",
+                "2.13",
+                287,
+                41
+            ],
+            [
+                "Testing with Mocha",
+                "18:16",
+                "2.14",
+                1096,
+                42
+            ],
+            [
+                "Mocha Structure",
+                "04:44",
+                "2.15",
+                284,
+                43
+            ],
+            [
+                "Fetching Accounts from Ganache",
+                "06:43",
+                "2.16",
+                403,
+                44
+            ],
+            [
+                "Refactor to Async/Await",
+                "02:39",
+                "2.17",
+                159,
+                45
+            ],
+            [
+                "Deployment with Web3",
+                "06:11",
+                "2.18",
+                371,
+                46
+            ],
+            [
+                "Deployed Inbox Overview",
+                "11:18",
+                "2.19",
+                678,
+                47
+            ],
+            [
+                "Asserting Deployment",
+                "05:22",
+                "2.20",
+                322,
+                48
+            ],
+            [
+                "Web3 Version Fix",
+                "00:49",
+                "2.21",
+                49,
+                49
+            ],
+            [
+                "Verifying the Initial Message",
+                "08:25",
+                "2.22",
+                505,
+                50
+            ],
+            [
+                "Testing Message Updates",
+                "06:24",
+                "2.23",
+                384,
+                51
+            ],
+            [
+                "Deployment with Infura",
+                "06:57",
+                "2.24",
+                417,
+                52
+            ],
+            [
+                "Infura Signup",
+                "04:18",
+                "2.25",
+                258,
+                53
+            ],
+            [
+                "Wallet Provider Setup",
+                "06:40",
+                "2.26",
+                400,
+                54
+            ],
+            [
+                "Updated Deploy Code",
+                "00:17",
+                "2.27",
+                17,
+                55
+            ],
+            [
+                "Deployment to Rinkeby",
+                "07:21",
+                "2.28",
+                441,
+                56
+            ],
+            [
+                "Observing Deployment on Etherscan",
+                "04:51",
+                "2.29",
+                291,
+                57
+            ],
+            [
+                "Deployed Contracts in Remix",
+                "07:13",
+                "2.30",
+                433,
+                58
+            ],
+            [
+                "Project Review",
+                "09:27",
+                "2.31",
+                567,
+                59
+            ]
+        ],
+        "total": "2hr 45min",
+        "duration": 9900,
+        "name": "Smart Contracts with Solidity",
+        "durs": [
+            16,
+            331,
+            309,
+            272,
+            23,
+            30,
+            382,
+            369,
+            228,
+            58,
+            255,
+            258,
+            287,
+            1096,
+            284,
+            403,
+            159,
+            371,
+            678,
+            322,
+            49,
+            505,
+            384,
+            417,
+            258,
+            400,
+            17,
+            441,
+            291,
+            433,
+            567
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "The Lottery Contract",
+                "02:36",
+                "3.1",
+                156,
+                60
+            ],
+            [
+                "Lottery Design",
+                "02:49",
+                "3.2",
+                169,
+                61
+            ],
+            [
+                "Basic Solidity Types",
+                "09:43",
+                "3.3",
+                583,
+                62
+            ],
+            [
+                "Starting the Lottery Contract",
+                "04:44",
+                "3.4",
+                284,
+                63
+            ],
+            [
+                "The Message Global Variable",
+                "05:53",
+                "3.5",
+                353,
+                64
+            ],
+            [
+                "Overview of Arrays",
+                "11:06",
+                "3.6",
+                666,
+                65
+            ],
+            [
+                "Overview of Mappings and Structs",
+                "03:42",
+                "3.7",
+                222,
+                66
+            ],
+            [
+                "Big Solidity Gotcha",
+                "06:28",
+                "3.8",
+                388,
+                67
+            ],
+            [
+                "Entering the Lottery",
+                "03:57",
+                "3.9",
+                237,
+                68
+            ],
+            [
+                "Validation with Require Statements",
+                "09:48",
+                "3.10",
+                588,
+                69
+            ],
+            [
+                "The Remix Debugger",
+                "04:03",
+                "3.11",
+                243,
+                70
+            ],
+            [
+                "Pseudo Random Number Generator",
+                "10:34",
+                "3.12",
+                634,
+                71
+            ],
+            [
+                "Selecting a Winner",
+                "04:58",
+                "3.13",
+                298,
+                72
+            ],
+            [
+                "Sending Ether from Contracts",
+                "05:08",
+                "3.14",
+                308,
+                73
+            ],
+            [
+                "Resetting Contract State",
+                "04:07",
+                "3.15",
+                247,
+                74
+            ],
+            [
+                "Requiring Managers",
+                "05:03",
+                "3.16",
+                303,
+                75
+            ],
+            [
+                "Function Modifiers",
+                "06:18",
+                "3.17",
+                378,
+                76
+            ],
+            [
+                "Returning Players Array",
+                "02:13",
+                "3.18",
+                133,
+                77
+            ],
+            [
+                "Contract Review",
+                "02:51",
+                "3.19",
+                171,
+                78
+            ],
+            [
+                "New Test Setup",
+                "03:04",
+                "3.20",
+                184,
+                79
+            ],
+            [
+                "Test Project Updates",
+                "02:04",
+                "3.21",
+                124,
+                80
+            ],
+            [
+                "Test Helper Review",
+                "04:33",
+                "3.22",
+                273,
+                81
+            ],
+            [
+                "Asserting Deployment",
+                "02:54",
+                "3.23",
+                174,
+                82
+            ],
+            [
+                "Entering the Lottery",
+                "06:27",
+                "3.24",
+                387,
+                83
+            ],
+            [
+                "Asserting Multiple Players",
+                "02:39",
+                "3.25",
+                159,
+                84
+            ],
+            [
+                "Try-Catch Assertions",
+                "05:57",
+                "3.26",
+                357,
+                85
+            ],
+            [
+                "Testing Function Modifiers",
+                "03:29",
+                "3.27",
+                209,
+                86
+            ],
+            [
+                "End to End Test",
+                "11:04",
+                "3.28",
+                664,
+                87
+            ]
+        ],
+        "total": "2hr 28min",
+        "duration": 8880,
+        "name": "Advanced Smart Contracts",
+        "durs": [
+            156,
+            169,
+            583,
+            284,
+            353,
+            666,
+            222,
+            388,
+            237,
+            588,
+            243,
+            634,
+            298,
+            308,
+            247,
+            303,
+            378,
+            133,
+            171,
+            184,
+            124,
+            273,
+            174,
+            387,
+            159,
+            357,
+            209,
+            664
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Ethereum App Architecture",
+                "09:20",
+                "4.1",
+                560,
+                88
+            ],
+            [
+                "Application Overview",
+                "07:56",
+                "4.2",
+                476,
+                89
+            ],
+            [
+                "Getting Started with Create-React-App",
+                "02:36",
+                "4.3",
+                156,
+                90
+            ],
+            [
+                "Multiple Web3 Instances",
+                "08:42",
+                "4.4",
+                522,
+                91
+            ],
+            [
+                "Web3 Setup",
+                "06:10",
+                "4.5",
+                370,
+                92
+            ],
+            [
+                "Updated Deploy Code",
+                "00:16",
+                "4.6",
+                16,
+                93
+            ],
+            [
+                "Deploying the Lottery Contract",
+                "05:32",
+                "4.7",
+                332,
+                94
+            ],
+            [
+                "Local Contract Instances",
+                "06:26",
+                "4.8",
+                386,
+                95
+            ],
+            [
+                "Rendering Contract Data",
+                "07:04",
+                "4.9",
+                424,
+                96
+            ],
+            [
+                "Instance Properties",
+                "01:58",
+                "4.10",
+                118,
+                97
+            ],
+            [
+                "Accessing More Properties",
+                "05:33",
+                "4.11",
+                333,
+                98
+            ],
+            [
+                "The 'Enter' Form",
+                "03:50",
+                "4.12",
+                230,
+                99
+            ],
+            [
+                "Form Setup",
+                "06:47",
+                "4.13",
+                407,
+                100
+            ],
+            [
+                "Entering the Lottery",
+                "06:35",
+                "4.14",
+                395,
+                101
+            ],
+            [
+                "Picking a Winner",
+                "08:34",
+                "4.15",
+                514,
+                102
+            ],
+            [
+                "Project Review",
+                "03:07",
+                "4.16",
+                187,
+                103
+            ]
+        ],
+        "total": "1hr 30min",
+        "duration": 5400,
+        "name": "Building Interactive Front-Ends",
+        "durs": [
+            560,
+            476,
+            156,
+            522,
+            370,
+            16,
+            332,
+            386,
+            424,
+            118,
+            333,
+            230,
+            407,
+            395,
+            514,
+            187
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Solving Real Problems with Contracts",
+                "06:01",
+                "5.1",
+                361,
+                104
+            ],
+            [
+                "Fixing Kickstarter's Issues",
+                "07:48",
+                "5.2",
+                468,
+                105
+            ],
+            [
+                "Campaign Contract Design",
+                "09:05",
+                "5.3",
+                545,
+                106
+            ],
+            [
+                "Campaign Constructor",
+                "04:16",
+                "5.4",
+                256,
+                107
+            ],
+            [
+                "Contributing to the Campaign",
+                "03:07",
+                "5.5",
+                187,
+                108
+            ],
+            [
+                "A Quick Test",
+                "02:14",
+                "5.6",
+                134,
+                109
+            ],
+            [
+                "The Request Struct",
+                "08:58",
+                "5.7",
+                538,
+                110
+            ],
+            [
+                "More on Function Modifiers",
+                "05:15",
+                "5.8",
+                315,
+                111
+            ],
+            [
+                "Creating Struct Instances",
+                "05:33",
+                "5.9",
+                333,
+                112
+            ],
+            [
+                "Instance Creation Syntax",
+                "09:31",
+                "5.10",
+                571,
+                113
+            ],
+            [
+                "Storage and Memory",
+                "06:27",
+                "5.11",
+                387,
+                114
+            ],
+            [
+                "More on Storage vs Memory",
+                "16:23",
+                "5.12",
+                983,
+                115
+            ],
+            [
+                "Voting System Requirements",
+                "02:49",
+                "5.13",
+                169,
+                116
+            ],
+            [
+                "The Wrong Voting System",
+                "05:12",
+                "5.14",
+                312,
+                117
+            ],
+            [
+                "Issues with Arrays",
+                "06:14",
+                "5.15",
+                374,
+                118
+            ],
+            [
+                "Mappings vs Arrays",
+                "04:01",
+                "5.16",
+                241,
+                119
+            ],
+            [
+                "Basics of Mappings",
+                "11:08",
+                "5.17",
+                668,
+                120
+            ],
+            [
+                "Refactoring to Mappings",
+                "06:45",
+                "5.18",
+                405,
+                121
+            ],
+            [
+                "Refactoring Request Stucts",
+                "02:15",
+                "5.19",
+                135,
+                122
+            ],
+            [
+                "More on Struct Initialization",
+                "02:52",
+                "5.20",
+                172,
+                123
+            ],
+            [
+                "Approving a Request",
+                "07:53",
+                "5.21",
+                473,
+                124
+            ],
+            [
+                "Testing Request Approvals",
+                "05:22",
+                "5.22",
+                322,
+                125
+            ],
+            [
+                "Finalizing a Request",
+                "07:24",
+                "5.23",
+                444,
+                126
+            ],
+            [
+                "Last Remix Test",
+                "03:03",
+                "5.24",
+                183,
+                127
+            ],
+            [
+                "Thinking about Deployment",
+                "09:46",
+                "5.25",
+                586,
+                128
+            ],
+            [
+                "Solution to Deployment",
+                "06:33",
+                "5.26",
+                393,
+                129
+            ],
+            [
+                "Adding a Campaign Factory",
+                "07:53",
+                "5.27",
+                473,
+                130
+            ],
+            [
+                "Testing the Factory",
+                "03:27",
+                "5.28",
+                207,
+                131
+            ]
+        ],
+        "total": "2hr 57min",
+        "duration": 10620,
+        "name": "Real Projects with Ethereum",
+        "durs": [
+            361,
+            468,
+            545,
+            256,
+            187,
+            134,
+            538,
+            315,
+            333,
+            571,
+            387,
+            983,
+            169,
+            312,
+            374,
+            241,
+            668,
+            405,
+            135,
+            172,
+            473,
+            322,
+            444,
+            183,
+            586,
+            393,
+            473,
+            207
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Project Setup",
+                "02:16",
+                "6.1",
+                136,
+                132
+            ],
+            [
+                "Directory Structure",
+                "02:56",
+                "6.2",
+                176,
+                133
+            ],
+            [
+                "A Better Compile Script",
+                "04:41",
+                "6.3",
+                281,
+                134
+            ],
+            [
+                "Single Run Compilation",
+                "08:46",
+                "6.4",
+                526,
+                135
+            ],
+            [
+                "More on Compile",
+                "06:20",
+                "6.5",
+                380,
+                136
+            ],
+            [
+                "Test File Setup",
+                "08:21",
+                "6.6",
+                501,
+                137
+            ],
+            [
+                "Creating Campaign Instances",
+                "10:19",
+                "6.7",
+                619,
+                138
+            ],
+            [
+                "Testing Warmup",
+                "03:11",
+                "6.8",
+                191,
+                139
+            ],
+            [
+                "Accessing Mappings",
+                "09:55",
+                "6.9",
+                595,
+                140
+            ],
+            [
+                "Requiring Minimum Contributinos",
+                "03:13",
+                "6.10",
+                193,
+                141
+            ],
+            [
+                "Array Getters",
+                "06:07",
+                "6.11",
+                367,
+                142
+            ],
+            [
+                "One End to End Test",
+                "13:00",
+                "6.12",
+                780,
+                143
+            ],
+            [
+                "Deployment",
+                "02:16",
+                "6.13",
+                136,
+                144
+            ],
+            [
+                "Updated Deploy Code",
+                "00:16",
+                "6.14",
+                16,
+                145
+            ],
+            [
+                "Refactoring Deployment",
+                "06:05",
+                "6.15",
+                365,
+                146
+            ]
+        ],
+        "total": "1hr 28min",
+        "duration": 5280,
+        "name": "Ethereum Project Infrastructure",
+        "durs": [
+            136,
+            176,
+            281,
+            526,
+            380,
+            501,
+            619,
+            191,
+            595,
+            193,
+            367,
+            780,
+            136,
+            16,
+            365
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "App Mockups",
+                "11:05",
+                "7.1",
+                665,
+                147
+            ],
+            [
+                "CRA vs Next",
+                "04:59",
+                "7.2",
+                299,
+                148
+            ],
+            [
+                "Next's Pages Architecture",
+                "05:07",
+                "7.3",
+                307,
+                149
+            ],
+            [
+                "Basics of Next Routing",
+                "04:51",
+                "7.4",
+                291,
+                150
+            ],
+            [
+                "Root Routes",
+                "05:23",
+                "7.5",
+                323,
+                151
+            ],
+            [
+                "CampaignFactory Instance",
+                "07:12",
+                "7.6",
+                432,
+                152
+            ],
+            [
+                "Getting a Test Campaign",
+                "05:35",
+                "7.7",
+                335,
+                153
+            ],
+            [
+                "Fetching Deployed Campaigns",
+                "06:27",
+                "7.8",
+                387,
+                154
+            ],
+            [
+                "Why Next.js, Anyways?",
+                "09:50",
+                "7.9",
+                590,
+                155
+            ],
+            [
+                "Server vs Client Web3 Instances",
+                "10:41",
+                "7.10",
+                641,
+                156
+            ],
+            [
+                "GetInitialProps Function",
+                "10:14",
+                "7.11",
+                614,
+                157
+            ],
+            [
+                "Semantic UI React",
+                "05:49",
+                "7.12",
+                349,
+                158
+            ],
+            [
+                "Card Group Setup",
+                "06:42",
+                "7.13",
+                402,
+                159
+            ],
+            [
+                "Rendering Card Groups",
+                "06:10",
+                "7.14",
+                370,
+                160
+            ],
+            [
+                "Adding CSS",
+                "04:40",
+                "7.15",
+                280,
+                161
+            ],
+            [
+                "Adding a Button",
+                "06:47",
+                "7.16",
+                407,
+                162
+            ],
+            [
+                "The Need for a Layout",
+                "06:16",
+                "7.17",
+                376,
+                163
+            ],
+            [
+                "The Layout Component",
+                "07:13",
+                "7.18",
+                433,
+                164
+            ],
+            [
+                "Assembling a Header",
+                "07:35",
+                "7.19",
+                455,
+                165
+            ],
+            [
+                "Constraining Content Width",
+                "04:28",
+                "7.20",
+                268,
+                166
+            ],
+            [
+                "Two Column Layout",
+                "01:58",
+                "7.21",
+                118,
+                167
+            ],
+            [
+                "Nested Routing",
+                "04:27",
+                "7.22",
+                267,
+                168
+            ],
+            [
+                "Final CSS Fix",
+                "05:20",
+                "7.23",
+                320,
+                169
+            ],
+            [
+                "Form Creation",
+                "04:31",
+                "7.24",
+                271,
+                170
+            ],
+            [
+                "Input Change Handlers",
+                "06:20",
+                "7.25",
+                380,
+                171
+            ],
+            [
+                "Form Submittal",
+                "05:58",
+                "7.26",
+                358,
+                172
+            ],
+            [
+                "Testing Submittal",
+                "03:44",
+                "7.27",
+                224,
+                173
+            ],
+            [
+                "Form Error Handling",
+                "12:49",
+                "7.28",
+                769,
+                174
+            ],
+            [
+                "Button Spinners",
+                "06:56",
+                "7.29",
+                416,
+                175
+            ],
+            [
+                "Routing Issues",
+                "03:13",
+                "7.30",
+                193,
+                176
+            ],
+            [
+                "Next Routes Setup",
+                "10:54",
+                "7.31",
+                654,
+                177
+            ],
+            [
+                "Automatic Navigation",
+                "04:43",
+                "7.32",
+                283,
+                178
+            ],
+            [
+                "Header Navigation",
+                "05:52",
+                "7.33",
+                352,
+                179
+            ],
+            [
+                "Routing to Campaigns",
+                "05:52",
+                "7.34",
+                352,
+                180
+            ],
+            [
+                "Restarting the Server",
+                "00:05",
+                "7.35",
+                5,
+                181
+            ],
+            [
+                "Route Mappings",
+                "07:01",
+                "7.36",
+                421,
+                182
+            ],
+            [
+                "Planning CampaignShow",
+                "03:59",
+                "7.37",
+                239,
+                183
+            ],
+            [
+                "Redeploying CampaignFactory",
+                "08:53",
+                "7.38",
+                533,
+                184
+            ],
+            [
+                "CampaignShow's GetInitialProps",
+                "07:10",
+                "7.39",
+                430,
+                185
+            ],
+            [
+                "Accessing a Campaign",
+                "08:03",
+                "7.40",
+                483,
+                186
+            ],
+            [
+                "Summary Translation Layer",
+                "04:15",
+                "7.41",
+                255,
+                187
+            ],
+            [
+                "Custom Card Groups",
+                "07:44",
+                "7.42",
+                464,
+                188
+            ],
+            [
+                "One Card Per Property",
+                "04:38",
+                "7.43",
+                278,
+                189
+            ],
+            [
+                "The Contribute Form",
+                "07:22",
+                "7.44",
+                442,
+                190
+            ],
+            [
+                "Grid Layouts",
+                "04:07",
+                "7.45",
+                247,
+                191
+            ],
+            [
+                "Form State",
+                "02:44",
+                "7.46",
+                164,
+                192
+            ],
+            [
+                "Communicating the Campaign Address",
+                "04:24",
+                "7.47",
+                264,
+                193
+            ],
+            [
+                "Making a Contribution",
+                "04:55",
+                "7.48",
+                295,
+                194
+            ],
+            [
+                "Refreshing Contract Data",
+                "06:17",
+                "7.49",
+                377,
+                195
+            ],
+            [
+                "Spinners and Error Handlers",
+                "04:56",
+                "7.50",
+                296,
+                196
+            ],
+            [
+                "Listing Requests",
+                "06:29",
+                "7.51",
+                389,
+                197
+            ],
+            [
+                "Grids vs Columns",
+                "03:36",
+                "7.52",
+                216,
+                198
+            ],
+            [
+                "More Routing!",
+                "08:32",
+                "7.53",
+                512,
+                199
+            ],
+            [
+                "Request Creation Form",
+                "10:35",
+                "7.54",
+                635,
+                200
+            ],
+            [
+                "Creating a Request",
+                "09:51",
+                "7.55",
+                591,
+                201
+            ],
+            [
+                "Form Polish",
+                "07:43",
+                "7.56",
+                463,
+                202
+            ],
+            [
+                "Creating a Request",
+                "01:12",
+                "7.57",
+                72,
+                203
+            ],
+            [
+                "Requests One by One",
+                "03:32",
+                "7.58",
+                212,
+                204
+            ],
+            [
+                "Fancy Javascript",
+                "07:35",
+                "7.59",
+                455,
+                205
+            ],
+            [
+                "Small Typo!",
+                "00:18",
+                "7.60",
+                18,
+                206
+            ],
+            [
+                "Rendering a Table",
+                "03:22",
+                "7.61",
+                202,
+                207
+            ],
+            [
+                "Request Row Component",
+                "06:17",
+                "7.62",
+                377,
+                208
+            ],
+            [
+                "Request Row Content",
+                "07:23",
+                "7.63",
+                443,
+                209
+            ],
+            [
+                "Approvers Count Cell",
+                "05:51",
+                "7.64",
+                351,
+                210
+            ],
+            [
+                "Approving a Request",
+                "06:58",
+                "7.65",
+                418,
+                211
+            ],
+            [
+                "Finalizing Requests",
+                "05:19",
+                "7.66",
+                319,
+                212
+            ],
+            [
+                "Testing Finalization",
+                "02:33",
+                "7.67",
+                153,
+                213
+            ],
+            [
+                "Row Status Styling",
+                "06:45",
+                "7.68",
+                405,
+                214
+            ],
+            [
+                "Finishing Requests Index",
+                "02:30",
+                "7.69",
+                150,
+                215
+            ],
+            [
+                "Wrapup",
+                "00:44",
+                "7.70",
+                44,
+                216
+            ]
+        ],
+        "total": "6hr 53min",
+        "duration": 24780,
+        "name": "Advanced Multi-Page Front-Ends",
+        "durs": [
+            665,
+            299,
+            307,
+            291,
+            323,
+            432,
+            335,
+            387,
+            590,
+            641,
+            614,
+            349,
+            402,
+            370,
+            280,
+            407,
+            376,
+            433,
+            455,
+            268,
+            118,
+            267,
+            320,
+            271,
+            380,
+            358,
+            224,
+            769,
+            416,
+            193,
+            654,
+            283,
+            352,
+            352,
+            5,
+            421,
+            239,
+            533,
+            430,
+            483,
+            255,
+            464,
+            278,
+            442,
+            247,
+            164,
+            264,
+            295,
+            377,
+            296,
+            389,
+            216,
+            512,
+            635,
+            591,
+            463,
+            72,
+            212,
+            455,
+            18,
+            202,
+            377,
+            443,
+            351,
+            418,
+            319,
+            153,
+            405,
+            150,
+            44
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "A Note on This Section",
+                "00:10",
+                "8.1",
+                10,
+                217
+            ],
+            [
+                "Purpose of Boilerplate Projects",
+                "03:41",
+                "8.2",
+                221,
+                218
+            ],
+            [
+                "Environment Setup",
+                "01:45",
+                "8.3",
+                105,
+                219
+            ],
+            [
+                "Project Setup",
+                "02:53",
+                "8.4",
+                173,
+                220
+            ],
+            [
+                "JSX",
+                "11:29",
+                "8.5",
+                689,
+                221
+            ],
+            [
+                "More on JSX",
+                "04:35",
+                "8.6",
+                275,
+                222
+            ],
+            [
+                "ES6 Import Statements",
+                "03:58",
+                "8.7",
+                238,
+                223
+            ],
+            [
+                "ReactDOM vs React",
+                "02:26",
+                "8.8",
+                146,
+                224
+            ],
+            [
+                "Component Instances",
+                "03:38",
+                "8.9",
+                218,
+                225
+            ],
+            [
+                "Render Targets",
+                "05:53",
+                "8.10",
+                353,
+                226
+            ],
+            [
+                "Component Structure",
+                "06:26",
+                "8.11",
+                386,
+                227
+            ],
+            [
+                "Youtube Search API Signup",
+                "06:39",
+                "8.12",
+                399,
+                228
+            ],
+            [
+                "Export Statements",
+                "08:40",
+                "8.13",
+                520,
+                229
+            ],
+            [
+                "Class Based Components",
+                "08:11",
+                "8.14",
+                491,
+                230
+            ],
+            [
+                "Handling User Events",
+                "09:30",
+                "8.15",
+                570,
+                231
+            ],
+            [
+                "Introduction to State",
+                "05:13",
+                "8.16",
+                313,
+                232
+            ],
+            [
+                "State Continued",
+                "06:04",
+                "8.17",
+                364,
+                233
+            ],
+            [
+                "Controlled Components",
+                "07:47",
+                "8.18",
+                467,
+                234
+            ],
+            [
+                "Breather and Review",
+                "03:37",
+                "8.19",
+                217,
+                235
+            ],
+            [
+                "Youtube Search Response",
+                "04:26",
+                "8.20",
+                266,
+                236
+            ],
+            [
+                "Refactoring Functional Components to Class Components",
+                "07:43",
+                "8.21",
+                463,
+                237
+            ],
+            [
+                "Props",
+                "07:42",
+                "8.22",
+                462,
+                238
+            ],
+            [
+                "Building Lists with Map",
+                "07:06",
+                "8.23",
+                426,
+                239
+            ],
+            [
+                "List Item Keys",
+                "03:54",
+                "8.24",
+                234,
+                240
+            ],
+            [
+                "Video List Items",
+                "07:53",
+                "8.25",
+                473,
+                241
+            ],
+            [
+                "Detail Component and Template Strings",
+                "07:05",
+                "8.26",
+                425,
+                242
+            ],
+            [
+                "Handling Null Props",
+                "04:41",
+                "8.27",
+                281,
+                243
+            ],
+            [
+                "Video Selection",
+                "11:39",
+                "8.28",
+                699,
+                244
+            ],
+            [
+                "Styling with CSS",
+                "03:43",
+                "8.29",
+                223,
+                245
+            ],
+            [
+                "Searching for Videos",
+                "07:51",
+                "8.30",
+                471,
+                246
+            ],
+            [
+                "Throttling Search Term Input",
+                "05:46",
+                "8.31",
+                346,
+                247
+            ],
+            [
+                "React Wrapup",
+                "05:24",
+                "8.32",
+                324,
+                248
+            ],
+            [
+                "Vue Flavored Version",
+                "00:13",
+                "8.33",
+                13,
+                249
+            ]
+        ],
+        "total": "3hr 8min",
+        "duration": 11280,
+        "name": "Appendix: Basic React",
+        "durs": [
+            10,
+            221,
+            105,
+            173,
+            689,
+            275,
+            238,
+            146,
+            218,
+            353,
+            386,
+            399,
+            520,
+            491,
+            570,
+            313,
+            364,
+            467,
+            217,
+            266,
+            463,
+            462,
+            426,
+            234,
+            473,
+            425,
+            281,
+            699,
+            223,
+            471,
+            346,
+            324,
+            13
+        ]
+    }
+]

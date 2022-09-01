@@ -1,0 +1,3022 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Curriculum Walkthrough",
+                "07:43",
+                "1.1",
+                463,
+                1
+            ],
+            [
+                "What Order Should You Watch In?",
+                "02:52",
+                "1.2",
+                172,
+                2
+            ],
+            [
+                "How I'm Running My Code",
+                "03:21",
+                "1.3",
+                201,
+                3
+            ]
+        ],
+        "total": "14min",
+        "duration": 840,
+        "name": "Introduction",
+        "durs": [
+            463,
+            172,
+            201
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Intro to Big O",
+                "07:41",
+                "2.1",
+                461,
+                4
+            ],
+            [
+                "Timing Our Code",
+                "10:19",
+                "2.2",
+                619,
+                5
+            ],
+            [
+                "Counting Operations",
+                "04:36",
+                "2.3",
+                276,
+                6
+            ],
+            [
+                "Visualizing Time Complexities",
+                "04:25",
+                "2.4",
+                265,
+                7
+            ],
+            [
+                "Official Intro to Big O",
+                "09:58",
+                "2.5",
+                598,
+                8
+            ],
+            [
+                "Simplifying Big O Expressions",
+                "09:32",
+                "2.6",
+                572,
+                9
+            ],
+            [
+                "Big O Time Complexity Quiz",
+                "5 questions",
+                "",
+                0,
+                10
+            ],
+            [
+                "Big O Time Complexity Quiz 2",
+                "5 questions",
+                "",
+                0,
+                10
+            ],
+            [
+                "Space Complexity",
+                "06:26",
+                "2.7",
+                386,
+                10
+            ],
+            [
+                "Big O Space Complexity Quiz",
+                "5 questions",
+                "",
+                0,
+                11
+            ],
+            [
+                "Logs and Section Recap",
+                "08:46",
+                "2.8",
+                526,
+                11
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Big O Notation",
+        "durs": [
+            461,
+            619,
+            276,
+            265,
+            598,
+            572,
+            0,
+            0,
+            386,
+            0,
+            526
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:05",
+                "3.1",
+                5,
+                12
+            ],
+            [
+                "Section Introduction",
+                "01:42",
+                "3.2",
+                102,
+                13
+            ],
+            [
+                "The BIG O of Objects",
+                "05:31",
+                "3.3",
+                331,
+                14
+            ],
+            [
+                "Object Operations Quiz",
+                "3 questions",
+                "",
+                0,
+                15
+            ],
+            [
+                "When are Arrays Slow?",
+                "06:25",
+                "3.4",
+                385,
+                15
+            ],
+            [
+                "Big O of Array Methods",
+                "05:56",
+                "3.5",
+                356,
+                16
+            ],
+            [
+                "Array Operations Quiz",
+                "3 questions",
+                "",
+                0,
+                17
+            ]
+        ],
+        "total": "20min",
+        "duration": 1200,
+        "name": "Analyzing Performance of Arrays and Objects",
+        "durs": [
+            5,
+            102,
+            331,
+            0,
+            385,
+            356,
+            0
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:05",
+                "4.1",
+                5,
+                17
+            ],
+            [
+                "Introduction to Problem Solving",
+                "07:08",
+                "4.2",
+                428,
+                18
+            ],
+            [
+                "Step 1: Understand The Problem",
+                "07:59",
+                "4.3",
+                479,
+                19
+            ],
+            [
+                "Step 2: Concrete Examples",
+                "06:19",
+                "4.4",
+                379,
+                20
+            ],
+            [
+                "Step 3: Break It Down",
+                "07:44",
+                "4.5",
+                464,
+                21
+            ],
+            [
+                "Step 4: Solve Or Simplify",
+                "10:32",
+                "4.6",
+                632,
+                22
+            ],
+            [
+                "Step 5: Look Back and Refactor",
+                "16:57",
+                "4.7",
+                1017,
+                23
+            ],
+            [
+                "Recap and Interview Strategies",
+                "04:12",
+                "4.8",
+                252,
+                24
+            ]
+        ],
+        "total": "1hr 1min",
+        "duration": 3660,
+        "name": "Problem Solving Approach",
+        "durs": [
+            5,
+            428,
+            479,
+            379,
+            464,
+            632,
+            1017,
+            252
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:06",
+                "5.1",
+                6,
+                25
+            ],
+            [
+                "Intro to Problem Solving Patterns",
+                "02:55",
+                "5.2",
+                175,
+                26
+            ],
+            [
+                "Frequency Counter Pattern",
+                "15:11",
+                "5.3",
+                911,
+                27
+            ],
+            [
+                "Frequency Counter: Anagram Challenge",
+                "02:33",
+                "5.4",
+                153,
+                28
+            ],
+            [
+                "Frequency Counter - validAnagram",
+                "1 question",
+                "",
+                0,
+                29
+            ],
+            [
+                "Anagram Challenge Solution",
+                "06:18",
+                "5.5",
+                378,
+                29
+            ],
+            [
+                "Multiple Pointers Pattern",
+                "09:42",
+                "5.6",
+                582,
+                30
+            ],
+            [
+                "Multiple Pointers: Count Unique Values Challenge",
+                "04:29",
+                "5.7",
+                269,
+                31
+            ],
+            [
+                "Multiple Pointers - countUniqueValues",
+                "1 question",
+                "",
+                0,
+                32
+            ],
+            [
+                "Count Unique Values Solution",
+                "06:30",
+                "5.8",
+                390,
+                32
+            ],
+            [
+                "Sliding Window Pattern",
+                "13:14",
+                "5.9",
+                794,
+                33
+            ],
+            [
+                "Divide And Conquer Pattern",
+                "07:02",
+                "5.10",
+                422,
+                34
+            ]
+        ],
+        "total": "1hr 8min",
+        "duration": 4080,
+        "name": "Problem Solving Patterns",
+        "durs": [
+            6,
+            175,
+            911,
+            153,
+            0,
+            378,
+            582,
+            269,
+            0,
+            390,
+            794,
+            422
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "IMPORTANT NOTE!",
+                "00:14",
+                "6.1",
+                14,
+                35
+            ],
+            [
+                "Frequency Counter - sameFrequency",
+                "1 question",
+                "",
+                0,
+                36
+            ],
+            [
+                "Frequency Counter / Multiple Pointers - areThereDuplicates",
+                "1 question",
+                "",
+                0,
+                36
+            ],
+            [
+                "SOLUTIONS PART 1",
+                "00:27",
+                "6.2",
+                27,
+                36
+            ],
+            [
+                "Multiple Pointers - averagePair",
+                "1 question",
+                "",
+                0,
+                37
+            ],
+            [
+                "Multiple Pointers - isSubsequence",
+                "1 question",
+                "",
+                0,
+                37
+            ],
+            [
+                "SOLUTIONS PART 2",
+                "00:21",
+                "6.3",
+                21,
+                37
+            ],
+            [
+                "Sliding Window - maxSubarraySum",
+                "1 question",
+                "",
+                0,
+                38
+            ],
+            [
+                "Sliding Window - minSubArrayLen",
+                "1 question",
+                "",
+                0,
+                38
+            ],
+            [
+                "Sliding Window - findLongestSubstring",
+                "1 question",
+                "",
+                0,
+                38
+            ],
+            [
+                "SOLUTIONS PART 3",
+                "00:48",
+                "6.4",
+                48,
+                38
+            ]
+        ],
+        "total": "2min",
+        "duration": 120,
+        "name": "100% OPTIONAL Challenges",
+        "durs": [
+            14,
+            0,
+            0,
+            27,
+            0,
+            0,
+            21,
+            0,
+            0,
+            0,
+            48
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:05",
+                "7.1",
+                5,
+                39
+            ],
+            [
+                "Story Time: Martin & The Dragon",
+                "07:06",
+                "7.2",
+                426,
+                40
+            ],
+            [
+                "Why Use Recursion?",
+                "05:53",
+                "7.3",
+                353,
+                41
+            ],
+            [
+                "The Call Stack",
+                "07:07",
+                "7.4",
+                427,
+                42
+            ],
+            [
+                "Our First Recursive Function",
+                "05:11",
+                "7.5",
+                311,
+                43
+            ],
+            [
+                "Recursion Quiz",
+                "2 questions",
+                "",
+                0,
+                44
+            ],
+            [
+                "Our Second Recursive Function",
+                "07:54",
+                "7.6",
+                474,
+                44
+            ],
+            [
+                "Writing Factorial Iteratively",
+                "02:19",
+                "7.7",
+                139,
+                45
+            ],
+            [
+                "Writing Factorial Recursively",
+                "03:15",
+                "7.8",
+                195,
+                46
+            ],
+            [
+                "Common Recursion Pitfalls",
+                "05:06",
+                "7.9",
+                306,
+                47
+            ],
+            [
+                "Helper Method Recursion",
+                "06:23",
+                "7.10",
+                383,
+                48
+            ],
+            [
+                "Pure Recursion",
+                "07:44",
+                "7.11",
+                464,
+                49
+            ]
+        ],
+        "total": "58min",
+        "duration": 3480,
+        "name": "Recursion",
+        "durs": [
+            5,
+            426,
+            353,
+            427,
+            311,
+            0,
+            474,
+            139,
+            195,
+            306,
+            383,
+            464
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "START HERE!",
+                "00:12",
+                "8.1",
+                12,
+                50
+            ],
+            [
+                "power",
+                "1 question",
+                "",
+                0,
+                51
+            ],
+            [
+                "factorial",
+                "1 question",
+                "",
+                0,
+                51
+            ],
+            [
+                "productOfArray",
+                "1 question",
+                "",
+                0,
+                51
+            ],
+            [
+                "recursiveRange",
+                "1 question",
+                "",
+                0,
+                51
+            ],
+            [
+                "fib",
+                "1 question",
+                "",
+                0,
+                51
+            ],
+            [
+                "SOLUTIONS FOR THIS SECTION",
+                "00:15",
+                "8.2",
+                15,
+                51
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Recursion Problem Set",
+        "durs": [
+            12,
+            0,
+            0,
+            0,
+            0,
+            0,
+            15
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "NOTE ON THIS SECTION",
+                "00:11",
+                "9.1",
+                11,
+                52
+            ],
+            [
+                "reverse",
+                "1 question",
+                "",
+                0,
+                53
+            ],
+            [
+                "isPalindrome",
+                "1 question",
+                "",
+                0,
+                53
+            ],
+            [
+                "someRecursive",
+                "1 question",
+                "",
+                0,
+                53
+            ],
+            [
+                "flatten",
+                "1 question",
+                "",
+                0,
+                53
+            ],
+            [
+                "SOLUTIONS PART 1",
+                "00:16",
+                "9.2",
+                16,
+                53
+            ],
+            [
+                "capitalizeFirst",
+                "1 question",
+                "",
+                0,
+                54
+            ],
+            [
+                "nestedEvenSum",
+                "1 question",
+                "",
+                0,
+                54
+            ],
+            [
+                "capitalizeWords",
+                "1 question",
+                "",
+                0,
+                54
+            ],
+            [
+                "stringifyNumbers",
+                "1 question",
+                "",
+                0,
+                54
+            ],
+            [
+                "collectStrings",
+                "1 question",
+                "",
+                0,
+                54
+            ],
+            [
+                "SOLUTIONS PART 2",
+                "00:38",
+                "9.3",
+                38,
+                54
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Bonus CHALLENGING Recursion Problems",
+        "durs": [
+            11,
+            0,
+            0,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0,
+            0,
+            38
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:05",
+                "10.1",
+                5,
+                55
+            ],
+            [
+                "Intro to Searching",
+                "04:04",
+                "10.2",
+                244,
+                56
+            ],
+            [
+                "Intro to Linear Search",
+                "04:47",
+                "10.3",
+                287,
+                57
+            ],
+            [
+                "Linear Search Exercise",
+                "1 question",
+                "",
+                0,
+                58
+            ],
+            [
+                "Linear Search Solution",
+                "05:18",
+                "10.4",
+                318,
+                58
+            ],
+            [
+                "Linear Search BIG O",
+                "01:55",
+                "10.5",
+                115,
+                59
+            ],
+            [
+                "Intro to Binary Search",
+                "05:47",
+                "10.6",
+                347,
+                60
+            ],
+            [
+                "Binary Search PseudoCode",
+                "02:40",
+                "10.7",
+                160,
+                61
+            ],
+            [
+                "Binary Search Exercise",
+                "1 question",
+                "",
+                0,
+                62
+            ],
+            [
+                "Binary Search Solution",
+                "16:41",
+                "10.8",
+                1001,
+                62
+            ],
+            [
+                "Binary Search BIG O",
+                "06:09",
+                "10.9",
+                369,
+                63
+            ],
+            [
+                "Naive String Search",
+                "04:38",
+                "10.10",
+                278,
+                64
+            ],
+            [
+                "Naive String Search Implementation",
+                "12:29",
+                "10.11",
+                749,
+                65
+            ],
+            [
+                "KNP COMING SOON",
+                "00:03",
+                "10.12",
+                3,
+                66
+            ]
+        ],
+        "total": "1hr 5min",
+        "duration": 3900,
+        "name": "Searching Algorithms",
+        "durs": [
+            5,
+            244,
+            287,
+            0,
+            318,
+            115,
+            347,
+            160,
+            0,
+            1001,
+            369,
+            278,
+            749,
+            3
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:05",
+                "11.1",
+                5,
+                67
+            ],
+            [
+                "Introduction to Sorting Algorithms",
+                "08:35",
+                "11.2",
+                515,
+                68
+            ],
+            [
+                "Built-In JavaScript Sorting",
+                "04:40",
+                "11.3",
+                280,
+                69
+            ],
+            [
+                "Bubble Sort: Overview",
+                "07:21",
+                "11.4",
+                441,
+                70
+            ],
+            [
+                "Bubble Sort: Implementation",
+                "09:58",
+                "11.5",
+                598,
+                71
+            ],
+            [
+                "Bubble Sort: Optimization",
+                "04:22",
+                "11.6",
+                262,
+                72
+            ],
+            [
+                "Bubble Sort: BIG O Complexity",
+                "01:28",
+                "11.7",
+                88,
+                73
+            ]
+        ],
+        "total": "36min",
+        "duration": 2160,
+        "name": "Bubble Sort",
+        "durs": [
+            5,
+            515,
+            280,
+            441,
+            598,
+            262,
+            88
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:10",
+                "12.1",
+                10,
+                74
+            ],
+            [
+                "Selection Sort: Introduction",
+                "06:18",
+                "12.2",
+                378,
+                75
+            ],
+            [
+                "Selection Sort: Implementation",
+                "11:14",
+                "12.3",
+                674,
+                76
+            ],
+            [
+                "Selection Sort: Big O Complexity",
+                "01:40",
+                "12.4",
+                100,
+                77
+            ]
+        ],
+        "total": "19min",
+        "duration": 1140,
+        "name": "Selection Sort",
+        "durs": [
+            10,
+            378,
+            674,
+            100
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:11",
+                "13.1",
+                11,
+                78
+            ],
+            [
+                "Insertion Sort: Introduction",
+                "03:17",
+                "13.2",
+                197,
+                79
+            ],
+            [
+                "Insertion Sort: Implementation",
+                "10:42",
+                "13.3",
+                642,
+                80
+            ],
+            [
+                "Insertion Sort: BIG O Complexity",
+                "02:24",
+                "13.4",
+                144,
+                81
+            ]
+        ],
+        "total": "17min",
+        "duration": 1020,
+        "name": "Insertion Sort",
+        "durs": [
+            11,
+            197,
+            642,
+            144
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Comparing Bubble, Selection, and Insertion Sort",
+                "05:33",
+                "14.1",
+                333,
+                82
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Comparing Bubble, Selection, and Insertion Sort",
+        "durs": [
+            333
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:12",
+                "15.1",
+                12,
+                83
+            ],
+            [
+                "Intro to the \"Crazier\" Sorts",
+                "06:05",
+                "15.2",
+                365,
+                84
+            ],
+            [
+                "Merge Sort: Introduction",
+                "05:25",
+                "15.3",
+                325,
+                85
+            ],
+            [
+                "Merging Arrays Intro",
+                "05:11",
+                "15.4",
+                311,
+                86
+            ],
+            [
+                "Merging Arrays: Implementation",
+                "06:55",
+                "15.5",
+                415,
+                87
+            ],
+            [
+                "Writing Merge Sort Part 1",
+                "02:21",
+                "15.6",
+                141,
+                88
+            ],
+            [
+                "Writing Merge Sort Part 2",
+                "12:37",
+                "15.7",
+                757,
+                89
+            ],
+            [
+                "Merge Sort BIG O Complexity",
+                "06:22",
+                "15.8",
+                382,
+                90
+            ]
+        ],
+        "total": "45min",
+        "duration": 2700,
+        "name": "Merge Sort",
+        "durs": [
+            12,
+            365,
+            325,
+            311,
+            415,
+            141,
+            757,
+            382
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:13",
+                "16.1",
+                13,
+                91
+            ],
+            [
+                "Introduction to Quick Sort",
+                "09:00",
+                "16.2",
+                540,
+                92
+            ],
+            [
+                "Pivot Helper Introduction",
+                "08:06",
+                "16.3",
+                486,
+                93
+            ],
+            [
+                "Pivot Helper Implementation",
+                "08:08",
+                "16.4",
+                488,
+                94
+            ],
+            [
+                "Quick Sort Implementation",
+                "08:46",
+                "16.5",
+                526,
+                95
+            ],
+            [
+                "Quick Sort Call Stack Walkthrough",
+                "04:15",
+                "16.6",
+                255,
+                96
+            ],
+            [
+                "Quick Sort Big O Complexity",
+                "04:06",
+                "16.7",
+                246,
+                97
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Quick Sort",
+        "durs": [
+            13,
+            540,
+            486,
+            488,
+            526,
+            255,
+            246
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:13",
+                "17.1",
+                13,
+                98
+            ],
+            [
+                "Radix Sort: Introduction",
+                "09:22",
+                "17.2",
+                562,
+                99
+            ],
+            [
+                "Radix Sort: Helper Methods",
+                "11:09",
+                "17.3",
+                669,
+                100
+            ],
+            [
+                "Radix Sort: Pseudocode",
+                "04:18",
+                "17.4",
+                258,
+                101
+            ],
+            [
+                "Radix Sort: Implementation",
+                "10:24",
+                "17.5",
+                624,
+                102
+            ],
+            [
+                "Radix Sort: BIG O Complexity",
+                "03:51",
+                "17.6",
+                231,
+                103
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "Radix Sort",
+        "durs": [
+            13,
+            562,
+            669,
+            258,
+            624,
+            231
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Which Data Structure Is The Best?",
+                "12:38",
+                "18.1",
+                758,
+                104
+            ],
+            [
+                "ES2015 Class Syntax Overview",
+                "05:14",
+                "18.2",
+                314,
+                105
+            ],
+            [
+                "Data Structures: The Class Keyword",
+                "06:36",
+                "18.3",
+                396,
+                106
+            ],
+            [
+                "Data Structures: Adding Instance Methods",
+                "09:49",
+                "18.4",
+                589,
+                107
+            ],
+            [
+                "Data Structures: Adding Class Methods",
+                "07:11",
+                "18.5",
+                431,
+                108
+            ]
+        ],
+        "total": "41min",
+        "duration": 2460,
+        "name": "Data Structures Introduction",
+        "durs": [
+            758,
+            314,
+            396,
+            589,
+            431
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:06",
+                "19.1",
+                6,
+                109
+            ],
+            [
+                "Intro to Singly Linked Lists",
+                "07:46",
+                "19.2",
+                466,
+                110
+            ],
+            [
+                "Starter Code and Push Intro",
+                "07:22",
+                "19.3",
+                442,
+                111
+            ],
+            [
+                "Singly Linked List: Push Solution",
+                "04:24",
+                "19.4",
+                264,
+                112
+            ],
+            [
+                "Singly Linked List: Pop Intro",
+                "06:14",
+                "19.5",
+                374,
+                113
+            ],
+            [
+                "Singly Linked List: Pop Solution",
+                "07:35",
+                "19.6",
+                455,
+                114
+            ],
+            [
+                "Singly Linked List: Shift Intro",
+                "01:31",
+                "19.7",
+                91,
+                115
+            ],
+            [
+                "Singly Linked List: Shift Solution",
+                "03:22",
+                "19.8",
+                202,
+                116
+            ],
+            [
+                "Singly Linked List: Unshift Intro",
+                "01:34",
+                "19.9",
+                94,
+                117
+            ],
+            [
+                "Singly Linked List: Unshift Solution",
+                "05:58",
+                "19.10",
+                358,
+                118
+            ],
+            [
+                "Singly Linked List: Get Intro",
+                "02:32",
+                "19.11",
+                152,
+                119
+            ],
+            [
+                "Singly Linked List: Get Solution",
+                "03:32",
+                "19.12",
+                212,
+                120
+            ],
+            [
+                "Singly Linked List: Set Intro",
+                "01:26",
+                "19.13",
+                86,
+                121
+            ],
+            [
+                "Singly Linked List: Set Solution",
+                "02:10",
+                "19.14",
+                130,
+                122
+            ],
+            [
+                "Singly Linked List: Insert Intro",
+                "04:27",
+                "19.15",
+                267,
+                123
+            ],
+            [
+                "Singly Linked List: Insert Solution",
+                "07:49",
+                "19.16",
+                469,
+                124
+            ],
+            [
+                "Singly Linked List: Remove Intro",
+                "01:56",
+                "19.17",
+                116,
+                125
+            ],
+            [
+                "Singly Linked List: Remove Solution",
+                "03:15",
+                "19.18",
+                195,
+                126
+            ],
+            [
+                "Singly Linked List: Reverse Intro",
+                "04:46",
+                "19.19",
+                286,
+                127
+            ],
+            [
+                "Singly Linked List: Reverse Solution",
+                "08:58",
+                "19.20",
+                538,
+                128
+            ],
+            [
+                "Singly Linked List: BIG O Complexity",
+                "05:41",
+                "19.21",
+                341,
+                129
+            ]
+        ],
+        "total": "1hr 32min",
+        "duration": 5520,
+        "name": "Singly Linked Lists",
+        "durs": [
+            6,
+            466,
+            442,
+            264,
+            374,
+            455,
+            91,
+            202,
+            94,
+            358,
+            152,
+            212,
+            86,
+            130,
+            267,
+            469,
+            116,
+            195,
+            286,
+            538,
+            341
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:07",
+                "20.1",
+                7,
+                130
+            ],
+            [
+                "Doubly Linked Lists Introduction",
+                "04:43",
+                "20.2",
+                283,
+                131
+            ],
+            [
+                "Setting Up Our Node Class",
+                "03:00",
+                "20.3",
+                180,
+                132
+            ],
+            [
+                "Push",
+                "02:10",
+                "20.4",
+                130,
+                133
+            ],
+            [
+                "Push Solution",
+                "04:04",
+                "20.5",
+                244,
+                134
+            ],
+            [
+                "Pop",
+                "03:20",
+                "20.6",
+                200,
+                135
+            ],
+            [
+                "Pop Solution",
+                "06:23",
+                "20.7",
+                383,
+                136
+            ],
+            [
+                "Shift",
+                "02:44",
+                "20.8",
+                164,
+                137
+            ],
+            [
+                "Shift Solution",
+                "04:12",
+                "20.9",
+                252,
+                138
+            ],
+            [
+                "Unshift",
+                "01:36",
+                "20.10",
+                96,
+                139
+            ],
+            [
+                "Unshift Solution",
+                "02:19",
+                "20.11",
+                139,
+                140
+            ],
+            [
+                "Get",
+                "04:02",
+                "20.12",
+                242,
+                141
+            ],
+            [
+                "Get Solution",
+                "07:04",
+                "20.13",
+                424,
+                142
+            ],
+            [
+                "Set",
+                "01:18",
+                "20.14",
+                78,
+                143
+            ],
+            [
+                "Set Solution",
+                "02:08",
+                "20.15",
+                128,
+                144
+            ],
+            [
+                "Insert",
+                "02:50",
+                "20.16",
+                170,
+                145
+            ],
+            [
+                "Insert Solution",
+                "06:48",
+                "20.17",
+                408,
+                146
+            ],
+            [
+                "Remove",
+                "02:18",
+                "20.18",
+                138,
+                147
+            ],
+            [
+                "Remove Solution",
+                "06:28",
+                "20.19",
+                388,
+                148
+            ],
+            [
+                "Comparing Singly and Doubly Linked Lists",
+                "04:32",
+                "20.20",
+                272,
+                149
+            ],
+            [
+                "DLL push - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL unshift - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL shift - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL set - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL- remove Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL pop - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL get - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "Doubly Linked Lists insert / remove - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "DLL reverse - Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Doubly Linked Lists",
+        "durs": [
+            7,
+            283,
+            180,
+            130,
+            244,
+            200,
+            383,
+            164,
+            252,
+            96,
+            139,
+            242,
+            424,
+            78,
+            128,
+            170,
+            408,
+            138,
+            388,
+            272,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:12",
+                "21.1",
+                12,
+                150
+            ],
+            [
+                "Intro to Stacks",
+                "06:19",
+                "21.2",
+                379,
+                151
+            ],
+            [
+                "Creating a Stack with an Array",
+                "07:05",
+                "21.3",
+                425,
+                152
+            ],
+            [
+                "Writing Our Own Stack From Scratch",
+                "11:33",
+                "21.4",
+                693,
+                153
+            ],
+            [
+                "BIG O of Stacks",
+                "02:14",
+                "21.5",
+                134,
+                154
+            ],
+            [
+                "Intro to Queues",
+                "04:14",
+                "21.6",
+                254,
+                155
+            ],
+            [
+                "Creating Queues Using Arrays",
+                "03:25",
+                "21.7",
+                205,
+                156
+            ],
+            [
+                "Writing Our Own Queue From Scratch",
+                "10:24",
+                "21.8",
+                624,
+                157
+            ],
+            [
+                "BIG O of Queues",
+                "02:30",
+                "21.9",
+                150,
+                158
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Stacks + Queues",
+        "durs": [
+            12,
+            379,
+            425,
+            693,
+            134,
+            254,
+            205,
+            624,
+            150
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:13",
+                "22.1",
+                13,
+                159
+            ],
+            [
+                "Introduction to Trees",
+                "06:45",
+                "22.2",
+                405,
+                160
+            ],
+            [
+                "Uses For Trees",
+                "06:32",
+                "22.3",
+                392,
+                161
+            ],
+            [
+                "Intro to Binary Trees",
+                "05:54",
+                "22.4",
+                354,
+                162
+            ],
+            [
+                "POP QUIZ!",
+                "01:13",
+                "22.5",
+                73,
+                163
+            ],
+            [
+                "Searching A Binary Search Tree",
+                "02:55",
+                "22.6",
+                175,
+                164
+            ],
+            [
+                "Our Tree Classes",
+                "02:44",
+                "22.7",
+                164,
+                165
+            ],
+            [
+                "BST: Insert",
+                "03:50",
+                "22.8",
+                230,
+                166
+            ],
+            [
+                "BST: Insert Solution",
+                "11:53",
+                "22.9",
+                713,
+                167
+            ],
+            [
+                "BST: Find",
+                "04:42",
+                "22.10",
+                282,
+                168
+            ],
+            [
+                "BST: Find Solution",
+                "05:36",
+                "22.11",
+                336,
+                169
+            ],
+            [
+                "Big O of Binary Search Trees",
+                "05:58",
+                "22.12",
+                358,
+                170
+            ]
+        ],
+        "total": "58min",
+        "duration": 3480,
+        "name": "Binary Search Trees",
+        "durs": [
+            13,
+            405,
+            392,
+            354,
+            73,
+            175,
+            164,
+            230,
+            713,
+            282,
+            336,
+            358
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:14",
+                "23.1",
+                14,
+                171
+            ],
+            [
+                "Intro To Tree Traversal",
+                "04:50",
+                "23.2",
+                290,
+                172
+            ],
+            [
+                "Breadth First Search Intro",
+                "05:51",
+                "23.3",
+                351,
+                173
+            ],
+            [
+                "Breadth First Search Solution",
+                "06:20",
+                "23.4",
+                380,
+                174
+            ],
+            [
+                "Depth First PreOrder Intro",
+                "05:37",
+                "23.5",
+                337,
+                175
+            ],
+            [
+                "Depth First PreOrder Solution",
+                "06:50",
+                "23.6",
+                410,
+                176
+            ],
+            [
+                "Depth First PostOrder Intro",
+                "04:02",
+                "23.7",
+                242,
+                177
+            ],
+            [
+                "Depth First PostOrder Solution",
+                "02:38",
+                "23.8",
+                158,
+                178
+            ],
+            [
+                "Depth First InOrder Intro",
+                "02:07",
+                "23.9",
+                127,
+                179
+            ],
+            [
+                "Depth First InOrder Solution",
+                "02:32",
+                "23.10",
+                152,
+                180
+            ],
+            [
+                "When to Use BFS and DFS",
+                "07:37",
+                "23.11",
+                457,
+                181
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "Tree Traversal",
+        "durs": [
+            14,
+            290,
+            351,
+            380,
+            337,
+            410,
+            242,
+            158,
+            127,
+            152,
+            457
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:15",
+                "24.1",
+                15,
+                182
+            ],
+            [
+                "Intro to Heaps",
+                "07:30",
+                "24.2",
+                450,
+                183
+            ],
+            [
+                "Storing Heaps",
+                "07:05",
+                "24.3",
+                425,
+                184
+            ],
+            [
+                "Heap: Insert Intro",
+                "09:14",
+                "24.4",
+                554,
+                185
+            ],
+            [
+                "Heap: Insert Solution",
+                "10:51",
+                "24.5",
+                651,
+                186
+            ],
+            [
+                "Heap: ExtractMax Intro",
+                "08:28",
+                "24.6",
+                508,
+                187
+            ],
+            [
+                "Heap: ExtractMax Solution",
+                "17:56",
+                "24.7",
+                1076,
+                188
+            ],
+            [
+                "Priority Queue Intro",
+                "08:59",
+                "24.8",
+                539,
+                189
+            ],
+            [
+                "Priority Queue Pseudocode",
+                "03:42",
+                "24.9",
+                222,
+                190
+            ],
+            [
+                "Priority Queue Solution",
+                "09:21",
+                "24.10",
+                561,
+                191
+            ],
+            [
+                "BIG O of Binary Heaps",
+                "08:54",
+                "24.11",
+                534,
+                192
+            ]
+        ],
+        "total": "1hr 32min",
+        "duration": 5520,
+        "name": "Binary Heaps",
+        "durs": [
+            15,
+            450,
+            425,
+            554,
+            651,
+            508,
+            1076,
+            539,
+            222,
+            561,
+            534
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:06",
+                "25.1",
+                6,
+                193
+            ],
+            [
+                "Intro to Hash Tables",
+                "05:50",
+                "25.2",
+                350,
+                194
+            ],
+            [
+                "More About Hash Tables",
+                "04:32",
+                "25.3",
+                272,
+                195
+            ],
+            [
+                "Intro to Hash Functions",
+                "06:11",
+                "25.4",
+                371,
+                196
+            ],
+            [
+                "Writing Our First Hash Function",
+                "08:27",
+                "25.5",
+                507,
+                197
+            ],
+            [
+                "Improving Our Hash Function",
+                "07:10",
+                "25.6",
+                430,
+                198
+            ],
+            [
+                "Handling Collisions",
+                "03:59",
+                "25.7",
+                239,
+                199
+            ],
+            [
+                "Hash Table Set and Get",
+                "04:02",
+                "25.8",
+                242,
+                200
+            ],
+            [
+                "Hash Table Set Solution",
+                "05:14",
+                "25.9",
+                314,
+                201
+            ],
+            [
+                "Hash Table Get Solution",
+                "06:43",
+                "25.10",
+                403,
+                202
+            ],
+            [
+                "Hash Table Keys and Values",
+                "01:41",
+                "25.11",
+                101,
+                203
+            ],
+            [
+                "Hash Table Keys and Values Solution",
+                "08:43",
+                "25.12",
+                523,
+                204
+            ],
+            [
+                "Hash Table Big O Complexity",
+                "05:41",
+                "25.13",
+                341,
+                205
+            ]
+        ],
+        "total": "1hr 8min",
+        "duration": 4080,
+        "name": "Hash Tables",
+        "durs": [
+            6,
+            350,
+            272,
+            371,
+            507,
+            430,
+            239,
+            242,
+            314,
+            403,
+            101,
+            523,
+            341
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:14",
+                "26.1",
+                14,
+                206
+            ],
+            [
+                "Intro to Graphs",
+                "03:50",
+                "26.2",
+                230,
+                207
+            ],
+            [
+                "Uses for Graphs",
+                "07:57",
+                "26.3",
+                477,
+                208
+            ],
+            [
+                "Types of Graphs",
+                "08:48",
+                "26.4",
+                528,
+                209
+            ],
+            [
+                "Storing Graphs: Adjacency Matrix",
+                "03:57",
+                "26.5",
+                237,
+                210
+            ],
+            [
+                "Storing Graphs: Adjacency List",
+                "02:29",
+                "26.6",
+                149,
+                211
+            ],
+            [
+                "Adjacency Matrix Vs. List BIG O",
+                "05:51",
+                "26.7",
+                351,
+                212
+            ],
+            [
+                "Add Vertex Intro",
+                "02:10",
+                "26.8",
+                130,
+                213
+            ],
+            [
+                "Add Vertex Solution",
+                "02:54",
+                "26.9",
+                174,
+                214
+            ],
+            [
+                "Add Edge Intro",
+                "02:32",
+                "26.10",
+                152,
+                215
+            ],
+            [
+                "Add Edge Solution",
+                "02:11",
+                "26.11",
+                131,
+                216
+            ],
+            [
+                "Remove Edge Intro",
+                "01:35",
+                "26.12",
+                95,
+                217
+            ],
+            [
+                "Remove Edge Solution",
+                "02:41",
+                "26.13",
+                161,
+                218
+            ],
+            [
+                "Remove Vertex Intro",
+                "02:35",
+                "26.14",
+                155,
+                219
+            ],
+            [
+                "Remove Vertex Solution",
+                "04:34",
+                "26.15",
+                274,
+                220
+            ]
+        ],
+        "total": "54min",
+        "duration": 3240,
+        "name": "Graphs",
+        "durs": [
+            14,
+            230,
+            477,
+            528,
+            237,
+            149,
+            351,
+            130,
+            174,
+            152,
+            131,
+            95,
+            161,
+            155,
+            274
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:16",
+                "27.1",
+                16,
+                221
+            ],
+            [
+                "Intro to Graph Traversal",
+                "08:38",
+                "27.2",
+                518,
+                222
+            ],
+            [
+                "Depth First Graph Traversal",
+                "08:30",
+                "27.3",
+                510,
+                223
+            ],
+            [
+                "DFS Recursive Intro",
+                "07:27",
+                "27.4",
+                447,
+                224
+            ],
+            [
+                "DFS Recursive Solution",
+                "12:45",
+                "27.5",
+                765,
+                225
+            ],
+            [
+                "DFS Iterative Intro",
+                "03:37",
+                "27.6",
+                217,
+                226
+            ],
+            [
+                "DFS Iterative Solution",
+                "08:44",
+                "27.7",
+                524,
+                227
+            ],
+            [
+                "Breadth First Graph Traversal",
+                "02:59",
+                "27.8",
+                179,
+                228
+            ],
+            [
+                "BFS Intro",
+                "02:26",
+                "27.9",
+                146,
+                229
+            ],
+            [
+                "BFS Solution",
+                "08:09",
+                "27.10",
+                489,
+                230
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Graph Traversal",
+        "durs": [
+            16,
+            518,
+            510,
+            447,
+            765,
+            217,
+            524,
+            179,
+            146,
+            489
+        ]
+    },
+    {
+        "idx": 27,
+        "lectures": [
+            [
+                "PREREQUISITES",
+                "00:16",
+                "28.1",
+                16,
+                231
+            ],
+            [
+                "Intro to Dijkstra's and Prerequisites",
+                "02:41",
+                "28.2",
+                161,
+                232
+            ],
+            [
+                "Who was Dijkstra and what is his Algorithm?",
+                "09:00",
+                "28.3",
+                540,
+                233
+            ],
+            [
+                "Writing a Weighted Graph",
+                "05:20",
+                "28.4",
+                320,
+                234
+            ],
+            [
+                "Walking through the Algorithm",
+                "16:26",
+                "28.5",
+                986,
+                235
+            ],
+            [
+                "Introducing Our Simple Priority Queue",
+                "03:48",
+                "28.6",
+                228,
+                236
+            ],
+            [
+                "Dijkstra's Pseudo-Code",
+                "04:28",
+                "28.7",
+                268,
+                237
+            ],
+            [
+                "Implementing Dijkstra's Algorithm",
+                "21:18",
+                "28.8",
+                1278,
+                238
+            ],
+            [
+                "Upgrading the Priority Queue",
+                "01:52",
+                "28.9",
+                112,
+                239
+            ]
+        ],
+        "total": "1hr 5min",
+        "duration": 3900,
+        "name": "Dijkstra's Algorithm!",
+        "durs": [
+            16,
+            161,
+            540,
+            320,
+            986,
+            228,
+            268,
+            1278,
+            112
+        ]
+    },
+    {
+        "idx": 28,
+        "lectures": [
+            [
+                "Intro to Dynamic Programming",
+                "05:03",
+                "29.1",
+                303,
+                240
+            ],
+            [
+                "Overlapping Subproblems",
+                "05:59",
+                "29.2",
+                359,
+                241
+            ],
+            [
+                "Optimal Substructure",
+                "06:28",
+                "29.3",
+                388,
+                242
+            ],
+            [
+                "Writing A Recursive Solution",
+                "06:43",
+                "29.4",
+                403,
+                243
+            ],
+            [
+                "Time Complexity of Our Solution",
+                "04:11",
+                "29.5",
+                251,
+                244
+            ],
+            [
+                "The Problem With Our Solution",
+                "03:39",
+                "29.6",
+                219,
+                245
+            ],
+            [
+                "Enter Memoization!",
+                "09:00",
+                "29.7",
+                540,
+                246
+            ],
+            [
+                "Time Complexity of Memoized Solution",
+                "03:27",
+                "29.8",
+                207,
+                247
+            ],
+            [
+                "Tabulation: A Bottom Up Approach",
+                "06:59",
+                "29.9",
+                419,
+                248
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Dynamic Programming",
+        "durs": [
+            303,
+            359,
+            388,
+            403,
+            251,
+            219,
+            540,
+            207,
+            419
+        ]
+    },
+    {
+        "idx": 29,
+        "lectures": [
+            [
+                "VERY IMPORTANT NOTE! PLEASE READ!",
+                "00:20",
+                "30.1",
+                20,
+                249
+            ],
+            [
+                "SLL - push Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - pop exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - get Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - insert Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - Rotate Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - set Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Divide and Conquer - countZeroes",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Divide and Conquer - sortedFrequency",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Divide and Conquer - findRotatedIndex",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Bubble Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Selection Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "SLL - remove Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Insertion Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Sorting Exercise - merge helper",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Merge Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Sorting Exercise - pivot helper",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Quick Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Radix Sort Helper - getDigit",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Radix Sort Helper - digitCount",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Radix Sort Helper - mostDigits",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Radix Sort",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Stacks - push Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Stacks - pop Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Stack with 2 Queues",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Queues - enqueue Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree - insert Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "BinarySearchTree - find",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree - DFS Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree - BFS Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree - remove Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree Exercise - Find 2nd largest node",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Binary Search Tree Exercise - Check if balanced",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "BinaryHeap - insert Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "BinaryHeap - extractMax Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs Exercise - addVertex",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs Exercise - removeEdge",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs Exercise - removeVertex",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs - DFS Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs Exercise - addEdge",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs - BFS Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Graphs - Dijkstra Exercise",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Dynamic Programming - Coin Change",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Coin Change - Greedy Algorithm",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Frequency Counter - constructNote",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Frequency Counter - findAllDuplicates",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Frequency Counter / Multiple Pointer - findPair",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Trie Exercise - addWord",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Trie Exercise - removeWord",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Trie Exercise - findWord",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Trie Exercise - getWords",
+                "1 question",
+                "",
+                0,
+                250
+            ],
+            [
+                "Trie - autocomplete",
+                "1 question",
+                "",
+                0,
+                250
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "The Wild West",
+        "durs": [
+            20,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+]

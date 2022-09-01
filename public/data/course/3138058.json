@@ -1,0 +1,1534 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Course Outline",
+                "04:34",
+                "1.1",
+                274,
+                1
+            ],
+            [
+                "Join Our Online Classroom!",
+                "01:14",
+                "1.2",
+                74,
+                2
+            ],
+            [
+                "Exercise: Meet The Community",
+                "01:27",
+                "1.3",
+                87,
+                3
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Introduction",
+        "durs": [
+            274,
+            74,
+            87
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Why Deno?",
+                "06:00",
+                "2.1",
+                360,
+                4
+            ],
+            [
+                "Deno Runtime And V8 Engine",
+                "05:25",
+                "2.2",
+                325,
+                5
+            ],
+            [
+                "Deno Installation",
+                "04:41",
+                "2.3",
+                281,
+                6
+            ],
+            [
+                "Quick Note: Installing Deno",
+                "00:22",
+                "2.4",
+                22,
+                7
+            ],
+            [
+                "MAC/LINUX Installation Tips",
+                "05:33",
+                "2.5",
+                333,
+                8
+            ],
+            [
+                "WINDOWS Installation Tips",
+                "01:17",
+                "2.6",
+                77,
+                9
+            ],
+            [
+                "Setting Up Our Developer Environment",
+                "05:15",
+                "2.7",
+                315,
+                10
+            ],
+            [
+                "Quick Note: Official VS Code Plugin",
+                "00:15",
+                "2.8",
+                15,
+                11
+            ],
+            [
+                "Our First Deno App",
+                "08:18",
+                "2.9",
+                498,
+                12
+            ],
+            [
+                "Exercise: Our First Deno App",
+                "00:18",
+                "2.10",
+                18,
+                13
+            ],
+            [
+                "The Most Important Video",
+                "00:59",
+                "2.11",
+                59,
+                14
+            ],
+            [
+                "Monthly Coding Challenges, Free Resources and Guides",
+                "00:40",
+                "2.12",
+                40,
+                15
+            ],
+            [
+                "Deno Internals And Architecture",
+                "12:39",
+                "2.13",
+                759,
+                16
+            ],
+            [
+                "Recommended Path: JavaScript Runtimes",
+                "00:29",
+                "2.14",
+                29,
+                17
+            ],
+            [
+                "Deno Metrics",
+                "06:50",
+                "2.15",
+                410,
+                18
+            ],
+            [
+                "Exercise: Deno Architecture",
+                "04:01",
+                "2.16",
+                241,
+                19
+            ],
+            [
+                "Deno 1.5 Compiler Update",
+                "00:08",
+                "2.17",
+                8,
+                20
+            ],
+            [
+                "Web Developer Monthly",
+                "00:21",
+                "2.18",
+                21,
+                21
+            ],
+            [
+                "Endorsements On LinkedIN",
+                "00:39",
+                "2.19",
+                39,
+                22
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Deno Foundations",
+        "durs": [
+            360,
+            325,
+            281,
+            22,
+            333,
+            77,
+            315,
+            15,
+            498,
+            18,
+            59,
+            40,
+            759,
+            29,
+            410,
+            241,
+            8,
+            21,
+            39
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Deno Game Changers",
+                "09:58",
+                "3.1",
+                598,
+                23
+            ],
+            [
+                "Deno Game Changers 2",
+                "07:56",
+                "3.2",
+                476,
+                24
+            ],
+            [
+                "Will Deno Kill NodeJS?",
+                "02:08",
+                "3.3",
+                128,
+                25
+            ],
+            [
+                "Single Executable To Rule Them All",
+                "04:08",
+                "3.4",
+                248,
+                26
+            ],
+            [
+                "Exciting Times: Deno 1.6",
+                "00:15",
+                "3.5",
+                15,
+                27
+            ],
+            [
+                "Deno Security",
+                "08:09",
+                "3.6",
+                489,
+                28
+            ],
+            [
+                "Deno Permissions",
+                "06:24",
+                "3.7",
+                384,
+                29
+            ],
+            [
+                "Deno Permissions 2",
+                "03:09",
+                "3.8",
+                189,
+                30
+            ],
+            [
+                "Deno Permissions 3",
+                "05:10",
+                "3.9",
+                310,
+                31
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Deno vs Node",
+        "durs": [
+            598,
+            476,
+            128,
+            248,
+            15,
+            489,
+            384,
+            189,
+            310
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "How Modules Work In Deno",
+                "06:20",
+                "4.1",
+                380,
+                32
+            ],
+            [
+                "URL Modules",
+                "05:53",
+                "4.2",
+                353,
+                33
+            ],
+            [
+                "Standard Library",
+                "04:07",
+                "4.3",
+                247,
+                34
+            ],
+            [
+                "3rd Party Modules",
+                "03:30",
+                "4.4",
+                210,
+                35
+            ],
+            [
+                "Deno Caching",
+                "04:07",
+                "4.5",
+                247,
+                36
+            ],
+            [
+                "Deno Caching 2",
+                "07:31",
+                "4.6",
+                451,
+                37
+            ],
+            [
+                "NPM for Deno",
+                "02:31",
+                "4.7",
+                151,
+                38
+            ],
+            [
+                "Managing Module Versions",
+                "05:51",
+                "4.8",
+                351,
+                39
+            ],
+            [
+                "Where the Bleep is package.json?",
+                "05:50",
+                "4.9",
+                350,
+                40
+            ],
+            [
+                "Deps.ts",
+                "03:12",
+                "4.10",
+                192,
+                41
+            ],
+            [
+                "Locking Dependencies",
+                "05:53",
+                "4.11",
+                353,
+                42
+            ],
+            [
+                "Deno Upgrade To Latest",
+                "01:01",
+                "4.12",
+                61,
+                43
+            ],
+            [
+                "Reviewing Deno Modules",
+                "04:07",
+                "4.13",
+                247,
+                44
+            ],
+            [
+                "Deno Tooling",
+                "06:32",
+                "4.14",
+                392,
+                45
+            ],
+            [
+                "Deno Tooling 2",
+                "05:19",
+                "4.15",
+                319,
+                46
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Deno Modules And Tooling",
+        "durs": [
+            380,
+            353,
+            247,
+            210,
+            247,
+            451,
+            151,
+            351,
+            350,
+            192,
+            353,
+            61,
+            247,
+            392,
+            319
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Recommended Path: TypeScript",
+                "00:37",
+                "5.1",
+                37,
+                47
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "TypeScript?",
+        "durs": [
+            37
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Code Along",
+                "00:10",
+                "6.1",
+                10,
+                48
+            ],
+            [
+                "Reading Files With Deno",
+                "05:58",
+                "6.2",
+                358,
+                49
+            ],
+            [
+                "Async vs Sync File I/O",
+                "02:54",
+                "6.3",
+                174,
+                50
+            ],
+            [
+                "Exercise: Async vs Sync File IO",
+                "00:37",
+                "6.4",
+                37,
+                51
+            ],
+            [
+                "Importing The Path Module",
+                "05:08",
+                "6.5",
+                308,
+                52
+            ],
+            [
+                "Downloading Our Planets Data",
+                "04:20",
+                "6.6",
+                260,
+                53
+            ],
+            [
+                "Reading Our CSV Data",
+                "07:38",
+                "6.7",
+                458,
+                54
+            ],
+            [
+                "Quick Note: Parse Update",
+                "00:15",
+                "6.8",
+                15,
+                55
+            ],
+            [
+                "Exercise: Resource Leaks",
+                "00:42",
+                "6.9",
+                42,
+                56
+            ],
+            [
+                "Finding Habitable Planets",
+                "10:15",
+                "6.10",
+                615,
+                57
+            ],
+            [
+                "Exploring Planets With 3rd Party Modules",
+                "06:26",
+                "6.11",
+                386,
+                58
+            ],
+            [
+                "Exercise: Exploring Earth-like Planets",
+                "00:37",
+                "6.12",
+                37,
+                59
+            ]
+        ],
+        "total": "45min",
+        "duration": 2700,
+        "name": "Deno File I/O - Planets Project",
+        "durs": [
+            10,
+            358,
+            174,
+            37,
+            308,
+            260,
+            458,
+            15,
+            42,
+            615,
+            386,
+            37
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Code Along",
+                "00:11",
+                "7.1",
+                11,
+                60
+            ],
+            [
+                "Recommended Path: APIs",
+                "00:21",
+                "7.2",
+                21,
+                61
+            ],
+            [
+                "fetch()",
+                "02:02",
+                "7.3",
+                122,
+                62
+            ],
+            [
+                "Fetching SpaceX Launch Data",
+                "04:28",
+                "7.4",
+                268,
+                63
+            ],
+            [
+                "Exercise: Making a POST Request",
+                "00:42",
+                "7.5",
+                42,
+                64
+            ],
+            [
+                "Logging",
+                "06:01",
+                "7.6",
+                361,
+                65
+            ],
+            [
+                "--reload Cache For Troubleshooting",
+                "01:08",
+                "7.7",
+                68,
+                66
+            ],
+            [
+                "Exploring SpaceX Launch Data",
+                "03:15",
+                "7.8",
+                195,
+                67
+            ],
+            [
+                "Postman and Insomnia",
+                "05:46",
+                "7.9",
+                346,
+                68
+            ],
+            [
+                "Quick Note: Rainbow Editor",
+                "00:09",
+                "7.10",
+                9,
+                69
+            ],
+            [
+                "SpaceX Customers Data",
+                "06:02",
+                "7.11",
+                362,
+                70
+            ],
+            [
+                "import.meta",
+                "03:53",
+                "7.12",
+                233,
+                71
+            ],
+            [
+                "Exercise: import.meta",
+                "00:27",
+                "7.13",
+                27,
+                72
+            ]
+        ],
+        "total": "34min",
+        "duration": 2040,
+        "name": "Exercise: SpaceX Launch Data",
+        "durs": [
+            11,
+            21,
+            122,
+            268,
+            42,
+            361,
+            68,
+            195,
+            346,
+            9,
+            362,
+            233,
+            27
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Introduction To Backend",
+                "07:24",
+                "8.1",
+                444,
+                73
+            ],
+            [
+                "Deno Backend Frameworks And Libraries",
+                "09:12",
+                "8.2",
+                552,
+                74
+            ],
+            [
+                "Code Along",
+                "00:10",
+                "8.3",
+                10,
+                75
+            ],
+            [
+                "Quick Note: Versioned Imports",
+                "00:31",
+                "8.4",
+                31,
+                76
+            ],
+            [
+                "Oak",
+                "07:48",
+                "8.5",
+                468,
+                77
+            ],
+            [
+                "What Is Middleware?",
+                "08:19",
+                "8.6",
+                499,
+                78
+            ],
+            [
+                "Working With Middleware",
+                "09:43",
+                "8.7",
+                583,
+                79
+            ],
+            [
+                "Reviewing Our Front End Code",
+                "10:52",
+                "8.8",
+                652,
+                80
+            ],
+            [
+                "Exercise: Reviewing Our Front End Code",
+                "01:13",
+                "8.9",
+                73,
+                81
+            ],
+            [
+                "Serving Static Files",
+                "07:14",
+                "8.10",
+                434,
+                82
+            ],
+            [
+                "Exercise: Fixing A Security Issue",
+                "00:19",
+                "8.11",
+                19,
+                83
+            ],
+            [
+                "Fixing Our Security Vulnerability",
+                "01:18",
+                "8.12",
+                78,
+                84
+            ],
+            [
+                "Oak Router",
+                "07:04",
+                "8.13",
+                424,
+                85
+            ],
+            [
+                "Method Not Allowed and OPTIONS",
+                "07:39",
+                "8.14",
+                459,
+                86
+            ],
+            [
+                "/planets",
+                "09:44",
+                "8.15",
+                584,
+                87
+            ],
+            [
+                "Exercise: Populating The Dropdown Menu",
+                "00:59",
+                "8.16",
+                59,
+                88
+            ],
+            [
+                "Planets Data To The Frontend",
+                "04:56",
+                "8.17",
+                296,
+                89
+            ],
+            [
+                "Testing With Deno",
+                "05:18",
+                "8.18",
+                318,
+                90
+            ],
+            [
+                "Testing With Deno 2",
+                "14:07",
+                "8.19",
+                847,
+                91
+            ],
+            [
+                "Testing With Deno 3",
+                "10:15",
+                "8.20",
+                615,
+                92
+            ],
+            [
+                "Quick Note: Replace in Files",
+                "00:22",
+                "8.21",
+                22,
+                93
+            ],
+            [
+                "Logging In Our API",
+                "02:35",
+                "8.22",
+                155,
+                94
+            ],
+            [
+                "Error Handling",
+                "08:12",
+                "8.23",
+                492,
+                95
+            ],
+            [
+                "JavaScript Maps",
+                "00:39",
+                "8.24",
+                39,
+                96
+            ],
+            [
+                "/launches",
+                "18:55",
+                "8.25",
+                1135,
+                97
+            ],
+            [
+                "POST /launches",
+                "12:30",
+                "8.26",
+                750,
+                98
+            ],
+            [
+                "Quick Note: Request Body",
+                "00:15",
+                "8.27",
+                15,
+                99
+            ],
+            [
+                "DELETE /launches",
+                "08:02",
+                "8.28",
+                482,
+                100
+            ],
+            [
+                "Managing Dependencies",
+                "08:05",
+                "8.29",
+                485,
+                101
+            ],
+            [
+                "Managing Dependencies 2",
+                "03:20",
+                "8.30",
+                200,
+                102
+            ],
+            [
+                "Adding Some Polish",
+                "01:46",
+                "8.31",
+                106,
+                103
+            ]
+        ],
+        "total": "3hr 9min",
+        "duration": 11340,
+        "name": "NASA Project: Deno For Backend Development",
+        "durs": [
+            444,
+            552,
+            10,
+            31,
+            468,
+            499,
+            583,
+            652,
+            73,
+            434,
+            19,
+            78,
+            424,
+            459,
+            584,
+            59,
+            296,
+            318,
+            847,
+            615,
+            22,
+            155,
+            492,
+            39,
+            1135,
+            750,
+            15,
+            482,
+            485,
+            200,
+            106
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Deploying Our Application To The Cloud",
+                "01:40",
+                "9.1",
+                100,
+                104
+            ],
+            [
+                "Serverless vs Containers",
+                "03:58",
+                "9.2",
+                238,
+                105
+            ],
+            [
+                "Virtual Machines",
+                "04:16",
+                "9.3",
+                256,
+                106
+            ],
+            [
+                "What is a Container?",
+                "04:59",
+                "9.4",
+                299,
+                107
+            ],
+            [
+                "Installing Docker",
+                "03:27",
+                "9.5",
+                207,
+                108
+            ],
+            [
+                "Running Our First Docker Container",
+                "05:38",
+                "9.6",
+                338,
+                109
+            ],
+            [
+                "Creating a Dockerfile",
+                "08:41",
+                "9.7",
+                521,
+                110
+            ],
+            [
+                "Your Docker Hub Account",
+                "01:39",
+                "9.8",
+                99,
+                111
+            ],
+            [
+                "Running Our NASA API in a Container",
+                "06:30",
+                "9.9",
+                390,
+                112
+            ],
+            [
+                "Restarting Docker Containers",
+                "03:17",
+                "9.10",
+                197,
+                113
+            ],
+            [
+                "Publishing Our Docker Image",
+                "03:05",
+                "9.11",
+                185,
+                114
+            ],
+            [
+                "Exploring Amazon Web Services",
+                "06:28",
+                "9.12",
+                388,
+                115
+            ],
+            [
+                "Creating an EC2 Instance 1",
+                "07:49",
+                "9.13",
+                469,
+                116
+            ],
+            [
+                "Creating an EC2 Instance 2: Security",
+                "13:29",
+                "9.14",
+                809,
+                117
+            ],
+            [
+                "What is SSH?",
+                "02:58",
+                "9.15",
+                178,
+                118
+            ],
+            [
+                "Connecting To Our EC2 Instance With SSH",
+                "07:50",
+                "9.16",
+                470,
+                119
+            ],
+            [
+                "Setting Up Our EC2 Server",
+                "03:48",
+                "9.17",
+                228,
+                120
+            ],
+            [
+                "Deploying Our NASA API",
+                "06:30",
+                "9.18",
+                390,
+                121
+            ]
+        ],
+        "total": "1hr 36min",
+        "duration": 5760,
+        "name": "NASA Project: Deno Production And The Cloud (Docker + AWS)",
+        "durs": [
+            100,
+            238,
+            256,
+            299,
+            207,
+            338,
+            521,
+            99,
+            390,
+            197,
+            185,
+            388,
+            469,
+            809,
+            178,
+            470,
+            228,
+            390
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Learning Guideline",
+                "00:09",
+                "10.1",
+                9,
+                122
+            ],
+            [
+                "LinkedIn Endorsements",
+                "00:39",
+                "10.2",
+                39,
+                123
+            ],
+            [
+                "Become An Alumni",
+                "00:37",
+                "10.3",
+                37,
+                124
+            ],
+            [
+                "Coding Challenges",
+                "00:29",
+                "10.4",
+                29,
+                125
+            ],
+            [
+                "Course Review",
+                "1 question",
+                "",
+                0,
+                126
+            ],
+            [
+                "The Final Challenge",
+                "1 question",
+                "",
+                0,
+                126
+            ]
+        ],
+        "total": "2min",
+        "duration": 120,
+        "name": "Where To Go From Here?",
+        "durs": [
+            9,
+            39,
+            37,
+            29,
+            0,
+            0
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:09",
+                "11.1",
+                9,
+                126
+            ],
+            [
+                "JavaScript Engine",
+                "05:28",
+                "11.2",
+                328,
+                127
+            ],
+            [
+                "Exercise: Javascript Engine",
+                "00:56",
+                "11.3",
+                56,
+                128
+            ],
+            [
+                "Inside the Engine",
+                "04:05",
+                "11.4",
+                245,
+                129
+            ],
+            [
+                "Exercise: JS Engine For All",
+                "02:33",
+                "11.5",
+                153,
+                130
+            ],
+            [
+                "Interpreters and Compilers",
+                "06:21",
+                "11.6",
+                381,
+                131
+            ],
+            [
+                "Inside the V8 Engine",
+                "08:56",
+                "11.7",
+                536,
+                132
+            ],
+            [
+                "Comparing Other Languages",
+                "04:15",
+                "11.8",
+                255,
+                133
+            ],
+            [
+                "Writing Optimized Code",
+                "08:53",
+                "11.9",
+                533,
+                134
+            ],
+            [
+                "WebAssembly",
+                "03:15",
+                "11.10",
+                195,
+                135
+            ],
+            [
+                "Call Stack and Memory Heap",
+                "14:37",
+                "11.11",
+                877,
+                136
+            ],
+            [
+                "Stack Overflow",
+                "03:21",
+                "11.12",
+                201,
+                137
+            ],
+            [
+                "Garbage Collection",
+                "04:30",
+                "11.13",
+                270,
+                138
+            ],
+            [
+                "Memory Leaks",
+                "06:34",
+                "11.14",
+                394,
+                139
+            ],
+            [
+                "Single Threaded",
+                "01:58",
+                "11.15",
+                118,
+                140
+            ],
+            [
+                "Exercise: Issue With Single Thread",
+                "02:40",
+                "11.16",
+                160,
+                141
+            ],
+            [
+                "Javascript Runtime",
+                "14:07",
+                "11.17",
+                847,
+                142
+            ],
+            [
+                "Node.js",
+                "06:27",
+                "11.18",
+                387,
+                143
+            ],
+            [
+                "Recommended Path: Back To Deno",
+                "00:16",
+                "11.19",
+                16,
+                144
+            ]
+        ],
+        "total": "1hr 39min",
+        "duration": 5940,
+        "name": "Bonus: How JavaScript Works",
+        "durs": [
+            9,
+            328,
+            56,
+            245,
+            153,
+            381,
+            536,
+            255,
+            533,
+            195,
+            877,
+            201,
+            270,
+            394,
+            118,
+            160,
+            847,
+            387,
+            16
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:10",
+                "12.1",
+                10,
+                145
+            ],
+            [
+                "Introduction To TypeScript",
+                "01:27",
+                "12.2",
+                87,
+                146
+            ],
+            [
+                "Dynamic vs Static Typing",
+                "11:50",
+                "12.3",
+                710,
+                147
+            ],
+            [
+                "Strongly vs Weakly Typed",
+                "03:18",
+                "12.4",
+                198,
+                148
+            ],
+            [
+                "Static Typing In JavaScript",
+                "09:45",
+                "12.5",
+                585,
+                149
+            ],
+            [
+                "Quick Note: Upcoming Videos",
+                "00:20",
+                "12.6",
+                20,
+                150
+            ],
+            [
+                "OPTIONAL: Installing TypeScript Compiler",
+                "03:50",
+                "12.7",
+                230,
+                151
+            ],
+            [
+                "OPTIONAL: Installing Node.js + TypeScript",
+                "00:31",
+                "12.8",
+                31,
+                152
+            ],
+            [
+                "TypeScript",
+                "11:33",
+                "12.9",
+                693,
+                153
+            ],
+            [
+                "TypeScript 2",
+                "03:16",
+                "12.10",
+                196,
+                154
+            ],
+            [
+                "TypeScript 3",
+                "07:24",
+                "12.11",
+                444,
+                155
+            ],
+            [
+                "Resources: TypeScript Types",
+                "00:09",
+                "12.12",
+                9,
+                156
+            ],
+            [
+                "TypeScript 4",
+                "05:38",
+                "12.13",
+                338,
+                157
+            ],
+            [
+                "TypeScript 5",
+                "06:39",
+                "12.14",
+                399,
+                158
+            ],
+            [
+                "TypeScript 6",
+                "04:48",
+                "12.15",
+                288,
+                159
+            ],
+            [
+                "Resources: Type VS Interface",
+                "00:02",
+                "12.16",
+                2,
+                160
+            ],
+            [
+                "TypeScript 7",
+                "03:34",
+                "12.17",
+                214,
+                161
+            ],
+            [
+                "Resources: Type Assertion",
+                "00:04",
+                "12.18",
+                4,
+                162
+            ],
+            [
+                "TypeScript 8",
+                "06:04",
+                "12.19",
+                364,
+                163
+            ],
+            [
+                "TypeScript 9",
+                "01:21",
+                "12.20",
+                81,
+                164
+            ],
+            [
+                "TypeScript 10",
+                "01:23",
+                "12.21",
+                83,
+                165
+            ]
+        ],
+        "total": "1hr 23min",
+        "duration": 4980,
+        "name": "Bonus: Learning TypeScript",
+        "durs": [
+            10,
+            87,
+            710,
+            198,
+            585,
+            20,
+            230,
+            31,
+            693,
+            196,
+            444,
+            9,
+            338,
+            399,
+            288,
+            2,
+            214,
+            4,
+            364,
+            81,
+            83
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:10",
+                "13.1",
+                10,
+                166
+            ],
+            [
+                "HTTP/HTTPS",
+                "19:58",
+                "13.2",
+                1198,
+                167
+            ],
+            [
+                "JSON",
+                "07:25",
+                "13.3",
+                445,
+                168
+            ],
+            [
+                "JSON vs Form Data",
+                "00:21",
+                "13.4",
+                21,
+                169
+            ],
+            [
+                "AJAX",
+                "13:37",
+                "13.5",
+                817,
+                170
+            ],
+            [
+                "APIs",
+                "13:31",
+                "13.6",
+                811,
+                171
+            ]
+        ],
+        "total": "55min",
+        "duration": 3300,
+        "name": "Bonus: HTTP, AJAX, JSON and APIs",
+        "durs": [
+            10,
+            1198,
+            445,
+            21,
+            817,
+            811
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Bonus Lecture",
+                "00:37",
+                "14.1",
+                37,
+                172
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "BONUS SECTION",
+        "durs": [
+            37
+        ]
+    }
+]

@@ -1,0 +1,1996 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "How To Succeed In This Course",
+                "05:37",
+                "1.1",
+                337,
+                1
+            ],
+            [
+                "Join Our Online Classroom",
+                "01:14",
+                "1.2",
+                74,
+                2
+            ],
+            [
+                "Exercise: Meet The Community!",
+                "01:22",
+                "1.3",
+                82,
+                3
+            ],
+            [
+                "Monthly Coding Challenges, Free Resources and Guides",
+                "00:40",
+                "1.4",
+                40,
+                4
+            ]
+        ],
+        "total": "9min",
+        "duration": 540,
+        "name": "Introduction",
+        "durs": [
+            337,
+            74,
+            82,
+            40
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Section Overview",
+                "02:27",
+                "2.1",
+                147,
+                5
+            ],
+            [
+                "Javascript Engine",
+                "05:28",
+                "2.2",
+                328,
+                6
+            ],
+            [
+                "Exercise: Javascript Engine",
+                "00:56",
+                "2.3",
+                56,
+                7
+            ],
+            [
+                "Inside the Engine",
+                "04:05",
+                "2.4",
+                245,
+                8
+            ],
+            [
+                "Exercise: JS Engine For All",
+                "02:33",
+                "2.5",
+                153,
+                9
+            ],
+            [
+                "Interpreters and Compilers",
+                "06:21",
+                "2.6",
+                381,
+                10
+            ],
+            [
+                "Babel + TypeScript",
+                "00:17",
+                "2.7",
+                17,
+                11
+            ],
+            [
+                "Inside the V8 Engine",
+                "08:56",
+                "2.8",
+                536,
+                12
+            ],
+            [
+                "Comparing Other Languages",
+                "04:15",
+                "2.9",
+                255,
+                13
+            ],
+            [
+                "Writing Optimized Code",
+                "08:53",
+                "2.10",
+                533,
+                14
+            ],
+            [
+                "WebAssembly",
+                "03:15",
+                "2.11",
+                195,
+                15
+            ],
+            [
+                "Call Stack and Memory Heap",
+                "14:37",
+                "2.12",
+                877,
+                16
+            ],
+            [
+                "Stack Overflow",
+                "03:21",
+                "2.13",
+                201,
+                17
+            ],
+            [
+                "Garbage Collection",
+                "04:30",
+                "2.14",
+                270,
+                18
+            ],
+            [
+                "Memory Leaks",
+                "06:34",
+                "2.15",
+                394,
+                19
+            ],
+            [
+                "Single Threaded",
+                "01:58",
+                "2.16",
+                118,
+                20
+            ],
+            [
+                "Exercise: Issue With Single Thread",
+                "02:40",
+                "2.17",
+                160,
+                21
+            ],
+            [
+                "Javascript Runtime",
+                "14:07",
+                "2.18",
+                847,
+                22
+            ],
+            [
+                "Node.js",
+                "06:27",
+                "2.19",
+                387,
+                23
+            ],
+            [
+                "Exercise: Fix This Code",
+                "00:26",
+                "2.20",
+                26,
+                24
+            ],
+            [
+                "Section Review",
+                "05:02",
+                "2.21",
+                302,
+                25
+            ],
+            [
+                "Web Developer Monthly",
+                "00:21",
+                "2.22",
+                21,
+                26
+            ],
+            [
+                "Advanced JavaScript Cheatsheet",
+                "00:09",
+                "2.23",
+                9,
+                27
+            ],
+            [
+                "Endorsements On LinkedIN",
+                "00:39",
+                "2.24",
+                39,
+                28
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "JavaScript Foundation",
+        "durs": [
+            147,
+            328,
+            56,
+            245,
+            153,
+            381,
+            17,
+            536,
+            255,
+            533,
+            195,
+            877,
+            201,
+            270,
+            394,
+            118,
+            160,
+            847,
+            387,
+            26,
+            302,
+            21,
+            9,
+            39
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Section Overview",
+                "01:06",
+                "3.1",
+                66,
+                29
+            ],
+            [
+                "Execution Context",
+                "08:35",
+                "3.2",
+                515,
+                30
+            ],
+            [
+                "Lexical Environment",
+                "05:39",
+                "3.3",
+                339,
+                31
+            ],
+            [
+                "Hoisting",
+                "10:47",
+                "3.4",
+                647,
+                32
+            ],
+            [
+                "Exercise: Hoisting",
+                "03:58",
+                "3.5",
+                238,
+                33
+            ],
+            [
+                "Exercise: Hoisting 2",
+                "07:06",
+                "3.6",
+                426,
+                34
+            ],
+            [
+                "Exercise: Hoisting 3",
+                "00:03",
+                "3.7",
+                3,
+                35
+            ],
+            [
+                "Function Invocation",
+                "06:59",
+                "3.8",
+                419,
+                36
+            ],
+            [
+                "arguments Keyword",
+                "04:22",
+                "3.9",
+                262,
+                37
+            ],
+            [
+                "Variable Environment",
+                "06:41",
+                "3.10",
+                401,
+                38
+            ],
+            [
+                "Scope Chain",
+                "12:20",
+                "3.11",
+                740,
+                39
+            ],
+            [
+                "[[scope]]",
+                "02:03",
+                "3.12",
+                123,
+                40
+            ],
+            [
+                "Exercise: JS is Weird",
+                "04:57",
+                "3.13",
+                297,
+                41
+            ],
+            [
+                "Function Scope vs Block Scope",
+                "03:35",
+                "3.14",
+                215,
+                42
+            ],
+            [
+                "Exercise: Block Scope",
+                "03:45",
+                "3.15",
+                225,
+                43
+            ],
+            [
+                "Global Variables",
+                "04:10",
+                "3.16",
+                250,
+                44
+            ],
+            [
+                "IIFE",
+                "13:38",
+                "3.17",
+                818,
+                45
+            ],
+            [
+                "this Keyword",
+                "16:59",
+                "3.18",
+                1019,
+                46
+            ],
+            [
+                "Exercise: Dynamic Scope vs Lexical Scope",
+                "12:08",
+                "3.19",
+                728,
+                47
+            ],
+            [
+                "call(), apply(), bind()",
+                "11:17",
+                "3.20",
+                677,
+                48
+            ],
+            [
+                "Exercise: call(), apply()",
+                "00:05",
+                "3.21",
+                5,
+                49
+            ],
+            [
+                "bind() and currying",
+                "03:42",
+                "3.22",
+                222,
+                50
+            ],
+            [
+                "Exercise: this Keyword",
+                "03:09",
+                "3.23",
+                189,
+                51
+            ],
+            [
+                "Exercise: this Keyword 2",
+                "00:11",
+                "3.24",
+                11,
+                52
+            ],
+            [
+                "Context vs Scope",
+                "01:08",
+                "3.25",
+                68,
+                53
+            ],
+            [
+                "Section Review",
+                "02:47",
+                "3.26",
+                167,
+                54
+            ]
+        ],
+        "total": "2hr 31min",
+        "duration": 9060,
+        "name": "Javascript Foundation II",
+        "durs": [
+            66,
+            515,
+            339,
+            647,
+            238,
+            426,
+            3,
+            419,
+            262,
+            401,
+            740,
+            123,
+            297,
+            215,
+            225,
+            250,
+            818,
+            1019,
+            728,
+            677,
+            5,
+            222,
+            189,
+            11,
+            68,
+            167
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Section Overview",
+                "01:22",
+                "4.1",
+                82,
+                55
+            ],
+            [
+                "Javascript Types",
+                "13:40",
+                "4.2",
+                820,
+                56
+            ],
+            [
+                "Array.isArray()",
+                "02:17",
+                "4.3",
+                137,
+                57
+            ],
+            [
+                "Pass By Value vs Pass By Reference",
+                "17:06",
+                "4.4",
+                1026,
+                58
+            ],
+            [
+                "Exercise: Compare Objects",
+                "00:15",
+                "4.5",
+                15,
+                59
+            ],
+            [
+                "Exercise: Pass By Reference",
+                "00:03",
+                "4.6",
+                3,
+                60
+            ],
+            [
+                "Type Coercion",
+                "09:02",
+                "4.7",
+                542,
+                61
+            ],
+            [
+                "Exercise: Type Coercion",
+                "00:07",
+                "4.8",
+                7,
+                62
+            ],
+            [
+                "Quick Note: Upcoming Videos",
+                "00:11",
+                "4.9",
+                11,
+                63
+            ],
+            [
+                "JTS: Dynamic vs Static Typing",
+                "11:50",
+                "4.10",
+                710,
+                64
+            ],
+            [
+                "JTS: Weakly vs Strongly Typed",
+                "03:18",
+                "4.11",
+                198,
+                65
+            ],
+            [
+                "JTS: Static Typing In JavaScript",
+                "09:45",
+                "4.12",
+                585,
+                66
+            ]
+        ],
+        "total": "1hr 9min",
+        "duration": 4140,
+        "name": "Types in JavaScript",
+        "durs": [
+            82,
+            820,
+            137,
+            1026,
+            15,
+            3,
+            542,
+            7,
+            11,
+            710,
+            198,
+            585
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Section Overview",
+                "01:54",
+                "5.1",
+                114,
+                67
+            ],
+            [
+                "Functions are Objects",
+                "09:18",
+                "5.2",
+                558,
+                68
+            ],
+            [
+                "First Class Citizens",
+                "04:04",
+                "5.3",
+                244,
+                69
+            ],
+            [
+                "Extra Bits: Functions",
+                "03:25",
+                "5.4",
+                205,
+                70
+            ],
+            [
+                "Higher Order Functions",
+                "17:14",
+                "5.5",
+                1034,
+                71
+            ],
+            [
+                "Exercise: Higher Order Functions",
+                "03:45",
+                "5.6",
+                225,
+                72
+            ],
+            [
+                "Closures",
+                "15:10",
+                "5.7",
+                910,
+                73
+            ],
+            [
+                "Exercise: Closures",
+                "03:18",
+                "5.8",
+                198,
+                74
+            ],
+            [
+                "Closures and Memory",
+                "07:52",
+                "5.9",
+                472,
+                75
+            ],
+            [
+                "Closures and Encapsulation",
+                "07:41",
+                "5.10",
+                461,
+                76
+            ],
+            [
+                "Exercise: Closures 2",
+                "01:31",
+                "5.11",
+                91,
+                77
+            ],
+            [
+                "Solution: Closures 2",
+                "02:34",
+                "5.12",
+                154,
+                78
+            ],
+            [
+                "Exercise: Closures 3",
+                "01:28",
+                "5.13",
+                88,
+                79
+            ],
+            [
+                "Solution: Closures 3",
+                "03:47",
+                "5.14",
+                227,
+                80
+            ],
+            [
+                "Closures Review",
+                "01:34",
+                "5.15",
+                94,
+                81
+            ],
+            [
+                "Prototypal Inheritance",
+                "06:47",
+                "5.16",
+                407,
+                82
+            ],
+            [
+                "Prototypal Inheritance 2",
+                "09:07",
+                "5.17",
+                547,
+                83
+            ],
+            [
+                "Prototypal Inheritance 3",
+                "07:46",
+                "5.18",
+                466,
+                84
+            ],
+            [
+                "Prototypal Inheritance 4",
+                "10:35",
+                "5.19",
+                635,
+                85
+            ],
+            [
+                "Prototypal Inheritance 5",
+                "02:43",
+                "5.20",
+                163,
+                86
+            ],
+            [
+                "Prototypal Inheritance 6",
+                "09:16",
+                "5.21",
+                556,
+                87
+            ],
+            [
+                "Exercise: Prototypal Inheritance",
+                "02:55",
+                "5.22",
+                175,
+                88
+            ],
+            [
+                "Solution: Prototypal Inheritance",
+                "08:20",
+                "5.23",
+                500,
+                89
+            ],
+            [
+                "Exercise: Prototypal Inheritance with this",
+                "00:06",
+                "5.24",
+                6,
+                90
+            ],
+            [
+                "Section Review",
+                "03:57",
+                "5.25",
+                237,
+                91
+            ]
+        ],
+        "total": "2hr 26min",
+        "duration": 8760,
+        "name": "The 2 Pillars: Closures and Prototypal Inheritance",
+        "durs": [
+            114,
+            558,
+            244,
+            205,
+            1034,
+            225,
+            910,
+            198,
+            472,
+            461,
+            91,
+            154,
+            88,
+            227,
+            94,
+            407,
+            547,
+            466,
+            635,
+            163,
+            556,
+            175,
+            500,
+            6,
+            237
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Section Overview",
+                "06:24",
+                "6.1",
+                384,
+                92
+            ],
+            [
+                "OOP and FP",
+                "03:50",
+                "6.2",
+                230,
+                93
+            ],
+            [
+                "OOP Introduction",
+                "03:21",
+                "6.3",
+                201,
+                94
+            ],
+            [
+                "OOP1: Factory Functions",
+                "08:20",
+                "6.4",
+                500,
+                95
+            ],
+            [
+                "OOP2: Object.create()",
+                "07:38",
+                "6.5",
+                458,
+                96
+            ],
+            [
+                "OOP3: Constructor Functions",
+                "13:00",
+                "6.6",
+                780,
+                97
+            ],
+            [
+                "More Constructor Functions",
+                "08:38",
+                "6.7",
+                518,
+                98
+            ],
+            [
+                "Funny Thing About JS...",
+                "02:52",
+                "6.8",
+                172,
+                99
+            ],
+            [
+                "OOP4: ES6 Classes",
+                "08:44",
+                "6.9",
+                524,
+                100
+            ],
+            [
+                "Object.create() vs Class",
+                "01:48",
+                "6.10",
+                108,
+                101
+            ],
+            [
+                "this - 4 Ways",
+                "04:44",
+                "6.11",
+                284,
+                102
+            ],
+            [
+                "Inheritance",
+                "14:41",
+                "6.12",
+                881,
+                103
+            ],
+            [
+                "Inheritance 2",
+                "05:25",
+                "6.13",
+                325,
+                104
+            ],
+            [
+                "ES2020: Private Class Variables",
+                "00:14",
+                "6.14",
+                14,
+                105
+            ],
+            [
+                "Public vs Private",
+                "04:21",
+                "6.15",
+                261,
+                106
+            ],
+            [
+                "OOP in React.js",
+                "03:05",
+                "6.16",
+                185,
+                107
+            ],
+            [
+                "4 Pillars of OOP",
+                "08:17",
+                "6.17",
+                497,
+                108
+            ],
+            [
+                "Exercise: OOP and Polymorphism",
+                "00:16",
+                "6.18",
+                16,
+                109
+            ],
+            [
+                "Reviewing OOP",
+                "02:06",
+                "6.19",
+                126,
+                110
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "Object Oriented Programming",
+        "durs": [
+            384,
+            230,
+            201,
+            500,
+            458,
+            780,
+            518,
+            172,
+            524,
+            108,
+            284,
+            881,
+            325,
+            14,
+            261,
+            185,
+            497,
+            16,
+            126
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Section Overview",
+                "02:29",
+                "7.1",
+                149,
+                111
+            ],
+            [
+                "Functional Programming Introduction",
+                "03:31",
+                "7.2",
+                211,
+                112
+            ],
+            [
+                "Exercise: Amazon",
+                "03:37",
+                "7.3",
+                217,
+                113
+            ],
+            [
+                "Pure Functions",
+                "04:35",
+                "7.4",
+                275,
+                114
+            ],
+            [
+                "Pure Functions 2",
+                "07:47",
+                "7.5",
+                467,
+                115
+            ],
+            [
+                "Can Everything Be Pure?",
+                "04:33",
+                "7.6",
+                273,
+                116
+            ],
+            [
+                "Idempotent",
+                "04:08",
+                "7.7",
+                248,
+                117
+            ],
+            [
+                "Imperative vs Declarative",
+                "06:27",
+                "7.8",
+                387,
+                118
+            ],
+            [
+                "Immutability",
+                "05:28",
+                "7.9",
+                328,
+                119
+            ],
+            [
+                "Higher Order Functions and Closures",
+                "07:49",
+                "7.10",
+                469,
+                120
+            ],
+            [
+                "Currying",
+                "04:24",
+                "7.11",
+                264,
+                121
+            ],
+            [
+                "Partial Application",
+                "04:24",
+                "7.12",
+                264,
+                122
+            ],
+            [
+                "Quick Note: Upcoming Videos",
+                "00:12",
+                "7.13",
+                12,
+                123
+            ],
+            [
+                "MCI: Memoization 1",
+                "07:47",
+                "7.14",
+                467,
+                124
+            ],
+            [
+                "MCI: Memoization 2",
+                "03:56",
+                "7.15",
+                236,
+                125
+            ],
+            [
+                "Compose and Pipe",
+                "12:33",
+                "7.16",
+                753,
+                126
+            ],
+            [
+                "Arity",
+                "01:46",
+                "7.17",
+                106,
+                127
+            ],
+            [
+                "Is FP The Answer To Everything?",
+                "02:54",
+                "7.18",
+                174,
+                128
+            ],
+            [
+                "Solution: Amazon",
+                "21:48",
+                "7.19",
+                1308,
+                129
+            ],
+            [
+                "Reviewing FP",
+                "05:14",
+                "7.20",
+                314,
+                130
+            ]
+        ],
+        "total": "1hr 55min",
+        "duration": 6900,
+        "name": "Functional Programming",
+        "durs": [
+            149,
+            211,
+            217,
+            275,
+            467,
+            273,
+            248,
+            387,
+            328,
+            469,
+            264,
+            264,
+            12,
+            467,
+            236,
+            753,
+            106,
+            174,
+            1308,
+            314
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Composition vs Inheritance",
+                "16:20",
+                "8.1",
+                980,
+                131
+            ],
+            [
+                "OOP vs FP",
+                "04:29",
+                "8.2",
+                269,
+                132
+            ],
+            [
+                "OOP vs FP 2",
+                "05:19",
+                "8.3",
+                319,
+                133
+            ]
+        ],
+        "total": "26min",
+        "duration": 1560,
+        "name": "OOP vs FP",
+        "durs": [
+            980,
+            269,
+            319
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Section Overview",
+                "04:51",
+                "9.1",
+                291,
+                134
+            ],
+            [
+                "Quick Note: Upcoming Videos",
+                "00:20",
+                "9.2",
+                20,
+                135
+            ],
+            [
+                "How JavaScript Works",
+                "24:12",
+                "9.3",
+                1452,
+                136
+            ],
+            [
+                "Promises",
+                "22:26",
+                "9.4",
+                1346,
+                137
+            ],
+            [
+                "ES8 - Async Await",
+                "15:22",
+                "9.5",
+                922,
+                138
+            ],
+            [
+                "ES9 (ES2018)",
+                "05:21",
+                "9.6",
+                321,
+                139
+            ],
+            [
+                "ES9 (ES2018) - Async",
+                "11:11",
+                "9.7",
+                671,
+                140
+            ],
+            [
+                "Job Queue",
+                "06:55",
+                "9.8",
+                415,
+                141
+            ],
+            [
+                "Parallel, Sequence and Race",
+                "10:00",
+                "9.9",
+                600,
+                142
+            ],
+            [
+                "ES2020: allSettled()",
+                "04:22",
+                "9.10",
+                262,
+                143
+            ],
+            [
+                "Threads, Concurrency and Parallelism",
+                "11:27",
+                "9.11",
+                687,
+                144
+            ]
+        ],
+        "total": "1hr 56min",
+        "duration": 6960,
+        "name": "Asynchronous JavaScript",
+        "durs": [
+            291,
+            20,
+            1452,
+            1346,
+            922,
+            321,
+            671,
+            415,
+            600,
+            262,
+            687
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Section Overview",
+                "02:44",
+                "10.1",
+                164,
+                145
+            ],
+            [
+                "What Is A Module?",
+                "11:05",
+                "10.2",
+                665,
+                146
+            ],
+            [
+                "Module Pattern",
+                "13:05",
+                "10.3",
+                785,
+                147
+            ],
+            [
+                "Module Pattern Pros and Cons",
+                "04:53",
+                "10.4",
+                293,
+                148
+            ],
+            [
+                "CommonJS, AMD, UMD",
+                "10:05",
+                "10.5",
+                605,
+                149
+            ],
+            [
+                "ES6 Modules",
+                "08:52",
+                "10.6",
+                532,
+                150
+            ],
+            [
+                "Section Review",
+                "02:14",
+                "10.7",
+                134,
+                151
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Modules In JavaScript",
+        "durs": [
+            164,
+            665,
+            785,
+            293,
+            605,
+            532,
+            134
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Section Overview",
+                "01:07",
+                "11.1",
+                67,
+                152
+            ],
+            [
+                "Errors In JavaScript",
+                "08:52",
+                "11.2",
+                532,
+                153
+            ],
+            [
+                "Try Catch",
+                "09:53",
+                "11.3",
+                593,
+                154
+            ],
+            [
+                "Async Error Handling",
+                "12:56",
+                "11.4",
+                776,
+                155
+            ],
+            [
+                "Async Error Handling 2",
+                "03:30",
+                "11.5",
+                210,
+                156
+            ],
+            [
+                "Exercise: Error Handling",
+                "00:01",
+                "11.6",
+                1,
+                157
+            ],
+            [
+                "Extending Errors",
+                "05:08",
+                "11.7",
+                308,
+                158
+            ],
+            [
+                "Section Review",
+                "01:18",
+                "11.8",
+                78,
+                159
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Error Handling",
+        "durs": [
+            67,
+            532,
+            593,
+            776,
+            210,
+            1,
+            308,
+            78
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Learning Guideline",
+                "00:10",
+                "12.1",
+                10,
+                160
+            ],
+            [
+                "Endorsements On LinkedIN",
+                "00:39",
+                "12.2",
+                39,
+                161
+            ],
+            [
+                "Become an Alumni",
+                "00:37",
+                "12.3",
+                37,
+                162
+            ],
+            [
+                "Coding Challenges",
+                "00:29",
+                "12.4",
+                29,
+                163
+            ],
+            [
+                "Thank You",
+                "00:39",
+                "12.5",
+                39,
+                164
+            ],
+            [
+                "Bonus Materials",
+                "00:08",
+                "12.6",
+                8,
+                165
+            ]
+        ],
+        "total": "3min",
+        "duration": 180,
+        "name": "Thank You",
+        "durs": [
+            10,
+            39,
+            37,
+            29,
+            39,
+            8
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:10",
+                "13.1",
+                10,
+                166
+            ],
+            [
+                "Section Overview",
+                "01:58",
+                "13.2",
+                118,
+                167
+            ],
+            [
+                "What Is A Data Structure?",
+                "05:53",
+                "13.3",
+                353,
+                168
+            ],
+            [
+                "How Computers Store Data",
+                "12:33",
+                "13.4",
+                753,
+                169
+            ],
+            [
+                "Data Structures In Different Languages",
+                "03:27",
+                "13.5",
+                207,
+                170
+            ],
+            [
+                "Operations On Data Structures",
+                "03:05",
+                "13.6",
+                185,
+                171
+            ],
+            [
+                "Array Introduction",
+                "13:51",
+                "13.7",
+                831,
+                172
+            ],
+            [
+                "Static vs Dynamic Arrays",
+                "06:40",
+                "13.8",
+                400,
+                173
+            ],
+            [
+                "Implementing An Array",
+                "17:19",
+                "13.9",
+                1039,
+                174
+            ],
+            [
+                "Strings and Arrays",
+                "01:04",
+                "13.10",
+                64,
+                175
+            ],
+            [
+                "Exercise: Reverse A String",
+                "01:35",
+                "13.11",
+                95,
+                176
+            ],
+            [
+                "Solution Reverse A String",
+                "10:31",
+                "13.12",
+                631,
+                177
+            ],
+            [
+                "Exercise: Merge Sorted Arrays",
+                "00:44",
+                "13.13",
+                44,
+                178
+            ],
+            [
+                "Solution: Merge Sorted Arrays",
+                "14:12",
+                "13.14",
+                852,
+                179
+            ],
+            [
+                "Arrays Review",
+                "03:28",
+                "13.15",
+                208,
+                180
+            ],
+            [
+                "Hash Tables Introduction",
+                "04:10",
+                "13.16",
+                250,
+                181
+            ],
+            [
+                "Hash Function",
+                "05:56",
+                "13.17",
+                356,
+                182
+            ],
+            [
+                "Hash Collisions",
+                "09:43",
+                "13.18",
+                583,
+                183
+            ],
+            [
+                "Hash Tables In Different Languages",
+                "03:30",
+                "13.19",
+                210,
+                184
+            ],
+            [
+                "Exercise: Implement A Hash Table",
+                "03:51",
+                "13.20",
+                231,
+                185
+            ],
+            [
+                "Solution: Implement A Hash Table",
+                "17:24",
+                "13.21",
+                1044,
+                186
+            ],
+            [
+                "keys()",
+                "06:11",
+                "13.22",
+                371,
+                187
+            ],
+            [
+                "Hash Tables vs Arrays",
+                "02:01",
+                "13.23",
+                121,
+                188
+            ],
+            [
+                "Exercise: First Recurring Character",
+                "01:18",
+                "13.24",
+                78,
+                189
+            ],
+            [
+                "Solution: First Recurring Character",
+                "16:11",
+                "13.25",
+                971,
+                190
+            ],
+            [
+                "Hash Tables Review",
+                "06:09",
+                "13.26",
+                369,
+                191
+            ]
+        ],
+        "total": "2hr 53min",
+        "duration": 10380,
+        "name": "Bonus: Data Structures In JavaScript",
+        "durs": [
+            10,
+            118,
+            353,
+            753,
+            207,
+            185,
+            831,
+            400,
+            1039,
+            64,
+            95,
+            631,
+            44,
+            852,
+            208,
+            250,
+            356,
+            583,
+            210,
+            231,
+            1044,
+            371,
+            121,
+            78,
+            971,
+            369
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:12",
+                "14.1",
+                12,
+                192
+            ],
+            [
+                "What is JavaScript?",
+                "05:33",
+                "14.2",
+                333,
+                193
+            ],
+            [
+                "Your First JavaScript",
+                "11:41",
+                "14.3",
+                701,
+                194
+            ],
+            [
+                "Variables",
+                "15:09",
+                "14.4",
+                909,
+                195
+            ],
+            [
+                "Control Flow",
+                "16:36",
+                "14.5",
+                996,
+                196
+            ],
+            [
+                "JavaScript On Our Webpage",
+                "09:05",
+                "14.6",
+                545,
+                197
+            ],
+            [
+                "Functions",
+                "23:53",
+                "14.7",
+                1433,
+                198
+            ],
+            [
+                "Data Structures: Arrays",
+                "13:06",
+                "14.8",
+                786,
+                199
+            ],
+            [
+                "Data Structures: Objects",
+                "15:25",
+                "14.9",
+                925,
+                200
+            ],
+            [
+                "Exercise: Build Facebook",
+                "11:16",
+                "14.10",
+                676,
+                201
+            ],
+            [
+                "JavaScript Terminology",
+                "03:43",
+                "14.11",
+                223,
+                202
+            ],
+            [
+                "Loops",
+                "22:22",
+                "14.12",
+                1342,
+                203
+            ],
+            [
+                "Exercise: Build Facebook 2",
+                "08:02",
+                "14.13",
+                482,
+                204
+            ],
+            [
+                "JavaScript Keywords",
+                "03:02",
+                "14.14",
+                182,
+                205
+            ]
+        ],
+        "total": "2hr 39min",
+        "duration": 9540,
+        "name": "Appendix I: Javascript Basics",
+        "durs": [
+            12,
+            333,
+            701,
+            909,
+            996,
+            545,
+            1433,
+            786,
+            925,
+            676,
+            223,
+            1342,
+            482,
+            182
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Quick Note: Upcoming Videos",
+                "00:12",
+                "15.1",
+                12,
+                206
+            ],
+            [
+                "Scope",
+                "10:25",
+                "15.2",
+                625,
+                207
+            ],
+            [
+                "Advanced Control Flow",
+                "11:41",
+                "15.3",
+                701,
+                208
+            ],
+            [
+                "ES5 and ES6",
+                "26:41",
+                "15.4",
+                1601,
+                209
+            ],
+            [
+                "Advanced Functions",
+                "20:04",
+                "15.5",
+                1204,
+                210
+            ],
+            [
+                "Advanced Arrays",
+                "16:40",
+                "15.6",
+                1000,
+                211
+            ],
+            [
+                "Advanced Objects",
+                "24:51",
+                "15.7",
+                1491,
+                212
+            ],
+            [
+                "ES7",
+                "03:06",
+                "15.8",
+                186,
+                213
+            ],
+            [
+                "ES8",
+                "09:19",
+                "15.9",
+                559,
+                214
+            ],
+            [
+                "Note: ES9 + ES8 Async Await",
+                "00:16",
+                "15.10",
+                16,
+                215
+            ],
+            [
+                "ES10 (ES2019)",
+                "16:49",
+                "15.11",
+                1009,
+                216
+            ],
+            [
+                "Advanced Loops",
+                "12:04",
+                "15.12",
+                724,
+                217
+            ],
+            [
+                "ES2020 Part 1",
+                "10:07",
+                "15.13",
+                607,
+                218
+            ],
+            [
+                "ES2020 Part 2",
+                "03:29",
+                "15.14",
+                209,
+                219
+            ],
+            [
+                "ES2020 Part 3",
+                "04:10",
+                "15.15",
+                250,
+                220
+            ],
+            [
+                "ES2020: globalThis",
+                "03:14",
+                "15.16",
+                194,
+                221
+            ],
+            [
+                "Debugging",
+                "08:23",
+                "15.17",
+                503,
+                222
+            ],
+            [
+                "Modules",
+                "13:19",
+                "15.18",
+                799,
+                223
+            ]
+        ],
+        "total": "3hr 15min",
+        "duration": 11700,
+        "name": "Appendix II: Intermediate Javascript",
+        "durs": [
+            12,
+            625,
+            701,
+            1601,
+            1204,
+            1000,
+            1491,
+            186,
+            559,
+            16,
+            1009,
+            724,
+            607,
+            209,
+            250,
+            194,
+            503,
+            799
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Notes To Review The Course",
+                "00:08",
+                "16.1",
+                8,
+                224
+            ],
+            [
+                "AMA - 100,000 Students!!",
+                "38:30",
+                "16.2",
+                2310,
+                225
+            ],
+            [
+                "Course Review",
+                "1 question",
+                "",
+                0,
+                226
+            ],
+            [
+                "The Final Challenge",
+                "1 question",
+                "",
+                0,
+                226
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "Bonus: Extra Bits",
+        "durs": [
+            8,
+            2310,
+            0,
+            0
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Bonus Lecture",
+                "00:37",
+                "17.1",
+                37,
+                226
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "BONUS SECTION",
+        "durs": [
+            37
+        ]
+    }
+]

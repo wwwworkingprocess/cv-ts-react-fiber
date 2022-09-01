@@ -1,0 +1,1142 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Why this course? (Course Promo)",
+                "02:36",
+                "1.1",
+                156,
+                1
+            ],
+            [
+                "The Blockchain and Cryptocurrencies - What, Why, and How",
+                "08:25",
+                "1.2",
+                505,
+                2
+            ],
+            [
+                "Code the Blockchain in 10 minutes | Lightning Version",
+                "10:51",
+                "1.3",
+                651,
+                3
+            ],
+            [
+                "[Required] Course Repository, Software Installation, Tips and Tricks",
+                "01:45",
+                "1.4",
+                105,
+                4
+            ],
+            [
+                "[Optional] Mega JavaScript and Node.js Overview",
+                "00:34",
+                "1.5",
+                34,
+                5
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Introduction and Getting Started",
+        "durs": [
+            156,
+            505,
+            651,
+            105,
+            34
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Set Up the Blockchain Application",
+                "04:18",
+                "2.1",
+                258,
+                6
+            ],
+            [
+                "Create the Block Class",
+                "07:42",
+                "2.2",
+                462,
+                7
+            ],
+            [
+                "Create the Block Class | TDD Style",
+                "12:23",
+                "2.3",
+                743,
+                8
+            ],
+            [
+                "The Genesis Block | Tests",
+                "08:21",
+                "2.4",
+                501,
+                9
+            ],
+            [
+                "The Genesis Block | Code",
+                "03:48",
+                "2.5",
+                228,
+                10
+            ],
+            [
+                "Mine Blocks",
+                "07:29",
+                "2.6",
+                449,
+                11
+            ],
+            [
+                "Crypto Hash and SHA-256",
+                "12:26",
+                "2.7",
+                746,
+                12
+            ],
+            [
+                "Hash in MineBlock",
+                "03:32",
+                "2.8",
+                212,
+                13
+            ],
+            [
+                "Recap: Blocks | The Blockchain Backend",
+                "00:47",
+                "2.9",
+                47,
+                14
+            ]
+        ],
+        "total": "1hr 1min",
+        "duration": 3660,
+        "name": "Blocks | The Blockchain Backend",
+        "durs": [
+            258,
+            462,
+            743,
+            501,
+            228,
+            449,
+            746,
+            212,
+            47
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "The Blockchain Class",
+                "08:48",
+                "3.1",
+                528,
+                15
+            ],
+            [
+                "Chain Validation and Replacement Overview | Free Preview",
+                "03:40",
+                "3.2",
+                220,
+                16
+            ],
+            [
+                "Chain Validation | Tests",
+                "10:36",
+                "3.3",
+                636,
+                17
+            ],
+            [
+                "Chain Validation | Code",
+                "07:44",
+                "3.4",
+                464,
+                18
+            ],
+            [
+                "Chain Replacement",
+                "12:16",
+                "3.5",
+                736,
+                19
+            ],
+            [
+                "Stub Console Output in Tests",
+                "04:58",
+                "3.6",
+                298,
+                20
+            ],
+            [
+                "Recap: The Chain and Proof of Work | the Blockchain Backend",
+                "00:33",
+                "3.7",
+                33,
+                21
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "The Chain | the Blockchain Backend",
+        "durs": [
+            528,
+            220,
+            636,
+            464,
+            736,
+            298,
+            33
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Proof of Work and the 51% Attack",
+                "09:12",
+                "4.1",
+                552,
+                22
+            ],
+            [
+                "Difficulty and the Nonce Value | Tests",
+                "04:52",
+                "4.2",
+                292,
+                23
+            ],
+            [
+                "Difficulty and the Nonce Value | Code",
+                "08:16",
+                "4.3",
+                496,
+                24
+            ],
+            [
+                "Dynamic Difficulty and the Mine Rate",
+                "09:53",
+                "4.4",
+                593,
+                25
+            ],
+            [
+                "Adjust the Difficulty in MineBlock",
+                "06:38",
+                "4.5",
+                398,
+                26
+            ],
+            [
+                "Improve the Proof of Work System | Average Work Script",
+                "11:26",
+                "4.6",
+                686,
+                27
+            ],
+            [
+                "Improve the Proof of Work System | Binary hashes",
+                "08:21",
+                "4.7",
+                501,
+                28
+            ],
+            [
+                "Prevent Difficulty Jumps",
+                "07:48",
+                "4.8",
+                468,
+                29
+            ],
+            [
+                "Recap: Proof of Work | the Blockchain Backend",
+                "00:49",
+                "4.9",
+                49,
+                30
+            ]
+        ],
+        "total": "1hr 7min",
+        "duration": 4020,
+        "name": "Proof of Work | The Blockchain Backend",
+        "durs": [
+            552,
+            292,
+            496,
+            593,
+            398,
+            686,
+            501,
+            468,
+            49
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Blockchain API and Network Overview",
+                "02:45",
+                "5.1",
+                165,
+                31
+            ],
+            [
+                "Setup Express API",
+                "09:06",
+                "5.2",
+                546,
+                32
+            ],
+            [
+                "Post Request to Mine a Block",
+                "09:46",
+                "5.3",
+                586,
+                33
+            ],
+            [
+                "Real-Time Messaging Network through Pub/Sub | Overview",
+                "04:27",
+                "5.4",
+                267,
+                34
+            ],
+            [
+                "Pub/Sub Options: Redis or PubNub",
+                "01:17",
+                "5.5",
+                77,
+                35
+            ],
+            [
+                "Install Redis",
+                "00:29",
+                "5.6",
+                29,
+                36
+            ],
+            [
+                "Redis Publisher/Subscriber Class",
+                "10:57",
+                "5.7",
+                657,
+                37
+            ],
+            [
+                "Install PubNub",
+                "00:14",
+                "5.8",
+                14,
+                38
+            ],
+            [
+                "PubNub: a Non-Redis Pub/Sub Alternative",
+                "13:10",
+                "5.9",
+                790,
+                39
+            ],
+            [
+                "Broadcast Chain",
+                "10:47",
+                "5.10",
+                647,
+                40
+            ],
+            [
+                "Start Peers and Broadcast Chain on API Mine",
+                "08:52",
+                "5.11",
+                532,
+                41
+            ],
+            [
+                "Sync Chain on Connect",
+                "07:59",
+                "5.12",
+                479,
+                42
+            ],
+            [
+                "Avoid Redundant Interactions",
+                "05:57",
+                "5.13",
+                357,
+                43
+            ],
+            [
+                "Recap: API and Network | the Blockchain Backend",
+                "00:52",
+                "5.14",
+                52,
+                44
+            ]
+        ],
+        "total": "1hr 27min",
+        "duration": 5220,
+        "name": "API and Network | The Blockchain Backend",
+        "durs": [
+            165,
+            546,
+            586,
+            267,
+            77,
+            29,
+            657,
+            14,
+            790,
+            647,
+            532,
+            479,
+            357,
+            52
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Wallets, Keys, and Transactions Overview",
+                "06:56",
+                "6.1",
+                416,
+                45
+            ],
+            [
+                "Code Organization",
+                "06:38",
+                "6.2",
+                398,
+                46
+            ],
+            [
+                "Create and Test Wallet Class",
+                "07:18",
+                "6.3",
+                438,
+                47
+            ],
+            [
+                "Key Pair and Public Key Addresses",
+                "08:32",
+                "6.4",
+                512,
+                48
+            ],
+            [
+                "Sign Data and Verifying Signatures",
+                "10:20",
+                "6.5",
+                620,
+                49
+            ],
+            [
+                "Transaction Objects and the OutputMap | Tests",
+                "07:57",
+                "6.6",
+                477,
+                50
+            ],
+            [
+                "Transaction Objects and the OutputMap | Code",
+                "05:42",
+                "6.7",
+                342,
+                51
+            ],
+            [
+                "Transaction Inputs",
+                "08:44",
+                "6.8",
+                524,
+                52
+            ],
+            [
+                "Cohesive Utility",
+                "02:32",
+                "6.9",
+                152,
+                53
+            ],
+            [
+                "Validate Transaction",
+                "11:14",
+                "6.10",
+                674,
+                54
+            ],
+            [
+                "Wallet Create Transaction",
+                "11:35",
+                "6.11",
+                695,
+                55
+            ],
+            [
+                "Update Transactions with Multiple Outputs",
+                "11:35",
+                "6.12",
+                695,
+                56
+            ],
+            [
+                "Improve the CryptoHash",
+                "09:29",
+                "6.13",
+                569,
+                57
+            ],
+            [
+                "Transaction Update Edge Cases",
+                "09:46",
+                "6.14",
+                586,
+                58
+            ],
+            [
+                "Recap: Wallets, Keys, and Transactions | The Cryptocurrency Backend",
+                "00:47",
+                "6.15",
+                47,
+                59
+            ]
+        ],
+        "total": "1hr 59min",
+        "duration": 7140,
+        "name": "Wallets, Keys, and Transactions | The Cryptocurrency Backend",
+        "durs": [
+            416,
+            398,
+            438,
+            512,
+            620,
+            477,
+            342,
+            524,
+            152,
+            674,
+            695,
+            695,
+            569,
+            586,
+            47
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Transaction Pool Overview",
+                "02:14",
+                "7.1",
+                134,
+                60
+            ],
+            [
+                "Create the Transaction Pool and Set Transactions",
+                "08:38",
+                "7.2",
+                518,
+                61
+            ],
+            [
+                "API Transactions and Main Transaction Pool",
+                "08:08",
+                "7.3",
+                488,
+                62
+            ],
+            [
+                "Handle Invalid Transactions",
+                "04:47",
+                "7.4",
+                287,
+                63
+            ],
+            [
+                "Transaction Updates in the API",
+                "09:21",
+                "7.5",
+                561,
+                64
+            ],
+            [
+                "Get Transaction Pool Map",
+                "03:35",
+                "7.6",
+                215,
+                65
+            ],
+            [
+                "Broadcast Transaction",
+                "09:29",
+                "7.7",
+                569,
+                66
+            ],
+            [
+                "Pubnub Set Transaction Edge Case",
+                "01:01",
+                "7.8",
+                61,
+                67
+            ],
+            [
+                "Sync Transaction Pool Map on Connect",
+                "05:58",
+                "7.9",
+                358,
+                68
+            ],
+            [
+                "Recap: Transaction Pool | the Blockchain Backend",
+                "00:48",
+                "7.10",
+                48,
+                69
+            ]
+        ],
+        "total": "54min",
+        "duration": 3240,
+        "name": "Transaction Pool | The Blockchain and Cryptocurrency Backend",
+        "durs": [
+            134,
+            518,
+            488,
+            287,
+            561,
+            215,
+            569,
+            61,
+            358,
+            48
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Mine Transactions Overview",
+                "04:16",
+                "8.1",
+                256,
+                70
+            ],
+            [
+                "Transaction Miner Class",
+                "04:11",
+                "8.2",
+                251,
+                71
+            ],
+            [
+                "Grab Valid Transactions",
+                "09:39",
+                "8.3",
+                579,
+                72
+            ],
+            [
+                "Reward Transaction",
+                "10:56",
+                "8.4",
+                656,
+                73
+            ],
+            [
+                "Clear Blockchain Transactions",
+                "10:45",
+                "8.5",
+                645,
+                74
+            ],
+            [
+                "Mine Transactions Endpoint",
+                "08:22",
+                "8.6",
+                502,
+                75
+            ],
+            [
+                "Clear Recorded Transactions on Successful Replace",
+                "06:14",
+                "8.7",
+                374,
+                76
+            ],
+            [
+                "Blockchain Balance Overview",
+                "03:41",
+                "8.8",
+                221,
+                77
+            ],
+            [
+                "Calculate the Wallet Balance",
+                "12:26",
+                "8.9",
+                746,
+                78
+            ],
+            [
+                "Calculate the Balance before each Transaction",
+                "07:27",
+                "8.10",
+                447,
+                79
+            ],
+            [
+                "Wallet Balance From Recent Transaction",
+                "13:29",
+                "8.11",
+                809,
+                80
+            ],
+            [
+                "Wallet-Info Request",
+                "05:09",
+                "8.12",
+                309,
+                81
+            ],
+            [
+                "Validate Transaction Blocks Overview",
+                "03:20",
+                "8.13",
+                200,
+                82
+            ],
+            [
+                "Valid Transaction Data | Tests",
+                "10:20",
+                "8.14",
+                620,
+                83
+            ],
+            [
+                "Valid Transaction Data | Code",
+                "12:30",
+                "8.15",
+                750,
+                84
+            ],
+            [
+                "Validate Input Balances",
+                "08:57",
+                "8.16",
+                537,
+                85
+            ],
+            [
+                "Prevent Duplicate Transactions in Block",
+                "04:38",
+                "8.17",
+                278,
+                86
+            ],
+            [
+                "Validate Transaction Chain",
+                "08:54",
+                "8.18",
+                534,
+                87
+            ],
+            [
+                "Recap: Mine Transactions | The Blockchain and Cryptocurrency Backend",
+                "01:04",
+                "8.19",
+                64,
+                88
+            ]
+        ],
+        "total": "2hr 26min",
+        "duration": 8760,
+        "name": "Mine Transactions | The Blockchain and Cryptocurrency Backend",
+        "durs": [
+            256,
+            251,
+            579,
+            656,
+            645,
+            502,
+            374,
+            221,
+            746,
+            447,
+            809,
+            309,
+            200,
+            620,
+            750,
+            537,
+            278,
+            534,
+            64
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "The Blockchain and Cryptocurrency Backend | Review",
+                "12:19",
+                "9.1",
+                739,
+                89
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "The Blockchain and Cryptocurrency Backend | Review",
+        "durs": [
+            739
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "The Frontend Blockchain Overview",
+                "03:58",
+                "10.1",
+                238,
+                90
+            ],
+            [
+                "Optional: React.js Overview",
+                "09:12",
+                "10.2",
+                552,
+                91
+            ],
+            [
+                "Serve a Frontend Page",
+                "08:38",
+                "10.3",
+                518,
+                92
+            ],
+            [
+                "Add JavaScript to the Frontend",
+                "04:59",
+                "10.4",
+                299,
+                93
+            ],
+            [
+                "Build React into the Frontend",
+                "12:37",
+                "10.5",
+                757,
+                94
+            ],
+            [
+                "Frontend Development Workflow",
+                "08:21",
+                "10.6",
+                501,
+                95
+            ],
+            [
+                "App Component",
+                "05:50",
+                "10.7",
+                350,
+                96
+            ],
+            [
+                "Fetch and Display Wallet-Info",
+                "15:55",
+                "10.8",
+                955,
+                97
+            ],
+            [
+                "[Optional] Upgrade to Babel Version 7",
+                "00:48",
+                "10.9",
+                48,
+                98
+            ],
+            [
+                "Visualize the Blocks",
+                "10:22",
+                "10.10",
+                622,
+                99
+            ],
+            [
+                "Seed the Backend with Data",
+                "08:41",
+                "10.11",
+                521,
+                100
+            ],
+            [
+                "Stylize the Application",
+                "14:03",
+                "10.12",
+                843,
+                101
+            ],
+            [
+                "Make a Block Component with Props",
+                "08:24",
+                "10.13",
+                504,
+                102
+            ],
+            [
+                "Recap: The Frontend Blockchain",
+                "00:50",
+                "10.14",
+                50,
+                103
+            ]
+        ],
+        "total": "1hr 53min",
+        "duration": 6780,
+        "name": "The Frontend Blockchain",
+        "durs": [
+            238,
+            552,
+            518,
+            299,
+            757,
+            501,
+            350,
+            955,
+            48,
+            622,
+            521,
+            843,
+            504,
+            50
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "The Frontend Cryptocurrency Overview",
+                "01:55",
+                "11.1",
+                115,
+                104
+            ],
+            [
+                "Toggle Transaction Displays",
+                "10:50",
+                "11.2",
+                650,
+                105
+            ],
+            [
+                "Transaction Component",
+                "10:45",
+                "11.3",
+                645,
+                106
+            ],
+            [
+                "React Router",
+                "11:55",
+                "11.4",
+                715,
+                107
+            ],
+            [
+                "Conduct Transaction Component",
+                "10:05",
+                "11.5",
+                605,
+                108
+            ],
+            [
+                "Post Transaction with Component",
+                "05:36",
+                "11.6",
+                336,
+                109
+            ],
+            [
+                "Transaction Pool Component",
+                "10:25",
+                "11.7",
+                625,
+                110
+            ],
+            [
+                "Poll the Transaction Pool",
+                "10:11",
+                "11.8",
+                611,
+                111
+            ],
+            [
+                "Mine a Block of Transactions through the Frontend",
+                "05:27",
+                "11.9",
+                327,
+                112
+            ],
+            [
+                "Recap: The Frontend Cryptocurrency",
+                "00:46",
+                "11.10",
+                46,
+                113
+            ]
+        ],
+        "total": "1hr 18min",
+        "duration": 4680,
+        "name": "The Frontend Cryptocurrency",
+        "durs": [
+            115,
+            650,
+            645,
+            715,
+            605,
+            336,
+            625,
+            611,
+            327,
+            46
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Prepare for production and Publish to Heroku",
+                "12:44",
+                "12.1",
+                764,
+                114
+            ],
+            [
+                "Start Production Peers",
+                "05:06",
+                "12.2",
+                306,
+                115
+            ],
+            [
+                "Known Addresses | Backend",
+                "03:54",
+                "12.3",
+                234,
+                116
+            ],
+            [
+                "Known Addresses | Frontend",
+                "03:45",
+                "12.4",
+                225,
+                117
+            ],
+            [
+                "Blocks Pagination | Backend",
+                "08:46",
+                "12.5",
+                526,
+                118
+            ],
+            [
+                "Blocks Pagination | Frontend",
+                "11:51",
+                "12.6",
+                711,
+                119
+            ],
+            [
+                "Recap: Deploying to Production and Backend-Included Improvements",
+                "00:38",
+                "12.7",
+                38,
+                120
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Deploying to Production and Full-Stack Improvements",
+        "durs": [
+            764,
+            306,
+            234,
+            225,
+            526,
+            711,
+            38
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Optional: Mega JavaScript & Node.js Overview for JS Newcomers | Part 1",
+                "16:26",
+                "13.1",
+                986,
+                121
+            ],
+            [
+                "Optional: Mega JavaScript & Node.js Overview for JS Newcomers | Part 2",
+                "09:47",
+                "13.2",
+                587,
+                122
+            ]
+        ],
+        "total": "26min",
+        "duration": 1560,
+        "name": "Optional References Including the JavaScript Overview",
+        "durs": [
+            986,
+            587
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Congratulations! And Final Remarks",
+                "01:13",
+                "14.1",
+                73,
+                123
+            ],
+            [
+                "Challenges List | Article",
+                "02:01",
+                "14.2",
+                121,
+                124
+            ],
+            [
+                "Bonus Lecture: More Content!",
+                "00:37",
+                "14.3",
+                37,
+                125
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Conclusion",
+        "durs": [
+            73,
+            121,
+            37
+        ]
+    }
+]

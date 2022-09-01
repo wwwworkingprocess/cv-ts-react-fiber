@@ -1,0 +1,1746 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome To The Course",
+                "03:57",
+                "1.1",
+                237,
+                1
+            ],
+            [
+                "New Updated Content",
+                "00:31",
+                "1.2",
+                31,
+                2
+            ],
+            [
+                "Download Unity & VS Code",
+                "05:41",
+                "1.3",
+                341,
+                3
+            ],
+            [
+                "Introducing Unity",
+                "13:08",
+                "1.4",
+                788,
+                4
+            ],
+            [
+                "Introducing Prefabs",
+                "12:37",
+                "1.5",
+                757,
+                5
+            ],
+            [
+                "Your First Script",
+                "09:39",
+                "1.6",
+                579,
+                6
+            ],
+            [
+                "Community & Support",
+                "04:05",
+                "1.7",
+                245,
+                7
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Introduction & Setup (New Unity 2020.1 Content)",
+        "durs": [
+            237,
+            31,
+            341,
+            788,
+            757,
+            579,
+            245
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Section Intro - Obstacle Course",
+                "01:27",
+                "2.1",
+                87,
+                8
+            ],
+            [
+                "Game Design - Obstacle Course",
+                "05:30",
+                "2.2",
+                330,
+                9
+            ],
+            [
+                "Start() & Update()",
+                "11:41",
+                "2.3",
+                701,
+                10
+            ],
+            [
+                "Introducing Variables",
+                "08:03",
+                "2.4",
+                483,
+                11
+            ],
+            [
+                "Using SerializeField",
+                "06:26",
+                "2.5",
+                386,
+                12
+            ],
+            [
+                "C# Formatting & Input.GetAxis()",
+                "13:09",
+                "2.6",
+                789,
+                13
+            ],
+            [
+                "Time.deltaTime",
+                "08:45",
+                "2.7",
+                525,
+                14
+            ],
+            [
+                "Cinemachine Follow Camera",
+                "10:43",
+                "2.8",
+                643,
+                15
+            ],
+            [
+                "Basic Collision",
+                "10:01",
+                "2.9",
+                601,
+                16
+            ],
+            [
+                "Introduction To Methods",
+                "12:24",
+                "2.10",
+                744,
+                17
+            ],
+            [
+                "Practicing With Methods",
+                "10:10",
+                "2.11",
+                610,
+                18
+            ],
+            [
+                "Using OnCollisionEnter()",
+                "06:26",
+                "2.12",
+                386,
+                19
+            ],
+            [
+                "Using GetComponent<>()",
+                "05:06",
+                "2.13",
+                306,
+                20
+            ],
+            [
+                "Incrementing A Score",
+                "09:03",
+                "2.14",
+                543,
+                21
+            ],
+            [
+                "Using Time.time",
+                "06:56",
+                "2.15",
+                416,
+                22
+            ],
+            [
+                "If Statements",
+                "06:49",
+                "2.16",
+                409,
+                23
+            ],
+            [
+                "Caching A Reference",
+                "11:28",
+                "2.17",
+                688,
+                24
+            ],
+            [
+                "Using Tags",
+                "09:55",
+                "2.18",
+                595,
+                25
+            ],
+            [
+                "Rotate An Object",
+                "08:10",
+                "2.19",
+                490,
+                26
+            ],
+            [
+                "Prepare Our Prefabs",
+                "07:41",
+                "2.20",
+                461,
+                27
+            ],
+            [
+                "Build An Obstacle Course",
+                "09:02",
+                "2.21",
+                542,
+                28
+            ],
+            [
+                "Wrap Up - Obstacle Course",
+                "01:59",
+                "2.22",
+                119,
+                29
+            ]
+        ],
+        "total": "3hr 1min",
+        "duration": 10860,
+        "name": "Obstacle Course (New Unity 2020.1 Content)",
+        "durs": [
+            87,
+            330,
+            701,
+            483,
+            386,
+            789,
+            525,
+            643,
+            601,
+            744,
+            610,
+            386,
+            306,
+            543,
+            416,
+            409,
+            688,
+            595,
+            490,
+            461,
+            542,
+            119
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Section Intro - Project Boost",
+                "00:55",
+                "3.1",
+                55,
+                30
+            ],
+            [
+                "Game Design - Project Boost",
+                "04:24",
+                "3.2",
+                264,
+                31
+            ],
+            [
+                "Onion Design",
+                "05:08",
+                "3.3",
+                308,
+                32
+            ],
+            [
+                "Unity Units",
+                "13:52",
+                "3.4",
+                832,
+                33
+            ],
+            [
+                "Introducing Classes",
+                "10:20",
+                "3.5",
+                620,
+                34
+            ],
+            [
+                "Basic Input Binding",
+                "14:18",
+                "3.6",
+                858,
+                35
+            ],
+            [
+                "Using AddRelativeForce()",
+                "09:45",
+                "3.7",
+                585,
+                36
+            ],
+            [
+                "Variable For Thrusting",
+                "04:27",
+                "3.8",
+                267,
+                37
+            ],
+            [
+                "Transform.Rotate() Our Rocket",
+                "11:20",
+                "3.9",
+                680,
+                38
+            ],
+            [
+                "Rigidbody Constraints",
+                "12:09",
+                "3.10",
+                729,
+                39
+            ],
+            [
+                "Our Source Control Repo",
+                "10:33",
+                "3.11",
+                633,
+                40
+            ],
+            [
+                "Unity Audio Introduction",
+                "07:47",
+                "3.12",
+                467,
+                41
+            ],
+            [
+                "Play AudioSource SFX",
+                "08:20",
+                "3.13",
+                500,
+                42
+            ],
+            [
+                "Switch Statements",
+                "13:02",
+                "3.14",
+                782,
+                43
+            ],
+            [
+                "Respawn Using SceneManager",
+                "10:05",
+                "3.15",
+                605,
+                44
+            ],
+            [
+                "Load Next Level",
+                "10:57",
+                "3.16",
+                657,
+                45
+            ],
+            [
+                "Using Invoke",
+                "11:33",
+                "3.17",
+                693,
+                46
+            ],
+            [
+                "Multiple Audio Clips",
+                "11:25",
+                "3.18",
+                685,
+                47
+            ],
+            [
+                "Bool Variable For State",
+                "08:36",
+                "3.19",
+                516,
+                48
+            ],
+            [
+                "Make Rocket Look Spiffy",
+                "15:00",
+                "3.20",
+                900,
+                49
+            ],
+            [
+                "How To Trigger Particles",
+                "11:46",
+                "3.21",
+                706,
+                50
+            ],
+            [
+                "Particles For Rocket Boosters",
+                "10:39",
+                "3.22",
+                639,
+                51
+            ],
+            [
+                "Refactor With Extract Method",
+                "06:07",
+                "3.23",
+                367,
+                52
+            ],
+            [
+                "Add Cheat / Debug Keys",
+                "06:52",
+                "3.24",
+                412,
+                53
+            ],
+            [
+                "Make Environment From Cubes",
+                "08:50",
+                "3.25",
+                530,
+                54
+            ],
+            [
+                "How To Add Lights In Unity",
+                "12:15",
+                "3.26",
+                735,
+                55
+            ],
+            [
+                "Move Obstacle With Code",
+                "10:01",
+                "3.27",
+                601,
+                56
+            ],
+            [
+                "Mathf.Sin() For Oscillation",
+                "13:00",
+                "3.28",
+                780,
+                57
+            ],
+            [
+                "Protect Against NaN Error",
+                "05:35",
+                "3.29",
+                335,
+                58
+            ],
+            [
+                "Designing Level Moments",
+                "09:22",
+                "3.30",
+                562,
+                59
+            ],
+            [
+                "Quit Application",
+                "03:42",
+                "3.31",
+                222,
+                60
+            ],
+            [
+                "How To Build & Publish A Game",
+                "07:33",
+                "3.32",
+                453,
+                61
+            ],
+            [
+                "Wrap Up - Project Boost",
+                "02:14",
+                "3.33",
+                134,
+                62
+            ]
+        ],
+        "total": "5hr 2min",
+        "duration": 18120,
+        "name": "Project Boost (New Unity 2020.1 Content)",
+        "durs": [
+            55,
+            264,
+            308,
+            832,
+            620,
+            858,
+            585,
+            267,
+            680,
+            729,
+            633,
+            467,
+            500,
+            782,
+            605,
+            657,
+            693,
+            685,
+            516,
+            900,
+            706,
+            639,
+            367,
+            412,
+            530,
+            735,
+            601,
+            780,
+            335,
+            562,
+            222,
+            453,
+            134
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Section Intro - Argon Assault",
+                "01:04",
+                "4.1",
+                64,
+                63
+            ],
+            [
+                "Game Design - Argon Assault",
+                "04:14",
+                "4.2",
+                254,
+                64
+            ],
+            [
+                "How To Add Terrain",
+                "14:03",
+                "4.3",
+                843,
+                65
+            ],
+            [
+                "Unity Terrain Tools",
+                "11:28",
+                "4.4",
+                688,
+                66
+            ],
+            [
+                "How To Use Unity Asset Store",
+                "05:37",
+                "4.5",
+                337,
+                67
+            ],
+            [
+                "Texturing Terrain In Unity",
+                "10:55",
+                "4.6",
+                655,
+                68
+            ],
+            [
+                "Add Trees To Terrain",
+                "06:03",
+                "4.7",
+                363,
+                69
+            ],
+            [
+                "Master Timeline For Player Rail",
+                "14:21",
+                "4.8",
+                861,
+                70
+            ],
+            [
+                "Animate Enemy Using Timeline",
+                "10:34",
+                "4.9",
+                634,
+                71
+            ],
+            [
+                "Import Player Ship Asset",
+                "07:36",
+                "4.10",
+                456,
+                72
+            ],
+            [
+                "Using GetAxis() For Movement",
+                "11:25",
+                "4.11",
+                685,
+                73
+            ],
+            [
+                "Unity's New Input System",
+                "13:30",
+                "4.12",
+                810,
+                74
+            ],
+            [
+                "Start Moving Our Player",
+                "09:35",
+                "4.13",
+                575,
+                75
+            ],
+            [
+                "Move Player Using Input",
+                "03:35",
+                "4.14",
+                215,
+                76
+            ],
+            [
+                "Mathf.Clamp() To Constrain Movement",
+                "06:49",
+                "4.15",
+                409,
+                77
+            ],
+            [
+                "How To Set Local Rotation",
+                "08:58",
+                "4.16",
+                538,
+                78
+            ],
+            [
+                "Rotate Ship With Position & Throw",
+                "14:53",
+                "4.17",
+                893,
+                79
+            ],
+            [
+                "Time To Tune And Tweak",
+                "11:00",
+                "4.18",
+                660,
+                80
+            ],
+            [
+                "Particle System Laser Bullet",
+                "14:30",
+                "4.19",
+                870,
+                81
+            ],
+            [
+                "Exploring Nested Prefabs In Unity",
+                "19:03",
+                "4.20",
+                1143,
+                82
+            ],
+            [
+                "Set Up Firing Input",
+                "06:01",
+                "4.21",
+                361,
+                83
+            ],
+            [
+                "Arrays & Foreach Loops",
+                "11:57",
+                "4.22",
+                717,
+                84
+            ],
+            [
+                "Deactivating Particle System Emission",
+                "05:32",
+                "4.23",
+                332,
+                85
+            ],
+            [
+                "Header & Tooltips Attributes",
+                "05:36",
+                "4.24",
+                336,
+                86
+            ],
+            [
+                "Understanding Collisions & Triggers",
+                "17:50",
+                "4.25",
+                1070,
+                87
+            ],
+            [
+                "Detecting Particle Collisions",
+                "09:18",
+                "4.26",
+                558,
+                88
+            ],
+            [
+                "Reload Scene After Collsion",
+                "09:49",
+                "4.27",
+                589,
+                89
+            ],
+            [
+                "Create Explosion Particle Effect",
+                "12:16",
+                "4.28",
+                736,
+                90
+            ],
+            [
+                "Trigger Player Explosion",
+                "06:31",
+                "4.29",
+                391,
+                91
+            ],
+            [
+                "Instantiate At Runtime",
+                "11:51",
+                "4.30",
+                711,
+                92
+            ],
+            [
+                "Public Methods In Unity C#",
+                "12:58",
+                "4.31",
+                778,
+                93
+            ],
+            [
+                "Simple User Interface For Score",
+                "11:01",
+                "4.32",
+                661,
+                94
+            ],
+            [
+                "ToString() To Display Score",
+                "05:04",
+                "4.33",
+                304,
+                95
+            ],
+            [
+                "Enemy Hit Points",
+                "09:17",
+                "4.34",
+                557,
+                96
+            ],
+            [
+                "Set Up Enemy Prefabs",
+                "13:51",
+                "4.35",
+                831,
+                97
+            ],
+            [
+                "Using FindWithTag()",
+                "08:46",
+                "4.36",
+                526,
+                98
+            ],
+            [
+                "Control Tracks For Enemy Waves",
+                "13:04",
+                "4.37",
+                784,
+                99
+            ],
+            [
+                "Timeline For Dialogue",
+                "11:56",
+                "4.38",
+                716,
+                100
+            ],
+            [
+                "Singleton Pattern For Music Player",
+                "10:28",
+                "4.39",
+                628,
+                101
+            ],
+            [
+                "Sneaky Explosion SFX",
+                "08:42",
+                "4.40",
+                522,
+                102
+            ],
+            [
+                "Skybox & Lighting",
+                "10:57",
+                "4.41",
+                657,
+                103
+            ],
+            [
+                "Add Post Processing",
+                "09:24",
+                "4.42",
+                564,
+                104
+            ],
+            [
+                "Your 3 Minute Experience",
+                "07:15",
+                "4.43",
+                435,
+                105
+            ],
+            [
+                "Wrap Up - Argon Assault",
+                "00:46",
+                "4.44",
+                46,
+                106
+            ]
+        ],
+        "total": "7hr 9min",
+        "duration": 25740,
+        "name": "Argon Assault (New Unity 2020.1 Content)",
+        "durs": [
+            64,
+            254,
+            843,
+            688,
+            337,
+            655,
+            363,
+            861,
+            634,
+            456,
+            685,
+            810,
+            575,
+            215,
+            409,
+            538,
+            893,
+            660,
+            870,
+            1143,
+            361,
+            717,
+            332,
+            336,
+            1070,
+            558,
+            589,
+            736,
+            391,
+            711,
+            778,
+            661,
+            304,
+            557,
+            831,
+            526,
+            784,
+            716,
+            628,
+            522,
+            657,
+            564,
+            435,
+            46
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Introduction - Realm Rush",
+                "01:03",
+                "5.1",
+                63,
+                107
+            ],
+            [
+                "Realm Rush Game Design",
+                "05:37",
+                "5.2",
+                337,
+                108
+            ],
+            [
+                "Grid Snapping",
+                "07:53",
+                "5.3",
+                473,
+                109
+            ],
+            [
+                "Text Labels",
+                "10:29",
+                "5.4",
+                629,
+                110
+            ],
+            [
+                "Coordinate System",
+                "11:28",
+                "5.5",
+                688,
+                111
+            ],
+            [
+                "Lists",
+                "11:11",
+                "5.6",
+                671,
+                112
+            ],
+            [
+                "Introducing Coroutines",
+                "11:24",
+                "5.7",
+                684,
+                113
+            ],
+            [
+                "Importing Assets",
+                "07:39",
+                "5.8",
+                459,
+                114
+            ],
+            [
+                "Prefab Variants",
+                "13:41",
+                "5.9",
+                821,
+                115
+            ],
+            [
+                "Smooth Enemy Movement",
+                "11:51",
+                "5.10",
+                711,
+                116
+            ],
+            [
+                "Detect Mouse Input",
+                "10:39",
+                "5.11",
+                639,
+                117
+            ],
+            [
+                "Targeting Enemies",
+                "10:32",
+                "5.12",
+                632,
+                118
+            ],
+            [
+                "Damaging Enemies",
+                "12:24",
+                "5.13",
+                744,
+                119
+            ],
+            [
+                "Debugging Tools",
+                "11:25",
+                "5.14",
+                685,
+                120
+            ],
+            [
+                "Finding the Path",
+                "09:38",
+                "5.15",
+                578,
+                121
+            ],
+            [
+                "Instantiating Enemies",
+                "07:34",
+                "5.16",
+                454,
+                122
+            ],
+            [
+                "Object Pools",
+                "12:54",
+                "5.17",
+                774,
+                123
+            ],
+            [
+                "Target Closest Enemy",
+                "11:56",
+                "5.18",
+                716,
+                124
+            ],
+            [
+                "Currency System (Part 1)",
+                "12:33",
+                "5.19",
+                753,
+                125
+            ],
+            [
+                "Currency System (Part 2)",
+                "10:59",
+                "5.20",
+                659,
+                126
+            ],
+            [
+                "UI Text",
+                "11:19",
+                "5.21",
+                679,
+                127
+            ],
+            [
+                "Increasing Difficulty",
+                "07:09",
+                "5.22",
+                429,
+                128
+            ],
+            [
+                "Refactoring",
+                "14:57",
+                "5.23",
+                897,
+                129
+            ],
+            [
+                "Playtest and Balance",
+                "13:43",
+                "5.24",
+                823,
+                130
+            ],
+            [
+                "Review and Reflect",
+                "01:52",
+                "5.25",
+                112,
+                131
+            ],
+            [
+                "Pathfinding Decisions",
+                "06:14",
+                "5.26",
+                374,
+                132
+            ],
+            [
+                "Breadth First Search",
+                "08:43",
+                "5.27",
+                523,
+                133
+            ],
+            [
+                "Pure C# Classes",
+                "11:10",
+                "5.28",
+                670,
+                134
+            ],
+            [
+                "Dictionaries",
+                "10:25",
+                "5.29",
+                625,
+                135
+            ],
+            [
+                "More Debugging Tools",
+                "12:43",
+                "5.30",
+                763,
+                136
+            ],
+            [
+                "Exploring Neighbors",
+                "11:11",
+                "5.31",
+                671,
+                137
+            ],
+            [
+                "Exploring the World",
+                "12:33",
+                "5.32",
+                753,
+                138
+            ],
+            [
+                "Finding the Path (again!)",
+                "07:37",
+                "5.33",
+                457,
+                139
+            ],
+            [
+                "Blocking Nodes",
+                "15:31",
+                "5.34",
+                931,
+                140
+            ],
+            [
+                "Valid Path",
+                "11:47",
+                "5.35",
+                707,
+                141
+            ],
+            [
+                "Script Execution Order",
+                "14:54",
+                "5.36",
+                894,
+                142
+            ],
+            [
+                "Broadcast Message",
+                "08:00",
+                "5.37",
+                480,
+                143
+            ],
+            [
+                "Overloading Methods",
+                "12:22",
+                "5.38",
+                742,
+                144
+            ],
+            [
+                "Build Timer",
+                "06:37",
+                "5.39",
+                397,
+                145
+            ],
+            [
+                "Ambience",
+                "13:06",
+                "5.40",
+                786,
+                146
+            ],
+            [
+                "Post Processing",
+                "11:08",
+                "5.41",
+                668,
+                147
+            ],
+            [
+                "Section Wrap-Up",
+                "01:36",
+                "5.42",
+                96,
+                148
+            ]
+        ],
+        "total": "7hr 7min",
+        "duration": 25620,
+        "name": "Realm Rush (New Unity 2020.1 Content)",
+        "durs": [
+            63,
+            337,
+            473,
+            629,
+            688,
+            671,
+            684,
+            459,
+            821,
+            711,
+            639,
+            632,
+            744,
+            685,
+            578,
+            454,
+            774,
+            716,
+            753,
+            659,
+            679,
+            429,
+            897,
+            823,
+            112,
+            374,
+            523,
+            670,
+            625,
+            763,
+            671,
+            753,
+            457,
+            931,
+            707,
+            894,
+            480,
+            742,
+            397,
+            786,
+            668,
+            96
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Welcome To Zombie Runner",
+                "04:16",
+                "6.1",
+                256,
+                149
+            ],
+            [
+                "Zombie Runner Game Design",
+                "03:44",
+                "6.2",
+                224,
+                150
+            ],
+            [
+                "Adding First Person Controller",
+                "04:56",
+                "6.3",
+                296,
+                151
+            ],
+            [
+                "Make A Prototyping Sandbox",
+                "06:27",
+                "6.4",
+                387,
+                152
+            ],
+            [
+                "Using NavMeshAgent For AI",
+                "09:58",
+                "6.5",
+                598,
+                153
+            ],
+            [
+                "Getting Stuck & Jittering",
+                "05:21",
+                "6.6",
+                321,
+                154
+            ],
+            [
+                "Enemy AI - Chase Range",
+                "07:25",
+                "6.7",
+                445,
+                155
+            ],
+            [
+                "Using OnDrawGizmosSelected()",
+                "04:05",
+                "6.8",
+                245,
+                156
+            ],
+            [
+                "Quiz - Zombie Runner #1",
+                "5 questions",
+                "",
+                0,
+                157
+            ],
+            [
+                "Enemy AI - Attack If Provoked",
+                "10:15",
+                "6.9",
+                615,
+                157
+            ],
+            [
+                "Give That Player A Gun",
+                "07:03",
+                "6.10",
+                423,
+                158
+            ],
+            [
+                "Introduction To Raycasting",
+                "08:07",
+                "6.11",
+                487,
+                159
+            ],
+            [
+                "Enemy Health & Damage",
+                "08:35",
+                "6.12",
+                515,
+                160
+            ],
+            [
+                "Implement A Muzzle Flash",
+                "06:57",
+                "6.13",
+                417,
+                161
+            ],
+            [
+                "Creating Shooting Hit Effect",
+                "09:05",
+                "6.14",
+                545,
+                162
+            ],
+            [
+                "Introduction To Animator Controller",
+                "08:08",
+                "6.15",
+                488,
+                163
+            ],
+            [
+                "Creating A Simple Animation",
+                "06:51",
+                "6.16",
+                411,
+                164
+            ],
+            [
+                "Animator Transition Conditions",
+                "04:18",
+                "6.17",
+                258,
+                165
+            ],
+            [
+                "Quiz - Zombie Runner #2",
+                "8 questions",
+                "",
+                0,
+                166
+            ],
+            [
+                "Trigger Animation In Code",
+                "12:13",
+                "6.18",
+                733,
+                166
+            ],
+            [
+                "Use Animation Events",
+                "06:58",
+                "6.19",
+                418,
+                167
+            ],
+            [
+                "Create Player Health Class",
+                "08:26",
+                "6.20",
+                506,
+                168
+            ],
+            [
+                "Rotate To Face Target",
+                "07:36",
+                "6.21",
+                456,
+                169
+            ],
+            [
+                "Game Over User Interface",
+                "13:16",
+                "6.22",
+                796,
+                170
+            ],
+            [
+                "Create A Death Handler",
+                "06:50",
+                "6.23",
+                410,
+                171
+            ],
+            [
+                "Using BroadcastMessage",
+                "07:17",
+                "6.24",
+                437,
+                172
+            ],
+            [
+                "Early Gameplay Loop",
+                "05:47",
+                "6.25",
+                347,
+                173
+            ],
+            [
+                "Weapon System Overview",
+                "04:10",
+                "6.26",
+                250,
+                174
+            ],
+            [
+                "Weapon Zoom - Field Of View",
+                "07:51",
+                "6.27",
+                471,
+                175
+            ],
+            [
+                "Quiz - Zombie Runner #3",
+                "8 questions",
+                "",
+                0,
+                176
+            ],
+            [
+                "Weapon Zoom - Mouse Sensitivity",
+                "05:33",
+                "6.28",
+                333,
+                176
+            ],
+            [
+                "Basic Ammo Functionality",
+                "06:38",
+                "6.29",
+                398,
+                177
+            ],
+            [
+                "Multiple Weapon Types",
+                "12:09",
+                "6.30",
+                729,
+                178
+            ],
+            [
+                "Weapon Differentiation",
+                "13:19",
+                "6.31",
+                799,
+                179
+            ],
+            [
+                "Set Active Weapon",
+                "08:05",
+                "6.32",
+                485,
+                180
+            ],
+            [
+                "Player Input To Select Weapon",
+                "10:22",
+                "6.33",
+                622,
+                181
+            ],
+            [
+                "Public Enum & Private Class",
+                "13:04",
+                "6.34",
+                784,
+                182
+            ],
+            [
+                "Different Weapon Different Ammo",
+                "07:54",
+                "6.35",
+                474,
+                183
+            ],
+            [
+                "Quick Bug Fix Challenge",
+                "04:11",
+                "6.36",
+                251,
+                184
+            ],
+            [
+                "Ammo Pickup - Part 1",
+                "06:27",
+                "6.37",
+                387,
+                185
+            ],
+            [
+                "Ammo Pickup - Part 2",
+                "13:13",
+                "6.38",
+                793,
+                186
+            ],
+            [
+                "Quiz - Zombie Runner #4",
+                "7 questions",
+                "",
+                0,
+                187
+            ],
+            [
+                "Let's Add A Zombie",
+                "14:46",
+                "6.39",
+                886,
+                187
+            ],
+            [
+                "Quick Zombie Attack Challenge",
+                "03:18",
+                "6.40",
+                198,
+                188
+            ],
+            [
+                "Flex Your Level Design Muscles",
+                "09:51",
+                "6.41",
+                591,
+                189
+            ],
+            [
+                "Add Terrain & Trees",
+                "12:30",
+                "6.42",
+                750,
+                190
+            ],
+            [
+                "ProBuilder For Making Props",
+                "15:05",
+                "6.43",
+                905,
+                191
+            ],
+            [
+                "ProBuilder To Make Rooms",
+                "11:53",
+                "6.44",
+                713,
+                192
+            ],
+            [
+                "ProBuilder To Make Levels",
+                "08:36",
+                "6.45",
+                516,
+                193
+            ],
+            [
+                "Adding Textures With ProBuilder",
+                "08:49",
+                "6.46",
+                529,
+                194
+            ],
+            [
+                "We Need Some Lights",
+                "10:09",
+                "6.47",
+                609,
+                195
+            ],
+            [
+                "Create A FlashLight",
+                "09:36",
+                "6.48",
+                576,
+                196
+            ],
+            [
+                "Create A Battery Pickup",
+                "13:02",
+                "6.49",
+                782,
+                197
+            ],
+            [
+                "Quiz - Zombie Runner #5",
+                "9 questions",
+                "",
+                0,
+                198
+            ],
+            [
+                "Display Current Ammo UI",
+                "08:41",
+                "6.50",
+                521,
+                198
+            ],
+            [
+                "Damage Received UI",
+                "11:46",
+                "6.51",
+                706,
+                199
+            ],
+            [
+                "Props & Polish",
+                "06:35",
+                "6.52",
+                395,
+                200
+            ]
+        ],
+        "total": "7hr 21min",
+        "duration": 26460,
+        "name": "Zombie Runner - First Person Shooter (Original Content)",
+        "durs": [
+            256,
+            224,
+            296,
+            387,
+            598,
+            321,
+            445,
+            245,
+            0,
+            615,
+            423,
+            487,
+            515,
+            417,
+            545,
+            488,
+            411,
+            258,
+            0,
+            733,
+            418,
+            506,
+            456,
+            796,
+            410,
+            437,
+            347,
+            250,
+            471,
+            0,
+            333,
+            398,
+            729,
+            799,
+            485,
+            622,
+            784,
+            474,
+            251,
+            387,
+            793,
+            0,
+            886,
+            198,
+            591,
+            750,
+            905,
+            713,
+            516,
+            529,
+            609,
+            576,
+            782,
+            0,
+            521,
+            706,
+            395
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Coupon For Original Course Content (Created In Unity 2017-2019)",
+                "00:33",
+                "7.1",
+                33,
+                201
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Updates and Important Messages",
+        "durs": [
+            33
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Congratulations",
+                "01:07",
+                "8.1",
+                67,
+                202
+            ],
+            [
+                "BONUS LECTURE: Our Other Courses",
+                "00:29",
+                "8.2",
+                29,
+                203
+            ]
+        ],
+        "total": "2min",
+        "duration": 120,
+        "name": "Bonus Section",
+        "durs": [
+            67,
+            29
+        ]
+    }
+]

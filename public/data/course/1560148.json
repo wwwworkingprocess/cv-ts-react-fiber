@@ -1,0 +1,1502 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Why This Course?",
+                "02:25",
+                "1.1",
+                145,
+                1
+            ],
+            [
+                "Additional FREE Content",
+                "00:10",
+                "1.2",
+                10,
+                2
+            ]
+        ],
+        "total": "3min",
+        "duration": 180,
+        "name": "Introduction",
+        "durs": [
+            145,
+            10
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Overview",
+                "00:24",
+                "2.1",
+                24,
+                3
+            ],
+            [
+                "Anaconda Distribution - Mac",
+                "02:41",
+                "2.2",
+                161,
+                4
+            ],
+            [
+                "Anaconda Distribution - Windows",
+                "02:54",
+                "2.3",
+                174,
+                5
+            ],
+            [
+                "Text Editor",
+                "02:47",
+                "2.4",
+                167,
+                6
+            ],
+            [
+                "Outro",
+                "00:29",
+                "2.5",
+                29,
+                7
+            ]
+        ],
+        "total": "9min",
+        "duration": 540,
+        "name": "Installation",
+        "durs": [
+            24,
+            161,
+            174,
+            167,
+            29
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Python Crash Course (Written Version) - Free Access",
+                "00:55",
+                "3.1",
+                55,
+                8
+            ],
+            [
+                "Python Crash Course (Written Version)",
+                "00:19",
+                "3.2",
+                19,
+                9
+            ],
+            [
+                "Python Crash Course Part 1 - Data Types",
+                "01:05",
+                "3.3",
+                65,
+                10
+            ],
+            [
+                "Jupyter Notebooks",
+                "01:39",
+                "3.4",
+                99,
+                11
+            ],
+            [
+                "Arithmetic Operations",
+                "04:23",
+                "3.5",
+                263,
+                12
+            ],
+            [
+                "Variables",
+                "05:05",
+                "3.6",
+                305,
+                13
+            ],
+            [
+                "Numeric Data Types",
+                "04:09",
+                "3.7",
+                249,
+                14
+            ],
+            [
+                "String Data Types",
+                "05:45",
+                "3.8",
+                345,
+                15
+            ],
+            [
+                "Booleans",
+                "04:27",
+                "3.9",
+                267,
+                16
+            ],
+            [
+                "Methods",
+                "03:04",
+                "3.10",
+                184,
+                17
+            ],
+            [
+                "Lists",
+                "05:31",
+                "3.11",
+                331,
+                18
+            ],
+            [
+                "Slicing",
+                "08:16",
+                "3.12",
+                496,
+                19
+            ],
+            [
+                "Membership Operators",
+                "02:50",
+                "3.13",
+                170,
+                20
+            ],
+            [
+                "Mutability",
+                "04:08",
+                "3.14",
+                248,
+                21
+            ],
+            [
+                "Mutability II",
+                "04:45",
+                "3.15",
+                285,
+                22
+            ],
+            [
+                "Common Functions & Methods",
+                "07:32",
+                "3.16",
+                452,
+                23
+            ],
+            [
+                "Tuples",
+                "03:32",
+                "3.17",
+                212,
+                24
+            ],
+            [
+                "Sets",
+                "02:58",
+                "3.18",
+                178,
+                25
+            ],
+            [
+                "Dictionaries",
+                "05:19",
+                "3.19",
+                319,
+                26
+            ],
+            [
+                "Compound Data Structures",
+                "02:49",
+                "3.20",
+                169,
+                27
+            ],
+            [
+                "Part 1 - Outro",
+                "00:14",
+                "3.21",
+                14,
+                28
+            ],
+            [
+                "Part 2 - Control Flow",
+                "00:47",
+                "3.22",
+                47,
+                29
+            ],
+            [
+                "If, else",
+                "04:47",
+                "3.23",
+                287,
+                30
+            ],
+            [
+                "elif",
+                "06:53",
+                "3.24",
+                413,
+                31
+            ],
+            [
+                "Complex Comparisons",
+                "05:11",
+                "3.25",
+                311,
+                32
+            ],
+            [
+                "For Loops",
+                "07:17",
+                "3.26",
+                437,
+                33
+            ],
+            [
+                "For Loops II",
+                "03:07",
+                "3.27",
+                187,
+                34
+            ],
+            [
+                "While Loops",
+                "03:07",
+                "3.28",
+                187,
+                35
+            ],
+            [
+                "Break",
+                "03:23",
+                "3.29",
+                203,
+                36
+            ],
+            [
+                "Part 2 - Outro",
+                "00:17",
+                "3.30",
+                17,
+                37
+            ],
+            [
+                "Part 3 - Functions",
+                "00:51",
+                "3.31",
+                51,
+                38
+            ],
+            [
+                "Functions",
+                "05:35",
+                "3.32",
+                335,
+                39
+            ],
+            [
+                "Scope",
+                "01:45",
+                "3.33",
+                105,
+                40
+            ],
+            [
+                "Doc Strings",
+                "02:45",
+                "3.34",
+                165,
+                41
+            ],
+            [
+                "Lambda & Higher Order Functions",
+                "06:07",
+                "3.35",
+                367,
+                42
+            ],
+            [
+                "Part 3 - Outro",
+                "00:41",
+                "3.36",
+                41,
+                43
+            ]
+        ],
+        "total": "2hr 11min",
+        "duration": 7860,
+        "name": "Python Crash Course (Optional)",
+        "durs": [
+            55,
+            19,
+            65,
+            99,
+            263,
+            305,
+            249,
+            345,
+            267,
+            184,
+            331,
+            496,
+            170,
+            248,
+            285,
+            452,
+            212,
+            178,
+            319,
+            169,
+            14,
+            47,
+            287,
+            413,
+            311,
+            437,
+            187,
+            187,
+            203,
+            17,
+            51,
+            335,
+            105,
+            165,
+            367,
+            41
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Overview",
+                "00:48",
+                "4.1",
+                48,
+                44
+            ],
+            [
+                "Vector Addition - Arrays vs Lists",
+                "12:03",
+                "4.2",
+                723,
+                45
+            ],
+            [
+                "Multidimensional Arrays",
+                "11:46",
+                "4.3",
+                706,
+                46
+            ],
+            [
+                "One Dimensional Slicing",
+                "03:33",
+                "4.4",
+                213,
+                47
+            ],
+            [
+                "Reshaping",
+                "03:34",
+                "4.5",
+                214,
+                48
+            ],
+            [
+                "Multidimensional Slicing",
+                "07:20",
+                "4.6",
+                440,
+                49
+            ],
+            [
+                "Manipulating Array Shapes",
+                "08:17",
+                "4.7",
+                497,
+                50
+            ],
+            [
+                "Matrix Multiplication",
+                "04:19",
+                "4.8",
+                259,
+                51
+            ],
+            [
+                "Stacking",
+                "14:00",
+                "4.9",
+                840,
+                52
+            ],
+            [
+                "Part 4 - Outro",
+                "00:08",
+                "4.10",
+                8,
+                53
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "NumPy Crash Course (Optional)",
+        "durs": [
+            48,
+            723,
+            706,
+            213,
+            214,
+            440,
+            497,
+            259,
+            840,
+            8
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Overview",
+                "00:35",
+                "5.1",
+                35,
+                54
+            ],
+            [
+                "Image needed for the next lesson",
+                "00:02",
+                "5.2",
+                2,
+                55
+            ],
+            [
+                "Loading Image",
+                "05:00",
+                "5.3",
+                300,
+                56
+            ],
+            [
+                "Save your file before running!",
+                "00:08",
+                "5.4",
+                8,
+                57
+            ],
+            [
+                "Grayscale Conversion",
+                "04:31",
+                "5.5",
+                271,
+                58
+            ],
+            [
+                "Smoothening Image",
+                "03:04",
+                "5.6",
+                184,
+                59
+            ],
+            [
+                "Simple Edge Detection",
+                "04:21",
+                "5.7",
+                261,
+                60
+            ],
+            [
+                "Region of Interest",
+                "07:41",
+                "5.8",
+                461,
+                61
+            ],
+            [
+                "Binary Numbers & Bitwise_and",
+                "09:44",
+                "5.9",
+                584,
+                62
+            ],
+            [
+                "Line Detection - Hough Transform",
+                "10:54",
+                "5.10",
+                654,
+                63
+            ],
+            [
+                "Hough Transform II",
+                "13:25",
+                "5.11",
+                805,
+                64
+            ],
+            [
+                "Optimizing",
+                "14:45",
+                "5.12",
+                885,
+                65
+            ],
+            [
+                "Resource for upcoming video",
+                "00:04",
+                "5.13",
+                4,
+                66
+            ],
+            [
+                "Finding Lanes on Video",
+                "06:20",
+                "5.14",
+                380,
+                67
+            ],
+            [
+                "Numpy.float64 Error (Quick Fix)",
+                "00:21",
+                "5.15",
+                21,
+                68
+            ],
+            [
+                "Source Code",
+                "00:58",
+                "5.16",
+                58,
+                69
+            ],
+            [
+                "Part 5 - Conclusion",
+                "00:34",
+                "5.17",
+                34,
+                70
+            ]
+        ],
+        "total": "1hr 22min",
+        "duration": 4920,
+        "name": "Computer Vision: Finding Lane Lines",
+        "durs": [
+            35,
+            2,
+            300,
+            8,
+            271,
+            184,
+            261,
+            461,
+            584,
+            654,
+            805,
+            885,
+            4,
+            380,
+            21,
+            58,
+            34
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Overview",
+                "01:44",
+                "6.1",
+                104,
+                71
+            ],
+            [
+                "Machine Learning",
+                "02:51",
+                "6.2",
+                171,
+                72
+            ],
+            [
+                "Supervised Learning - Friendly Example",
+                "04:25",
+                "6.3",
+                265,
+                73
+            ],
+            [
+                "Classification",
+                "07:48",
+                "6.4",
+                468,
+                74
+            ],
+            [
+                "Linear Model",
+                "06:52",
+                "6.5",
+                412,
+                75
+            ],
+            [
+                "Perceptrons",
+                "04:08",
+                "6.6",
+                248,
+                76
+            ],
+            [
+                "Weights",
+                "02:03",
+                "6.7",
+                123,
+                77
+            ],
+            [
+                "Project - Initial Stages",
+                "10:57",
+                "6.8",
+                657,
+                78
+            ],
+            [
+                "Sample Code for Initial Stages",
+                "00:10",
+                "6.9",
+                10,
+                79
+            ],
+            [
+                "Error Function",
+                "03:36",
+                "6.10",
+                216,
+                80
+            ],
+            [
+                "Sigmoid",
+                "05:56",
+                "6.11",
+                356,
+                81
+            ],
+            [
+                "Sigmoid Implementation (Code)",
+                "11:46",
+                "6.12",
+                706,
+                82
+            ],
+            [
+                "Source code",
+                "00:16",
+                "6.13",
+                16,
+                83
+            ],
+            [
+                "Cross Entropy",
+                "05:38",
+                "6.14",
+                338,
+                84
+            ],
+            [
+                "Cross Entropy (Code)",
+                "07:41",
+                "6.15",
+                461,
+                85
+            ],
+            [
+                "Source Code",
+                "00:19",
+                "6.16",
+                19,
+                86
+            ],
+            [
+                "Gradient Descent",
+                "03:14",
+                "6.17",
+                194,
+                87
+            ],
+            [
+                "Gradient Descent (Code)",
+                "08:45",
+                "6.18",
+                525,
+                88
+            ],
+            [
+                "Recap",
+                "01:54",
+                "6.19",
+                114,
+                89
+            ],
+            [
+                "Source Code",
+                "00:25",
+                "6.20",
+                25,
+                90
+            ],
+            [
+                "Part 6 - Conclusion",
+                "00:39",
+                "6.21",
+                39,
+                91
+            ]
+        ],
+        "total": "1hr 31min",
+        "duration": 5460,
+        "name": "The Perceptron",
+        "durs": [
+            104,
+            171,
+            265,
+            468,
+            412,
+            248,
+            123,
+            657,
+            10,
+            216,
+            356,
+            706,
+            16,
+            338,
+            461,
+            19,
+            194,
+            525,
+            114,
+            25,
+            39
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Overview",
+                "00:30",
+                "7.1",
+                30,
+                92
+            ],
+            [
+                "Intro to Keras (See next article for installation fix)",
+                "02:04",
+                "7.2",
+                124,
+                93
+            ],
+            [
+                "Stop Using Jupyter - Use Colab instead",
+                "00:20",
+                "7.3",
+                20,
+                94
+            ],
+            [
+                "How to Import Keras",
+                "00:15",
+                "7.4",
+                15,
+                95
+            ],
+            [
+                "Starter Code",
+                "00:09",
+                "7.5",
+                9,
+                96
+            ],
+            [
+                "Fix for next video (update)",
+                "00:02",
+                "7.6",
+                2,
+                97
+            ],
+            [
+                "Keras Models",
+                "21:08",
+                "7.7",
+                1268,
+                98
+            ],
+            [
+                "Keras - Predictions",
+                "19:25",
+                "7.8",
+                1165,
+                99
+            ],
+            [
+                "Source Code",
+                "00:33",
+                "7.9",
+                33,
+                100
+            ],
+            [
+                "Part 7 - Outro",
+                "00:21",
+                "7.10",
+                21,
+                101
+            ]
+        ],
+        "total": "45min",
+        "duration": 2700,
+        "name": "Keras",
+        "durs": [
+            30,
+            124,
+            20,
+            15,
+            9,
+            2,
+            1268,
+            1165,
+            33,
+            21
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Overview",
+                "00:52",
+                "8.1",
+                52,
+                102
+            ],
+            [
+                "Non-Linear Boundaries",
+                "05:05",
+                "8.2",
+                305,
+                103
+            ],
+            [
+                "Architecture",
+                "09:00",
+                "8.3",
+                540,
+                104
+            ],
+            [
+                "Feedforward Process",
+                "07:46",
+                "8.4",
+                466,
+                105
+            ],
+            [
+                "Error Function",
+                "04:10",
+                "8.5",
+                250,
+                106
+            ],
+            [
+                "Backpropagation",
+                "05:12",
+                "8.6",
+                312,
+                107
+            ],
+            [
+                "Fix for next video (update)",
+                "00:02",
+                "8.7",
+                2,
+                108
+            ],
+            [
+                "Code Implementation",
+                "26:02",
+                "8.8",
+                1562,
+                109
+            ],
+            [
+                "Source Code",
+                "00:32",
+                "8.9",
+                32,
+                110
+            ],
+            [
+                "Section 8 - Conclusion",
+                "00:23",
+                "8.10",
+                23,
+                111
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Deep Neural Networks",
+        "durs": [
+            52,
+            305,
+            540,
+            466,
+            250,
+            312,
+            2,
+            1562,
+            32,
+            23
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Overview",
+                "00:35",
+                "9.1",
+                35,
+                112
+            ],
+            [
+                "Softmax",
+                "11:50",
+                "9.2",
+                710,
+                113
+            ],
+            [
+                "Cross Entropy",
+                "08:16",
+                "9.3",
+                496,
+                114
+            ],
+            [
+                "Implementation",
+                "30:55",
+                "9.4",
+                1855,
+                115
+            ],
+            [
+                "Source Code",
+                "00:47",
+                "9.5",
+                47,
+                116
+            ],
+            [
+                "Section 9 - Outro",
+                "00:18",
+                "9.6",
+                18,
+                117
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Multiclass Classification",
+        "durs": [
+            35,
+            710,
+            496,
+            1855,
+            47,
+            18
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Overview",
+                "00:48",
+                "10.1",
+                48,
+                118
+            ],
+            [
+                "MNIST Dataset",
+                "05:25",
+                "10.2",
+                325,
+                119
+            ],
+            [
+                "Train & Test",
+                "13:28",
+                "10.3",
+                808,
+                120
+            ],
+            [
+                "Hyperparameters",
+                "07:04",
+                "10.4",
+                424,
+                121
+            ],
+            [
+                "Implementation Part 1",
+                "33:45",
+                "10.5",
+                2025,
+                122
+            ],
+            [
+                "Fix for upcoming video",
+                "00:02",
+                "10.6",
+                2,
+                123
+            ],
+            [
+                "Implementation Part 2",
+                "20:13",
+                "10.7",
+                1213,
+                124
+            ],
+            [
+                "Resource for upcoming video",
+                "00:02",
+                "10.8",
+                2,
+                125
+            ],
+            [
+                "Implementation Part 3",
+                "11:49",
+                "10.9",
+                709,
+                126
+            ],
+            [
+                "Final Source Code",
+                "01:03",
+                "10.10",
+                63,
+                127
+            ],
+            [
+                "Section 10 - Outro",
+                "00:24",
+                "10.11",
+                24,
+                128
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "MNIST Image Recognition",
+        "durs": [
+            48,
+            325,
+            808,
+            424,
+            2025,
+            2,
+            1213,
+            2,
+            709,
+            63,
+            24
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Overview",
+                "00:45",
+                "11.1",
+                45,
+                129
+            ],
+            [
+                "Convolutions & MNIST",
+                "06:44",
+                "11.2",
+                404,
+                130
+            ],
+            [
+                "Convolutional Layer",
+                "18:11",
+                "11.3",
+                1091,
+                131
+            ],
+            [
+                "Convolutions II",
+                "08:07",
+                "11.4",
+                487,
+                132
+            ],
+            [
+                "Pooling",
+                "14:11",
+                "11.5",
+                851,
+                133
+            ],
+            [
+                "Fully Connected Layer",
+                "06:23",
+                "11.6",
+                383,
+                134
+            ],
+            [
+                "Starter Code",
+                "01:53",
+                "11.7",
+                113,
+                135
+            ],
+            [
+                "Code Implementation I",
+                "31:02",
+                "11.8",
+                1862,
+                136
+            ],
+            [
+                "Code Implementation II",
+                "26:22",
+                "11.9",
+                1582,
+                137
+            ],
+            [
+                "Final Source Code",
+                "01:26",
+                "11.10",
+                86,
+                138
+            ],
+            [
+                "Section 11 - Conclusion",
+                "00:17",
+                "11.11",
+                17,
+                139
+            ]
+        ],
+        "total": "1hr 55min",
+        "duration": 6900,
+        "name": "Convolutional Neural Networks",
+        "durs": [
+            45,
+            404,
+            1091,
+            487,
+            851,
+            383,
+            113,
+            1862,
+            1582,
+            86,
+            17
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Overview",
+                "01:00",
+                "12.1",
+                60,
+                140
+            ],
+            [
+                "Traffic Signs Starter Code",
+                "00:27",
+                "12.2",
+                27,
+                141
+            ],
+            [
+                "Preprocessing Images",
+                "42:58",
+                "12.3",
+                2578,
+                142
+            ],
+            [
+                "leNet Implementation",
+                "20:12",
+                "12.4",
+                1212,
+                143
+            ],
+            [
+                "Fine-tuning Model",
+                "14:27",
+                "12.5",
+                867,
+                144
+            ],
+            [
+                "Resources Needed for Testing",
+                "00:20",
+                "12.6",
+                20,
+                145
+            ],
+            [
+                "Testing",
+                "06:14",
+                "12.7",
+                374,
+                146
+            ],
+            [
+                "Fit Generator",
+                "23:50",
+                "12.8",
+                1430,
+                147
+            ],
+            [
+                "Final Source Code",
+                "02:04",
+                "12.9",
+                124,
+                148
+            ],
+            [
+                "Section 12 - Outro",
+                "00:43",
+                "12.10",
+                43,
+                149
+            ]
+        ],
+        "total": "1hr 52min",
+        "duration": 6720,
+        "name": "Classifying Road Symbols",
+        "durs": [
+            60,
+            27,
+            2578,
+            1212,
+            867,
+            20,
+            374,
+            1430,
+            124,
+            43
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Overview",
+                "00:30",
+                "13.1",
+                30,
+                150
+            ],
+            [
+                "Implementation",
+                "15:22",
+                "13.2",
+                922,
+                151
+            ],
+            [
+                "Final Source Code",
+                "00:13",
+                "13.3",
+                13,
+                152
+            ],
+            [
+                "Section 13 - Conclusion",
+                "00:22",
+                "13.4",
+                22,
+                153
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Polynomial Regression",
+        "durs": [
+            30,
+            922,
+            13,
+            22
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Overview",
+                "03:11",
+                "14.1",
+                191,
+                154
+            ],
+            [
+                "Collecting Data",
+                "17:46",
+                "14.2",
+                1066,
+                155
+            ],
+            [
+                "Downloading Data",
+                "17:52",
+                "14.3",
+                1072,
+                156
+            ],
+            [
+                "Balancing Data",
+                "11:31",
+                "14.4",
+                691,
+                157
+            ],
+            [
+                "Training & Validation Split",
+                "11:27",
+                "14.5",
+                687,
+                158
+            ],
+            [
+                "Preprocessing Images",
+                "18:04",
+                "14.6",
+                1084,
+                159
+            ],
+            [
+                "(Fix for next video)",
+                "00:19",
+                "14.7",
+                19,
+                160
+            ],
+            [
+                "Defining Nvidia Model",
+                "27:10",
+                "14.8",
+                1630,
+                161
+            ],
+            [
+                "Drive.py code",
+                "00:53",
+                "14.9",
+                53,
+                162
+            ],
+            [
+                "Flask & Socket.io",
+                "17:33",
+                "14.10",
+                1053,
+                163
+            ],
+            [
+                "Self Driving Car - Test 1",
+                "16:30",
+                "14.11",
+                990,
+                164
+            ],
+            [
+                "Fix for simulation not starting",
+                "00:09",
+                "14.12",
+                9,
+                165
+            ],
+            [
+                "Generator - Augmentation Techniques",
+                "34:29",
+                "14.13",
+                2069,
+                166
+            ],
+            [
+                "Batch Generator",
+                "10:58",
+                "14.14",
+                658,
+                167
+            ],
+            [
+                "Fit Generator",
+                "19:20",
+                "14.15",
+                1160,
+                168
+            ],
+            [
+                "Final Source Code",
+                "02:29",
+                "14.16",
+                149,
+                169
+            ],
+            [
+                "Outro",
+                "00:55",
+                "14.17",
+                55,
+                170
+            ]
+        ],
+        "total": "3hr 31min",
+        "duration": 12660,
+        "name": "Behavioural Cloning",
+        "durs": [
+            191,
+            1066,
+            1072,
+            691,
+            687,
+            1084,
+            19,
+            1630,
+            53,
+            1053,
+            990,
+            9,
+            2069,
+            658,
+            1160,
+            149,
+            55
+        ]
+    }
+]

@@ -1,0 +1,5472 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "05:09",
+                "1.1",
+                309,
+                1
+            ]
+        ],
+        "total": "5min",
+        "duration": 300,
+        "name": "Introduction",
+        "durs": [
+            309
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "How to Download Anaconda",
+                "05:50",
+                "2.1",
+                350,
+                2
+            ],
+            [
+                "VERY IMPORTANT NOTE FOR STUDENTS!!",
+                "00:17",
+                "2.2",
+                17,
+                3
+            ],
+            [
+                "How to Download R Studio",
+                "05:35",
+                "2.3",
+                335,
+                4
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Installing Software",
+        "durs": [
+            350,
+            17,
+            335
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Introduction to NumPy",
+                "04:22",
+                "3.1",
+                262,
+                5
+            ],
+            [
+                "Understanding Data Types in Python",
+                "11:47",
+                "3.2",
+                707,
+                6
+            ],
+            [
+                "Fixed Type Arrays in Python",
+                "05:44",
+                "3.3",
+                344,
+                7
+            ],
+            [
+                "Creating Arrays from Scratch",
+                "08:58",
+                "3.4",
+                538,
+                8
+            ],
+            [
+                "The Basics of NumPy Arrays",
+                "13:42",
+                "3.5",
+                822,
+                9
+            ],
+            [
+                "Array Slicing - Accessing Subarrays",
+                "10:10",
+                "3.6",
+                610,
+                10
+            ],
+            [
+                "Reshaping of Arrays",
+                "13:33",
+                "3.7",
+                813,
+                11
+            ],
+            [
+                "Splitting of Arrays",
+                "10:27",
+                "3.8",
+                627,
+                12
+            ],
+            [
+                "Splitting of Arrays - 2",
+                "06:59",
+                "3.9",
+                419,
+                13
+            ],
+            [
+                "Exploring NumPy's UFuncs",
+                "12:23",
+                "3.10",
+                743,
+                14
+            ],
+            [
+                "Exponents and Logarithms",
+                "11:18",
+                "3.11",
+                678,
+                15
+            ],
+            [
+                "Advanced UFunc Functions",
+                "07:28",
+                "3.12",
+                448,
+                16
+            ],
+            [
+                "Aggregations",
+                "09:00",
+                "3.13",
+                540,
+                17
+            ],
+            [
+                "Example US Presidents",
+                "10:31",
+                "3.14",
+                631,
+                18
+            ],
+            [
+                "Computation on Arrays - Broadcasting",
+                "07:25",
+                "3.15",
+                445,
+                19
+            ],
+            [
+                "Broadcasting Example",
+                "05:15",
+                "3.16",
+                315,
+                20
+            ],
+            [
+                "Broadcasting in Practice",
+                "06:10",
+                "3.17",
+                370,
+                21
+            ],
+            [
+                "Comparisons, Masks and Boolean Logic",
+                "15:06",
+                "3.18",
+                906,
+                22
+            ],
+            [
+                "Boolean Operators",
+                "08:45",
+                "3.19",
+                525,
+                23
+            ],
+            [
+                "Boolean Arrays as Masks",
+                "08:40",
+                "3.20",
+                520,
+                24
+            ],
+            [
+                "Fancy Indexing",
+                "07:05",
+                "3.21",
+                425,
+                25
+            ],
+            [
+                "Combined Indexing",
+                "08:36",
+                "3.22",
+                516,
+                26
+            ],
+            [
+                "Modifying values with Fancy Indexing",
+                "05:14",
+                "3.23",
+                314,
+                27
+            ],
+            [
+                "Example Binning Data",
+                "08:08",
+                "3.24",
+                488,
+                28
+            ],
+            [
+                "Sorting Arrays",
+                "05:59",
+                "3.25",
+                359,
+                29
+            ],
+            [
+                "Fast Sorting in NumPy",
+                "06:51",
+                "3.26",
+                411,
+                30
+            ],
+            [
+                "Example: k-Nearest Neighbors",
+                "12:01",
+                "3.27",
+                721,
+                31
+            ],
+            [
+                "Structured Data - NumPy's Structured Arrays",
+                "14:51",
+                "3.28",
+                891,
+                32
+            ],
+            [
+                "More Advanced Component Types",
+                "05:59",
+                "3.29",
+                359,
+                33
+            ]
+        ],
+        "total": "4hr 22min",
+        "duration": 15720,
+        "name": "Data Science with Python",
+        "durs": [
+            262,
+            707,
+            344,
+            538,
+            822,
+            610,
+            813,
+            627,
+            419,
+            743,
+            678,
+            448,
+            540,
+            631,
+            445,
+            315,
+            370,
+            906,
+            525,
+            520,
+            425,
+            516,
+            314,
+            488,
+            359,
+            411,
+            721,
+            891,
+            359
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Introduction",
+                "02:25",
+                "4.1",
+                145,
+                34
+            ],
+            [
+                "Installing and Using Pandas",
+                "01:35",
+                "4.2",
+                95,
+                35
+            ],
+            [
+                "Introducing Pandas Objects",
+                "11:31",
+                "4.3",
+                691,
+                36
+            ],
+            [
+                "Constructing Series Objects",
+                "03:58",
+                "4.4",
+                238,
+                37
+            ],
+            [
+                "The Pandas DataFrame Object",
+                "05:21",
+                "4.5",
+                321,
+                38
+            ],
+            [
+                "DataFrame as a specialized Dictionary",
+                "08:32",
+                "4.6",
+                512,
+                39
+            ],
+            [
+                "The Pandas Index Object",
+                "05:31",
+                "4.7",
+                331,
+                40
+            ],
+            [
+                "Data Indexing and Selection",
+                "10:34",
+                "4.8",
+                634,
+                41
+            ],
+            [
+                "Data Selection in DataFrame",
+                "14:55",
+                "4.9",
+                895,
+                42
+            ],
+            [
+                "DataFrame as two-dimensional array",
+                "06:58",
+                "4.10",
+                418,
+                43
+            ],
+            [
+                "Operating on Data in Pandas",
+                "05:15",
+                "4.11",
+                315,
+                44
+            ],
+            [
+                "UFuncs Index Alignment",
+                "09:05",
+                "4.12",
+                545,
+                45
+            ],
+            [
+                "Index alignment in DataFrame",
+                "04:47",
+                "4.13",
+                287,
+                46
+            ],
+            [
+                "Ufuncs Operations Between DataFrame and Series",
+                "03:23",
+                "4.14",
+                203,
+                47
+            ],
+            [
+                "Handling Missing Data",
+                "03:23",
+                "4.15",
+                203,
+                48
+            ],
+            [
+                "Missing Data in Pandas",
+                "09:17",
+                "4.16",
+                557,
+                49
+            ],
+            [
+                "NaN and None in Pandas",
+                "02:55",
+                "4.17",
+                175,
+                50
+            ],
+            [
+                "Operating on Null Values",
+                "10:03",
+                "4.18",
+                603,
+                51
+            ],
+            [
+                "Hierarchical Indexing",
+                "06:51",
+                "4.19",
+                411,
+                52
+            ],
+            [
+                "The better way Pandas MultiIndex",
+                "07:05",
+                "4.20",
+                425,
+                53
+            ],
+            [
+                "Methods of MultiIndex Creation",
+                "10:53",
+                "4.21",
+                653,
+                54
+            ],
+            [
+                "MultiIndex for columns",
+                "05:48",
+                "4.22",
+                348,
+                55
+            ],
+            [
+                "Indexing and Slicing a MultiIndex",
+                "07:15",
+                "4.23",
+                435,
+                56
+            ],
+            [
+                "Rearranging Multi-Indices",
+                "06:06",
+                "4.24",
+                366,
+                57
+            ],
+            [
+                "Index setting and resetting",
+                "02:07",
+                "4.25",
+                127,
+                58
+            ],
+            [
+                "Data Aggregations on Multi-Indices",
+                "02:19",
+                "4.26",
+                139,
+                59
+            ],
+            [
+                "Combining Datasets Concat and Append",
+                "11:42",
+                "4.27",
+                702,
+                60
+            ],
+            [
+                "Duplicate indices",
+                "05:41",
+                "4.28",
+                341,
+                61
+            ],
+            [
+                "Catching the repeats as an error",
+                "09:49",
+                "4.29",
+                589,
+                62
+            ],
+            [
+                "Combining Datasets Merge and Join",
+                "13:02",
+                "4.30",
+                782,
+                63
+            ],
+            [
+                "Specification of the Merge Key",
+                "09:22",
+                "4.31",
+                562,
+                64
+            ],
+            [
+                "Specifying Set Arithmetic for Joins",
+                "10:03",
+                "4.32",
+                603,
+                65
+            ],
+            [
+                "Example US States Data",
+                "08:15",
+                "4.33",
+                495,
+                66
+            ],
+            [
+                "Example US States Data - 2",
+                "09:28",
+                "4.34",
+                568,
+                67
+            ],
+            [
+                "Aggregation and Grouping",
+                "09:32",
+                "4.35",
+                572,
+                68
+            ],
+            [
+                "GroupBy Split, Apply, Combine",
+                "07:44",
+                "4.36",
+                464,
+                69
+            ],
+            [
+                "Iteration over groups",
+                "04:46",
+                "4.37",
+                286,
+                70
+            ],
+            [
+                "Aggregate, filter, transform, apply",
+                "06:26",
+                "4.38",
+                386,
+                71
+            ],
+            [
+                "Transformation",
+                "10:06",
+                "4.39",
+                606,
+                72
+            ],
+            [
+                "Pivot Tables",
+                "05:13",
+                "4.40",
+                313,
+                73
+            ],
+            [
+                "Pivot Table Syntax",
+                "07:48",
+                "4.41",
+                468,
+                74
+            ],
+            [
+                "Example Birthrate Data",
+                "18:06",
+                "4.42",
+                1086,
+                75
+            ],
+            [
+                "Vectorized String Operations",
+                "07:50",
+                "4.43",
+                470,
+                76
+            ],
+            [
+                "Methods using regular expressions",
+                "07:44",
+                "4.44",
+                464,
+                77
+            ],
+            [
+                "Working with Time Series",
+                "11:05",
+                "4.45",
+                665,
+                78
+            ],
+            [
+                "Dates and times in Pandas Best of both worlds",
+                "06:56",
+                "4.46",
+                416,
+                79
+            ],
+            [
+                "Pandas Time Series Data Structures",
+                "09:20",
+                "4.47",
+                560,
+                80
+            ],
+            [
+                "Example Visualizing Seattle Bicycle Counts",
+                "11:03",
+                "4.48",
+                663,
+                81
+            ],
+            [
+                "Example Visualizing Seattle Bicycle Counts - 1",
+                "07:13",
+                "4.49",
+                433,
+                82
+            ],
+            [
+                "High-Performance Pandas eval() and query()",
+                "08:01",
+                "4.50",
+                481,
+                83
+            ],
+            [
+                "pandas.eval() for Efficient Operations",
+                "09:52",
+                "4.51",
+                592,
+                84
+            ],
+            [
+                "DataFrame.eval() for Column-Wise Operations",
+                "07:07",
+                "4.52",
+                427,
+                85
+            ]
+        ],
+        "total": "6hr 41min",
+        "duration": 24060,
+        "name": "Data Manipulation with Pandas",
+        "durs": [
+            145,
+            95,
+            691,
+            238,
+            321,
+            512,
+            331,
+            634,
+            895,
+            418,
+            315,
+            545,
+            287,
+            203,
+            203,
+            557,
+            175,
+            603,
+            411,
+            425,
+            653,
+            348,
+            435,
+            366,
+            127,
+            139,
+            702,
+            341,
+            589,
+            782,
+            562,
+            603,
+            495,
+            568,
+            572,
+            464,
+            286,
+            386,
+            606,
+            313,
+            468,
+            1086,
+            470,
+            464,
+            665,
+            416,
+            560,
+            663,
+            433,
+            481,
+            592,
+            427
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Visualization with Matplotlib",
+                "08:13",
+                "5.1",
+                493,
+                86
+            ],
+            [
+                "Plotting from an IPython Shell",
+                "06:11",
+                "5.2",
+                371,
+                87
+            ],
+            [
+                "Two Interfaces for the Price of one",
+                "04:57",
+                "5.3",
+                297,
+                88
+            ],
+            [
+                "Simple Line Plots",
+                "12:14",
+                "5.4",
+                734,
+                89
+            ],
+            [
+                "Adjusting the Plot - Axes Limits",
+                "07:22",
+                "5.5",
+                442,
+                90
+            ],
+            [
+                "Simple Scatter Plots",
+                "08:09",
+                "5.6",
+                489,
+                91
+            ],
+            [
+                "Scatter Plots with plt.scatter",
+                "08:05",
+                "5.7",
+                485,
+                92
+            ],
+            [
+                "Basic Errorbars",
+                "09:22",
+                "5.8",
+                562,
+                93
+            ],
+            [
+                "Density and Contour Plots",
+                "13:06",
+                "5.9",
+                786,
+                94
+            ],
+            [
+                "Histograms, Binnings, and Density",
+                "08:54",
+                "5.10",
+                534,
+                95
+            ],
+            [
+                "plt.hexbin - Hexagonal binnings",
+                "10:49",
+                "5.11",
+                649,
+                96
+            ],
+            [
+                "Customizing Plot Legends",
+                "08:46",
+                "5.12",
+                526,
+                97
+            ],
+            [
+                "Legend for Size of Points",
+                "08:48",
+                "5.13",
+                528,
+                98
+            ],
+            [
+                "Multiple Legends",
+                "06:18",
+                "5.14",
+                378,
+                99
+            ],
+            [
+                "Customizing Color-bars",
+                "16:07",
+                "5.15",
+                967,
+                100
+            ],
+            [
+                "Color limits and extensions",
+                "05:35",
+                "5.16",
+                335,
+                101
+            ],
+            [
+                "Example Handwritten Digits",
+                "07:00",
+                "5.17",
+                420,
+                102
+            ],
+            [
+                "Multiple Subplots",
+                "10:07",
+                "5.18",
+                607,
+                103
+            ],
+            [
+                "plt.subplots The Whole Grid in One Go",
+                "13:39",
+                "5.19",
+                819,
+                104
+            ],
+            [
+                "Text and Annotation",
+                "17:32",
+                "5.20",
+                1052,
+                105
+            ],
+            [
+                "Arrows and Annotation",
+                "12:08",
+                "5.21",
+                728,
+                106
+            ],
+            [
+                "Major and Minor Ticks",
+                "09:47",
+                "5.22",
+                587,
+                107
+            ],
+            [
+                "Reducing or Increasing the Number of Ticks",
+                "14:07",
+                "5.23",
+                847,
+                108
+            ],
+            [
+                "Customizing Matplotlib Configurations and Stylesheets",
+                "06:23",
+                "5.24",
+                383,
+                109
+            ],
+            [
+                "Changing the Defaults rcParams",
+                "08:36",
+                "5.25",
+                516,
+                110
+            ],
+            [
+                "Stylesheets",
+                "09:28",
+                "5.26",
+                568,
+                111
+            ],
+            [
+                "Three-Dimensional Plotting in Matplotlib",
+                "10:36",
+                "5.27",
+                636,
+                112
+            ],
+            [
+                "Wireframes and Surface Plots",
+                "09:44",
+                "5.28",
+                584,
+                113
+            ],
+            [
+                "Example Visualizing a Möbius strip",
+                "07:19",
+                "5.29",
+                439,
+                114
+            ],
+            [
+                "Geographic Data with Basemap",
+                "07:48",
+                "5.30",
+                468,
+                115
+            ],
+            [
+                "Map Projections",
+                "04:45",
+                "5.31",
+                285,
+                116
+            ],
+            [
+                "Seaborn Versus Matplotlib",
+                "08:46",
+                "5.32",
+                526,
+                117
+            ],
+            [
+                "Pair plots",
+                "07:50",
+                "5.33",
+                470,
+                118
+            ],
+            [
+                "Bar Plots",
+                "03:41",
+                "5.34",
+                221,
+                119
+            ]
+        ],
+        "total": "5hr 12min",
+        "duration": 18720,
+        "name": "Data Visualization with Matplotlib",
+        "durs": [
+            493,
+            371,
+            297,
+            734,
+            442,
+            489,
+            485,
+            562,
+            786,
+            534,
+            649,
+            526,
+            528,
+            378,
+            967,
+            335,
+            420,
+            607,
+            819,
+            1052,
+            728,
+            587,
+            847,
+            383,
+            516,
+            568,
+            636,
+            584,
+            439,
+            468,
+            285,
+            526,
+            470,
+            221
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Data Wrangling",
+                "04:08",
+                "6.1",
+                248,
+                120
+            ],
+            [
+                "Creating a DataFrame",
+                "04:36",
+                "6.2",
+                276,
+                121
+            ],
+            [
+                "Describing the Data",
+                "08:07",
+                "6.3",
+                487,
+                122
+            ],
+            [
+                "Selecting Rows based on Conditionals",
+                "07:25",
+                "6.4",
+                445,
+                123
+            ],
+            [
+                "Renaming Columns",
+                "04:17",
+                "6.5",
+                257,
+                124
+            ],
+            [
+                "Finding the Minimum, Maximum, Sum, Average and Count",
+                "06:08",
+                "6.6",
+                368,
+                125
+            ],
+            [
+                "Handling Missing Values",
+                "06:35",
+                "6.7",
+                395,
+                126
+            ],
+            [
+                "Deleting a Row & Dropping Duplicate Rows",
+                "07:40",
+                "6.8",
+                460,
+                127
+            ],
+            [
+                "Grouping Values by Variables",
+                "08:48",
+                "6.9",
+                528,
+                128
+            ],
+            [
+                "Looping over a column",
+                "06:03",
+                "6.10",
+                363,
+                129
+            ],
+            [
+                "Concatenating DataFrames",
+                "06:12",
+                "6.11",
+                372,
+                130
+            ],
+            [
+                "Merging DataFrames",
+                "07:19",
+                "6.12",
+                439,
+                131
+            ]
+        ],
+        "total": "1hr 17min",
+        "duration": 4620,
+        "name": "||Machine Learning with Python||",
+        "durs": [
+            248,
+            276,
+            487,
+            445,
+            257,
+            368,
+            395,
+            460,
+            528,
+            363,
+            372,
+            439
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Encoding Nominal Categorical Data",
+                "05:55",
+                "7.1",
+                355,
+                132
+            ],
+            [
+                "Encoding Ordinal Categorical Features",
+                "06:34",
+                "7.2",
+                394,
+                133
+            ],
+            [
+                "Encoding Dictionaries of Features",
+                "05:45",
+                "7.3",
+                345,
+                134
+            ],
+            [
+                "Imputing Missing Class Values",
+                "08:31",
+                "7.4",
+                511,
+                135
+            ],
+            [
+                "Handling Imbalanced Classes",
+                "12:25",
+                "7.5",
+                745,
+                136
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "Handling Categorical Data",
+        "durs": [
+            355,
+            394,
+            345,
+            511,
+            745
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Rescaling a Feature",
+                "08:53",
+                "8.1",
+                533,
+                137
+            ],
+            [
+                "Normalizing Observations",
+                "08:21",
+                "8.2",
+                501,
+                138
+            ]
+        ],
+        "total": "17min",
+        "duration": 1020,
+        "name": "Handling Missing Values",
+        "durs": [
+            533,
+            501
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Transforming Features",
+                "04:02",
+                "9.1",
+                242,
+                139
+            ],
+            [
+                "Detecting Outliers",
+                "07:15",
+                "9.2",
+                435,
+                140
+            ],
+            [
+                "Handling Outliers",
+                "06:34",
+                "9.3",
+                394,
+                141
+            ],
+            [
+                "Discretizating Features",
+                "03:37",
+                "9.4",
+                217,
+                142
+            ],
+            [
+                "Grouping Observations using Clustering",
+                "05:33",
+                "9.5",
+                333,
+                143
+            ]
+        ],
+        "total": "27min",
+        "duration": 1620,
+        "name": "Handling Numerical Data",
+        "durs": [
+            242,
+            435,
+            394,
+            217,
+            333
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Loading Data",
+                "13:07",
+                "10.1",
+                787,
+                144
+            ]
+        ],
+        "total": "13min",
+        "duration": 780,
+        "name": "Loading Data",
+        "durs": [
+            787
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Vectors, Matrices and Arrays",
+                "10:50",
+                "11.1",
+                650,
+                145
+            ],
+            [
+                "One or more elements in a matrix",
+                "08:51",
+                "11.2",
+                531,
+                146
+            ],
+            [
+                "Finding Minimum and Maximum Values in an Array and Matrix + Vector",
+                "07:18",
+                "11.3",
+                438,
+                147
+            ],
+            [
+                "Flattening a Matrix",
+                "06:47",
+                "11.4",
+                407,
+                148
+            ],
+            [
+                "Calculating the trace of a Matrix",
+                "04:21",
+                "11.5",
+                261,
+                149
+            ],
+            [
+                "Calculating the Dot Products",
+                "08:17",
+                "11.6",
+                497,
+                150
+            ]
+        ],
+        "total": "46min",
+        "duration": 2760,
+        "name": "Vectors, Matrices and Arrays",
+        "durs": [
+            650,
+            531,
+            438,
+            407,
+            261,
+            497
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Introduction",
+                "08:24",
+                "12.1",
+                504,
+                151
+            ],
+            [
+                "MNIST and Softmax Regression",
+                "08:30",
+                "12.2",
+                510,
+                152
+            ],
+            [
+                "Softmax Regression",
+                "12:36",
+                "12.3",
+                756,
+                153
+            ],
+            [
+                "Softmax Regression Code Explanation",
+                "08:53",
+                "12.4",
+                533,
+                154
+            ],
+            [
+                "Computation Graphs",
+                "05:07",
+                "12.5",
+                307,
+                155
+            ],
+            [
+                "Graphs, Sessions, Fetches",
+                "07:38",
+                "12.6",
+                458,
+                156
+            ],
+            [
+                "Constructing and Managing Graph & Fetches",
+                "16:11",
+                "12.7",
+                971,
+                157
+            ],
+            [
+                "Flowing Tensors",
+                "12:48",
+                "12.8",
+                768,
+                158
+            ],
+            [
+                "Data Types, Casting, Tensor Arrays and Shapes",
+                "10:44",
+                "12.9",
+                644,
+                159
+            ],
+            [
+                "Matrix Multiplication",
+                "07:59",
+                "12.10",
+                479,
+                160
+            ],
+            [
+                "Names",
+                "05:08",
+                "12.11",
+                308,
+                161
+            ],
+            [
+                "Variables, Placeholders, and Simple Optimization",
+                "05:44",
+                "12.12",
+                344,
+                162
+            ],
+            [
+                "Placeholders",
+                "06:42",
+                "12.13",
+                402,
+                163
+            ],
+            [
+                "Optimization",
+                "06:48",
+                "12.14",
+                408,
+                164
+            ],
+            [
+                "The Gradient Descent Optimizer",
+                "04:45",
+                "12.15",
+                285,
+                165
+            ],
+            [
+                "Gradient Descent in TensorFlow",
+                "01:47",
+                "12.16",
+                107,
+                166
+            ],
+            [
+                "Example Linear Regression",
+                "11:46",
+                "12.17",
+                706,
+                167
+            ],
+            [
+                "Convolutional Neural Networks",
+                "05:57",
+                "12.18",
+                357,
+                168
+            ],
+            [
+                "Convolution, Pooling, Dropout",
+                "05:29",
+                "12.19",
+                329,
+                169
+            ],
+            [
+                "The Model",
+                "10:01",
+                "12.20",
+                601,
+                170
+            ],
+            [
+                "MNIST Data Set",
+                "12:51",
+                "12.21",
+                771,
+                171
+            ],
+            [
+                "Working with TensorfBoard",
+                "04:25",
+                "12.22",
+                265,
+                172
+            ],
+            [
+                "Introduction to Recurrent Neural Networks",
+                "05:38",
+                "12.23",
+                338,
+                173
+            ],
+            [
+                "MNIST Images as Sequences",
+                "06:27",
+                "12.24",
+                387,
+                174
+            ],
+            [
+                "Input and Label Placeholders",
+                "04:27",
+                "12.25",
+                267,
+                175
+            ],
+            [
+                "The RNN Step",
+                "07:58",
+                "12.26",
+                478,
+                176
+            ],
+            [
+                "Applying the RNN step with tfscan",
+                "07:42",
+                "12.27",
+                462,
+                177
+            ],
+            [
+                "Sequential Outputs",
+                "07:11",
+                "12.28",
+                431,
+                178
+            ],
+            [
+                "TensorFlow Built-in RNN Functions",
+                "22:51",
+                "12.29",
+                1371,
+                179
+            ],
+            [
+                "RNN for Text Sequences",
+                "11:10",
+                "12.30",
+                670,
+                180
+            ],
+            [
+                "Text Sequences",
+                "07:41",
+                "12.31",
+                461,
+                181
+            ],
+            [
+                "contrib.learn",
+                "03:26",
+                "12.32",
+                206,
+                182
+            ]
+        ],
+        "total": "4hr 25min",
+        "duration": 15900,
+        "name": "||Deep Learning||",
+        "durs": [
+            504,
+            510,
+            756,
+            533,
+            307,
+            458,
+            971,
+            768,
+            644,
+            479,
+            308,
+            344,
+            402,
+            408,
+            285,
+            107,
+            706,
+            357,
+            329,
+            601,
+            771,
+            265,
+            338,
+            387,
+            267,
+            478,
+            462,
+            431,
+            1371,
+            670,
+            461,
+            206
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Computing with Language Texts and Words",
+                "03:47",
+                "13.1",
+                227,
+                183
+            ],
+            [
+                "Searching Texts",
+                "06:04",
+                "13.2",
+                364,
+                184
+            ],
+            [
+                "Counting Vocabulary",
+                "06:31",
+                "13.3",
+                391,
+                185
+            ],
+            [
+                "Lexical_Diversity",
+                "04:31",
+                "13.4",
+                271,
+                186
+            ],
+            [
+                "Lexical diversity of various genres in the Brown Corpus",
+                "01:09",
+                "13.5",
+                69,
+                187
+            ],
+            [
+                "Lists",
+                "05:12",
+                "13.6",
+                312,
+                188
+            ],
+            [
+                "Indexing Lists",
+                "04:11",
+                "13.7",
+                251,
+                189
+            ],
+            [
+                "Variables",
+                "05:22",
+                "13.8",
+                322,
+                190
+            ],
+            [
+                "Strings",
+                "01:43",
+                "13.9",
+                103,
+                191
+            ],
+            [
+                "Computing with Language Simple Statistics",
+                "02:53",
+                "13.10",
+                173,
+                192
+            ],
+            [
+                "Frequency Distributions",
+                "04:59",
+                "13.11",
+                299,
+                193
+            ],
+            [
+                "Fine-Grained Selection of Words",
+                "04:52",
+                "13.12",
+                292,
+                194
+            ],
+            [
+                "Collocations and Bigrams",
+                "03:31",
+                "13.13",
+                211,
+                195
+            ],
+            [
+                "Counting other Things",
+                "03:49",
+                "13.14",
+                229,
+                196
+            ],
+            [
+                "Making Decisions and Taking Control",
+                "05:43",
+                "13.15",
+                343,
+                197
+            ],
+            [
+                "Operating on Every Element",
+                "03:15",
+                "13.16",
+                195,
+                198
+            ],
+            [
+                "Nested Code Blocks",
+                "04:24",
+                "13.17",
+                264,
+                199
+            ],
+            [
+                "Looping with Conditionals",
+                "04:39",
+                "13.18",
+                279,
+                200
+            ],
+            [
+                "Accessing Text Corposa",
+                "11:47",
+                "13.19",
+                707,
+                201
+            ],
+            [
+                "Web and Chat Texts",
+                "03:57",
+                "13.20",
+                237,
+                202
+            ],
+            [
+                "Brown Corpus",
+                "04:41",
+                "13.21",
+                281,
+                203
+            ],
+            [
+                "Brown Corpus - 2",
+                "03:12",
+                "13.22",
+                192,
+                204
+            ],
+            [
+                "Reuters Corpus",
+                "05:03",
+                "13.23",
+                303,
+                205
+            ],
+            [
+                "Inaugural Address Corpus",
+                "03:49",
+                "13.24",
+                229,
+                206
+            ],
+            [
+                "Conditional Frequency Distribution",
+                "07:52",
+                "13.25",
+                472,
+                207
+            ],
+            [
+                "Plotting and Tabulating Distributions",
+                "05:58",
+                "13.26",
+                358,
+                208
+            ],
+            [
+                "Generating Random Texts with Bigram",
+                "03:36",
+                "13.27",
+                216,
+                209
+            ],
+            [
+                "Function",
+                "01:48",
+                "13.28",
+                108,
+                210
+            ]
+        ],
+        "total": "2hr 8min",
+        "duration": 7680,
+        "name": "||Natural Language Processing||",
+        "durs": [
+            227,
+            364,
+            391,
+            271,
+            69,
+            312,
+            251,
+            322,
+            103,
+            173,
+            299,
+            292,
+            211,
+            229,
+            343,
+            195,
+            264,
+            279,
+            707,
+            237,
+            281,
+            192,
+            303,
+            229,
+            472,
+            358,
+            216,
+            108
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Essential Libraries and Tools",
+                "15:20",
+                "14.1",
+                920,
+                211
+            ],
+            [
+                "A First Application Classifying Iris Species",
+                "12:24",
+                "14.2",
+                744,
+                212
+            ],
+            [
+                "Measuring Success Training and Testing Data",
+                "07:17",
+                "14.3",
+                437,
+                213
+            ],
+            [
+                "First Things Fast - Look at your Data",
+                "05:35",
+                "14.4",
+                335,
+                214
+            ],
+            [
+                "Building your first model k-Nearest Neighbors",
+                "04:32",
+                "14.5",
+                272,
+                215
+            ],
+            [
+                "Making Predictions",
+                "06:29",
+                "14.6",
+                389,
+                216
+            ]
+        ],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Machine Learning with Python || Introductory ||",
+        "durs": [
+            920,
+            744,
+            437,
+            335,
+            272,
+            389
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Supervised Learning",
+                "08:09",
+                "15.1",
+                489,
+                217
+            ],
+            [
+                "load_breast_cancer function from scikit-learn",
+                "05:52",
+                "15.2",
+                352,
+                218
+            ],
+            [
+                "Dataset Analysis",
+                "12:52",
+                "15.3",
+                772,
+                219
+            ],
+            [
+                "Analyzing KNeighborsClassifier",
+                "06:50",
+                "15.4",
+                410,
+                220
+            ],
+            [
+                "Evaluation of Test Performance",
+                "06:48",
+                "15.5",
+                408,
+                221
+            ],
+            [
+                "k-Neighbors Regression",
+                "06:07",
+                "15.6",
+                367,
+                222
+            ],
+            [
+                "Analyzing KNeighborsRegressor",
+                "09:03",
+                "15.7",
+                543,
+                223
+            ],
+            [
+                "Linear Models",
+                "04:47",
+                "15.8",
+                287,
+                224
+            ],
+            [
+                "Linear regression (aka ordinary least squares)",
+                "09:37",
+                "15.9",
+                577,
+                225
+            ],
+            [
+                "Ridge regression",
+                "08:37",
+                "15.10",
+                517,
+                226
+            ],
+            [
+                "Boston Housing dataset and evaluated LinearRegression",
+                "07:16",
+                "15.11",
+                436,
+                227
+            ],
+            [
+                "Lasso",
+                "09:33",
+                "15.12",
+                573,
+                228
+            ],
+            [
+                "Linear Models for Classification",
+                "11:37",
+                "15.13",
+                697,
+                229
+            ],
+            [
+                "Decision boundaries of a linear SVM",
+                "07:38",
+                "15.14",
+                458,
+                230
+            ],
+            [
+                "Coefficients Learned by the models with the three different settings",
+                "11:27",
+                "15.15",
+                687,
+                231
+            ],
+            [
+                "Linear Models for Multiclass Classification",
+                "11:00",
+                "15.16",
+                660,
+                232
+            ],
+            [
+                "Predictions for all regions of the 2D",
+                "06:16",
+                "15.17",
+                376,
+                233
+            ],
+            [
+                "Strengths, weaknesses, and parameter",
+                "04:00",
+                "15.18",
+                240,
+                234
+            ],
+            [
+                "Decision Trees",
+                "06:56",
+                "15.19",
+                416,
+                235
+            ]
+        ],
+        "total": "2hr 34min",
+        "duration": 9240,
+        "name": "Supervised Learning with Python",
+        "durs": [
+            489,
+            352,
+            772,
+            410,
+            408,
+            367,
+            543,
+            287,
+            577,
+            517,
+            436,
+            573,
+            697,
+            458,
+            687,
+            660,
+            376,
+            240,
+            416
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Using R as a Calculator",
+                "06:10",
+                "16.1",
+                370,
+                236
+            ],
+            [
+                "Assignments",
+                "01:46",
+                "16.2",
+                106,
+                237
+            ],
+            [
+                "Vector of Values",
+                "03:48",
+                "16.3",
+                228,
+                238
+            ],
+            [
+                "Indexing of Vectors",
+                "05:25",
+                "16.4",
+                325,
+                239
+            ],
+            [
+                "Vectorized Expressions",
+                "03:16",
+                "16.5",
+                196,
+                240
+            ],
+            [
+                "Comments",
+                "01:13",
+                "16.6",
+                73,
+                241
+            ],
+            [
+                "Functions",
+                "02:57",
+                "16.7",
+                177,
+                242
+            ],
+            [
+                "Writing your own Functions",
+                "05:36",
+                "16.8",
+                336,
+                243
+            ],
+            [
+                "Vectorized Expressions and Functions",
+                "03:17",
+                "16.9",
+                197,
+                244
+            ],
+            [
+                "Control Structures",
+                "09:54",
+                "16.10",
+                594,
+                245
+            ],
+            [
+                "Fucnctor",
+                "09:18",
+                "16.11",
+                558,
+                246
+            ],
+            [
+                "Factors",
+                "10:10",
+                "16.12",
+                610,
+                247
+            ],
+            [
+                "Factors - 2",
+                "03:02",
+                "16.13",
+                182,
+                248
+            ],
+            [
+                "Data Frames",
+                "06:32",
+                "16.14",
+                392,
+                249
+            ],
+            [
+                "Dealing with Missing Values",
+                "03:16",
+                "16.15",
+                196,
+                250
+            ],
+            [
+                "Installing Packages",
+                "02:17",
+                "16.16",
+                137,
+                251
+            ],
+            [
+                "Data Pipelines",
+                "05:19",
+                "16.17",
+                319,
+                252
+            ],
+            [
+                "Writing Pipelines of Functional Calls",
+                "04:32",
+                "16.18",
+                272,
+                253
+            ],
+            [
+                "Writing Functions that work with the Pipelines",
+                "03:18",
+                "16.19",
+                198,
+                254
+            ],
+            [
+                "The Magical \".\" Argument",
+                "05:43",
+                "16.20",
+                343,
+                255
+            ],
+            [
+                "Defining Functions Using",
+                "03:17",
+                "16.21",
+                197,
+                256
+            ],
+            [
+                "Anonymous Functions",
+                "05:14",
+                "16.22",
+                314,
+                257
+            ],
+            [
+                "Data Manipulation",
+                "05:38",
+                "16.23",
+                338,
+                258
+            ],
+            [
+                "Quickly Reviewing the Data",
+                "02:05",
+                "16.24",
+                125,
+                259
+            ],
+            [
+                "Breast Cancer Dataset",
+                "10:33",
+                "16.25",
+                633,
+                260
+            ],
+            [
+                "Breast Cancer Dataset - 2",
+                "11:28",
+                "16.26",
+                688,
+                261
+            ],
+            [
+                "Breast Cancer Dataset - 3",
+                "03:03",
+                "16.27",
+                183,
+                262
+            ],
+            [
+                "Boston Housing Dataset",
+                "05:41",
+                "16.28",
+                341,
+                263
+            ],
+            [
+                "The readr Package",
+                "04:40",
+                "16.29",
+                280,
+                264
+            ],
+            [
+                "Manipulating Data with dplyr",
+                "01:37",
+                "16.30",
+                97,
+                265
+            ],
+            [
+                "Some Useful dplyr Functions",
+                "02:12",
+                "16.31",
+                132,
+                266
+            ],
+            [
+                "Select()",
+                "05:13",
+                "16.32",
+                313,
+                267
+            ],
+            [
+                "Mutate()",
+                "03:03",
+                "16.33",
+                183,
+                268
+            ],
+            [
+                "Transmute()",
+                "05:17",
+                "16.34",
+                317,
+                269
+            ],
+            [
+                "Group_by()",
+                "06:10",
+                "16.35",
+                370,
+                270
+            ],
+            [
+                "Tidying Data with tidyr",
+                "03:45",
+                "16.36",
+                225,
+                271
+            ],
+            [
+                "Visualizing Data",
+                "08:31",
+                "16.37",
+                511,
+                272
+            ],
+            [
+                "Longley Data",
+                "08:17",
+                "16.38",
+                497,
+                273
+            ],
+            [
+                "Longley Data and Geom_point",
+                "03:01",
+                "16.39",
+                181,
+                274
+            ],
+            [
+                "Grammer of Graphics and ggplo2",
+                "05:43",
+                "16.40",
+                343,
+                275
+            ],
+            [
+                "qplot",
+                "03:11",
+                "16.41",
+                191,
+                276
+            ],
+            [
+                "Using Geometries",
+                "08:19",
+                "16.42",
+                499,
+                277
+            ],
+            [
+                "Making Graphs through ggplot",
+                "08:41",
+                "16.43",
+                521,
+                278
+            ],
+            [
+                "Using ggplot",
+                "06:19",
+                "16.44",
+                379,
+                279
+            ],
+            [
+                "Facets",
+                "05:21",
+                "16.45",
+                321,
+                280
+            ],
+            [
+                "Facet_grid",
+                "03:44",
+                "16.46",
+                224,
+                281
+            ],
+            [
+                "Scaling",
+                "07:56",
+                "16.47",
+                476,
+                282
+            ],
+            [
+                "Using Iris Data Set",
+                "07:26",
+                "16.48",
+                446,
+                283
+            ],
+            [
+                "Themes and Other Graphical Transformation",
+                "08:20",
+                "16.49",
+                500,
+                284
+            ],
+            [
+                "Iris Dataset",
+                "05:05",
+                "16.50",
+                305,
+                285
+            ],
+            [
+                "Figures with Multiple Plots",
+                "04:31",
+                "16.51",
+                271,
+                286
+            ],
+            [
+                "Working with Large Dataset",
+                "01:54",
+                "16.52",
+                114,
+                287
+            ],
+            [
+                "Running out of Memory",
+                "02:51",
+                "16.53",
+                171,
+                288
+            ]
+        ],
+        "total": "4hr 35min",
+        "duration": 16500,
+        "name": "|| R Language ||",
+        "durs": [
+            370,
+            106,
+            228,
+            325,
+            196,
+            73,
+            177,
+            336,
+            197,
+            594,
+            558,
+            610,
+            182,
+            392,
+            196,
+            137,
+            319,
+            272,
+            198,
+            343,
+            197,
+            314,
+            338,
+            125,
+            633,
+            688,
+            183,
+            341,
+            280,
+            97,
+            132,
+            313,
+            183,
+            317,
+            370,
+            225,
+            511,
+            497,
+            181,
+            343,
+            191,
+            499,
+            521,
+            379,
+            321,
+            224,
+            476,
+            446,
+            500,
+            305,
+            271,
+            114,
+            171
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Integer Values",
+                "17:07",
+                "17.1",
+                1027,
+                289
+            ],
+            [
+                "Variables and Assignment",
+                "18:59",
+                "17.2",
+                1139,
+                290
+            ],
+            [
+                "Identifiers",
+                "11:30",
+                "17.3",
+                690,
+                291
+            ],
+            [
+                "Floating-Point Types",
+                "09:55",
+                "17.4",
+                595,
+                292
+            ],
+            [
+                "Control Codes within Strings",
+                "10:53",
+                "17.5",
+                653,
+                293
+            ],
+            [
+                "User Input",
+                "15:34",
+                "17.6",
+                934,
+                294
+            ],
+            [
+                "The eval Function",
+                "12:12",
+                "17.7",
+                732,
+                295
+            ],
+            [
+                "Controlling the Print Function",
+                "11:54",
+                "17.8",
+                714,
+                296
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "|| Python X ||",
+        "durs": [
+            1027,
+            1139,
+            690,
+            595,
+            653,
+            934,
+            732,
+            714
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Expressions",
+                "30:15",
+                "18.1",
+                1815,
+                297
+            ],
+            [
+                "Operator Precedence and Associativity",
+                "07:24",
+                "18.2",
+                444,
+                298
+            ],
+            [
+                "Comments",
+                "04:59",
+                "18.3",
+                299,
+                299
+            ],
+            [
+                "Errors",
+                "00:50",
+                "18.4",
+                50,
+                300
+            ],
+            [
+                "Syntax Errors",
+                "03:34",
+                "18.5",
+                214,
+                301
+            ],
+            [
+                "Run-Time Errors",
+                "09:21",
+                "18.6",
+                561,
+                302
+            ],
+            [
+                "Logic Errors",
+                "09:41",
+                "18.7",
+                581,
+                303
+            ],
+            [
+                "Arithmetic Examples",
+                "26:20",
+                "18.8",
+                1580,
+                304
+            ],
+            [
+                "More Arithmetic Operators",
+                "06:44",
+                "18.9",
+                404,
+                305
+            ],
+            [
+                "Algorithms",
+                "06:49",
+                "18.10",
+                409,
+                306
+            ]
+        ],
+        "total": "1hr 46min",
+        "duration": 6360,
+        "name": "Expressions and Arithmetic",
+        "durs": [
+            1815,
+            444,
+            299,
+            50,
+            214,
+            561,
+            581,
+            1580,
+            404,
+            409
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Boolean Expressions",
+                "04:31",
+                "19.1",
+                271,
+                307
+            ],
+            [
+                "Boolean Expressions 2.0",
+                "02:49",
+                "19.2",
+                169,
+                308
+            ],
+            [
+                "The Simple if Statement",
+                "25:51",
+                "19.3",
+                1551,
+                309
+            ],
+            [
+                "The if-else Statement",
+                "10:52",
+                "19.4",
+                652,
+                310
+            ],
+            [
+                "Compound Boolean Expressions",
+                "14:56",
+                "19.5",
+                896,
+                311
+            ],
+            [
+                "Nested Conditionals",
+                "25:58",
+                "19.6",
+                1558,
+                312
+            ],
+            [
+                "Multiway Decision Statements",
+                "22:59",
+                "19.7",
+                1379,
+                313
+            ],
+            [
+                "Conditional Expressions",
+                "10:19",
+                "19.8",
+                619,
+                314
+            ],
+            [
+                "Errors in Conditional Statements",
+                "03:21",
+                "19.9",
+                201,
+                315
+            ]
+        ],
+        "total": "2hr 2min",
+        "duration": 7320,
+        "name": "Conditional Execution",
+        "durs": [
+            271,
+            169,
+            1551,
+            652,
+            896,
+            1558,
+            1379,
+            619,
+            201
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "The while statement",
+                "23:59",
+                "20.1",
+                1439,
+                316
+            ],
+            [
+                "Definite Loops vs Indefinite Loops",
+                "05:17",
+                "20.2",
+                317,
+                317
+            ],
+            [
+                "The for statement",
+                "06:10",
+                "20.3",
+                370,
+                318
+            ],
+            [
+                "Nested Loops",
+                "18:02",
+                "20.4",
+                1082,
+                319
+            ],
+            [
+                "Abnormal Loop Termination",
+                "00:49",
+                "20.5",
+                49,
+                320
+            ],
+            [
+                "The break statement",
+                "13:55",
+                "20.6",
+                835,
+                321
+            ],
+            [
+                "The continue statement",
+                "08:38",
+                "20.7",
+                518,
+                322
+            ],
+            [
+                "Infinite Loops",
+                "14:03",
+                "20.8",
+                843,
+                323
+            ],
+            [
+                "Iteration Examples",
+                "00:23",
+                "20.9",
+                23,
+                324
+            ],
+            [
+                "Computing Square root",
+                "05:09",
+                "20.10",
+                309,
+                325
+            ],
+            [
+                "Drawing a Tree",
+                "12:44",
+                "20.11",
+                764,
+                326
+            ],
+            [
+                "Printing Prime Number",
+                "15:30",
+                "20.12",
+                930,
+                327
+            ],
+            [
+                "Insisting on the Proper Input",
+                "03:47",
+                "20.13",
+                227,
+                328
+            ]
+        ],
+        "total": "2hr 8min",
+        "duration": 7680,
+        "name": "Iteration",
+        "durs": [
+            1439,
+            317,
+            370,
+            1082,
+            49,
+            835,
+            518,
+            843,
+            23,
+            309,
+            764,
+            930,
+            227
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "Introduction to Using Functions",
+                "19:20",
+                "21.1",
+                1160,
+                329
+            ],
+            [
+                "Standard Mathematical Functions",
+                "16:45",
+                "21.2",
+                1005,
+                330
+            ],
+            [
+                "time Functions",
+                "19:30",
+                "21.3",
+                1170,
+                331
+            ],
+            [
+                "Random Numbers",
+                "13:58",
+                "21.4",
+                838,
+                332
+            ],
+            [
+                "Importing Issues",
+                "07:23",
+                "21.5",
+                443,
+                333
+            ]
+        ],
+        "total": "1hr 17min",
+        "duration": 4620,
+        "name": "Using Functions",
+        "durs": [
+            1160,
+            1005,
+            1170,
+            838,
+            443
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Function Basics",
+                "26:13",
+                "22.1",
+                1573,
+                334
+            ],
+            [
+                "Using Functions",
+                "10:37",
+                "22.2",
+                637,
+                335
+            ],
+            [
+                "Main Function",
+                "05:45",
+                "22.3",
+                345,
+                336
+            ],
+            [
+                "Parameter Passing",
+                "04:28",
+                "22.4",
+                268,
+                337
+            ],
+            [
+                "Function examples",
+                "00:17",
+                "22.5",
+                17,
+                338
+            ],
+            [
+                "Better Organized Prime Generator",
+                "09:36",
+                "22.6",
+                576,
+                339
+            ],
+            [
+                "Command Interpreter",
+                "10:20",
+                "22.7",
+                620,
+                340
+            ],
+            [
+                "Restricted Input",
+                "08:14",
+                "22.8",
+                494,
+                341
+            ],
+            [
+                "Better Die Rolling Simulator",
+                "05:32",
+                "22.9",
+                332,
+                342
+            ],
+            [
+                "Tree Drawing Functions",
+                "06:10",
+                "22.10",
+                370,
+                343
+            ],
+            [
+                "Floating Point Equality",
+                "10:39",
+                "22.11",
+                639,
+                344
+            ],
+            [
+                "Custom Functions vs Standard Functions",
+                "13:15",
+                "22.12",
+                795,
+                345
+            ]
+        ],
+        "total": "1hr 51min",
+        "duration": 6660,
+        "name": "Writing Functions",
+        "durs": [
+            1573,
+            637,
+            345,
+            268,
+            17,
+            576,
+            620,
+            494,
+            332,
+            370,
+            639,
+            795
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "Global Variables",
+                "20:12",
+                "23.1",
+                1212,
+                346
+            ],
+            [
+                "Default Parameters",
+                "04:25",
+                "23.2",
+                265,
+                347
+            ],
+            [
+                "Recursion",
+                "15:47",
+                "23.3",
+                947,
+                348
+            ],
+            [
+                "Making Functions Reusable",
+                "09:26",
+                "23.4",
+                566,
+                349
+            ],
+            [
+                "Documenting Functions and Modules",
+                "10:47",
+                "23.5",
+                647,
+                350
+            ],
+            [
+                "Functions as Data",
+                "05:54",
+                "23.6",
+                354,
+                351
+            ]
+        ],
+        "total": "1hr 7min",
+        "duration": 4020,
+        "name": "More on Functions",
+        "durs": [
+            1212,
+            265,
+            947,
+            566,
+            647,
+            354
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "Lists",
+                "10:31",
+                "24.1",
+                631,
+                352
+            ],
+            [
+                "Using Lists",
+                "28:52",
+                "24.2",
+                1732,
+                353
+            ],
+            [
+                "List Assignment and Equivalence",
+                "17:06",
+                "24.3",
+                1026,
+                354
+            ],
+            [
+                "List Bounds",
+                "10:03",
+                "24.4",
+                603,
+                355
+            ],
+            [
+                "Slicing",
+                "13:21",
+                "24.5",
+                801,
+                356
+            ],
+            [
+                "Lists and Functions",
+                "08:58",
+                "24.6",
+                538,
+                357
+            ],
+            [
+                "Prime Generation with a List",
+                "20:55",
+                "24.7",
+                1255,
+                358
+            ]
+        ],
+        "total": "1hr 50min",
+        "duration": 6600,
+        "name": "Lists",
+        "durs": [
+            631,
+            1732,
+            1026,
+            603,
+            801,
+            538,
+            1255
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "Sorting",
+                "16:10",
+                "25.1",
+                970,
+                359
+            ],
+            [
+                "Flexible Sorting",
+                "13:30",
+                "25.2",
+                810,
+                360
+            ],
+            [
+                "Search",
+                "00:14",
+                "25.3",
+                14,
+                361
+            ],
+            [
+                "Linear Search",
+                "14:20",
+                "25.4",
+                860,
+                362
+            ],
+            [
+                "Binary Search",
+                "37:06",
+                "25.5",
+                2226,
+                363
+            ],
+            [
+                "List Permutations",
+                "10:27",
+                "25.6",
+                627,
+                364
+            ],
+            [
+                "Randomly Permuting a List",
+                "26:07",
+                "25.7",
+                1567,
+                365
+            ],
+            [
+                "Reversing a List",
+                "03:07",
+                "25.8",
+                187,
+                366
+            ]
+        ],
+        "total": "2hr 1min",
+        "duration": 7260,
+        "name": "List Processing",
+        "durs": [
+            970,
+            810,
+            14,
+            860,
+            2226,
+            627,
+            1567,
+            187
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "Using Objects",
+                "07:22",
+                "26.1",
+                442,
+                367
+            ],
+            [
+                "String Objects",
+                "17:00",
+                "26.2",
+                1020,
+                368
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Objects",
+        "durs": [
+            442,
+            1020
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "The Background of Software Development",
+                "02:26",
+                "27.1",
+                146,
+                369
+            ],
+            [
+                "Software",
+                "02:39",
+                "27.2",
+                159,
+                370
+            ],
+            [
+                "Development Tools",
+                "09:29",
+                "27.3",
+                569,
+                371
+            ],
+            [
+                "Learning Programming with Python",
+                "01:53",
+                "27.4",
+                113,
+                372
+            ],
+            [
+                "Writing a Python Program",
+                "05:08",
+                "27.5",
+                308,
+                373
+            ],
+            [
+                "A Longer Python program",
+                "03:23",
+                "27.6",
+                203,
+                374
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "|| Python DIY ||",
+        "durs": [
+            146,
+            159,
+            569,
+            113,
+            308,
+            203
+        ]
+    },
+    {
+        "idx": 27,
+        "lectures": [
+            [
+                "Values and Variables",
+                "00:24",
+                "28.1",
+                24,
+                375
+            ],
+            [
+                "Integer Values",
+                "12:11",
+                "28.2",
+                731,
+                376
+            ],
+            [
+                "Variables and Assignment",
+                "12:48",
+                "28.3",
+                768,
+                377
+            ],
+            [
+                "Identifiers",
+                "07:39",
+                "28.4",
+                459,
+                378
+            ],
+            [
+                "Floating-point Types",
+                "06:31",
+                "28.5",
+                391,
+                379
+            ],
+            [
+                "Control Codes within Strings",
+                "04:49",
+                "28.6",
+                289,
+                380
+            ],
+            [
+                "User Input",
+                "05:23",
+                "28.7",
+                323,
+                381
+            ],
+            [
+                "The Eval Function",
+                "04:10",
+                "28.8",
+                250,
+                382
+            ],
+            [
+                "Controlling the Print Function",
+                "06:12",
+                "28.9",
+                372,
+                383
+            ]
+        ],
+        "total": "1hr",
+        "duration": 3600,
+        "name": "Values and Variables",
+        "durs": [
+            24,
+            731,
+            768,
+            459,
+            391,
+            289,
+            323,
+            250,
+            372
+        ]
+    },
+    {
+        "idx": 28,
+        "lectures": [
+            [
+                "Expressions and Arithmetic",
+                "00:24",
+                "29.1",
+                24,
+                384
+            ],
+            [
+                "Expressions",
+                "19:36",
+                "29.2",
+                1176,
+                385
+            ],
+            [
+                "Operator Precedence and Associativity",
+                "04:30",
+                "29.3",
+                270,
+                386
+            ],
+            [
+                "Comments",
+                "02:58",
+                "29.4",
+                178,
+                387
+            ],
+            [
+                "Errors",
+                "00:34",
+                "29.5",
+                34,
+                388
+            ],
+            [
+                "Syntax Errors",
+                "02:11",
+                "29.6",
+                131,
+                389
+            ],
+            [
+                "Run-Time Errors",
+                "05:01",
+                "29.7",
+                301,
+                390
+            ],
+            [
+                "Logic Errors",
+                "03:25",
+                "29.8",
+                205,
+                391
+            ],
+            [
+                "Arithmetic Examples",
+                "05:17",
+                "29.9",
+                317,
+                392
+            ],
+            [
+                "More Arithmetic Operators",
+                "02:56",
+                "29.10",
+                176,
+                393
+            ],
+            [
+                "Algorithms",
+                "03:51",
+                "29.11",
+                231,
+                394
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Expressions and Arithmetic",
+        "durs": [
+            24,
+            1176,
+            270,
+            178,
+            34,
+            131,
+            301,
+            205,
+            317,
+            176,
+            231
+        ]
+    },
+    {
+        "idx": 29,
+        "lectures": [
+            [
+                "Conditional Execution",
+                "00:42",
+                "30.1",
+                42,
+                395
+            ],
+            [
+                "Boolean Expressions",
+                "02:07",
+                "30.2",
+                127,
+                396
+            ],
+            [
+                "Boolean Expressions 2.0",
+                "01:39",
+                "30.3",
+                99,
+                397
+            ],
+            [
+                "The Simple if Statement",
+                "10:08",
+                "30.4",
+                608,
+                398
+            ],
+            [
+                "The if-else Statement",
+                "04:58",
+                "30.5",
+                298,
+                399
+            ],
+            [
+                "Compound Boolean Expressions",
+                "10:33",
+                "30.6",
+                633,
+                400
+            ],
+            [
+                "Nested Conditionals",
+                "06:40",
+                "30.7",
+                400,
+                401
+            ],
+            [
+                "Multiway Decision Statements",
+                "06:07",
+                "30.8",
+                367,
+                402
+            ],
+            [
+                "Conditional Expressions",
+                "04:09",
+                "30.9",
+                249,
+                403
+            ],
+            [
+                "Errors in Conditional Statements",
+                "02:42",
+                "30.10",
+                162,
+                404
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Conditional Execution",
+        "durs": [
+            42,
+            127,
+            99,
+            608,
+            298,
+            633,
+            400,
+            367,
+            249,
+            162
+        ]
+    },
+    {
+        "idx": 30,
+        "lectures": [
+            [
+                "Iteration",
+                "00:20",
+                "31.1",
+                20,
+                405
+            ],
+            [
+                "The while statement",
+                "10:53",
+                "31.2",
+                653,
+                406
+            ],
+            [
+                "Definite Loops vs Indefinite Loops",
+                "03:16",
+                "31.3",
+                196,
+                407
+            ],
+            [
+                "The for statement",
+                "04:26",
+                "31.4",
+                266,
+                408
+            ],
+            [
+                "Nested Loops",
+                "06:01",
+                "31.5",
+                361,
+                409
+            ],
+            [
+                "Abnormal Loop Termination",
+                "00:43",
+                "31.6",
+                43,
+                410
+            ],
+            [
+                "The break statement",
+                "05:27",
+                "31.7",
+                327,
+                411
+            ],
+            [
+                "The continue statement",
+                "02:38",
+                "31.8",
+                158,
+                412
+            ],
+            [
+                "Infinite Loops",
+                "10:06",
+                "31.9",
+                606,
+                413
+            ],
+            [
+                "Iteration Examples",
+                "00:20",
+                "31.10",
+                20,
+                414
+            ],
+            [
+                "Computing Square root",
+                "02:25",
+                "31.11",
+                145,
+                415
+            ],
+            [
+                "Drawing a Tree",
+                "04:43",
+                "31.12",
+                283,
+                416
+            ],
+            [
+                "Printing Prime Number",
+                "07:16",
+                "31.13",
+                436,
+                417
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Iteration",
+        "durs": [
+            20,
+            653,
+            196,
+            266,
+            361,
+            43,
+            327,
+            158,
+            606,
+            20,
+            145,
+            283,
+            436
+        ]
+    },
+    {
+        "idx": 31,
+        "lectures": [
+            [
+                "Using Functions",
+                "01:48",
+                "32.1",
+                108,
+                418
+            ],
+            [
+                "Introduction to Using Functions",
+                "12:43",
+                "32.2",
+                763,
+                419
+            ],
+            [
+                "Standard Mathematical Functions",
+                "07:31",
+                "32.3",
+                451,
+                420
+            ],
+            [
+                "time Functions",
+                "05:26",
+                "32.4",
+                326,
+                421
+            ],
+            [
+                "Random Numbers",
+                "04:49",
+                "32.5",
+                289,
+                422
+            ],
+            [
+                "Introduction to Using Functions",
+                "12:43",
+                "32.6",
+                763,
+                423
+            ],
+            [
+                "Importing Issues",
+                "05:51",
+                "32.7",
+                351,
+                424
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Using Functions",
+        "durs": [
+            108,
+            763,
+            451,
+            326,
+            289,
+            763,
+            351
+        ]
+    },
+    {
+        "idx": 32,
+        "lectures": [
+            [
+                "Writing Functions",
+                "04:08",
+                "33.1",
+                248,
+                425
+            ],
+            [
+                "Function Basics",
+                "14:58",
+                "33.2",
+                898,
+                426
+            ],
+            [
+                "Using Functions",
+                "08:36",
+                "33.3",
+                516,
+                427
+            ],
+            [
+                "Main Function",
+                "01:30",
+                "33.4",
+                90,
+                428
+            ],
+            [
+                "Parameter Passing",
+                "02:19",
+                "33.5",
+                139,
+                429
+            ],
+            [
+                "Function examples",
+                "00:20",
+                "33.6",
+                20,
+                430
+            ],
+            [
+                "Better Organized Prime Generator",
+                "04:38",
+                "33.7",
+                278,
+                431
+            ],
+            [
+                "Command Interpreter",
+                "00:57",
+                "33.8",
+                57,
+                432
+            ],
+            [
+                "Restricted Input",
+                "03:08",
+                "33.9",
+                188,
+                433
+            ],
+            [
+                "Better Die Rolling Simulator",
+                "02:04",
+                "33.10",
+                124,
+                434
+            ],
+            [
+                "Tree Drawing Functions",
+                "01:21",
+                "33.11",
+                81,
+                435
+            ],
+            [
+                "Floating Point Equality",
+                "05:24",
+                "33.12",
+                324,
+                436
+            ],
+            [
+                "Custom Functions vs Standard Functions",
+                "04:04",
+                "33.13",
+                244,
+                437
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Writing Functions",
+        "durs": [
+            248,
+            898,
+            516,
+            90,
+            139,
+            20,
+            278,
+            57,
+            188,
+            124,
+            81,
+            324,
+            244
+        ]
+    },
+    {
+        "idx": 33,
+        "lectures": [
+            [
+                "More on Functions",
+                "00:16",
+                "34.1",
+                16,
+                438
+            ],
+            [
+                "Global Variables",
+                "10:57",
+                "34.2",
+                657,
+                439
+            ],
+            [
+                "Default Parameters",
+                "02:14",
+                "34.3",
+                134,
+                440
+            ],
+            [
+                "Making Functions Reusable",
+                "04:09",
+                "34.4",
+                249,
+                441
+            ],
+            [
+                "Documenting Functions and Modules",
+                "05:13",
+                "34.5",
+                313,
+                442
+            ],
+            [
+                "Functions as Data",
+                "02:03",
+                "34.6",
+                123,
+                443
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "More on Functions",
+        "durs": [
+            16,
+            657,
+            134,
+            249,
+            313,
+            123
+        ]
+    },
+    {
+        "idx": 34,
+        "lectures": [
+            [
+                "Lists",
+                "04:04",
+                "35.1",
+                244,
+                444
+            ],
+            [
+                "Using Lists",
+                "14:31",
+                "35.2",
+                871,
+                445
+            ],
+            [
+                "List Assignment and Equivalence",
+                "07:21",
+                "35.3",
+                441,
+                446
+            ],
+            [
+                "List Bounds",
+                "05:04",
+                "35.4",
+                304,
+                447
+            ],
+            [
+                "Slicing",
+                "04:44",
+                "35.5",
+                284,
+                448
+            ],
+            [
+                "Lists and Functions",
+                "01:34",
+                "35.6",
+                94,
+                449
+            ],
+            [
+                "Prime Generation with a List",
+                "09:09",
+                "35.7",
+                549,
+                450
+            ]
+        ],
+        "total": "46min",
+        "duration": 2760,
+        "name": "Lists",
+        "durs": [
+            244,
+            871,
+            441,
+            304,
+            284,
+            94,
+            549
+        ]
+    },
+    {
+        "idx": 35,
+        "lectures": [
+            [
+                "List Processing",
+                "00:24",
+                "36.1",
+                24,
+                451
+            ],
+            [
+                "Sorting",
+                "04:39",
+                "36.2",
+                279,
+                452
+            ],
+            [
+                "Flexible Sorting",
+                "03:11",
+                "36.3",
+                191,
+                453
+            ],
+            [
+                "Search",
+                "00:13",
+                "36.4",
+                13,
+                454
+            ],
+            [
+                "Linear Search",
+                "02:18",
+                "36.5",
+                138,
+                455
+            ],
+            [
+                "Binary Search",
+                "14:11",
+                "36.6",
+                851,
+                456
+            ],
+            [
+                "List Permutations",
+                "03:42",
+                "36.7",
+                222,
+                457
+            ],
+            [
+                "Randomly Permuting a List",
+                "08:47",
+                "36.8",
+                527,
+                458
+            ],
+            [
+                "Reversing a List",
+                "01:14",
+                "36.9",
+                74,
+                459
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "List Processing",
+        "durs": [
+            24,
+            279,
+            191,
+            13,
+            138,
+            851,
+            222,
+            527,
+            74
+        ]
+    },
+    {
+        "idx": 36,
+        "lectures": [
+            [
+                "Objects",
+                "02:31",
+                "37.1",
+                151,
+                460
+            ],
+            [
+                "Using Objects",
+                "05:32",
+                "37.2",
+                332,
+                461
+            ],
+            [
+                "String Objects",
+                "07:56",
+                "37.3",
+                476,
+                462
+            ],
+            [
+                "List Objects",
+                "01:55",
+                "37.4",
+                115,
+                463
+            ]
+        ],
+        "total": "18min",
+        "duration": 1080,
+        "name": "Objects",
+        "durs": [
+            151,
+            332,
+            476,
+            115
+        ]
+    },
+    {
+        "idx": 37,
+        "lectures": [
+            [
+                "Custom Types",
+                "01:35",
+                "38.1",
+                95,
+                464
+            ],
+            [
+                "Geometric Points",
+                "09:53",
+                "38.2",
+                593,
+                465
+            ],
+            [
+                "Methods",
+                "12:28",
+                "38.3",
+                748,
+                466
+            ],
+            [
+                "Custom Type Examples",
+                "00:25",
+                "38.4",
+                25,
+                467
+            ],
+            [
+                "Stopwatch",
+                "03:40",
+                "38.5",
+                220,
+                468
+            ],
+            [
+                "Automated Testing",
+                "03:30",
+                "38.6",
+                210,
+                469
+            ],
+            [
+                "Class Inheritance",
+                "03:39",
+                "38.7",
+                219,
+                470
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Custom Types",
+        "durs": [
+            95,
+            593,
+            748,
+            25,
+            220,
+            210,
+            219
+        ]
+    },
+    {
+        "idx": 38,
+        "lectures": [
+            [
+                "Introduction",
+                "00:09",
+                "39.1",
+                9,
+                471
+            ],
+            [
+                "What is Machine Learning?",
+                "08:57",
+                "39.2",
+                537,
+                472
+            ],
+            [
+                "Examples of Machine Learning Applications",
+                "00:11",
+                "39.3",
+                11,
+                473
+            ],
+            [
+                "Learning Association",
+                "01:53",
+                "39.4",
+                113,
+                474
+            ],
+            [
+                "Classification",
+                "11:43",
+                "39.5",
+                703,
+                475
+            ],
+            [
+                "Regression",
+                "04:20",
+                "39.6",
+                260,
+                476
+            ],
+            [
+                "Unsupervised Learning",
+                "05:30",
+                "39.7",
+                330,
+                477
+            ],
+            [
+                "Reinforcement Learning",
+                "02:31",
+                "39.8",
+                151,
+                478
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "||Mathematics and Statistics for Machine Learning||",
+        "durs": [
+            9,
+            537,
+            11,
+            113,
+            703,
+            260,
+            330,
+            151
+        ]
+    },
+    {
+        "idx": 39,
+        "lectures": [
+            [
+                "Supervised Learning",
+                "00:22",
+                "40.1",
+                22,
+                479
+            ],
+            [
+                "Learning a Class from Examples",
+                "17:21",
+                "40.2",
+                1041,
+                480
+            ],
+            [
+                "Vapnik-Chervonenkis (VC) Dimension",
+                "03:43",
+                "40.3",
+                223,
+                481
+            ],
+            [
+                "Probably Approximately Correct (PAC) Learning",
+                "07:15",
+                "40.4",
+                435,
+                482
+            ],
+            [
+                "Noise",
+                "05:03",
+                "40.5",
+                303,
+                483
+            ],
+            [
+                "Learning Multiple Classes",
+                "04:58",
+                "40.6",
+                298,
+                484
+            ],
+            [
+                "Regression",
+                "09:41",
+                "40.7",
+                581,
+                485
+            ],
+            [
+                "Model Selection and Generalization",
+                "12:28",
+                "40.8",
+                748,
+                486
+            ],
+            [
+                "Dimensions of a Supervised Machine Learning Algorithm",
+                "05:30",
+                "40.9",
+                330,
+                487
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Supervised Learning",
+        "durs": [
+            22,
+            1041,
+            223,
+            435,
+            303,
+            298,
+            581,
+            748,
+            330
+        ]
+    },
+    {
+        "idx": 40,
+        "lectures": [
+            [
+                "Bayesian Decision Theory",
+                "00:33",
+                "41.1",
+                33,
+                488
+            ],
+            [
+                "Introduction",
+                "05:47",
+                "41.2",
+                347,
+                489
+            ],
+            [
+                "Classification",
+                "07:55",
+                "41.3",
+                475,
+                490
+            ],
+            [
+                "Losses and Risks",
+                "05:45",
+                "41.4",
+                345,
+                491
+            ],
+            [
+                "Discriminant Functions",
+                "02:28",
+                "41.5",
+                148,
+                492
+            ],
+            [
+                "Utility Theory",
+                "03:53",
+                "41.6",
+                233,
+                493
+            ],
+            [
+                "Association Rules",
+                "08:18",
+                "41.7",
+                498,
+                494
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Bayesian Decision Theory",
+        "durs": [
+            33,
+            347,
+            475,
+            345,
+            148,
+            233,
+            498
+        ]
+    },
+    {
+        "idx": 41,
+        "lectures": [
+            [
+                "Parametric Methods",
+                "00:35",
+                "42.1",
+                35,
+                495
+            ],
+            [
+                "Introduction",
+                "01:57",
+                "42.2",
+                117,
+                496
+            ],
+            [
+                "Maximum Likelihood Estimation",
+                "02:31",
+                "42.3",
+                151,
+                497
+            ],
+            [
+                "Bernoulli Density",
+                "02:50",
+                "42.4",
+                170,
+                498
+            ],
+            [
+                "Multinomial Density",
+                "02:09",
+                "42.5",
+                129,
+                499
+            ],
+            [
+                "Gaussian (Normal) Density",
+                "01:40",
+                "42.6",
+                100,
+                500
+            ],
+            [
+                "Evaluating an Estimator",
+                "06:50",
+                "42.7",
+                410,
+                501
+            ],
+            [
+                "The Bayes’ Estimator",
+                "07:54",
+                "42.8",
+                474,
+                502
+            ],
+            [
+                "Parametric Classification",
+                "09:59",
+                "42.9",
+                599,
+                503
+            ],
+            [
+                "Regression",
+                "07:58",
+                "42.10",
+                478,
+                504
+            ],
+            [
+                "Tuning Model Complexity",
+                "09:35",
+                "42.11",
+                575,
+                505
+            ],
+            [
+                "Model Selection Procedures",
+                "10:27",
+                "42.12",
+                627,
+                506
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Parametric Methods",
+        "durs": [
+            35,
+            117,
+            151,
+            170,
+            129,
+            100,
+            410,
+            474,
+            599,
+            478,
+            575,
+            627
+        ]
+    },
+    {
+        "idx": 42,
+        "lectures": [
+            [
+                "Dimensionality Reduction",
+                "00:32",
+                "43.1",
+                32,
+                507
+            ],
+            [
+                "Introduction",
+                "02:56",
+                "43.2",
+                176,
+                508
+            ],
+            [
+                "Subset Selection",
+                "06:57",
+                "43.3",
+                417,
+                509
+            ],
+            [
+                "Principal Components Analysis",
+                "18:19",
+                "43.4",
+                1099,
+                510
+            ],
+            [
+                "Factor Analysis",
+                "16:26",
+                "43.5",
+                986,
+                511
+            ],
+            [
+                "Multidimensional Scaling",
+                "07:44",
+                "43.6",
+                464,
+                512
+            ],
+            [
+                "Linear Discriminant Analysis",
+                "09:29",
+                "43.7",
+                569,
+                513
+            ],
+            [
+                "Locally Linear Embedding",
+                "08:18",
+                "43.8",
+                498,
+                514
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Dimensionality Reduction",
+        "durs": [
+            32,
+            176,
+            417,
+            1099,
+            986,
+            464,
+            569,
+            498
+        ]
+    },
+    {
+        "idx": 43,
+        "lectures": [
+            [
+                "Clustering",
+                "00:36",
+                "44.1",
+                36,
+                515
+            ],
+            [
+                "Introduction",
+                "02:58",
+                "44.2",
+                178,
+                516
+            ],
+            [
+                "Mixture Densities",
+                "03:24",
+                "44.3",
+                204,
+                517
+            ],
+            [
+                "k-Means Clustering",
+                "10:07",
+                "44.4",
+                607,
+                518
+            ],
+            [
+                "Expectation-Maximization Algorithm",
+                "11:41",
+                "44.5",
+                701,
+                519
+            ],
+            [
+                "Mixtures of Latent Variable Models",
+                "03:14",
+                "44.6",
+                194,
+                520
+            ],
+            [
+                "Supervised Learning after Clustering",
+                "04:23",
+                "44.7",
+                263,
+                521
+            ],
+            [
+                "Hierarchical Clustering",
+                "03:50",
+                "44.8",
+                230,
+                522
+            ],
+            [
+                "Choosing the Number of Clusters",
+                "01:56",
+                "44.9",
+                116,
+                523
+            ]
+        ],
+        "total": "42min",
+        "duration": 2520,
+        "name": "Clustering",
+        "durs": [
+            36,
+            178,
+            204,
+            607,
+            701,
+            194,
+            263,
+            230,
+            116
+        ]
+    },
+    {
+        "idx": 44,
+        "lectures": [
+            [
+                "Nonparametric Methods",
+                "00:35",
+                "45.1",
+                35,
+                524
+            ],
+            [
+                "Introduction",
+                "03:56",
+                "45.2",
+                236,
+                525
+            ],
+            [
+                "Nonparametric Density Estimation",
+                "01:21",
+                "45.3",
+                81,
+                526
+            ],
+            [
+                "Histogram Estimator",
+                "02:31",
+                "45.4",
+                151,
+                527
+            ],
+            [
+                "Kernel Estimator",
+                "02:09",
+                "45.5",
+                129,
+                528
+            ],
+            [
+                "k-Nearest Neighbor Estimator",
+                "02:44",
+                "45.6",
+                164,
+                529
+            ],
+            [
+                "Generalization to Multivariate Data",
+                "02:25",
+                "45.7",
+                145,
+                530
+            ],
+            [
+                "Nonparametric Classification",
+                "03:46",
+                "45.8",
+                226,
+                531
+            ],
+            [
+                "Condensed Nearest Neighbor",
+                "03:13",
+                "45.9",
+                193,
+                532
+            ],
+            [
+                "Nonparametric Regression",
+                "01:19",
+                "45.10",
+                79,
+                533
+            ],
+            [
+                "Running Mean Smoother",
+                "01:23",
+                "45.11",
+                83,
+                534
+            ],
+            [
+                "Kernel Smoother",
+                "00:39",
+                "45.12",
+                39,
+                535
+            ],
+            [
+                "Running Line Smoother",
+                "01:00",
+                "45.13",
+                60,
+                536
+            ],
+            [
+                "How to Choose the Smoothing Parameter",
+                "02:35",
+                "45.14",
+                155,
+                537
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Nonparametric Methods",
+        "durs": [
+            35,
+            236,
+            81,
+            151,
+            129,
+            164,
+            145,
+            226,
+            193,
+            79,
+            83,
+            39,
+            60,
+            155
+        ]
+    },
+    {
+        "idx": 45,
+        "lectures": [
+            [
+                "Decision Trees",
+                "00:28",
+                "46.1",
+                28,
+                538
+            ],
+            [
+                "Introduction",
+                "03:34",
+                "46.2",
+                214,
+                539
+            ],
+            [
+                "Univariate Trees",
+                "02:33",
+                "46.3",
+                153,
+                540
+            ],
+            [
+                "Classification Trees",
+                "10:17",
+                "46.4",
+                617,
+                541
+            ],
+            [
+                "Regression Trees",
+                "04:33",
+                "46.5",
+                273,
+                542
+            ],
+            [
+                "Pruning",
+                "02:28",
+                "46.6",
+                148,
+                543
+            ],
+            [
+                "Rule Extraction from Trees",
+                "03:56",
+                "46.7",
+                236,
+                544
+            ],
+            [
+                "Learning Rules from Data",
+                "08:03",
+                "46.8",
+                483,
+                545
+            ],
+            [
+                "Multivariate Trees",
+                "05:59",
+                "46.9",
+                359,
+                546
+            ]
+        ],
+        "total": "42min",
+        "duration": 2520,
+        "name": "Decision Trees",
+        "durs": [
+            28,
+            214,
+            153,
+            617,
+            273,
+            148,
+            236,
+            483,
+            359
+        ]
+    },
+    {
+        "idx": 46,
+        "lectures": [
+            [
+                "Linear Discrimination",
+                "00:20",
+                "47.1",
+                20,
+                547
+            ],
+            [
+                "Introduction",
+                "04:50",
+                "47.2",
+                290,
+                548
+            ],
+            [
+                "Generalizing the Linear Model",
+                "02:04",
+                "47.3",
+                124,
+                549
+            ],
+            [
+                "Geometry of the Linear Discriminant",
+                "00:04",
+                "47.4",
+                4,
+                550
+            ],
+            [
+                "Two Classes",
+                "02:44",
+                "47.5",
+                164,
+                551
+            ],
+            [
+                "Multiple Classes",
+                "02:30",
+                "47.6",
+                150,
+                552
+            ],
+            [
+                "Pairwise Separation",
+                "02:51",
+                "47.7",
+                171,
+                553
+            ],
+            [
+                "Parametric Discrimination Revisited",
+                "03:30",
+                "47.8",
+                210,
+                554
+            ],
+            [
+                "Gradient Descent",
+                "02:58",
+                "47.9",
+                178,
+                555
+            ],
+            [
+                "Logistic Discrimination",
+                "00:04",
+                "47.10",
+                4,
+                556
+            ],
+            [
+                "Two Classes",
+                "07:23",
+                "47.11",
+                443,
+                557
+            ],
+            [
+                "Multiple Classes",
+                "07:38",
+                "47.12",
+                458,
+                558
+            ],
+            [
+                "Discrimination by Regression",
+                "03:10",
+                "47.13",
+                190,
+                559
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Linear Discrimination",
+        "durs": [
+            20,
+            290,
+            124,
+            4,
+            164,
+            150,
+            171,
+            210,
+            178,
+            4,
+            443,
+            458,
+            190
+        ]
+    },
+    {
+        "idx": 47,
+        "lectures": [
+            [
+                "Multilayer Perceptrons",
+                "00:20",
+                "48.1",
+                20,
+                560
+            ],
+            [
+                "Introduction",
+                "02:09",
+                "48.2",
+                129,
+                561
+            ],
+            [
+                "Understanding the Brain",
+                "04:08",
+                "48.3",
+                248,
+                562
+            ],
+            [
+                "Neural Networks as a Paradigm for Parallel Processing",
+                "03:55",
+                "48.4",
+                235,
+                563
+            ],
+            [
+                "The Perceptron",
+                "08:26",
+                "48.5",
+                506,
+                564
+            ],
+            [
+                "Training a Perceptron",
+                "07:21",
+                "48.6",
+                441,
+                565
+            ],
+            [
+                "Learning Boolean Functions",
+                "03:03",
+                "48.7",
+                183,
+                566
+            ],
+            [
+                "Multilayer Perceptrons",
+                "04:42",
+                "48.8",
+                282,
+                567
+            ],
+            [
+                "MLP as a Universal Approximator",
+                "03:19",
+                "48.9",
+                199,
+                568
+            ],
+            [
+                "Backpropagation Algorithm",
+                "00:44",
+                "48.10",
+                44,
+                569
+            ],
+            [
+                "Nonlinear Regression",
+                "08:30",
+                "48.11",
+                510,
+                570
+            ],
+            [
+                "Two-Class Discrimination",
+                "01:13",
+                "48.12",
+                73,
+                571
+            ],
+            [
+                "Multiclass Discrimination",
+                "01:12",
+                "48.13",
+                72,
+                572
+            ],
+            [
+                "Multiple Hidden Layers",
+                "00:50",
+                "48.14",
+                50,
+                573
+            ],
+            [
+                "Training Procedures",
+                "00:03",
+                "48.15",
+                3,
+                574
+            ],
+            [
+                "Improving Convergence",
+                "03:04",
+                "48.16",
+                184,
+                575
+            ],
+            [
+                "Over training",
+                "03:14",
+                "48.17",
+                194,
+                576
+            ],
+            [
+                "Structuring the Network",
+                "03:36",
+                "48.18",
+                216,
+                577
+            ],
+            [
+                "Hints",
+                "04:28",
+                "48.19",
+                268,
+                578
+            ],
+            [
+                "Tuning the Network Size",
+                "05:47",
+                "48.20",
+                347,
+                579
+            ],
+            [
+                "Bayesian View of Learning",
+                "04:30",
+                "48.21",
+                270,
+                580
+            ],
+            [
+                "Dimensionality Reduction",
+                "05:24",
+                "48.22",
+                324,
+                581
+            ],
+            [
+                "Learning Time",
+                "01:07",
+                "48.23",
+                67,
+                582
+            ],
+            [
+                "Time Delay Neural Networks",
+                "01:01",
+                "48.24",
+                61,
+                583
+            ],
+            [
+                "Recurrent Networks",
+                "02:30",
+                "48.25",
+                150,
+                584
+            ]
+        ],
+        "total": "1hr 25min",
+        "duration": 5100,
+        "name": "Multilayer Perceptrons",
+        "durs": [
+            20,
+            129,
+            248,
+            235,
+            506,
+            441,
+            183,
+            282,
+            199,
+            44,
+            510,
+            73,
+            72,
+            50,
+            3,
+            184,
+            194,
+            216,
+            268,
+            347,
+            270,
+            324,
+            67,
+            61,
+            150
+        ]
+    },
+    {
+        "idx": 48,
+        "lectures": [
+            [
+                "Local Models",
+                "00:26",
+                "49.1",
+                26,
+                585
+            ],
+            [
+                "Introduction",
+                "01:02",
+                "49.2",
+                62,
+                586
+            ],
+            [
+                "Competitive Learning",
+                "02:11",
+                "49.3",
+                131,
+                587
+            ],
+            [
+                "Online k-Means",
+                "11:02",
+                "49.4",
+                662,
+                588
+            ],
+            [
+                "Adaptive Resonance Theory",
+                "02:17",
+                "49.5",
+                137,
+                589
+            ],
+            [
+                "Self-Organizing Maps",
+                "03:36",
+                "49.6",
+                216,
+                590
+            ],
+            [
+                "Radial Basis Functions",
+                "14:30",
+                "49.7",
+                870,
+                591
+            ],
+            [
+                "Incorporating Rule-Based Knowledge",
+                "03:14",
+                "49.8",
+                194,
+                592
+            ],
+            [
+                "Normalized Basis Functions",
+                "03:07",
+                "49.9",
+                187,
+                593
+            ],
+            [
+                "Competitive Basis Functions",
+                "05:21",
+                "49.10",
+                321,
+                594
+            ],
+            [
+                "Learning Vector Quantization",
+                "01:16",
+                "49.11",
+                76,
+                595
+            ],
+            [
+                "Cooperative Experts",
+                "01:10",
+                "49.12",
+                70,
+                596
+            ],
+            [
+                "Competitive Experts",
+                "01:09",
+                "49.13",
+                69,
+                597
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Local Models",
+        "durs": [
+            26,
+            62,
+            131,
+            662,
+            137,
+            216,
+            870,
+            194,
+            187,
+            321,
+            76,
+            70,
+            69
+        ]
+    },
+    {
+        "idx": 49,
+        "lectures": [
+            [
+                "Hidden Markov Models",
+                "00:23",
+                "50.1",
+                23,
+                598
+            ],
+            [
+                "Introduction",
+                "01:19",
+                "50.2",
+                79,
+                599
+            ],
+            [
+                "Discrete Markov Processes",
+                "07:27",
+                "50.3",
+                447,
+                600
+            ],
+            [
+                "Hidden Markov Models",
+                "04:52",
+                "50.4",
+                292,
+                601
+            ],
+            [
+                "Three Basic Problems of HMMs",
+                "01:15",
+                "50.5",
+                75,
+                602
+            ],
+            [
+                "Evaluation Problem",
+                "06:47",
+                "50.6",
+                407,
+                603
+            ],
+            [
+                "Finding the State Sequence",
+                "05:03",
+                "50.7",
+                303,
+                604
+            ],
+            [
+                "Learning Model Parameters",
+                "06:14",
+                "50.8",
+                374,
+                605
+            ],
+            [
+                "Continuous Observations",
+                "02:09",
+                "50.9",
+                129,
+                606
+            ],
+            [
+                "The HMM with Input",
+                "02:39",
+                "50.10",
+                159,
+                607
+            ],
+            [
+                "Model Selection in HMM",
+                "05:24",
+                "50.11",
+                324,
+                608
+            ]
+        ],
+        "total": "44min",
+        "duration": 2640,
+        "name": "Hidden Markov Models",
+        "durs": [
+            23,
+            79,
+            447,
+            292,
+            75,
+            407,
+            303,
+            374,
+            129,
+            159,
+            324
+        ]
+    },
+    {
+        "idx": 50,
+        "lectures": [
+            [
+                "Combining Multiple Learners",
+                "00:26",
+                "51.1",
+                26,
+                609
+            ],
+            [
+                "Rationale",
+                "02:17",
+                "51.2",
+                137,
+                610
+            ],
+            [
+                "Generating Diverse Learners",
+                "07:17",
+                "51.3",
+                437,
+                611
+            ],
+            [
+                "Model Combination Schemes",
+                "02:45",
+                "51.4",
+                165,
+                612
+            ],
+            [
+                "Voting",
+                "08:49",
+                "51.5",
+                529,
+                613
+            ],
+            [
+                "Error-Correcting Output Codes",
+                "07:56",
+                "51.6",
+                476,
+                614
+            ],
+            [
+                "Bagging",
+                "02:31",
+                "51.7",
+                151,
+                615
+            ],
+            [
+                "Boosting",
+                "07:50",
+                "51.8",
+                470,
+                616
+            ],
+            [
+                "Mixture of Experts Revisited",
+                "04:05",
+                "51.9",
+                245,
+                617
+            ],
+            [
+                "Stacked Generalization",
+                "03:14",
+                "51.10",
+                194,
+                618
+            ],
+            [
+                "Fine-Tuning an Ensemble",
+                "04:10",
+                "51.11",
+                250,
+                619
+            ],
+            [
+                "Cascading",
+                "04:10",
+                "51.12",
+                250,
+                620
+            ]
+        ],
+        "total": "56min",
+        "duration": 3360,
+        "name": "Combining Multiple Learners",
+        "durs": [
+            26,
+            137,
+            437,
+            165,
+            529,
+            476,
+            151,
+            470,
+            245,
+            194,
+            250,
+            250
+        ]
+    }
+]

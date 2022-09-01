@@ -1,0 +1,1698 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome To The Course!",
+                "04:26",
+                "1.1",
+                266,
+                1
+            ],
+            [
+                "What The Course Covers",
+                "03:52",
+                "1.2",
+                232,
+                2
+            ],
+            [
+                "A Note On The Exercises",
+                "02:07",
+                "1.3",
+                127,
+                3
+            ],
+            [
+                "Accessing The Slides & Diagrams",
+                "01:09",
+                "1.4",
+                69,
+                4
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Course Orientation",
+        "durs": [
+            266,
+            232,
+            127,
+            69
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:24",
+                "2.1",
+                84,
+                5
+            ],
+            [
+                "What Exactly Is Git?",
+                "03:08",
+                "2.2",
+                188,
+                6
+            ],
+            [
+                "Visualizing Git",
+                "06:49",
+                "2.3",
+                409,
+                7
+            ],
+            [
+                "A Quick History Of Git",
+                "05:03",
+                "2.4",
+                303,
+                8
+            ],
+            [
+                "Who Uses Git?",
+                "05:58",
+                "2.5",
+                358,
+                9
+            ],
+            [
+                "Git Vs. Github: What's The Difference?",
+                "03:25",
+                "2.6",
+                205,
+                10
+            ]
+        ],
+        "total": "26min",
+        "duration": 1560,
+        "name": "Introducing...Git!",
+        "durs": [
+            84,
+            188,
+            409,
+            303,
+            358,
+            205
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:55",
+                "3.1",
+                115,
+                11
+            ],
+            [
+                "Installing Git: Terminal Vs. GUIs",
+                "06:16",
+                "3.2",
+                376,
+                12
+            ],
+            [
+                "WINDOWS Git Installation",
+                "08:53",
+                "3.3",
+                533,
+                13
+            ],
+            [
+                "MAC Git Installation",
+                "03:27",
+                "3.4",
+                207,
+                14
+            ],
+            [
+                "Configuring Your Git Name & Email",
+                "04:13",
+                "3.5",
+                253,
+                15
+            ],
+            [
+                "Installing GitKraken (Our GUI)",
+                "03:46",
+                "3.6",
+                226,
+                16
+            ],
+            [
+                "Terminal Crash Course: Introduction",
+                "03:04",
+                "3.7",
+                184,
+                17
+            ],
+            [
+                "Terminal Crash Course: Navigation",
+                "12:18",
+                "3.8",
+                738,
+                18
+            ],
+            [
+                "Terminal Crash Course: Creating Files & Folders",
+                "09:47",
+                "3.9",
+                587,
+                19
+            ],
+            [
+                "Terminal Crash Course: Deleting Files & Folders",
+                "06:42",
+                "3.10",
+                402,
+                20
+            ]
+        ],
+        "total": "1hr",
+        "duration": 3600,
+        "name": "Installation & Setup",
+        "durs": [
+            115,
+            376,
+            533,
+            207,
+            253,
+            226,
+            184,
+            738,
+            587,
+            402
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:12",
+                "4.1",
+                72,
+                21
+            ],
+            [
+                "What Is A Git Repo?",
+                "04:05",
+                "4.2",
+                245,
+                22
+            ],
+            [
+                "Our First Commands: Git Init and Git Status",
+                "03:54",
+                "4.3",
+                234,
+                23
+            ],
+            [
+                "The Mysterious .Git Folder",
+                "03:34",
+                "4.4",
+                214,
+                24
+            ],
+            [
+                "A Common Early Git Mistake",
+                "03:32",
+                "4.5",
+                212,
+                25
+            ],
+            [
+                "The Committing Workflow Overview",
+                "06:24",
+                "4.6",
+                384,
+                26
+            ],
+            [
+                "Staging Changes With Git Add",
+                "07:15",
+                "4.7",
+                435,
+                27
+            ],
+            [
+                "Finally, The Git Commit Command!",
+                "04:51",
+                "4.8",
+                291,
+                28
+            ],
+            [
+                "The Git Log Command (And More Committing)",
+                "08:24",
+                "4.9",
+                504,
+                29
+            ],
+            [
+                "Committing Exercise",
+                "07:50",
+                "4.10",
+                470,
+                30
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "The Very Basics Of Git: Adding & Committing",
+        "durs": [
+            72,
+            245,
+            234,
+            214,
+            212,
+            384,
+            435,
+            291,
+            504,
+            470
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:13",
+                "5.1",
+                133,
+                31
+            ],
+            [
+                "Navigating The Git Documentation",
+                "04:06",
+                "5.2",
+                246,
+                32
+            ],
+            [
+                "Keeping Your Commits Atomic",
+                "06:20",
+                "5.3",
+                380,
+                33
+            ],
+            [
+                "Commit Messages: Present Or Past Tense?",
+                "03:09",
+                "5.4",
+                189,
+                34
+            ],
+            [
+                "Escaping VIM & Configuring Git's Default Editor",
+                "09:01",
+                "5.5",
+                541,
+                35
+            ],
+            [
+                "A Closer Look At The Git Log Command",
+                "04:06",
+                "5.6",
+                246,
+                36
+            ],
+            [
+                "Committing With A GUI",
+                "06:25",
+                "5.7",
+                385,
+                37
+            ],
+            [
+                "Fixing Mistakes With Amend",
+                "04:59",
+                "5.8",
+                299,
+                38
+            ],
+            [
+                "Ignoring Files w/ .gitignore",
+                "10:41",
+                "5.9",
+                641,
+                39
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Commits In Detail (And Related Topics)",
+        "durs": [
+            133,
+            246,
+            380,
+            189,
+            541,
+            246,
+            385,
+            299,
+            641
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:05",
+                "6.1",
+                125,
+                40
+            ],
+            [
+                "Introducing Branches",
+                "05:32",
+                "6.2",
+                332,
+                41
+            ],
+            [
+                "The Master Branch (Or Is It Main?)",
+                "04:43",
+                "6.3",
+                283,
+                42
+            ],
+            [
+                "What On Earth Is HEAD?",
+                "05:36",
+                "6.4",
+                336,
+                43
+            ],
+            [
+                "Viewing All Branches With Git Branch",
+                "01:22",
+                "6.5",
+                82,
+                44
+            ],
+            [
+                "Creating & Switching Branches",
+                "07:56",
+                "6.6",
+                476,
+                45
+            ],
+            [
+                "More Practice With Branching",
+                "05:27",
+                "6.7",
+                327,
+                46
+            ],
+            [
+                "Another Option: Git Checkout Vs. Git Switch",
+                "04:38",
+                "6.8",
+                278,
+                47
+            ],
+            [
+                "Switching Branches With Unstaged Changes?",
+                "03:56",
+                "6.9",
+                236,
+                48
+            ],
+            [
+                "Deleting & Renaming Branches",
+                "05:33",
+                "6.10",
+                333,
+                49
+            ],
+            [
+                "How Git Stores HEAD & Branches",
+                "05:27",
+                "6.11",
+                327,
+                50
+            ],
+            [
+                "Branching Exercise",
+                "08:09",
+                "6.12",
+                489,
+                51
+            ]
+        ],
+        "total": "1hr",
+        "duration": 3600,
+        "name": "Working With Branches",
+        "durs": [
+            125,
+            332,
+            283,
+            336,
+            82,
+            476,
+            327,
+            278,
+            236,
+            333,
+            327,
+            489
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:46",
+                "7.1",
+                106,
+                52
+            ],
+            [
+                "An Introduction To Merging",
+                "05:16",
+                "7.2",
+                316,
+                53
+            ],
+            [
+                "Performing A Fast Forward Merge",
+                "04:31",
+                "7.3",
+                271,
+                54
+            ],
+            [
+                "Visualizing Merges",
+                "04:36",
+                "7.4",
+                276,
+                55
+            ],
+            [
+                "Generating Merge Commits",
+                "09:43",
+                "7.5",
+                583,
+                56
+            ],
+            [
+                "Oh No! Merge Conflicts!",
+                "03:18",
+                "7.6",
+                198,
+                57
+            ],
+            [
+                "Resolving Merge Conflicts",
+                "08:13",
+                "7.7",
+                493,
+                58
+            ],
+            [
+                "Using VSCode To Resolve Conflicts",
+                "07:41",
+                "7.8",
+                461,
+                59
+            ],
+            [
+                "Merging Exercise",
+                "11:06",
+                "7.9",
+                666,
+                60
+            ]
+        ],
+        "total": "56min",
+        "duration": 3360,
+        "name": "Merging Branches, Oh Boy!",
+        "durs": [
+            106,
+            316,
+            271,
+            276,
+            583,
+            198,
+            493,
+            461,
+            666
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:51",
+                "8.1",
+                111,
+                61
+            ],
+            [
+                "Introducing The Git Diff Command",
+                "04:29",
+                "8.2",
+                269,
+                62
+            ],
+            [
+                "A Guide To Reading Diffs",
+                "10:25",
+                "8.3",
+                625,
+                63
+            ],
+            [
+                "Viewing Unstaged Changes",
+                "03:51",
+                "8.4",
+                231,
+                64
+            ],
+            [
+                "Viewing Working Directory Changes",
+                "03:28",
+                "8.5",
+                208,
+                65
+            ],
+            [
+                "Viewing Staged Changes",
+                "02:05",
+                "8.6",
+                125,
+                66
+            ],
+            [
+                "Diffing Specific Files",
+                "02:39",
+                "8.7",
+                159,
+                67
+            ],
+            [
+                "Comparing Changes Across Branches",
+                "04:44",
+                "8.8",
+                284,
+                68
+            ],
+            [
+                "Comparing Changes Across Commits",
+                "02:09",
+                "8.9",
+                129,
+                69
+            ],
+            [
+                "Visualizing Diffs With GUIs",
+                "06:25",
+                "8.10",
+                385,
+                70
+            ],
+            [
+                "Diff Exercise",
+                "11:14",
+                "8.11",
+                674,
+                71
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Comparing Changes With Git Diff",
+        "durs": [
+            111,
+            269,
+            625,
+            231,
+            208,
+            125,
+            159,
+            284,
+            129,
+            385,
+            674
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:46",
+                "9.1",
+                106,
+                72
+            ],
+            [
+                "Why We Need Git Stash",
+                "07:45",
+                "9.2",
+                465,
+                73
+            ],
+            [
+                "Stashing Basics: Git Stash Save & Pop",
+                "03:43",
+                "9.3",
+                223,
+                74
+            ],
+            [
+                "Practicing With Git Stash",
+                "03:25",
+                "9.4",
+                205,
+                75
+            ],
+            [
+                "Git Stash Apply",
+                "04:10",
+                "9.5",
+                250,
+                76
+            ],
+            [
+                "Working With Multiple Stashes",
+                "06:41",
+                "9.6",
+                401,
+                77
+            ],
+            [
+                "Dropping & Clearing The Stash",
+                "02:12",
+                "9.7",
+                132,
+                78
+            ],
+            [
+                "Stashing Exercise",
+                "05:04",
+                "9.8",
+                304,
+                79
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "The Ins and Outs of Stashing",
+        "durs": [
+            106,
+            465,
+            223,
+            205,
+            250,
+            401,
+            132,
+            304
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:09",
+                "10.1",
+                129,
+                80
+            ],
+            [
+                "Checking Out Old Commits",
+                "07:09",
+                "10.2",
+                429,
+                81
+            ],
+            [
+                "Re-Attaching Our Detached HEAD!",
+                "05:34",
+                "10.3",
+                334,
+                82
+            ],
+            [
+                "Referencing Commits Relative to HEAD",
+                "04:02",
+                "10.4",
+                242,
+                83
+            ],
+            [
+                "Discarding Changes With Git Checkout",
+                "05:16",
+                "10.5",
+                316,
+                84
+            ],
+            [
+                "Un-Modifying With Git Restore",
+                "06:05",
+                "10.6",
+                365,
+                85
+            ],
+            [
+                "Un-Staging Changes With Git Restore",
+                "04:03",
+                "10.7",
+                243,
+                86
+            ],
+            [
+                "Undoing Commits With Git Reset",
+                "07:45",
+                "10.8",
+                465,
+                87
+            ],
+            [
+                "Reverting Commits With...Git Revert",
+                "06:26",
+                "10.9",
+                386,
+                88
+            ],
+            [
+                "Undoing Changes Exercise",
+                "10:05",
+                "10.10",
+                605,
+                89
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Undoing Changes & Time Traveling",
+        "durs": [
+            129,
+            429,
+            334,
+            242,
+            316,
+            365,
+            243,
+            465,
+            386,
+            605
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:39",
+                "11.1",
+                99,
+                90
+            ],
+            [
+                "What Does Github Do For Us?",
+                "06:23",
+                "11.2",
+                383,
+                91
+            ],
+            [
+                "Why You Should Use Github!",
+                "04:36",
+                "11.3",
+                276,
+                92
+            ],
+            [
+                "Cloning Github Repos With Git Clone",
+                "08:14",
+                "11.4",
+                494,
+                93
+            ],
+            [
+                "Cloning Non-Github Repos",
+                "02:55",
+                "11.5",
+                175,
+                94
+            ],
+            [
+                "Github Setup: SSH Config",
+                "07:31",
+                "11.6",
+                451,
+                95
+            ],
+            [
+                "Creating Our First Github Repo!",
+                "06:02",
+                "11.7",
+                362,
+                96
+            ],
+            [
+                "A Crash Course on Git Remotes",
+                "07:04",
+                "11.8",
+                424,
+                97
+            ],
+            [
+                "Introducing Git Push",
+                "08:48",
+                "11.9",
+                528,
+                98
+            ],
+            [
+                "Touring A Github Repo",
+                "03:40",
+                "11.10",
+                220,
+                99
+            ],
+            [
+                "Practice With Git Push",
+                "03:59",
+                "11.11",
+                239,
+                100
+            ],
+            [
+                "A Closer Look At Git Push",
+                "06:07",
+                "11.12",
+                367,
+                101
+            ],
+            [
+                "What does \"git push -u\" mean?",
+                "05:33",
+                "11.13",
+                333,
+                102
+            ],
+            [
+                "Another Github Workflow: Cloning First",
+                "04:19",
+                "11.14",
+                259,
+                103
+            ],
+            [
+                "Main & Master: Github Default Branches",
+                "06:10",
+                "11.15",
+                370,
+                104
+            ],
+            [
+                "Github Basics Exercise",
+                "10:25",
+                "11.16",
+                625,
+                105
+            ]
+        ],
+        "total": "1hr 33min",
+        "duration": 5580,
+        "name": "Github: The Basics",
+        "durs": [
+            99,
+            383,
+            276,
+            494,
+            175,
+            451,
+            362,
+            424,
+            528,
+            220,
+            239,
+            367,
+            333,
+            259,
+            370,
+            625
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:20",
+                "12.1",
+                80,
+                106
+            ],
+            [
+                "Remote Tracking Branches: WTF Are They?",
+                "05:59",
+                "12.2",
+                359,
+                107
+            ],
+            [
+                "Checking Out Remote Tracking Branches",
+                "07:18",
+                "12.3",
+                438,
+                108
+            ],
+            [
+                "Working With Remote Branches",
+                "09:33",
+                "12.4",
+                573,
+                109
+            ],
+            [
+                "Git Fetch: The Basics",
+                "05:46",
+                "12.5",
+                346,
+                110
+            ],
+            [
+                "Demonstrating Git Fetch",
+                "09:26",
+                "12.6",
+                566,
+                111
+            ],
+            [
+                "Git Pull: The Basics",
+                "04:12",
+                "12.7",
+                252,
+                112
+            ],
+            [
+                "Git Pull & Merge Conflicts",
+                "05:12",
+                "12.8",
+                312,
+                113
+            ],
+            [
+                "A Shorter Syntax For Git Pull?",
+                "05:08",
+                "12.9",
+                308,
+                114
+            ]
+        ],
+        "total": "54min",
+        "duration": 3240,
+        "name": "Fetching & Pulling",
+        "durs": [
+            80,
+            359,
+            438,
+            573,
+            346,
+            566,
+            252,
+            312,
+            308
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:30",
+                "13.1",
+                150,
+                115
+            ],
+            [
+                "Github Repo Visibility: Public Vs. Private",
+                "05:37",
+                "13.2",
+                337,
+                116
+            ],
+            [
+                "Adding Github Collaborators",
+                "04:03",
+                "13.3",
+                243,
+                117
+            ],
+            [
+                "Github Collaboration Demo",
+                "07:16",
+                "13.4",
+                436,
+                118
+            ],
+            [
+                "What are READMEs?",
+                "04:28",
+                "13.5",
+                268,
+                119
+            ],
+            [
+                "A Markdown Crash Course",
+                "09:47",
+                "13.6",
+                587,
+                120
+            ],
+            [
+                "Adding a README To A Project",
+                "04:41",
+                "13.7",
+                281,
+                121
+            ],
+            [
+                "Creating Github Gists",
+                "05:55",
+                "13.8",
+                355,
+                122
+            ],
+            [
+                "Introducing Github Pages",
+                "05:03",
+                "13.9",
+                303,
+                123
+            ],
+            [
+                "Github Pages Demo",
+                "09:55",
+                "13.10",
+                595,
+                124
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Github Grab Bag: Odds & Ends",
+        "durs": [
+            150,
+            337,
+            243,
+            436,
+            268,
+            587,
+            281,
+            355,
+            303,
+            595
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:31",
+                "14.1",
+                151,
+                125
+            ],
+            [
+                "The Pitfalls Of A Centralized Workflow",
+                "07:41",
+                "14.2",
+                461,
+                126
+            ],
+            [
+                "Centralized Workflow Demonstration",
+                "11:36",
+                "14.3",
+                696,
+                127
+            ],
+            [
+                "The All-Important Feature Branch Workflow",
+                "07:12",
+                "14.4",
+                432,
+                128
+            ],
+            [
+                "Feature Branch Workflow Demo",
+                "13:13",
+                "14.5",
+                793,
+                129
+            ],
+            [
+                "Merging Feature Branches",
+                "04:33",
+                "14.6",
+                273,
+                130
+            ],
+            [
+                "Introducing Pull Requests",
+                "09:06",
+                "14.7",
+                546,
+                131
+            ],
+            [
+                "Making Our First Pull Request",
+                "06:25",
+                "14.8",
+                385,
+                132
+            ],
+            [
+                "Merging Pull Requests With Conflicts",
+                "11:33",
+                "14.9",
+                693,
+                133
+            ],
+            [
+                "Configuring Branch Protection Rules",
+                "06:21",
+                "14.10",
+                381,
+                134
+            ],
+            [
+                "Introducing Forking",
+                "03:28",
+                "14.11",
+                208,
+                135
+            ],
+            [
+                "Forking Demonstration",
+                "05:29",
+                "14.12",
+                329,
+                136
+            ],
+            [
+                "The Fork & Clone Workflow",
+                "06:30",
+                "14.13",
+                390,
+                137
+            ],
+            [
+                "Fork & Clone Workflow Demonstration",
+                "11:19",
+                "14.14",
+                679,
+                138
+            ]
+        ],
+        "total": "1hr 47min",
+        "duration": 6420,
+        "name": "Git Collaboration Workflows",
+        "durs": [
+            151,
+            461,
+            696,
+            432,
+            793,
+            273,
+            546,
+            385,
+            693,
+            381,
+            208,
+            329,
+            390,
+            679
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:32",
+                "15.1",
+                92,
+                139
+            ],
+            [
+                "Why is Rebasing Scary? Is it?",
+                "02:36",
+                "15.2",
+                156,
+                140
+            ],
+            [
+                "Comparing Merging & Rebasing",
+                "07:12",
+                "15.3",
+                432,
+                141
+            ],
+            [
+                "Rebase Demo Pt 1: Setup & Merging",
+                "07:14",
+                "15.4",
+                434,
+                142
+            ],
+            [
+                "Rebasing Demo Pt 2: Actually Rebasing",
+                "09:23",
+                "15.5",
+                563,
+                143
+            ],
+            [
+                "The Golden Rule: When NOT to Rebase",
+                "05:08",
+                "15.6",
+                308,
+                144
+            ],
+            [
+                "Handling Conflicts & Rebasing",
+                "06:27",
+                "15.7",
+                387,
+                145
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Rebasing: The Scariest Git Command?",
+        "durs": [
+            92,
+            156,
+            432,
+            434,
+            563,
+            308,
+            387
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:08",
+                "16.1",
+                68,
+                146
+            ],
+            [
+                "Introducing Interactive Rebase",
+                "03:13",
+                "16.2",
+                193,
+                147
+            ],
+            [
+                "Rewording Commits With Interactive Rebase",
+                "10:44",
+                "16.3",
+                644,
+                148
+            ],
+            [
+                "Fixing Up & Squashing Commits With Interactive Rebase",
+                "07:17",
+                "16.4",
+                437,
+                149
+            ],
+            [
+                "Dropping Commits With Interactive Rebase",
+                "03:27",
+                "16.5",
+                207,
+                150
+            ]
+        ],
+        "total": "26min",
+        "duration": 1560,
+        "name": "Cleaning Up History With Interactive Rebase",
+        "durs": [
+            68,
+            193,
+            644,
+            437,
+            207
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:41",
+                "17.1",
+                101,
+                151
+            ],
+            [
+                "The Idea Behind Git Tags",
+                "03:41",
+                "17.2",
+                221,
+                152
+            ],
+            [
+                "A Side Note On Semantic Versioning",
+                "06:58",
+                "17.3",
+                418,
+                153
+            ],
+            [
+                "Viewing & Searching Tags",
+                "06:23",
+                "17.4",
+                383,
+                154
+            ],
+            [
+                "Comparing Tags With Git Diff",
+                "04:22",
+                "17.5",
+                262,
+                155
+            ],
+            [
+                "Creating Lightweight Tags",
+                "03:56",
+                "17.6",
+                236,
+                156
+            ],
+            [
+                "Creating Annotated Tags",
+                "03:35",
+                "17.7",
+                215,
+                157
+            ],
+            [
+                "Tagging Previous Commits",
+                "01:35",
+                "17.8",
+                95,
+                158
+            ],
+            [
+                "Replacing Tags With Force",
+                "01:33",
+                "17.9",
+                93,
+                159
+            ],
+            [
+                "Deleting Tags",
+                "00:51",
+                "17.10",
+                51,
+                160
+            ],
+            [
+                "IMPORTANT: Pushing Tags",
+                "03:40",
+                "17.11",
+                220,
+                161
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Git Tags: Marking Important Moments In History",
+        "durs": [
+            101,
+            221,
+            418,
+            383,
+            262,
+            236,
+            215,
+            95,
+            93,
+            51,
+            220
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "02:01",
+                "18.1",
+                121,
+                162
+            ],
+            [
+                "Working With The Local Config File",
+                "09:55",
+                "18.2",
+                595,
+                163
+            ],
+            [
+                "Inside Git: The Refs Directory",
+                "06:57",
+                "18.3",
+                417,
+                164
+            ],
+            [
+                "Inside Git: The HEAD file",
+                "02:24",
+                "18.4",
+                144,
+                165
+            ],
+            [
+                "Inside Git: The Objects Directory",
+                "02:51",
+                "18.5",
+                171,
+                166
+            ],
+            [
+                "A Crash Course On Hashing Functions",
+                "07:01",
+                "18.6",
+                421,
+                167
+            ],
+            [
+                "Git As A Key-Value Datastore",
+                "03:51",
+                "18.7",
+                231,
+                168
+            ],
+            [
+                "Hashing With Git Hash-Object",
+                "08:42",
+                "18.8",
+                522,
+                169
+            ],
+            [
+                "Retrieving Data With Git Cat-File",
+                "08:51",
+                "18.9",
+                531,
+                170
+            ],
+            [
+                "Deep Dive Into Git Objects: Blobs",
+                "03:07",
+                "18.10",
+                187,
+                171
+            ],
+            [
+                "Deep Dive Into Git Objects: Trees",
+                "08:57",
+                "18.11",
+                537,
+                172
+            ],
+            [
+                "Deep Dive Into Git Objects: Commits",
+                "14:05",
+                "18.12",
+                845,
+                173
+            ]
+        ],
+        "total": "1hr 19min",
+        "duration": 4740,
+        "name": "Git Behind The Scenes - Hashing & Objects",
+        "durs": [
+            121,
+            595,
+            417,
+            144,
+            171,
+            421,
+            231,
+            522,
+            531,
+            187,
+            537,
+            845
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "What Really Matters In This Section",
+                "01:34",
+                "19.1",
+                94,
+                174
+            ],
+            [
+                "Introducing Reflogs",
+                "06:24",
+                "19.2",
+                384,
+                175
+            ],
+            [
+                "The Limitations of Reflogs",
+                "01:18",
+                "19.3",
+                78,
+                176
+            ],
+            [
+                "The Git Reflog Show Command",
+                "07:05",
+                "19.4",
+                425,
+                177
+            ],
+            [
+                "Passing Reflog References Around",
+                "04:50",
+                "19.5",
+                290,
+                178
+            ],
+            [
+                "Time-Based Reflog Qualifiers",
+                "05:27",
+                "19.6",
+                327,
+                179
+            ],
+            [
+                "Rescuing Lost Commits With Reflog",
+                "07:08",
+                "19.7",
+                428,
+                180
+            ],
+            [
+                "Undoing A Rebase w/ Reflog - It's A Miracle!",
+                "09:44",
+                "19.8",
+                584,
+                181
+            ]
+        ],
+        "total": "44min",
+        "duration": 2640,
+        "name": "The Power of Reflogs - Retrieving \"Lost\" Work",
+        "durs": [
+            94,
+            384,
+            78,
+            425,
+            290,
+            327,
+            428,
+            584
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "What Matters In This Section",
+                "01:04",
+                "20.1",
+                64,
+                182
+            ],
+            [
+                "The Global Git Config File",
+                "04:24",
+                "20.2",
+                264,
+                183
+            ],
+            [
+                "Writing Our First Git Alias",
+                "03:12",
+                "20.3",
+                192,
+                184
+            ],
+            [
+                "Setting Aliases From The Command Line",
+                "01:34",
+                "20.4",
+                94,
+                185
+            ],
+            [
+                "Aliases With Arguments",
+                "04:19",
+                "20.5",
+                259,
+                186
+            ],
+            [
+                "Exploring Existing Useful Aliases Online",
+                "05:35",
+                "20.6",
+                335,
+                187
+            ]
+        ],
+        "total": "20min",
+        "duration": 1200,
+        "name": "Writing Custom Git Aliases",
+        "durs": [
+            64,
+            264,
+            192,
+            94,
+            259,
+            335
+        ]
+    }
+]

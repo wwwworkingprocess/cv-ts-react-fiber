@@ -1,0 +1,6724 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "What you're going to get from this course",
+                "03:27",
+                "1.1",
+                207,
+                1
+            ],
+            [
+                "START HERE",
+                "02:53",
+                "1.2",
+                173,
+                2
+            ],
+            [
+                "Downloadable Resources and Tips for Taking the Course",
+                "04:22",
+                "1.3",
+                262,
+                3
+            ],
+            [
+                "Skills Assessment",
+                "10 questions",
+                "",
+                0,
+                4
+            ],
+            [
+                "Day 1 Goals: what we will make by the end of the day",
+                "02:19",
+                "1.4",
+                139,
+                4
+            ],
+            [
+                "Printing to the Console in Python",
+                "09:29",
+                "1.5",
+                569,
+                5
+            ],
+            [
+                "[Interactive Coding Exercise] Printing",
+                "06:45",
+                "1.6",
+                405,
+                6
+            ],
+            [
+                "String Manipulation and Code Intelligence",
+                "09:46",
+                "1.7",
+                586,
+                7
+            ],
+            [
+                "[Interactive Coding Exercise] Debugging Practice",
+                "06:08",
+                "1.8",
+                368,
+                8
+            ],
+            [
+                "The Python Input Function",
+                "08:49",
+                "1.9",
+                529,
+                9
+            ],
+            [
+                "[Interactive Coding Exercise] Input Function",
+                "07:02",
+                "1.10",
+                422,
+                10
+            ],
+            [
+                "Python Variables",
+                "06:43",
+                "1.11",
+                403,
+                11
+            ],
+            [
+                "[Interactive Coding Exercise] Variables",
+                "04:00",
+                "1.12",
+                240,
+                12
+            ],
+            [
+                "Variable Naming",
+                "03:58",
+                "1.13",
+                238,
+                13
+            ],
+            [
+                "Variable Naming Quiz",
+                "3 questions",
+                "",
+                0,
+                14
+            ],
+            [
+                "Day 1 Project: Band Name Generator",
+                "05:49",
+                "1.14",
+                349,
+                14
+            ],
+            [
+                "Congratulations! Well done!",
+                "00:52",
+                "1.15",
+                52,
+                15
+            ]
+        ],
+        "total": "1hr 22min",
+        "duration": 4920,
+        "name": "Day 1 - Beginner - Working with Variables in Python to Manage Data",
+        "durs": [
+            207,
+            173,
+            262,
+            0,
+            139,
+            569,
+            405,
+            586,
+            368,
+            529,
+            422,
+            403,
+            240,
+            238,
+            0,
+            349,
+            52
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Day 2 Goals: what we will make by the end of the day",
+                "01:46",
+                "2.1",
+                106,
+                16
+            ],
+            [
+                "Python Primitive Data Types",
+                "07:58",
+                "2.2",
+                478,
+                17
+            ],
+            [
+                "Data Types Quiz",
+                "3 questions",
+                "",
+                0,
+                18
+            ],
+            [
+                "Type Error, Type Checking and Type Conversion",
+                "07:19",
+                "2.3",
+                439,
+                18
+            ],
+            [
+                "[Interactive Coding Exercise] Data Types",
+                "06:04",
+                "2.4",
+                364,
+                19
+            ],
+            [
+                "Mathematical Operations in Python",
+                "08:27",
+                "2.5",
+                507,
+                20
+            ],
+            [
+                "[Interactive Coding Exercise] BMI Calculator",
+                "07:10",
+                "2.6",
+                430,
+                21
+            ],
+            [
+                "Number Manipulation and F Strings in Python",
+                "08:10",
+                "2.7",
+                490,
+                22
+            ],
+            [
+                "[Interactive Coding Exercise] Life in Weeks",
+                "06:24",
+                "2.8",
+                384,
+                23
+            ],
+            [
+                "Mathematical Operations Quiz",
+                "3 questions",
+                "",
+                0,
+                24
+            ],
+            [
+                "Day 2 Project: Tip Calculator",
+                "18:26",
+                "2.9",
+                1106,
+                24
+            ],
+            [
+                "You are already in the top 50%",
+                "00:29",
+                "2.10",
+                29,
+                25
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Day 2 - Beginner - Understanding Data Types and How to Manipulate Strings",
+        "durs": [
+            106,
+            478,
+            0,
+            439,
+            364,
+            507,
+            430,
+            490,
+            384,
+            0,
+            1106,
+            29
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Day 3 Goals: what we will make by the end of the day",
+                "01:22",
+                "3.1",
+                82,
+                26
+            ],
+            [
+                "Control Flow with if / else and Conditional Operators",
+                "10:24",
+                "3.2",
+                624,
+                27
+            ],
+            [
+                "[Interactive Coding Exercise] Odd or Even? Introducing the Modulo",
+                "04:56",
+                "3.3",
+                296,
+                28
+            ],
+            [
+                "Nested if statements and elif statements",
+                "06:28",
+                "3.4",
+                388,
+                29
+            ],
+            [
+                "[Interactive Coding Exercise] BMI 2.0",
+                "07:18",
+                "3.5",
+                438,
+                30
+            ],
+            [
+                "[Interactive Coding Exercise] Leap Year",
+                "10:34",
+                "3.6",
+                634,
+                31
+            ],
+            [
+                "Multiple If Statements in Succession",
+                "09:29",
+                "3.7",
+                569,
+                32
+            ],
+            [
+                "[Interactive Coding Exercise] Pizza Order Practice",
+                "06:16",
+                "3.8",
+                376,
+                33
+            ],
+            [
+                "Logical Operators",
+                "05:58",
+                "3.9",
+                358,
+                34
+            ],
+            [
+                "[Interactive Coding Exercise] Love Calculator",
+                "14:07",
+                "3.10",
+                847,
+                35
+            ],
+            [
+                "Day 3 Project: Treasure Island",
+                "18:12",
+                "3.11",
+                1092,
+                36
+            ],
+            [
+                "Share and Show off your Project!",
+                "00:43",
+                "3.12",
+                43,
+                37
+            ]
+        ],
+        "total": "1hr 36min",
+        "duration": 5760,
+        "name": "Day 3 - Beginner - Control Flow and Logical Operators",
+        "durs": [
+            82,
+            624,
+            296,
+            388,
+            438,
+            634,
+            569,
+            376,
+            358,
+            847,
+            1092,
+            43
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Day 4 Goals: what we will make by the end of the day",
+                "01:31",
+                "4.1",
+                91,
+                38
+            ],
+            [
+                "Random Module",
+                "13:45",
+                "4.2",
+                825,
+                39
+            ],
+            [
+                "[Interactive Coding Exercise] Random Exercise",
+                "02:16",
+                "4.3",
+                136,
+                40
+            ],
+            [
+                "Understanding the Offset and Appending Items to Lists",
+                "13:14",
+                "4.4",
+                794,
+                41
+            ],
+            [
+                "[Interactive Coding Exercise] Banker Roulette - Who will pay the bill?",
+                "10:22",
+                "4.5",
+                622,
+                42
+            ],
+            [
+                "IndexErrors and Working with Nested Lists",
+                "05:25",
+                "4.6",
+                325,
+                43
+            ],
+            [
+                "List and IndexError Quiz",
+                "3 questions",
+                "",
+                0,
+                44
+            ],
+            [
+                "[Interactive Coding Exercise] Treasure Map",
+                "11:36",
+                "4.7",
+                696,
+                44
+            ],
+            [
+                "Day 4 Project: Rock Paper Scissors",
+                "21:27",
+                "4.8",
+                1287,
+                45
+            ],
+            [
+                "Programming is like going to the Gym",
+                "01:04",
+                "4.9",
+                64,
+                46
+            ]
+        ],
+        "total": "1hr 21min",
+        "duration": 4860,
+        "name": "Day 4 - Beginner - Randomisation and Python Lists",
+        "durs": [
+            91,
+            825,
+            136,
+            794,
+            622,
+            325,
+            0,
+            696,
+            1287,
+            64
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Day 5 Goals: what we will make by the end of the day",
+                "03:13",
+                "5.1",
+                193,
+                47
+            ],
+            [
+                "Using the for loop with Python Lists",
+                "07:32",
+                "5.2",
+                452,
+                48
+            ],
+            [
+                "[Interactive Coding Exercise] Average Height",
+                "08:40",
+                "5.3",
+                520,
+                49
+            ],
+            [
+                "[Interactive Coding Exercise] High Score",
+                "07:08",
+                "5.4",
+                428,
+                50
+            ],
+            [
+                "for loops and the range() function",
+                "05:21",
+                "5.5",
+                321,
+                51
+            ],
+            [
+                "[Interactive Coding Exercise] Adding Even Numbers",
+                "04:35",
+                "5.6",
+                275,
+                52
+            ],
+            [
+                "[Interactive Coding Exercise] The FizzBuzz Job Interview Question",
+                "05:22",
+                "5.7",
+                322,
+                53
+            ],
+            [
+                "Day 5 Project: Create a Password Generator",
+                "16:10",
+                "5.8",
+                970,
+                54
+            ],
+            [
+                "Hard Work and Perseverance beats Raw Talent Every Time",
+                "01:08",
+                "5.9",
+                68,
+                55
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Day 5 - Beginner - Python Loops",
+        "durs": [
+            193,
+            452,
+            520,
+            428,
+            321,
+            275,
+            322,
+            970,
+            68
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Day 6 Goals: what we will make by the end of the day",
+                "01:01",
+                "6.1",
+                61,
+                56
+            ],
+            [
+                "Defining and Calling Python Functions",
+                "15:50",
+                "6.2",
+                950,
+                57
+            ],
+            [
+                "The Hurdles Loop Challenge",
+                "10:37",
+                "6.3",
+                637,
+                58
+            ],
+            [
+                "Indentation in Python",
+                "09:14",
+                "6.4",
+                554,
+                59
+            ],
+            [
+                "Code Indentation Quiz",
+                "3 questions",
+                "",
+                0,
+                60
+            ],
+            [
+                "While Loops",
+                "12:42",
+                "6.5",
+                762,
+                60
+            ],
+            [
+                "Hurdles Challenge using While Loops",
+                "06:57",
+                "6.6",
+                417,
+                61
+            ],
+            [
+                "Jumping over Hurdles with Variable Heights",
+                "08:12",
+                "6.7",
+                492,
+                62
+            ],
+            [
+                "Final Project: Escaping the Maze",
+                "16:41",
+                "6.8",
+                1001,
+                63
+            ],
+            [
+                "Why is this *so* Hard?! Can I really do this?",
+                "01:25",
+                "6.9",
+                85,
+                64
+            ]
+        ],
+        "total": "1hr 23min",
+        "duration": 4980,
+        "name": "Day 6 - Beginner - Python Functions & Karel",
+        "durs": [
+            61,
+            950,
+            637,
+            554,
+            0,
+            762,
+            417,
+            492,
+            1001,
+            85
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Day 7 Goals: what we will make by the end of the day",
+                "01:59",
+                "7.1",
+                119,
+                65
+            ],
+            [
+                "How to break a Complex Problem down into a Flow Chart",
+                "05:13",
+                "7.2",
+                313,
+                66
+            ],
+            [
+                "Challenge 1 - Picking a Random Words and Checking Answers",
+                "02:05",
+                "7.3",
+                125,
+                67
+            ],
+            [
+                "Challenge 1 Solution - How to Check the User's Answer",
+                "06:45",
+                "7.4",
+                405,
+                68
+            ],
+            [
+                "Challenge 2 - Replacing Blanks with Guesses",
+                "02:55",
+                "7.5",
+                175,
+                69
+            ],
+            [
+                "Challenge 2 Solution - How to Replace the Blanks",
+                "10:46",
+                "7.6",
+                646,
+                70
+            ],
+            [
+                "Challenge 3 - Checking if the Player has Won",
+                "03:25",
+                "7.7",
+                205,
+                71
+            ],
+            [
+                "Challenge 3 Solution - How to Check if the Player Won",
+                "03:51",
+                "7.8",
+                231,
+                72
+            ],
+            [
+                "Challenge 4 - Keeping Track of the Player's Lives",
+                "02:16",
+                "7.9",
+                136,
+                73
+            ],
+            [
+                "Challenge 4 Solution - How to Keep Track of the Player's Lives",
+                "05:47",
+                "7.10",
+                347,
+                74
+            ],
+            [
+                "Challenge 5 - Improving the User Experience",
+                "04:23",
+                "7.11",
+                263,
+                75
+            ],
+            [
+                "Challenge 5 Solution - How to Add ASCII Art and Improve the UI",
+                "06:33",
+                "7.12",
+                393,
+                76
+            ],
+            [
+                "The Benefits of Daily Practice",
+                "01:12",
+                "7.13",
+                72,
+                77
+            ]
+        ],
+        "total": "57min",
+        "duration": 3420,
+        "name": "Day 7 - Beginner - Hangman",
+        "durs": [
+            119,
+            313,
+            125,
+            405,
+            175,
+            646,
+            205,
+            231,
+            136,
+            347,
+            263,
+            393,
+            72
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Day 8 Goals: what we will make by the end of the day",
+                "02:15",
+                "8.1",
+                135,
+                78
+            ],
+            [
+                "Functions with Inputs",
+                "09:32",
+                "8.2",
+                572,
+                79
+            ],
+            [
+                "Positional vs. Keyword Arguments",
+                "08:51",
+                "8.3",
+                531,
+                80
+            ],
+            [
+                "[Interactive Coding Exercise] Paint Area Calculator",
+                "07:48",
+                "8.4",
+                468,
+                81
+            ],
+            [
+                "[Interactive Coding Exercise] Prime Number Checker",
+                "08:54",
+                "8.5",
+                534,
+                82
+            ],
+            [
+                "Caesar Cipher Part 1 - Encryption",
+                "14:41",
+                "8.6",
+                881,
+                83
+            ],
+            [
+                "Caesar Cipher Part 2 - Decryption",
+                "06:29",
+                "8.7",
+                389,
+                84
+            ],
+            [
+                "Caesar Cipher Part 3 - Reorganising our Code",
+                "10:36",
+                "8.8",
+                636,
+                85
+            ],
+            [
+                "Caesar Cipher Part 4 - User Experience Improvements & Final Touches",
+                "13:23",
+                "8.9",
+                803,
+                86
+            ],
+            [
+                "How You Can *Stay* Motivated",
+                "01:06",
+                "8.10",
+                66,
+                87
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "Day 8 - Beginner - Function Parameters & Caesar Cipher",
+        "durs": [
+            135,
+            572,
+            531,
+            468,
+            534,
+            881,
+            389,
+            636,
+            803,
+            66
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Day 9 Goals: what we will make by the end of the day",
+                "02:29",
+                "9.1",
+                149,
+                88
+            ],
+            [
+                "The Python Dictionary: Deep Dive",
+                "14:13",
+                "9.2",
+                853,
+                89
+            ],
+            [
+                "[Interactive Coding Exercise] Grading Program",
+                "06:00",
+                "9.3",
+                360,
+                90
+            ],
+            [
+                "Nesting Lists and Dictionaries",
+                "09:55",
+                "9.4",
+                595,
+                91
+            ],
+            [
+                "[Interactive Coding Exercise] Dictionary in List",
+                "05:35",
+                "9.5",
+                335,
+                92
+            ],
+            [
+                "Python Dictionaries Quiz",
+                "3 questions",
+                "",
+                0,
+                93
+            ],
+            [
+                "The Secret Auction Program Instructions and Flow Chart",
+                "04:29",
+                "9.6",
+                269,
+                93
+            ],
+            [
+                "Solution and Complete Code for the Secret Auction Program",
+                "18:13",
+                "9.7",
+                1093,
+                94
+            ],
+            [
+                "Motivation and the Accountability Trick",
+                "01:02",
+                "9.8",
+                62,
+                95
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Day 9 - Beginner - Dictionaries, Nesting and the Secret Auction",
+        "durs": [
+            149,
+            853,
+            360,
+            595,
+            335,
+            0,
+            269,
+            1093,
+            62
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Day 10 Goals: what we will make by the end of the day",
+                "01:34",
+                "10.1",
+                94,
+                96
+            ],
+            [
+                "Functions with Outputs",
+                "12:57",
+                "10.2",
+                777,
+                97
+            ],
+            [
+                "Multiple return values",
+                "03:31",
+                "10.3",
+                211,
+                98
+            ],
+            [
+                "[Interactive Coding Exercise] Days in Month",
+                "06:44",
+                "10.4",
+                404,
+                99
+            ],
+            [
+                "Docstrings",
+                "03:42",
+                "10.5",
+                222,
+                100
+            ],
+            [
+                "Functions Quiz",
+                "3 questions",
+                "",
+                0,
+                101
+            ],
+            [
+                "Calculator Part 1: Combining Dictionaries and Functions",
+                "08:43",
+                "10.6",
+                523,
+                101
+            ],
+            [
+                "Print vs. Return",
+                "04:37",
+                "10.7",
+                277,
+                102
+            ],
+            [
+                "While Loops, Flags and Recursion",
+                "07:49",
+                "10.8",
+                469,
+                103
+            ],
+            [
+                "Calculator Finishing Touches and Bug Fixes",
+                "03:47",
+                "10.9",
+                227,
+                104
+            ],
+            [
+                "How to Get a Good Night's Sleep",
+                "01:32",
+                "10.10",
+                92,
+                105
+            ]
+        ],
+        "total": "55min",
+        "duration": 3300,
+        "name": "Day 10 - Beginner - Functions with Outputs",
+        "durs": [
+            94,
+            777,
+            211,
+            404,
+            222,
+            0,
+            523,
+            277,
+            469,
+            227,
+            92
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Day 11 Goals: what we will make by the end of the day",
+                "02:15",
+                "11.1",
+                135,
+                106
+            ],
+            [
+                "Blackjack Program Requirements and Game Rules",
+                "08:34",
+                "11.2",
+                514,
+                107
+            ],
+            [
+                "Hint 4 & 5 Solution Walkthrough",
+                "06:49",
+                "11.3",
+                409,
+                108
+            ],
+            [
+                "Hint 6-8 Solution Walkthrough",
+                "05:06",
+                "11.4",
+                306,
+                109
+            ],
+            [
+                "Hint 9 Solution Walkthrough: Refactoring and calling calculate_score()",
+                "05:08",
+                "11.5",
+                308,
+                110
+            ],
+            [
+                "Hint 10-12 Solution Walkthrough",
+                "05:24",
+                "11.6",
+                324,
+                111
+            ],
+            [
+                "Hint 13 Solution Walkthrough",
+                "08:43",
+                "11.7",
+                523,
+                112
+            ],
+            [
+                "A Solid Foundation goes a Long Way",
+                "01:37",
+                "11.8",
+                97,
+                113
+            ]
+        ],
+        "total": "44min",
+        "duration": 2640,
+        "name": "Day 11 - Beginner - The Blackjack Capstone Project",
+        "durs": [
+            135,
+            514,
+            409,
+            306,
+            308,
+            324,
+            523,
+            97
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Namespaces: Local vs. Global Scope",
+                "07:51",
+                "12.1",
+                471,
+                114
+            ],
+            [
+                "Does Python Have Block Scope?",
+                "02:50",
+                "12.2",
+                170,
+                115
+            ],
+            [
+                "How to Modify a Global Variable",
+                "04:43",
+                "12.3",
+                283,
+                116
+            ],
+            [
+                "Python Constants and Global Scope",
+                "01:46",
+                "12.4",
+                106,
+                117
+            ],
+            [
+                "Scope Quiz",
+                "3 questions",
+                "",
+                0,
+                118
+            ],
+            [
+                "Introducing the Final Project: The Number Guessing Game",
+                "04:58",
+                "12.5",
+                298,
+                118
+            ],
+            [
+                "Solution & Walkthrough to the Number Guessing Game",
+                "23:41",
+                "12.6",
+                1421,
+                119
+            ],
+            [
+                "Don't be too hard on yourself",
+                "00:44",
+                "12.7",
+                44,
+                120
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Day 12 - Beginner - Scope & Number Guessing Game",
+        "durs": [
+            471,
+            170,
+            283,
+            106,
+            0,
+            298,
+            1421,
+            44
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Describe the Problem",
+                "04:51",
+                "13.1",
+                291,
+                121
+            ],
+            [
+                "Reproduce the Bug",
+                "03:34",
+                "13.2",
+                214,
+                122
+            ],
+            [
+                "Play Computer and Evaluate Each Line",
+                "03:51",
+                "13.3",
+                231,
+                123
+            ],
+            [
+                "Fixing Errors and Watching for Red Underlines",
+                "03:29",
+                "13.4",
+                209,
+                124
+            ],
+            [
+                "Squash bugs with a print() Statement",
+                "04:39",
+                "13.5",
+                279,
+                125
+            ],
+            [
+                "Bringing out the BIG Gun: Using a Debugger",
+                "05:52",
+                "13.6",
+                352,
+                126
+            ],
+            [
+                "Final Debugging Tips",
+                "05:09",
+                "13.7",
+                309,
+                127
+            ],
+            [
+                "[Interactive Coding Exercise] Debugging Odd or Even",
+                "02:45",
+                "13.8",
+                165,
+                128
+            ],
+            [
+                "[Interactive Coding Exercise] Debugging Leap Year",
+                "03:01",
+                "13.9",
+                181,
+                129
+            ],
+            [
+                "[Interactive Coding Exercise] Debugging FizzBuzz",
+                "07:34",
+                "13.10",
+                454,
+                130
+            ],
+            [
+                "Building Confidence",
+                "01:00",
+                "13.11",
+                60,
+                131
+            ]
+        ],
+        "total": "46min",
+        "duration": 2760,
+        "name": "Day 13 - Beginner - Debugging: How to Find and Fix Errors in your Code",
+        "durs": [
+            291,
+            214,
+            231,
+            209,
+            279,
+            352,
+            309,
+            165,
+            181,
+            454,
+            60
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Introduction & Program Requirements for the Higher Lower Game",
+                "07:37",
+                "14.1",
+                457,
+                132
+            ],
+            [
+                "Solution & Walkthrough of the Higher Lower Game",
+                "30:31",
+                "14.2",
+                1831,
+                133
+            ],
+            [
+                "Study Tip: Set Reminders in Your Calendar to Review",
+                "01:07",
+                "14.3",
+                67,
+                134
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "Day 14 - Beginner - Higher Lower Game Project",
+        "durs": [
+            457,
+            1831,
+            67
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Installing Python Locally on Your Computer",
+                "04:38",
+                "15.1",
+                278,
+                135
+            ],
+            [
+                "Download PyCharm for Windows or Mac",
+                "01:59",
+                "15.2",
+                119,
+                136
+            ],
+            [
+                "PyCharm's Charming Features (while you wait for the download to finish)",
+                "13:04",
+                "15.3",
+                784,
+                137
+            ],
+            [
+                "How to Install PyCharm on Windows",
+                "02:38",
+                "15.4",
+                158,
+                138
+            ],
+            [
+                "Installing PyCharm on Mac",
+                "02:53",
+                "15.5",
+                173,
+                139
+            ],
+            [
+                "Introduction & Requirements for the Coffee Machine Project",
+                "10:35",
+                "15.6",
+                635,
+                140
+            ],
+            [
+                "Solution & Walkthrough for the Coffee Machine Code",
+                "28:58",
+                "15.7",
+                1738,
+                141
+            ],
+            [
+                "Location, Location, Location - Pavlov's Coding Corner",
+                "01:08",
+                "15.8",
+                68,
+                142
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Day 15 - Intermediate - Local Development Environment Setup & the Coffee Machine",
+        "durs": [
+            278,
+            119,
+            784,
+            158,
+            173,
+            635,
+            1738,
+            68
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Why do we need OOP and how does it work?",
+                "07:21",
+                "16.1",
+                441,
+                143
+            ],
+            [
+                "How to use OOP: Classes and Objects",
+                "04:09",
+                "16.2",
+                249,
+                144
+            ],
+            [
+                "Constructing Objects and Accessing their Attributes and Methods",
+                "15:56",
+                "16.3",
+                956,
+                145
+            ],
+            [
+                "How to Add Python Packages and use PyPi",
+                "05:56",
+                "16.4",
+                356,
+                146
+            ],
+            [
+                "Practice Modifying Object Attributes and Calling Methods",
+                "08:29",
+                "16.5",
+                509,
+                147
+            ],
+            [
+                "Python Objects Quiz",
+                "3 questions",
+                "",
+                0,
+                148
+            ],
+            [
+                "Building the Coffee Machine in OOP",
+                "07:11",
+                "16.6",
+                431,
+                148
+            ],
+            [
+                "Walkthrough and Solution for the OOP Coffee Machine",
+                "15:46",
+                "16.7",
+                946,
+                149
+            ],
+            [
+                "Don't forget to review occasionally",
+                "00:56",
+                "16.8",
+                56,
+                150
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Day 16 - Intermediate - Object Oriented Programming (OOP)",
+        "durs": [
+            441,
+            249,
+            956,
+            356,
+            509,
+            0,
+            431,
+            946,
+            56
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Day 17 Goals: what we will make by the end of the day",
+                "01:08",
+                "17.1",
+                68,
+                151
+            ],
+            [
+                "How to create your own Class in Python",
+                "04:44",
+                "17.2",
+                284,
+                152
+            ],
+            [
+                "Working with Attributes, Class Constructors and the __init__() Function",
+                "11:08",
+                "17.3",
+                668,
+                153
+            ],
+            [
+                "Adding Methods to a Class",
+                "04:26",
+                "17.4",
+                266,
+                154
+            ],
+            [
+                "Quiz Project Part 1: Creating the Question Class",
+                "05:47",
+                "17.5",
+                347,
+                155
+            ],
+            [
+                "Quiz Project Part 2: Creating the List of Question Objects from the Data",
+                "07:48",
+                "17.6",
+                468,
+                156
+            ],
+            [
+                "Quiz Project Part 3: The QuizBrain and the next_question() Method",
+                "07:51",
+                "17.7",
+                471,
+                157
+            ],
+            [
+                "Quiz Project Part 4: How to continue showing new Questions",
+                "04:46",
+                "17.8",
+                286,
+                158
+            ],
+            [
+                "Quiz Project Part 5: Checking Answers and Keeping Score",
+                "08:08",
+                "17.9",
+                488,
+                159
+            ],
+            [
+                "The Benefits of OOP: Use Open Trivia DB to Get New Questions",
+                "05:35",
+                "17.10",
+                335,
+                160
+            ],
+            [
+                "Run for that Bus!",
+                "01:19",
+                "17.11",
+                79,
+                161
+            ]
+        ],
+        "total": "1hr 3min",
+        "duration": 3780,
+        "name": "Day 17 - Intermediate - The Quiz Project & the Benefits of OOP",
+        "durs": [
+            68,
+            284,
+            668,
+            266,
+            347,
+            468,
+            471,
+            286,
+            488,
+            335,
+            79
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Day 18 Goals: what we will make by the end of the day",
+                "01:03",
+                "18.1",
+                63,
+                162
+            ],
+            [
+                "Understanding Turtle Graphics and How to use the Documentation",
+                "09:56",
+                "18.2",
+                596,
+                163
+            ],
+            [
+                "Turtle Challenge 1 - Draw a Square",
+                "02:28",
+                "18.3",
+                148,
+                164
+            ],
+            [
+                "Importing Modules, Installing Packages, and Working with Aliases",
+                "08:09",
+                "18.4",
+                489,
+                165
+            ],
+            [
+                "Turtle Challenge 2 - Draw a Dashed Line",
+                "03:00",
+                "18.5",
+                180,
+                166
+            ],
+            [
+                "Turtle Challenge 3 - Drawing Different Shapes",
+                "06:43",
+                "18.6",
+                403,
+                167
+            ],
+            [
+                "Turtle Challenge 4 - Generate a Random Walk",
+                "07:21",
+                "18.7",
+                441,
+                168
+            ],
+            [
+                "Python Tuples and How to Generate Random RGB Colours",
+                "07:42",
+                "18.8",
+                462,
+                169
+            ],
+            [
+                "Turtle Challenge 5 - Draw a Spirograph",
+                "09:26",
+                "18.9",
+                566,
+                170
+            ],
+            [
+                "The Hirst Painting Project Part 1 - How to Extract RGB Values from Images",
+                "13:50",
+                "18.10",
+                830,
+                171
+            ],
+            [
+                "The Hirst Painting Project Part 2 - Drawing the Dots",
+                "12:24",
+                "18.11",
+                744,
+                172
+            ],
+            [
+                "Space out your study sessions and stay consistent",
+                "01:36",
+                "18.12",
+                96,
+                173
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "Day 18 - Intermediate - Turtle & the Graphical User Interface (GUI)",
+        "durs": [
+            63,
+            596,
+            148,
+            489,
+            180,
+            403,
+            441,
+            462,
+            566,
+            830,
+            744,
+            96
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Day 19 Goals: what we will make by the end of the day",
+                "01:48",
+                "19.1",
+                108,
+                174
+            ],
+            [
+                "Python Higher Order Functions & Event Listeners",
+                "07:13",
+                "19.2",
+                433,
+                175
+            ],
+            [
+                "Challenge: Make an Etch-A-Sketch App",
+                "07:26",
+                "19.3",
+                446,
+                176
+            ],
+            [
+                "Object State and Instances",
+                "03:25",
+                "19.4",
+                205,
+                177
+            ],
+            [
+                "Understanding the Turtle Coordinate System",
+                "13:14",
+                "19.5",
+                794,
+                178
+            ],
+            [
+                "Turtle Coordinate System Quiz",
+                "3 questions",
+                "",
+                0,
+                179
+            ],
+            [
+                "Aaaand, we're off to the races!",
+                "10:02",
+                "19.6",
+                602,
+                179
+            ],
+            [
+                "Expand on the Solutions",
+                "01:47",
+                "19.7",
+                107,
+                180
+            ]
+        ],
+        "total": "45min",
+        "duration": 2700,
+        "name": "Day 19 - Intermediate - Instances, State and Higher Order Functions",
+        "durs": [
+            108,
+            433,
+            446,
+            205,
+            794,
+            0,
+            602,
+            107
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "Day 20 Goals: what we will make by the end of the day",
+                "04:39",
+                "20.1",
+                279,
+                181
+            ],
+            [
+                "Screen Setup and Creating a Snake Body",
+                "07:59",
+                "20.2",
+                479,
+                182
+            ],
+            [
+                "Animating the Snake Segments on Screen",
+                "17:19",
+                "20.3",
+                1039,
+                183
+            ],
+            [
+                "Create a Snake Class & Move to OOP",
+                "07:26",
+                "20.4",
+                446,
+                184
+            ],
+            [
+                "How to Control the Snake with a Keypress",
+                "10:54",
+                "20.5",
+                654,
+                185
+            ],
+            [
+                "Programming is not Memorising",
+                "02:14",
+                "20.6",
+                134,
+                186
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Day 20 - Intermediate - Build the Snake Game Part 1: Animation & Coordinates",
+        "durs": [
+            279,
+            479,
+            1039,
+            446,
+            654,
+            134
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "Day 21 Goals: what we will make by the end of the day",
+                "01:06",
+                "21.1",
+                66,
+                187
+            ],
+            [
+                "Class Inheritance",
+                "06:47",
+                "21.2",
+                407,
+                188
+            ],
+            [
+                "Inheritance Quiz",
+                "3 questions",
+                "",
+                0,
+                189
+            ],
+            [
+                "Detect Collisions with Food",
+                "11:48",
+                "21.3",
+                708,
+                189
+            ],
+            [
+                "Create a Scoreboard and Keep Score",
+                "10:21",
+                "21.4",
+                621,
+                190
+            ],
+            [
+                "Detect Collisions with the Wall",
+                "03:52",
+                "21.5",
+                232,
+                191
+            ],
+            [
+                "Detect Collisions with your own Tail",
+                "06:19",
+                "21.6",
+                379,
+                192
+            ],
+            [
+                "How to Slice Lists & Tuples in Python",
+                "07:40",
+                "21.7",
+                460,
+                193
+            ],
+            [
+                "Stay motivated by remembering the reason you signed up",
+                "01:43",
+                "21.8",
+                103,
+                194
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Day 21 - Intermediate - Build the Snake Game Part 2: Inheritance & List Slicing",
+        "durs": [
+            66,
+            407,
+            0,
+            708,
+            621,
+            232,
+            379,
+            460,
+            103
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Day 22 Goals: what you will make by the end of the day",
+                "03:44",
+                "22.1",
+                224,
+                195
+            ],
+            [
+                "Set up the Main Screen",
+                "01:43",
+                "22.2",
+                103,
+                196
+            ],
+            [
+                "Create a Paddle that responds to Key Presses",
+                "06:21",
+                "22.3",
+                381,
+                197
+            ],
+            [
+                "Write the Paddle Class and Create the Second Paddle",
+                "07:37",
+                "22.4",
+                457,
+                198
+            ],
+            [
+                "Write the Ball Class and Make the Ball Move",
+                "04:44",
+                "22.5",
+                284,
+                199
+            ],
+            [
+                "Add the Ball Bouncing Logic",
+                "07:01",
+                "22.6",
+                421,
+                200
+            ],
+            [
+                "How to Detect Collisions with the Paddle",
+                "06:16",
+                "22.7",
+                376,
+                201
+            ],
+            [
+                "How to Detect when the Ball goes Out of Bounds",
+                "04:02",
+                "22.8",
+                242,
+                202
+            ],
+            [
+                "Score Keeping and Changing the Ball Speed",
+                "09:25",
+                "22.9",
+                565,
+                203
+            ],
+            [
+                "Picturing fears: even the worst-case scenario is not so scary",
+                "01:40",
+                "22.10",
+                100,
+                204
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Day 22 - Intermediate - Build Pong: The Famous Arcade Game",
+        "durs": [
+            224,
+            103,
+            381,
+            457,
+            284,
+            421,
+            376,
+            242,
+            565,
+            100
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "Day 23 Goals: what you will make by the end of the day",
+                "01:27",
+                "23.1",
+                87,
+                205
+            ],
+            [
+                "Choose Your Difficulty",
+                "00:36",
+                "23.2",
+                36,
+                206
+            ],
+            [
+                "How to use the Starter Code",
+                "03:29",
+                "23.3",
+                209,
+                207
+            ],
+            [
+                "Step 1 - Check out how the game play works",
+                "00:21",
+                "23.4",
+                21,
+                208
+            ],
+            [
+                "Step 2 - Break down the Problem",
+                "01:11",
+                "23.5",
+                71,
+                209
+            ],
+            [
+                "Solution to Step 3 - Create the Player Behaviour",
+                "04:43",
+                "23.6",
+                283,
+                210
+            ],
+            [
+                "Solution to Step 4 - Create the Car Behaviour",
+                "09:13",
+                "23.7",
+                553,
+                211
+            ],
+            [
+                "Solution to Step 5 - Detect when the Turtle collides with a Car *squish*",
+                "02:29",
+                "23.8",
+                149,
+                212
+            ],
+            [
+                "Solution to Step 6 - Detect when the Player has reached the other side",
+                "04:28",
+                "23.9",
+                268,
+                213
+            ],
+            [
+                "Solution to Step 7 - Add the Scoreboard and Game Over sequence",
+                "07:52",
+                "23.10",
+                472,
+                214
+            ],
+            [
+                "This course is not about typing out code",
+                "01:44",
+                "23.11",
+                104,
+                215
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Day 23 - Intermediate - The Turtle Crossing Capstone Project",
+        "durs": [
+            87,
+            36,
+            209,
+            21,
+            71,
+            283,
+            553,
+            149,
+            268,
+            472,
+            104
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "Day 24 Goals: what you will make by the end of the day",
+                "02:08",
+                "24.1",
+                128,
+                216
+            ],
+            [
+                "Add a High Score to the Snake Game",
+                "10:45",
+                "24.2",
+                645,
+                217
+            ],
+            [
+                "How to Open, Read, and Write to Files using the \"with\" Keyword",
+                "09:32",
+                "24.3",
+                572,
+                218
+            ],
+            [
+                "Challenge: Read and Write the High Score to a File in Snake",
+                "06:02",
+                "24.4",
+                362,
+                219
+            ],
+            [
+                "Understand Relative and Absolute File Paths",
+                "15:26",
+                "24.5",
+                926,
+                220
+            ],
+            [
+                "File Paths Quiz",
+                "3 questions",
+                "",
+                0,
+                221
+            ],
+            [
+                "Introducing the Mail Merge Challenge",
+                "04:45",
+                "24.6",
+                285,
+                221
+            ],
+            [
+                "Solution & Walkthrough for the Mail Merge Project",
+                "11:28",
+                "24.7",
+                688,
+                222
+            ],
+            [
+                "What's the correct solution? What's the best answer? What's the right way?",
+                "02:58",
+                "24.8",
+                178,
+                223
+            ]
+        ],
+        "total": "1hr 3min",
+        "duration": 3780,
+        "name": "Day 24 - Intermediate - Files, Directories and Paths",
+        "durs": [
+            128,
+            645,
+            572,
+            362,
+            926,
+            0,
+            285,
+            688,
+            178
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "Day 25 Goals: what we will make by the end of the day",
+                "01:51",
+                "25.1",
+                111,
+                224
+            ],
+            [
+                "Reading CSV Data in Python",
+                "13:20",
+                "25.2",
+                800,
+                225
+            ],
+            [
+                "DataFrames & Series: Working with Rows & Columns",
+                "17:25",
+                "25.3",
+                1045,
+                226
+            ],
+            [
+                "The Great Squirrel Census Data Analysis (with Pandas!)",
+                "09:52",
+                "25.4",
+                592,
+                227
+            ],
+            [
+                "U.S. States Game Part 1: Setup",
+                "10:18",
+                "25.5",
+                618,
+                228
+            ],
+            [
+                "U.S. States Game Part 2: Challenge with .csv",
+                "16:04",
+                "25.6",
+                964,
+                229
+            ],
+            [
+                "U.S. States Game Part 3: Saving Data to .csv",
+                "05:26",
+                "25.7",
+                326,
+                230
+            ]
+        ],
+        "total": "1hr 14min",
+        "duration": 4440,
+        "name": "Day 25 - Intermediate - Working with CSV Data and the Pandas Library",
+        "durs": [
+            111,
+            800,
+            1045,
+            592,
+            618,
+            964,
+            326
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "Day 26 Goals: what you will make by the end of the day",
+                "01:24",
+                "26.1",
+                84,
+                231
+            ],
+            [
+                "How to Create Lists using List Comprehension",
+                "15:49",
+                "26.2",
+                949,
+                232
+            ],
+            [
+                "[Interactive Coding Exercise] Squaring Numbers",
+                "02:03",
+                "26.3",
+                123,
+                233
+            ],
+            [
+                "[Interactive Coding Exercise] Filtering Even Numbers",
+                "02:37",
+                "26.4",
+                157,
+                234
+            ],
+            [
+                "[Interactive Coding Exercise] Data Overlap",
+                "04:53",
+                "26.5",
+                293,
+                235
+            ],
+            [
+                "Apply List Comprehension to the U.S. States Game",
+                "02:42",
+                "26.6",
+                162,
+                236
+            ],
+            [
+                "How to use Dictionary Comprehension",
+                "08:55",
+                "26.7",
+                535,
+                237
+            ],
+            [
+                "[Interactive Coding Exercise] Dictionary Comprehension 1",
+                "04:05",
+                "26.8",
+                245,
+                238
+            ],
+            [
+                "[Interactive Coding Exercise] Dictionary Comprehension 2",
+                "03:19",
+                "26.9",
+                199,
+                239
+            ],
+            [
+                "How to Iterate over a Pandas DataFrame",
+                "04:56",
+                "26.10",
+                296,
+                240
+            ],
+            [
+                "Introducing the NATO Alphabet Project",
+                "05:29",
+                "26.11",
+                329,
+                241
+            ],
+            [
+                "Solution & Walkthrough for the NATO Alphabet Project",
+                "05:53",
+                "26.12",
+                353,
+                242
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Day 26 - Intermediate - List Comprehension and the NATO Alphabet",
+        "durs": [
+            84,
+            949,
+            123,
+            157,
+            293,
+            162,
+            535,
+            245,
+            199,
+            296,
+            329,
+            353
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "Day 27 Goals: what we will make by the end of the day",
+                "02:04",
+                "27.1",
+                124,
+                243
+            ],
+            [
+                "History of GUI and Introduction to Tkinter",
+                "05:22",
+                "27.2",
+                322,
+                244
+            ],
+            [
+                "Creating Windows and Labels with Tkinter",
+                "09:34",
+                "27.3",
+                574,
+                245
+            ],
+            [
+                "Setting Default Values for Optional Arguments inside a Function Header",
+                "05:43",
+                "27.4",
+                343,
+                246
+            ],
+            [
+                "Default Values Quiz",
+                "4 questions",
+                "",
+                0,
+                247
+            ],
+            [
+                "*args: Many Positional Arguments",
+                "05:58",
+                "27.5",
+                358,
+                247
+            ],
+            [
+                "**kwargs: Many Keyword Arguments",
+                "09:50",
+                "27.6",
+                590,
+                248
+            ],
+            [
+                "Optional Arguments, *args and **kwargs Quiz",
+                "5 questions",
+                "",
+                0,
+                249
+            ],
+            [
+                "Buttons, Entry, and Setting Component Options",
+                "09:48",
+                "27.7",
+                588,
+                249
+            ],
+            [
+                "Other Tkinter Widgets: Radiobuttons, Scales, Checkbuttons and more",
+                "07:19",
+                "27.8",
+                439,
+                250
+            ],
+            [
+                "Tkinter Layout Managers: pack(), place() and grid()",
+                "11:03",
+                "27.9",
+                663,
+                251
+            ],
+            [
+                "Mile to Kilometers Converter Project",
+                "11:10",
+                "27.10",
+                670,
+                252
+            ]
+        ],
+        "total": "1hr 18min",
+        "duration": 4680,
+        "name": "Day 27 - Intermediate - Tkinter, *args, **kwargs and Creating GUI Programs",
+        "durs": [
+            124,
+            322,
+            574,
+            343,
+            0,
+            358,
+            590,
+            0,
+            588,
+            439,
+            663,
+            670
+        ]
+    },
+    {
+        "idx": 27,
+        "lectures": [
+            [
+                "Day 28 Goals: what we will make by the end of the day",
+                "02:41",
+                "28.1",
+                161,
+                253
+            ],
+            [
+                "How to work with the Canvas Widget and Add Images to Tkinter",
+                "15:10",
+                "28.2",
+                910,
+                254
+            ],
+            [
+                "Challenge - Complete the Application's User Interface (UI)",
+                "08:44",
+                "28.3",
+                524,
+                255
+            ],
+            [
+                "Add a Count Down Mechanism",
+                "17:46",
+                "28.4",
+                1066,
+                256
+            ],
+            [
+                "Dynamic Typing Explained",
+                "06:58",
+                "28.5",
+                418,
+                257
+            ],
+            [
+                "Setting Different Timer Sessions and Values",
+                "08:00",
+                "28.6",
+                480,
+                258
+            ],
+            [
+                "Adding Checkmarks and Resetting the Application",
+                "09:50",
+                "28.7",
+                590,
+                259
+            ]
+        ],
+        "total": "1hr 9min",
+        "duration": 4140,
+        "name": "Day 28 - Intermediate - Tkinter, Dynamic Typing and the Pomodoro GUI Application",
+        "durs": [
+            161,
+            910,
+            524,
+            1066,
+            418,
+            480,
+            590
+        ]
+    },
+    {
+        "idx": 28,
+        "lectures": [
+            [
+                "Day 29 Goals: what we will make by the end of the day",
+                "03:32",
+                "29.1",
+                212,
+                260
+            ],
+            [
+                "Challenge 1 - Working with Images and Setting up the Canvas",
+                "05:03",
+                "29.2",
+                303,
+                261
+            ],
+            [
+                "Challenge 2 - Use grid() and columnspan to Complete the User Interface",
+                "04:54",
+                "29.3",
+                294,
+                262
+            ],
+            [
+                "Solution to the Creating the Grid Layout",
+                "06:35",
+                "29.4",
+                395,
+                263
+            ],
+            [
+                "Challenge 3 - Saving Data to File",
+                "13:25",
+                "29.5",
+                805,
+                264
+            ],
+            [
+                "Dialog Boxes and Pop-Ups in Tkinter",
+                "09:08",
+                "29.6",
+                548,
+                265
+            ],
+            [
+                "Generate a Password & Copy it to the Clipboard",
+                "12:47",
+                "29.7",
+                767,
+                266
+            ]
+        ],
+        "total": "55min",
+        "duration": 3300,
+        "name": "Day 29 - Intermediate - Building a Password Manager GUI App with Tkinter",
+        "durs": [
+            212,
+            303,
+            294,
+            395,
+            805,
+            548,
+            767
+        ]
+    },
+    {
+        "idx": 29,
+        "lectures": [
+            [
+                "Day 30 Goals: what you will make by the end of the day",
+                "01:41",
+                "30.1",
+                101,
+                267
+            ],
+            [
+                "Catching Exceptions: The try catch except finally Pattern",
+                "15:32",
+                "30.2",
+                932,
+                268
+            ],
+            [
+                "Raising your own Exceptions",
+                "04:14",
+                "30.3",
+                254,
+                269
+            ],
+            [
+                "[Interactive Coding Exercise] IndexError Handling",
+                "02:47",
+                "30.4",
+                167,
+                270
+            ],
+            [
+                "[Interactive Coding Exercise] KeyError Handling",
+                "03:29",
+                "30.5",
+                209,
+                271
+            ],
+            [
+                "Code Exercise: Exception Handling in the NATO Phonetic Alphabet Project",
+                "06:31",
+                "30.6",
+                391,
+                272
+            ],
+            [
+                "Write, read and update JSON data in the Password Manager",
+                "13:20",
+                "30.7",
+                800,
+                273
+            ],
+            [
+                "Challenge 1 - Handling Exceptions in the Password Manager",
+                "06:19",
+                "30.8",
+                379,
+                274
+            ],
+            [
+                "Challenge 2 - Search for a Website in the Password Manager",
+                "17:56",
+                "30.9",
+                1076,
+                275
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Day 30 - Intermediate - Errors, Exceptions and JSON Data: Improving the Password",
+        "durs": [
+            101,
+            932,
+            254,
+            167,
+            209,
+            391,
+            800,
+            379,
+            1076
+        ]
+    },
+    {
+        "idx": 30,
+        "lectures": [
+            [
+                "Day 31 Goals: what you will make by the end of the day",
+                "10:06",
+                "31.1",
+                606,
+                276
+            ],
+            [
+                "Step 1 - Create the User Interface (UI) with Tkinter",
+                "00:26",
+                "31.2",
+                26,
+                277
+            ],
+            [
+                "Solution & Walkthrough for Creating the UI",
+                "11:48",
+                "31.3",
+                708,
+                278
+            ],
+            [
+                "Step 2 - Create New Flash Cards",
+                "00:20",
+                "31.4",
+                20,
+                279
+            ],
+            [
+                "Solution & Walkthrough for Creating New Flash Cards",
+                "08:07",
+                "31.5",
+                487,
+                280
+            ],
+            [
+                "Step 3 - Flip the Cards!",
+                "00:41",
+                "31.6",
+                41,
+                281
+            ],
+            [
+                "Solution & Walkthrough for Flipping Cards",
+                "08:54",
+                "31.7",
+                534,
+                282
+            ],
+            [
+                "Step 4 - Save Your Progress",
+                "00:51",
+                "31.8",
+                51,
+                283
+            ],
+            [
+                "Solution & Walkthrough for Saving Progress",
+                "09:31",
+                "31.9",
+                571,
+                284
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Day 31 - Intermediate - Flash Card App Capstone Project",
+        "durs": [
+            606,
+            26,
+            708,
+            20,
+            487,
+            41,
+            534,
+            51,
+            571
+        ]
+    },
+    {
+        "idx": 31,
+        "lectures": [
+            [
+                "Day 32 Goals: what we will make by the end of the day",
+                "02:31",
+                "32.1",
+                151,
+                285
+            ],
+            [
+                "A Note About the Next Lesson: Google SMTP Port",
+                "00:34",
+                "32.2",
+                34,
+                286
+            ],
+            [
+                "How to Send Emails with Python using SMTP",
+                "14:28",
+                "32.3",
+                868,
+                287
+            ],
+            [
+                "Working with the datetime Module",
+                "06:12",
+                "32.4",
+                372,
+                288
+            ],
+            [
+                "Challenge 1 - Send Motivational Quotes on Mondays via Email",
+                "08:37",
+                "32.5",
+                517,
+                289
+            ],
+            [
+                "Automated Birthday Wisher Project Challenge",
+                "05:40",
+                "32.6",
+                340,
+                290
+            ],
+            [
+                "Solution & Walkthrough for the Automated Birthday Wisher",
+                "17:27",
+                "32.7",
+                1047,
+                291
+            ],
+            [
+                "Run Your Python Code in the Cloud!",
+                "06:10",
+                "32.8",
+                370,
+                292
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Day 32 - Intermediate+ Send Email (smtplib) & Manage Dates (datetime)",
+        "durs": [
+            151,
+            34,
+            868,
+            372,
+            517,
+            340,
+            1047,
+            370
+        ]
+    },
+    {
+        "idx": 32,
+        "lectures": [
+            [
+                "Day 33 Goals: what you will make by the end of the day",
+                "01:05",
+                "33.1",
+                65,
+                293
+            ],
+            [
+                "What are Application Programming Interfaces (APIs)?",
+                "04:07",
+                "33.2",
+                247,
+                294
+            ],
+            [
+                "API Endpoints and Making API Calls",
+                "07:43",
+                "33.3",
+                463,
+                295
+            ],
+            [
+                "Working with Responses: HTTP Codes, Exceptions & JSON Data",
+                "08:55",
+                "33.4",
+                535,
+                296
+            ],
+            [
+                "Challenge - Build a Kanye Quotes App using the Kanye Rest API",
+                "04:40",
+                "33.5",
+                280,
+                297
+            ],
+            [
+                "Understand API Parameters: Match Sunset Times with the Current Time",
+                "15:08",
+                "33.6",
+                908,
+                298
+            ],
+            [
+                "ISS Overhead Notifier Project - Challenge & Solution",
+                "10:06",
+                "33.7",
+                606,
+                299
+            ]
+        ],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Day 33 - Intermediate+ API Endpoints & API Parameters - ISS Overhead Notifier",
+        "durs": [
+            65,
+            247,
+            463,
+            535,
+            280,
+            908,
+            606
+        ]
+    },
+    {
+        "idx": 33,
+        "lectures": [
+            [
+                "Day 34 Goals: what you will make by the end of the day",
+                "02:19",
+                "34.1",
+                139,
+                300
+            ],
+            [
+                "Trivia Question API Challenge",
+                "05:48",
+                "34.2",
+                348,
+                301
+            ],
+            [
+                "Solution & Walkthrough for getting Trivia Questions",
+                "03:33",
+                "34.3",
+                213,
+                302
+            ],
+            [
+                "Unescaping HTML Entities",
+                "04:02",
+                "34.4",
+                242,
+                303
+            ],
+            [
+                "Class based Tkinter UI",
+                "14:28",
+                "34.5",
+                868,
+                304
+            ],
+            [
+                "Python Typing & Showing the Next Question in the GUI",
+                "06:56",
+                "34.6",
+                416,
+                305
+            ],
+            [
+                "Python Typing: Type Hints and Arrows ->",
+                "05:13",
+                "34.7",
+                313,
+                306
+            ],
+            [
+                "Check the Answer",
+                "03:34",
+                "34.8",
+                214,
+                307
+            ],
+            [
+                "Give Feedback to the Player, Keep Score and Fix the Bugs =)",
+                "08:38",
+                "34.9",
+                518,
+                308
+            ]
+        ],
+        "total": "55min",
+        "duration": 3300,
+        "name": "Day 34 - Intermediate+ API Practice - Creating a GUI Quiz App",
+        "durs": [
+            139,
+            348,
+            213,
+            242,
+            868,
+            416,
+            313,
+            214,
+            518
+        ]
+    },
+    {
+        "idx": 34,
+        "lectures": [
+            [
+                "Day 35 Goals: what you will make by the end of the day",
+                "01:35",
+                "35.1",
+                95,
+                309
+            ],
+            [
+                "What is API Authentication and Why Do We Need to Authenticate Ourselves?",
+                "04:28",
+                "35.2",
+                268,
+                310
+            ],
+            [
+                "Using API Keys to Authenticate and Get the Weather from OpenWeatherMap",
+                "13:04",
+                "35.3",
+                784,
+                311
+            ],
+            [
+                "Challenge - Check if it Will Rain in the Next 12 Hours",
+                "18:58",
+                "35.4",
+                1138,
+                312
+            ],
+            [
+                "Sending SMS via the Twilio API",
+                "09:11",
+                "35.5",
+                551,
+                313
+            ],
+            [
+                "Use PythonAnywhere to Automate the Python Script",
+                "07:35",
+                "35.6",
+                455,
+                314
+            ],
+            [
+                "Understanding Environment Variables and Hiding API Keys",
+                "10:13",
+                "35.7",
+                613,
+                315
+            ]
+        ],
+        "total": "1hr 5min",
+        "duration": 3900,
+        "name": "Day 35 - Intermediate+ Keys, Authentication & Environment Variables: Send SMS",
+        "durs": [
+            95,
+            268,
+            784,
+            1138,
+            551,
+            455,
+            613
+        ]
+    },
+    {
+        "idx": 35,
+        "lectures": [
+            [
+                "Day 36 Goals: what you will make by the end of the day",
+                "09:30",
+                "36.1",
+                570,
+                316
+            ],
+            [
+                "Choose Your Destiny!",
+                "00:10",
+                "36.2",
+                10,
+                317
+            ],
+            [
+                "Solution & Walkthrough for Step 1 - Check for Stock Price Movements",
+                "15:15",
+                "36.3",
+                915,
+                318
+            ],
+            [
+                "Solution & Walkthrough for Step 2 - Get the News Articles",
+                "06:48",
+                "36.4",
+                408,
+                319
+            ],
+            [
+                "Solution & Walkthrough for Step 3 - Send the SMS Messages",
+                "08:17",
+                "36.5",
+                497,
+                320
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Day 36 - Intermediate+ Stock Trading News Alert Project",
+        "durs": [
+            570,
+            10,
+            915,
+            408,
+            497
+        ]
+    },
+    {
+        "idx": 36,
+        "lectures": [
+            [
+                "Day 37 Goals: what you will make by the end of the day",
+                "02:45",
+                "37.1",
+                165,
+                321
+            ],
+            [
+                "HTTP Post Requests",
+                "08:21",
+                "37.2",
+                501,
+                322
+            ],
+            [
+                "Advanced Authentication using an HTTP Header",
+                "10:52",
+                "37.3",
+                652,
+                323
+            ],
+            [
+                "Challenge: Add a Pixel to the Habit Tracker using a Post Request",
+                "05:55",
+                "37.4",
+                355,
+                324
+            ],
+            [
+                "Autofilling today's date using strftime",
+                "04:18",
+                "37.5",
+                258,
+                325
+            ],
+            [
+                "How to use HTTP Put and Delete Requests",
+                "06:34",
+                "37.6",
+                394,
+                326
+            ]
+        ],
+        "total": "39min",
+        "duration": 2340,
+        "name": "Day 37 - Intermediate+ Habit Tracking Project: API Post Requests & Headers",
+        "durs": [
+            165,
+            501,
+            652,
+            355,
+            258,
+            394
+        ]
+    },
+    {
+        "idx": 37,
+        "lectures": [
+            [
+                "Day 38 Goals: what you will make by the end of the day",
+                "03:37",
+                "38.1",
+                217,
+                327
+            ],
+            [
+                "Step 1 - Setup API Credentials and Google Spreadsheet",
+                "00:23",
+                "38.2",
+                23,
+                328
+            ],
+            [
+                "Step 2 - Get Exercise Stats with Natural Language Queries",
+                "00:25",
+                "38.3",
+                25,
+                329
+            ],
+            [
+                "Step 3 - Setup Your Google Sheet with Sheety",
+                "00:19",
+                "38.4",
+                19,
+                330
+            ],
+            [
+                "Step 4 - Saving Data into Google Sheets",
+                "00:32",
+                "38.5",
+                32,
+                331
+            ],
+            [
+                "Step 5 - Authenticate Your Sheety API",
+                "00:52",
+                "38.6",
+                52,
+                332
+            ],
+            [
+                "Step 6 - Environment Variables in Repl.it",
+                "00:33",
+                "38.7",
+                33,
+                333
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Day 38 - Intermediate+ Workout Tracking Using Google Sheets",
+        "durs": [
+            217,
+            23,
+            25,
+            19,
+            32,
+            52,
+            33
+        ]
+    },
+    {
+        "idx": 38,
+        "lectures": [
+            [
+                "Day 39 Goals: what you will make by the end of the day",
+                "04:37",
+                "39.1",
+                277,
+                334
+            ],
+            [
+                "Step 1 - Choose Your Path and Download the Starting Project",
+                "01:43",
+                "39.2",
+                103,
+                335
+            ],
+            [
+                "Step 2 - Use Sheety to Read and Write Data to the Google Sheet",
+                "01:24",
+                "39.3",
+                84,
+                336
+            ],
+            [
+                "Step 3 - Get the IATA Codes using the Kiwi Partners API",
+                "01:00",
+                "39.4",
+                60,
+                337
+            ],
+            [
+                "Step 4 - Search for Cheap Flights",
+                "01:16",
+                "39.5",
+                76,
+                338
+            ],
+            [
+                "Step 5 - If Flight Price Lower than in Google Sheet send an SMS",
+                "00:18",
+                "39.6",
+                18,
+                339
+            ]
+        ],
+        "total": "10min",
+        "duration": 600,
+        "name": "Day 39 - Intermediate+ Capstone Part 1: Flight Deal Finder",
+        "durs": [
+            277,
+            103,
+            84,
+            60,
+            76,
+            18
+        ]
+    },
+    {
+        "idx": 39,
+        "lectures": [
+            [
+                "Day 40 Goals: what you will make by the end of the day",
+                "02:53",
+                "40.1",
+                173,
+                340
+            ],
+            [
+                "Step 1 - Create the Customer Acquisition Code",
+                "00:44",
+                "40.2",
+                44,
+                341
+            ],
+            [
+                "Step 2 - Download the Starting Project",
+                "00:16",
+                "40.3",
+                16,
+                342
+            ],
+            [
+                "Step 3 - Exception Handling for Destinations without Flights",
+                "00:44",
+                "40.4",
+                44,
+                343
+            ],
+            [
+                "Step 4 - Destinations without Direct Flights",
+                "00:41",
+                "40.5",
+                41,
+                344
+            ],
+            [
+                "Step 5 - Email all our customers",
+                "00:41",
+                "40.6",
+                41,
+                345
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Day 40 - Intermediate+ Capstone Part 2: Flight Club",
+        "durs": [
+            173,
+            44,
+            16,
+            44,
+            41,
+            41
+        ]
+    },
+    {
+        "idx": 40,
+        "lectures": [
+            [
+                "Day 41 Goals: what you will make by the end of the day",
+                "04:01",
+                "41.1",
+                241,
+                346
+            ],
+            [
+                "How Does the Internet Actually Work?",
+                "05:42",
+                "41.2",
+                342,
+                347
+            ],
+            [
+                "How Do Websites Actually Work?",
+                "06:20",
+                "41.3",
+                380,
+                348
+            ],
+            [
+                "Optional: Install the Atom Text Editor used in the Video Lessons",
+                "00:16",
+                "41.4",
+                16,
+                349
+            ],
+            [
+                "Introduction to HTML",
+                "10:51",
+                "41.5",
+                651,
+                350
+            ],
+            [
+                "The Anatomy of an HTML Tag",
+                "10:55",
+                "41.6",
+                655,
+                351
+            ],
+            [
+                "What we're building - HTML Personal Site",
+                "02:52",
+                "41.7",
+                172,
+                352
+            ],
+            [
+                "What is The HTML Boilerplate?",
+                "17:01",
+                "41.8",
+                1021,
+                353
+            ],
+            [
+                "How to Structure Text in HTML",
+                "11:00",
+                "41.9",
+                660,
+                354
+            ],
+            [
+                "HTML Lists",
+                "05:24",
+                "41.10",
+                324,
+                355
+            ],
+            [
+                "HTML Image Elements",
+                "07:32",
+                "41.11",
+                452,
+                356
+            ],
+            [
+                "HTML Links and Anchor Tags",
+                "11:55",
+                "41.12",
+                715,
+                357
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Day 41 - Web Foundation - Introduction to HTML",
+        "durs": [
+            241,
+            342,
+            380,
+            16,
+            651,
+            655,
+            172,
+            1021,
+            660,
+            324,
+            452,
+            715
+        ]
+    },
+    {
+        "idx": 41,
+        "lectures": [
+            [
+                "Day 42 Goals: what you will make by the end of the day",
+                "01:00",
+                "42.1",
+                60,
+                358
+            ],
+            [
+                "HTML Tables",
+                "11:57",
+                "42.2",
+                717,
+                359
+            ],
+            [
+                "Using HTML Tables for Layout",
+                "02:17",
+                "42.3",
+                137,
+                360
+            ],
+            [
+                "HTML Tables Code Challenge",
+                "01:44",
+                "42.4",
+                104,
+                361
+            ],
+            [
+                "How to Type Emojis",
+                "01:02",
+                "42.5",
+                62,
+                362
+            ],
+            [
+                "HTML Tables Solution Walkthrough",
+                "06:42",
+                "42.6",
+                402,
+                363
+            ],
+            [
+                "HTML Forms",
+                "09:09",
+                "42.7",
+                549,
+                364
+            ],
+            [
+                "Forms in Practice - Create a Contact Me Form",
+                "07:27",
+                "42.8",
+                447,
+                365
+            ],
+            [
+                "HTML Challenge",
+                "1 question",
+                "",
+                0,
+                366
+            ],
+            [
+                "Publish Your Website!",
+                "06:44",
+                "42.9",
+                404,
+                366
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Day 42 - Web Foundation - Intermediate HTML",
+        "durs": [
+            60,
+            717,
+            137,
+            104,
+            62,
+            402,
+            549,
+            447,
+            0,
+            404
+        ]
+    },
+    {
+        "idx": 42,
+        "lectures": [
+            [
+                "Day 43 Goals: what you will make by the end of the day",
+                "00:45",
+                "43.1",
+                45,
+                367
+            ],
+            [
+                "Introduction to CSS",
+                "03:04",
+                "43.2",
+                184,
+                368
+            ],
+            [
+                "Inline CSS",
+                "09:56",
+                "43.3",
+                596,
+                369
+            ],
+            [
+                "A Quick Note about the Next Lesson",
+                "00:12",
+                "43.4",
+                12,
+                370
+            ],
+            [
+                "Internal CSS",
+                "20:22",
+                "43.5",
+                1222,
+                371
+            ],
+            [
+                "External CSS",
+                "08:29",
+                "43.6",
+                509,
+                372
+            ],
+            [
+                "How to Debug CSS Code",
+                "13:37",
+                "43.7",
+                817,
+                373
+            ],
+            [
+                "The Anatomy of CSS Syntax",
+                "13:08",
+                "43.8",
+                788,
+                374
+            ],
+            [
+                "CSS Selectors",
+                "06:23",
+                "43.9",
+                383,
+                375
+            ],
+            [
+                "Classes vs. Ids",
+                "11:44",
+                "43.10",
+                704,
+                376
+            ],
+            [
+                "CSS Quiz",
+                "6 questions",
+                "",
+                0,
+                377
+            ]
+        ],
+        "total": "1hr 28min",
+        "duration": 5280,
+        "name": "Day 43 - Web Foundation - Introduction to CSS",
+        "durs": [
+            45,
+            184,
+            596,
+            12,
+            1222,
+            509,
+            817,
+            788,
+            383,
+            704,
+            0
+        ]
+    },
+    {
+        "idx": 43,
+        "lectures": [
+            [
+                "Day 44 Goals: what you will make by the end of the day",
+                "00:49",
+                "44.1",
+                49,
+                377
+            ],
+            [
+                "What We'll Make - Stylised Personal Site",
+                "04:57",
+                "44.2",
+                297,
+                378
+            ],
+            [
+                "What Are Favicons?",
+                "03:47",
+                "44.3",
+                227,
+                379
+            ],
+            [
+                "HTML Divs",
+                "13:33",
+                "44.4",
+                813,
+                380
+            ],
+            [
+                "The Box Model of Website Styling",
+                "19:25",
+                "44.5",
+                1165,
+                381
+            ],
+            [
+                "CSS Display Property",
+                "15:11",
+                "44.6",
+                911,
+                382
+            ],
+            [
+                "CSS Static and Relative Positioning",
+                "14:36",
+                "44.7",
+                876,
+                383
+            ],
+            [
+                "Absolute positioning",
+                "12:12",
+                "44.8",
+                732,
+                384
+            ],
+            [
+                "The Dark Art of Centering Elements with CSS",
+                "09:03",
+                "44.9",
+                543,
+                385
+            ],
+            [
+                "Font Styling in Our Personal Site",
+                "13:59",
+                "44.10",
+                839,
+                386
+            ],
+            [
+                "Adding Content to Our Website",
+                "06:52",
+                "44.11",
+                412,
+                387
+            ],
+            [
+                "CSS Sizing",
+                "15:39",
+                "44.12",
+                939,
+                388
+            ],
+            [
+                "Font Properties Challenge 1 - Change the Font Colour",
+                "00:09",
+                "44.13",
+                9,
+                389
+            ],
+            [
+                "Font Properties Challenge 2 - Change the Font Weight",
+                "00:02",
+                "44.14",
+                2,
+                390
+            ],
+            [
+                "Font Properties Challenge 3 - Change the Line Height",
+                "00:02",
+                "44.15",
+                2,
+                391
+            ],
+            [
+                "CSS Font Property Challenge Solutions",
+                "03:57",
+                "44.16",
+                237,
+                392
+            ],
+            [
+                "CSS Float and Clear",
+                "15:13",
+                "44.17",
+                913,
+                393
+            ],
+            [
+                "CSS Challenge",
+                "00:23",
+                "44.18",
+                23,
+                394
+            ],
+            [
+                "Stylised Personal Site Solution Walkthrough",
+                "21:22",
+                "44.19",
+                1282,
+                395
+            ],
+            [
+                "[Optional] Get More Practice HTML and CSS",
+                "00:16",
+                "44.20",
+                16,
+                396
+            ]
+        ],
+        "total": "2hr 51min",
+        "duration": 10260,
+        "name": "Day 44 - Web Foundation - Intermediate CSS",
+        "durs": [
+            49,
+            297,
+            227,
+            813,
+            1165,
+            911,
+            876,
+            732,
+            543,
+            839,
+            412,
+            939,
+            9,
+            2,
+            2,
+            237,
+            913,
+            23,
+            1282,
+            16
+        ]
+    },
+    {
+        "idx": 44,
+        "lectures": [
+            [
+                "Day 45 Goals: what you will make by the end of the day",
+                "02:26",
+                "45.1",
+                146,
+                397
+            ],
+            [
+                "Parsing HTML and Making Soup",
+                "10:02",
+                "45.2",
+                602,
+                398
+            ],
+            [
+                "Finding and Selecting Particular Elements with BeautifulSoup",
+                "11:51",
+                "45.3",
+                711,
+                399
+            ],
+            [
+                "Beautiful Soup Exercises",
+                "3 questions",
+                "",
+                0,
+                400
+            ],
+            [
+                "Scraping a Live Website",
+                "17:10",
+                "45.4",
+                1030,
+                400
+            ],
+            [
+                "Is Web Scraping Legal?",
+                "11:25",
+                "45.5",
+                685,
+                401
+            ],
+            [
+                "100 Movies that You Must Watch",
+                "11:06",
+                "45.6",
+                666,
+                402
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Day 45 - Intermediate+ Web Scraping with Beautiful Soup",
+        "durs": [
+            146,
+            602,
+            711,
+            0,
+            1030,
+            685,
+            666
+        ]
+    },
+    {
+        "idx": 45,
+        "lectures": [
+            [
+                "Day 46 Goals: what you will make by the end of the day",
+                "04:11",
+                "46.1",
+                251,
+                403
+            ],
+            [
+                "Step 1 - Scraping the Billboard Hot 100",
+                "00:15",
+                "46.2",
+                15,
+                404
+            ],
+            [
+                "Step 2 - Authentication with Spotify",
+                "01:37",
+                "46.3",
+                97,
+                405
+            ],
+            [
+                "Step 3 - Search Spotify for the Songs from Step 1",
+                "00:19",
+                "46.4",
+                19,
+                406
+            ],
+            [
+                "Step 4 - Creating and Adding to Spotify Playlist",
+                "00:18",
+                "46.5",
+                18,
+                407
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Day 46 - Intermediate+ Create a Spotify Playlist using the Musical Time Machine",
+        "durs": [
+            251,
+            15,
+            97,
+            19,
+            18
+        ]
+    },
+    {
+        "idx": 46,
+        "lectures": [
+            [
+                "Day 47 Goals: what you will make by the end of the day",
+                "05:31",
+                "47.1",
+                331,
+                408
+            ],
+            [
+                "Step 1 - Use BeautifulSoup to Scrape the Product Price",
+                "01:13",
+                "47.2",
+                73,
+                409
+            ],
+            [
+                "Step 2 - Email Alert When Price Below Preset Value",
+                "00:48",
+                "47.3",
+                48,
+                410
+            ]
+        ],
+        "total": "8min",
+        "duration": 480,
+        "name": "Day 47 - Intermediate+ Create an Automated Amazon Price Tracker",
+        "durs": [
+            331,
+            73,
+            48
+        ]
+    },
+    {
+        "idx": 47,
+        "lectures": [
+            [
+                "Day 48 Goals: what you will make by the end of the day",
+                "02:50",
+                "48.1",
+                170,
+                411
+            ],
+            [
+                "How to Install & Set Up Selenium",
+                "11:54",
+                "48.2",
+                714,
+                412
+            ],
+            [
+                "How to Find and Select Elements on a Website with Selenium",
+                "11:42",
+                "48.3",
+                702,
+                413
+            ],
+            [
+                "Challenge: Use Selenium to Scrape Website Data",
+                "08:11",
+                "48.4",
+                491,
+                414
+            ],
+            [
+                "Challenge: Use Selenium in a Blank Project & Scrape a Different Piece of Data",
+                "04:30",
+                "48.5",
+                270,
+                415
+            ],
+            [
+                "How to Automate Filling Out Forms and Clicking Buttons with Selenium",
+                "10:42",
+                "48.6",
+                642,
+                416
+            ],
+            [
+                "The Cookie Clicker Project",
+                "03:38",
+                "48.7",
+                218,
+                417
+            ],
+            [
+                "Challenge: Create an Automated Game Playing Bot",
+                "00:49",
+                "48.8",
+                49,
+                418
+            ]
+        ],
+        "total": "54min",
+        "duration": 3240,
+        "name": "Day 48 - Intermediate+ Selenium Webdriver Browser and Game Playing Bot",
+        "durs": [
+            170,
+            714,
+            702,
+            491,
+            270,
+            642,
+            218,
+            49
+        ]
+    },
+    {
+        "idx": 48,
+        "lectures": [
+            [
+                "Day 49 Goals: what you will make by the end of the day",
+                "03:12",
+                "49.1",
+                192,
+                419
+            ],
+            [
+                "Step 1 - Setup Your LinkedIn Account",
+                "00:56",
+                "49.2",
+                56,
+                420
+            ],
+            [
+                "Step 2 - Automatically Login",
+                "00:28",
+                "49.3",
+                28,
+                421
+            ],
+            [
+                "Step 3 - Apply for a Job",
+                "00:36",
+                "49.4",
+                36,
+                422
+            ],
+            [
+                "Step 4 - Apply for all the jobs",
+                "00:33",
+                "49.5",
+                33,
+                423
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Day 49 - Intermediate+ Automating Job Applications on LinkedIn",
+        "durs": [
+            192,
+            56,
+            28,
+            36,
+            33
+        ]
+    },
+    {
+        "idx": 49,
+        "lectures": [
+            [
+                "Day 50 Goals: what you will make by the end of the day",
+                "06:43",
+                "50.1",
+                403,
+                424
+            ],
+            [
+                "Step 1 - Setup your account on Tinder",
+                "00:34",
+                "50.2",
+                34,
+                425
+            ],
+            [
+                "Step 2 - Navigate to Login Page",
+                "00:37",
+                "50.3",
+                37,
+                426
+            ],
+            [
+                "Step 3 - Login with Facebook",
+                "01:04",
+                "50.4",
+                64,
+                427
+            ],
+            [
+                "Step 4 - Dismiss all requests",
+                "00:20",
+                "50.5",
+                20,
+                428
+            ],
+            [
+                "Step 5 - Hit Like!",
+                "00:45",
+                "50.6",
+                45,
+                429
+            ]
+        ],
+        "total": "10min",
+        "duration": 600,
+        "name": "Day 50 - Intermediate+ Auto Tinder Swiping Bot",
+        "durs": [
+            403,
+            34,
+            37,
+            64,
+            20,
+            45
+        ]
+    },
+    {
+        "idx": 50,
+        "lectures": [
+            [
+                "Day 51 Goals: what you will make by the end of the day",
+                "05:38",
+                "51.1",
+                338,
+                430
+            ],
+            [
+                "Step 1 - Setup Your Twitter Account",
+                "00:22",
+                "51.2",
+                22,
+                431
+            ],
+            [
+                "Step 2 - Create a Class",
+                "00:27",
+                "51.3",
+                27,
+                432
+            ],
+            [
+                "Step 3 - Get Internet Speeds",
+                "00:22",
+                "51.4",
+                22,
+                433
+            ],
+            [
+                "Step 4 - Building a Twitter Bot to Tweet at your Internet Provider",
+                "00:24",
+                "51.5",
+                24,
+                434
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Day 51 - Intermediate+ Internet Speed Twitter Complaint Bot",
+        "durs": [
+            338,
+            22,
+            27,
+            22,
+            24
+        ]
+    },
+    {
+        "idx": 51,
+        "lectures": [
+            [
+                "Day 52 Goals: what you will make by the end of the day",
+                "03:27",
+                "52.1",
+                207,
+                435
+            ],
+            [
+                "Step 1 - Get Your Instagram Credentials",
+                "00:13",
+                "52.2",
+                13,
+                436
+            ],
+            [
+                "Step 2 - Create a Class",
+                "00:14",
+                "52.3",
+                14,
+                437
+            ],
+            [
+                "Step 3 - Login to Instagram",
+                "00:06",
+                "52.4",
+                6,
+                438
+            ],
+            [
+                "Step 4 - Find the followers of the target account",
+                "00:34",
+                "52.5",
+                34,
+                439
+            ],
+            [
+                "Step 5 - Follow all the followers",
+                "00:30",
+                "52.6",
+                30,
+                440
+            ]
+        ],
+        "total": "5min",
+        "duration": 300,
+        "name": "Day 52 - Intermediate+ Instagram Follower Bot",
+        "durs": [
+            207,
+            13,
+            14,
+            6,
+            34,
+            30
+        ]
+    },
+    {
+        "idx": 52,
+        "lectures": [
+            [
+                "Day 53 Goals: what you will make by the end of the day",
+                "06:41",
+                "53.1",
+                401,
+                441
+            ],
+            [
+                "Capstone Project Program Requirements",
+                "01:18",
+                "53.2",
+                78,
+                442
+            ],
+            [
+                "HINTS & SOLUTION",
+                "00:41",
+                "53.3",
+                41,
+                443
+            ]
+        ],
+        "total": "9min",
+        "duration": 540,
+        "name": "Day 53 - Intermediate+ Web Scraping Capstone - Data Entry Job Automation",
+        "durs": [
+            401,
+            78,
+            41
+        ]
+    },
+    {
+        "idx": 53,
+        "lectures": [
+            [
+                "Understanding Backend Web Development with Python",
+                "07:56",
+                "54.1",
+                476,
+                444
+            ],
+            [
+                "Create your First Web Server with Flask",
+                "12:31",
+                "54.2",
+                751,
+                445
+            ],
+            [
+                "Understand the Command Line on Windows and Mac",
+                "13:10",
+                "54.3",
+                790,
+                446
+            ],
+            [
+                "__name__ and __main__ : Special Attributes built into Python",
+                "03:58",
+                "54.4",
+                238,
+                447
+            ],
+            [
+                "Python Functions as First Class Objects: Passing & Nesting Functions",
+                "09:56",
+                "54.5",
+                596,
+                448
+            ],
+            [
+                "Understanding Python Decorator Functions and the @ Syntax",
+                "09:07",
+                "54.6",
+                547,
+                449
+            ],
+            [
+                "[Interactive Coding Exercise] Create Your Own Python Decorator",
+                "00:04",
+                "54.7",
+                4,
+                450
+            ]
+        ],
+        "total": "57min",
+        "duration": 3420,
+        "name": "Day 54 - Intermediate+ Introduction to Web Development with Flask",
+        "durs": [
+            476,
+            751,
+            790,
+            238,
+            596,
+            547,
+            4
+        ]
+    },
+    {
+        "idx": 54,
+        "lectures": [
+            [
+                "Day 55 Goals: what you will make by the end of the day",
+                "01:32",
+                "55.1",
+                92,
+                451
+            ],
+            [
+                "Working Flask URL Paths and the Flask Debugger",
+                "13:19",
+                "55.2",
+                799,
+                452
+            ],
+            [
+                "Rendering HTML Elements with Flask",
+                "06:56",
+                "55.3",
+                416,
+                453
+            ],
+            [
+                "Challenge: Use Python Decorators to Style HTML Tags",
+                "02:59",
+                "55.4",
+                179,
+                454
+            ],
+            [
+                "Advanced Decorators with *args and **kwargs",
+                "07:12",
+                "55.5",
+                432,
+                455
+            ],
+            [
+                "[Interactive Coding Exercise] Advanced Decorators",
+                "00:04",
+                "55.6",
+                4,
+                456
+            ],
+            [
+                "Final Project - Higher or Lower URLs",
+                "00:47",
+                "55.7",
+                47,
+                457
+            ]
+        ],
+        "total": "33min",
+        "duration": 1980,
+        "name": "Day 55 - Intermediate+ HTML & URL Parsing in Flask and the Higher Lower Game",
+        "durs": [
+            92,
+            799,
+            416,
+            179,
+            432,
+            4,
+            47
+        ]
+    },
+    {
+        "idx": 55,
+        "lectures": [
+            [
+                "Day 56 Goals: what you will make by the end of the day",
+                "01:19",
+                "56.1",
+                79,
+                458
+            ],
+            [
+                "Rendering HTML Files with Flask",
+                "09:06",
+                "56.2",
+                546,
+                459
+            ],
+            [
+                "Serving Static Files using Flask",
+                "08:57",
+                "56.3",
+                537,
+                460
+            ],
+            [
+                "How to Use Website Templates to Speed Up Web Development",
+                "12:44",
+                "56.4",
+                764,
+                461
+            ],
+            [
+                "Final Project - Name Card Website Template",
+                "00:24",
+                "56.5",
+                24,
+                462
+            ],
+            [
+                "Solution and Walkthrough for the Name Card Final Project",
+                "07:35",
+                "56.6",
+                455,
+                463
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Day 56 - Intermediate+ Rendering HTML/Static files and Using Website Templates",
+        "durs": [
+            79,
+            546,
+            537,
+            764,
+            24,
+            455
+        ]
+    },
+    {
+        "idx": 56,
+        "lectures": [
+            [
+                "Day 57 Goals: what you will make by the end of the day",
+                "01:48",
+                "57.1",
+                108,
+                464
+            ],
+            [
+                "Using Jinja to Produce Dynamic HTML Pages",
+                "11:31",
+                "57.2",
+                691,
+                465
+            ],
+            [
+                "Challenge: Combining Jinja Templating with APIs",
+                "11:53",
+                "57.3",
+                713,
+                466
+            ],
+            [
+                "Multiline Statements with Jinja",
+                "07:21",
+                "57.4",
+                441,
+                467
+            ],
+            [
+                "URL Building with Flask",
+                "04:38",
+                "57.5",
+                278,
+                468
+            ],
+            [
+                "Blog Capstone Project Part 1 - Templating",
+                "00:22",
+                "57.6",
+                22,
+                469
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Day 57 - Intermediate+ Templating with Jinja in Flask Applications",
+        "durs": [
+            108,
+            691,
+            713,
+            441,
+            278,
+            22
+        ]
+    },
+    {
+        "idx": 57,
+        "lectures": [
+            [
+                "Day 58 Goals: What You'll Learn By the End of Today",
+                "00:32",
+                "58.1",
+                32,
+                470
+            ],
+            [
+                "What is Bootstrap?",
+                "14:36",
+                "58.2",
+                876,
+                471
+            ],
+            [
+                "Installing Bootstrap",
+                "07:55",
+                "58.3",
+                475,
+                472
+            ],
+            [
+                "Web Design 101 - Wireframing",
+                "11:38",
+                "58.4",
+                698,
+                473
+            ],
+            [
+                "The Bootstrap Navigation Bar",
+                "20:40",
+                "58.5",
+                1240,
+                474
+            ],
+            [
+                "What We'll Make - Tindog",
+                "00:56",
+                "58.6",
+                56,
+                475
+            ],
+            [
+                "Download the Starting Files",
+                "00:12",
+                "58.7",
+                12,
+                476
+            ],
+            [
+                "Setting Up Our New Project",
+                "07:41",
+                "58.8",
+                461,
+                477
+            ],
+            [
+                "The Bootstrap Grid Layout System",
+                "20:17",
+                "58.9",
+                1217,
+                478
+            ],
+            [
+                "Getting Custom Fonts and Montserrat Black to Work",
+                "00:38",
+                "58.10",
+                38,
+                479
+            ],
+            [
+                "Adding Grid Layouts to Our Website",
+                "09:39",
+                "58.11",
+                579,
+                480
+            ],
+            [
+                "A Note About CSS Link Order",
+                "00:50",
+                "58.12",
+                50,
+                481
+            ],
+            [
+                "Bootstrap Containers",
+                "05:54",
+                "58.13",
+                354,
+                482
+            ],
+            [
+                "Bootstrap Buttons and Font Awesome",
+                "11:30",
+                "58.14",
+                690,
+                483
+            ],
+            [
+                "Styling Our Website Challenges and Solutions",
+                "20:20",
+                "58.15",
+                1220,
+                484
+            ],
+            [
+                "Bootstrap Challenge 1",
+                "00:35",
+                "58.16",
+                35,
+                485
+            ],
+            [
+                "Solution to Bootstrap Challenge 1",
+                "17:01",
+                "58.17",
+                1021,
+                486
+            ],
+            [
+                "The Bootstrap Carousel Part 1",
+                "09:39",
+                "58.18",
+                579,
+                487
+            ],
+            [
+                "The Bootstrap Carousel Part 2",
+                "17:20",
+                "58.19",
+                1040,
+                488
+            ],
+            [
+                "Bootstrap Cards",
+                "16:31",
+                "58.20",
+                991,
+                489
+            ],
+            [
+                "CSS Z-index and Stacking Order",
+                "21:28",
+                "58.21",
+                1288,
+                490
+            ],
+            [
+                "Advanced CSS - Media Query Breakpoints",
+                "22:03",
+                "58.22",
+                1323,
+                491
+            ],
+            [
+                "Bootstrap Challenge 2",
+                "00:17",
+                "58.23",
+                17,
+                492
+            ],
+            [
+                "Solution to Bootstrap Challenge 2",
+                "11:46",
+                "58.24",
+                706,
+                493
+            ],
+            [
+                "Code Refactoring",
+                "07:48",
+                "58.25",
+                468,
+                494
+            ],
+            [
+                "Refactor Our Website Part 1",
+                "19:20",
+                "58.26",
+                1160,
+                495
+            ],
+            [
+                "Advanced CSS - Combining Selectors",
+                "11:43",
+                "58.27",
+                703,
+                496
+            ],
+            [
+                "Refactoring Our Website Part 2",
+                "05:21",
+                "58.28",
+                321,
+                497
+            ],
+            [
+                "Advanced CSS - Selector Priority",
+                "05:51",
+                "58.29",
+                351,
+                498
+            ],
+            [
+                "Completing the Website",
+                "02:34",
+                "58.30",
+                154,
+                499
+            ]
+        ],
+        "total": "5hr 3min",
+        "duration": 18180,
+        "name": "Day 58 - Web Foundation Bootstrap",
+        "durs": [
+            32,
+            876,
+            475,
+            698,
+            1240,
+            56,
+            12,
+            461,
+            1217,
+            38,
+            579,
+            50,
+            354,
+            690,
+            1220,
+            35,
+            1021,
+            579,
+            1040,
+            991,
+            1288,
+            1323,
+            17,
+            706,
+            468,
+            1160,
+            703,
+            321,
+            351,
+            154
+        ]
+    },
+    {
+        "idx": 58,
+        "lectures": [
+            [
+                "Day 59 Goals: What you'll make by the end of today",
+                "00:35",
+                "59.1",
+                35,
+                500
+            ],
+            [
+                "Step 1 - Download the starting project",
+                "00:22",
+                "59.2",
+                22,
+                501
+            ],
+            [
+                "Step 2 - Get the home page to work",
+                "00:08",
+                "59.3",
+                8,
+                502
+            ],
+            [
+                "Step 3 - Fix the header and footer",
+                "00:29",
+                "59.4",
+                29,
+                503
+            ],
+            [
+                "Step 4 - Using Jinja Include fo Render Templates",
+                "00:32",
+                "59.5",
+                32,
+                504
+            ],
+            [
+                "Step 5 - Make the About and Contact Pages Work",
+                "00:30",
+                "59.6",
+                30,
+                505
+            ],
+            [
+                "Step 6 - Fetch and render the blog posts from an API",
+                "00:37",
+                "59.7",
+                37,
+                506
+            ],
+            [
+                "Step 7 - Rendering Individual Posts",
+                "00:29",
+                "59.8",
+                29,
+                507
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Day 59 - Advanced - Blog Capstone Project Part 2 - Adding Styling",
+        "durs": [
+            35,
+            22,
+            8,
+            29,
+            32,
+            30,
+            37,
+            29
+        ]
+    },
+    {
+        "idx": 59,
+        "lectures": [
+            [
+                "Day 60 goals - Make the Contact Form Work",
+                "00:22",
+                "60.1",
+                22,
+                508
+            ],
+            [
+                "HTML Forms Revision - Creating a Form from Scratch",
+                "00:14",
+                "60.2",
+                14,
+                509
+            ],
+            [
+                "Handle POST Requests with Flask Servers",
+                "01:02",
+                "60.3",
+                62,
+                510
+            ],
+            [
+                "POST Requests in Flask Solution",
+                "00:21",
+                "60.4",
+                21,
+                511
+            ],
+            [
+                "Getting the Contact Form to Work",
+                "00:42",
+                "60.5",
+                42,
+                512
+            ],
+            [
+                "Sending Email with smtplib",
+                "00:14",
+                "60.6",
+                14,
+                513
+            ]
+        ],
+        "total": "3min",
+        "duration": 180,
+        "name": "Day 60 - Advanced - Make POST Requests with Flask and HTML Forms",
+        "durs": [
+            22,
+            14,
+            62,
+            21,
+            42,
+            14
+        ]
+    },
+    {
+        "idx": 60,
+        "lectures": [
+            [
+                "Day 61 Goals: Building Advanced Forms",
+                "00:58",
+                "61.1",
+                58,
+                514
+            ],
+            [
+                "Installing Flask-WTF",
+                "00:43",
+                "61.2",
+                43,
+                515
+            ],
+            [
+                "Creating Forms with Flask-WTF",
+                "00:40",
+                "61.3",
+                40,
+                516
+            ],
+            [
+                "Code Improvements for Our WTForms",
+                "01:02",
+                "61.4",
+                62,
+                517
+            ],
+            [
+                "Adding Validation to Forms with Flask-WTF",
+                "01:41",
+                "61.5",
+                101,
+                518
+            ],
+            [
+                "Receiving Form Data with WTForms",
+                "00:39",
+                "61.6",
+                39,
+                519
+            ],
+            [
+                "Inheriting Templates Using Jinja2",
+                "02:17",
+                "61.7",
+                137,
+                520
+            ],
+            [
+                "Using Flask-Bootstrap as an Inherited Template",
+                "00:36",
+                "61.8",
+                36,
+                521
+            ],
+            [
+                "Flask-Bootstrap Supports WTForms",
+                "00:58",
+                "61.9",
+                58,
+                522
+            ]
+        ],
+        "total": "10min",
+        "duration": 600,
+        "name": "Day 61 - Advanced - Building Advanced Forms with Flask-WTForms",
+        "durs": [
+            58,
+            43,
+            40,
+            62,
+            101,
+            39,
+            137,
+            36,
+            58
+        ]
+    },
+    {
+        "idx": 61,
+        "lectures": [
+            [
+                "Download the Starting Project",
+                "00:10",
+                "62.1",
+                10,
+                523
+            ],
+            [
+                "Look at the Desired Final Product",
+                "00:00",
+                "",
+                0,
+                524
+            ],
+            [
+                "Check Off Each Requirement",
+                "02:08",
+                "62.2",
+                128,
+                524
+            ]
+        ],
+        "total": "2min",
+        "duration": 120,
+        "name": "Day 62 - Advanced - Flask, WTForms, Bootstrap and CSV - Coffee & Wifi Project",
+        "durs": [
+            10,
+            0,
+            128
+        ]
+    },
+    {
+        "idx": 62,
+        "lectures": [
+            [
+                "Day 63 Goals: Creating a Virtual Bookshelf",
+                "00:26",
+                "63.1",
+                26,
+                525
+            ],
+            [
+                "Download the Starting Project",
+                "00:08",
+                "63.2",
+                8,
+                526
+            ],
+            [
+                "Make the Website Work",
+                "00:46",
+                "63.3",
+                46,
+                527
+            ],
+            [
+                "What Happens When You Refresh the Server?",
+                "00:27",
+                "63.4",
+                27,
+                528
+            ],
+            [
+                "SQLite Databases",
+                "03:35",
+                "63.5",
+                215,
+                529
+            ],
+            [
+                "SQLAlchemy",
+                "01:06",
+                "63.6",
+                66,
+                530
+            ],
+            [
+                "CRUD Operations with SQLAlchemy",
+                "00:52",
+                "63.7",
+                52,
+                531
+            ],
+            [
+                "Build a SQLite Database into the Flask Website",
+                "01:02",
+                "63.8",
+                62,
+                532
+            ]
+        ],
+        "total": "8min",
+        "duration": 480,
+        "name": "Day 63 - Advanced - Databases and with SQLite and SQLAlchemy",
+        "durs": [
+            26,
+            8,
+            46,
+            27,
+            215,
+            66,
+            52,
+            62
+        ]
+    },
+    {
+        "idx": 63,
+        "lectures": [
+            [
+                "Day 64 Goals: What We'll Build",
+                "00:23",
+                "64.1",
+                23,
+                533
+            ],
+            [
+                "Download the Starting Project",
+                "00:07",
+                "64.2",
+                7,
+                534
+            ],
+            [
+                "Requirement 1 - Be Able to View Movie List Items",
+                "00:40",
+                "64.3",
+                40,
+                535
+            ],
+            [
+                "Requirement 2 - Be Able to Edit a Movie's Rating and Review",
+                "00:32",
+                "64.4",
+                32,
+                536
+            ],
+            [
+                "Requirement 3 - Be Able to Delete Movies from the Database",
+                "00:07",
+                "64.5",
+                7,
+                537
+            ],
+            [
+                "Requirement 4 - Be Able to Add New Movies Via the Add Page",
+                "01:59",
+                "64.6",
+                119,
+                538
+            ],
+            [
+                "Requirement 5 - Be Able to Sort and Rank the Movies By Rating",
+                "00:33",
+                "64.7",
+                33,
+                539
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Day 64 - Advanced -My Top 10 Movies Website",
+        "durs": [
+            23,
+            7,
+            40,
+            32,
+            7,
+            119,
+            33
+        ]
+    },
+    {
+        "idx": 64,
+        "lectures": [
+            [
+                "Introduction to Web Design",
+                "03:55",
+                "65.1",
+                235,
+                540
+            ],
+            [
+                "Understanding Color Theory",
+                "09:04",
+                "65.2",
+                544,
+                541
+            ],
+            [
+                "Understanding Typography and How to Choose Fonts",
+                "10:28",
+                "65.3",
+                628,
+                542
+            ],
+            [
+                "Manage ATTENTION with effective User Interface (UI) Design",
+                "10:27",
+                "65.4",
+                627,
+                543
+            ],
+            [
+                "User Experience (UX) Design",
+                "13:39",
+                "65.5",
+                819,
+                544
+            ],
+            [
+                "Web Design in Practice - Let's apply what we've learnt!",
+                "18:20",
+                "65.6",
+                1100,
+                545
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Day 65 - Web Design School - How to Create a Website that People will Love",
+        "durs": [
+            235,
+            544,
+            628,
+            627,
+            819,
+            1100
+        ]
+    },
+    {
+        "idx": 65,
+        "lectures": [
+            [
+                "Day 66 Goals: Build Your Own REST API Service",
+                "00:41",
+                "66.1",
+                41,
+                546
+            ],
+            [
+                "What is REST?",
+                "13:22",
+                "66.2",
+                802,
+                547
+            ],
+            [
+                "Download the Starting Project",
+                "00:22",
+                "66.3",
+                22,
+                548
+            ],
+            [
+                "HTTP GET - a Random Cafe",
+                "01:22",
+                "66.4",
+                82,
+                549
+            ],
+            [
+                "HTTP GET - All the Cafes",
+                "00:14",
+                "66.5",
+                14,
+                550
+            ],
+            [
+                "HTTP GET - Find a Cafe",
+                "00:28",
+                "66.6",
+                28,
+                551
+            ],
+            [
+                "Postman - The all in one API Testing Tool",
+                "00:34",
+                "66.7",
+                34,
+                552
+            ],
+            [
+                "HTTP POST - A New Cafe",
+                "00:26",
+                "66.8",
+                26,
+                553
+            ],
+            [
+                "HTTP PUT vs. PATCH",
+                "01:44",
+                "66.9",
+                104,
+                554
+            ],
+            [
+                "HTTP PATCH - A Cafe's Coffee Price",
+                "01:10",
+                "66.10",
+                70,
+                555
+            ],
+            [
+                "HTTP DELETE - A Cafe that's Closed",
+                "00:33",
+                "66.11",
+                33,
+                556
+            ],
+            [
+                "Build Documentation for Your API",
+                "00:41",
+                "66.12",
+                41,
+                557
+            ]
+        ],
+        "total": "22min",
+        "duration": 1320,
+        "name": "Day 66 - Advanced - Building Your Own API with RESTful Routing",
+        "durs": [
+            41,
+            802,
+            22,
+            82,
+            14,
+            28,
+            34,
+            26,
+            104,
+            70,
+            33,
+            41
+        ]
+    },
+    {
+        "idx": 66,
+        "lectures": [
+            [
+                "Day 67 Goals: Building a RESTful Blog with Editing!",
+                "00:12",
+                "67.1",
+                12,
+                558
+            ],
+            [
+                "Download the Starting Project",
+                "00:20",
+                "67.2",
+                20,
+                559
+            ],
+            [
+                "Requirement 1 - Be Able to GET Blog Post Items",
+                "00:22",
+                "67.3",
+                22,
+                560
+            ],
+            [
+                "Requirement 2 - Be Able to POST a New Blog Post",
+                "01:14",
+                "67.4",
+                74,
+                561
+            ],
+            [
+                "Requirement 3 - Be Able to Edit Existing Blog Posts",
+                "01:09",
+                "67.5",
+                69,
+                562
+            ],
+            [
+                "Requirement 4- Be Able DELETE Blog Posts",
+                "00:14",
+                "67.6",
+                14,
+                563
+            ]
+        ],
+        "total": "4min",
+        "duration": 240,
+        "name": "Day 67 - Advanced - Blog Capstone Project Part 3 - RESTful Routing",
+        "durs": [
+            12,
+            20,
+            22,
+            74,
+            69,
+            14
+        ]
+    },
+    {
+        "idx": 67,
+        "lectures": [
+            [
+                "Day 68 Goals - Login and Registering Users with Authentication",
+                "00:44",
+                "68.1",
+                44,
+                564
+            ],
+            [
+                "What is Authentication?",
+                "03:38",
+                "68.2",
+                218,
+                565
+            ],
+            [
+                "Download the Starting Project",
+                "00:28",
+                "68.3",
+                28,
+                566
+            ],
+            [
+                "Register New Users",
+                "00:26",
+                "68.4",
+                26,
+                567
+            ],
+            [
+                "Downloading Files",
+                "00:22",
+                "68.5",
+                22,
+                568
+            ],
+            [
+                "Encryption and Hashing",
+                "15:19",
+                "68.6",
+                919,
+                569
+            ],
+            [
+                "How to Hack Passwords 101",
+                "12:28",
+                "68.7",
+                748,
+                570
+            ],
+            [
+                "Salting Passwords",
+                "07:10",
+                "68.8",
+                430,
+                571
+            ],
+            [
+                "Hashing Passwords using Werkzeug",
+                "00:19",
+                "68.9",
+                19,
+                572
+            ],
+            [
+                "Authenticating Users with Flask-Login",
+                "00:56",
+                "68.10",
+                56,
+                573
+            ],
+            [
+                "Flask Flash Messages",
+                "00:54",
+                "68.11",
+                54,
+                574
+            ],
+            [
+                "Passing Authentication Status to Templates",
+                "00:15",
+                "68.12",
+                15,
+                575
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Day 68 - Advanced - Authentication with Flask",
+        "durs": [
+            44,
+            218,
+            28,
+            26,
+            22,
+            919,
+            748,
+            430,
+            19,
+            56,
+            54,
+            15
+        ]
+    },
+    {
+        "idx": 68,
+        "lectures": [
+            [
+                "Day 69 Goals - Adding Users to Our Blog Project",
+                "00:19",
+                "69.1",
+                19,
+                576
+            ],
+            [
+                "Download the Starting Project",
+                "00:28",
+                "69.2",
+                28,
+                577
+            ],
+            [
+                "Requirement 1 - Register New Users",
+                "00:24",
+                "69.3",
+                24,
+                578
+            ],
+            [
+                "Requirement 2 - Login Registered Users",
+                "01:07",
+                "69.4",
+                67,
+                579
+            ],
+            [
+                "Requirement 3 - Protect Routes",
+                "00:39",
+                "69.5",
+                39,
+                580
+            ],
+            [
+                "Creating Relational Databases",
+                "02:00",
+                "69.6",
+                120,
+                581
+            ],
+            [
+                "Requirement 4 - Allow Any User to Add Comments to BlogPosts",
+                "01:55",
+                "69.7",
+                115,
+                582
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Day 69 - Advanced - Blog Capstone Project Part 4 - Adding Users",
+        "durs": [
+            19,
+            28,
+            24,
+            67,
+            39,
+            120,
+            115
+        ]
+    },
+    {
+        "idx": 69,
+        "lectures": [
+            [
+                "Day 70 Goals - Learn to Deploy Your Website",
+                "01:32",
+                "70.1",
+                92,
+                583
+            ],
+            [
+                "Version Control and Git",
+                "18:48",
+                "70.2",
+                1128,
+                584
+            ],
+            [
+                "What is GitHub?",
+                "09:44",
+                "70.3",
+                584,
+                585
+            ],
+            [
+                "Step 1 - Upload Your Project to GitHub",
+                "02:28",
+                "70.4",
+                148,
+                586
+            ],
+            [
+                "Step 2 - Use gunicorn and Heroku to host your website",
+                "01:18",
+                "70.5",
+                78,
+                587
+            ],
+            [
+                "Step 3 - Setup a WSGI server with gunicorn",
+                "01:35",
+                "70.6",
+                95,
+                588
+            ],
+            [
+                "Step 4 - Upgrade SQLite Database to PostgreSQL",
+                "02:10",
+                "70.7",
+                130,
+                589
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Day 70 - Advanced - Deploying Your Web Application with Heroku",
+        "durs": [
+            92,
+            1128,
+            584,
+            148,
+            78,
+            95,
+            130
+        ]
+    },
+    {
+        "idx": 70,
+        "lectures": [
+            [
+                "Day 71 Goals: what you will make by the end of the day",
+                "00:41",
+                "71.1",
+                41,
+                590
+            ],
+            [
+                "Upload the Data and Read the .csv File",
+                "00:33",
+                "71.2",
+                33,
+                591
+            ],
+            [
+                "Getting Set Up for Data Science",
+                "00:36",
+                "71.3",
+                36,
+                592
+            ],
+            [
+                "Preliminary Data Exploration and Data Cleaning with Pandas",
+                "01:24",
+                "71.4",
+                84,
+                593
+            ],
+            [
+                "Accessing Columns and Individual Cells in a Dataframe",
+                "01:11",
+                "71.5",
+                71,
+                594
+            ],
+            [
+                "Solution: Highest and Lowest Earning Degrees",
+                "00:37",
+                "71.6",
+                37,
+                595
+            ],
+            [
+                "Sorting Values & Adding Columns: Majors with the Most Potential vs Lowest Risk",
+                "01:20",
+                "71.7",
+                80,
+                596
+            ],
+            [
+                "Solution: Degrees with the Highest Potential",
+                "00:22",
+                "71.8",
+                22,
+                597
+            ],
+            [
+                "Grouping and Pivoting Data with Pandas",
+                "00:53",
+                "71.9",
+                53,
+                598
+            ],
+            [
+                "Learning Points & Summary",
+                "00:42",
+                "71.10",
+                42,
+                599
+            ]
+        ],
+        "total": "8min",
+        "duration": 480,
+        "name": "Day 71 - Advanced - Data Exploration with Pandas: College Major v.s. Your Salary",
+        "durs": [
+            41,
+            33,
+            36,
+            84,
+            71,
+            37,
+            80,
+            22,
+            53,
+            42
+        ]
+    },
+    {
+        "idx": 71,
+        "lectures": [
+            [
+                "Day 72 Goals: what you will make by the end of the day",
+                "00:43",
+                "72.1",
+                43,
+                600
+            ],
+            [
+                "Download and Open the Starter Notebook",
+                "00:37",
+                "72.2",
+                37,
+                601
+            ],
+            [
+                "Solution: Preliminary Data Exploration",
+                "01:00",
+                "72.3",
+                60,
+                602
+            ],
+            [
+                "Solution: Analysis by Programming Language",
+                "00:22",
+                "72.4",
+                22,
+                603
+            ],
+            [
+                "Data Cleaning: Working with Time Stamps",
+                "00:51",
+                "72.5",
+                51,
+                604
+            ],
+            [
+                "Data Manipulation: Pivoting DataFrames",
+                "02:08",
+                "72.6",
+                128,
+                605
+            ],
+            [
+                "Data Visualisation with Matplotlib",
+                "01:25",
+                "72.7",
+                85,
+                606
+            ],
+            [
+                "Multi-Line Charts with Matplotib",
+                "00:52",
+                "72.8",
+                52,
+                607
+            ],
+            [
+                "Smoothing out Time-Series Data",
+                "00:43",
+                "72.9",
+                43,
+                608
+            ],
+            [
+                "Programming Language Data Analysis",
+                "3 questions",
+                "",
+                0,
+                609
+            ],
+            [
+                "Learning Points & Summary",
+                "00:34",
+                "72.10",
+                34,
+                609
+            ]
+        ],
+        "total": "9min",
+        "duration": 540,
+        "name": "Day 72 - Advanced - Data Visualisation with Matplotlib: Programming Languages",
+        "durs": [
+            43,
+            37,
+            60,
+            22,
+            51,
+            128,
+            85,
+            52,
+            43,
+            0,
+            34
+        ]
+    },
+    {
+        "idx": 72,
+        "lectures": [
+            [
+                "Day 73 Goals: what you will make by the end of the day",
+                "01:14",
+                "73.1",
+                74,
+                610
+            ],
+            [
+                "Use HTML Markdown to Make Your Notebook Look Pretty",
+                "01:01",
+                "73.2",
+                61,
+                611
+            ],
+            [
+                "Solution: Exploring the LEGO Brick Colours",
+                "00:50",
+                "73.3",
+                50,
+                612
+            ],
+            [
+                "Find the Oldest and Largest LEGO Sets",
+                "01:41",
+                "73.4",
+                101,
+                613
+            ],
+            [
+                "Visualise the Number of Sets Published over Time",
+                "01:31",
+                "73.5",
+                91,
+                614
+            ],
+            [
+                "How to use the Pandas .agg() function",
+                "01:07",
+                "73.6",
+                67,
+                615
+            ],
+            [
+                "Superimposing Line Charts with Separate Axes",
+                "00:49",
+                "73.7",
+                49,
+                616
+            ],
+            [
+                "Scatter Plots: Average Number of Parts per LEGO Set",
+                "01:14",
+                "73.8",
+                74,
+                617
+            ],
+            [
+                "Relational Database Schemas: Primary and Foreign Keys",
+                "02:02",
+                "73.9",
+                122,
+                618
+            ],
+            [
+                "How to Merge DataFrames and Create Bar Charts",
+                "01:37",
+                "73.10",
+                97,
+                619
+            ],
+            [
+                "Learning Points & Summary",
+                "00:35",
+                "73.11",
+                35,
+                620
+            ]
+        ],
+        "total": "14min",
+        "duration": 840,
+        "name": "Day 73 - Advanced - Aggregate & Merge Data with Pandas: Analyse the LEGO Dataset",
+        "durs": [
+            74,
+            61,
+            50,
+            101,
+            91,
+            67,
+            49,
+            74,
+            122,
+            97,
+            35
+        ]
+    },
+    {
+        "idx": 73,
+        "lectures": [
+            [
+                "Day 74 Goals: what you will make by the end of the day",
+                "00:57",
+                "74.1",
+                57,
+                621
+            ],
+            [
+                "Data Exploration - Making Sense of Google Search Data",
+                "02:08",
+                "74.2",
+                128,
+                622
+            ],
+            [
+                "Data Cleaning - Resampling Time Series Data",
+                "02:08",
+                "74.3",
+                128,
+                623
+            ],
+            [
+                "Data Visualisation - Tesla Line Charts in Matplotlib",
+                "02:51",
+                "74.4",
+                171,
+                624
+            ],
+            [
+                "Using Locators and DateFormatters to generate Tick Marks on a Time Line",
+                "00:50",
+                "74.5",
+                50,
+                625
+            ],
+            [
+                "Data Visualisation - Bitcoin: Line Style and Markers",
+                "01:29",
+                "74.6",
+                89,
+                626
+            ],
+            [
+                "Data Visualisation - Unemployment: How to use Grids",
+                "02:15",
+                "74.7",
+                135,
+                627
+            ],
+            [
+                "Data Visualisation - Unemployment: The Effect of New Data",
+                "00:41",
+                "74.8",
+                41,
+                628
+            ],
+            [
+                "Learning Points & Summary",
+                "00:39",
+                "74.9",
+                39,
+                629
+            ]
+        ],
+        "total": "14min",
+        "duration": 840,
+        "name": "Day 74 - Advanced - Google Trends Data: Resampling and Visualising Time Series",
+        "durs": [
+            57,
+            128,
+            128,
+            171,
+            50,
+            89,
+            135,
+            41,
+            39
+        ]
+    },
+    {
+        "idx": 74,
+        "lectures": [
+            [
+                "Day 75 Goals: what you will make by the end of the day",
+                "01:06",
+                "75.1",
+                66,
+                630
+            ],
+            [
+                "Data Cleaning: Removing NaN Values and Duplicates",
+                "02:37",
+                "75.2",
+                157,
+                631
+            ],
+            [
+                "Preliminary Exploration: The Highest Ratings, Most Reviews, and Largest Size",
+                "00:57",
+                "75.3",
+                57,
+                632
+            ],
+            [
+                "Data Visualisation with Plotly: Create Pie and Donut Charts",
+                "00:58",
+                "75.4",
+                58,
+                633
+            ],
+            [
+                "Numeric Type Conversions for the Installations & Price Data",
+                "02:52",
+                "75.5",
+                172,
+                634
+            ],
+            [
+                "Plotly Bar Charts & Scatter Plots: The Most Competitive & Popular App Categories",
+                "02:21",
+                "75.6",
+                141,
+                635
+            ],
+            [
+                "Extracting Nested Column Data using .stack()",
+                "01:11",
+                "75.7",
+                71,
+                636
+            ],
+            [
+                "Grouped Bar Charts and Box Plots with Plotly",
+                "03:25",
+                "75.8",
+                205,
+                637
+            ],
+            [
+                "Learning Points & Summary",
+                "00:27",
+                "75.9",
+                27,
+                638
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Day 75 - Advanced - Beautiful Plotly Charts & Analysing the Android App Store",
+        "durs": [
+            66,
+            157,
+            57,
+            58,
+            172,
+            141,
+            71,
+            205,
+            27
+        ]
+    },
+    {
+        "idx": 75,
+        "lectures": [
+            [
+                "Day 76 Goals: what you will make by the end of the day",
+                "00:53",
+                "76.1",
+                53,
+                639
+            ],
+            [
+                "NumPy's ndarray - Incredible Power at Your Fingertips!",
+                "02:50",
+                "76.2",
+                170,
+                640
+            ],
+            [
+                "Generating and Manipulating ndarrays",
+                "02:48",
+                "76.3",
+                168,
+                641
+            ],
+            [
+                "Broadcasting, Scalars and Matrix Multiplication",
+                "01:38",
+                "76.4",
+                98,
+                642
+            ],
+            [
+                "Manipulating Images as ndarrays",
+                "03:07",
+                "76.5",
+                187,
+                643
+            ],
+            [
+                "Learning Points & Summary",
+                "00:20",
+                "76.6",
+                20,
+                644
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Day 76 - Advanced - Computation with NumPy and N-Dimensional Arrays",
+        "durs": [
+            53,
+            170,
+            168,
+            98,
+            187,
+            20
+        ]
+    },
+    {
+        "idx": 76,
+        "lectures": [
+            [
+                "Day 77 Goals: what you will make by the end of the day",
+                "00:49",
+                "77.1",
+                49,
+                645
+            ],
+            [
+                "Explore and Clean the Data",
+                "01:40",
+                "77.2",
+                100,
+                646
+            ],
+            [
+                "Investigate the Films that had Zero Revenue",
+                "02:07",
+                "77.3",
+                127,
+                647
+            ],
+            [
+                "Filter on Multiple Conditions: International Films",
+                "02:02",
+                "77.4",
+                122,
+                648
+            ],
+            [
+                "Seaborn Data Visualisation: Bubble Charts",
+                "02:15",
+                "77.5",
+                135,
+                649
+            ],
+            [
+                "Floor Division: A Trick to Convert Years to Decades",
+                "01:42",
+                "77.6",
+                102,
+                650
+            ],
+            [
+                "Plotting Linear Regressions with Seaborn",
+                "02:03",
+                "77.7",
+                123,
+                651
+            ],
+            [
+                "Use scikit-learn to Run Your Own Regression",
+                "03:34",
+                "77.8",
+                214,
+                652
+            ],
+            [
+                "Learning Points & Summary",
+                "00:33",
+                "77.9",
+                33,
+                653
+            ]
+        ],
+        "total": "17min",
+        "duration": 1020,
+        "name": "Day 77 - Advanced - Linear Regression and Data Visualisation with Seaborn",
+        "durs": [
+            49,
+            100,
+            127,
+            122,
+            135,
+            102,
+            123,
+            214,
+            33
+        ]
+    },
+    {
+        "idx": 77,
+        "lectures": [
+            [
+                "Day 78 Goals: what you will make by the end of the day",
+                "01:17",
+                "78.1",
+                77,
+                654
+            ],
+            [
+                "Update Packages in Google Colab & Explore and Clean the Dataset",
+                "02:05",
+                "78.2",
+                125,
+                655
+            ],
+            [
+                "plotly Bar & Donut Charts: Analyse Prize Categories & Women Winning Prizes",
+                "03:26",
+                "78.3",
+                206,
+                656
+            ],
+            [
+                "Using Matplotlib to Visualise Trends over Time",
+                "02:44",
+                "78.4",
+                164,
+                657
+            ],
+            [
+                "A Choropleth Map and the Countries with the Most Prizes",
+                "04:52",
+                "78.5",
+                292,
+                658
+            ],
+            [
+                "Create Sunburst Charts for a Detailed Regional Breakdown of Research Locations",
+                "02:28",
+                "78.6",
+                148,
+                659
+            ],
+            [
+                "Unearthing Patterns in the Laureate Age at the Time of the Award",
+                "04:04",
+                "78.7",
+                244,
+                660
+            ],
+            [
+                "Learning Points & Summary",
+                "00:43",
+                "78.8",
+                43,
+                661
+            ]
+        ],
+        "total": "22min",
+        "duration": 1320,
+        "name": "Day 78 - Advanced - Analysing the Nobel Prize with Plotly, Matplotlib & Seaborn",
+        "durs": [
+            77,
+            125,
+            206,
+            164,
+            292,
+            148,
+            244,
+            43
+        ]
+    },
+    {
+        "idx": 78,
+        "lectures": [
+            [
+                "Day 79 Goals: what you will make by the end of the day",
+                "01:00",
+                "79.1",
+                60,
+                662
+            ],
+            [
+                "Preliminary Data Exploration and Visualising Births & Deaths at Vienna Hospital",
+                "02:22",
+                "79.2",
+                142,
+                663
+            ],
+            [
+                "Analysing the Yearly Data Split By Clinic",
+                "03:14",
+                "79.3",
+                194,
+                664
+            ],
+            [
+                "The Effect of Handwashing",
+                "02:19",
+                "79.4",
+                139,
+                665
+            ],
+            [
+                "Visualising Distributions and Testing for Statistical Significance",
+                "04:33",
+                "79.5",
+                273,
+                666
+            ],
+            [
+                "Learning Points & Summary",
+                "01:45",
+                "79.6",
+                105,
+                667
+            ]
+        ],
+        "total": "15min",
+        "duration": 900,
+        "name": "Day 79 - Advanced - The Tragic Discovery of Handwashing: t-Tests & Distributions",
+        "durs": [
+            60,
+            142,
+            194,
+            139,
+            273,
+            105
+        ]
+    },
+    {
+        "idx": 79,
+        "lectures": [
+            [
+                "Day 80 Goals: what you will make by the end of the day",
+                "00:44",
+                "80.1",
+                44,
+                668
+            ],
+            [
+                "Solution & Learning Points",
+                "00:26",
+                "80.2",
+                26,
+                669
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Day 80 - Advanced - Capstone Project - Predict House Prices",
+        "durs": [
+            44,
+            26
+        ]
+    },
+    {
+        "idx": 80,
+        "lectures": [
+            [
+                "The Road to Becoming a Professional Developer",
+                "01:06",
+                "81.1",
+                66,
+                670
+            ],
+            [
+                "Text to Morse Code Converter",
+                "1 question",
+                "",
+                0,
+                671
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Day 81 - Professional Portfolio Project - [Python Scripting]",
+        "durs": [
+            66,
+            0
+        ]
+    },
+    {
+        "idx": 81,
+        "lectures": [
+            [
+                "Where are the Videos and the Solution Code?",
+                "02:44",
+                "82.1",
+                164,
+                671
+            ],
+            [
+                "Portfolio Website",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "3min",
+        "duration": 180,
+        "name": "Day 82 - Professional Portfolio Project - [Python Web Development]",
+        "durs": [
+            164,
+            0
+        ]
+    },
+    {
+        "idx": 82,
+        "lectures": [
+            [
+                "Tic Tac Toe",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 83 - Professional Portfolio Project - [Python Scripting]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 83,
+        "lectures": [
+            [
+                "Image Watermarking Desktop App",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 84 - Professional Portfolio Project - [GUI]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 84,
+        "lectures": [
+            [
+                "Typing Speed Test",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 85 - Professional Portfolio Project - [GUI]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 85,
+        "lectures": [
+            [
+                "Breakout Game",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 86 - Professional Portfolio Project - [Game]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 86,
+        "lectures": [
+            [
+                "Cafe and Wifi Website",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 87 - Professional Portfolio Project - [Web Development]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 87,
+        "lectures": [
+            [
+                "Todo List",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 88 - Professional Portfolio Project - [Web Development]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 88,
+        "lectures": [
+            [
+                "Disappearing Text Writing App",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 89 - Professional Portfolio Project - [GUI Desktop App]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 89,
+        "lectures": [
+            [
+                "Convert PDF to Audiobook",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 90 - Professional Portfolio Project - [HTTP Requests & APIs]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 90,
+        "lectures": [
+            [
+                "Image Colour Palette Generator",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 91 - Professional Portfolio Project - [Image Processing & Data Science]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 91,
+        "lectures": [
+            [
+                "Custom Web Scraper",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 92 - Professional Portfolio Project - [Web Scraping]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 92,
+        "lectures": [
+            [
+                "Automate the Google Dinosaur Game",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 93 - Professional Portfolio Project - [GUI Automation]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 93,
+        "lectures": [
+            [
+                "Space Invaders",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 94 - Professional Portfolio Project - [Game]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 94,
+        "lectures": [
+            [
+                "Custom API Based Website",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 95 - Professional Portfolio Project - [HTTP Requests & APIs]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 95,
+        "lectures": [
+            [
+                "An Online Shop",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 96 - Professional Portfolio Project - [Web Development]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 96,
+        "lectures": [
+            [
+                "Custom Automation",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 97 - Professional Portfolio Project - [Python Automation]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 97,
+        "lectures": [
+            [
+                "Analyse and Visualise the Space Race",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 98 - Professional Portfolio Project - [Data Science]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 98,
+        "lectures": [
+            [
+                "Analyse Deaths involving Police in the United States",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 99 - Professional Portfolio Project - [Data Science]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 99,
+        "lectures": [
+            [
+                "Predict Earnings using Multivariable Regression",
+                "1 question",
+                "",
+                0,
+                672
+            ]
+        ],
+        "total": "0min",
+        "duration": 0,
+        "name": "Day 100 - Professional Portfolio Project - [Data Science]",
+        "durs": [
+            0
+        ]
+    },
+    {
+        "idx": 100,
+        "lectures": [
+            [
+                "Recording of our Live AMA (aka AAA - Ask Angela Anything)",
+                "59:52",
+                "101.1",
+                3592,
+                672
+            ],
+            [
+                "Study With Me",
+                "01:41:23",
+                "",
+                0,
+                673
+            ],
+            [
+                "My Other Courses",
+                "00:05",
+                "101.2",
+                5,
+                673
+            ]
+        ],
+        "total": "2hr 41min",
+        "duration": 9660,
+        "name": "Bonus Section",
+        "durs": [
+            3592,
+            0,
+            5
+        ]
+    }
+]

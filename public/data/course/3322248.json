@@ -1,0 +1,1316 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "00:09",
+                "1.1",
+                9,
+                1
+            ],
+            [
+                "VERY IMPORTANT NOTE FOR STUDENTS!!",
+                "00:19",
+                "1.2",
+                19,
+                2
+            ],
+            [
+                "What Is Machine Learning",
+                "08:57",
+                "1.3",
+                537,
+                3
+            ],
+            [
+                "Examples of Machine Learning Applications",
+                "00:11",
+                "1.4",
+                11,
+                4
+            ],
+            [
+                "Learning Association",
+                "01:53",
+                "1.5",
+                113,
+                5
+            ],
+            [
+                "Classification",
+                "11:43",
+                "1.6",
+                703,
+                6
+            ],
+            [
+                "Regression",
+                "04:20",
+                "1.7",
+                260,
+                7
+            ],
+            [
+                "Unsupervised Learning",
+                "05:30",
+                "1.8",
+                330,
+                8
+            ],
+            [
+                "Reinforcement Learning",
+                "02:31",
+                "1.9",
+                151,
+                9
+            ]
+        ],
+        "total": "36min",
+        "duration": 2160,
+        "name": "Introduction",
+        "durs": [
+            9,
+            19,
+            537,
+            11,
+            113,
+            703,
+            260,
+            330,
+            151
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Supervised Learning",
+                "00:22",
+                "2.1",
+                22,
+                10
+            ],
+            [
+                "Learning a Class from Examples",
+                "17:21",
+                "2.2",
+                1041,
+                11
+            ],
+            [
+                "Vapnik-Chervonenkis (VC) Dimension",
+                "03:43",
+                "2.3",
+                223,
+                12
+            ],
+            [
+                "Probably Approximately Correct (PAC) Learning",
+                "07:15",
+                "2.4",
+                435,
+                13
+            ],
+            [
+                "Noise",
+                "05:03",
+                "2.5",
+                303,
+                14
+            ],
+            [
+                "Learning Multiple Classes",
+                "04:58",
+                "2.6",
+                298,
+                15
+            ],
+            [
+                "Regression",
+                "09:41",
+                "2.7",
+                581,
+                16
+            ],
+            [
+                "Model Selection and Generalization",
+                "12:28",
+                "2.8",
+                748,
+                17
+            ],
+            [
+                "Dimensions of a Supervised Machine Learning Algorithm",
+                "05:30",
+                "2.9",
+                330,
+                18
+            ]
+        ],
+        "total": "1hr 6min",
+        "duration": 3960,
+        "name": "Supervised Learning",
+        "durs": [
+            22,
+            1041,
+            223,
+            435,
+            303,
+            298,
+            581,
+            748,
+            330
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Bayesian Decision Theory",
+                "00:33",
+                "3.1",
+                33,
+                19
+            ],
+            [
+                "Introduction",
+                "05:47",
+                "3.2",
+                347,
+                20
+            ],
+            [
+                "Classification",
+                "07:55",
+                "3.3",
+                475,
+                21
+            ],
+            [
+                "Losses and Risks",
+                "05:45",
+                "3.4",
+                345,
+                22
+            ],
+            [
+                "Discriminant Functions",
+                "02:28",
+                "3.5",
+                148,
+                23
+            ],
+            [
+                "Utility Theory",
+                "03:53",
+                "3.6",
+                233,
+                24
+            ],
+            [
+                "Association Rules",
+                "08:18",
+                "3.7",
+                498,
+                25
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Bayesian Decision Theory",
+        "durs": [
+            33,
+            347,
+            475,
+            345,
+            148,
+            233,
+            498
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Parametric Methods",
+                "00:35",
+                "4.1",
+                35,
+                26
+            ],
+            [
+                "Introduction",
+                "01:57",
+                "4.2",
+                117,
+                27
+            ],
+            [
+                "Maximum Likelihood Estimation",
+                "02:31",
+                "4.3",
+                151,
+                28
+            ],
+            [
+                "Bernoulli Density",
+                "02:50",
+                "4.4",
+                170,
+                29
+            ],
+            [
+                "Multinomial Density",
+                "02:09",
+                "4.5",
+                129,
+                30
+            ],
+            [
+                "Gaussian (Normal) Density",
+                "01:40",
+                "4.6",
+                100,
+                31
+            ],
+            [
+                "Evaluating an Estimator",
+                "06:50",
+                "4.7",
+                410,
+                32
+            ],
+            [
+                "The Bayes Estimator",
+                "07:54",
+                "4.8",
+                474,
+                33
+            ],
+            [
+                "Parametric Classification",
+                "09:59",
+                "4.9",
+                599,
+                34
+            ],
+            [
+                "Regression",
+                "07:58",
+                "4.10",
+                478,
+                35
+            ],
+            [
+                "Tuning Model Complexity",
+                "09:35",
+                "4.11",
+                575,
+                36
+            ],
+            [
+                "Model Selection Procedures",
+                "10:27",
+                "4.12",
+                627,
+                37
+            ]
+        ],
+        "total": "1hr 4min",
+        "duration": 3840,
+        "name": "Parametric Methods",
+        "durs": [
+            35,
+            117,
+            151,
+            170,
+            129,
+            100,
+            410,
+            474,
+            599,
+            478,
+            575,
+            627
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Multivariate Methods",
+                "00:38",
+                "5.1",
+                38,
+                38
+            ],
+            [
+                "Multivariate Data",
+                "01:45",
+                "5.2",
+                105,
+                39
+            ],
+            [
+                "Parameter Estimation",
+                "03:44",
+                "5.3",
+                224,
+                40
+            ],
+            [
+                "Estimation of Missing Values",
+                "01:50",
+                "5.4",
+                110,
+                41
+            ],
+            [
+                "Multivariate Normal Distribution",
+                "10:03",
+                "5.5",
+                603,
+                42
+            ],
+            [
+                "Multivariate Classification",
+                "17:42",
+                "5.6",
+                1062,
+                43
+            ],
+            [
+                "Tuning Complexity",
+                "02:26",
+                "5.7",
+                146,
+                44
+            ],
+            [
+                "Discrete Features",
+                "04:19",
+                "5.8",
+                259,
+                45
+            ],
+            [
+                "Multivariate Regression",
+                "04:07",
+                "5.9",
+                247,
+                46
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Multivariate Methods",
+        "durs": [
+            38,
+            105,
+            224,
+            110,
+            603,
+            1062,
+            146,
+            259,
+            247
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Dimensionality Reduction",
+                "00:32",
+                "6.1",
+                32,
+                47
+            ],
+            [
+                "Introduction",
+                "02:56",
+                "6.2",
+                176,
+                48
+            ],
+            [
+                "Subset Selection",
+                "06:57",
+                "6.3",
+                417,
+                49
+            ],
+            [
+                "Principal Components Analysis",
+                "18:19",
+                "6.4",
+                1099,
+                50
+            ],
+            [
+                "Factor Analysis",
+                "16:26",
+                "6.5",
+                986,
+                51
+            ],
+            [
+                "Multidimensional Scaling",
+                "07:44",
+                "6.6",
+                464,
+                52
+            ],
+            [
+                "Linear Discriminant Analysis",
+                "09:29",
+                "6.7",
+                569,
+                53
+            ],
+            [
+                "Locally Linear Embedding",
+                "08:18",
+                "6.8",
+                498,
+                54
+            ]
+        ],
+        "total": "1hr 11min",
+        "duration": 4260,
+        "name": "Dimensionality Reduction",
+        "durs": [
+            32,
+            176,
+            417,
+            1099,
+            986,
+            464,
+            569,
+            498
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Clustering",
+                "00:36",
+                "7.1",
+                36,
+                55
+            ],
+            [
+                "Introduction",
+                "02:58",
+                "7.2",
+                178,
+                56
+            ],
+            [
+                "Mixture Densities",
+                "03:24",
+                "7.3",
+                204,
+                57
+            ],
+            [
+                "k-Means Clustering",
+                "10:07",
+                "7.4",
+                607,
+                58
+            ],
+            [
+                "Expectation-Maximization Algorithm",
+                "11:41",
+                "7.5",
+                701,
+                59
+            ],
+            [
+                "Mixtures of Latent Variable Models",
+                "03:14",
+                "7.6",
+                194,
+                60
+            ],
+            [
+                "Supervised Learning after Clustering",
+                "04:23",
+                "7.7",
+                263,
+                61
+            ],
+            [
+                "Hierarchical Clustering",
+                "03:50",
+                "7.8",
+                230,
+                62
+            ],
+            [
+                "Choosing the Number of Clusters",
+                "01:56",
+                "7.9",
+                116,
+                63
+            ]
+        ],
+        "total": "42min",
+        "duration": 2520,
+        "name": "Clustering",
+        "durs": [
+            36,
+            178,
+            204,
+            607,
+            701,
+            194,
+            263,
+            230,
+            116
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Nonparametric Methods",
+                "00:35",
+                "8.1",
+                35,
+                64
+            ],
+            [
+                "Introduction",
+                "03:56",
+                "8.2",
+                236,
+                65
+            ],
+            [
+                "Nonparametric Density Estimation",
+                "01:21",
+                "8.3",
+                81,
+                66
+            ],
+            [
+                "Histogram Estimator",
+                "02:31",
+                "8.4",
+                151,
+                67
+            ],
+            [
+                "Kernel Estimator",
+                "02:09",
+                "8.5",
+                129,
+                68
+            ],
+            [
+                "k-Nearest Neighbor Estimator",
+                "02:44",
+                "8.6",
+                164,
+                69
+            ],
+            [
+                "Generalization to Multivariate Data",
+                "02:25",
+                "8.7",
+                145,
+                70
+            ],
+            [
+                "Nonparametric Classification",
+                "03:46",
+                "8.8",
+                226,
+                71
+            ],
+            [
+                "Condensed Nearest Neighbor",
+                "03:13",
+                "8.9",
+                193,
+                72
+            ],
+            [
+                "Nonparametric Regression",
+                "01:19",
+                "8.10",
+                79,
+                73
+            ],
+            [
+                "Running Mean Smoother",
+                "01:23",
+                "8.11",
+                83,
+                74
+            ],
+            [
+                "Kernel Smoother",
+                "00:39",
+                "8.12",
+                39,
+                75
+            ],
+            [
+                "Running Line Smoother",
+                "01:00",
+                "8.13",
+                60,
+                76
+            ],
+            [
+                "How to Choose the Smoothing Parameter",
+                "02:35",
+                "8.14",
+                155,
+                77
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Nonparametric Methods",
+        "durs": [
+            35,
+            236,
+            81,
+            151,
+            129,
+            164,
+            145,
+            226,
+            193,
+            79,
+            83,
+            39,
+            60,
+            155
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Decision Trees",
+                "00:28",
+                "9.1",
+                28,
+                78
+            ],
+            [
+                "Introduction",
+                "03:34",
+                "9.2",
+                214,
+                79
+            ],
+            [
+                "Univariate Trees",
+                "02:33",
+                "9.3",
+                153,
+                80
+            ],
+            [
+                "Classification Trees",
+                "10:17",
+                "9.4",
+                617,
+                81
+            ],
+            [
+                "Regression Trees",
+                "04:33",
+                "9.5",
+                273,
+                82
+            ],
+            [
+                "Pruning",
+                "02:28",
+                "9.6",
+                148,
+                83
+            ],
+            [
+                "Rule Extraction from Trees",
+                "03:56",
+                "9.7",
+                236,
+                84
+            ],
+            [
+                "Learning Rules from Data",
+                "08:03",
+                "9.8",
+                483,
+                85
+            ],
+            [
+                "Multivariate Trees",
+                "05:59",
+                "9.9",
+                359,
+                86
+            ]
+        ],
+        "total": "42min",
+        "duration": 2520,
+        "name": "Decision Trees",
+        "durs": [
+            28,
+            214,
+            153,
+            617,
+            273,
+            148,
+            236,
+            483,
+            359
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Linear Discrimination",
+                "00:20",
+                "10.1",
+                20,
+                87
+            ],
+            [
+                "Introduction",
+                "04:50",
+                "10.2",
+                290,
+                88
+            ],
+            [
+                "Generalizing the Linear Model",
+                "02:04",
+                "10.3",
+                124,
+                89
+            ],
+            [
+                "Geometry of the Linear Discriminant",
+                "00:04",
+                "10.4",
+                4,
+                90
+            ],
+            [
+                "Two Classes",
+                "02:44",
+                "10.5",
+                164,
+                91
+            ],
+            [
+                "Multiple Classes",
+                "02:30",
+                "10.6",
+                150,
+                92
+            ],
+            [
+                "Pairwise Separation",
+                "02:51",
+                "10.7",
+                171,
+                93
+            ],
+            [
+                "Parametric Discrimination Revisited",
+                "03:30",
+                "10.8",
+                210,
+                94
+            ],
+            [
+                "Gradient Descent",
+                "02:58",
+                "10.9",
+                178,
+                95
+            ],
+            [
+                "Logistic Discrimination",
+                "00:04",
+                "10.10",
+                4,
+                96
+            ],
+            [
+                "Two Classes",
+                "07:23",
+                "10.11",
+                443,
+                97
+            ],
+            [
+                "Multiple Classes",
+                "07:38",
+                "10.12",
+                458,
+                98
+            ],
+            [
+                "Discrimination by Regression",
+                "03:10",
+                "10.13",
+                190,
+                99
+            ]
+        ],
+        "total": "40min",
+        "duration": 2400,
+        "name": "Linear Discrimination",
+        "durs": [
+            20,
+            290,
+            124,
+            4,
+            164,
+            150,
+            171,
+            210,
+            178,
+            4,
+            443,
+            458,
+            190
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Multilayer Perceptrons",
+                "00:20",
+                "11.1",
+                20,
+                100
+            ],
+            [
+                "Introduction",
+                "02:09",
+                "11.2",
+                129,
+                101
+            ],
+            [
+                "Understanding the Brain",
+                "04:08",
+                "11.3",
+                248,
+                102
+            ],
+            [
+                "Neural Networks as a Paradigm for Parallel Processing",
+                "03:55",
+                "11.4",
+                235,
+                103
+            ],
+            [
+                "The Perceptron",
+                "08:26",
+                "11.5",
+                506,
+                104
+            ],
+            [
+                "Training a Perceptron",
+                "07:21",
+                "11.6",
+                441,
+                105
+            ],
+            [
+                "Learning Boolean Functions",
+                "03:03",
+                "11.7",
+                183,
+                106
+            ],
+            [
+                "Multilayer Perceptrons",
+                "04:42",
+                "11.8",
+                282,
+                107
+            ],
+            [
+                "MLP as a Universal Approximator",
+                "03:19",
+                "11.9",
+                199,
+                108
+            ],
+            [
+                "Backpropagation Algorithm",
+                "00:44",
+                "11.10",
+                44,
+                109
+            ],
+            [
+                "Nonlinear Regression",
+                "08:30",
+                "11.11",
+                510,
+                110
+            ],
+            [
+                "Two-Class Discrimination",
+                "01:13",
+                "11.12",
+                73,
+                111
+            ],
+            [
+                "Multiclass Discrimination",
+                "01:12",
+                "11.13",
+                72,
+                112
+            ],
+            [
+                "Multiple Hidden Layers",
+                "00:50",
+                "11.14",
+                50,
+                113
+            ],
+            [
+                "Training Procedures",
+                "00:03",
+                "11.15",
+                3,
+                114
+            ],
+            [
+                "Improving Convergence",
+                "03:04",
+                "11.16",
+                184,
+                115
+            ],
+            [
+                "Over training",
+                "03:14",
+                "11.17",
+                194,
+                116
+            ],
+            [
+                "Structuring the Network",
+                "03:36",
+                "11.18",
+                216,
+                117
+            ],
+            [
+                "Hints",
+                "04:28",
+                "11.19",
+                268,
+                118
+            ],
+            [
+                "Tuning the Network Size",
+                "05:47",
+                "11.20",
+                347,
+                119
+            ],
+            [
+                "Bayesian View of Learning",
+                "04:30",
+                "11.21",
+                270,
+                120
+            ],
+            [
+                "Dimensionality Reduction",
+                "05:24",
+                "11.22",
+                324,
+                121
+            ],
+            [
+                "Learning Time",
+                "01:07",
+                "11.23",
+                67,
+                122
+            ],
+            [
+                "Time Delay Neural Networks",
+                "01:01",
+                "11.24",
+                61,
+                123
+            ],
+            [
+                "Recurrent Networks",
+                "02:30",
+                "11.25",
+                150,
+                124
+            ]
+        ],
+        "total": "1hr 25min",
+        "duration": 5100,
+        "name": "Multilayer Perceptrons",
+        "durs": [
+            20,
+            129,
+            248,
+            235,
+            506,
+            441,
+            183,
+            282,
+            199,
+            44,
+            510,
+            73,
+            72,
+            50,
+            3,
+            184,
+            194,
+            216,
+            268,
+            347,
+            270,
+            324,
+            67,
+            61,
+            150
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Local Models",
+                "00:26",
+                "12.1",
+                26,
+                125
+            ],
+            [
+                "Introduction",
+                "01:02",
+                "12.2",
+                62,
+                126
+            ],
+            [
+                "Competitive Learning",
+                "02:11",
+                "12.3",
+                131,
+                127
+            ],
+            [
+                "Online k-Means",
+                "11:02",
+                "12.4",
+                662,
+                128
+            ],
+            [
+                "Adaptive Resonance Theory",
+                "02:17",
+                "12.5",
+                137,
+                129
+            ],
+            [
+                "Self-Organizing Maps",
+                "03:36",
+                "12.6",
+                216,
+                130
+            ],
+            [
+                "Radial Basis Functions",
+                "14:30",
+                "12.7",
+                870,
+                131
+            ],
+            [
+                "Incorporating Rule-Based Knowledge",
+                "03:14",
+                "12.8",
+                194,
+                132
+            ],
+            [
+                "Normalized Basis Functions",
+                "03:07",
+                "12.9",
+                187,
+                133
+            ],
+            [
+                "Competitive Basis Functions",
+                "05:21",
+                "12.10",
+                321,
+                134
+            ],
+            [
+                "Learning Vector Quantization",
+                "01:16",
+                "12.11",
+                76,
+                135
+            ],
+            [
+                "Cooperative Experts",
+                "01:10",
+                "12.12",
+                70,
+                136
+            ],
+            [
+                "Competitive Experts",
+                "01:09",
+                "12.13",
+                69,
+                137
+            ]
+        ],
+        "total": "50min",
+        "duration": 3000,
+        "name": "Local Models",
+        "durs": [
+            26,
+            62,
+            131,
+            662,
+            137,
+            216,
+            870,
+            194,
+            187,
+            321,
+            76,
+            70,
+            69
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Kernel Machines",
+                "00:26",
+                "13.1",
+                26,
+                138
+            ],
+            [
+                "Introduction",
+                "04:22",
+                "13.2",
+                262,
+                139
+            ],
+            [
+                "Optimal Separating Hyperplane",
+                "09:17",
+                "13.3",
+                557,
+                140
+            ],
+            [
+                "The Nonseparable Case: Soft Margin Hyperplane",
+                "09:13",
+                "13.4",
+                553,
+                141
+            ],
+            [
+                "v-SVM",
+                "01:18",
+                "13.5",
+                78,
+                142
+            ],
+            [
+                "Kernel Trick",
+                "04:28",
+                "13.6",
+                268,
+                143
+            ],
+            [
+                "Vectorial Kernels",
+                "03:07",
+                "13.7",
+                187,
+                144
+            ],
+            [
+                "Defining Kernels",
+                "04:15",
+                "13.8",
+                255,
+                145
+            ],
+            [
+                "Multiple Kernel Learning",
+                "03:18",
+                "13.9",
+                198,
+                146
+            ],
+            [
+                "Multiclass Kernel Machines",
+                "03:54",
+                "13.10",
+                234,
+                147
+            ],
+            [
+                "Kernel Machines for Regression",
+                "07:23",
+                "13.11",
+                443,
+                148
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Kernel Machines",
+        "durs": [
+            26,
+            262,
+            557,
+            553,
+            78,
+            268,
+            187,
+            255,
+            198,
+            234,
+            443
+        ]
+    }
+]

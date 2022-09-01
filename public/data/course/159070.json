@@ -1,0 +1,554 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Course Overview",
+                "06:18",
+                "1.1",
+                378,
+                1
+            ],
+            [
+                "Why a Text Editor is a good idea",
+                "06:16",
+                "1.2",
+                376,
+                2
+            ],
+            [
+                "Installing Microsoft Expression Web [Free Version]",
+                "02:14",
+                "1.3",
+                134,
+                3
+            ],
+            [
+                "Install Adobe Brackets",
+                "00:59",
+                "1.4",
+                59,
+                4
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Welcome to the course",
+        "durs": [
+            378,
+            376,
+            134,
+            59
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Markup Language -- Tags",
+                "03:37",
+                "2.1",
+                217,
+                5
+            ],
+            [
+                "Attributes",
+                "03:32",
+                "2.2",
+                212,
+                6
+            ],
+            [
+                "The Head",
+                "04:10",
+                "2.3",
+                250,
+                7
+            ],
+            [
+                "The Body",
+                "01:23",
+                "2.4",
+                83,
+                8
+            ],
+            [
+                "The Form",
+                "02:52",
+                "2.5",
+                172,
+                9
+            ],
+            [
+                "Comments",
+                "01:40",
+                "2.6",
+                100,
+                10
+            ]
+        ],
+        "total": "17min",
+        "duration": 1020,
+        "name": "Syntax and Page Layout",
+        "durs": [
+            217,
+            212,
+            250,
+            83,
+            172,
+            100
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Get Setup",
+                "01:50",
+                "3.1",
+                110,
+                11
+            ],
+            [
+                "Headings",
+                "01:57",
+                "3.2",
+                117,
+                12
+            ],
+            [
+                "Paragraphs and Line Breaks",
+                "02:38",
+                "3.3",
+                158,
+                13
+            ],
+            [
+                "Italic Text",
+                "01:37",
+                "3.4",
+                97,
+                14
+            ],
+            [
+                "Bold Text",
+                "02:05",
+                "3.5",
+                125,
+                15
+            ]
+        ],
+        "total": "10min",
+        "duration": 600,
+        "name": "Text",
+        "durs": [
+            110,
+            117,
+            158,
+            97,
+            125
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Ampersand, Greater Than, and Less Than",
+                "03:52",
+                "4.1",
+                232,
+                16
+            ],
+            [
+                "Nonbreaking Space, Tab",
+                "04:09",
+                "4.2",
+                249,
+                17
+            ],
+            [
+                "Copyright and more to explore",
+                "03:34",
+                "4.3",
+                214,
+                18
+            ]
+        ],
+        "total": "12min",
+        "duration": 720,
+        "name": "Special Characters",
+        "durs": [
+            232,
+            249,
+            214
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Ordered Lists",
+                "01:57",
+                "5.1",
+                117,
+                19
+            ],
+            [
+                "Unordered Lists",
+                "04:05",
+                "5.2",
+                245,
+                20
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Lists",
+        "durs": [
+            117,
+            245
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Anchors [Links]",
+                "04:13",
+                "6.1",
+                253,
+                21
+            ],
+            [
+                "Anchors [mailto]",
+                "02:21",
+                "6.2",
+                141,
+                22
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Links",
+        "durs": [
+            253,
+            141
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Going Forward",
+                "01:11",
+                "7.1",
+                71,
+                23
+            ],
+            [
+                "Tables, Rows, Columns, and cells",
+                "05:37",
+                "7.2",
+                337,
+                24
+            ],
+            [
+                "Cell and Row Styling - Borders",
+                "06:55",
+                "7.3",
+                415,
+                25
+            ],
+            [
+                "Cell and Row Styling - Colors",
+                "05:27",
+                "7.4",
+                327,
+                26
+            ],
+            [
+                "Cell and Row Styling - Padding and Spacing",
+                "05:06",
+                "7.5",
+                306,
+                27
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Tables",
+        "durs": [
+            71,
+            337,
+            415,
+            327,
+            306
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Using Images",
+                "04:05",
+                "8.1",
+                245,
+                28
+            ],
+            [
+                "Styling Images: Sizing",
+                "02:22",
+                "8.2",
+                142,
+                29
+            ],
+            [
+                "Styling Images: Border And Corners",
+                "03:12",
+                "8.3",
+                192,
+                30
+            ],
+            [
+                "Using Images With Links",
+                "06:16",
+                "8.4",
+                376,
+                31
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Images",
+        "durs": [
+            245,
+            142,
+            192,
+            376
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Text Input",
+                "05:21",
+                "9.1",
+                321,
+                32
+            ],
+            [
+                "Results Page - why and how quick look",
+                "02:50",
+                "9.2",
+                170,
+                33
+            ],
+            [
+                "Submit Buttons",
+                "05:34",
+                "9.3",
+                334,
+                34
+            ],
+            [
+                "Text Area Input",
+                "03:30",
+                "9.4",
+                210,
+                35
+            ],
+            [
+                "Password Input",
+                "01:15",
+                "9.5",
+                75,
+                36
+            ],
+            [
+                "Checkboxes",
+                "05:18",
+                "9.6",
+                318,
+                37
+            ],
+            [
+                "Radio Buttons",
+                "03:21",
+                "9.7",
+                201,
+                38
+            ],
+            [
+                "Dropdown List [select -- option]",
+                "03:06",
+                "9.8",
+                186,
+                39
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Input, and User Submission",
+        "durs": [
+            321,
+            170,
+            334,
+            210,
+            75,
+            318,
+            201,
+            186
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Input Types",
+                "04:55",
+                "10.1",
+                295,
+                40
+            ],
+            [
+                "Header",
+                "02:50",
+                "10.2",
+                170,
+                41
+            ],
+            [
+                "Nav",
+                "01:40",
+                "10.3",
+                100,
+                42
+            ],
+            [
+                "Section",
+                "01:37",
+                "10.4",
+                97,
+                43
+            ],
+            [
+                "Article",
+                "02:25",
+                "10.5",
+                145,
+                44
+            ],
+            [
+                "Aside",
+                "02:25",
+                "10.6",
+                145,
+                45
+            ],
+            [
+                "Footer",
+                "02:01",
+                "10.7",
+                121,
+                46
+            ]
+        ],
+        "total": "18min",
+        "duration": 1080,
+        "name": "HTML 5 Enhancements",
+        "durs": [
+            295,
+            170,
+            100,
+            97,
+            145,
+            145,
+            121
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Audio in HTML5",
+                "02:18",
+                "11.1",
+                138,
+                47
+            ],
+            [
+                "Video in HTML5",
+                "02:24",
+                "11.2",
+                144,
+                48
+            ],
+            [
+                "SVG in HTML5",
+                "02:56",
+                "11.3",
+                176,
+                49
+            ],
+            [
+                "Canvas",
+                "02:39",
+                "11.4",
+                159,
+                50
+            ]
+        ],
+        "total": "10min",
+        "duration": 600,
+        "name": "HTML5 Media And Graphics",
+        "durs": [
+            138,
+            144,
+            176,
+            159
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Cascading Style Sheets [CSS]",
+                "06:50",
+                "12.1",
+                410,
+                51
+            ],
+            [
+                "Javascript",
+                "08:32",
+                "12.2",
+                512,
+                52
+            ],
+            [
+                "JQuery",
+                "06:32",
+                "12.3",
+                392,
+                53
+            ],
+            [
+                "Course Wrap Up",
+                "02:34",
+                "12.4",
+                154,
+                54
+            ]
+        ],
+        "total": "24min",
+        "duration": 1440,
+        "name": "Further Exploration and Wrap Up",
+        "durs": [
+            410,
+            512,
+            392,
+            154
+        ]
+    }
+]

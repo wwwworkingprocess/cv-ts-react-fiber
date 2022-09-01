@@ -1,0 +1,2374 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "01:46",
+                "1.1",
+                106,
+                1
+            ],
+            [
+                "What Do You Want To Achieve?",
+                "02:09",
+                "1.2",
+                129,
+                2
+            ],
+            [
+                "Installing Visual Studio Community",
+                "07:07",
+                "1.3",
+                427,
+                3
+            ],
+            [
+                "Udemy Reviews Update",
+                "00:25",
+                "1.4",
+                25,
+                4
+            ],
+            [
+                "Important note!",
+                "00:31",
+                "1.5",
+                31,
+                5
+            ],
+            [
+                "Hello World - First Program",
+                "14:09",
+                "1.6",
+                849,
+                6
+            ],
+            [
+                "Hello World on a Mac",
+                "02:03",
+                "1.7",
+                123,
+                7
+            ],
+            [
+                "Visual Studio Interface",
+                "07:42",
+                "1.8",
+                462,
+                8
+            ],
+            [
+                "What To Do If You Get Stuck",
+                "00:19",
+                "1.9",
+                19,
+                9
+            ],
+            [
+                "Whats new in Visual Studio 2019",
+                "00:18",
+                "1.10",
+                18,
+                10
+            ],
+            [
+                "Get the most from Tutorials.EU",
+                "00:08",
+                "1.11",
+                8,
+                11
+            ],
+            [
+                "BONUS: additional materials",
+                "00:34",
+                "1.12",
+                34,
+                12
+            ],
+            [
+                "Intro Quiz",
+                "3 questions",
+                "",
+                0,
+                13
+            ],
+            [
+                "Chapter 1 Summary",
+                "01:09",
+                "1.13",
+                69,
+                13
+            ]
+        ],
+        "total": "38min",
+        "duration": 2280,
+        "name": "Your First C# Programm And Overview Of Visual Studio",
+        "durs": [
+            106,
+            129,
+            427,
+            25,
+            31,
+            849,
+            123,
+            462,
+            19,
+            18,
+            8,
+            34,
+            0,
+            69
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Quick Hint",
+                "00:14",
+                "2.1",
+                14,
+                14
+            ],
+            [
+                "Datatypes Overview",
+                "08:39",
+                "2.2",
+                519,
+                15
+            ],
+            [
+                "Other Datatypes",
+                "00:13",
+                "2.3",
+                13,
+                16
+            ],
+            [
+                "Datatypes Int, Float and Double",
+                "10:40",
+                "2.4",
+                640,
+                17
+            ],
+            [
+                "Datatype String And Some Of Its Methods",
+                "04:57",
+                "2.5",
+                297,
+                18
+            ],
+            [
+                "Datatypes And Variables",
+                "4 questions",
+                "",
+                0,
+                19
+            ],
+            [
+                "Coding Standards",
+                "04:48",
+                "2.6",
+                288,
+                19
+            ],
+            [
+                "Value vs Reference Types",
+                "03:58",
+                "2.7",
+                238,
+                20
+            ],
+            [
+                "Console Class and some of its Methods",
+                "11:03",
+                "2.8",
+                663,
+                21
+            ],
+            [
+                "Changing The Consoles Colors",
+                "07:54",
+                "2.9",
+                474,
+                22
+            ],
+            [
+                "Naming Conventions and Coding Standards",
+                "05:43",
+                "2.10",
+                343,
+                23
+            ],
+            [
+                "Implicit and Explicit Conversion",
+                "08:31",
+                "2.11",
+                511,
+                24
+            ],
+            [
+                "Parsing a String To An Integer",
+                "05:19",
+                "2.12",
+                319,
+                25
+            ],
+            [
+                "Some String Methods",
+                "05:25",
+                "2.13",
+                325,
+                26
+            ],
+            [
+                "Challenge String and its methods",
+                "00:43",
+                "2.14",
+                43,
+                27
+            ],
+            [
+                "Solution For Exercise: Strings 1",
+                "05:30",
+                "2.15",
+                330,
+                28
+            ],
+            [
+                "Challenge String and its methods 2",
+                "00:36",
+                "2.16",
+                36,
+                29
+            ],
+            [
+                "Solution For Exercise: Strings 2",
+                "05:36",
+                "2.17",
+                336,
+                30
+            ],
+            [
+                "Challenge - Datatypes And Variables",
+                "00:29",
+                "2.18",
+                29,
+                31
+            ],
+            [
+                "Solution For The Challenge \"Datatypes And Variables\"",
+                "04:26",
+                "2.19",
+                266,
+                32
+            ],
+            [
+                "Constants",
+                "05:31",
+                "2.20",
+                331,
+                33
+            ],
+            [
+                "Datatypes and Variables Part 2",
+                "3 questions",
+                "",
+                0,
+                34
+            ],
+            [
+                "C# Cheat sheets",
+                "00:36",
+                "2.21",
+                36,
+                34
+            ],
+            [
+                "DataTypes Summary",
+                "00:53",
+                "2.22",
+                53,
+                35
+            ]
+        ],
+        "total": "1hr 42min",
+        "duration": 6120,
+        "name": "DataTypes And Variables",
+        "durs": [
+            14,
+            519,
+            13,
+            640,
+            297,
+            0,
+            288,
+            238,
+            663,
+            474,
+            343,
+            511,
+            319,
+            325,
+            43,
+            330,
+            36,
+            336,
+            29,
+            266,
+            331,
+            0,
+            36,
+            53
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Methods Intro",
+                "01:14",
+                "3.1",
+                74,
+                36
+            ],
+            [
+                "Intro To Functions / Methods",
+                "07:08",
+                "3.2",
+                428,
+                37
+            ],
+            [
+                "Void Methods",
+                "08:14",
+                "3.3",
+                494,
+                38
+            ],
+            [
+                "Methods With Return Value And Parameters",
+                "08:54",
+                "3.4",
+                534,
+                39
+            ],
+            [
+                "Methods",
+                "3 questions",
+                "",
+                0,
+                40
+            ],
+            [
+                "Challenge - Methods",
+                "00:18",
+                "3.5",
+                18,
+                40
+            ],
+            [
+                "Solution For The Challenge \"Methods\"",
+                "04:04",
+                "3.6",
+                244,
+                41
+            ],
+            [
+                "User Input",
+                "09:00",
+                "3.7",
+                540,
+                42
+            ],
+            [
+                "Try Catch and Finally",
+                "14:39",
+                "3.8",
+                879,
+                43
+            ],
+            [
+                "Operators",
+                "17:41",
+                "3.9",
+                1061,
+                44
+            ],
+            [
+                "Operators",
+                "3 questions",
+                "",
+                0,
+                45
+            ],
+            [
+                "Methods Summary",
+                "00:58",
+                "3.10",
+                58,
+                45
+            ]
+        ],
+        "total": "1hr 12min",
+        "duration": 4320,
+        "name": "Functions / Methods And How To Save Time",
+        "durs": [
+            74,
+            428,
+            494,
+            534,
+            0,
+            18,
+            244,
+            540,
+            879,
+            1061,
+            0,
+            58
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Making Decisions Intro",
+                "00:54",
+                "4.1",
+                54,
+                46
+            ],
+            [
+                "Introduction To Decision Making In C#",
+                "08:47",
+                "4.2",
+                527,
+                47
+            ],
+            [
+                "Intro to TryParse",
+                "05:20",
+                "4.3",
+                320,
+                48
+            ],
+            [
+                "IF And Else If + Try Parse",
+                "07:31",
+                "4.4",
+                451,
+                49
+            ],
+            [
+                "Nested If Statements",
+                "09:53",
+                "4.5",
+                593,
+                50
+            ],
+            [
+                "Challenge - If Statements",
+                "00:19",
+                "4.6",
+                19,
+                51
+            ],
+            [
+                "Solution For The Challenge \"If Statements\"",
+                "07:14",
+                "4.7",
+                434,
+                52
+            ],
+            [
+                "Switch Statement",
+                "06:34",
+                "4.8",
+                394,
+                53
+            ],
+            [
+                "Challenge - If Statements 2",
+                "00:23",
+                "4.9",
+                23,
+                54
+            ],
+            [
+                "Solution For The Challenge \"If Statements 2\"",
+                "05:47",
+                "4.10",
+                347,
+                55
+            ],
+            [
+                "Enhanced If Statements - Ternary Operator",
+                "09:02",
+                "4.11",
+                542,
+                56
+            ],
+            [
+                "Enhanced If Statements - Ternary Operator - Challenge",
+                "00:39",
+                "4.12",
+                39,
+                57
+            ],
+            [
+                "Enhanced If Statements - Ternary Operator - Challenge - Solution",
+                "05:24",
+                "4.13",
+                324,
+                58
+            ],
+            [
+                "If-Statements",
+                "5 questions",
+                "",
+                0,
+                59
+            ],
+            [
+                "Making Decisions Summary",
+                "01:54",
+                "4.14",
+                114,
+                59
+            ]
+        ],
+        "total": "1hr 10min",
+        "duration": 4200,
+        "name": "Making Decisions",
+        "durs": [
+            54,
+            527,
+            320,
+            451,
+            593,
+            19,
+            434,
+            394,
+            23,
+            347,
+            542,
+            39,
+            324,
+            0,
+            114
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Loops Intro",
+                "00:55",
+                "5.1",
+                55,
+                60
+            ],
+            [
+                "Basics of Loops",
+                "05:38",
+                "5.2",
+                338,
+                61
+            ],
+            [
+                "For Loops",
+                "06:58",
+                "5.3",
+                418,
+                62
+            ],
+            [
+                "Do While Loops",
+                "07:59",
+                "5.4",
+                479,
+                63
+            ],
+            [
+                "While Loops",
+                "06:03",
+                "5.5",
+                363,
+                64
+            ],
+            [
+                "break and continue",
+                "05:34",
+                "5.6",
+                334,
+                65
+            ],
+            [
+                "Challenge - Loops 1 - Average",
+                "00:29",
+                "5.7",
+                29,
+                66
+            ],
+            [
+                "Solution For The Challenge \"Loops\"",
+                "12:17",
+                "5.8",
+                737,
+                67
+            ],
+            [
+                "Loops",
+                "3 questions",
+                "",
+                0,
+                68
+            ],
+            [
+                "Loops Summary",
+                "01:16",
+                "5.9",
+                76,
+                68
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Loops",
+        "durs": [
+            55,
+            338,
+            418,
+            479,
+            363,
+            334,
+            29,
+            737,
+            0,
+            76
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Objects Intro",
+                "02:07",
+                "6.1",
+                127,
+                69
+            ],
+            [
+                "Introduction To Classes And Objects",
+                "03:15",
+                "6.2",
+                195,
+                70
+            ],
+            [
+                "Our First Own Class",
+                "11:09",
+                "6.3",
+                669,
+                71
+            ],
+            [
+                "Using Constructors",
+                "11:50",
+                "6.4",
+                710,
+                72
+            ],
+            [
+                "Using Multiple Constructors",
+                "11:45",
+                "6.5",
+                705,
+                73
+            ],
+            [
+                "Access Modifiers",
+                "00:05",
+                "6.6",
+                5,
+                74
+            ],
+            [
+                "Constructors and Member-Variables",
+                "3 questions",
+                "",
+                0,
+                75
+            ],
+            [
+                "Properties Part 1",
+                "20:03",
+                "6.7",
+                1203,
+                75
+            ],
+            [
+                "Properties Part 2",
+                "18:24",
+                "6.8",
+                1104,
+                76
+            ],
+            [
+                "Challenge - Properties",
+                "02:10",
+                "6.9",
+                130,
+                77
+            ],
+            [
+                "Members And Finalizers/Destructors",
+                "14:43",
+                "6.10",
+                883,
+                78
+            ],
+            [
+                "Objects Summary",
+                "01:23",
+                "6.11",
+                83,
+                79
+            ]
+        ],
+        "total": "1hr 37min",
+        "duration": 5820,
+        "name": "Object Oriented Programming (OOP)",
+        "durs": [
+            127,
+            195,
+            669,
+            710,
+            705,
+            5,
+            0,
+            1203,
+            1104,
+            130,
+            883,
+            83
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Arrays Intro",
+                "00:58",
+                "7.1",
+                58,
+                80
+            ],
+            [
+                "Basics of Arrays",
+                "04:08",
+                "7.2",
+                248,
+                81
+            ],
+            [
+                "Declaring and Initializing Arrays and the Length Property",
+                "07:07",
+                "7.3",
+                427,
+                82
+            ],
+            [
+                "Foreach Loops",
+                "09:28",
+                "7.4",
+                568,
+                83
+            ],
+            [
+                "Foreach Loops and Switch Statement challenge",
+                "00:58",
+                "7.5",
+                58,
+                84
+            ],
+            [
+                "Foreach Loops and Switch Statement challenge - solution",
+                "09:08",
+                "7.6",
+                548,
+                85
+            ],
+            [
+                "Multi Dimensional Arrays",
+                "14:25",
+                "7.7",
+                865,
+                86
+            ],
+            [
+                "Arrays Quiz",
+                "5 questions",
+                "",
+                0,
+                87
+            ],
+            [
+                "Challenge - Tic Tac Toe",
+                "48:34",
+                "7.8",
+                2914,
+                87
+            ],
+            [
+                "Jagged Arrays",
+                "09:08",
+                "7.9",
+                548,
+                88
+            ],
+            [
+                "Challenge - Jagged Arrays",
+                "06:35",
+                "7.10",
+                395,
+                89
+            ],
+            [
+                "Using Arrays As Parameters",
+                "09:01",
+                "7.11",
+                541,
+                90
+            ],
+            [
+                "Why you can change an array by passing it as a variable",
+                "00:19",
+                "7.12",
+                19,
+                91
+            ],
+            [
+                "ArrayLists",
+                "11:24",
+                "7.13",
+                684,
+                92
+            ],
+            [
+                "Lists",
+                "04:04",
+                "7.14",
+                244,
+                93
+            ],
+            [
+                "Arraylists vs Lists vs Arrays",
+                "14:52",
+                "7.15",
+                892,
+                94
+            ],
+            [
+                "Arrays Summary",
+                "02:08",
+                "7.16",
+                128,
+                95
+            ]
+        ],
+        "total": "2hr 32min",
+        "duration": 9120,
+        "name": "Arrays & Lists",
+        "durs": [
+            58,
+            248,
+            427,
+            568,
+            58,
+            548,
+            865,
+            0,
+            2914,
+            548,
+            395,
+            541,
+            19,
+            684,
+            244,
+            892,
+            128
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Debugging Intro",
+                "00:49",
+                "8.1",
+                49,
+                96
+            ],
+            [
+                "Debugging Basics",
+                "12:35",
+                "8.2",
+                755,
+                97
+            ],
+            [
+                "Locals and Autos",
+                "10:42",
+                "8.3",
+                642,
+                98
+            ],
+            [
+                "Debugging, Creating Copies of Lists and solving some bugs",
+                "10:34",
+                "8.4",
+                634,
+                99
+            ],
+            [
+                "Debugging Call Stack, Throwing Errors and defensive programming",
+                "14:33",
+                "8.5",
+                873,
+                100
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "Debugging",
+        "durs": [
+            49,
+            755,
+            642,
+            634,
+            873
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Welcome to Inheritance",
+                "01:03",
+                "9.1",
+                63,
+                101
+            ],
+            [
+                "Introduction To Inheritance",
+                "04:41",
+                "9.2",
+                281,
+                102
+            ],
+            [
+                "Inheritance Demo",
+                "23:04",
+                "9.3",
+                1384,
+                103
+            ],
+            [
+                "Inheritance Challenge - Videopost and Timer with Callback",
+                "24:04",
+                "9.4",
+                1444,
+                104
+            ],
+            [
+                "Inheritance Challenge 2 - Employees, Bosses and Trainees",
+                "00:30",
+                "9.5",
+                30,
+                105
+            ],
+            [
+                "Inheritance Challenge 2 - Employees, Bosses and Trainees Solution",
+                "16:32",
+                "9.6",
+                992,
+                106
+            ],
+            [
+                "Interfaces",
+                "11:04",
+                "9.7",
+                664,
+                107
+            ],
+            [
+                "Inheritance Outro",
+                "00:39",
+                "9.8",
+                39,
+                108
+            ]
+        ],
+        "total": "1hr 22min",
+        "duration": 4920,
+        "name": "Inheritance And More About OOP",
+        "durs": [
+            63,
+            281,
+            1384,
+            1444,
+            30,
+            992,
+            664,
+            39
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Polymorphism Intro",
+                "00:25",
+                "10.1",
+                25,
+                109
+            ],
+            [
+                "Polymorphic Parameters",
+                "16:41",
+                "10.2",
+                1001,
+                110
+            ],
+            [
+                "Sealed Key Word",
+                "05:21",
+                "10.3",
+                321,
+                111
+            ],
+            [
+                "Has A - Relationships",
+                "07:41",
+                "10.4",
+                461,
+                112
+            ],
+            [
+                "Read from a Textfile",
+                "05:32",
+                "10.5",
+                332,
+                113
+            ],
+            [
+                "Write into a Text File",
+                "11:55",
+                "10.6",
+                715,
+                114
+            ],
+            [
+                "Polymorphism Summary",
+                "01:09",
+                "10.7",
+                69,
+                115
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "Polymorphism And Even More On OOP + Text Files",
+        "durs": [
+            25,
+            1001,
+            321,
+            461,
+            332,
+            715,
+            69
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Advanced Topics Intro",
+                "00:43",
+                "11.1",
+                43,
+                116
+            ],
+            [
+                ".net core vs .net framework",
+                "00:10",
+                "11.2",
+                10,
+                117
+            ],
+            [
+                "Access Modifiers",
+                "06:21",
+                "11.3",
+                381,
+                118
+            ],
+            [
+                "Structs",
+                "07:47",
+                "11.4",
+                467,
+                119
+            ],
+            [
+                "Enums",
+                "05:35",
+                "11.5",
+                335,
+                120
+            ],
+            [
+                "Math Class",
+                "08:35",
+                "11.6",
+                515,
+                121
+            ],
+            [
+                "Random Class",
+                "06:20",
+                "11.7",
+                380,
+                122
+            ],
+            [
+                "VS 2019 and Regular expressions",
+                "00:14",
+                "11.8",
+                14,
+                123
+            ],
+            [
+                "Regular Expressions",
+                "43:36",
+                "11.9",
+                2616,
+                124
+            ],
+            [
+                "DateTime",
+                "21:06",
+                "11.10",
+                1266,
+                125
+            ],
+            [
+                "Nullables",
+                "12:01",
+                "11.11",
+                721,
+                126
+            ],
+            [
+                "Garbage Collector",
+                "07:58",
+                "11.12",
+                478,
+                127
+            ],
+            [
+                "Abstract",
+                "13:37",
+                "11.13",
+                817,
+                128
+            ],
+            [
+                "Abstract and as & is Keyword / Polymorphism",
+                "06:58",
+                "11.14",
+                418,
+                129
+            ]
+        ],
+        "total": "2hr 21min",
+        "duration": 8460,
+        "name": "Advanced C# Topics",
+        "durs": [
+            43,
+            10,
+            381,
+            467,
+            335,
+            515,
+            380,
+            14,
+            2616,
+            1266,
+            721,
+            478,
+            817,
+            418
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Delegates intro",
+                "01:28",
+                "12.1",
+                88,
+                130
+            ],
+            [
+                "Delegates Basics",
+                "06:23",
+                "12.2",
+                383,
+                131
+            ],
+            [
+                "Creating your own delegate and multicast delegate",
+                "09:51",
+                "12.3",
+                591,
+                132
+            ],
+            [
+                "Anonymous Methods",
+                "06:19",
+                "12.4",
+                379,
+                133
+            ],
+            [
+                "Lambda Expressions",
+                "08:45",
+                "12.5",
+                525,
+                134
+            ],
+            [
+                "Events and Delegates",
+                "28:53",
+                "12.6",
+                1733,
+                135
+            ],
+            [
+                "Delegates Outro",
+                "01:35",
+                "12.7",
+                95,
+                136
+            ]
+        ],
+        "total": "1hr 3min",
+        "duration": 3780,
+        "name": "Events and Delegates",
+        "durs": [
+            88,
+            383,
+            591,
+            379,
+            525,
+            1733,
+            95
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "WPF Intro",
+                "01:22",
+                "13.1",
+                82,
+                137
+            ],
+            [
+                "Introduction To WPF - And When To Use It",
+                "06:26",
+                "13.2",
+                386,
+                138
+            ],
+            [
+                "XAML Basics and Code Behind",
+                "20:01",
+                "13.3",
+                1201,
+                139
+            ],
+            [
+                "StackPanel - Listbox - Visual and Logical Tree",
+                "10:16",
+                "13.4",
+                616,
+                140
+            ],
+            [
+                "Routed Events - Direct, Bubbling and Tunneling",
+                "08:48",
+                "13.5",
+                528,
+                141
+            ],
+            [
+                "More details on Routed Events",
+                "00:07",
+                "13.6",
+                7,
+                142
+            ],
+            [
+                "Grid",
+                "13:01",
+                "13.7",
+                781,
+                143
+            ],
+            [
+                "Dependency Properties",
+                "15:26",
+                "13.8",
+                926,
+                144
+            ],
+            [
+                "Data Binding",
+                "11:11",
+                "13.9",
+                671,
+                145
+            ],
+            [
+                "INotifyPropertyChanged Interface",
+                "15:33",
+                "13.10",
+                933,
+                146
+            ],
+            [
+                "ListBox and a List of Current Matches",
+                "21:45",
+                "13.11",
+                1305,
+                147
+            ],
+            [
+                "ComboBox",
+                "05:10",
+                "13.12",
+                310,
+                148
+            ],
+            [
+                "CheckBox",
+                "12:04",
+                "13.13",
+                724,
+                149
+            ],
+            [
+                "ToolTip",
+                "02:48",
+                "13.14",
+                168,
+                150
+            ],
+            [
+                "RadioButtons and Images",
+                "11:29",
+                "13.15",
+                689,
+                151
+            ],
+            [
+                "Property, Data and Event Triggers",
+                "19:52",
+                "13.16",
+                1192,
+                152
+            ],
+            [
+                "PasswordBox",
+                "05:19",
+                "13.17",
+                319,
+                153
+            ],
+            [
+                "WPF Summary",
+                "01:16",
+                "13.18",
+                76,
+                154
+            ]
+        ],
+        "total": "3hr 2min",
+        "duration": 10920,
+        "name": "WPF - Windows Presentation Foundation",
+        "durs": [
+            82,
+            386,
+            1201,
+            616,
+            528,
+            7,
+            781,
+            926,
+            671,
+            933,
+            1305,
+            310,
+            724,
+            168,
+            689,
+            1192,
+            319,
+            76
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Databases Intro",
+                "01:04",
+                "14.1",
+                64,
+                155
+            ],
+            [
+                "Setup MS SQL Server and VS For DB work",
+                "09:53",
+                "14.2",
+                593,
+                156
+            ],
+            [
+                "Intro And Setting Up Our DataSet And Table",
+                "13:35",
+                "14.3",
+                815,
+                157
+            ],
+            [
+                "Relationship or Associative Tables",
+                "14:07",
+                "14.4",
+                847,
+                158
+            ],
+            [
+                "Showing Data in a ListBox",
+                "13:36",
+                "14.5",
+                816,
+                159
+            ],
+            [
+                "Showing Associated Data",
+                "10:24",
+                "14.6",
+                624,
+                160
+            ],
+            [
+                "Displaying all Animals In The ListBox",
+                "08:11",
+                "14.7",
+                491,
+                161
+            ],
+            [
+                "Deleting From A Table With A Click",
+                "16:07",
+                "14.8",
+                967,
+                162
+            ],
+            [
+                "Added Note - Adding the base tables and entries back",
+                "01:22",
+                "14.9",
+                82,
+                163
+            ],
+            [
+                "Delete Animals, Remove Animals and Add Animals Functionality",
+                "17:00",
+                "14.10",
+                1020,
+                164
+            ],
+            [
+                "Updating Entries in Our Tables",
+                "15:53",
+                "14.11",
+                953,
+                165
+            ],
+            [
+                "Databases Outro",
+                "00:39",
+                "14.12",
+                39,
+                166
+            ]
+        ],
+        "total": "2hr 2min",
+        "duration": 7320,
+        "name": "Using Databases With C#",
+        "durs": [
+            64,
+            593,
+            815,
+            847,
+            816,
+            624,
+            491,
+            967,
+            82,
+            1020,
+            953,
+            39
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Linq Intro",
+                "00:52",
+                "15.1",
+                52,
+                167
+            ],
+            [
+                "Linq gentle Introduction",
+                "03:56",
+                "15.2",
+                236,
+                168
+            ],
+            [
+                "Linq Demo",
+                "05:35",
+                "15.3",
+                335,
+                169
+            ],
+            [
+                "Linq with Lists - and our University Manager Part 1",
+                "13:28",
+                "15.4",
+                808,
+                170
+            ],
+            [
+                "Sorting and Filtering with Linq",
+                "15:10",
+                "15.5",
+                910,
+                171
+            ],
+            [
+                "Creating collections based on other collections",
+                "06:52",
+                "15.6",
+                412,
+                172
+            ],
+            [
+                "Linq with XML",
+                "17:38",
+                "15.7",
+                1058,
+                173
+            ],
+            [
+                "Setting up the project for LinqToSQL",
+                "15:48",
+                "15.8",
+                948,
+                174
+            ],
+            [
+                "Inserting Objects into our Database",
+                "19:12",
+                "15.9",
+                1152,
+                175
+            ],
+            [
+                "Using assiociative tables with Linq",
+                "16:25",
+                "15.10",
+                985,
+                176
+            ],
+            [
+                "Joining tables next level",
+                "09:22",
+                "15.11",
+                562,
+                177
+            ],
+            [
+                "Deleting and Updating",
+                "13:30",
+                "15.12",
+                810,
+                178
+            ],
+            [
+                "Linq Outro",
+                "00:33",
+                "15.13",
+                33,
+                179
+            ]
+        ],
+        "total": "2hr 18min",
+        "duration": 8280,
+        "name": "Linq",
+        "durs": [
+            52,
+            236,
+            335,
+            808,
+            910,
+            412,
+            1058,
+            948,
+            1152,
+            985,
+            562,
+            810,
+            33
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Part 1 - Building The GUI And Using Static Data",
+                "00:09",
+                "16.1",
+                9,
+                180
+            ],
+            [
+                "Part 2 - Building A Grid Table And Using A Database",
+                "00:07",
+                "16.2",
+                7,
+                181
+            ],
+            [
+                "Part 3 - Using Live Currency Values from the Internet Using An API And JSON",
+                "30:56",
+                "16.3",
+                1856,
+                182
+            ]
+        ],
+        "total": "31min",
+        "duration": 1860,
+        "name": "NEW: WPF Project - Currency Converter with GUI Database and API",
+        "durs": [
+            9,
+            7,
+            1856
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Threads Intro",
+                "00:51",
+                "17.1",
+                51,
+                183
+            ],
+            [
+                "Threads Basics",
+                "11:51",
+                "17.2",
+                711,
+                184
+            ],
+            [
+                "Thread Start and End &Completion",
+                "09:53",
+                "17.3",
+                593,
+                185
+            ],
+            [
+                "ThreadPools and Threads in The Background",
+                "09:06",
+                "17.4",
+                546,
+                186
+            ],
+            [
+                "Join And IsAlive",
+                "13:35",
+                "17.5",
+                815,
+                187
+            ],
+            [
+                "Tasks and WPF",
+                "24:10",
+                "17.6",
+                1450,
+                188
+            ],
+            [
+                "Threads Readings",
+                "00:08",
+                "17.7",
+                8,
+                189
+            ],
+            [
+                "Threads Outro",
+                "00:39",
+                "17.8",
+                39,
+                190
+            ]
+        ],
+        "total": "1hr 10min",
+        "duration": 4200,
+        "name": "Threads",
+        "durs": [
+            51,
+            711,
+            593,
+            546,
+            815,
+            1450,
+            8,
+            39
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Intro Unity Basics",
+                "02:35",
+                "18.1",
+                155,
+                191
+            ],
+            [
+                "Installing Unity",
+                "00:02",
+                "18.2",
+                2,
+                192
+            ],
+            [
+                "Overview of the Unity Interface",
+                "07:43",
+                "18.3",
+                463,
+                193
+            ],
+            [
+                "Creating your own Layout",
+                "03:46",
+                "18.4",
+                226,
+                194
+            ],
+            [
+                "Player Movement",
+                "13:12",
+                "18.5",
+                792,
+                195
+            ],
+            [
+                "Making Sure We Make Changes Correctly",
+                "03:05",
+                "18.6",
+                185,
+                196
+            ],
+            [
+                "Physis Basics",
+                "04:35",
+                "18.7",
+                275,
+                197
+            ],
+            [
+                "RigidBody - A Physical Body",
+                "09:38",
+                "18.8",
+                578,
+                198
+            ],
+            [
+                "Colliders And Their Different Types",
+                "12:04",
+                "18.9",
+                724,
+                199
+            ],
+            [
+                "Triggers",
+                "10:21",
+                "18.10",
+                621,
+                200
+            ],
+            [
+                "Prefabs And GameObjects",
+                "05:11",
+                "18.11",
+                311,
+                201
+            ],
+            [
+                "Components And More On Prefabs",
+                "04:12",
+                "18.12",
+                252,
+                202
+            ],
+            [
+                "Keeping The Hierarchy Tidy",
+                "02:29",
+                "18.13",
+                149,
+                203
+            ],
+            [
+                "Class Structure",
+                "08:58",
+                "18.14",
+                538,
+                204
+            ],
+            [
+                "Mathf And Random Class",
+                "04:57",
+                "18.15",
+                297,
+                205
+            ],
+            [
+                "Unity Basics Outro",
+                "01:48",
+                "18.16",
+                108,
+                206
+            ]
+        ],
+        "total": "1hr 35min",
+        "duration": 5700,
+        "name": "UNITY - Basics",
+        "durs": [
+            155,
+            2,
+            463,
+            226,
+            792,
+            185,
+            275,
+            578,
+            724,
+            621,
+            311,
+            252,
+            149,
+            538,
+            297,
+            108
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Pong Introduction",
+                "02:05",
+                "19.1",
+                125,
+                207
+            ],
+            [
+                "Basics - UI Elements",
+                "06:47",
+                "19.2",
+                407,
+                208
+            ],
+            [
+                "Basics - Accessing Text Through Code",
+                "05:44",
+                "19.3",
+                344,
+                209
+            ],
+            [
+                "Basics - Buttons",
+                "05:48",
+                "19.4",
+                348,
+                210
+            ],
+            [
+                "Basics - Switching Scenes",
+                "09:35",
+                "19.5",
+                575,
+                211
+            ],
+            [
+                "Basics - Play Sound",
+                "08:52",
+                "19.6",
+                532,
+                212
+            ],
+            [
+                "Project Outline - Pong",
+                "07:26",
+                "19.7",
+                446,
+                213
+            ],
+            [
+                "Creating The Main Menu",
+                "15:03",
+                "19.8",
+                903,
+                214
+            ],
+            [
+                "Switching Scenes and Using Buttons",
+                "09:01",
+                "19.9",
+                541,
+                215
+            ],
+            [
+                "Building Our Game Scene",
+                "13:58",
+                "19.10",
+                838,
+                216
+            ],
+            [
+                "2D vs 3D Colliders and Rigidbody For Our Ball",
+                "06:56",
+                "19.11",
+                416,
+                217
+            ],
+            [
+                "Moving Our Ball Left And Right",
+                "11:14",
+                "19.12",
+                674,
+                218
+            ],
+            [
+                "Racket Movement",
+                "09:43",
+                "19.13",
+                583,
+                219
+            ],
+            [
+                "Bouncing Off Correctly",
+                "09:12",
+                "19.14",
+                552,
+                220
+            ],
+            [
+                "Scoring System",
+                "08:22",
+                "19.15",
+                502,
+                221
+            ],
+            [
+                "Restarting A Round",
+                "05:27",
+                "19.16",
+                327,
+                222
+            ],
+            [
+                "The Game Over Screen",
+                "04:23",
+                "19.17",
+                263,
+                223
+            ],
+            [
+                "Adding Sound To The Game",
+                "07:26",
+                "19.18",
+                446,
+                224
+            ],
+            [
+                "Adding a Basic AI",
+                "05:17",
+                "19.19",
+                317,
+                225
+            ],
+            [
+                "Chapter Summary",
+                "01:22",
+                "19.20",
+                82,
+                226
+            ]
+        ],
+        "total": "2hr 34min",
+        "duration": 9240,
+        "name": "UNITY - Building the Game Pong with Unity",
+        "durs": [
+            125,
+            407,
+            344,
+            348,
+            575,
+            532,
+            446,
+            903,
+            541,
+            838,
+            416,
+            674,
+            583,
+            552,
+            502,
+            327,
+            263,
+            446,
+            317,
+            82
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "Chapter Intro",
+                "00:45",
+                "20.1",
+                45,
+                227
+            ],
+            [
+                "Zig Zag Intro",
+                "00:40",
+                "20.2",
+                40,
+                228
+            ],
+            [
+                "Basics- Instatiating (Creating Via Code) An Object",
+                "05:02",
+                "20.3",
+                302,
+                229
+            ],
+            [
+                "Basics - Invoke And InvokeRepeating For Delayed Calls And Repeated Calls",
+                "04:22",
+                "20.4",
+                262,
+                230
+            ],
+            [
+                "Basics - Playerpreferences - Saving Data",
+                "06:38",
+                "20.5",
+                398,
+                231
+            ],
+            [
+                "Basics - Raycast",
+                "07:48",
+                "20.6",
+                468,
+                232
+            ],
+            [
+                "Setup For Zig Zag",
+                "07:31",
+                "20.7",
+                451,
+                233
+            ],
+            [
+                "Setting The Perspective",
+                "07:23",
+                "20.8",
+                443,
+                234
+            ],
+            [
+                "Moving The Character",
+                "06:28",
+                "20.9",
+                388,
+                235
+            ],
+            [
+                "Make Camera Follow Player",
+                "03:32",
+                "20.10",
+                212,
+                236
+            ],
+            [
+                "Animate The Character",
+                "13:30",
+                "20.11",
+                810,
+                237
+            ],
+            [
+                "Start The Game",
+                "08:49",
+                "20.12",
+                529,
+                238
+            ],
+            [
+                "Restart The Game",
+                "04:00",
+                "20.13",
+                240,
+                239
+            ],
+            [
+                "Collecting Crystals And Increasing The Score",
+                "09:35",
+                "20.14",
+                575,
+                240
+            ],
+            [
+                "Adding A Highscore",
+                "05:08",
+                "20.15",
+                308,
+                241
+            ],
+            [
+                "Adding The Particle Effect",
+                "12:58",
+                "20.16",
+                778,
+                242
+            ],
+            [
+                "Background Music Loop",
+                "06:26",
+                "20.17",
+                386,
+                243
+            ],
+            [
+                "Procedural Creation Of Our Map",
+                "20:53",
+                "20.18",
+                1253,
+                244
+            ]
+        ],
+        "total": "2hr 11min",
+        "duration": 7860,
+        "name": "UNITY - Building a Zig Zag Clone With Unity",
+        "durs": [
+            45,
+            40,
+            302,
+            262,
+            398,
+            468,
+            451,
+            443,
+            388,
+            212,
+            810,
+            529,
+            240,
+            575,
+            308,
+            778,
+            386,
+            1253
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "Chapter Intro",
+                "01:47",
+                "21.1",
+                107,
+                245
+            ],
+            [
+                "Create Fruits And Explode Them",
+                "16:22",
+                "21.2",
+                982,
+                246
+            ],
+            [
+                "Fruit Spawner",
+                "16:52",
+                "21.3",
+                1012,
+                247
+            ],
+            [
+                "Creating Our Blade",
+                "13:38",
+                "21.4",
+                818,
+                248
+            ],
+            [
+                "GUI and Bombs",
+                "21:17",
+                "21.5",
+                1277,
+                249
+            ],
+            [
+                "Game Over and Restart",
+                "12:12",
+                "21.6",
+                732,
+                250
+            ],
+            [
+                "Adding The Highscore",
+                "09:05",
+                "21.7",
+                545,
+                251
+            ],
+            [
+                "Extend The Game",
+                "06:46",
+                "21.8",
+                406,
+                252
+            ],
+            [
+                "Prepare Code For Android",
+                "06:35",
+                "21.9",
+                395,
+                253
+            ],
+            [
+                "Test On An Android Device",
+                "04:01",
+                "21.10",
+                241,
+                254
+            ],
+            [
+                "Make Some Adjustments",
+                "02:15",
+                "21.11",
+                135,
+                255
+            ],
+            [
+                "Adding Unity Ads to Your Game",
+                "06:28",
+                "21.12",
+                388,
+                256
+            ],
+            [
+                "Setting Up Your Device as Developer Device",
+                "01:20",
+                "21.13",
+                80,
+                257
+            ],
+            [
+                "Adding Sound",
+                "09:45",
+                "21.14",
+                585,
+                258
+            ]
+        ],
+        "total": "2hr 8min",
+        "duration": 7680,
+        "name": "UNITY - Building a Fruit Ninja Clone With Unity",
+        "durs": [
+            107,
+            982,
+            1012,
+            818,
+            1277,
+            732,
+            545,
+            406,
+            395,
+            241,
+            135,
+            388,
+            80,
+            585
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Thanks for finishing the course",
+                "04:29",
+                "22.1",
+                269,
+                259
+            ],
+            [
+                "YOUR SPECIAL BONUS",
+                "00:17",
+                "22.2",
+                17,
+                260
+            ]
+        ],
+        "total": "5min",
+        "duration": 300,
+        "name": "Thanks and Bonus",
+        "durs": [
+            269,
+            17
+        ]
+    }
+]

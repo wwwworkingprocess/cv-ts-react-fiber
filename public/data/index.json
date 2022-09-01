@@ -1,0 +1,3739 @@
+{
+    "nodes": [
+        {
+            "id": 0,
+            "name": "Udemy"
+        },
+        {
+            "id": 1,
+            "data_id": 1594488,
+            "name": "Blockchain A-Z™: Learn How To Build Your First Blockchain",
+            "group": 1
+        },
+        {
+            "id": 100001,
+            "name": "Introduction",
+            "group": 1
+        },
+        {
+            "id": 10000000001,
+            "name": "Welcome to the course!",
+            "group": 100001
+        },
+        {
+            "id": 10000000002,
+            "name": "Where to get the Materials",
+            "group": 100001
+        },
+        {
+            "id": 10000000003,
+            "name": "Meet your instructors",
+            "group": 100001
+        },
+        {
+            "id": 10000000004,
+            "name": "FAQBot!",
+            "group": 100001
+        },
+        {
+            "id": 200001,
+            "name": "-------------------- Part 1 - Blockchain --------------------",
+            "group": 1
+        },
+        {
+            "id": 10000000005,
+            "name": "Welcome to Part 1 - Blockchain",
+            "group": 200001
+        },
+        {
+            "id": 300001,
+            "name": "Blockchain Intuition",
+            "group": 1
+        },
+        {
+            "id": 10000000006,
+            "name": "Plan of Attack",
+            "group": 300001
+        },
+        {
+            "id": 10000000007,
+            "name": "Updates on Udemy Reviews",
+            "group": 300001
+        },
+        {
+            "id": 10000000008,
+            "name": "What is a Blockchain",
+            "group": 300001
+        },
+        {
+            "id": 10000000009,
+            "name": "Understanding SHA256 - Hash",
+            "group": 300001
+        },
+        {
+            "id": 10000000010,
+            "name": "Immutable Ledger",
+            "group": 300001
+        },
+        {
+            "id": 10000000011,
+            "name": "Distributed P2P Network",
+            "group": 300001
+        },
+        {
+            "id": 10000000012,
+            "name": "How Mining Works: The Nonce",
+            "group": 300001
+        },
+        {
+            "id": 10000000013,
+            "name": "How Mining Works: The Cryptographic Puzzle",
+            "group": 300001
+        },
+        {
+            "id": 10000000014,
+            "name": "Byzantine Fault Tolerance",
+            "group": 300001
+        },
+        {
+            "id": 10000000015,
+            "name": "Consensus Protocol: Defense Against Attackers",
+            "group": 300001
+        },
+        {
+            "id": 10000000016,
+            "name": "Consensus Protocol: Proof-of-Work (PoW)",
+            "group": 300001
+        },
+        {
+            "id": 10000000017,
+            "name": "Blockchain Demo",
+            "group": 300001
+        },
+        {
+            "id": 10000000018,
+            "name": "Quiz 1: Blockchain Intuition",
+            "group": 300001
+        },
+        {
+            "id": 400001,
+            "name": "Create a Blockchain",
+            "group": 1
+        },
+        {
+            "id": 10000000019,
+            "name": "Step 1",
+            "group": 400001
+        },
+        {
+            "id": 10000000020,
+            "name": "Step 2",
+            "group": 400001
+        },
+        {
+            "id": 10000000021,
+            "name": "Step 3",
+            "group": 400001
+        },
+        {
+            "id": 10000000022,
+            "name": "Step 4",
+            "group": 400001
+        },
+        {
+            "id": 10000000023,
+            "name": "Step 5",
+            "group": 400001
+        },
+        {
+            "id": 10000000024,
+            "name": "Step 6",
+            "group": 400001
+        },
+        {
+            "id": 10000000025,
+            "name": "Step 7",
+            "group": 400001
+        },
+        {
+            "id": 10000000026,
+            "name": "Step 8",
+            "group": 400001
+        },
+        {
+            "id": 10000000027,
+            "name": "Step 9",
+            "group": 400001
+        },
+        {
+            "id": 10000000028,
+            "name": "Step 10",
+            "group": 400001
+        },
+        {
+            "id": 10000000029,
+            "name": "Step 11",
+            "group": 400001
+        },
+        {
+            "id": 10000000030,
+            "name": "Quick Note",
+            "group": 400001
+        },
+        {
+            "id": 10000000031,
+            "name": "Step 12",
+            "group": 400001
+        },
+        {
+            "id": 10000000032,
+            "name": "Homework",
+            "group": 400001
+        },
+        {
+            "id": 10000000033,
+            "name": "Homework Solution",
+            "group": 400001
+        },
+        {
+            "id": 10000000034,
+            "name": "Full Code",
+            "group": 400001
+        },
+        {
+            "id": 500001,
+            "name": "-------------------- Part 2 - Cryptocurrency --------------------",
+            "group": 1
+        },
+        {
+            "id": 10000000035,
+            "name": "Welcome to Part 2 - Cryptocurrency",
+            "group": 500001
+        },
+        {
+            "id": 600001,
+            "name": "Cryptocurrency Intuition",
+            "group": 1
+        },
+        {
+            "id": 10000000036,
+            "name": "Plan of Attack",
+            "group": 600001
+        },
+        {
+            "id": 10000000037,
+            "name": "What is Bitcoin?",
+            "group": 600001
+        },
+        {
+            "id": 10000000038,
+            "name": "Bitcoin's Monetary Policy",
+            "group": 600001
+        },
+        {
+            "id": 10000000039,
+            "name": "Understanding Mining Difficulty",
+            "group": 600001
+        },
+        {
+            "id": 10000000040,
+            "name": "Virtual tour of a Bitcoin Mine",
+            "group": 600001
+        },
+        {
+            "id": 10000000041,
+            "name": "Mining Pools",
+            "group": 600001
+        },
+        {
+            "id": 10000000042,
+            "name": "Nonce Range",
+            "group": 600001
+        },
+        {
+            "id": 10000000043,
+            "name": "How Miners Pick Transactions (Part 1)",
+            "group": 600001
+        },
+        {
+            "id": 10000000044,
+            "name": "How Miners Pick Transactions (Part 2)",
+            "group": 600001
+        },
+        {
+            "id": 10000000045,
+            "name": "CPU's vs GPU's vs ASIC's",
+            "group": 600001
+        },
+        {
+            "id": 10000000046,
+            "name": "How do Mempools work?",
+            "group": 600001
+        },
+        {
+            "id": 10000000047,
+            "name": "Orphaned Blocks",
+            "group": 600001
+        },
+        {
+            "id": 10000000048,
+            "name": "The 51% Attack",
+            "group": 600001
+        },
+        {
+            "id": 10000000049,
+            "name": "Extra: Bits to Target conversion",
+            "group": 600001
+        },
+        {
+            "id": 10000000050,
+            "name": "Quiz 2a: Cryptocurrency Intuition",
+            "group": 600001
+        },
+        {
+            "id": 700001,
+            "name": "Cryptocurrency Transactions Intuition",
+            "group": 1
+        },
+        {
+            "id": 10000000051,
+            "name": "Plan of Attack",
+            "group": 700001
+        },
+        {
+            "id": 10000000052,
+            "name": "Transactions and UTXO's",
+            "group": 700001
+        },
+        {
+            "id": 10000000053,
+            "name": "Where do transaction fees come from?",
+            "group": 700001
+        },
+        {
+            "id": 10000000054,
+            "name": "How wallets work",
+            "group": 700001
+        },
+        {
+            "id": 10000000055,
+            "name": "Signatures: Private & Public Keys",
+            "group": 700001
+        },
+        {
+            "id": 10000000056,
+            "name": "Signatures & Keys Demo",
+            "group": 700001
+        },
+        {
+            "id": 10000000057,
+            "name": "What is Segregated Witness (SegWit)",
+            "group": 700001
+        },
+        {
+            "id": 10000000058,
+            "name": "Public Key vs Bitcoin Address",
+            "group": 700001
+        },
+        {
+            "id": 10000000059,
+            "name": "Hierarchically Deterministic (HD) Wallets",
+            "group": 700001
+        },
+        {
+            "id": 10000000060,
+            "name": "Quiz 2b: Cryptocurrency Transactions Intuition",
+            "group": 700001
+        },
+        {
+            "id": 800001,
+            "name": "Create a Cryptocurrency",
+            "group": 1
+        },
+        {
+            "id": 10000000061,
+            "name": "Step 1",
+            "group": 800001
+        },
+        {
+            "id": 10000000062,
+            "name": "Step 2",
+            "group": 800001
+        },
+        {
+            "id": 10000000063,
+            "name": "Step 3",
+            "group": 800001
+        },
+        {
+            "id": 10000000064,
+            "name": "Step 4",
+            "group": 800001
+        },
+        {
+            "id": 10000000065,
+            "name": "Step 5",
+            "group": 800001
+        },
+        {
+            "id": 10000000066,
+            "name": "Step 6",
+            "group": 800001
+        },
+        {
+            "id": 10000000067,
+            "name": "Step 7",
+            "group": 800001
+        },
+        {
+            "id": 10000000068,
+            "name": "Step 8",
+            "group": 800001
+        },
+        {
+            "id": 10000000069,
+            "name": "Step 9",
+            "group": 800001
+        },
+        {
+            "id": 10000000070,
+            "name": "Step 10",
+            "group": 800001
+        },
+        {
+            "id": 10000000071,
+            "name": "Full Code",
+            "group": 800001
+        },
+        {
+            "id": 900001,
+            "name": "-------------------- Part 3 - Smart Contract --------------------",
+            "group": 1
+        },
+        {
+            "id": 10000000072,
+            "name": "Welcome to Part 3 - Smart Contract",
+            "group": 900001
+        },
+        {
+            "id": 1000001,
+            "name": "Smart Contract Intuition",
+            "group": 1
+        },
+        {
+            "id": 10000000073,
+            "name": "Plan of Attack",
+            "group": 1000001
+        },
+        {
+            "id": 10000000074,
+            "name": "What is Ethereum",
+            "group": 1000001
+        },
+        {
+            "id": 10000000075,
+            "name": "What is a Smart Contract?",
+            "group": 1000001
+        },
+        {
+            "id": 10000000076,
+            "name": "Decentralized Applications (Dapps)",
+            "group": 1000001
+        },
+        {
+            "id": 10000000077,
+            "name": "Ethereum Virtual Machine & Gas",
+            "group": 1000001
+        },
+        {
+            "id": 10000000078,
+            "name": "Decentralized Autonomous Organizations (DAOs)",
+            "group": 1000001
+        },
+        {
+            "id": 10000000079,
+            "name": "The DAO Attack",
+            "group": 1000001
+        },
+        {
+            "id": 10000000080,
+            "name": "Soft and Hard Forks (Part 1)",
+            "group": 1000001
+        },
+        {
+            "id": 10000000081,
+            "name": "Soft and Hard Forks (Part 2) - Advanced Tutorial",
+            "group": 1000001
+        },
+        {
+            "id": 10000000082,
+            "name": "Initial Coin Offerings (ICOs)",
+            "group": 1000001
+        },
+        {
+            "id": 10000000083,
+            "name": "ICO Case Study",
+            "group": 1000001
+        },
+        {
+            "id": 10000000084,
+            "name": "Blockchain Startups: White Papers",
+            "group": 1000001
+        },
+        {
+            "id": 10000000085,
+            "name": "Blockchain and Web 3.0",
+            "group": 1000001
+        },
+        {
+            "id": 10000000086,
+            "name": "Quiz 3: Smart Contract Intuition",
+            "group": 1000001
+        },
+        {
+            "id": 1100001,
+            "name": "Create a Smart Contract",
+            "group": 1
+        },
+        {
+            "id": 10000000087,
+            "name": "Step 1",
+            "group": 1100001
+        },
+        {
+            "id": 10000000088,
+            "name": "Step 2",
+            "group": 1100001
+        },
+        {
+            "id": 10000000089,
+            "name": "Step 3",
+            "group": 1100001
+        },
+        {
+            "id": 10000000090,
+            "name": "Step 4",
+            "group": 1100001
+        },
+        {
+            "id": 10000000091,
+            "name": "Step 5",
+            "group": 1100001
+        },
+        {
+            "id": 10000000092,
+            "name": "Step 6",
+            "group": 1100001
+        },
+        {
+            "id": 10000000093,
+            "name": "Step 7",
+            "group": 1100001
+        },
+        {
+            "id": 10000000094,
+            "name": "Step 8",
+            "group": 1100001
+        },
+        {
+            "id": 10000000095,
+            "name": "Full Code",
+            "group": 1100001
+        },
+        {
+            "id": 1200001,
+            "name": "Alt Coins",
+            "group": 1
+        },
+        {
+            "id": 10000000096,
+            "name": "Ripple",
+            "group": 1200001
+        },
+        {
+            "id": 10000000097,
+            "name": "Neo",
+            "group": 1200001
+        },
+        {
+            "id": 10000000098,
+            "name": "Litecoin",
+            "group": 1200001
+        },
+        {
+            "id": 10000000099,
+            "name": "Cardano",
+            "group": 1200001
+        },
+        {
+            "id": 10000000100,
+            "name": "Stellar",
+            "group": 1200001
+        },
+        {
+            "id": 10000000101,
+            "name": "THANK YOU bonus video",
+            "group": 1200001
+        },
+        {
+            "id": 1300001,
+            "name": "Bonus Lectures",
+            "group": 1
+        },
+        {
+            "id": 10000000102,
+            "name": "***YOUR SPECIAL BONUS***",
+            "group": 1300001
+        },
+        {
+            "id": 2,
+            "data_id": 1148688,
+            "name": "Design Patterns in C# and .NET",
+            "group": 2
+        },
+        {
+            "id": 100002,
+            "name": "Introduction",
+            "group": 2
+        },
+        {
+            "id": 10000000103,
+            "name": "Introduction",
+            "group": 100002
+        },
+        {
+            "id": 200002,
+            "name": "The SOLID Design Principles",
+            "group": 2
+        },
+        {
+            "id": 10000000104,
+            "name": "Overview",
+            "group": 200002
+        },
+        {
+            "id": 10000000105,
+            "name": "Single Responsibility Principle",
+            "group": 200002
+        },
+        {
+            "id": 10000000106,
+            "name": "Open-Closed Principle",
+            "group": 200002
+        },
+        {
+            "id": 10000000107,
+            "name": "Liskov Substitution Principle",
+            "group": 200002
+        },
+        {
+            "id": 10000000108,
+            "name": "Interface Segregation Principle",
+            "group": 200002
+        },
+        {
+            "id": 10000000109,
+            "name": "Dependency Inversion Principle",
+            "group": 200002
+        },
+        {
+            "id": 10000000110,
+            "name": "Summary",
+            "group": 200002
+        },
+        {
+            "id": 300002,
+            "name": "Builder",
+            "group": 2
+        },
+        {
+            "id": 10000000111,
+            "name": "Gamma Categorization",
+            "group": 300002
+        },
+        {
+            "id": 10000000112,
+            "name": "Overview",
+            "group": 300002
+        },
+        {
+            "id": 10000000113,
+            "name": "Life Without Builder",
+            "group": 300002
+        },
+        {
+            "id": 10000000114,
+            "name": "Builder",
+            "group": 300002
+        },
+        {
+            "id": 10000000115,
+            "name": "Fluent Builder",
+            "group": 300002
+        },
+        {
+            "id": 10000000116,
+            "name": "Fluent Builder Inheritance with Recursive Generics",
+            "group": 300002
+        },
+        {
+            "id": 10000000117,
+            "name": "Functional Builder",
+            "group": 300002
+        },
+        {
+            "id": 10000000118,
+            "name": "Faceted Builder",
+            "group": 300002
+        },
+        {
+            "id": 10000000119,
+            "name": "Builder Coding Exercise",
+            "group": 300002
+        },
+        {
+            "id": 10000000120,
+            "name": "Summary",
+            "group": 300002
+        },
+        {
+            "id": 400002,
+            "name": "Factories",
+            "group": 2
+        },
+        {
+            "id": 10000000121,
+            "name": "Overview",
+            "group": 400002
+        },
+        {
+            "id": 10000000122,
+            "name": "Point Example",
+            "group": 400002
+        },
+        {
+            "id": 10000000123,
+            "name": "Factory Method",
+            "group": 400002
+        },
+        {
+            "id": 10000000124,
+            "name": "Asynchronous Factory Method",
+            "group": 400002
+        },
+        {
+            "id": 10000000125,
+            "name": "Factory",
+            "group": 400002
+        },
+        {
+            "id": 10000000126,
+            "name": "Inner Factory",
+            "group": 400002
+        },
+        {
+            "id": 10000000127,
+            "name": "Abstract Factory",
+            "group": 400002
+        },
+        {
+            "id": 10000000128,
+            "name": "Abstract Factory and OCP",
+            "group": 400002
+        },
+        {
+            "id": 10000000129,
+            "name": "Factory Coding Exercise",
+            "group": 400002
+        },
+        {
+            "id": 10000000130,
+            "name": "Summary",
+            "group": 400002
+        },
+        {
+            "id": 500002,
+            "name": "Prototype",
+            "group": 2
+        },
+        {
+            "id": 10000000131,
+            "name": "Overview",
+            "group": 500002
+        },
+        {
+            "id": 10000000132,
+            "name": "ICloneable is Bad",
+            "group": 500002
+        },
+        {
+            "id": 10000000133,
+            "name": "Copy Constructors",
+            "group": 500002
+        },
+        {
+            "id": 10000000134,
+            "name": "Explicit Deep Copy Interface",
+            "group": 500002
+        },
+        {
+            "id": 10000000135,
+            "name": "Prototype Inheritance",
+            "group": 500002
+        },
+        {
+            "id": 10000000136,
+            "name": "Copy Through Serialization",
+            "group": 500002
+        },
+        {
+            "id": 10000000137,
+            "name": "Prototype Coding Exercise",
+            "group": 500002
+        },
+        {
+            "id": 10000000138,
+            "name": "Summary",
+            "group": 500002
+        },
+        {
+            "id": 600002,
+            "name": "Singleton",
+            "group": 2
+        },
+        {
+            "id": 10000000139,
+            "name": "Overview",
+            "group": 600002
+        },
+        {
+            "id": 10000000140,
+            "name": "Singleton Implementation",
+            "group": 600002
+        },
+        {
+            "id": 10000000141,
+            "name": "Testability Issues",
+            "group": 600002
+        },
+        {
+            "id": 10000000142,
+            "name": "Singleton in Dependency Injection",
+            "group": 600002
+        },
+        {
+            "id": 10000000143,
+            "name": "Monostate",
+            "group": 600002
+        },
+        {
+            "id": 10000000144,
+            "name": "Per-Thread Singleton",
+            "group": 600002
+        },
+        {
+            "id": 10000000145,
+            "name": "Ambient Context",
+            "group": 600002
+        },
+        {
+            "id": 10000000146,
+            "name": "Singleton Coding Exercise",
+            "group": 600002
+        },
+        {
+            "id": 10000000147,
+            "name": "Summary",
+            "group": 600002
+        },
+        {
+            "id": 700002,
+            "name": "Adapter",
+            "group": 2
+        },
+        {
+            "id": 10000000148,
+            "name": "Overview",
+            "group": 700002
+        },
+        {
+            "id": 10000000149,
+            "name": "Vector/Raster Demo",
+            "group": 700002
+        },
+        {
+            "id": 10000000150,
+            "name": "Adapter Caching",
+            "group": 700002
+        },
+        {
+            "id": 10000000151,
+            "name": "Generic Value Adapter",
+            "group": 700002
+        },
+        {
+            "id": 10000000152,
+            "name": "Adapter in Dependency Injection",
+            "group": 700002
+        },
+        {
+            "id": 10000000153,
+            "name": "Adapter Coding Exercise",
+            "group": 700002
+        },
+        {
+            "id": 10000000154,
+            "name": "Summary",
+            "group": 700002
+        },
+        {
+            "id": 800002,
+            "name": "Bridge",
+            "group": 2
+        },
+        {
+            "id": 10000000155,
+            "name": "Overview",
+            "group": 800002
+        },
+        {
+            "id": 10000000156,
+            "name": "Bridge",
+            "group": 800002
+        },
+        {
+            "id": 10000000157,
+            "name": "Bridge Coding Exercise",
+            "group": 800002
+        },
+        {
+            "id": 10000000158,
+            "name": "Summary",
+            "group": 800002
+        },
+        {
+            "id": 900002,
+            "name": "Composite",
+            "group": 2
+        },
+        {
+            "id": 10000000159,
+            "name": "Overview",
+            "group": 900002
+        },
+        {
+            "id": 10000000160,
+            "name": "Geometric Shapes",
+            "group": 900002
+        },
+        {
+            "id": 10000000161,
+            "name": "Neural Networks",
+            "group": 900002
+        },
+        {
+            "id": 10000000162,
+            "name": "Composite Specification",
+            "group": 900002
+        },
+        {
+            "id": 10000000163,
+            "name": "Composite Coding Exercise",
+            "group": 900002
+        },
+        {
+            "id": 10000000164,
+            "name": "Summary",
+            "group": 900002
+        },
+        {
+            "id": 1000002,
+            "name": "Decorator",
+            "group": 2
+        },
+        {
+            "id": 10000000165,
+            "name": "Overview",
+            "group": 1000002
+        },
+        {
+            "id": 10000000166,
+            "name": "Custom String Builder",
+            "group": 1000002
+        },
+        {
+            "id": 10000000167,
+            "name": "Adapter-Decorator",
+            "group": 1000002
+        },
+        {
+            "id": 10000000168,
+            "name": "Multiple Inheritance with Interfaces",
+            "group": 1000002
+        },
+        {
+            "id": 10000000169,
+            "name": "Multiple Inheritance with Default Interface Members",
+            "group": 1000002
+        },
+        {
+            "id": 10000000170,
+            "name": "Dynamic Decorator Composition",
+            "group": 1000002
+        },
+        {
+            "id": 10000000171,
+            "name": "Detecting Decorator Cycles",
+            "group": 1000002
+        },
+        {
+            "id": 10000000172,
+            "name": "Static Decorator Composition",
+            "group": 1000002
+        },
+        {
+            "id": 10000000173,
+            "name": "Decorator in Dependency Injection",
+            "group": 1000002
+        },
+        {
+            "id": 10000000174,
+            "name": "Decorator Coding Exercise",
+            "group": 1000002
+        },
+        {
+            "id": 10000000175,
+            "name": "Summary",
+            "group": 1000002
+        },
+        {
+            "id": 1100002,
+            "name": "Façade",
+            "group": 2
+        },
+        {
+            "id": 10000000176,
+            "name": "Overview",
+            "group": 1100002
+        },
+        {
+            "id": 10000000177,
+            "name": "Façade",
+            "group": 1100002
+        },
+        {
+            "id": 10000000178,
+            "name": "Facade Coding Exercise",
+            "group": 1100002
+        },
+        {
+            "id": 10000000179,
+            "name": "Summary",
+            "group": 1100002
+        },
+        {
+            "id": 1200002,
+            "name": "Flyweight",
+            "group": 2
+        },
+        {
+            "id": 10000000180,
+            "name": "Overview",
+            "group": 1200002
+        },
+        {
+            "id": 10000000181,
+            "name": "Repeating User Names",
+            "group": 1200002
+        },
+        {
+            "id": 10000000182,
+            "name": "Text Formatting",
+            "group": 1200002
+        },
+        {
+            "id": 10000000183,
+            "name": "Flyweight Coding Exercise",
+            "group": 1200002
+        },
+        {
+            "id": 10000000184,
+            "name": "Summary",
+            "group": 1200002
+        },
+        {
+            "id": 1300002,
+            "name": "Proxy",
+            "group": 2
+        },
+        {
+            "id": 10000000185,
+            "name": "Overview",
+            "group": 1300002
+        },
+        {
+            "id": 10000000186,
+            "name": "Protection Proxy",
+            "group": 1300002
+        },
+        {
+            "id": 10000000187,
+            "name": "Property Proxy",
+            "group": 1300002
+        },
+        {
+            "id": 10000000188,
+            "name": "Value Proxy",
+            "group": 1300002
+        },
+        {
+            "id": 10000000189,
+            "name": "Composite Proxy: SoA/AoS",
+            "group": 1300002
+        },
+        {
+            "id": 10000000190,
+            "name": "Composite Proxy with Array-Backed Properties",
+            "group": 1300002
+        },
+        {
+            "id": 10000000191,
+            "name": "Dynamic Proxy for Logging",
+            "group": 1300002
+        },
+        {
+            "id": 10000000192,
+            "name": "Proxy vs. Decorator",
+            "group": 1300002
+        },
+        {
+            "id": 10000000193,
+            "name": "ViewModel",
+            "group": 1300002
+        },
+        {
+            "id": 10000000194,
+            "name": "Proxy Coding Exercise",
+            "group": 1300002
+        },
+        {
+            "id": 10000000195,
+            "name": "Bit Fragging",
+            "group": 1300002
+        },
+        {
+            "id": 10000000196,
+            "name": "Summary",
+            "group": 1300002
+        },
+        {
+            "id": 1400002,
+            "name": "Chain of Responsibility",
+            "group": 2
+        },
+        {
+            "id": 10000000197,
+            "name": "Overview",
+            "group": 1400002
+        },
+        {
+            "id": 10000000198,
+            "name": "Command Query Separation",
+            "group": 1400002
+        },
+        {
+            "id": 10000000199,
+            "name": "Method Chain",
+            "group": 1400002
+        },
+        {
+            "id": 10000000200,
+            "name": "Broker Chain",
+            "group": 1400002
+        },
+        {
+            "id": 10000000201,
+            "name": "Chain of Responsibility Coding Exercise",
+            "group": 1400002
+        },
+        {
+            "id": 10000000202,
+            "name": "Summary",
+            "group": 1400002
+        },
+        {
+            "id": 1500002,
+            "name": "Command",
+            "group": 2
+        },
+        {
+            "id": 10000000203,
+            "name": "Overview",
+            "group": 1500002
+        },
+        {
+            "id": 10000000204,
+            "name": "Command",
+            "group": 1500002
+        },
+        {
+            "id": 10000000205,
+            "name": "Undo Operations",
+            "group": 1500002
+        },
+        {
+            "id": 10000000206,
+            "name": "Composite Command",
+            "group": 1500002
+        },
+        {
+            "id": 10000000207,
+            "name": "Command Coding Exercise",
+            "group": 1500002
+        },
+        {
+            "id": 10000000208,
+            "name": "Summary",
+            "group": 1500002
+        },
+        {
+            "id": 1600002,
+            "name": "Interpreter",
+            "group": 2
+        },
+        {
+            "id": 10000000209,
+            "name": "Overview",
+            "group": 1600002
+        },
+        {
+            "id": 10000000210,
+            "name": "Handmade Interpreter: Lexing",
+            "group": 1600002
+        },
+        {
+            "id": 10000000211,
+            "name": "Handmade Interpreter: Parsing",
+            "group": 1600002
+        },
+        {
+            "id": 10000000212,
+            "name": "ANTLR",
+            "group": 1600002
+        },
+        {
+            "id": 10000000213,
+            "name": "Interpreter Coding Exercise",
+            "group": 1600002
+        },
+        {
+            "id": 10000000214,
+            "name": "Summary",
+            "group": 1600002
+        },
+        {
+            "id": 1700002,
+            "name": "Iterator",
+            "group": 2
+        },
+        {
+            "id": 10000000215,
+            "name": "Overview",
+            "group": 1700002
+        },
+        {
+            "id": 10000000216,
+            "name": "Iterator Object",
+            "group": 1700002
+        },
+        {
+            "id": 10000000217,
+            "name": "Iterator Method",
+            "group": 1700002
+        },
+        {
+            "id": 10000000218,
+            "name": "Iterators and Duck Typing",
+            "group": 1700002
+        },
+        {
+            "id": 10000000219,
+            "name": "Array-Backed Properties",
+            "group": 1700002
+        },
+        {
+            "id": 10000000220,
+            "name": "Iterator Coding Exercise",
+            "group": 1700002
+        },
+        {
+            "id": 10000000221,
+            "name": "Summary",
+            "group": 1700002
+        },
+        {
+            "id": 1800002,
+            "name": "Mediator",
+            "group": 2
+        },
+        {
+            "id": 10000000222,
+            "name": "Overview",
+            "group": 1800002
+        },
+        {
+            "id": 10000000223,
+            "name": "Chat Room",
+            "group": 1800002
+        },
+        {
+            "id": 10000000224,
+            "name": "Event Broker",
+            "group": 1800002
+        },
+        {
+            "id": 10000000225,
+            "name": "Introduction to MediatR",
+            "group": 1800002
+        },
+        {
+            "id": 10000000226,
+            "name": "Mediator Coding Exercise",
+            "group": 1800002
+        },
+        {
+            "id": 10000000227,
+            "name": "Summary",
+            "group": 1800002
+        },
+        {
+            "id": 1900002,
+            "name": "Memento",
+            "group": 2
+        },
+        {
+            "id": 10000000228,
+            "name": "Overview",
+            "group": 1900002
+        },
+        {
+            "id": 10000000229,
+            "name": "Memento",
+            "group": 1900002
+        },
+        {
+            "id": 10000000230,
+            "name": "Undo and Redo",
+            "group": 1900002
+        },
+        {
+            "id": 10000000231,
+            "name": "Memento for Interop",
+            "group": 1900002
+        },
+        {
+            "id": 10000000232,
+            "name": "Memento Coding Exercise",
+            "group": 1900002
+        },
+        {
+            "id": 10000000233,
+            "name": "Summary",
+            "group": 1900002
+        },
+        {
+            "id": 2000002,
+            "name": "Null Object",
+            "group": 2
+        },
+        {
+            "id": 10000000234,
+            "name": "Overview",
+            "group": 2000002
+        },
+        {
+            "id": 10000000235,
+            "name": "Null Object",
+            "group": 2000002
+        },
+        {
+            "id": 10000000236,
+            "name": "Dynamic Null Object",
+            "group": 2000002
+        },
+        {
+            "id": 10000000237,
+            "name": "Null Object Coding Exercise",
+            "group": 2000002
+        },
+        {
+            "id": 10000000238,
+            "name": "Summary",
+            "group": 2000002
+        },
+        {
+            "id": 2100002,
+            "name": "Observer",
+            "group": 2
+        },
+        {
+            "id": 10000000239,
+            "name": "Overview",
+            "group": 2100002
+        },
+        {
+            "id": 10000000240,
+            "name": "Observer via the 'event' Keyword",
+            "group": 2100002
+        },
+        {
+            "id": 10000000241,
+            "name": "Weak Event Pattern",
+            "group": 2100002
+        },
+        {
+            "id": 10000000242,
+            "name": "Observer via Special Interfaces",
+            "group": 2100002
+        },
+        {
+            "id": 10000000243,
+            "name": "Observable Collections",
+            "group": 2100002
+        },
+        {
+            "id": 10000000244,
+            "name": "Bidirectional Observer",
+            "group": 2100002
+        },
+        {
+            "id": 10000000245,
+            "name": "Property Dependencies",
+            "group": 2100002
+        },
+        {
+            "id": 10000000246,
+            "name": "Declarative Event Subscriptions with Interfaces",
+            "group": 2100002
+        },
+        {
+            "id": 10000000247,
+            "name": "Observer Coding Exercise",
+            "group": 2100002
+        },
+        {
+            "id": 10000000248,
+            "name": "Summary",
+            "group": 2100002
+        },
+        {
+            "id": 2200002,
+            "name": "State",
+            "group": 2
+        },
+        {
+            "id": 10000000249,
+            "name": "Overview",
+            "group": 2200002
+        },
+        {
+            "id": 10000000250,
+            "name": "Classic Implementation",
+            "group": 2200002
+        },
+        {
+            "id": 10000000251,
+            "name": "Handmade State Machine",
+            "group": 2200002
+        },
+        {
+            "id": 10000000252,
+            "name": "Switch-Based State Machine",
+            "group": 2200002
+        },
+        {
+            "id": 10000000253,
+            "name": "Switch Expressions",
+            "group": 2200002
+        },
+        {
+            "id": 10000000254,
+            "name": "State Machine with Stateless",
+            "group": 2200002
+        },
+        {
+            "id": 10000000255,
+            "name": "State Coding Exercise",
+            "group": 2200002
+        },
+        {
+            "id": 10000000256,
+            "name": "Summary",
+            "group": 2200002
+        },
+        {
+            "id": 2300002,
+            "name": "Strategy",
+            "group": 2
+        },
+        {
+            "id": 10000000257,
+            "name": "Overview",
+            "group": 2300002
+        },
+        {
+            "id": 10000000258,
+            "name": "Dynamic Strategy",
+            "group": 2300002
+        },
+        {
+            "id": 10000000259,
+            "name": "Static Strategy",
+            "group": 2300002
+        },
+        {
+            "id": 10000000260,
+            "name": "Equality and Comparison Strategies",
+            "group": 2300002
+        },
+        {
+            "id": 10000000261,
+            "name": "Strategy Coding Exercise",
+            "group": 2300002
+        },
+        {
+            "id": 10000000262,
+            "name": "Summary",
+            "group": 2300002
+        },
+        {
+            "id": 2400002,
+            "name": "Template Method",
+            "group": 2
+        },
+        {
+            "id": 10000000263,
+            "name": "Overview",
+            "group": 2400002
+        },
+        {
+            "id": 10000000264,
+            "name": "Template Method",
+            "group": 2400002
+        },
+        {
+            "id": 10000000265,
+            "name": "Functional Template Method",
+            "group": 2400002
+        },
+        {
+            "id": 10000000266,
+            "name": "Template Method Coding Exercise",
+            "group": 2400002
+        },
+        {
+            "id": 10000000267,
+            "name": "Summary",
+            "group": 2400002
+        },
+        {
+            "id": 2500002,
+            "name": "Visitor",
+            "group": 2
+        },
+        {
+            "id": 10000000268,
+            "name": "Overview",
+            "group": 2500002
+        },
+        {
+            "id": 10000000269,
+            "name": "Intrusive Expression Printing",
+            "group": 2500002
+        },
+        {
+            "id": 10000000270,
+            "name": "Reflection-Based Printing",
+            "group": 2500002
+        },
+        {
+            "id": 10000000271,
+            "name": "Classic Visitor (Double Dispatch)",
+            "group": 2500002
+        },
+        {
+            "id": 10000000272,
+            "name": "Dynamic Visitor via the DLR",
+            "group": 2500002
+        },
+        {
+            "id": 10000000273,
+            "name": "Acyclic Visitor",
+            "group": 2500002
+        },
+        {
+            "id": 10000000274,
+            "name": "Visitor Coding Exercise",
+            "group": 2500002
+        },
+        {
+            "id": 10000000275,
+            "name": "Summary",
+            "group": 2500002
+        },
+        {
+            "id": 2600002,
+            "name": "Course Summary",
+            "group": 2
+        },
+        {
+            "id": 10000000276,
+            "name": "Creational Paterns Summary",
+            "group": 2600002
+        },
+        {
+            "id": 10000000277,
+            "name": "Structural Patterns Summary",
+            "group": 2600002
+        },
+        {
+            "id": 10000000278,
+            "name": "Behavioral Patterns Summary",
+            "group": 2600002
+        },
+        {
+            "id": 10000000279,
+            "name": "End of Course",
+            "group": 2600002
+        },
+        {
+            "id": 2700002,
+            "name": "Bonus Lectures: Related Concepts",
+            "group": 2
+        },
+        {
+            "id": 10000000280,
+            "name": "An ASCII C# String",
+            "group": 2700002
+        },
+        {
+            "id": 10000000281,
+            "name": "Continuation Passing Style",
+            "group": 2700002
+        },
+        {
+            "id": 10000000282,
+            "name": "Local Inversion of Control",
+            "group": 2700002
+        },
+        {
+            "id": 10000000283,
+            "name": "DI Container and Event Broker Integration",
+            "group": 2700002
+        },
+        {
+            "id": 10000000284,
+            "name": "Beyond the Elvis Operator",
+            "group": 2700002
+        },
+        {
+            "id": 10000000285,
+            "name": "CQRS and Event Sourcing",
+            "group": 2700002
+        },
+        {
+            "id": 10000000286,
+            "name": "Bonus Lecture: Other Courses at a Discount",
+            "group": 2700002
+        },
+        {
+            "id": 2800002,
+            "name": "Bonus Lectures: Functional Patterns in F#",
+            "group": 2
+        },
+        {
+            "id": 10000000287,
+            "name": "Overview",
+            "group": 2800002
+        },
+        {
+            "id": 10000000288,
+            "name": "Builder",
+            "group": 2800002
+        },
+        {
+            "id": 10000000289,
+            "name": "Decorator",
+            "group": 2800002
+        },
+        {
+            "id": 10000000290,
+            "name": "Factory",
+            "group": 2800002
+        },
+        {
+            "id": 10000000291,
+            "name": "Interpreter",
+            "group": 2800002
+        },
+        {
+            "id": 10000000292,
+            "name": "Strategy",
+            "group": 2800002
+        },
+        {
+            "id": 10000000293,
+            "name": "Template Method",
+            "group": 2800002
+        },
+        {
+            "id": 10000000294,
+            "name": "Summary",
+            "group": 2800002
+        },
+        {
+            "id": 3,
+            "data_id": 851712,
+            "name": "The Complete JavaScript Course 2021: From Zero to Expert!",
+            "group": 3
+        },
+        {
+            "id": 4,
+            "data_id": 2034156,
+            "name": "Build a Blockchain &amp; Cryptocurrency | Full-Stack Edition",
+            "group": 4
+        },
+        {
+            "id": 5,
+            "data_id": 1329100,
+            "name": "Progressive Web Apps (PWA) - The Complete Guide",
+            "group": 5
+        },
+        {
+            "id": 6,
+            "data_id": 1172526,
+            "name": "Ethereum Blockchain Developer Bootcamp With Solidity (2021)",
+            "group": 6
+        },
+        {
+            "id": 7,
+            "data_id": 3138058,
+            "name": "Deno: The Complete Guide Zero to Mastery",
+            "group": 7
+        },
+        {
+            "id": 8,
+            "data_id": 3322248,
+            "name": "Mathematics &amp; Statistics of Machine Learning &amp; Data Science",
+            "group": 8
+        },
+        {
+            "id": 9,
+            "data_id": 3792262,
+            "name": "The Git &amp; Github Bootcamp",
+            "group": 9
+        },
+        {
+            "id": 10,
+            "data_id": 50522,
+            "name": "Become Exceptional in HTML and HTML5",
+            "group": 10
+        },
+        {
+            "id": 11,
+            "data_id": 1178124,
+            "name": "Complete C# Unity Game Developer 3D",
+            "group": 11
+        },
+        {
+            "id": 12,
+            "data_id": 2157118,
+            "name": "Machine Learning Classification Bootcamp in Python",
+            "group": 12
+        },
+        {
+            "id": 13,
+            "data_id": 159070,
+            "name": "Introduction to Web Development: HTML",
+            "group": 13
+        },
+        {
+            "id": 14,
+            "data_id": 903744,
+            "name": "Python for Data Science and Machine Learning Bootcamp",
+            "group": 14
+        },
+        {
+            "id": 15,
+            "data_id": 2776760,
+            "name": "100 Days of Code - The Complete Python Pro Bootcamp for 2021",
+            "group": 15
+        },
+        {
+            "id": 16,
+            "data_id": 1406344,
+            "name": "JavaScript Algorithms and Data Structures Masterclass",
+            "group": 16
+        },
+        {
+            "id": 17,
+            "data_id": 2710120,
+            "name": "F# From the Ground Up",
+            "group": 17
+        },
+        {
+            "id": 18,
+            "data_id": 947098,
+            "name": "Understanding TypeScript - 2021 Edition",
+            "group": 18
+        },
+        {
+            "id": 19,
+            "data_id": 1501104,
+            "name": "JavaScript: The Advanced Concepts (2021)",
+            "group": 19
+        },
+        {
+            "id": 20,
+            "data_id": 1466612,
+            "name": "Ethereum and Solidity: The Complete Developer's Guide",
+            "group": 20
+        },
+        {
+            "id": 21,
+            "data_id": 2999814,
+            "name": "Rust lang: The complete beginner's guide",
+            "group": 21
+        },
+        {
+            "id": 22,
+            "data_id": 1581488,
+            "name": "Complete C# Masterclass",
+            "group": 22
+        },
+        {
+            "id": 23,
+            "data_id": 1172996,
+            "name": "React Native: Advanced Concepts",
+            "group": 23
+        },
+        {
+            "id": 24,
+            "data_id": 1436092,
+            "name": "React Native - The Practical Guide [2021 Edition]",
+            "group": 24
+        },
+        {
+            "id": 25,
+            "data_id": 2365628,
+            "name": "Complete React Developer in 2021 (w/ Redux, Hooks, GraphQL)",
+            "group": 25
+        },
+        {
+            "id": 26,
+            "data_id": 995016,
+            "name": "Vue - The Complete Guide (w/ Router, Vuex, Composition API)",
+            "group": 26
+        },
+        {
+            "id": 27,
+            "data_id": 2472180,
+            "name": "Complete guide to building an app with .Net Core and React",
+            "group": 27
+        },
+        {
+            "id": 28,
+            "data_id": 3334910,
+            "name": "Learn Data Science Deep Learning, Machine Learning NLP &amp; R",
+            "group": 28
+        },
+        {
+            "id": 29,
+            "data_id": 1560148,
+            "name": "The Complete Self-Driving Car Course - Applied Deep Learning",
+            "group": 29
+        }
+    ],
+    "links": [
+        {
+            "source": 100001,
+            "target": 1,
+            "value": 4
+        },
+        {
+            "source": 100001,
+            "target": 1,
+            "value": 4
+        },
+        {
+            "source": 10000000001,
+            "target": 100001,
+            "value": 8
+        },
+        {
+            "source": 10000000002,
+            "target": 100001,
+            "value": 2
+        },
+        {
+            "source": 10000000003,
+            "target": 100001,
+            "value": 2
+        },
+        {
+            "source": 10000000004,
+            "target": 100001,
+            "value": 3
+        },
+        {
+            "source": 200001,
+            "target": 100001,
+            "value": 1
+        },
+        {
+            "source": 200001,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 10000000005,
+            "target": 200001,
+            "value": 2
+        },
+        {
+            "source": 300001,
+            "target": 200001,
+            "value": 13
+        },
+        {
+            "source": 300001,
+            "target": 1,
+            "value": 13
+        },
+        {
+            "source": 10000000006,
+            "target": 300001,
+            "value": 6
+        },
+        {
+            "source": 10000000007,
+            "target": 300001,
+            "value": 3
+        },
+        {
+            "source": 10000000008,
+            "target": 300001,
+            "value": 8
+        },
+        {
+            "source": 10000000009,
+            "target": 300001,
+            "value": 16
+        },
+        {
+            "source": 10000000010,
+            "target": 300001,
+            "value": 15
+        },
+        {
+            "source": 10000000011,
+            "target": 300001,
+            "value": 14
+        },
+        {
+            "source": 10000000012,
+            "target": 300001,
+            "value": 9
+        },
+        {
+            "source": 10000000013,
+            "target": 300001,
+            "value": 19
+        },
+        {
+            "source": 10000000014,
+            "target": 300001,
+            "value": 15
+        },
+        {
+            "source": 10000000015,
+            "target": 300001,
+            "value": 13
+        },
+        {
+            "source": 10000000016,
+            "target": 300001,
+            "value": 13
+        },
+        {
+            "source": 10000000017,
+            "target": 300001,
+            "value": 11
+        },
+        {
+            "source": 10000000018,
+            "target": 300001,
+            "value": 1
+        },
+        {
+            "source": 400001,
+            "target": 300001,
+            "value": 16
+        },
+        {
+            "source": 400001,
+            "target": 1,
+            "value": 16
+        },
+        {
+            "source": 10000000019,
+            "target": 400001,
+            "value": 9
+        },
+        {
+            "source": 10000000020,
+            "target": 400001,
+            "value": 6
+        },
+        {
+            "source": 10000000021,
+            "target": 400001,
+            "value": 10
+        },
+        {
+            "source": 10000000022,
+            "target": 400001,
+            "value": 11
+        },
+        {
+            "source": 10000000023,
+            "target": 400001,
+            "value": 4
+        },
+        {
+            "source": 10000000024,
+            "target": 400001,
+            "value": 14
+        },
+        {
+            "source": 10000000025,
+            "target": 400001,
+            "value": 7
+        },
+        {
+            "source": 10000000026,
+            "target": 400001,
+            "value": 13
+        },
+        {
+            "source": 10000000027,
+            "target": 400001,
+            "value": 6
+        },
+        {
+            "source": 10000000028,
+            "target": 400001,
+            "value": 15
+        },
+        {
+            "source": 10000000029,
+            "target": 400001,
+            "value": 6
+        },
+        {
+            "source": 10000000030,
+            "target": 400001,
+            "value": 2
+        },
+        {
+            "source": 10000000031,
+            "target": 400001,
+            "value": 13
+        },
+        {
+            "source": 10000000032,
+            "target": 400001,
+            "value": 2
+        },
+        {
+            "source": 10000000033,
+            "target": 400001,
+            "value": 9
+        },
+        {
+            "source": 10000000034,
+            "target": 400001,
+            "value": 2
+        },
+        {
+            "source": 500001,
+            "target": 400001,
+            "value": 1
+        },
+        {
+            "source": 500001,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 10000000035,
+            "target": 500001,
+            "value": 2
+        },
+        {
+            "source": 600001,
+            "target": 500001,
+            "value": 15
+        },
+        {
+            "source": 600001,
+            "target": 1,
+            "value": 15
+        },
+        {
+            "source": 10000000036,
+            "target": 600001,
+            "value": 7
+        },
+        {
+            "source": 10000000037,
+            "target": 600001,
+            "value": 16
+        },
+        {
+            "source": 10000000038,
+            "target": 600001,
+            "value": 13
+        },
+        {
+            "source": 10000000039,
+            "target": 600001,
+            "value": 19
+        },
+        {
+            "source": 10000000040,
+            "target": 600001,
+            "value": 6
+        },
+        {
+            "source": 10000000041,
+            "target": 600001,
+            "value": 20
+        },
+        {
+            "source": 10000000042,
+            "target": 600001,
+            "value": 17
+        },
+        {
+            "source": 10000000043,
+            "target": 600001,
+            "value": 16
+        },
+        {
+            "source": 10000000044,
+            "target": 600001,
+            "value": 9
+        },
+        {
+            "source": 10000000045,
+            "target": 600001,
+            "value": 18
+        },
+        {
+            "source": 10000000046,
+            "target": 600001,
+            "value": 13
+        },
+        {
+            "source": 10000000047,
+            "target": 600001,
+            "value": 13
+        },
+        {
+            "source": 10000000048,
+            "target": 600001,
+            "value": 18
+        },
+        {
+            "source": 10000000049,
+            "target": 600001,
+            "value": 12
+        },
+        {
+            "source": 10000000050,
+            "target": 600001,
+            "value": 1
+        },
+        {
+            "source": 700001,
+            "target": 600001,
+            "value": 10
+        },
+        {
+            "source": 700001,
+            "target": 1,
+            "value": 10
+        },
+        {
+            "source": 10000000051,
+            "target": 700001,
+            "value": 5
+        },
+        {
+            "source": 10000000052,
+            "target": 700001,
+            "value": 12
+        },
+        {
+            "source": 10000000053,
+            "target": 700001,
+            "value": 13
+        },
+        {
+            "source": 10000000054,
+            "target": 700001,
+            "value": 10
+        },
+        {
+            "source": 10000000055,
+            "target": 700001,
+            "value": 10
+        },
+        {
+            "source": 10000000056,
+            "target": 700001,
+            "value": 9
+        },
+        {
+            "source": 10000000057,
+            "target": 700001,
+            "value": 14
+        },
+        {
+            "source": 10000000058,
+            "target": 700001,
+            "value": 9
+        },
+        {
+            "source": 10000000059,
+            "target": 700001,
+            "value": 15
+        },
+        {
+            "source": 10000000060,
+            "target": 700001,
+            "value": 1
+        },
+        {
+            "source": 800001,
+            "target": 700001,
+            "value": 11
+        },
+        {
+            "source": 800001,
+            "target": 1,
+            "value": 11
+        },
+        {
+            "source": 10000000061,
+            "target": 800001,
+            "value": 11
+        },
+        {
+            "source": 10000000062,
+            "target": 800001,
+            "value": 13
+        },
+        {
+            "source": 10000000063,
+            "target": 800001,
+            "value": 12
+        },
+        {
+            "source": 10000000064,
+            "target": 800001,
+            "value": 20
+        },
+        {
+            "source": 10000000065,
+            "target": 800001,
+            "value": 15
+        },
+        {
+            "source": 10000000066,
+            "target": 800001,
+            "value": 17
+        },
+        {
+            "source": 10000000067,
+            "target": 800001,
+            "value": 12
+        },
+        {
+            "source": 10000000068,
+            "target": 800001,
+            "value": 10
+        },
+        {
+            "source": 10000000069,
+            "target": 800001,
+            "value": 11
+        },
+        {
+            "source": 10000000070,
+            "target": 800001,
+            "value": 22
+        },
+        {
+            "source": 10000000071,
+            "target": 800001,
+            "value": 2
+        },
+        {
+            "source": 900001,
+            "target": 800001,
+            "value": 1
+        },
+        {
+            "source": 900001,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 10000000072,
+            "target": 900001,
+            "value": 2
+        },
+        {
+            "source": 1000001,
+            "target": 900001,
+            "value": 14
+        },
+        {
+            "source": 1000001,
+            "target": 1,
+            "value": 14
+        },
+        {
+            "source": 10000000073,
+            "target": 1000001,
+            "value": 7
+        },
+        {
+            "source": 10000000074,
+            "target": 1000001,
+            "value": 7
+        },
+        {
+            "source": 10000000075,
+            "target": 1000001,
+            "value": 15
+        },
+        {
+            "source": 10000000076,
+            "target": 1000001,
+            "value": 5
+        },
+        {
+            "source": 10000000077,
+            "target": 1000001,
+            "value": 16
+        },
+        {
+            "source": 10000000078,
+            "target": 1000001,
+            "value": 13
+        },
+        {
+            "source": 10000000079,
+            "target": 1000001,
+            "value": 11
+        },
+        {
+            "source": 10000000080,
+            "target": 1000001,
+            "value": 15
+        },
+        {
+            "source": 10000000081,
+            "target": 1000001,
+            "value": 19
+        },
+        {
+            "source": 10000000082,
+            "target": 1000001,
+            "value": 10
+        },
+        {
+            "source": 10000000083,
+            "target": 1000001,
+            "value": 12
+        },
+        {
+            "source": 10000000084,
+            "target": 1000001,
+            "value": 19
+        },
+        {
+            "source": 10000000085,
+            "target": 1000001,
+            "value": 13
+        },
+        {
+            "source": 10000000086,
+            "target": 1000001,
+            "value": 1
+        },
+        {
+            "source": 1100001,
+            "target": 1000001,
+            "value": 9
+        },
+        {
+            "source": 1100001,
+            "target": 1,
+            "value": 9
+        },
+        {
+            "source": 10000000087,
+            "target": 1100001,
+            "value": 15
+        },
+        {
+            "source": 10000000088,
+            "target": 1100001,
+            "value": 11
+        },
+        {
+            "source": 10000000089,
+            "target": 1100001,
+            "value": 6
+        },
+        {
+            "source": 10000000090,
+            "target": 1100001,
+            "value": 7
+        },
+        {
+            "source": 10000000091,
+            "target": 1100001,
+            "value": 8
+        },
+        {
+            "source": 10000000092,
+            "target": 1100001,
+            "value": 11
+        },
+        {
+            "source": 10000000093,
+            "target": 1100001,
+            "value": 7
+        },
+        {
+            "source": 10000000094,
+            "target": 1100001,
+            "value": 25
+        },
+        {
+            "source": 10000000095,
+            "target": 1100001,
+            "value": 2
+        },
+        {
+            "source": 1200001,
+            "target": 1100001,
+            "value": 6
+        },
+        {
+            "source": 1200001,
+            "target": 1,
+            "value": 6
+        },
+        {
+            "source": 10000000096,
+            "target": 1200001,
+            "value": 8
+        },
+        {
+            "source": 10000000097,
+            "target": 1200001,
+            "value": 8
+        },
+        {
+            "source": 10000000098,
+            "target": 1200001,
+            "value": 8
+        },
+        {
+            "source": 10000000099,
+            "target": 1200001,
+            "value": 8
+        },
+        {
+            "source": 10000000100,
+            "target": 1200001,
+            "value": 8
+        },
+        {
+            "source": 10000000101,
+            "target": 1200001,
+            "value": 4
+        },
+        {
+            "source": 1300001,
+            "target": 1200001,
+            "value": 1
+        },
+        {
+            "source": 1300001,
+            "target": 1,
+            "value": 1
+        },
+        {
+            "source": 10000000102,
+            "target": 1300001,
+            "value": 2
+        },
+        {
+            "source": 100002,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 100002,
+            "target": 2,
+            "value": 1
+        },
+        {
+            "source": 10000000103,
+            "target": 100002,
+            "value": 9
+        },
+        {
+            "source": 200002,
+            "target": 100002,
+            "value": 7
+        },
+        {
+            "source": 200002,
+            "target": 2,
+            "value": 7
+        },
+        {
+            "source": 10000000104,
+            "target": 200002,
+            "value": 3
+        },
+        {
+            "source": 10000000105,
+            "target": 200002,
+            "value": 9
+        },
+        {
+            "source": 10000000106,
+            "target": 200002,
+            "value": 19
+        },
+        {
+            "source": 10000000107,
+            "target": 200002,
+            "value": 8
+        },
+        {
+            "source": 10000000108,
+            "target": 200002,
+            "value": 8
+        },
+        {
+            "source": 10000000109,
+            "target": 200002,
+            "value": 13
+        },
+        {
+            "source": 10000000110,
+            "target": 200002,
+            "value": 7
+        },
+        {
+            "source": 300002,
+            "target": 200002,
+            "value": 10
+        },
+        {
+            "source": 300002,
+            "target": 2,
+            "value": 10
+        },
+        {
+            "source": 10000000111,
+            "target": 300002,
+            "value": 5
+        },
+        {
+            "source": 10000000112,
+            "target": 300002,
+            "value": 3
+        },
+        {
+            "source": 10000000113,
+            "target": 300002,
+            "value": 5
+        },
+        {
+            "source": 10000000114,
+            "target": 300002,
+            "value": 11
+        },
+        {
+            "source": 10000000115,
+            "target": 300002,
+            "value": 3
+        },
+        {
+            "source": 10000000116,
+            "target": 300002,
+            "value": 14
+        },
+        {
+            "source": 10000000117,
+            "target": 300002,
+            "value": 12
+        },
+        {
+            "source": 10000000118,
+            "target": 300002,
+            "value": 13
+        },
+        {
+            "source": 10000000119,
+            "target": 300002,
+            "value": 1
+        },
+        {
+            "source": 10000000120,
+            "target": 300002,
+            "value": 2
+        },
+        {
+            "source": 400002,
+            "target": 300002,
+            "value": 10
+        },
+        {
+            "source": 400002,
+            "target": 2,
+            "value": 10
+        },
+        {
+            "source": 10000000121,
+            "target": 400002,
+            "value": 4
+        },
+        {
+            "source": 10000000122,
+            "target": 400002,
+            "value": 6
+        },
+        {
+            "source": 10000000123,
+            "target": 400002,
+            "value": 7
+        },
+        {
+            "source": 10000000124,
+            "target": 400002,
+            "value": 7
+        },
+        {
+            "source": 10000000125,
+            "target": 400002,
+            "value": 4
+        },
+        {
+            "source": 10000000126,
+            "target": 400002,
+            "value": 7
+        },
+        {
+            "source": 10000000127,
+            "target": 400002,
+            "value": 13
+        },
+        {
+            "source": 10000000128,
+            "target": 400002,
+            "value": 11
+        },
+        {
+            "source": 10000000129,
+            "target": 400002,
+            "value": 1
+        },
+        {
+            "source": 10000000130,
+            "target": 400002,
+            "value": 3
+        },
+        {
+            "source": 500002,
+            "target": 400002,
+            "value": 8
+        },
+        {
+            "source": 500002,
+            "target": 2,
+            "value": 8
+        },
+        {
+            "source": 10000000131,
+            "target": 500002,
+            "value": 3
+        },
+        {
+            "source": 10000000132,
+            "target": 500002,
+            "value": 9
+        },
+        {
+            "source": 10000000133,
+            "target": 500002,
+            "value": 5
+        },
+        {
+            "source": 10000000134,
+            "target": 500002,
+            "value": 4
+        },
+        {
+            "source": 10000000135,
+            "target": 500002,
+            "value": 22
+        },
+        {
+            "source": 10000000136,
+            "target": 500002,
+            "value": 11
+        },
+        {
+            "source": 10000000137,
+            "target": 500002,
+            "value": 1
+        },
+        {
+            "source": 10000000138,
+            "target": 500002,
+            "value": 3
+        },
+        {
+            "source": 600002,
+            "target": 500002,
+            "value": 9
+        },
+        {
+            "source": 600002,
+            "target": 2,
+            "value": 9
+        },
+        {
+            "source": 10000000139,
+            "target": 600002,
+            "value": 4
+        },
+        {
+            "source": 10000000140,
+            "target": 600002,
+            "value": 10
+        },
+        {
+            "source": 10000000141,
+            "target": 600002,
+            "value": 9
+        },
+        {
+            "source": 10000000142,
+            "target": 600002,
+            "value": 10
+        },
+        {
+            "source": 10000000143,
+            "target": 600002,
+            "value": 5
+        },
+        {
+            "source": 10000000144,
+            "target": 600002,
+            "value": 6
+        },
+        {
+            "source": 10000000145,
+            "target": 600002,
+            "value": 14
+        },
+        {
+            "source": 10000000146,
+            "target": 600002,
+            "value": 1
+        },
+        {
+            "source": 10000000147,
+            "target": 600002,
+            "value": 4
+        },
+        {
+            "source": 700002,
+            "target": 600002,
+            "value": 7
+        },
+        {
+            "source": 700002,
+            "target": 2,
+            "value": 7
+        },
+        {
+            "source": 10000000148,
+            "target": 700002,
+            "value": 4
+        },
+        {
+            "source": 10000000149,
+            "target": 700002,
+            "value": 10
+        },
+        {
+            "source": 10000000150,
+            "target": 700002,
+            "value": 8
+        },
+        {
+            "source": 10000000151,
+            "target": 700002,
+            "value": 27
+        },
+        {
+            "source": 10000000152,
+            "target": 700002,
+            "value": 11
+        },
+        {
+            "source": 10000000153,
+            "target": 700002,
+            "value": 1
+        },
+        {
+            "source": 10000000154,
+            "target": 700002,
+            "value": 3
+        },
+        {
+            "source": 800002,
+            "target": 700002,
+            "value": 4
+        },
+        {
+            "source": 800002,
+            "target": 2,
+            "value": 4
+        },
+        {
+            "source": 10000000155,
+            "target": 800002,
+            "value": 4
+        },
+        {
+            "source": 10000000156,
+            "target": 800002,
+            "value": 11
+        },
+        {
+            "source": 10000000157,
+            "target": 800002,
+            "value": 1
+        },
+        {
+            "source": 10000000158,
+            "target": 800002,
+            "value": 3
+        },
+        {
+            "source": 900002,
+            "target": 800002,
+            "value": 6
+        },
+        {
+            "source": 900002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000159,
+            "target": 900002,
+            "value": 3
+        },
+        {
+            "source": 10000000160,
+            "target": 900002,
+            "value": 9
+        },
+        {
+            "source": 10000000161,
+            "target": 900002,
+            "value": 9
+        },
+        {
+            "source": 10000000162,
+            "target": 900002,
+            "value": 7
+        },
+        {
+            "source": 10000000163,
+            "target": 900002,
+            "value": 1
+        },
+        {
+            "source": 10000000164,
+            "target": 900002,
+            "value": 3
+        },
+        {
+            "source": 1000002,
+            "target": 900002,
+            "value": 11
+        },
+        {
+            "source": 1000002,
+            "target": 2,
+            "value": 11
+        },
+        {
+            "source": 10000000165,
+            "target": 1000002,
+            "value": 4
+        },
+        {
+            "source": 10000000166,
+            "target": 1000002,
+            "value": 8
+        },
+        {
+            "source": 10000000167,
+            "target": 1000002,
+            "value": 8
+        },
+        {
+            "source": 10000000168,
+            "target": 1000002,
+            "value": 10
+        },
+        {
+            "source": 10000000169,
+            "target": 1000002,
+            "value": 9
+        },
+        {
+            "source": 10000000170,
+            "target": 1000002,
+            "value": 9
+        },
+        {
+            "source": 10000000171,
+            "target": 1000002,
+            "value": 24
+        },
+        {
+            "source": 10000000172,
+            "target": 1000002,
+            "value": 11
+        },
+        {
+            "source": 10000000173,
+            "target": 1000002,
+            "value": 8
+        },
+        {
+            "source": 10000000174,
+            "target": 1000002,
+            "value": 1
+        },
+        {
+            "source": 10000000175,
+            "target": 1000002,
+            "value": 4
+        },
+        {
+            "source": 1100002,
+            "target": 1000002,
+            "value": 4
+        },
+        {
+            "source": 1100002,
+            "target": 2,
+            "value": 4
+        },
+        {
+            "source": 10000000176,
+            "target": 1100002,
+            "value": 5
+        },
+        {
+            "source": 10000000177,
+            "target": 1100002,
+            "value": 9
+        },
+        {
+            "source": 10000000178,
+            "target": 1100002,
+            "value": 1
+        },
+        {
+            "source": 10000000179,
+            "target": 1100002,
+            "value": 3
+        },
+        {
+            "source": 1200002,
+            "target": 1100002,
+            "value": 5
+        },
+        {
+            "source": 1200002,
+            "target": 2,
+            "value": 5
+        },
+        {
+            "source": 10000000180,
+            "target": 1200002,
+            "value": 7
+        },
+        {
+            "source": 10000000181,
+            "target": 1200002,
+            "value": 14
+        },
+        {
+            "source": 10000000182,
+            "target": 1200002,
+            "value": 10
+        },
+        {
+            "source": 10000000183,
+            "target": 1200002,
+            "value": 1
+        },
+        {
+            "source": 10000000184,
+            "target": 1200002,
+            "value": 2
+        },
+        {
+            "source": 1300002,
+            "target": 1200002,
+            "value": 12
+        },
+        {
+            "source": 1300002,
+            "target": 2,
+            "value": 12
+        },
+        {
+            "source": 10000000185,
+            "target": 1300002,
+            "value": 5
+        },
+        {
+            "source": 10000000186,
+            "target": 1300002,
+            "value": 5
+        },
+        {
+            "source": 10000000187,
+            "target": 1300002,
+            "value": 11
+        },
+        {
+            "source": 10000000188,
+            "target": 1300002,
+            "value": 14
+        },
+        {
+            "source": 10000000189,
+            "target": 1300002,
+            "value": 13
+        },
+        {
+            "source": 10000000190,
+            "target": 1300002,
+            "value": 8
+        },
+        {
+            "source": 10000000191,
+            "target": 1300002,
+            "value": 13
+        },
+        {
+            "source": 10000000192,
+            "target": 1300002,
+            "value": 3
+        },
+        {
+            "source": 10000000193,
+            "target": 1300002,
+            "value": 10
+        },
+        {
+            "source": 10000000194,
+            "target": 1300002,
+            "value": 1
+        },
+        {
+            "source": 10000000195,
+            "target": 1300002,
+            "value": 27
+        },
+        {
+            "source": 10000000196,
+            "target": 1300002,
+            "value": 2
+        },
+        {
+            "source": 1400002,
+            "target": 1300002,
+            "value": 6
+        },
+        {
+            "source": 1400002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000197,
+            "target": 1400002,
+            "value": 5
+        },
+        {
+            "source": 10000000198,
+            "target": 1400002,
+            "value": 3
+        },
+        {
+            "source": 10000000199,
+            "target": 1400002,
+            "value": 14
+        },
+        {
+            "source": 10000000200,
+            "target": 1400002,
+            "value": 15
+        },
+        {
+            "source": 10000000201,
+            "target": 1400002,
+            "value": 1
+        },
+        {
+            "source": 10000000202,
+            "target": 1400002,
+            "value": 3
+        },
+        {
+            "source": 1500002,
+            "target": 1400002,
+            "value": 6
+        },
+        {
+            "source": 1500002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000203,
+            "target": 1500002,
+            "value": 5
+        },
+        {
+            "source": 10000000204,
+            "target": 1500002,
+            "value": 9
+        },
+        {
+            "source": 10000000205,
+            "target": 1500002,
+            "value": 8
+        },
+        {
+            "source": 10000000206,
+            "target": 1500002,
+            "value": 14
+        },
+        {
+            "source": 10000000207,
+            "target": 1500002,
+            "value": 1
+        },
+        {
+            "source": 10000000208,
+            "target": 1500002,
+            "value": 3
+        },
+        {
+            "source": 1600002,
+            "target": 1500002,
+            "value": 6
+        },
+        {
+            "source": 1600002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000209,
+            "target": 1600002,
+            "value": 5
+        },
+        {
+            "source": 10000000210,
+            "target": 1600002,
+            "value": 9
+        },
+        {
+            "source": 10000000211,
+            "target": 1600002,
+            "value": 14
+        },
+        {
+            "source": 10000000212,
+            "target": 1600002,
+            "value": 4
+        },
+        {
+            "source": 10000000213,
+            "target": 1600002,
+            "value": 1
+        },
+        {
+            "source": 10000000214,
+            "target": 1600002,
+            "value": 3
+        },
+        {
+            "source": 1700002,
+            "target": 1600002,
+            "value": 7
+        },
+        {
+            "source": 1700002,
+            "target": 2,
+            "value": 7
+        },
+        {
+            "source": 10000000215,
+            "target": 1700002,
+            "value": 3
+        },
+        {
+            "source": 10000000216,
+            "target": 1700002,
+            "value": 13
+        },
+        {
+            "source": 10000000217,
+            "target": 1700002,
+            "value": 8
+        },
+        {
+            "source": 10000000218,
+            "target": 1700002,
+            "value": 6
+        },
+        {
+            "source": 10000000219,
+            "target": 1700002,
+            "value": 7
+        },
+        {
+            "source": 10000000220,
+            "target": 1700002,
+            "value": 1
+        },
+        {
+            "source": 10000000221,
+            "target": 1700002,
+            "value": 3
+        },
+        {
+            "source": 1800002,
+            "target": 1700002,
+            "value": 6
+        },
+        {
+            "source": 1800002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000222,
+            "target": 1800002,
+            "value": 3
+        },
+        {
+            "source": 10000000223,
+            "target": 1800002,
+            "value": 12
+        },
+        {
+            "source": 10000000224,
+            "target": 1800002,
+            "value": 17
+        },
+        {
+            "source": 10000000225,
+            "target": 1800002,
+            "value": 15
+        },
+        {
+            "source": 10000000226,
+            "target": 1800002,
+            "value": 1
+        },
+        {
+            "source": 10000000227,
+            "target": 1800002,
+            "value": 3
+        },
+        {
+            "source": 1900002,
+            "target": 1800002,
+            "value": 6
+        },
+        {
+            "source": 1900002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000228,
+            "target": 1900002,
+            "value": 3
+        },
+        {
+            "source": 10000000229,
+            "target": 1900002,
+            "value": 8
+        },
+        {
+            "source": 10000000230,
+            "target": 1900002,
+            "value": 9
+        },
+        {
+            "source": 10000000231,
+            "target": 1900002,
+            "value": 8
+        },
+        {
+            "source": 10000000232,
+            "target": 1900002,
+            "value": 1
+        },
+        {
+            "source": 10000000233,
+            "target": 1900002,
+            "value": 3
+        },
+        {
+            "source": 2000002,
+            "target": 1900002,
+            "value": 5
+        },
+        {
+            "source": 2000002,
+            "target": 2,
+            "value": 5
+        },
+        {
+            "source": 10000000234,
+            "target": 2000002,
+            "value": 3
+        },
+        {
+            "source": 10000000235,
+            "target": 2000002,
+            "value": 10
+        },
+        {
+            "source": 10000000236,
+            "target": 2000002,
+            "value": 8
+        },
+        {
+            "source": 10000000237,
+            "target": 2000002,
+            "value": 1
+        },
+        {
+            "source": 10000000238,
+            "target": 2000002,
+            "value": 2
+        },
+        {
+            "source": 2100002,
+            "target": 2000002,
+            "value": 10
+        },
+        {
+            "source": 2100002,
+            "target": 2,
+            "value": 10
+        },
+        {
+            "source": 10000000239,
+            "target": 2100002,
+            "value": 4
+        },
+        {
+            "source": 10000000240,
+            "target": 2100002,
+            "value": 9
+        },
+        {
+            "source": 10000000241,
+            "target": 2100002,
+            "value": 10
+        },
+        {
+            "source": 10000000242,
+            "target": 2100002,
+            "value": 20
+        },
+        {
+            "source": 10000000243,
+            "target": 2100002,
+            "value": 11
+        },
+        {
+            "source": 10000000244,
+            "target": 2100002,
+            "value": 16
+        },
+        {
+            "source": 10000000245,
+            "target": 2100002,
+            "value": 15
+        },
+        {
+            "source": 10000000246,
+            "target": 2100002,
+            "value": 29
+        },
+        {
+            "source": 10000000247,
+            "target": 2100002,
+            "value": 1
+        },
+        {
+            "source": 10000000248,
+            "target": 2100002,
+            "value": 2
+        },
+        {
+            "source": 2200002,
+            "target": 2100002,
+            "value": 8
+        },
+        {
+            "source": 2200002,
+            "target": 2,
+            "value": 8
+        },
+        {
+            "source": 10000000249,
+            "target": 2200002,
+            "value": 5
+        },
+        {
+            "source": 10000000250,
+            "target": 2200002,
+            "value": 14
+        },
+        {
+            "source": 10000000251,
+            "target": 2200002,
+            "value": 8
+        },
+        {
+            "source": 10000000252,
+            "target": 2200002,
+            "value": 8
+        },
+        {
+            "source": 10000000253,
+            "target": 2200002,
+            "value": 10
+        },
+        {
+            "source": 10000000254,
+            "target": 2200002,
+            "value": 7
+        },
+        {
+            "source": 10000000255,
+            "target": 2200002,
+            "value": 1
+        },
+        {
+            "source": 10000000256,
+            "target": 2200002,
+            "value": 2
+        },
+        {
+            "source": 2300002,
+            "target": 2200002,
+            "value": 6
+        },
+        {
+            "source": 2300002,
+            "target": 2,
+            "value": 6
+        },
+        {
+            "source": 10000000257,
+            "target": 2300002,
+            "value": 3
+        },
+        {
+            "source": 10000000258,
+            "target": 2300002,
+            "value": 10
+        },
+        {
+            "source": 10000000259,
+            "target": 2300002,
+            "value": 6
+        },
+        {
+            "source": 10000000260,
+            "target": 2300002,
+            "value": 9
+        },
+        {
+            "source": 10000000261,
+            "target": 2300002,
+            "value": 1
+        },
+        {
+            "source": 10000000262,
+            "target": 2300002,
+            "value": 2
+        },
+        {
+            "source": 2400002,
+            "target": 2300002,
+            "value": 5
+        },
+        {
+            "source": 2400002,
+            "target": 2,
+            "value": 5
+        },
+        {
+            "source": 10000000263,
+            "target": 2400002,
+            "value": 3
+        },
+        {
+            "source": 10000000264,
+            "target": 2400002,
+            "value": 9
+        },
+        {
+            "source": 10000000265,
+            "target": 2400002,
+            "value": 5
+        },
+        {
+            "source": 10000000266,
+            "target": 2400002,
+            "value": 1
+        },
+        {
+            "source": 10000000267,
+            "target": 2400002,
+            "value": 2
+        },
+        {
+            "source": 2500002,
+            "target": 2400002,
+            "value": 8
+        },
+        {
+            "source": 2500002,
+            "target": 2,
+            "value": 8
+        },
+        {
+            "source": 10000000268,
+            "target": 2500002,
+            "value": 6
+        },
+        {
+            "source": 10000000269,
+            "target": 2500002,
+            "value": 6
+        },
+        {
+            "source": 10000000270,
+            "target": 2500002,
+            "value": 11
+        },
+        {
+            "source": 10000000271,
+            "target": 2500002,
+            "value": 12
+        },
+        {
+            "source": 10000000272,
+            "target": 2500002,
+            "value": 9
+        },
+        {
+            "source": 10000000273,
+            "target": 2500002,
+            "value": 14
+        },
+        {
+            "source": 10000000274,
+            "target": 2500002,
+            "value": 1
+        },
+        {
+            "source": 10000000275,
+            "target": 2500002,
+            "value": 3
+        },
+        {
+            "source": 2600002,
+            "target": 2500002,
+            "value": 4
+        },
+        {
+            "source": 2600002,
+            "target": 2,
+            "value": 4
+        },
+        {
+            "source": 10000000276,
+            "target": 2600002,
+            "value": 6
+        },
+        {
+            "source": 10000000277,
+            "target": 2600002,
+            "value": 8
+        },
+        {
+            "source": 10000000278,
+            "target": 2600002,
+            "value": 10
+        },
+        {
+            "source": 10000000279,
+            "target": 2600002,
+            "value": 2
+        },
+        {
+            "source": 2700002,
+            "target": 2600002,
+            "value": 7
+        },
+        {
+            "source": 2700002,
+            "target": 2,
+            "value": 7
+        },
+        {
+            "source": 10000000280,
+            "target": 2700002,
+            "value": 15
+        },
+        {
+            "source": 10000000281,
+            "target": 2700002,
+            "value": 13
+        },
+        {
+            "source": 10000000282,
+            "target": 2700002,
+            "value": 19
+        },
+        {
+            "source": 10000000283,
+            "target": 2700002,
+            "value": 12
+        },
+        {
+            "source": 10000000284,
+            "target": 2700002,
+            "value": 16
+        },
+        {
+            "source": 10000000285,
+            "target": 2700002,
+            "value": 28
+        },
+        {
+            "source": 10000000286,
+            "target": 2700002,
+            "value": 2
+        },
+        {
+            "source": 2800002,
+            "target": 2700002,
+            "value": 8
+        },
+        {
+            "source": 2800002,
+            "target": 2,
+            "value": 8
+        },
+        {
+            "source": 10000000287,
+            "target": 2800002,
+            "value": 7
+        },
+        {
+            "source": 10000000288,
+            "target": 2800002,
+            "value": 6
+        },
+        {
+            "source": 10000000289,
+            "target": 2800002,
+            "value": 6
+        },
+        {
+            "source": 10000000290,
+            "target": 2800002,
+            "value": 10
+        },
+        {
+            "source": 10000000291,
+            "target": 2800002,
+            "value": 11
+        },
+        {
+            "source": 10000000292,
+            "target": 2800002,
+            "value": 7
+        },
+        {
+            "source": 10000000293,
+            "target": 2800002,
+            "value": 12
+        },
+        {
+            "source": 10000000294,
+            "target": 2800002,
+            "value": 4
+        }
+    ]
+}

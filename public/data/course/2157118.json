@@ -1,0 +1,748 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction and Welcome Message",
+                "02:26",
+                "1.1",
+                146,
+                1
+            ],
+            [
+                "Introduction and Welcome Message [Course Material Download]",
+                "00:00",
+                "",
+                0,
+                2
+            ],
+            [
+                "BONUS: Learning Paths",
+                "00:33",
+                "1.2",
+                33,
+                2
+            ],
+            [
+                "Updates on Udemy Reviews",
+                "01:04",
+                "1.3",
+                64,
+                3
+            ],
+            [
+                "Course Overview",
+                "11:56",
+                "1.4",
+                716,
+                4
+            ],
+            [
+                "Get the Materials",
+                "00:06",
+                "1.5",
+                6,
+                5
+            ]
+        ],
+        "total": "16min",
+        "duration": 960,
+        "name": "Introduction",
+        "durs": [
+            146,
+            0,
+            33,
+            64,
+            716,
+            6
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "What is Machine Learning? The Big Picture Part #1",
+                "11:01",
+                "2.1",
+                661,
+                6
+            ],
+            [
+                "What is Machine Learning? The Big Picture Part #2",
+                "17:24",
+                "2.2",
+                1044,
+                7
+            ]
+        ],
+        "total": "28min",
+        "duration": 1680,
+        "name": "What is Machine Learning? The Big Picture",
+        "durs": [
+            661,
+            1044
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "What is Anaconda and How to download it?",
+                "04:12",
+                "3.1",
+                252,
+                8
+            ],
+            [
+                "What are Jupyter Notebooks?",
+                "03:34",
+                "3.2",
+                214,
+                9
+            ],
+            [
+                "How to run a Jupyter Notebook?",
+                "14:54",
+                "3.3",
+                894,
+                10
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Installation & Setup [Optional][Skip if you are familiar with Jupyter Notebooks]",
+        "durs": [
+            252,
+            214,
+            894
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Logistic Regression Introduction and Learning Outcomes",
+                "02:23",
+                "4.1",
+                143,
+                11
+            ],
+            [
+                "Logistic Regression Intuition",
+                "14:46",
+                "4.2",
+                886,
+                12
+            ],
+            [
+                "Confusion Matrix Overview",
+                "11:32",
+                "4.3",
+                692,
+                13
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #1",
+                "07:12",
+                "4.4",
+                432,
+                14
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #2",
+                "06:21",
+                "4.5",
+                381,
+                15
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #3",
+                "22:25",
+                "4.6",
+                1345,
+                16
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #4",
+                "14:53",
+                "4.7",
+                893,
+                17
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #5",
+                "08:47",
+                "4.8",
+                527,
+                18
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #6",
+                "04:18",
+                "4.9",
+                258,
+                19
+            ],
+            [
+                "Logistic Regression - Project #1 - Part #7",
+                "08:33",
+                "4.10",
+                513,
+                20
+            ],
+            [
+                "Logistic Regression - Project #2 Overview",
+                "07:03",
+                "4.11",
+                423,
+                21
+            ],
+            [
+                "Logistic Regression - Project #2 - Part #1",
+                "04:43",
+                "4.12",
+                283,
+                22
+            ],
+            [
+                "Logistic Regression - Project #2 - Part #2",
+                "10:38",
+                "4.13",
+                638,
+                23
+            ],
+            [
+                "Logistic Regression - Project #2 - Part #2",
+                "05:28",
+                "4.14",
+                328,
+                24
+            ],
+            [
+                "Logistic Regression - Project #2 - Part #3",
+                "11:45",
+                "4.15",
+                705,
+                25
+            ],
+            [
+                "Logistic Regression - Project #2 - Part #4",
+                "09:33",
+                "4.16",
+                573,
+                26
+            ]
+        ],
+        "total": "2hr 30min",
+        "duration": 9000,
+        "name": "Logistic Regression",
+        "durs": [
+            143,
+            886,
+            692,
+            432,
+            381,
+            1345,
+            893,
+            527,
+            258,
+            513,
+            423,
+            283,
+            638,
+            328,
+            705,
+            573
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Support Vector Machines Intro and Learning Outcomes",
+                "01:54",
+                "5.1",
+                114,
+                27
+            ],
+            [
+                "Support Vector Machines - Intuition",
+                "11:56",
+                "5.2",
+                716,
+                28
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #1",
+                "04:30",
+                "5.3",
+                270,
+                29
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #2",
+                "13:56",
+                "5.4",
+                836,
+                30
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #3",
+                "12:05",
+                "5.5",
+                725,
+                31
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #4",
+                "09:43",
+                "5.6",
+                583,
+                32
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #5",
+                "06:28",
+                "5.7",
+                388,
+                33
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #6",
+                "10:59",
+                "5.8",
+                659,
+                34
+            ],
+            [
+                "Support Vector Machines - Project #1 - Part #7",
+                "19:33",
+                "5.9",
+                1173,
+                35
+            ],
+            [
+                "Project #2 Overview",
+                "03:24",
+                "5.10",
+                204,
+                36
+            ],
+            [
+                "Support Vector Machines - Project #2 - Part #1",
+                "06:59",
+                "5.11",
+                419,
+                37
+            ],
+            [
+                "Support Vector Machines - Project #2 - Part #2",
+                "08:22",
+                "5.12",
+                502,
+                38
+            ],
+            [
+                "Support Vector Machines - Project #2 - Part #3",
+                "07:19",
+                "5.13",
+                439,
+                39
+            ],
+            [
+                "Support Vector Machines - Project #2 - Part #4",
+                "07:20",
+                "5.14",
+                440,
+                40
+            ]
+        ],
+        "total": "2hr 4min",
+        "duration": 7440,
+        "name": "Support Vector Machines",
+        "durs": [
+            114,
+            716,
+            270,
+            836,
+            725,
+            583,
+            388,
+            659,
+            1173,
+            204,
+            419,
+            502,
+            439,
+            440
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "K-Nearest Neighbors Intro and Learning Outcomes",
+                "01:44",
+                "6.1",
+                104,
+                41
+            ],
+            [
+                "K-Nearest Neighbors - Intuition",
+                "15:38",
+                "6.2",
+                938,
+                42
+            ],
+            [
+                "KNN - Project #1 - Part #1",
+                "06:40",
+                "6.3",
+                400,
+                43
+            ],
+            [
+                "KNN - Project #1 - Part #2",
+                "08:54",
+                "6.4",
+                534,
+                44
+            ],
+            [
+                "KNN - Project #1 - Part #3",
+                "07:58",
+                "6.5",
+                478,
+                45
+            ],
+            [
+                "KNN - Project #1 - Part #4",
+                "06:54",
+                "6.6",
+                414,
+                46
+            ],
+            [
+                "KNN - Project #2 Overview",
+                "05:37",
+                "6.7",
+                337,
+                47
+            ],
+            [
+                "KNN - Project #2 - Part #1",
+                "15:15",
+                "6.8",
+                915,
+                48
+            ],
+            [
+                "KNN - Project #2 - Part #2",
+                "07:47",
+                "6.9",
+                467,
+                49
+            ],
+            [
+                "KNN - Project #2 - Part #3",
+                "07:28",
+                "6.10",
+                448,
+                50
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "K-Nearest Neighbors",
+        "durs": [
+            104,
+            938,
+            400,
+            534,
+            478,
+            414,
+            337,
+            915,
+            467,
+            448
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Decision Trees and Random Forest Intro and Learning Outcomes",
+                "02:24",
+                "7.1",
+                144,
+                51
+            ],
+            [
+                "Decision Trees - Intuition",
+                "15:36",
+                "7.2",
+                936,
+                52
+            ],
+            [
+                "Random Forest - Intuition",
+                "08:02",
+                "7.3",
+                482,
+                53
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #1",
+                "03:02",
+                "7.4",
+                182,
+                54
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #2",
+                "09:26",
+                "7.5",
+                566,
+                55
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #3",
+                "09:46",
+                "7.6",
+                586,
+                56
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #4",
+                "08:16",
+                "7.7",
+                496,
+                57
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #5",
+                "12:16",
+                "7.8",
+                736,
+                58
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #6",
+                "07:25",
+                "7.9",
+                445,
+                59
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #7",
+                "06:36",
+                "7.10",
+                396,
+                60
+            ],
+            [
+                "Decision Trees & Random Forest - Project #1 - Part #8",
+                "09:30",
+                "7.11",
+                570,
+                61
+            ],
+            [
+                "Decision Trees & Random Forest - Project #2 Overview",
+                "05:42",
+                "7.12",
+                342,
+                62
+            ],
+            [
+                "Decision Trees & Random Forest - Project #2 - Part #1",
+                "20:55",
+                "7.13",
+                1255,
+                63
+            ],
+            [
+                "Decision Trees & Random Forest - Project #2 - Part #2",
+                "09:55",
+                "7.14",
+                595,
+                64
+            ],
+            [
+                "Decision Trees & Random Forest - Project #3 - Part #3",
+                "07:48",
+                "7.15",
+                468,
+                65
+            ],
+            [
+                "Decision Trees & Random Forest - Project #2 - Part #4",
+                "12:42",
+                "7.16",
+                762,
+                66
+            ]
+        ],
+        "total": "2hr 29min",
+        "duration": 8940,
+        "name": "Decision Trees and Random Forest",
+        "durs": [
+            144,
+            936,
+            482,
+            182,
+            566,
+            586,
+            496,
+            736,
+            445,
+            396,
+            570,
+            342,
+            1255,
+            595,
+            468,
+            762
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Naive Bayes Intro and Learning Outcomes",
+                "01:19",
+                "8.1",
+                79,
+                67
+            ],
+            [
+                "Naive Bayes Intuition",
+                "16:06",
+                "8.2",
+                966,
+                68
+            ],
+            [
+                "Naive Bayes - Mathematics",
+                "14:55",
+                "8.3",
+                895,
+                69
+            ],
+            [
+                "Project #1 - Part #1",
+                "09:25",
+                "8.4",
+                565,
+                70
+            ],
+            [
+                "Project #1 - Part #2",
+                "09:54",
+                "8.5",
+                594,
+                71
+            ],
+            [
+                "Project #1 - Part #3",
+                "14:12",
+                "8.6",
+                852,
+                72
+            ],
+            [
+                "Project #1 - Part #4",
+                "09:01",
+                "8.7",
+                541,
+                73
+            ],
+            [
+                "Project #1 - Part #5",
+                "05:08",
+                "8.8",
+                308,
+                74
+            ],
+            [
+                "Project #1 - Part #6",
+                "07:20",
+                "8.9",
+                440,
+                75
+            ],
+            [
+                "Project #2 - Overview",
+                "08:41",
+                "8.10",
+                521,
+                76
+            ],
+            [
+                "Project #2 - Part #1",
+                "10:57",
+                "8.11",
+                657,
+                77
+            ],
+            [
+                "Project #2 - Part #2",
+                "06:26",
+                "8.12",
+                386,
+                78
+            ],
+            [
+                "Project #2 - Part #3",
+                "05:56",
+                "8.13",
+                356,
+                79
+            ],
+            [
+                "Project #2 - Part #4",
+                "08:28",
+                "8.14",
+                508,
+                80
+            ]
+        ],
+        "total": "2hr 8min",
+        "duration": 7680,
+        "name": "Naive Bayes Classifiers",
+        "durs": [
+            79,
+            966,
+            895,
+            565,
+            594,
+            852,
+            541,
+            308,
+            440,
+            521,
+            657,
+            386,
+            356,
+            508
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "***YOUR SPECIAL BONUS***",
+                "00:28",
+                "9.1",
+                28,
+                81
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Bonus Lectures",
+        "durs": [
+            28
+        ]
+    }
+]

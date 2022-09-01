@@ -1,0 +1,1268 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Quick Introduction Before Commencing With This Course",
+                "04:57",
+                "1.1",
+                297,
+                1
+            ],
+            [
+                "Cryptocurrency (And Blockchain) Playbook",
+                "00:06",
+                "1.2",
+                6,
+                2
+            ]
+        ],
+        "total": "5min",
+        "duration": 300,
+        "name": "A Quick Introduction into the Course",
+        "durs": [
+            297,
+            6
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Why You Should Learn Blockchain Development",
+                "08:39",
+                "2.1",
+                519,
+                3
+            ],
+            [
+                "Ownership, Possession and the Double Spending Problem",
+                "04:49",
+                "2.2",
+                289,
+                4
+            ],
+            [
+                "Why The Blockchain Is Such Revolutionary Technology",
+                "04:52",
+                "2.3",
+                292,
+                5
+            ],
+            [
+                "Breaking Down And Understanding The Blockchain At Its Core",
+                "07:00",
+                "2.4",
+                420,
+                6
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "Your Guide To Understanding Blockchain Technology",
+        "durs": [
+            519,
+            289,
+            292,
+            420
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "We Install MetaMask and get Ether into the Wallet",
+                "07:40",
+                "3.1",
+                460,
+                7
+            ],
+            [
+                "Assignment: Download, Install and Configure MetaMask",
+                "00:06",
+                "3.2",
+                6,
+                8
+            ],
+            [
+                "Behind the Scenes: MetaMask, Infura, Blockchain Nodes and the Ledger",
+                "04:48",
+                "3.3",
+                288,
+                9
+            ],
+            [
+                "Send your first Transaction using MetaMask",
+                "03:20",
+                "3.4",
+                200,
+                10
+            ],
+            [
+                "Behind the Scenes: Ethereum Transactions and Signatures, Private/Public-Keys",
+                "10:30",
+                "3.5",
+                630,
+                11
+            ],
+            [
+                "Assignment: Send Ether between Accounts in MetaMask",
+                "00:15",
+                "3.6",
+                15,
+                12
+            ],
+            [
+                "This is how Blocks are chained together: Cryptographic Hashing Explained",
+                "07:00",
+                "3.7",
+                420,
+                13
+            ],
+            [
+                "Assignment: Observe how Blocks are linked together",
+                "00:51",
+                "3.8",
+                51,
+                14
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Transactions, Wallets and Hashing Step By Step",
+        "durs": [
+            460,
+            6,
+            288,
+            200,
+            630,
+            15,
+            420,
+            51
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "LAB: Create Your First Smart Contract",
+                "06:43",
+                "4.1",
+                403,
+                15
+            ],
+            [
+                "Assignment: Create your First Smart Contract",
+                "00:04",
+                "4.2",
+                4,
+                16
+            ],
+            [
+                "Create Your First Smart Contract - Explained!",
+                "08:16",
+                "4.3",
+                496,
+                17
+            ],
+            [
+                "LAB: Understanding Blockchain Nodes",
+                "06:00",
+                "4.4",
+                360,
+                18
+            ],
+            [
+                "Understanding Blockchain Nodes - Explained!",
+                "09:14",
+                "4.5",
+                554,
+                19
+            ],
+            [
+                "Assignment: Deploy Smart Contracts into Ganache",
+                "00:06",
+                "4.6",
+                6,
+                20
+            ],
+            [
+                "Download: Solidity Variables Cheat Sheet",
+                "00:37",
+                "4.7",
+                37,
+                21
+            ],
+            [
+                "LAB: Variables - (Unsigned) Integers in Solidity",
+                "04:10",
+                "4.8",
+                250,
+                22
+            ],
+            [
+                "LAB: Variables - Booleans",
+                "01:11",
+                "4.9",
+                71,
+                23
+            ],
+            [
+                "LAB: Variables - Understanding Integer Wrap Around",
+                "01:57",
+                "4.10",
+                117,
+                24
+            ],
+            [
+                "LAB: Variables - Addresses and Balances",
+                "03:42",
+                "4.11",
+                222,
+                25
+            ],
+            [
+                "LAB: Variables - Strings in Solidity",
+                "03:14",
+                "4.12",
+                194,
+                26
+            ],
+            [
+                "Solidity Value Type Variables - Explained!",
+                "09:51",
+                "4.13",
+                591,
+                27
+            ],
+            [
+                "Assignment: Understand simple Variables in Solidity",
+                "00:05",
+                "4.14",
+                5,
+                28
+            ],
+            [
+                "LAB: Understanding Addresses and the Msg-Object step by step",
+                "11:46",
+                "4.15",
+                706,
+                29
+            ],
+            [
+                "Assignment: Addresses and the global Msg.Object",
+                "00:13",
+                "4.16",
+                13,
+                30
+            ],
+            [
+                "Addresses and the Global Msg-Object - Explained!",
+                "09:09",
+                "4.17",
+                549,
+                31
+            ],
+            [
+                "LAB: Starting, Stopping, Pausing and Deleting Smart Contracts",
+                "12:07",
+                "4.18",
+                727,
+                32
+            ],
+            [
+                "Assignment: Starting, Stopping, Pausing and Deleting Smart Contracts",
+                "00:11",
+                "4.19",
+                11,
+                33
+            ],
+            [
+                "Starting, Stopping, Pausing and Deleting Information - Explained!",
+                "08:54",
+                "4.20",
+                534,
+                34
+            ],
+            [
+                "LAB: Introduction to Mappings",
+                "08:48",
+                "4.21",
+                528,
+                35
+            ],
+            [
+                "Assignment: Simple Mappings",
+                "00:12",
+                "4.22",
+                12,
+                36
+            ],
+            [
+                "LAB: Understanding Mappings by Example",
+                "10:41",
+                "4.23",
+                641,
+                37
+            ],
+            [
+                "LAB: Understanding Solidity Structs Step by Step",
+                "05:11",
+                "4.24",
+                311,
+                38
+            ],
+            [
+                "Mappings, Structs and Arrays - Explained!",
+                "10:18",
+                "4.25",
+                618,
+                39
+            ],
+            [
+                "Assignment: Understanding Mappings and Structs",
+                "00:12",
+                "4.26",
+                12,
+                40
+            ],
+            [
+                "LAB: Exception Handling in Solidity - Require + Assert",
+                "07:29",
+                "4.27",
+                449,
+                41
+            ],
+            [
+                "Exception: Require Assert Revert - Explained!",
+                "10:51",
+                "4.28",
+                651,
+                42
+            ],
+            [
+                "Assignment: Exception Handling - Require Assert and Revert",
+                "00:12",
+                "4.29",
+                12,
+                43
+            ],
+            [
+                "LAB: Constructor, the Fallback Function and View/Pure Getter Functions",
+                "12:05",
+                "4.30",
+                725,
+                44
+            ],
+            [
+                "Constructor, Fallback Function, View/Pure Functions and Function Visibility",
+                "08:54",
+                "4.31",
+                534,
+                45
+            ],
+            [
+                "Assignment: Constructor, Fallback Function and View/Pure functions",
+                "00:12",
+                "4.32",
+                12,
+                46
+            ],
+            [
+                "Lab: Modifier, Inheritance, Importing of Files",
+                "08:46",
+                "4.33",
+                526,
+                47
+            ],
+            [
+                "Modifier, Inheritance and Importing: Explained!",
+                "03:20",
+                "4.34",
+                200,
+                48
+            ],
+            [
+                "Lab: Events and Return Variables",
+                "05:49",
+                "4.35",
+                349,
+                49
+            ],
+            [
+                "Events and Return Variables: Explained",
+                "09:41",
+                "4.36",
+                581,
+                50
+            ],
+            [
+                "LAB: The ABI Array and Debugging Explained",
+                "10:09",
+                "4.37",
+                609,
+                51
+            ],
+            [
+                "ABI Array, Debugging and Gas Introduction in Solidity Explained",
+                "10:42",
+                "4.38",
+                642,
+                52
+            ],
+            [
+                "Understanding Gas and Gas Costs Step By Step",
+                "07:44",
+                "4.39",
+                464,
+                53
+            ],
+            [
+                "LAB: Libraries and Using ... For",
+                "09:48",
+                "4.40",
+                588,
+                54
+            ],
+            [
+                "Libraries and Using ... For explained Step By Step",
+                "03:30",
+                "4.41",
+                210,
+                55
+            ],
+            [
+                "UPDATE: Solidity 0.6.0 Breaking Changes Walkthrough",
+                "17:53",
+                "4.42",
+                1073,
+                56
+            ]
+        ],
+        "total": "4hr 20min",
+        "duration": 15600,
+        "name": "Learning Solidity Step By Step with Labs and Slides",
+        "durs": [
+            403,
+            4,
+            496,
+            360,
+            554,
+            6,
+            37,
+            250,
+            71,
+            117,
+            222,
+            194,
+            591,
+            5,
+            706,
+            13,
+            549,
+            727,
+            11,
+            534,
+            528,
+            12,
+            641,
+            311,
+            618,
+            12,
+            449,
+            651,
+            12,
+            725,
+            534,
+            12,
+            526,
+            200,
+            349,
+            581,
+            609,
+            642,
+            464,
+            588,
+            210,
+            1073
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Introduction to the Project we are developing",
+                "03:58",
+                "5.1",
+                238,
+                57
+            ],
+            [
+                "Course Files",
+                "00:06",
+                "5.2",
+                6,
+                58
+            ],
+            [
+                "Step 1: Define the Basic Smart Contract",
+                "02:57",
+                "5.3",
+                177,
+                59
+            ],
+            [
+                "Step 2: Securing the Smart Contract",
+                "03:35",
+                "5.4",
+                215,
+                60
+            ],
+            [
+                "Step 3: Re-Using OpenZepplin Smart Contracts",
+                "03:58",
+                "5.5",
+                238,
+                61
+            ],
+            [
+                "Step 4: Add Allowance Functionality",
+                "08:36",
+                "5.6",
+                516,
+                62
+            ],
+            [
+                "Step 5: Add Reduce-Allowance Functionality",
+                "05:28",
+                "5.7",
+                328,
+                63
+            ],
+            [
+                "Step 6: Improve the Smart Contract Structure for better Auditability",
+                "01:33",
+                "5.8",
+                93,
+                64
+            ],
+            [
+                "Step 7: Add Events for the Allowance Smart Contract",
+                "05:00",
+                "5.9",
+                300,
+                65
+            ],
+            [
+                "Step 8: Add Events for the Simple Wallet Smart Contract",
+                "03:35",
+                "5.10",
+                215,
+                66
+            ],
+            [
+                "Step 9: Add the SafeMath Library",
+                "03:33",
+                "5.11",
+                213,
+                67
+            ],
+            [
+                "Step 10: Remove the RenounceOwnership Functionality",
+                "02:29",
+                "5.12",
+                149,
+                68
+            ],
+            [
+                "Step 11: The Final Smart Contract from our Project",
+                "01:44",
+                "5.13",
+                104,
+                69
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "FULL PROJECT - Solidity Project: Create a Shared Wallet",
+        "durs": [
+            238,
+            6,
+            177,
+            215,
+            238,
+            516,
+            328,
+            93,
+            300,
+            215,
+            213,
+            149,
+            104
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Installing NodeJS to get our Environment Set Up",
+                "03:53",
+                "6.1",
+                233,
+                70
+            ],
+            [
+                "Use Web3.js in the Node Console to Send Ether from One Account to the Other",
+                "12:53",
+                "6.2",
+                773,
+                71
+            ],
+            [
+                "Use Web3.JS in the Node Console to Interact With Smart Contracts",
+                "11:29",
+                "6.3",
+                689,
+                72
+            ],
+            [
+                "Using Web3.js with Chrome to Interact with Smart Contracts - Step by Step",
+                "08:08",
+                "6.4",
+                488,
+                73
+            ],
+            [
+                "Behind the Scenes: Web3.js, Blockchain Nodes, RPC, IPC, WebSocket Connections",
+                "09:26",
+                "6.5",
+                566,
+                74
+            ]
+        ],
+        "total": "46min",
+        "duration": 2760,
+        "name": "Understanding Web3.js and Browser<->Smart Contract Interaction",
+        "durs": [
+            233,
+            773,
+            689,
+            488,
+            566
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Project Introduction: This is what we build",
+                "05:41",
+                "7.1",
+                341,
+                75
+            ],
+            [
+                "Project Files",
+                "00:08",
+                "7.2",
+                8,
+                76
+            ],
+            [
+                "A Demo of the final Smart Contract Functionality",
+                "04:01",
+                "7.3",
+                241,
+                77
+            ],
+            [
+                "Solidity Part: Implement Approach 1 for Payment Notifications",
+                "08:42",
+                "7.4",
+                522,
+                78
+            ],
+            [
+                "Solidity Part: Test Approach 1 for Payment Notifications",
+                "03:23",
+                "7.5",
+                203,
+                79
+            ],
+            [
+                "Solidity Part: Improve Approach 1 for flawless UX for Endusers",
+                "12:04",
+                "7.6",
+                724,
+                80
+            ],
+            [
+                "Solidity Part: Add Ownable Functionality and Why I didn't choose OpenZeppelin",
+                "04:20",
+                "7.7",
+                260,
+                81
+            ],
+            [
+                "Truffle - Introduction to the Truffle Framework and Truffle Boxes",
+                "08:38",
+                "7.8",
+                518,
+                82
+            ],
+            [
+                "A Note on Errors for Fixing react-scripts",
+                "01:08",
+                "7.9",
+                68,
+                83
+            ],
+            [
+                "The Truffle React Box Explained Line By Line",
+                "12:57",
+                "7.10",
+                777,
+                84
+            ],
+            [
+                "Replace Smart Contracts in the Truffle React Box",
+                "04:49",
+                "7.11",
+                289,
+                85
+            ],
+            [
+                "Modify the App.js and HTML Part in the React Box",
+                "12:06",
+                "7.12",
+                726,
+                86
+            ],
+            [
+                "Implement the Add-Item functionality to our Smart Contracts for Item-Tracking",
+                "10:37",
+                "7.13",
+                637,
+                87
+            ],
+            [
+                "Add Event-Triggers to Track Payments and start the Delivery-Process",
+                "07:21",
+                "7.14",
+                441,
+                88
+            ],
+            [
+                "Create Unit-Tests in Truffle to Maintain Code Quality",
+                "15:48",
+                "7.15",
+                948,
+                89
+            ]
+        ],
+        "total": "1hr 52min",
+        "duration": 6720,
+        "name": "FULL PROJECT: Event Triggers / Supply Chain Example with Truffle 5 and Unit Test",
+        "durs": [
+            341,
+            8,
+            241,
+            522,
+            203,
+            724,
+            260,
+            518,
+            68,
+            777,
+            289,
+            726,
+            637,
+            441,
+            948
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Let Me Introduce The \"Big Picture\"",
+                "06:07",
+                "8.1",
+                367,
+                90
+            ],
+            [
+                "This Is Where You Can Download Geth And How You Install It",
+                "02:19",
+                "8.2",
+                139,
+                91
+            ],
+            [
+                "This Happens When You Open Geth Without Any Additional Parameters",
+                "06:43",
+                "8.3",
+                403,
+                92
+            ],
+            [
+                "Log-Output from Geth Explained",
+                "05:02",
+                "8.4",
+                302,
+                93
+            ],
+            [
+                "This Is Where The Data Is Stored By Default In Geth",
+                "01:40",
+                "8.5",
+                100,
+                94
+            ],
+            [
+                "This Is How You Attach To A Running Geth Instance",
+                "03:03",
+                "8.6",
+                183,
+                95
+            ],
+            [
+                "How To Attach To A Running Geth Instance - Explanation (March 2018)",
+                "00:49",
+                "8.7",
+                49,
+                96
+            ],
+            [
+                "We Are Working With The JavaScript JSON-API",
+                "07:01",
+                "8.8",
+                421,
+                97
+            ],
+            [
+                "This Is The Difference Between Blockchains and Networks",
+                "02:41",
+                "8.9",
+                161,
+                98
+            ],
+            [
+                "This Is The Genesis.json File",
+                "04:10",
+                "8.10",
+                250,
+                99
+            ],
+            [
+                "Let's Create Our Own Private Network With Go-Ethereum",
+                "04:00",
+                "8.11",
+                240,
+                100
+            ],
+            [
+                "First steps with the Json API And Our Private Network",
+                "06:03",
+                "8.12",
+                363,
+                101
+            ],
+            [
+                "This Is How I Mine Ether On My Private Network.",
+                "07:21",
+                "8.13",
+                441,
+                102
+            ],
+            [
+                "ASSIGNMENT: Create Your Own Private Network And Mine Some Ether",
+                "02:48",
+                "8.14",
+                168,
+                103
+            ],
+            [
+                "Let Me Show You Some Important Tips and Tricks With Geth",
+                "03:33",
+                "8.15",
+                213,
+                104
+            ]
+        ],
+        "total": "1hr 3min",
+        "duration": 3780,
+        "name": "Understand and Use Go-Ethereum",
+        "durs": [
+            367,
+            139,
+            403,
+            302,
+            100,
+            183,
+            49,
+            421,
+            161,
+            250,
+            240,
+            363,
+            441,
+            168,
+            213
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "The Types Of Blockchains You Can Work With",
+                "03:55",
+                "9.1",
+                235,
+                105
+            ],
+            [
+                "Potential Use Cases For Blockchain Technology",
+                "05:55",
+                "9.2",
+                355,
+                106
+            ],
+            [
+                "Let Me Highlight How Powerful The Ethereum Blockchain Is",
+                "03:50",
+                "9.3",
+                230,
+                107
+            ]
+        ],
+        "total": "14min",
+        "duration": 840,
+        "name": "Key Characteristics Of How The Blockchain Operates",
+        "durs": [
+            235,
+            355,
+            230
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Let Me Explain What Smart Contracts Actually Are",
+                "04:46",
+                "10.1",
+                286,
+                108
+            ],
+            [
+                "An Example Of Cryptocurrency Contract Code",
+                "02:01",
+                "10.2",
+                121,
+                109
+            ],
+            [
+                "The Pros And Cons Of Smart Contract Technology",
+                "02:24",
+                "10.3",
+                144,
+                110
+            ],
+            [
+                "The Differences Between Accounts And Contract Wallets",
+                "03:42",
+                "10.4",
+                222,
+                111
+            ]
+        ],
+        "total": "13min",
+        "duration": 780,
+        "name": "How Smart Contracts Operate At Their Core",
+        "durs": [
+            286,
+            121,
+            144,
+            222
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Your Introduction To Decentralisation",
+                "03:33",
+                "11.1",
+                213,
+                112
+            ],
+            [
+                "Let Me Highlight The Positives Uses Of Decentralisation",
+                "02:43",
+                "11.2",
+                163,
+                113
+            ]
+        ],
+        "total": "6min",
+        "duration": 360,
+        "name": "Understanding Decentralisation At A Deeper Level",
+        "durs": [
+            213,
+            163
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Project Introduction: This is what we are building",
+                "03:01",
+                "12.1",
+                181,
+                114
+            ],
+            [
+                "Download the Full Project Walk-through here",
+                "00:11",
+                "12.2",
+                11,
+                115
+            ],
+            [
+                "Fungible vs. Non-Fungible Tokens Summarized",
+                "04:13",
+                "12.3",
+                253,
+                116
+            ],
+            [
+                "This Is How We Approach This Project: The Implementation Path",
+                "07:05",
+                "12.4",
+                425,
+                117
+            ],
+            [
+                "We Install Truffle And Initialize our Project Using Truffle Boxes",
+                "02:18",
+                "12.5",
+                138,
+                118
+            ],
+            [
+                "Let's Add In The ERC20 Smart Contracts From OpenZeppelin",
+                "04:07",
+                "12.6",
+                247,
+                119
+            ],
+            [
+                "We Add Migrations For Truffle For The OpenZeppelin Smart Contracts",
+                "04:19",
+                "12.7",
+                259,
+                120
+            ],
+            [
+                "Let's Add Unit Tests Using Mocha, Chai, Chai-Expect and Chai-as-Promised",
+                "11:19",
+                "12.8",
+                679,
+                121
+            ],
+            [
+                "It's Time To Add More Unit Tests For Full Testing Of Our MyToken Smart Contract",
+                "08:08",
+                "12.9",
+                488,
+                122
+            ],
+            [
+                "We Add A Crowdsale Smart Contract For Solidity 0.6.x From OpenZeppelin",
+                "04:23",
+                "12.10",
+                263,
+                123
+            ],
+            [
+                "This Is How You Use The Crowdsale Smart Contract From OpenZeppelin",
+                "02:37",
+                "12.11",
+                157,
+                124
+            ],
+            [
+                "Let's Add The Migration For The MyTokenSale Smart Contract",
+                "05:38",
+                "12.12",
+                338,
+                125
+            ],
+            [
+                "Let's Fix The Unit Test And Encapsulate It From The Other Tests",
+                "03:08",
+                "12.13",
+                188,
+                126
+            ],
+            [
+                "Let's Consolidate Our Configuration in Truffle into One .env File using dotenv",
+                "05:35",
+                "12.14",
+                335,
+                127
+            ],
+            [
+                "Let's Write A Crowdsale Unit Test Using Mocha and Chai",
+                "04:45",
+                "12.15",
+                285,
+                128
+            ],
+            [
+                "Fix Multiple Truffle Tests Using A Common Setup For Chai and Chai Expect",
+                "03:10",
+                "12.16",
+                190,
+                129
+            ],
+            [
+                "Let's Add The Remaining Unit Tests Into Our Crowdsale",
+                "06:55",
+                "12.17",
+                415,
+                130
+            ],
+            [
+                "We Add A KYC Smart Contract Solution Mockup For Our Crowdsale With Whitelisting",
+                "10:51",
+                "12.18",
+                651,
+                131
+            ],
+            [
+                "Let's Adapt The React Frontend for Our TokenSale App",
+                "09:53",
+                "12.19",
+                593,
+                132
+            ],
+            [
+                "Let's Add The KYC Whitelisting Functionality To Our Frontend",
+                "06:34",
+                "12.20",
+                394,
+                133
+            ],
+            [
+                "Fix Common Errors With Accounts, Contracts And Private Keys",
+                "09:13",
+                "12.21",
+                553,
+                134
+            ],
+            [
+                "Use Truffle HDWallet Provider To Deploy Smart Contracts",
+                "11:43",
+                "12.22",
+                703,
+                135
+            ],
+            [
+                "Buy Tokens Using MetaMask and the Send Functionality",
+                "05:41",
+                "12.23",
+                341,
+                136
+            ],
+            [
+                "Display Tokens Directly In MetaMask",
+                "02:42",
+                "12.24",
+                162,
+                137
+            ],
+            [
+                "Display And Buy Tokens Via The Website Using Web3.js",
+                "09:47",
+                "12.25",
+                587,
+                138
+            ],
+            [
+                "Deployment Of The Smart Contracts To Ropsten Using Infura",
+                "07:43",
+                "12.26",
+                463,
+                139
+            ],
+            [
+                "FINAL COURSE ASSIGNMENT",
+                "00:55",
+                "12.27",
+                55,
+                140
+            ]
+        ],
+        "total": "2hr 36min",
+        "duration": 9360,
+        "name": "FULL PROJECT: Asset Tokenization using OpenZeppelin and Truffle",
+        "durs": [
+            181,
+            11,
+            253,
+            425,
+            138,
+            247,
+            259,
+            679,
+            488,
+            263,
+            157,
+            338,
+            188,
+            335,
+            285,
+            190,
+            415,
+            651,
+            593,
+            394,
+            553,
+            703,
+            341,
+            162,
+            587,
+            463,
+            55
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Thank You For Enrolling On And Completing This Course",
+                "01:01",
+                "13.1",
+                61,
+                141
+            ],
+            [
+                "Next Steps To Take",
+                "01:01",
+                "13.2",
+                61,
+                142
+            ]
+        ],
+        "total": "2min",
+        "duration": 120,
+        "name": "Wrapping Up This Complete Course On Ethereum Blockchain Development",
+        "durs": [
+            61,
+            61
+        ]
+    }
+]

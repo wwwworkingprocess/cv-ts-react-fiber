@@ -1,0 +1,1818 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction",
+                "07:12",
+                "1.1",
+                432,
+                1
+            ]
+        ],
+        "total": "7min",
+        "duration": 420,
+        "name": "Introduction",
+        "durs": [
+            432
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Overview",
+                "01:16",
+                "2.1",
+                76,
+                2
+            ],
+            [
+                "Single Responsibility Principle",
+                "07:29",
+                "2.2",
+                449,
+                3
+            ],
+            [
+                "Open-Closed Principle",
+                "17:24",
+                "2.3",
+                1044,
+                4
+            ],
+            [
+                "Liskov Substitution Principle",
+                "06:37",
+                "2.4",
+                397,
+                5
+            ],
+            [
+                "Interface Segregation Principle",
+                "06:33",
+                "2.5",
+                393,
+                6
+            ],
+            [
+                "Dependency Inversion Principle",
+                "11:11",
+                "2.6",
+                671,
+                7
+            ],
+            [
+                "Summary",
+                "05:25",
+                "2.7",
+                325,
+                8
+            ]
+        ],
+        "total": "56min",
+        "duration": 3360,
+        "name": "The SOLID Design Principles",
+        "durs": [
+            76,
+            449,
+            1044,
+            397,
+            393,
+            671,
+            325
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Gamma Categorization",
+                "03:36",
+                "3.1",
+                216,
+                9
+            ],
+            [
+                "Overview",
+                "01:43",
+                "3.2",
+                103,
+                10
+            ],
+            [
+                "Life Without Builder",
+                "03:34",
+                "3.3",
+                214,
+                11
+            ],
+            [
+                "Builder",
+                "09:06",
+                "3.4",
+                546,
+                12
+            ],
+            [
+                "Fluent Builder",
+                "01:16",
+                "3.5",
+                76,
+                13
+            ],
+            [
+                "Fluent Builder Inheritance with Recursive Generics",
+                "12:37",
+                "3.6",
+                757,
+                14
+            ],
+            [
+                "Functional Builder",
+                "10:19",
+                "3.7",
+                619,
+                15
+            ],
+            [
+                "Faceted Builder",
+                "11:11",
+                "3.8",
+                671,
+                16
+            ],
+            [
+                "Builder Coding Exercise",
+                "1 question",
+                "",
+                0,
+                17
+            ],
+            [
+                "Summary",
+                "00:57",
+                "3.9",
+                57,
+                17
+            ]
+        ],
+        "total": "54min",
+        "duration": 3240,
+        "name": "Builder",
+        "durs": [
+            216,
+            103,
+            214,
+            546,
+            76,
+            757,
+            619,
+            671,
+            0,
+            57
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Overview",
+                "02:22",
+                "4.1",
+                142,
+                18
+            ],
+            [
+                "Point Example",
+                "04:38",
+                "4.2",
+                278,
+                19
+            ],
+            [
+                "Factory Method",
+                "05:03",
+                "4.3",
+                303,
+                20
+            ],
+            [
+                "Asynchronous Factory Method",
+                "05:01",
+                "4.4",
+                301,
+                21
+            ],
+            [
+                "Factory",
+                "02:59",
+                "4.5",
+                179,
+                22
+            ],
+            [
+                "Inner Factory",
+                "05:41",
+                "4.6",
+                341,
+                23
+            ],
+            [
+                "Abstract Factory",
+                "11:21",
+                "4.7",
+                681,
+                24
+            ],
+            [
+                "Abstract Factory and OCP",
+                "09:52",
+                "4.8",
+                592,
+                25
+            ],
+            [
+                "Factory Coding Exercise",
+                "1 question",
+                "",
+                0,
+                26
+            ],
+            [
+                "Summary",
+                "01:05",
+                "4.9",
+                65,
+                26
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Factories",
+        "durs": [
+            142,
+            278,
+            303,
+            301,
+            179,
+            341,
+            681,
+            592,
+            0,
+            65
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Overview",
+                "01:59",
+                "5.1",
+                119,
+                27
+            ],
+            [
+                "ICloneable is Bad",
+                "07:37",
+                "5.2",
+                457,
+                28
+            ],
+            [
+                "Copy Constructors",
+                "03:55",
+                "5.3",
+                235,
+                29
+            ],
+            [
+                "Explicit Deep Copy Interface",
+                "02:34",
+                "5.4",
+                154,
+                30
+            ],
+            [
+                "Prototype Inheritance",
+                "20:24",
+                "5.5",
+                1224,
+                31
+            ],
+            [
+                "Copy Through Serialization",
+                "09:05",
+                "5.6",
+                545,
+                32
+            ],
+            [
+                "Prototype Coding Exercise",
+                "1 question",
+                "",
+                0,
+                33
+            ],
+            [
+                "Summary",
+                "01:08",
+                "5.7",
+                68,
+                33
+            ]
+        ],
+        "total": "47min",
+        "duration": 2820,
+        "name": "Prototype",
+        "durs": [
+            119,
+            457,
+            235,
+            154,
+            1224,
+            545,
+            0,
+            68
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Overview",
+                "02:43",
+                "6.1",
+                163,
+                34
+            ],
+            [
+                "Singleton Implementation",
+                "08:40",
+                "6.2",
+                520,
+                35
+            ],
+            [
+                "Testability Issues",
+                "07:22",
+                "6.3",
+                442,
+                36
+            ],
+            [
+                "Singleton in Dependency Injection",
+                "08:58",
+                "6.4",
+                538,
+                37
+            ],
+            [
+                "Monostate",
+                "03:46",
+                "6.5",
+                226,
+                38
+            ],
+            [
+                "Per-Thread Singleton",
+                "04:25",
+                "6.6",
+                265,
+                39
+            ],
+            [
+                "Ambient Context",
+                "12:26",
+                "6.7",
+                746,
+                40
+            ],
+            [
+                "Singleton Coding Exercise",
+                "1 question",
+                "",
+                0,
+                41
+            ],
+            [
+                "Summary",
+                "02:15",
+                "6.8",
+                135,
+                41
+            ]
+        ],
+        "total": "51min",
+        "duration": 3060,
+        "name": "Singleton",
+        "durs": [
+            163,
+            520,
+            442,
+            538,
+            226,
+            265,
+            746,
+            0,
+            135
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Overview",
+                "02:36",
+                "7.1",
+                156,
+                42
+            ],
+            [
+                "Vector/Raster Demo",
+                "08:35",
+                "7.2",
+                515,
+                43
+            ],
+            [
+                "Adapter Caching",
+                "06:04",
+                "7.3",
+                364,
+                44
+            ],
+            [
+                "Generic Value Adapter",
+                "25:18",
+                "7.4",
+                1518,
+                45
+            ],
+            [
+                "Adapter in Dependency Injection",
+                "09:07",
+                "7.5",
+                547,
+                46
+            ],
+            [
+                "Adapter Coding Exercise",
+                "1 question",
+                "",
+                0,
+                47
+            ],
+            [
+                "Summary",
+                "01:10",
+                "7.6",
+                70,
+                47
+            ]
+        ],
+        "total": "53min",
+        "duration": 3180,
+        "name": "Adapter",
+        "durs": [
+            156,
+            515,
+            364,
+            1518,
+            547,
+            0,
+            70
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Overview",
+                "02:50",
+                "8.1",
+                170,
+                48
+            ],
+            [
+                "Bridge",
+                "09:49",
+                "8.2",
+                589,
+                49
+            ],
+            [
+                "Bridge Coding Exercise",
+                "1 question",
+                "",
+                0,
+                50
+            ],
+            [
+                "Summary",
+                "01:33",
+                "8.3",
+                93,
+                50
+            ]
+        ],
+        "total": "14min",
+        "duration": 840,
+        "name": "Bridge",
+        "durs": [
+            170,
+            589,
+            0,
+            93
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Overview",
+                "01:53",
+                "9.1",
+                113,
+                51
+            ],
+            [
+                "Geometric Shapes",
+                "07:33",
+                "9.2",
+                453,
+                52
+            ],
+            [
+                "Neural Networks",
+                "08:00",
+                "9.3",
+                480,
+                53
+            ],
+            [
+                "Composite Specification",
+                "05:58",
+                "9.4",
+                358,
+                54
+            ],
+            [
+                "Composite Coding Exercise",
+                "1 question",
+                "",
+                0,
+                55
+            ],
+            [
+                "Summary",
+                "01:11",
+                "9.5",
+                71,
+                55
+            ]
+        ],
+        "total": "25min",
+        "duration": 1500,
+        "name": "Composite",
+        "durs": [
+            113,
+            453,
+            480,
+            358,
+            0,
+            71
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Overview",
+                "02:34",
+                "10.1",
+                154,
+                56
+            ],
+            [
+                "Custom String Builder",
+                "06:19",
+                "10.2",
+                379,
+                57
+            ],
+            [
+                "Adapter-Decorator",
+                "06:33",
+                "10.3",
+                393,
+                58
+            ],
+            [
+                "Multiple Inheritance with Interfaces",
+                "08:40",
+                "10.4",
+                520,
+                59
+            ],
+            [
+                "Multiple Inheritance with Default Interface Members",
+                "07:44",
+                "10.5",
+                464,
+                60
+            ],
+            [
+                "Dynamic Decorator Composition",
+                "07:39",
+                "10.6",
+                459,
+                61
+            ],
+            [
+                "Detecting Decorator Cycles",
+                "22:02",
+                "10.7",
+                1322,
+                62
+            ],
+            [
+                "Static Decorator Composition",
+                "09:30",
+                "10.8",
+                570,
+                63
+            ],
+            [
+                "Decorator in Dependency Injection",
+                "06:10",
+                "10.9",
+                370,
+                64
+            ],
+            [
+                "Decorator Coding Exercise",
+                "1 question",
+                "",
+                0,
+                65
+            ],
+            [
+                "Summary",
+                "02:02",
+                "10.10",
+                122,
+                65
+            ]
+        ],
+        "total": "1hr 19min",
+        "duration": 4740,
+        "name": "Decorator",
+        "durs": [
+            154,
+            379,
+            393,
+            520,
+            464,
+            459,
+            1322,
+            570,
+            370,
+            0,
+            122
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Overview",
+                "03:08",
+                "11.1",
+                188,
+                66
+            ],
+            [
+                "Façade",
+                "07:59",
+                "11.2",
+                479,
+                67
+            ],
+            [
+                "Facade Coding Exercise",
+                "1 question",
+                "",
+                0,
+                68
+            ],
+            [
+                "Summary",
+                "01:25",
+                "11.3",
+                85,
+                68
+            ]
+        ],
+        "total": "13min",
+        "duration": 780,
+        "name": "Façade",
+        "durs": [
+            188,
+            479,
+            0,
+            85
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Overview",
+                "05:24",
+                "12.1",
+                324,
+                69
+            ],
+            [
+                "Repeating User Names",
+                "12:29",
+                "12.2",
+                749,
+                70
+            ],
+            [
+                "Text Formatting",
+                "08:53",
+                "12.3",
+                533,
+                71
+            ],
+            [
+                "Flyweight Coding Exercise",
+                "1 question",
+                "",
+                0,
+                72
+            ],
+            [
+                "Summary",
+                "00:58",
+                "12.4",
+                58,
+                72
+            ]
+        ],
+        "total": "28min",
+        "duration": 1680,
+        "name": "Flyweight",
+        "durs": [
+            324,
+            749,
+            533,
+            0,
+            58
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Overview",
+                "03:12",
+                "13.1",
+                192,
+                73
+            ],
+            [
+                "Protection Proxy",
+                "03:11",
+                "13.2",
+                191,
+                74
+            ],
+            [
+                "Property Proxy",
+                "09:24",
+                "13.3",
+                564,
+                75
+            ],
+            [
+                "Value Proxy",
+                "12:04",
+                "13.4",
+                724,
+                76
+            ],
+            [
+                "Composite Proxy: SoA/AoS",
+                "11:30",
+                "13.5",
+                690,
+                77
+            ],
+            [
+                "Composite Proxy with Array-Backed Properties",
+                "06:42",
+                "13.6",
+                402,
+                78
+            ],
+            [
+                "Dynamic Proxy for Logging",
+                "11:50",
+                "13.7",
+                710,
+                79
+            ],
+            [
+                "Proxy vs. Decorator",
+                "01:27",
+                "13.8",
+                87,
+                80
+            ],
+            [
+                "ViewModel",
+                "08:42",
+                "13.9",
+                522,
+                81
+            ],
+            [
+                "Proxy Coding Exercise",
+                "1 question",
+                "",
+                0,
+                82
+            ],
+            [
+                "Bit Fragging",
+                "25:04",
+                "13.10",
+                1504,
+                82
+            ],
+            [
+                "Summary",
+                "00:55",
+                "13.11",
+                55,
+                83
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Proxy",
+        "durs": [
+            192,
+            191,
+            564,
+            724,
+            690,
+            402,
+            710,
+            87,
+            522,
+            0,
+            1504,
+            55
+        ]
+    },
+    {
+        "idx": 13,
+        "lectures": [
+            [
+                "Overview",
+                "03:33",
+                "14.1",
+                213,
+                84
+            ],
+            [
+                "Command Query Separation",
+                "01:28",
+                "14.2",
+                88,
+                85
+            ],
+            [
+                "Method Chain",
+                "12:15",
+                "14.3",
+                735,
+                86
+            ],
+            [
+                "Broker Chain",
+                "13:50",
+                "14.4",
+                830,
+                87
+            ],
+            [
+                "Chain of Responsibility Coding Exercise",
+                "1 question",
+                "",
+                0,
+                88
+            ],
+            [
+                "Summary",
+                "01:18",
+                "14.5",
+                78,
+                88
+            ]
+        ],
+        "total": "32min",
+        "duration": 1920,
+        "name": "Chain of Responsibility",
+        "durs": [
+            213,
+            88,
+            735,
+            830,
+            0,
+            78
+        ]
+    },
+    {
+        "idx": 14,
+        "lectures": [
+            [
+                "Overview",
+                "03:06",
+                "15.1",
+                186,
+                89
+            ],
+            [
+                "Command",
+                "07:47",
+                "15.2",
+                467,
+                90
+            ],
+            [
+                "Undo Operations",
+                "06:05",
+                "15.3",
+                365,
+                91
+            ],
+            [
+                "Composite Command",
+                "12:11",
+                "15.4",
+                731,
+                92
+            ],
+            [
+                "Command Coding Exercise",
+                "1 question",
+                "",
+                0,
+                93
+            ],
+            [
+                "Summary",
+                "01:09",
+                "15.5",
+                69,
+                93
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Command",
+        "durs": [
+            186,
+            467,
+            365,
+            731,
+            0,
+            69
+        ]
+    },
+    {
+        "idx": 15,
+        "lectures": [
+            [
+                "Overview",
+                "04:00",
+                "16.1",
+                240,
+                94
+            ],
+            [
+                "Handmade Interpreter: Lexing",
+                "07:52",
+                "16.2",
+                472,
+                95
+            ],
+            [
+                "Handmade Interpreter: Parsing",
+                "12:05",
+                "16.3",
+                725,
+                96
+            ],
+            [
+                "ANTLR",
+                "02:44",
+                "16.4",
+                164,
+                97
+            ],
+            [
+                "Interpreter Coding Exercise",
+                "1 question",
+                "",
+                0,
+                98
+            ],
+            [
+                "Summary",
+                "01:03",
+                "16.5",
+                63,
+                98
+            ]
+        ],
+        "total": "28min",
+        "duration": 1680,
+        "name": "Interpreter",
+        "durs": [
+            240,
+            472,
+            725,
+            164,
+            0,
+            63
+        ]
+    },
+    {
+        "idx": 16,
+        "lectures": [
+            [
+                "Overview",
+                "01:42",
+                "17.1",
+                102,
+                99
+            ],
+            [
+                "Iterator Object",
+                "11:49",
+                "17.2",
+                709,
+                100
+            ],
+            [
+                "Iterator Method",
+                "06:57",
+                "17.3",
+                417,
+                101
+            ],
+            [
+                "Iterators and Duck Typing",
+                "04:06",
+                "17.4",
+                246,
+                102
+            ],
+            [
+                "Array-Backed Properties",
+                "05:51",
+                "17.5",
+                351,
+                103
+            ],
+            [
+                "Iterator Coding Exercise",
+                "1 question",
+                "",
+                0,
+                104
+            ],
+            [
+                "Summary",
+                "01:28",
+                "17.6",
+                88,
+                104
+            ]
+        ],
+        "total": "32min",
+        "duration": 1920,
+        "name": "Iterator",
+        "durs": [
+            102,
+            709,
+            417,
+            246,
+            351,
+            0,
+            88
+        ]
+    },
+    {
+        "idx": 17,
+        "lectures": [
+            [
+                "Overview",
+                "01:13",
+                "18.1",
+                73,
+                105
+            ],
+            [
+                "Chat Room",
+                "10:42",
+                "18.2",
+                642,
+                106
+            ],
+            [
+                "Event Broker",
+                "15:30",
+                "18.3",
+                930,
+                107
+            ],
+            [
+                "Introduction to MediatR",
+                "13:20",
+                "18.4",
+                800,
+                108
+            ],
+            [
+                "Mediator Coding Exercise",
+                "1 question",
+                "",
+                0,
+                109
+            ],
+            [
+                "Summary",
+                "01:16",
+                "18.5",
+                76,
+                109
+            ]
+        ],
+        "total": "42min",
+        "duration": 2520,
+        "name": "Mediator",
+        "durs": [
+            73,
+            642,
+            930,
+            800,
+            0,
+            76
+        ]
+    },
+    {
+        "idx": 18,
+        "lectures": [
+            [
+                "Overview",
+                "01:41",
+                "19.1",
+                101,
+                110
+            ],
+            [
+                "Memento",
+                "06:04",
+                "19.2",
+                364,
+                111
+            ],
+            [
+                "Undo and Redo",
+                "07:15",
+                "19.3",
+                435,
+                112
+            ],
+            [
+                "Memento for Interop",
+                "06:38",
+                "19.4",
+                398,
+                113
+            ],
+            [
+                "Memento Coding Exercise",
+                "1 question",
+                "",
+                0,
+                114
+            ],
+            [
+                "Summary",
+                "01:17",
+                "19.5",
+                77,
+                114
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Memento",
+        "durs": [
+            101,
+            364,
+            435,
+            398,
+            0,
+            77
+        ]
+    },
+    {
+        "idx": 19,
+        "lectures": [
+            [
+                "Overview",
+                "01:57",
+                "20.1",
+                117,
+                115
+            ],
+            [
+                "Null Object",
+                "08:53",
+                "20.2",
+                533,
+                116
+            ],
+            [
+                "Dynamic Null Object",
+                "06:11",
+                "20.3",
+                371,
+                117
+            ],
+            [
+                "Null Object Coding Exercise",
+                "1 question",
+                "",
+                0,
+                118
+            ],
+            [
+                "Summary",
+                "00:41",
+                "20.4",
+                41,
+                118
+            ]
+        ],
+        "total": "18min",
+        "duration": 1080,
+        "name": "Null Object",
+        "durs": [
+            117,
+            533,
+            371,
+            0,
+            41
+        ]
+    },
+    {
+        "idx": 20,
+        "lectures": [
+            [
+                "Overview",
+                "02:10",
+                "21.1",
+                130,
+                119
+            ],
+            [
+                "Observer via the 'event' Keyword",
+                "07:09",
+                "21.2",
+                429,
+                120
+            ],
+            [
+                "Weak Event Pattern",
+                "08:25",
+                "21.3",
+                505,
+                121
+            ],
+            [
+                "Observer via Special Interfaces",
+                "18:28",
+                "21.4",
+                1108,
+                122
+            ],
+            [
+                "Observable Collections",
+                "09:45",
+                "21.5",
+                585,
+                123
+            ],
+            [
+                "Bidirectional Observer",
+                "14:48",
+                "21.6",
+                888,
+                124
+            ],
+            [
+                "Property Dependencies",
+                "13:30",
+                "21.7",
+                810,
+                125
+            ],
+            [
+                "Declarative Event Subscriptions with Interfaces",
+                "27:08",
+                "21.8",
+                1628,
+                126
+            ],
+            [
+                "Observer Coding Exercise",
+                "1 question",
+                "",
+                0,
+                127
+            ],
+            [
+                "Summary",
+                "00:56",
+                "21.9",
+                56,
+                127
+            ]
+        ],
+        "total": "1hr 42min",
+        "duration": 6120,
+        "name": "Observer",
+        "durs": [
+            130,
+            429,
+            505,
+            1108,
+            585,
+            888,
+            810,
+            1628,
+            0,
+            56
+        ]
+    },
+    {
+        "idx": 21,
+        "lectures": [
+            [
+                "Overview",
+                "03:08",
+                "22.1",
+                188,
+                128
+            ],
+            [
+                "Classic Implementation",
+                "12:32",
+                "22.2",
+                752,
+                129
+            ],
+            [
+                "Handmade State Machine",
+                "06:44",
+                "22.3",
+                404,
+                130
+            ],
+            [
+                "Switch-Based State Machine",
+                "06:38",
+                "22.4",
+                398,
+                131
+            ],
+            [
+                "Switch Expressions",
+                "08:49",
+                "22.5",
+                529,
+                132
+            ],
+            [
+                "State Machine with Stateless",
+                "05:37",
+                "22.6",
+                337,
+                133
+            ],
+            [
+                "State Coding Exercise",
+                "1 question",
+                "",
+                0,
+                134
+            ],
+            [
+                "Summary",
+                "01:00",
+                "22.7",
+                60,
+                134
+            ]
+        ],
+        "total": "44min",
+        "duration": 2640,
+        "name": "State",
+        "durs": [
+            188,
+            752,
+            404,
+            398,
+            529,
+            337,
+            0,
+            60
+        ]
+    },
+    {
+        "idx": 22,
+        "lectures": [
+            [
+                "Overview",
+                "01:50",
+                "23.1",
+                110,
+                135
+            ],
+            [
+                "Dynamic Strategy",
+                "08:25",
+                "23.2",
+                505,
+                136
+            ],
+            [
+                "Static Strategy",
+                "04:07",
+                "23.3",
+                247,
+                137
+            ],
+            [
+                "Equality and Comparison Strategies",
+                "07:41",
+                "23.4",
+                461,
+                138
+            ],
+            [
+                "Strategy Coding Exercise",
+                "1 question",
+                "",
+                0,
+                139
+            ],
+            [
+                "Summary",
+                "00:26",
+                "23.5",
+                26,
+                139
+            ]
+        ],
+        "total": "22min",
+        "duration": 1320,
+        "name": "Strategy",
+        "durs": [
+            110,
+            505,
+            247,
+            461,
+            0,
+            26
+        ]
+    },
+    {
+        "idx": 23,
+        "lectures": [
+            [
+                "Overview",
+                "01:29",
+                "24.1",
+                89,
+                140
+            ],
+            [
+                "Template Method",
+                "07:22",
+                "24.2",
+                442,
+                141
+            ],
+            [
+                "Functional Template Method",
+                "03:38",
+                "24.3",
+                218,
+                142
+            ],
+            [
+                "Template Method Coding Exercise",
+                "1 question",
+                "",
+                0,
+                143
+            ],
+            [
+                "Summary",
+                "00:45",
+                "24.4",
+                45,
+                143
+            ]
+        ],
+        "total": "13min",
+        "duration": 780,
+        "name": "Template Method",
+        "durs": [
+            89,
+            442,
+            218,
+            0,
+            45
+        ]
+    },
+    {
+        "idx": 24,
+        "lectures": [
+            [
+                "Overview",
+                "04:46",
+                "25.1",
+                286,
+                144
+            ],
+            [
+                "Intrusive Expression Printing",
+                "04:41",
+                "25.2",
+                281,
+                145
+            ],
+            [
+                "Reflection-Based Printing",
+                "09:10",
+                "25.3",
+                550,
+                146
+            ],
+            [
+                "Classic Visitor (Double Dispatch)",
+                "10:21",
+                "25.4",
+                621,
+                147
+            ],
+            [
+                "Dynamic Visitor via the DLR",
+                "07:11",
+                "25.5",
+                431,
+                148
+            ],
+            [
+                "Acyclic Visitor",
+                "12:01",
+                "25.6",
+                721,
+                149
+            ],
+            [
+                "Visitor Coding Exercise",
+                "1 question",
+                "",
+                0,
+                150
+            ],
+            [
+                "Summary",
+                "01:09",
+                "25.7",
+                69,
+                150
+            ]
+        ],
+        "total": "49min",
+        "duration": 2940,
+        "name": "Visitor",
+        "durs": [
+            286,
+            281,
+            550,
+            621,
+            431,
+            721,
+            0,
+            69
+        ]
+    },
+    {
+        "idx": 25,
+        "lectures": [
+            [
+                "Creational Paterns Summary",
+                "04:41",
+                "26.1",
+                281,
+                151
+            ],
+            [
+                "Structural Patterns Summary",
+                "06:13",
+                "26.2",
+                373,
+                152
+            ],
+            [
+                "Behavioral Patterns Summary",
+                "08:48",
+                "26.3",
+                528,
+                153
+            ],
+            [
+                "End of Course",
+                "00:54",
+                "26.4",
+                54,
+                154
+            ]
+        ],
+        "total": "21min",
+        "duration": 1260,
+        "name": "Course Summary",
+        "durs": [
+            281,
+            373,
+            528,
+            54
+        ]
+    },
+    {
+        "idx": 26,
+        "lectures": [
+            [
+                "An ASCII C# String",
+                "13:58",
+                "27.1",
+                838,
+                155
+            ],
+            [
+                "Continuation Passing Style",
+                "11:06",
+                "27.2",
+                666,
+                156
+            ],
+            [
+                "Local Inversion of Control",
+                "17:42",
+                "27.3",
+                1062,
+                157
+            ],
+            [
+                "DI Container and Event Broker Integration",
+                "10:11",
+                "27.4",
+                611,
+                158
+            ],
+            [
+                "Beyond the Elvis Operator",
+                "14:46",
+                "27.5",
+                886,
+                159
+            ],
+            [
+                "CQRS and Event Sourcing",
+                "26:42",
+                "27.6",
+                1602,
+                160
+            ],
+            [
+                "Bonus Lecture: Other Courses at a Discount",
+                "00:04",
+                "27.7",
+                4,
+                161
+            ]
+        ],
+        "total": "1hr 34min",
+        "duration": 5640,
+        "name": "Bonus Lectures: Related Concepts",
+        "durs": [
+            838,
+            666,
+            1062,
+            611,
+            886,
+            1602,
+            4
+        ]
+    },
+    {
+        "idx": 27,
+        "lectures": [
+            [
+                "Overview",
+                "05:10",
+                "28.1",
+                310,
+                162
+            ],
+            [
+                "Builder",
+                "04:57",
+                "28.2",
+                297,
+                163
+            ],
+            [
+                "Decorator",
+                "04:39",
+                "28.3",
+                279,
+                164
+            ],
+            [
+                "Factory",
+                "08:15",
+                "28.4",
+                495,
+                165
+            ],
+            [
+                "Interpreter",
+                "09:58",
+                "28.5",
+                598,
+                166
+            ],
+            [
+                "Strategy",
+                "05:38",
+                "28.6",
+                338,
+                167
+            ],
+            [
+                "Template Method",
+                "10:06",
+                "28.7",
+                606,
+                168
+            ],
+            [
+                "Summary",
+                "02:55",
+                "28.8",
+                175,
+                169
+            ]
+        ],
+        "total": "52min",
+        "duration": 3120,
+        "name": "Bonus Lectures: Functional Patterns in F#",
+        "durs": [
+            310,
+            297,
+            279,
+            495,
+            598,
+            338,
+            606,
+            175
+        ]
+    }
+]

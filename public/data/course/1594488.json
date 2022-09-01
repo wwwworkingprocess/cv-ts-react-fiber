@@ -1,0 +1,948 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome to the course!",
+                "06:58",
+                "1.1",
+                418,
+                1
+            ],
+            [
+                "Where to get the Materials",
+                "00:07",
+                "1.2",
+                7,
+                2
+            ],
+            [
+                "Meet your instructors",
+                "00:11",
+                "1.3",
+                11,
+                3
+            ],
+            [
+                "FAQBot!",
+                "01:27",
+                "1.4",
+                87,
+                4
+            ]
+        ],
+        "total": "9min",
+        "duration": 540,
+        "name": "Introduction",
+        "durs": [
+            418,
+            7,
+            11,
+            87
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Welcome to Part 1 - Blockchain",
+                "00:06",
+                "2.1",
+                6,
+                5
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "-------------------- Part 1 - Blockchain --------------------",
+        "durs": [
+            6
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Plan of Attack",
+                "04:59",
+                "3.1",
+                299,
+                6
+            ],
+            [
+                "Updates on Udemy Reviews",
+                "01:09",
+                "3.2",
+                69,
+                7
+            ],
+            [
+                "What is a Blockchain",
+                "06:03",
+                "3.3",
+                363,
+                8
+            ],
+            [
+                "Understanding SHA256 - Hash",
+                "14:34",
+                "3.4",
+                874,
+                9
+            ],
+            [
+                "Immutable Ledger",
+                "13:23",
+                "3.5",
+                803,
+                10
+            ],
+            [
+                "Distributed P2P Network",
+                "12:51",
+                "3.6",
+                771,
+                11
+            ],
+            [
+                "How Mining Works: The Nonce",
+                "07:25",
+                "3.7",
+                445,
+                12
+            ],
+            [
+                "How Mining Works: The Cryptographic Puzzle",
+                "17:28",
+                "3.8",
+                1048,
+                13
+            ],
+            [
+                "Byzantine Fault Tolerance",
+                "13:04",
+                "3.9",
+                784,
+                14
+            ],
+            [
+                "Consensus Protocol: Defense Against Attackers",
+                "11:43",
+                "3.10",
+                703,
+                15
+            ],
+            [
+                "Consensus Protocol: Proof-of-Work (PoW)",
+                "11:04",
+                "3.11",
+                664,
+                16
+            ],
+            [
+                "Blockchain Demo",
+                "09:50",
+                "3.12",
+                590,
+                17
+            ],
+            [
+                "Quiz 1: Blockchain Intuition",
+                "5 questions",
+                "",
+                0,
+                18
+            ]
+        ],
+        "total": "2hr 4min",
+        "duration": 7440,
+        "name": "Blockchain Intuition",
+        "durs": [
+            299,
+            69,
+            363,
+            874,
+            803,
+            771,
+            445,
+            1048,
+            784,
+            703,
+            664,
+            590,
+            0
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Step 1",
+                "07:52",
+                "4.1",
+                472,
+                18
+            ],
+            [
+                "Step 2",
+                "04:49",
+                "4.2",
+                289,
+                19
+            ],
+            [
+                "Step 3",
+                "08:06",
+                "4.3",
+                486,
+                20
+            ],
+            [
+                "Step 4",
+                "09:58",
+                "4.4",
+                598,
+                21
+            ],
+            [
+                "Step 5",
+                "02:18",
+                "4.5",
+                138,
+                22
+            ],
+            [
+                "Step 6",
+                "12:39",
+                "4.6",
+                759,
+                23
+            ],
+            [
+                "Step 7",
+                "05:45",
+                "4.7",
+                345,
+                24
+            ],
+            [
+                "Step 8",
+                "11:41",
+                "4.8",
+                701,
+                25
+            ],
+            [
+                "Step 9",
+                "04:30",
+                "4.9",
+                270,
+                26
+            ],
+            [
+                "Step 10",
+                "13:43",
+                "4.10",
+                823,
+                27
+            ],
+            [
+                "Step 11",
+                "04:43",
+                "4.11",
+                283,
+                28
+            ],
+            [
+                "Quick Note",
+                "00:17",
+                "4.12",
+                17,
+                29
+            ],
+            [
+                "Step 12",
+                "11:18",
+                "4.13",
+                678,
+                30
+            ],
+            [
+                "Homework",
+                "00:12",
+                "4.14",
+                12,
+                31
+            ],
+            [
+                "Homework Solution",
+                "07:38",
+                "4.15",
+                458,
+                32
+            ],
+            [
+                "Full Code",
+                "00:04",
+                "4.16",
+                4,
+                33
+            ]
+        ],
+        "total": "1hr 46min",
+        "duration": 6360,
+        "name": "Create a Blockchain",
+        "durs": [
+            472,
+            289,
+            486,
+            598,
+            138,
+            759,
+            345,
+            701,
+            270,
+            823,
+            283,
+            17,
+            678,
+            12,
+            458,
+            4
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Welcome to Part 2 - Cryptocurrency",
+                "00:07",
+                "5.1",
+                7,
+                34
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "-------------------- Part 2 - Cryptocurrency --------------------",
+        "durs": [
+            7
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Plan of Attack",
+                "05:45",
+                "6.1",
+                345,
+                35
+            ],
+            [
+                "What is Bitcoin?",
+                "14:14",
+                "6.2",
+                854,
+                36
+            ],
+            [
+                "Bitcoin's Monetary Policy",
+                "11:40",
+                "6.3",
+                700,
+                37
+            ],
+            [
+                "Understanding Mining Difficulty",
+                "17:56",
+                "6.4",
+                1076,
+                38
+            ],
+            [
+                "Virtual tour of a Bitcoin Mine",
+                "04:58",
+                "6.5",
+                298,
+                39
+            ],
+            [
+                "Mining Pools",
+                "18:18",
+                "6.6",
+                1098,
+                40
+            ],
+            [
+                "Nonce Range",
+                "15:38",
+                "6.7",
+                938,
+                41
+            ],
+            [
+                "How Miners Pick Transactions (Part 1)",
+                "14:57",
+                "6.8",
+                897,
+                42
+            ],
+            [
+                "How Miners Pick Transactions (Part 2)",
+                "07:44",
+                "6.9",
+                464,
+                43
+            ],
+            [
+                "CPU's vs GPU's vs ASIC's",
+                "16:41",
+                "6.10",
+                1001,
+                44
+            ],
+            [
+                "How do Mempools work?",
+                "11:53",
+                "6.11",
+                713,
+                45
+            ],
+            [
+                "Orphaned Blocks",
+                "11:34",
+                "6.12",
+                694,
+                46
+            ],
+            [
+                "The 51% Attack",
+                "16:20",
+                "6.13",
+                980,
+                47
+            ],
+            [
+                "Extra: Bits to Target conversion",
+                "10:28",
+                "6.14",
+                628,
+                48
+            ],
+            [
+                "Quiz 2a: Cryptocurrency Intuition",
+                "5 questions",
+                "",
+                0,
+                49
+            ]
+        ],
+        "total": "2hr 58min",
+        "duration": 10680,
+        "name": "Cryptocurrency Intuition",
+        "durs": [
+            345,
+            854,
+            700,
+            1076,
+            298,
+            1098,
+            938,
+            897,
+            464,
+            1001,
+            713,
+            694,
+            980,
+            628,
+            0
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Plan of Attack",
+                "03:44",
+                "7.1",
+                224,
+                49
+            ],
+            [
+                "Transactions and UTXO's",
+                "10:05",
+                "7.2",
+                605,
+                50
+            ],
+            [
+                "Where do transaction fees come from?",
+                "11:53",
+                "7.3",
+                713,
+                51
+            ],
+            [
+                "How wallets work",
+                "08:15",
+                "7.4",
+                495,
+                52
+            ],
+            [
+                "Signatures: Private & Public Keys",
+                "08:11",
+                "7.5",
+                491,
+                53
+            ],
+            [
+                "Signatures & Keys Demo",
+                "07:57",
+                "7.6",
+                477,
+                54
+            ],
+            [
+                "What is Segregated Witness (SegWit)",
+                "12:06",
+                "7.7",
+                726,
+                55
+            ],
+            [
+                "Public Key vs Bitcoin Address",
+                "07:33",
+                "7.8",
+                453,
+                56
+            ],
+            [
+                "Hierarchically Deterministic (HD) Wallets",
+                "13:03",
+                "7.9",
+                783,
+                57
+            ],
+            [
+                "Quiz 2b: Cryptocurrency Transactions Intuition",
+                "5 questions",
+                "",
+                0,
+                58
+            ]
+        ],
+        "total": "1hr 23min",
+        "duration": 4980,
+        "name": "Cryptocurrency Transactions Intuition",
+        "durs": [
+            224,
+            605,
+            713,
+            495,
+            491,
+            477,
+            726,
+            453,
+            783,
+            0
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Step 1",
+                "09:19",
+                "8.1",
+                559,
+                58
+            ],
+            [
+                "Step 2",
+                "11:26",
+                "8.2",
+                686,
+                59
+            ],
+            [
+                "Step 3",
+                "10:02",
+                "8.3",
+                602,
+                60
+            ],
+            [
+                "Step 4",
+                "18:58",
+                "8.4",
+                1138,
+                61
+            ],
+            [
+                "Step 5",
+                "13:29",
+                "8.5",
+                809,
+                62
+            ],
+            [
+                "Step 6",
+                "15:06",
+                "8.6",
+                906,
+                63
+            ],
+            [
+                "Step 7",
+                "10:47",
+                "8.7",
+                647,
+                64
+            ],
+            [
+                "Step 8",
+                "08:15",
+                "8.8",
+                495,
+                65
+            ],
+            [
+                "Step 9",
+                "09:11",
+                "8.9",
+                551,
+                66
+            ],
+            [
+                "Step 10",
+                "20:50",
+                "8.10",
+                1250,
+                67
+            ],
+            [
+                "Full Code",
+                "00:05",
+                "8.11",
+                5,
+                68
+            ]
+        ],
+        "total": "2hr 7min",
+        "duration": 7620,
+        "name": "Create a Cryptocurrency",
+        "durs": [
+            559,
+            686,
+            602,
+            1138,
+            809,
+            906,
+            647,
+            495,
+            551,
+            1250,
+            5
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Welcome to Part 3 - Smart Contract",
+                "00:06",
+                "9.1",
+                6,
+                69
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "-------------------- Part 3 - Smart Contract --------------------",
+        "durs": [
+            6
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Plan of Attack",
+                "05:07",
+                "10.1",
+                307,
+                70
+            ],
+            [
+                "What is Ethereum",
+                "05:48",
+                "10.2",
+                348,
+                71
+            ],
+            [
+                "What is a Smart Contract?",
+                "13:30",
+                "10.3",
+                810,
+                72
+            ],
+            [
+                "Decentralized Applications (Dapps)",
+                "03:41",
+                "10.4",
+                221,
+                73
+            ],
+            [
+                "Ethereum Virtual Machine & Gas",
+                "14:14",
+                "10.5",
+                854,
+                74
+            ],
+            [
+                "Decentralized Autonomous Organizations (DAOs)",
+                "11:13",
+                "10.6",
+                673,
+                75
+            ],
+            [
+                "The DAO Attack",
+                "09:21",
+                "10.7",
+                561,
+                76
+            ],
+            [
+                "Soft and Hard Forks (Part 1)",
+                "13:13",
+                "10.8",
+                793,
+                77
+            ],
+            [
+                "Soft and Hard Forks (Part 2) - Advanced Tutorial",
+                "17:59",
+                "10.9",
+                1079,
+                78
+            ],
+            [
+                "Initial Coin Offerings (ICOs)",
+                "08:24",
+                "10.10",
+                504,
+                79
+            ],
+            [
+                "ICO Case Study",
+                "10:52",
+                "10.11",
+                652,
+                80
+            ],
+            [
+                "Blockchain Startups: White Papers",
+                "17:04",
+                "10.12",
+                1024,
+                81
+            ],
+            [
+                "Blockchain and Web 3.0",
+                "11:50",
+                "10.13",
+                710,
+                82
+            ],
+            [
+                "Quiz 3: Smart Contract Intuition",
+                "5 questions",
+                "",
+                0,
+                83
+            ]
+        ],
+        "total": "2hr 22min",
+        "duration": 8520,
+        "name": "Smart Contract Intuition",
+        "durs": [
+            307,
+            348,
+            810,
+            221,
+            854,
+            673,
+            561,
+            793,
+            1079,
+            504,
+            652,
+            1024,
+            710,
+            0
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Step 1",
+                "13:51",
+                "11.1",
+                831,
+                83
+            ],
+            [
+                "Step 2",
+                "09:38",
+                "11.2",
+                578,
+                84
+            ],
+            [
+                "Step 3",
+                "04:29",
+                "11.3",
+                269,
+                85
+            ],
+            [
+                "Step 4",
+                "05:08",
+                "11.4",
+                308,
+                86
+            ],
+            [
+                "Step 5",
+                "06:16",
+                "11.5",
+                376,
+                87
+            ],
+            [
+                "Step 6",
+                "09:30",
+                "11.6",
+                570,
+                88
+            ],
+            [
+                "Step 7",
+                "05:52",
+                "11.7",
+                352,
+                89
+            ],
+            [
+                "Step 8",
+                "23:32",
+                "11.8",
+                1412,
+                90
+            ],
+            [
+                "Full Code",
+                "00:05",
+                "11.9",
+                5,
+                91
+            ]
+        ],
+        "total": "1hr 18min",
+        "duration": 4680,
+        "name": "Create a Smart Contract",
+        "durs": [
+            831,
+            578,
+            269,
+            308,
+            376,
+            570,
+            352,
+            1412,
+            5
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Ripple",
+                "06:08",
+                "12.1",
+                368,
+                92
+            ],
+            [
+                "Neo",
+                "06:24",
+                "12.2",
+                384,
+                93
+            ],
+            [
+                "Litecoin",
+                "06:17",
+                "12.3",
+                377,
+                94
+            ],
+            [
+                "Cardano",
+                "06:13",
+                "12.4",
+                373,
+                95
+            ],
+            [
+                "Stellar",
+                "06:57",
+                "12.5",
+                417,
+                96
+            ],
+            [
+                "THANK YOU bonus video",
+                "02:40",
+                "12.6",
+                160,
+                97
+            ]
+        ],
+        "total": "35min",
+        "duration": 2100,
+        "name": "Alt Coins",
+        "durs": [
+            368,
+            384,
+            377,
+            373,
+            417,
+            160
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "***YOUR SPECIAL BONUS***",
+                "00:29",
+                "13.1",
+                29,
+                98
+            ]
+        ],
+        "total": "1min",
+        "duration": 60,
+        "name": "Bonus Lectures",
+        "durs": [
+            29
+        ]
+    }
+]

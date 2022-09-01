@@ -1,0 +1,1116 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Welcome to the Course!",
+                "01:39",
+                "1.1",
+                99,
+                1
+            ],
+            [
+                "What is \"Vue.js\"?",
+                "07:51",
+                "1.2",
+                471,
+                2
+            ],
+            [
+                "Different Ways of Using Vue",
+                "02:35",
+                "1.3",
+                155,
+                3
+            ],
+            [
+                "Exploring Vue Alternatives",
+                "03:11",
+                "1.4",
+                191,
+                4
+            ],
+            [
+                "Building A First App With Just JavaScript",
+                "07:26",
+                "1.5",
+                446,
+                5
+            ],
+            [
+                "Re-building the App with Vue",
+                "10:51",
+                "1.6",
+                651,
+                6
+            ],
+            [
+                "Vue vs \"Vanilla JavaScript\" (just JavaScript)",
+                "01:10",
+                "1.7",
+                70,
+                7
+            ],
+            [
+                "Setting Up the Course Development Environment",
+                "02:04",
+                "1.8",
+                124,
+                8
+            ],
+            [
+                "Course Outline & What's In The Course",
+                "02:58",
+                "1.9",
+                178,
+                9
+            ],
+            [
+                "How To Get The Most Out Of This Course",
+                "03:23",
+                "1.10",
+                203,
+                10
+            ],
+            [
+                "Module Resources",
+                "00:09",
+                "1.11",
+                9,
+                11
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Getting Started",
+        "durs": [
+            99,
+            471,
+            155,
+            191,
+            446,
+            651,
+            70,
+            124,
+            178,
+            203,
+            9
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Module Introduction",
+                "00:48",
+                "2.1",
+                48,
+                12
+            ],
+            [
+                "Creating and Connecting Vue App Instances",
+                "08:40",
+                "2.2",
+                520,
+                13
+            ],
+            [
+                "Interpolation and Data Binding",
+                "03:35",
+                "2.3",
+                215,
+                14
+            ],
+            [
+                "Binding Attributes with the \"v-bind\" Directive",
+                "05:37",
+                "2.4",
+                337,
+                15
+            ],
+            [
+                "Understanding \"methods\" in Vue Apps",
+                "05:47",
+                "2.5",
+                347,
+                16
+            ],
+            [
+                "Working with Data inside of a Vue App",
+                "03:23",
+                "2.6",
+                203,
+                17
+            ],
+            [
+                "Outputting Raw HTML Content with v-html",
+                "03:31",
+                "2.7",
+                211,
+                18
+            ],
+            [
+                "A First Summary",
+                "04:12",
+                "2.8",
+                252,
+                19
+            ],
+            [
+                "Time to Practice: Data Binding",
+                "1 question",
+                "",
+                0,
+                20
+            ],
+            [
+                "Understanding Event Binding",
+                "07:17",
+                "2.9",
+                437,
+                20
+            ],
+            [
+                "Events & Methods",
+                "06:12",
+                "2.10",
+                372,
+                21
+            ],
+            [
+                "Working with Event Arguments",
+                "02:59",
+                "2.11",
+                179,
+                22
+            ],
+            [
+                "Using the Native Event Object",
+                "08:59",
+                "2.12",
+                539,
+                23
+            ],
+            [
+                "Exploring Event Modifiers",
+                "09:53",
+                "2.13",
+                593,
+                24
+            ],
+            [
+                "Locking Content with v-once",
+                "02:08",
+                "2.14",
+                128,
+                25
+            ],
+            [
+                "Time to Practice: Event Binding",
+                "1 question",
+                "",
+                0,
+                26
+            ],
+            [
+                "Data Binding + Event Binding = Two-Way Binding",
+                "06:32",
+                "2.15",
+                392,
+                26
+            ],
+            [
+                "Methods used for Data Binding: How It Works",
+                "06:46",
+                "2.16",
+                406,
+                27
+            ],
+            [
+                "Introducing Computed Properties",
+                "05:58",
+                "2.17",
+                358,
+                28
+            ],
+            [
+                "Working with Watchers",
+                "10:49",
+                "2.18",
+                649,
+                29
+            ],
+            [
+                "Methods vs Computed Properties vs Watchers",
+                "02:27",
+                "2.19",
+                147,
+                30
+            ],
+            [
+                "v-bind and v-on Shorthands",
+                "01:53",
+                "2.20",
+                113,
+                31
+            ],
+            [
+                "Time to Practice: Reactivity",
+                "1 question",
+                "",
+                0,
+                32
+            ],
+            [
+                "Dynamic Styling with Inline Styles",
+                "07:19",
+                "2.21",
+                439,
+                32
+            ],
+            [
+                "Adding CSS Classes Dynamically",
+                "06:31",
+                "2.22",
+                391,
+                33
+            ],
+            [
+                "Classes & Computed Properties",
+                "01:57",
+                "2.23",
+                117,
+                34
+            ],
+            [
+                "Dynamic Classes: Array Syntax",
+                "01:22",
+                "2.24",
+                82,
+                35
+            ],
+            [
+                "Time to Practice: Dynamic Styling",
+                "1 question",
+                "",
+                0,
+                36
+            ],
+            [
+                "Module Summary",
+                "04:27",
+                "2.25",
+                267,
+                36
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "2.26",
+                6,
+                37
+            ]
+        ],
+        "total": "2hr 9min",
+        "duration": 7740,
+        "name": "Basics & Core Concepts - DOM Interaction with Vue",
+        "durs": [
+            48,
+            520,
+            215,
+            337,
+            347,
+            203,
+            211,
+            252,
+            0,
+            437,
+            372,
+            179,
+            539,
+            593,
+            128,
+            0,
+            392,
+            406,
+            358,
+            649,
+            147,
+            113,
+            0,
+            439,
+            391,
+            117,
+            82,
+            0,
+            267,
+            6
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:35",
+                "3.1",
+                95,
+                38
+            ],
+            [
+                "Understanding the Problem",
+                "03:16",
+                "3.2",
+                196,
+                39
+            ],
+            [
+                "Rendering Content Conditionally",
+                "05:09",
+                "3.3",
+                309,
+                40
+            ],
+            [
+                "v-if, v-else and v-else-if",
+                "04:18",
+                "3.4",
+                258,
+                41
+            ],
+            [
+                "Using v-show Instead Of v-if",
+                "02:25",
+                "3.5",
+                145,
+                42
+            ],
+            [
+                "Rendering Lists of Data",
+                "06:20",
+                "3.6",
+                380,
+                43
+            ],
+            [
+                "Diving Deeper Into v-for",
+                "05:12",
+                "3.7",
+                312,
+                44
+            ],
+            [
+                "Removing List Items",
+                "03:59",
+                "3.8",
+                239,
+                45
+            ],
+            [
+                "Lists & Keys",
+                "08:26",
+                "3.9",
+                506,
+                46
+            ],
+            [
+                "Time to Practice: Conditional Content & Lists",
+                "1 question",
+                "",
+                0,
+                47
+            ],
+            [
+                "Module Summary",
+                "02:15",
+                "3.10",
+                135,
+                47
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "3.11",
+                6,
+                48
+            ]
+        ],
+        "total": "43min",
+        "duration": 2580,
+        "name": "Rendering Conditional Content & Lists",
+        "durs": [
+            95,
+            196,
+            309,
+            258,
+            145,
+            380,
+            312,
+            239,
+            506,
+            0,
+            135,
+            6
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:18",
+                "4.1",
+                78,
+                49
+            ],
+            [
+                "Project Setup & First Methods",
+                "12:27",
+                "4.2",
+                747,
+                50
+            ],
+            [
+                "Updating the Health Bars",
+                "07:07",
+                "4.3",
+                427,
+                51
+            ],
+            [
+                "Adding a \"Special Attack\"",
+                "06:23",
+                "4.4",
+                383,
+                52
+            ],
+            [
+                "Adding a \"Heal\" Functionality",
+                "04:46",
+                "4.5",
+                286,
+                53
+            ],
+            [
+                "Adding a \"Game Over\" Screen",
+                "09:37",
+                "4.6",
+                577,
+                54
+            ],
+            [
+                "Finishing the Core Functionality",
+                "06:08",
+                "4.7",
+                368,
+                55
+            ],
+            [
+                "Adding a Battle Log",
+                "14:11",
+                "4.8",
+                851,
+                56
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "4.9",
+                6,
+                57
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Course Project: The Monster Slayer Game",
+        "durs": [
+            78,
+            747,
+            427,
+            383,
+            286,
+            577,
+            368,
+            851,
+            6
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:31",
+                "5.1",
+                91,
+                58
+            ],
+            [
+                "An Introduction to Vue's Reactivity",
+                "04:26",
+                "5.2",
+                266,
+                59
+            ],
+            [
+                "Vue Reactivity: A Deep Dive",
+                "08:10",
+                "5.3",
+                490,
+                60
+            ],
+            [
+                "One App vs Multiple Apps",
+                "03:53",
+                "5.4",
+                233,
+                61
+            ],
+            [
+                "Understanding Templates",
+                "03:56",
+                "5.5",
+                236,
+                62
+            ],
+            [
+                "Working with Refs",
+                "05:21",
+                "5.6",
+                321,
+                63
+            ],
+            [
+                "How Vue Updates the DOM",
+                "06:26",
+                "5.7",
+                386,
+                64
+            ],
+            [
+                "Vue App Lifecycle - Theory",
+                "04:46",
+                "5.8",
+                286,
+                65
+            ],
+            [
+                "Vue App Lifecycle - Practice",
+                "09:48",
+                "5.9",
+                588,
+                66
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "5.10",
+                6,
+                67
+            ]
+        ],
+        "total": "48min",
+        "duration": 2880,
+        "name": "Vue: Behind the Scenes",
+        "durs": [
+            91,
+            266,
+            490,
+            233,
+            236,
+            321,
+            386,
+            286,
+            588,
+            6
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:30",
+                "6.1",
+                90,
+                68
+            ],
+            [
+                "Understanding the Problem",
+                "08:39",
+                "6.2",
+                519,
+                69
+            ],
+            [
+                "Introducing Components",
+                "10:54",
+                "6.3",
+                654,
+                70
+            ],
+            [
+                "The Why: Building Complex User Interfaces With Components",
+                "01:00",
+                "6.4",
+                60,
+                71
+            ],
+            [
+                "Multiple Vue Apps vs Multiple Components",
+                "00:57",
+                "6.5",
+                57,
+                72
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "6.6",
+                6,
+                73
+            ]
+        ],
+        "total": "23min",
+        "duration": 1380,
+        "name": "Introducing Components",
+        "durs": [
+            90,
+            519,
+            654,
+            60,
+            57,
+            6
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:35",
+                "7.1",
+                95,
+                74
+            ],
+            [
+                "Why We Need A Development Server",
+                "03:29",
+                "7.2",
+                209,
+                75
+            ],
+            [
+                "Why We Want A Better Developer Experience",
+                "05:50",
+                "7.3",
+                350,
+                76
+            ],
+            [
+                "Installing & Using the Vue CLI",
+                "08:26",
+                "7.4",
+                506,
+                77
+            ],
+            [
+                "Inspecting the Created Project",
+                "05:59",
+                "7.5",
+                359,
+                78
+            ],
+            [
+                "Inspecting the Vue Code & \".vue\" Files",
+                "06:04",
+                "7.6",
+                364,
+                79
+            ],
+            [
+                "Adding the \"Vetur\" Extension to VS Code",
+                "01:15",
+                "7.7",
+                75,
+                80
+            ],
+            [
+                "More on \".vue\" Files",
+                "01:40",
+                "7.8",
+                100,
+                81
+            ],
+            [
+                "A New Vue Project",
+                "05:05",
+                "7.9",
+                305,
+                82
+            ],
+            [
+                "Creating a Basic Vue App",
+                "09:32",
+                "7.10",
+                572,
+                83
+            ],
+            [
+                "Adding a Component",
+                "08:14",
+                "7.11",
+                494,
+                84
+            ],
+            [
+                "Adding Styling",
+                "02:16",
+                "7.12",
+                136,
+                85
+            ],
+            [
+                "A Small Addition",
+                "00:13",
+                "7.13",
+                13,
+                86
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "7.14",
+                6,
+                87
+            ]
+        ],
+        "total": "1hr",
+        "duration": 3600,
+        "name": "Moving to a Better Development Setup & Workflow with the Vue CLI",
+        "durs": [
+            95,
+            209,
+            350,
+            506,
+            359,
+            364,
+            75,
+            100,
+            305,
+            572,
+            494,
+            136,
+            13,
+            6
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:41",
+                "8.1",
+                101,
+                88
+            ],
+            [
+                "Introducing \"Props\" (Parent => Child Communication)",
+                "10:03",
+                "8.2",
+                603,
+                89
+            ],
+            [
+                "Prop Behavior & Changing Props",
+                "06:30",
+                "8.3",
+                390,
+                90
+            ],
+            [
+                "Validating Props",
+                "07:14",
+                "8.4",
+                434,
+                91
+            ],
+            [
+                "Supported Prop Values",
+                "00:09",
+                "8.5",
+                9,
+                92
+            ],
+            [
+                "Working with Dynamic Prop Values",
+                "05:37",
+                "8.6",
+                337,
+                93
+            ],
+            [
+                "Emitting Custom Events (Child => Parent Communication)",
+                "11:15",
+                "8.7",
+                675,
+                94
+            ],
+            [
+                "Defining & Validating Custom Events",
+                "04:05",
+                "8.8",
+                245,
+                95
+            ],
+            [
+                "Prop / Event Fallthrough & Binding All Props",
+                "01:19",
+                "8.9",
+                79,
+                96
+            ],
+            [
+                "Demo: Adding Components & Connecting Them",
+                "13:15",
+                "8.10",
+                795,
+                97
+            ],
+            [
+                "Demo: Adding More Component Communication",
+                "06:24",
+                "8.11",
+                384,
+                98
+            ],
+            [
+                "Time to Practice: Props & Custom Events",
+                "1 question",
+                "",
+                0,
+                99
+            ],
+            [
+                "A Potential Problem",
+                "06:26",
+                "8.12",
+                386,
+                99
+            ],
+            [
+                "Provide + Inject To The Rescue",
+                "08:16",
+                "8.13",
+                496,
+                100
+            ],
+            [
+                "Provide + Inject for Functions / Methods",
+                "03:59",
+                "8.14",
+                239,
+                101
+            ],
+            [
+                "Provide + Inject vs Props & Custom Events",
+                "02:06",
+                "8.15",
+                126,
+                102
+            ],
+            [
+                "Module Summary",
+                "04:44",
+                "8.16",
+                284,
+                103
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "8.17",
+                6,
+                104
+            ]
+        ],
+        "total": "1hr 33min",
+        "duration": 5580,
+        "name": "Component Communication",
+        "durs": [
+            101,
+            603,
+            390,
+            434,
+            9,
+            337,
+            675,
+            245,
+            79,
+            795,
+            384,
+            0,
+            386,
+            496,
+            239,
+            126,
+            284,
+            6
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "Module Introduction",
+                "01:38",
+                "9.1",
+                98,
+                105
+            ],
+            [
+                "Project Setup",
+                "02:38",
+                "9.2",
+                158,
+                106
+            ],
+            [
+                "Global vs Local Components",
+                "09:22",
+                "9.3",
+                562,
+                107
+            ],
+            [
+                "Scoped Styles",
+                "05:15",
+                "9.4",
+                315,
+                108
+            ],
+            [
+                "Introducing Slots",
+                "06:23",
+                "9.5",
+                383,
+                109
+            ],
+            [
+                "Named Slots",
+                "05:35",
+                "9.6",
+                335,
+                110
+            ],
+            [
+                "Slot Styles & Compilation",
+                "02:26",
+                "9.7",
+                146,
+                111
+            ],
+            [
+                "More on Slots",
+                "07:19",
+                "9.8",
+                439,
+                112
+            ],
+            [
+                "Scoped Slots",
+                "09:34",
+                "9.9",
+                574,
+                113
+            ],
+            [
+                "Dynamic Components",
+                "07:06",
+                "9.10",
+                426,
+                114
+            ],
+            [
+                "Keeping Dynamic Components Alive",
+                "02:44",
+                "9.11",
+                164,
+                115
+            ],
+            [
+                "Applying What We Know & A Problem",
+                "09:24",
+                "9.12",
+                564,
+                116
+            ],
+            [
+                "Teleporting Elements",
+                "03:50",
+                "9.13",
+                230,
+                117
+            ],
+            [
+                "Working with Fragments",
+                "01:23",
+                "9.14",
+                83,
+                118
+            ],
+            [
+                "The Vue Style Guide",
+                "03:02",
+                "9.15",
+                182,
+                119
+            ],
+            [
+                "Moving to a Different Folder Structure",
+                "02:56",
+                "9.16",
+                176,
+                120
+            ],
+            [
+                "Module Summary",
+                "03:38",
+                "9.17",
+                218,
+                121
+            ],
+            [
+                "Module Resources",
+                "00:06",
+                "9.18",
+                6,
+                122
+            ]
+        ],
+        "total": "1hr 24min",
+        "duration": 5040,
+        "name": "Diving Deeper Into Components",
+        "durs": [
+            98,
+            158,
+            562,
+            315,
+            383,
+            335,
+            146,
+            439,
+            574,
+            426,
+            164,
+            564,
+            230,
+            83,
+            182,
+            176,
+            218,
+            6
+        ]
+    }
+]

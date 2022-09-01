@@ -1,0 +1,1332 @@
+[
+    {
+        "idx": 0,
+        "lectures": [
+            [
+                "Introduction - Start Here!",
+                "01:43",
+                "1.1",
+                103,
+                1
+            ],
+            [
+                "Github Links",
+                "00:03",
+                "1.2",
+                3,
+                2
+            ],
+            [
+                "Creating React Native Apps",
+                "02:23",
+                "1.3",
+                143,
+                3
+            ],
+            [
+                "Why Expo?",
+                "06:44",
+                "1.4",
+                404,
+                4
+            ],
+            [
+                "Creating Our First App",
+                "04:13",
+                "1.5",
+                253,
+                5
+            ]
+        ],
+        "total": "15min",
+        "duration": 900,
+        "name": "Expo Setup",
+        "durs": [
+            103,
+            3,
+            143,
+            404,
+            253
+        ]
+    },
+    {
+        "idx": 1,
+        "lectures": [
+            [
+                "Animation Systems",
+                "06:15",
+                "2.1",
+                375,
+                6
+            ],
+            [
+                "The Animation Module",
+                "09:47",
+                "2.2",
+                587,
+                7
+            ],
+            [
+                "Animation from Square One",
+                "08:14",
+                "2.3",
+                494,
+                8
+            ],
+            [
+                "Moving a Ball",
+                "05:22",
+                "2.4",
+                322,
+                9
+            ],
+            [
+                "How Animations Work",
+                "09:36",
+                "2.5",
+                576,
+                10
+            ],
+            [
+                "Animation from Another Angle",
+                "08:47",
+                "2.6",
+                527,
+                11
+            ],
+            [
+                "Swipe Deck Props",
+                "04:17",
+                "2.7",
+                257,
+                12
+            ],
+            [
+                "Component Boilerplate",
+                "03:51",
+                "2.8",
+                231,
+                13
+            ],
+            [
+                "Deck Data",
+                "00:18",
+                "2.9",
+                18,
+                14
+            ],
+            [
+                "Interplay Between Components",
+                "07:34",
+                "2.10",
+                454,
+                15
+            ],
+            [
+                "Customizing Individual Cards",
+                "13:51",
+                "2.11",
+                831,
+                16
+            ]
+        ],
+        "total": "1hr 18min",
+        "duration": 4680,
+        "name": "Animations with React Native",
+        "durs": [
+            375,
+            587,
+            494,
+            322,
+            576,
+            527,
+            257,
+            231,
+            18,
+            454,
+            831
+        ]
+    },
+    {
+        "idx": 2,
+        "lectures": [
+            [
+                "The Pan Responder System",
+                "10:23",
+                "3.1",
+                623,
+                17
+            ],
+            [
+                "Pan Responder's Event Handlers",
+                "08:47",
+                "3.2",
+                527,
+                18
+            ],
+            [
+                "The Gesture Object",
+                "09:54",
+                "3.3",
+                594,
+                19
+            ],
+            [
+                "Dragging a Card",
+                "11:28",
+                "3.4",
+                688,
+                20
+            ]
+        ],
+        "total": "41min",
+        "duration": 2460,
+        "name": "Handling Gestures",
+        "durs": [
+            623,
+            527,
+            594,
+            688
+        ]
+    },
+    {
+        "idx": 3,
+        "lectures": [
+            [
+                "Animating Single Cards",
+                "04:38",
+                "4.1",
+                278,
+                21
+            ],
+            [
+                "How to Rotate Elements",
+                "06:59",
+                "4.2",
+                419,
+                22
+            ],
+            [
+                "Interpolating Rotation Values",
+                "06:14",
+                "4.3",
+                374,
+                23
+            ],
+            [
+                "Linear Relations with Interpolation",
+                "05:33",
+                "4.4",
+                333,
+                24
+            ],
+            [
+                "Limiting Rotation with Interpolation",
+                "05:33",
+                "4.5",
+                333,
+                25
+            ],
+            [
+                "Springing Back to Default",
+                "05:10",
+                "4.6",
+                310,
+                26
+            ],
+            [
+                "Detecting Minimum Swipe Distance",
+                "07:22",
+                "4.7",
+                442,
+                27
+            ],
+            [
+                "Programmatic Animation",
+                "08:41",
+                "4.8",
+                521,
+                28
+            ],
+            [
+                "Forcing Swipes",
+                "04:11",
+                "4.9",
+                251,
+                29
+            ],
+            [
+                "Callbacks on Swipe Completion",
+                "06:25",
+                "4.10",
+                385,
+                30
+            ]
+        ],
+        "total": "1hr 1min",
+        "duration": 3660,
+        "name": "Applying Animation Styling",
+        "durs": [
+            278,
+            419,
+            374,
+            333,
+            333,
+            310,
+            442,
+            521,
+            251,
+            385
+        ]
+    },
+    {
+        "idx": 4,
+        "lectures": [
+            [
+                "Writing Reusable Components",
+                "04:49",
+                "5.1",
+                289,
+                31
+            ],
+            [
+                "The DefaultProps System",
+                "04:20",
+                "5.2",
+                260,
+                32
+            ],
+            [
+                "Resetting Card Position",
+                "06:03",
+                "5.3",
+                363,
+                33
+            ],
+            [
+                "Advancing the Deck",
+                "06:10",
+                "5.4",
+                370,
+                34
+            ],
+            [
+                "Handling Empty Lists",
+                "06:49",
+                "5.5",
+                409,
+                35
+            ],
+            [
+                "Getting the Cards to Stack",
+                "08:31",
+                "5.6",
+                511,
+                36
+            ],
+            [
+                "Troubleshooting Flashing Images",
+                "03:09",
+                "5.7",
+                189,
+                37
+            ],
+            [
+                "Cascading Card List",
+                "05:34",
+                "5.8",
+                334,
+                38
+            ],
+            [
+                "Animating Advancing Cards",
+                "04:22",
+                "5.9",
+                262,
+                39
+            ],
+            [
+                "Resetting the Index",
+                "05:15",
+                "5.10",
+                315,
+                40
+            ],
+            [
+                "Deck Wrapup",
+                "03:39",
+                "5.11",
+                219,
+                41
+            ]
+        ],
+        "total": "59min",
+        "duration": 3540,
+        "name": "Component Reusability",
+        "durs": [
+            289,
+            260,
+            363,
+            370,
+            409,
+            511,
+            189,
+            334,
+            262,
+            315,
+            219
+        ]
+    },
+    {
+        "idx": 5,
+        "lectures": [
+            [
+                "Review of Common Auth Flows",
+                "08:20",
+                "6.1",
+                500,
+                42
+            ],
+            [
+                "The Details of One Time Passwords",
+                "10:04",
+                "6.2",
+                604,
+                43
+            ],
+            [
+                "Tech Stack with Google Cloud Functions",
+                "08:26",
+                "6.3",
+                506,
+                44
+            ],
+            [
+                "Traditional Servers vs Google Cloud Functions",
+                "08:21",
+                "6.4",
+                501,
+                45
+            ],
+            [
+                "Layout of Google Cloud Functions",
+                "09:49",
+                "6.5",
+                589,
+                46
+            ],
+            [
+                "Firebase Project Setup",
+                "07:21",
+                "6.6",
+                441,
+                47
+            ],
+            [
+                "Deploying a Firebase Project",
+                "04:35",
+                "6.7",
+                275,
+                48
+            ],
+            [
+                "Testing Deployed Functions",
+                "07:42",
+                "6.8",
+                462,
+                49
+            ],
+            [
+                "Project File Structure",
+                "05:48",
+                "6.9",
+                348,
+                50
+            ],
+            [
+                "The Request and Response Objects",
+                "10:49",
+                "6.10",
+                649,
+                51
+            ],
+            [
+                "Generating a Service Account",
+                "05:48",
+                "6.11",
+                348,
+                52
+            ],
+            [
+                "Sanitizing User Inputs",
+                "08:54",
+                "6.12",
+                534,
+                53
+            ],
+            [
+                "Creating New Users",
+                "06:22",
+                "6.13",
+                382,
+                54
+            ],
+            [
+                "Testing New User Creation",
+                "05:23",
+                "6.14",
+                323,
+                55
+            ]
+        ],
+        "total": "1hr 48min",
+        "duration": 6480,
+        "name": "One Time Password Authentication",
+        "durs": [
+            500,
+            604,
+            506,
+            501,
+            589,
+            441,
+            275,
+            462,
+            348,
+            649,
+            348,
+            534,
+            382,
+            323
+        ]
+    },
+    {
+        "idx": 6,
+        "lectures": [
+            [
+                "Texting from Twilio",
+                "06:29",
+                "7.1",
+                389,
+                56
+            ],
+            [
+                "Twilio Credentials",
+                "07:03",
+                "7.2",
+                423,
+                57
+            ],
+            [
+                "Accessing Saved Users",
+                "06:10",
+                "7.3",
+                370,
+                58
+            ],
+            [
+                "Quick Note",
+                "00:27",
+                "7.4",
+                27,
+                59
+            ],
+            [
+                "Sending Texts to Users",
+                "08:45",
+                "7.5",
+                525,
+                60
+            ],
+            [
+                "Generating Access Codes",
+                "09:05",
+                "7.6",
+                545,
+                61
+            ],
+            [
+                "Verifying One Time Passwords",
+                "08:00",
+                "7.7",
+                480,
+                62
+            ],
+            [
+                "Invalidating Used Codes",
+                "07:52",
+                "7.8",
+                472,
+                63
+            ],
+            [
+                "Generating JWT's",
+                "04:31",
+                "7.9",
+                271,
+                64
+            ]
+        ],
+        "total": "58min",
+        "duration": 3480,
+        "name": "Twilio Integration",
+        "durs": [
+            389,
+            423,
+            370,
+            27,
+            525,
+            545,
+            480,
+            472,
+            271
+        ]
+    },
+    {
+        "idx": 7,
+        "lectures": [
+            [
+                "Transitioning to React Native",
+                "02:53",
+                "8.1",
+                173,
+                65
+            ],
+            [
+                "App Boilerplate",
+                "06:57",
+                "8.2",
+                417,
+                66
+            ],
+            [
+                "Defining Instance Properties",
+                "08:09",
+                "8.3",
+                489,
+                67
+            ],
+            [
+                "Invoking Cloud Functions",
+                "06:57",
+                "8.4",
+                417,
+                68
+            ],
+            [
+                "Refactoring with Async/Await",
+                "09:07",
+                "8.5",
+                547,
+                69
+            ],
+            [
+                "Debugging with Async/Await",
+                "04:33",
+                "8.6",
+                273,
+                70
+            ],
+            [
+                "Async/Await on User Signin",
+                "05:59",
+                "8.7",
+                359,
+                71
+            ],
+            [
+                "Capturing Tokens",
+                "03:52",
+                "8.8",
+                232,
+                72
+            ],
+            [
+                "Firebase Auth with a JWT",
+                "05:58",
+                "8.9",
+                358,
+                73
+            ],
+            [
+                "Breather and Review",
+                "07:23",
+                "8.10",
+                443,
+                74
+            ]
+        ],
+        "total": "1hr 2min",
+        "duration": 3720,
+        "name": "Client Side One Time Passwords",
+        "durs": [
+            173,
+            417,
+            489,
+            417,
+            547,
+            273,
+            359,
+            232,
+            358,
+            443
+        ]
+    },
+    {
+        "idx": 8,
+        "lectures": [
+            [
+                "App Overview",
+                "05:39",
+                "9.1",
+                339,
+                75
+            ],
+            [
+                "Screen Walkthrough",
+                "06:23",
+                "9.2",
+                383,
+                76
+            ],
+            [
+                "More Screen Walkthroughs",
+                "06:41",
+                "9.3",
+                401,
+                77
+            ],
+            [
+                "App Challenges and Solutions",
+                "05:09",
+                "9.4",
+                309,
+                78
+            ],
+            [
+                "Screens vs Components",
+                "03:12",
+                "9.5",
+                192,
+                79
+            ],
+            [
+                "React Native Navigation Options",
+                "09:20",
+                "9.6",
+                560,
+                80
+            ],
+            [
+                "React Navigation in Practice",
+                "10:24",
+                "9.7",
+                624,
+                81
+            ],
+            [
+                "Screen Boilerplate",
+                "07:05",
+                "9.8",
+                425,
+                82
+            ],
+            [
+                "Implementing the First Navigator",
+                "07:13",
+                "9.9",
+                433,
+                83
+            ],
+            [
+                "Nesting Navigators",
+                "07:11",
+                "9.10",
+                431,
+                84
+            ],
+            [
+                "Wiring Up Stack Navigators",
+                "03:15",
+                "9.11",
+                195,
+                85
+            ],
+            [
+                "Class vs Instance Properties",
+                "05:39",
+                "9.12",
+                339,
+                86
+            ],
+            [
+                "Customization with Header Options",
+                "04:43",
+                "9.13",
+                283,
+                87
+            ],
+            [
+                "Programmatic Navigation",
+                "06:41",
+                "9.14",
+                401,
+                88
+            ],
+            [
+                "Styling the NavBar",
+                "05:12",
+                "9.15",
+                312,
+                89
+            ],
+            [
+                "The Welcome Screen",
+                "06:11",
+                "9.16",
+                371,
+                90
+            ],
+            [
+                "Styling the Welcome Screen",
+                "07:40",
+                "9.17",
+                460,
+                91
+            ],
+            [
+                "Even More Welcome Screen Styling!",
+                "08:39",
+                "9.18",
+                519,
+                92
+            ],
+            [
+                "Navigation from the Welcome Screen",
+                "04:57",
+                "9.19",
+                297,
+                93
+            ],
+            [
+                "More on Welcome Screen Navigation",
+                "10:01",
+                "9.20",
+                601,
+                94
+            ]
+        ],
+        "total": "2hr 11min",
+        "duration": 7860,
+        "name": "Bringing it All Together",
+        "durs": [
+            339,
+            383,
+            401,
+            309,
+            192,
+            560,
+            624,
+            425,
+            433,
+            431,
+            195,
+            339,
+            283,
+            401,
+            312,
+            371,
+            460,
+            519,
+            297,
+            601
+        ]
+    },
+    {
+        "idx": 9,
+        "lectures": [
+            [
+                "Facebook Auth Flow",
+                "05:31",
+                "10.1",
+                331,
+                95
+            ],
+            [
+                "The Facebook Dev Console",
+                "05:50",
+                "10.2",
+                350,
+                96
+            ],
+            [
+                "Redux Setup",
+                "13:00",
+                "10.3",
+                780,
+                97
+            ],
+            [
+                "Using Async Storage",
+                "10:06",
+                "10.4",
+                606,
+                98
+            ],
+            [
+                "Crazy Async/Await Syntax",
+                "13:00",
+                "10.5",
+                780,
+                99
+            ],
+            [
+                "Logging in With Facebook",
+                "17:46",
+                "10.6",
+                1066,
+                100
+            ],
+            [
+                "Testing Facebook's Login Flow",
+                "10:37",
+                "10.7",
+                637,
+                101
+            ],
+            [
+                "Quick Note",
+                "00:16",
+                "10.8",
+                16,
+                102
+            ],
+            [
+                "World's Biggest Gotcha",
+                "09:13",
+                "10.9",
+                553,
+                103
+            ],
+            [
+                "The Auth Reducer",
+                "05:46",
+                "10.10",
+                346,
+                104
+            ],
+            [
+                "Skipping the Auth Screen",
+                "08:49",
+                "10.11",
+                529,
+                105
+            ],
+            [
+                "Testing Auth Flow",
+                "03:51",
+                "10.12",
+                231,
+                106
+            ],
+            [
+                "Advancing the Welcome Screen",
+                "11:36",
+                "10.13",
+                696,
+                107
+            ],
+            [
+                "Resolving the Loading Screen",
+                "03:01",
+                "10.14",
+                181,
+                108
+            ]
+        ],
+        "total": "1hr 58min",
+        "duration": 7080,
+        "name": "Facebook Authentication",
+        "durs": [
+            331,
+            350,
+            780,
+            606,
+            780,
+            1066,
+            637,
+            16,
+            553,
+            346,
+            529,
+            231,
+            696,
+            181
+        ]
+    },
+    {
+        "idx": 10,
+        "lectures": [
+            [
+                "Showing a Map",
+                "05:25",
+                "11.1",
+                325,
+                109
+            ],
+            [
+                "Interacting with the MapView",
+                "07:23",
+                "11.2",
+                443,
+                110
+            ],
+            [
+                "Working around MapView Issues",
+                "04:43",
+                "11.3",
+                283,
+                111
+            ],
+            [
+                "Indeed API Key",
+                "00:12",
+                "11.4",
+                12,
+                112
+            ],
+            [
+                "The Indeed Jobs API",
+                "08:55",
+                "11.5",
+                535,
+                113
+            ],
+            [
+                "Location API Mismatch",
+                "08:58",
+                "11.6",
+                538,
+                114
+            ],
+            [
+                "Converting LatLong to Zip Code",
+                "10:31",
+                "11.7",
+                631,
+                115
+            ],
+            [
+                "Fetching a List of Jobs",
+                "07:42",
+                "11.8",
+                462,
+                116
+            ],
+            [
+                "Issuing Action Creators from MapScreen",
+                "10:04",
+                "11.9",
+                604,
+                117
+            ],
+            [
+                "The Jobs Reducer",
+                "08:44",
+                "11.10",
+                524,
+                118
+            ],
+            [
+                "Navigating from Action Creators",
+                "05:29",
+                "11.11",
+                329,
+                119
+            ],
+            [
+                "The Deck Screen",
+                "03:57",
+                "11.12",
+                237,
+                120
+            ],
+            [
+                "Importing the Deck Component",
+                "04:24",
+                "11.13",
+                264,
+                121
+            ],
+            [
+                "Applying the Swipe Component",
+                "06:10",
+                "11.14",
+                370,
+                122
+            ],
+            [
+                "Styling Job Cards",
+                "08:38",
+                "11.15",
+                518,
+                123
+            ],
+            [
+                "Customizing MapViews",
+                "10:29",
+                "11.16",
+                629,
+                124
+            ],
+            [
+                "Android Compatibility",
+                "07:07",
+                "11.17",
+                427,
+                125
+            ],
+            [
+                "Dynamic Key Props",
+                "04:42",
+                "11.18",
+                282,
+                126
+            ],
+            [
+                "One More Swipe Deck Fix",
+                "02:08",
+                "11.19",
+                128,
+                127
+            ],
+            [
+                "Liking a Job",
+                "03:29",
+                "11.20",
+                209,
+                128
+            ],
+            [
+                "Considering Only Unique Jobs",
+                "10:40",
+                "11.21",
+                640,
+                129
+            ],
+            [
+                "The Review Screen",
+                "03:20",
+                "11.22",
+                200,
+                130
+            ],
+            [
+                "Rendering a List of Liked Jobs",
+                "08:00",
+                "11.23",
+                480,
+                131
+            ],
+            [
+                "Applying to Jobs",
+                "08:19",
+                "11.24",
+                499,
+                132
+            ],
+            [
+                "Mapping a Jobs Location",
+                "08:24",
+                "11.25",
+                504,
+                133
+            ],
+            [
+                "Styling the Job Card",
+                "06:33",
+                "11.26",
+                393,
+                134
+            ],
+            [
+                "Clearing Liked Jobs",
+                "07:36",
+                "11.27",
+                456,
+                135
+            ],
+            [
+                "Redirecting Back to the Map",
+                "03:23",
+                "11.28",
+                203,
+                136
+            ],
+            [
+                "Callback Gotcha",
+                "03:26",
+                "11.29",
+                206,
+                137
+            ],
+            [
+                "Tab Bar Icons",
+                "05:30",
+                "11.30",
+                330,
+                138
+            ],
+            [
+                "Tab Bar Config",
+                "06:47",
+                "11.31",
+                407,
+                139
+            ],
+            [
+                "Android Specific Fixes",
+                "04:37",
+                "11.32",
+                277,
+                140
+            ]
+        ],
+        "total": "3hr 26min",
+        "duration": 12360,
+        "name": "MapViews on React Native",
+        "durs": [
+            325,
+            443,
+            283,
+            12,
+            535,
+            538,
+            631,
+            462,
+            604,
+            524,
+            329,
+            237,
+            264,
+            370,
+            518,
+            629,
+            427,
+            282,
+            128,
+            209,
+            640,
+            200,
+            480,
+            499,
+            504,
+            393,
+            456,
+            203,
+            206,
+            330,
+            407,
+            277
+        ]
+    },
+    {
+        "idx": 11,
+        "lectures": [
+            [
+                "Push Notifications and Data Persistence",
+                "03:30",
+                "12.1",
+                210,
+                141
+            ],
+            [
+                "Persisting Application State",
+                "05:25",
+                "12.2",
+                325,
+                142
+            ],
+            [
+                "Wiring Up Redux Persist",
+                "03:29",
+                "12.3",
+                209,
+                143
+            ],
+            [
+                "How Redux Persist Works",
+                "06:57",
+                "12.4",
+                417,
+                144
+            ],
+            [
+                "Redux Persist - Huge Gotcha!",
+                "08:23",
+                "12.5",
+                503,
+                145
+            ]
+        ],
+        "total": "28min",
+        "duration": 1680,
+        "name": "Offline Data Persistence",
+        "durs": [
+            210,
+            325,
+            209,
+            417,
+            503
+        ]
+    },
+    {
+        "idx": 12,
+        "lectures": [
+            [
+                "Push Notification Overview",
+                "05:50",
+                "13.1",
+                350,
+                146
+            ],
+            [
+                "Registering For Push Notifications",
+                "08:17",
+                "13.2",
+                497,
+                147
+            ],
+            [
+                "Generating Push Tokens",
+                "05:15",
+                "13.3",
+                315,
+                148
+            ],
+            [
+                "Testing Notifications",
+                "06:15",
+                "13.4",
+                375,
+                149
+            ],
+            [
+                "More on Notifications and Wrapup",
+                "04:50",
+                "13.5",
+                290,
+                150
+            ]
+        ],
+        "total": "30min",
+        "duration": 1800,
+        "name": "Push Notifications",
+        "durs": [
+            350,
+            497,
+            315,
+            375,
+            290
+        ]
+    }
+]
