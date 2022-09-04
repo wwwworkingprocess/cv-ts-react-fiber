@@ -171,7 +171,7 @@ class TreeHelper {
     const ok = bound
       .filter((x: Array<any>) => x[1] !== undefined)
       .forEach((x: Array<any>) => {
-        const { id, p, lat, lng, pop, km2 } = x[0];
+        const { lat, lng, pop, km2 } = x[0];
         x[1].data = { lat, lng, pop, km2 };
       });
     //

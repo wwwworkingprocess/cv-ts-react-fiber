@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export const useAdminOneGeoData = (country_code: string) => {
   const [loading, setLoading] = useState<boolean>(false);
-  // const [data, setData] = useState<Array<any> | null>(null);
   const [features, setFeatures] =
     useState<Array<{ properties: any; geometry: any }>>();
 
@@ -16,7 +15,6 @@ export const useAdminOneGeoData = (country_code: string) => {
           setFeatures(gjson.features);
           setLoading(false);
         })
-
         .catch((error) => {
           setFeatures([]);
           setLoading(false);

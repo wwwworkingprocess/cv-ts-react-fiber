@@ -1,91 +1,16 @@
-// import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
-// import SignInForm from "../../components/sign-in-form/sign-in-form.component";
+import { useEffect, useMemo, useState } from "react";
 
-import { useMemo, useState } from "react";
 import styled from "styled-components";
+
 import { Spinner } from "../../components/spinner/spinner.component";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 import { useWikidata } from "../../hooks/useWikidata";
-
-const countries = [
-  {
-    type: "Feature",
-    geometry: {
-      type: "Polygon",
-      coordinates: [
-        [
-          [3.087, -54.401],
-          [3.407, -54.349],
-          [3.566, -54.322],
-          [3.571, -54.516],
-          [3.407, -54.528],
-          [3.224, -54.541],
-          [3.087, -54.401],
-        ],
-      ],
-    },
-    properties: { id: "BVT", name: "Bouvet Island" },
-  },
-  {
-    type: "Feature",
-    geometry: {
-      type: "Polygon",
-      coordinates: [
-        [
-          [25.27, -17.799],
-          [26.187, -19.502],
-          [27.617, -20.572],
-          [27.779, -21.123],
-          [28.123, -21.527],
-          [28.919, -21.788],
-          [29.361, -22.197],
-          [28.271, -22.66],
-          [27.053, -23.648],
-          [26.795, -24.278],
-          [26.002, -24.719],
-          [25.585, -25.583],
-          [25.332, -25.742],
-          [24.472, -25.766],
-          [23.44, -25.306],
-          [23.033, -25.325],
-          [22.56, -26.193],
-          [21.661, -26.83],
-          [21.283, -26.866],
-          [20.7, -26.818],
-          [20.824, -26.071],
-          [20.698, -25.63],
-          [20.413, -25.096],
-          [19.999, -24.752],
-          [20.014, -22.094],
-          [20.936, -21.971],
-          [20.999, -21.602],
-          [20.999, -21.407],
-          [20.999, -20.851],
-          [20.999, -20.567],
-          [20.999, -20.142],
-          [21, -18.32],
-          [21.463, -18.304],
-          [21.72, -18.256],
-          [23.185, -18.01],
-          [23.668, -18.422],
-          [24.307, -18.019],
-          [25.263, -17.791],
-          [25.27, -17.799],
-        ],
-      ],
-    },
-    properties: { id: "BWA", name: "Botswana" },
-  },
-].map((f) => ({
-  id: f.properties.id,
-  name: f.properties.name,
-  path: f.geometry.coordinates,
-}));
 
 type TSvg = {
   width: number;
   height: number;
 };
+
 export const Svg = styled.svg.attrs<TSvg>((props) => ({
   viewBox: `0 0 ` + props.width + ` ` + props.height,
   preserveAspectRatio: `xMidYMid meet`,
@@ -105,9 +30,42 @@ export const Path = styled.path`
   }
 `;
 
-// import { AuthenticationContainer } from "./authentication.styles";
-
 const Map = () => {
+  const [countries, setCountries] = useState<Array<any>>();
+
+  //
+  // loading geojson
+  //
+  useEffect(() => {
+    const afterDataLoaded = (countries: any) => {
+      setCountries(countries);
+      //
+      const fs = countries.features;
+      const mapped = fs.map(
+        (f: {
+          properties: Record<string, any>;
+          geometry: { coordinates: Array<[number, number]> };
+        }) => ({
+          id: f.properties.id,
+          name: f.properties.name,
+          path: f.geometry.coordinates,
+        })
+      );
+      setCountries(mapped);
+    };
+
+    const fn = () => {
+      // fetch("data/geojson/admin1.geojson")
+      fetch("data/geojson/ne_110m_admin_0_countries.geojson")
+        .then((res) => res.json())
+        .then(afterDataLoaded);
+    };
+    console.log("loading geojson");
+    fn();
+  }, []);
+  //
+
+  //
   const [countryCode, setCountryCode] = useState<string>("28");
   const [selectedCode, setSelectedCode] = useState<string>("Q28");
   //
@@ -172,6 +130,79 @@ const Map = () => {
     return matchingNames;
   }, [tree, keyword]);
 
+  const [svgCanvasWidth, svgCanvasHeight] = [960, 400];
+  const svgPathMemo = useMemo(() => {
+    if (!countries) return { paths: [undefined] };
+
+    const projectToCanvas = (latLng: { lat: number; lng: number }) => {
+      //
+      // projecting from [ lat:[-90, +90], lng: [-180, +180] ]
+      //            to   [ x: [0, canvasWidth], y: [0, canvasHeight] ]
+      //
+      return {
+        x: (latLng.lng + 180) * (svgCanvasWidth / 360),
+        y:
+          svgCanvasHeight / 2 -
+          ((svgCanvasHeight *
+            Math.log(
+              Math.tan(Math.PI / 4 + (latLng.lat * Math.PI) / 180 / 2)
+            )) /
+            (2 * Math.PI)) *
+            (svgCanvasWidth / svgCanvasHeight),
+      };
+    };
+
+    //
+    function convertCoordinatesToSvgPaths(
+      coordArrays: Array<Array<[number, number]>>,
+      fx: any
+    ) {
+      console.log("gmpath", coordArrays);
+      //
+      const svgPaths = [];
+      //
+      let minX = svgCanvasWidth;
+      let minY = svgCanvasHeight;
+      let maxX = 0;
+      let maxY = 0;
+
+      for (let pp = 0; pp < coordArrays.length; ++pp) {
+        // console.log("feature", pp);
+        const [coords /*, outterRingCoords*/] = coordArrays[pp];
+        const svgPath = [];
+        //
+        for (let p = 0; p < coords.length; ++p) {
+          const point = projectToCanvas(fx(coords[p]));
+          //
+          minX = Math.min(minX, point.x);
+          minY = Math.min(minY, point.y);
+          maxX = Math.max(maxX, point.x);
+          maxY = Math.max(maxY, point.y);
+          //
+          svgPath.push([point.x, point.y].join(","));
+        }
+        //
+        svgPaths.push(svgPath.join(" "));
+      }
+
+      return {
+        //path: "M" + svgPaths.join("z M") + "z",   // single path
+        paths: svgPaths.map((svgp) => `M${svgp}z`), // one path per feature
+        x: minX,
+        y: minY,
+        width: maxX - minX,
+        height: maxY - minY,
+      };
+    }
+
+    const svgProps = convertCoordinatesToSvgPaths(
+      countries.map((c) => c.path),
+      (coord: [number, number]) => ({ lat: coord[1], lng: coord[0] })
+    );
+    //
+    //
+    return svgProps;
+  }, [countries, svgCanvasWidth, svgCanvasHeight]);
   //
   //
   //
@@ -222,31 +253,41 @@ const Map = () => {
     setCountrySelected(null);
   }
   //
-  const [width, height] = [300, 200];
   //
   //
   //
   return (
     <div>
-      Map
+      Map ({countrySelected})
       <hr />
-      <>
-        <Svg width={width} height={height}>
-          {countries.map(({ id, name, path }, index) => {
-            console.log(path);
-            return (
-              <Path
-                key={index}
-                data-testid={name}
-                onMouseEnter={mouseEnter.bind(null, { name })}
-                onMouseLeave={mouseLeave}
-                // onClick={() => onCountryClick!({ id, name })}
-              />
-            );
-          })}
-        </Svg>
-        {/* {countrySelected && <CountryDetails name={countrySelected} />} */}
-      </>
+      {countries && (
+        <>
+          {svgPathMemo && (
+            <Svg
+              style={{ border: "solid 1px red" }}
+              {...svgPathMemo}
+              width={svgCanvasWidth}
+              height={svgCanvasHeight}
+            >
+              {countries.map(({ id, name, path }, index) => {
+                // console.log("drawing c path", id, name, path);
+                return (
+                  <Path
+                    key={index}
+                    color={"white"}
+                    strokeWidth={0.5}
+                    data-testid={name}
+                    onMouseEnter={mouseEnter.bind(null, { name })}
+                    onMouseLeave={mouseLeave}
+                    d={svgPathMemo.paths[index]}
+                  />
+                );
+              })}
+            </Svg>
+          )}
+          {countrySelected && JSON.stringify(countrySelected)}
+        </>
+      )}
       <hr />
       Keyword:{" "}
       <input
@@ -295,10 +336,6 @@ const Map = () => {
           MEMO:
           {nodes ? renderAsList(adminOneMemo) : "loading"}
           <hr />
-          {/* INLINE:
-          {nodes
-            ? JSON.stringify(tree._children_of(parseInt(countryCode)))
-            : "loading"} */}
           Selected code: {selectedCode}
           A2 MEMO:
           {selectedCode ? renderAsList(adminTwoMemo) : "loading"}
@@ -324,11 +361,6 @@ const Map = () => {
               <div>
                 {wikiEntry
                   ? Object.keys(wikiEntry.claims).join(" -- ")
-                  : "loading"}
-              </div>
-              <div>
-                {wikiEntry
-                  ? JSON.stringify(wikiEntry.claims["P41"])
                   : "loading"}
               </div>
               <div>

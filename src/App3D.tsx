@@ -1,27 +1,35 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, RoundedBox } from "@react-three/drei";
+import { Extrude, OrbitControls } from "@react-three/drei";
 
 import { Dice } from "./three-components/dice/dice.component";
-import MyText from "./three-components/tree-3d/text-3d.component";
+import MyText from "./three-components/text-3d/text-3d.component";
 import {
   BoxBufferGeometry,
   Color,
   DoubleSide,
-  InstancedBufferAttribute,
   InstancedMesh,
-  MeshLambertMaterial,
   MeshStandardMaterial,
   Object3D,
-  Shape,
 } from "three";
+import { shapeFromCoords, shapeRoundedRectangle } from "./utils/d3d";
+
+import hungarianBorder from "./fiber-apps/hungary/border.28.json";
 
 const tempBoxes = new Object3D();
 
-const Boxes = ({ i, j }: { i: number; j: number }) => {
+const Boxes = ({
+  i,
+  j,
+  baseColor,
+}: {
+  i: number;
+  j: number;
+  baseColor: Color;
+}) => {
   const material = new MeshStandardMaterial({
-    color: new Color(Math.random(), Math.random(), Math.random()),
+    // color: baseColor,
   });
   const boxesGeometry = new BoxBufferGeometry(0.5, 0.5, 0.5);
   const ref = useRef<InstancedMesh>(null!);
@@ -38,14 +46,16 @@ const Boxes = ({ i, j }: { i: number; j: number }) => {
           tempBoxes.rotation.y = t;
           tempBoxes.updateMatrix();
           ref.current.setMatrixAt(id, tempBoxes.matrix);
-          // ref.current.setColorAt(
-          //   id,
-          //   new Color(
-          //     Math.random(),
-          //     Math.random() * (i + 1),
-          //     Math.random() * (j + 1)
-          //   )
-          // );
+
+          ref.current.setColorAt(
+            id,
+            new Color(
+              0.9 * Math.abs(1 - Math.cos(t * 1000 * x)) * baseColor.r,
+              ((0.15 * (Math.abs(Math.sin(t)) * 1 + 0.1)) / (z + 1)) *
+                baseColor.g,
+              0.1 * Math.abs(Math.cos(t)) * baseColor.b
+            )
+          );
         }
       }
       ref.current.instanceMatrix.needsUpdate = true;
@@ -55,48 +65,32 @@ const Boxes = ({ i, j }: { i: number; j: number }) => {
   return <instancedMesh ref={ref} args={[boxesGeometry, material, i * j]} />;
 };
 
-const roundedRect = (width: number, height: number, radius: number) => {
-  const shape = new Shape();
-  //
-  shape.moveTo(-(width / 2), -(height / 2) + radius);
-  //
-  shape.lineTo(-(width / 2), height / 2 - radius);
-  shape.quadraticCurveTo(
-    -(width / 2),
-    height / 2,
-    -(width / 2) + radius,
-    height / 2
-  );
-  //
-  shape.lineTo(width / 2 - radius, height / 2);
-  shape.quadraticCurveTo(width / 2, height / 2, width / 2, height / 2 - radius);
-  //
-  shape.lineTo(width / 2, -(height / 2) + radius);
-  shape.quadraticCurveTo(
-    width / 2,
-    -(height / 2),
-    width / 2 - radius,
-    -(height / 2)
-  );
-  //
-  shape.lineTo(-(width / 2) + radius, -(height / 2));
-  shape.quadraticCurveTo(
-    -(width / 2),
-    -(height / 2),
-    -(width / 2),
-    -(height / 2) + radius
-  );
-  //
-  return shape;
-};
-
 const App3D = (props: {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const { setIsOpen } = props;
+  // const { setIsOpen } = props;
 
   const [scale, setScale] = useState<number>(2);
   //
+  const countryBorderPoints = hungarianBorder.coordinates as Array<
+    [number, number]
+  >;
+  //
+  const extrudeOptions = {
+    size: 4,
+    height: 3,
+    curveSegments: 32,
+    bevelEnabled: true,
+    bevelThickness: 0.06,
+    bevelSize: 0.025,
+    bevelOffset: 0,
+    bevelSegments: 8,
+  };
+  //const extrudeArgs = [shapeFromCoords(countryBorderPoints), extrudeOptions];
+
+  const [boxColor] = useState<Color>(
+    new Color(Math.random(), Math.random(), Math.random())
+  );
   //
   return (
     <>
@@ -113,32 +107,45 @@ const App3D = (props: {
         <pointLight position={[-10, -10, -10]} />
 
         <mesh {...props}>
-          <shapeGeometry args={[roundedRect(2.5, 5, 0.2)]} />
+          <shapeGeometry args={[shapeRoundedRectangle(2.5, 5, 0.2)]} />
           <meshBasicMaterial color="red" side={DoubleSide} />
         </mesh>
 
         <Dice />
 
         <MyText
-          position={[0, 10, 0]}
+          position={[0, 3, 0]}
           // color="black"
           // anchorX="center"
           // anchorY="middle"
-          // onClick={(e) => console.log("clicked text")}
         >
-          Hello Text 3D!
+          Welcome to 3D!
         </MyText>
-        {/* 
-        <RoundedBox
-          args={[1, 1, 1]}
-          position={[1, 1, -2]}
-          radius={0.25}
-          smoothness={4}
+        <Extrude
+          position={[-1, -5, -2]}
+          args={[shapeRoundedRectangle(2.5, 5, 0.2), { bevelSize: 0.1 }]}
+        ></Extrude>
+        <Extrude
+          scale={[1, 1, 0.0725]}
+          position={[-1, -5, -4]}
+          args={[shapeRoundedRectangle(2.5, 5, 0.2), { bevelSize: 0.1 }]}
         >
-          <meshPhongMaterial color="#33f3f3" wireframe />
-        </RoundedBox> */}
-
-        <Boxes i={128} j={128} />
+          <meshStandardMaterial color="lightblue" side={DoubleSide} />
+        </Extrude>
+        <group position={[-20 - 5, -47, -3]}>
+          <Extrude
+            scale={[1, 1, 0.15]}
+            args={[shapeFromCoords(countryBorderPoints), { ...extrudeOptions }]}
+          >
+            <meshStandardMaterial color="lightgreen" side={DoubleSide} />
+          </Extrude>
+        </group>
+        <group position={[-20 - 5, -47 - 5, -3]}>
+          <Extrude
+            args={[shapeFromCoords(countryBorderPoints), { ...extrudeOptions }]}
+          ></Extrude>
+        </group>
+        <Boxes i={128} j={128} baseColor={boxColor} />
       </Canvas>
     </>
   );

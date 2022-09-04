@@ -4,9 +4,10 @@ import { GeoJsonGeometry } from "three-geojson-geometry";
 import EarthD3D from "../../Earth3D";
 
 // const geojsonUrlSmall = "data/geojson/ne_110m_admin_0_only_hungary.geojson";
+// const geojsonUrlLarge = "data/geojson/admin1.28.geojson";
+
 const geojsonUrlSmall = "data/geojson/ne_110m_admin_0_countries.geojson";
 const geojsonUrlLarge = "data/geojson/admin1.geojson";
-// const geojsonUrlLarge = "data/geojson/admin1.28.geojson";
 
 export type CountryGeoJson = {
   features: Array<{ properties: Array<any>; geometry: any }>;
@@ -18,7 +19,7 @@ const useCountryBorders = (
 ) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [countries, setCountries] = useState<CountryGeoJson>();
-  const [lineObjs, setLineObjs] = useState<Array<LineSegments>>([]);
+  const [lineObjs /*, setLineObjs*/] = useState<Array<LineSegments>>([]);
   //
   //
   //
@@ -26,10 +27,6 @@ const useCountryBorders = (
     () => Boolean(scene) && Boolean(e3d),
     [scene, e3d]
   );
-
-  //
-  // retrieve json
-  //
 
   //
   // after data loaded
@@ -62,12 +59,7 @@ const useCountryBorders = (
       const alt = 1.03;
       //
       const materials = [
-        new LineBasicMaterial({
-          color: "blue",
-          // opacity: 0.64,
-          linewidth: 1,
-          // transparent: true,
-        }), // outer ring
+        new LineBasicMaterial({ color: "blue", linewidth: 1 }), // outer ring
         new LineBasicMaterial({ color: "green" }), // inner holes
       ];
 

@@ -1,9 +1,3 @@
-import * as React from "react";
-
-import { Canvas } from "@react-three/fiber";
-import Box from "./three-components/box/box.component";
-import { useNavigate } from "react-router-dom";
-
 import * as THREE from "three";
 
 import tfs from "./utils/textures";
@@ -37,14 +31,12 @@ class EarthD3D {
     this.mesh = mesh_earth;
     //
     mesh_earth.rotation.y = 0;
-    //mesh_earth.rotation.x += Math.PI - Math.PI / 4;
     //
     this.is_rotating = true;
     //
-    // tenp hack:
-    scene?.add(mesh_earth);
+    scene?.add(mesh_earth); // place mesh once scene has been initialized
     //
-    return mesh_earth;
+    return mesh_earth; // consider returnining instance reference
   };
   //
   create_earth = async () => {
@@ -68,23 +60,6 @@ class EarthD3D {
     this.mesh_lines = mesh_lines;
     this.mesh_lines.rotation.y = Math.PI / 2;
     //
-    //console.log('added to unis', w_map);
-    // const geo_1x1 = new THREE.SphereGeometry(1.020, 36, 18, 0, Math.PI / 10, 0, Math.PI / 10);
-    // console.log(geo_1x1.faces.length, geo_1x1.vertices.length);
-    // for (let j = geo_1x1.faces.length - 1; j > 0; j--) {
-    //   if (j % 2 == 0) { geo_1x1.faces.splice(j, 1); }
-
-    // }
-    // console.log(geo_1x1.faces.length, geo_1x1.vertices.length);
-    // const wireframe = new THREE.WireframeGeometry(geo_1x1);
-    // const line = new THREE.LineSegments(wireframe);
-
-    // //line.material.depthTest = false;
-    // line.material['opacity'] = 0.5;
-    // line.material['transparent'] = true;
-
-    // mesh_earth.add(line);
-    //
     return { mesh_earth, mesh_cloud };
   };
   //
@@ -92,7 +67,7 @@ class EarthD3D {
     const mat_earth = new THREE.MeshPhongMaterial();
     //
     const { diffuse_map, normal_map, specular_map, displacement_map } =
-      await this.init_textures_earth(); // console.log(['earth textures', diffuse_map, normal_map, specular_map, displacement_map]);
+      await this.init_textures_earth();
     //
     console.log("TEXTURES", {
       diffuse_map,
@@ -123,11 +98,7 @@ class EarthD3D {
   };
   //
   init_textures_earth = async () => {
-    console.log(["EarthD3D", "init_textures_surface", "SKIP"]);
-    //
-    //const diffuse_map: THREE.Texture = await tfs.load_from_url('dist/earth/3_no_ice_clouds_8k.jpg');
     const diffuse_map: THREE.Texture = await tfs.load_from_url(
-      //"data/earth/_test_world_16bpp_32x_for.png"
       process.env.PUBLIC_URL + "data/earth/_test_world_16bpp_32x_for.png"
     );
 
@@ -176,14 +147,12 @@ class EarthD3D {
     //
     // now after both the diffuse and the alpha map is present we load the image and apply the mask to it
     //
-    let pixel_idx = 0,
-      i = 0,
+    let i = 0,
       len = data8.length; //CONV. STEP: move a component channel to alpha-channel
     //
     while (i < len) {
       data8[i + 3] = Math.floor(0.75 * (255 - data8alpha[i]));
       i += 4;
-      // pixel_idx++;
     }
     //
     const ctx = cu.create_empty_context(w, h, "#ffffff");
@@ -205,41 +174,10 @@ class EarthD3D {
     //
 
     if (is_ready) {
-      this.mesh_cloud.rotation.y += (1 / 25) * elapsed; // was using delta
-      this.mesh.rotation.y += (1 / 32) * elapsed; // was using delta
+      this.mesh_cloud.rotation.y += (1 / 25) * elapsed;
+      this.mesh.rotation.y += (1 / 32) * elapsed;
     }
   };
 }
 
-/*
-const Earth3D = (props: {
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  const { setIsOpen } = props;
-  //
-  const navigate = useNavigate();
-  //
-  const gotoCoursesHandler = React.useCallback(() => navigate("courses"), []);
-  const gotoAuthHandler = React.useCallback(() => navigate("auth"), []);
-  //
-  //
-  return (
-    <Canvas>
-      <ambientLight intensity={0.5} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
-      <pointLight position={[-10, -10, -10]} />
-      <Box
-        position={[-1.2, 0, 0]}
-        setIsOpen={setIsOpen}
-        onNavigate={gotoCoursesHandler}
-      />
-      <Box
-        position={[1.2, 0, 0]}
-        setIsOpen={setIsOpen}
-        onNavigate={gotoAuthHandler}
-      />
-    </Canvas>
-  );
-};
-*/
 export default EarthD3D;

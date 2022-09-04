@@ -13,6 +13,19 @@ export type GenerateHeightmapArgs = {
   width: number;
 };
 
+/*
+class MyGeometry extends CylinderGeometry {
+  constructor(rt = 0.01, rb = 0.02, h = 1) {
+    super(rt, rb, h, 2, 1);
+
+    this.translate(0, h / 2, 0);
+    this.rotateX(Math.PI / 2);
+  }
+}
+
+extend({ MyGeometry });
+*/
+
 const HeightMapRandomApp3D = () => {
   const [rotating, setRotating] = useState<boolean>(false);
   //
@@ -30,11 +43,13 @@ const HeightMapRandomApp3D = () => {
     [scale, number]
   );
 
+  // const refHeightField = useRef<Mesh>(null!);
+
   return (
     <>
       <Canvas
         camera={{
-          position: [5, 20, 5],
+          position: [5, 10, 5],
           zoom: 50,
           near: 1,
           far: 1000,
@@ -43,6 +58,7 @@ const HeightMapRandomApp3D = () => {
         <gridHelper />
         <spotLight position={[10, 20, 10]} angle={0.15} penumbra={1} />
         <OrbitControls enableZoom={true} />
+
         <Physics>
           <Heightfield
             elementSize={(scale * 1) / 128}

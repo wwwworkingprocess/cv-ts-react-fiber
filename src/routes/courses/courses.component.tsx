@@ -1,32 +1,32 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import CompletedCourseCard from "../../components/card-completed/card-completed.component";
-import CardList from "../../components/card-list/card-list.component";
-import { selectUdemyItems } from "../../store/udemy/udemy.selectors";
 
 import ReactForceGraph3d from "react-force-graph-3d";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Spinner } from "../../components/spinner/spinner.component";
+import { selectUdemyItems } from "../../store/udemy/udemy.selectors";
+
 import useWindowSize from "../../hooks/useWindowSize";
+
+import { Spinner } from "../../components/spinner/spinner.component";
+import CompletedCourseCard from "../../components/card-completed/card-completed.component";
+import CardList from "../../components/card-list/card-list.component";
 import ExpandableGraph from "../../components/expandable-graph/expandable-graph.component";
+
+const ids = [
+  50522, 3792262, 2034156, 1594488, 1329100, 3138058, 851712, 2365628, 995016,
+  159070,
+];
 
 const Courses = () => {
   const fgRef = useRef();
   //
   const [graphWidth, setGraphWidth] = useState(400);
   //
-  const ids = [
-    50522, 3792262, 2034156, 1594488, 1329100, 3138058, 851712, 2365628, 995016,
-    159070,
-  ];
   const [selectedId, setSelectedId] = useState<number>(ids[0]);
   //
   const { windowSize } = useWindowSize();
   //
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<{
-    nodes: [];
-    links: [];
-  }>();
+  const [data, setData] = useState<{ nodes: []; links: [] }>();
   //
   const items = useSelector(selectUdemyItems);
   //
@@ -96,19 +96,6 @@ const Courses = () => {
       console.log("zoom complete");
     }
   }, [fgRef]);
-
-  const rootIdMemo = useMemo(() => {
-    if (selectedId) {
-      return ids.indexOf(selectedId);
-    }
-
-    return 1;
-  }, [ids, selectedId]);
-  /*
-  const onCardClicked = () => {
-    console.log("clicked");
-  };
-  */
 
   //
   return (

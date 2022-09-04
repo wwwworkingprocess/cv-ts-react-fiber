@@ -1,17 +1,14 @@
-import { Text3D } from "@react-three/drei";
 import { useLayoutEffect, useMemo, useRef } from "react";
+import { Text3D } from "@react-three/drei";
 import * as THREE from "three";
-import { FileLoader } from "three/src/loaders/FileLoader";
 
-import Roboto from "../../Roboto_Regular.json";
+// import Roboto from "../../Roboto_Regular.json";
 
 const vAlign = "center";
 const hAlign = "center";
 const size = 1.5;
-const color = "#000000";
 
-const MyText = ({ props, children }: any) => {
-  //const MyText = ({ children, ...props }: { children: any; props: any }) => {
+const MyText = ({ children, ...props }: any) => {
   const config = useMemo(
     () => ({
       size: 4,

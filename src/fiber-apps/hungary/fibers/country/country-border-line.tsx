@@ -16,7 +16,7 @@ const CountryBorderLine = (
       lineWidth={1} // In pixels (default)
       dashed={false} // Default
       vertexColors={[
-        [0, 0, 0],
+        [0, 250, 0],
         [60, 60, 60],
       ]} // Optional array of RGB values for each point
       // {...lineProps}                  // All THREE.Line2 props are valid

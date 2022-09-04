@@ -1,17 +1,18 @@
-import { Triplet, useHeightfield } from "@react-three/cannon";
+import { FC, useRef } from "react";
+
 import { useFrame } from "@react-three/fiber";
-import * as React from "react";
+import { Triplet, useHeightfield } from "@react-three/cannon";
 
 import HeightmapGeometry from "../height-map-geometry/height-map-geometry.component";
 
-export const Heightfield: React.FC<{
+export const Heightfield: FC<{
   elementSize: number;
   heights: number[][];
   position: Triplet;
   rotation: Triplet;
   autoRotate?: boolean;
 }> = ({ elementSize, heights, position, rotation, autoRotate }) => {
-  const ref = React.useRef<THREE.Object3D<Event>>(
+  const ref = useRef<THREE.Object3D<Event>>(
     useHeightfield(() => ({
       args: [
         heights,

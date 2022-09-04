@@ -32,7 +32,7 @@ export const useTreeDataForCountry = (
       }));
       //
       return mapped;
-    } else return [];
+    } else return undefined; // [];
   }, [tree, keys, minPop, maxPop]);
   //
 

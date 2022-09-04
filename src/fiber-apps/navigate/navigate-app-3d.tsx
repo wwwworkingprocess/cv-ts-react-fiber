@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useCallback, useMemo, useState } from "react";
 import type { NavigateFunction } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 
@@ -12,22 +12,25 @@ const NavigateApp3D = (props: {
 }) => {
   const { navigate, path } = props;
   //
-  const relativePath = (endpoint: string) =>
-    `${path ? `${path}/` : ""}${endpoint}`;
+  const relativePath = useCallback(
+    (endpoint: string) => `${path ? `${path}/` : ""}${endpoint}`,
+    [path]
+  );
   //
-  const gotoCoursesHandler = React.useCallback(
+  const gotoCoursesHandler = useCallback(
     () => navigate(relativePath("courses")),
-    []
+    [navigate, relativePath]
   );
-  const gotoAuthHandler = React.useCallback(
+  const gotoAuthHandler = useCallback(
     () => navigate(relativePath("auth")),
-    []
+    [navigate, relativePath]
   );
 
-  const [perspectiveTarget, setPerspectiveTarget] =
-    React.useState<Vector3Tuple>([0, 0, 0]);
+  const [perspectiveTarget, setPerspectiveTarget] = useState<Vector3Tuple>([
+    0, 0, 0,
+  ]);
 
-  const controlledCameraPropsMemo = React.useMemo(() => {
+  const controlledCameraPropsMemo = useMemo(() => {
     const controlledCameraProps = {
       perspectivePosition: [0, 2, 10],
       perspectiveTarget: perspectiveTarget,

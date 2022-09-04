@@ -1,17 +1,11 @@
-import * as THREE from "three";
 import { useCallback, useMemo } from "react";
-import {} from "@react-three/fiber";
+
 import { Instances } from "@react-three/drei";
 
 import { BoxBufferGeometry, Color, MeshBasicMaterial, Vector3 } from "three";
 import CountryCityFeature from "./country-city-feature";
 
-const randomEuler = () => [0, 0, 0];
-//  [
-//   Math.random() * Math.PI,
-//   Math.random() * Math.PI,
-//   Math.random() * Math.PI,
-// ];
+const randomEuler = () => [0, 0, 0]; //   Math.random() * Math.PI
 
 const CountryCityFeatures = (
   props: JSX.IntrinsicElements["group"] & {
@@ -26,7 +20,7 @@ const CountryCityFeatures = (
     parentColors: Record<string, Color>;
   }
 ) => {
-  const { range, treeNodes, parentColors } = props;
+  const { treeNodes, parentColors, range } = props;
 
   const getCityPositionAtIdx = useCallback(
     (idx: number) => {
@@ -59,28 +53,26 @@ const CountryCityFeatures = (
     console.log("new rendermemo", randomData.length);
 
     return randomData;
-  }, [getCityPositionAtIdx, treeNodes.length]);
+  }, [getCityPositionAtIdx, treeNodes]); // [getCityPositionAtIdx, treeNodes.length]);
 
-  const colorByParent = useCallback(
-    (node: { parent: number }) => {
-      if (parentColors) {
-        const parentCode = node.parent || 3;
-        const parentColor = parentColors[parentCode];
-        //
-        return parentColor;
-      }
+  // const colorByParent = useCallback(
+  //   (node: { parent: number }) => {
+  //     if (parentColors) {
+  //       const parentCode = node.parent || 3;
+  //       const parentColor = parentColors[parentCode];
+  //       //
+  //       return parentColor;
+  //     }
 
-      return new Color("white");
-    },
-    [parentColors] //  [treeNodes, parentColors]
-  );
+  //     return new Color("white");
+  //   },
+  //   [] //  [treeNodes, parentColors]
+  // );
 
   return (
     <group {...props}>
       <Instances
-        // frustumCulled={false}
-        // range={renderMemo.length}
-        // count={range}
+        count={range}
         // range={range}
 
         material={new MeshBasicMaterial()}
@@ -88,12 +80,13 @@ const CountryCityFeatures = (
       >
         {renderMemo.map((props, i) => (
           <CountryCityFeature
-            key={i}
+            key={treeNodes[i].code}
             //   {...props}
             position={new Vector3(...props.position)}
             rotation={props.rotation as any}
             node={treeNodes[i]}
-            color={colorByParent(treeNodes[i])}
+            // color={colorByParent(treeNodes[i])}
+            color={parentColors[treeNodes[i].parent]}
           />
         ))}
       </Instances>

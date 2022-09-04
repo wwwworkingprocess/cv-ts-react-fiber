@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
-import { useSelector, useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
 /*
 import { selectCurrentUser } from "../../store/user/user.selector";
 
 */
 
-// import { ReactComponent as AppLogo } from "../../assets/svg/logo.svg";
+import { ReactComponent as AppLogo } from "../../assets/svg/test.svg";
 
 import {
   NavigationContainer,
@@ -18,7 +18,7 @@ import {
 } from "./navigation.styles";
 
 const Navigation = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   //
   const currentUser = null; // useSelector(selectCurrentUser);
   //
@@ -28,7 +28,7 @@ const Navigation = () => {
     <>
       <NavigationContainer>
         <LogoContainer to="/">
-          {/* <AppLogo className="logo" /> */}
+          <AppLogo className="logo" style={{ width: "50px", height: "50px" }} />
         </LogoContainer>
         <NavLinks>
           <NavLink to="/map">MAP</NavLink>

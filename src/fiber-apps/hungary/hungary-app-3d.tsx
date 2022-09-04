@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, useEffect } from "react";
+import { useState, useRef, useMemo } from "react";
 import type { NavigateFunction } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 //
@@ -6,7 +6,6 @@ import { Canvas } from "@react-three/fiber";
 //
 import {
   Billboard,
-  Box,
   MapControls,
   OrthographicCamera,
   Stats,
@@ -14,7 +13,6 @@ import {
 } from "@react-three/drei";
 import Camera from "../Camera";
 import { Color, Vector3Tuple } from "three";
-// import { useTreeHelper } from "../../hooks/useTreeHelper";
 //
 // FIBERS
 //
@@ -45,20 +43,15 @@ const HungaryApp3D = (props: {
   //
   const isOrtographic = false;
   const { currentColors: adminOneColors } = useColorPalette(themeId);
-  // const adminOneColors = palettes[themeId];
   const countryBorderPoints = hungarianBorder.coordinates as Array<
     [number, number]
   >;
   //
-  const [countryCode, setCountryCode] = useState<string>("28");
-  const [selectedCode, setSelectedCode] = useState<string>("Q28");
+  const [countryCode /*, setCountryCode*/] = useState<string>("28");
+  // const [selectedCode, setSelectedCode] = useState<string>("Q28");
   //
 
   //
-  //
-  //
-  // const { loading, tree, keys, nodes } = useTreeHelper(countryCode);
-
   const { loading, tree, keys, nodes, cMemo } = useTreeDataForCountry(
     countryCode,
     minPop,
@@ -66,12 +59,11 @@ const HungaryApp3D = (props: {
   );
   //
 
-  const [perspectiveTarget, setPerspectiveTarget] = useState<Vector3Tuple>([
-    0, 1, 1,
-  ]);
-  const [perspectivePosition, setPerspectivePosition] = useState<Vector3Tuple>([
-    0, 0, 3,
-  ]);
+  const [perspectiveTarget /*, setPerspectiveTarget*/] = useState<Vector3Tuple>(
+    [0, 1, 1]
+  );
+  const [perspectivePosition /*, setPerspectivePosition*/] =
+    useState<Vector3Tuple>([0, 0, 3]);
 
   const controlledCameraPropsMemo = useMemo(() => {
     const controlledCameraProps = {
@@ -94,34 +86,31 @@ const HungaryApp3D = (props: {
 
   const { features: featuresA1 } = useAdminOneGeoData(countryCode);
 
-  const parentColorMemo = useMemo(() => {
-    if (loading) return {} as Record<string, Color>;
+  const parentsMemo = useMemo(() => {
+    if (loading) return [] as Array<number>;
     if (tree) {
       const all = tree.list_all();
-      const mapped = all.map((x) => ({
-        parent: x.p,
-        name: x.name,
-        code: x.code,
-      }));
+      const parents = all.map((x) => Number(x.p) || 3);
+      //
+      return Array.from(new Set(parents));
+    }
+  }, [loading]);
 
-      // if (all) {
-      const parents = mapped.map((node) => node.parent || 3);
-      console.log("NEW COLOR MEMO", parents);
+  const parentColorMemo = useMemo(() => {
+    if (parentsMemo) {
+      console.log("NEW COLOR MEMO", parentsMemo);
+      const colorRange = palettes.flat();
+      //
       return Object.fromEntries(
-        parents.map((i: any) => [
+        parentsMemo.map((i: any) => [
           String(i),
-          new Color(palettes[i % 100][0]),
+          new Color(colorRange[i % parentsMemo.length]),
           //  new Color(cityColors[i % cityColors.length]),
         ])
       ) as Record<string, Color>;
-      //} else return {} as Record<string, Color>;
     }
     return {} as Record<string, Color>;
-  }, [loading, tree]);
-
-  // const cityColors
-
-  // const isOrtographic = true;
+  }, [parentsMemo]);
 
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   return (
@@ -130,15 +119,7 @@ const HungaryApp3D = (props: {
         {canvasRef ? <Stats showPanel={0} parent={canvasRef} /> : null}
 
         <pointLight position={[-10, -10, -10]} />
-        <spotLight
-          intensity={8}
-          angle={Math.PI / 10}
-          position={[10, 10, 10]}
-
-          // castShadow
-          // shadow-mapSize-width={2048}
-          // shadow-mapSize-height={2048}
-        />
+        <spotLight intensity={8} angle={Math.PI / 10} position={[10, 10, 10]} />
 
         {!isOrtographic ? (
           <Camera {...controlledCameraPropsMemo} />
@@ -181,14 +162,8 @@ const HungaryApp3D = (props: {
           ) : null}
         </group>
 
-        <Billboard
-          position={[0, -1, 0]}
-          follow={true}
-          lockX={false}
-          lockY={false}
-          lockZ={false} // Lock the rotation on the z axis (default=false)
-        >
-          <Text fontSize={1}>{cMemo.length}</Text>
+        <Billboard position={[0, -1, 0]} follow={true}>
+          <Text fontSize={1}>{cMemo?.length}</Text>
         </Billboard>
 
         {/* <gridHelper rotation={[Math.PI / 2, 0, 0]} /> */}

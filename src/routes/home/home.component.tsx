@@ -1,13 +1,8 @@
-import { SetStateAction, useCallback, useEffect, useState } from "react";
-
-import { DataLoadTest } from "../../App";
+import { SetStateAction, useEffect, useState } from "react";
 
 import App3D from "../../App3D";
 
 import Dialog from "../../components/dialog/dialog.component";
-import useCoinGeckoPrices from "../../hooks/useCoinGeckoPrices";
-
-const MAX_API_TRIES = 1;
 
 type TimerProps = {
   isActive: boolean;
@@ -40,39 +35,58 @@ export const Timer = ({ isActive, seconds, setSeconds }: TimerProps) => {
   return <>{seconds}</>;
 };
 
+const DataLoadTest = () => {
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<Array<any> | null>(null);
+
+  const fetchApi = () => {
+    fetch("data/course/3792262.json", { mode: "no-cors" })
+      //fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        console.log(json);
+        setLoading(false);
+        setData(json);
+      });
+  };
+
+  useEffect(() => {
+    fetchApi();
+  }, []);
+
+  if (loading) return <h1>Loading</h1>;
+
+  return (
+    <div>
+      <h1>Data fetched successfully.</h1>
+      {data && data.length} items
+    </div>
+  );
+};
+
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   //
+  /*
   const [count, setCount] = useState<number>(0);
   //
-  const { getEthereumPriceFromCoinGecko } = useCoinGeckoPrices();
-  //
   // const MINUTE_MS = 60000;
-  const FIVE_SECONDS_MS = 15000;
-
+  //
   const cb = async () => {
-    //const cb = async () => {
+    const MAX_API_TRIES = 1;
     const nextCount = Math.min((count || 0) + 1, MAX_API_TRIES);
     //
     console.log("running callback", count, "next", nextCount);
     //
-
-    //
     if (nextCount === MAX_API_TRIES) {
       console.log("remove effect after last try (max)", "SKIP");
     } else {
-      try {
-        const res = await getEthereumPriceFromCoinGecko();
-
-        console.log("res", res);
-      } catch (error) {
-        console.log("ERROR", error);
-      }
-
-      //
       setCount(nextCount);
     }
   };
+  */
 
   //
   const [seconds, setSeconds] = useState(0);
@@ -87,13 +101,9 @@ const Home = () => {
   //
   return (
     <>
-      Personal Portfolio Page ({formatSeconds(seconds)})
       <Timer isActive={isActive} seconds={seconds} setSeconds={setSeconds} />
       <App3D setIsOpen={setIsOpen} />
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
-        {/* <App3D paused={!isPaused} heightmapScale={heightmapScale}/> */}
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste a ipsam
-        repellendus commodi ad, fugit id magnam inventore laudantium autem.
         <DataLoadTest />
       </Dialog>
       <button onClick={(e) => setIsOpen(true)}>Open Dialog</button>
