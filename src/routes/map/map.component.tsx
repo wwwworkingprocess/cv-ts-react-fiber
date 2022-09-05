@@ -3,7 +3,9 @@ import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 
 import { Spinner } from "../../components/spinner/spinner.component";
+import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
+
 import { useWikidata } from "../../hooks/useWikidata";
 
 type TSvg = {
@@ -31,14 +33,17 @@ export const Path = styled.path`
 `;
 
 const Map = () => {
-  const [countries, setCountries] = useState<Array<any>>();
+  const [svgCountries, setSvgCountries] = useState<Array<any>>();
+  //
+  const { data: wikiCountries } = useWikiCountries();
+  const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>();
 
   //
   // loading geojson
   //
   useEffect(() => {
     const afterDataLoaded = (countries: any) => {
-      setCountries(countries);
+      setSvgCountries(countries);
       //
       const fs = countries.features;
       const mapped = fs.map(
@@ -51,10 +56,11 @@ const Map = () => {
           path: f.geometry.coordinates,
         })
       );
-      setCountries(mapped);
+      setSvgCountries(mapped);
     };
 
     const fn = () => {
+      // fetch("data/geojson/countries.geojson")
       // fetch("data/geojson/admin1.geojson")
       fetch("data/geojson/ne_110m_admin_0_countries.geojson")
         .then((res) => res.json())
@@ -112,7 +118,6 @@ const Map = () => {
   //
   const searchResultsMemo = useMemo(() => {
     const nodes = tree && keyword && keyword.length > 1 ? tree.list_all() : [];
-    // const labels = nodes.map((n) => n.name);
     //
     const matchingNames = nodes.filter(
       (node) => node.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
@@ -130,9 +135,9 @@ const Map = () => {
     return matchingNames;
   }, [tree, keyword]);
 
-  const [svgCanvasWidth, svgCanvasHeight] = [960, 400];
+  const [svgCanvasWidth, svgCanvasHeight] = [720, 360];
   const svgPathMemo = useMemo(() => {
-    if (!countries) return { paths: [undefined] };
+    if (!svgCountries) return { paths: [undefined] };
 
     const projectToCanvas = (latLng: { lat: number; lng: number }) => {
       //
@@ -174,15 +179,21 @@ const Map = () => {
         for (let p = 0; p < coords.length; ++p) {
           const point = projectToCanvas(fx(coords[p]));
           //
-          minX = Math.min(minX, point.x);
-          minY = Math.min(minY, point.y);
-          maxX = Math.max(maxX, point.x);
-          maxY = Math.max(maxY, point.y);
+          const valid = !(isNaN(point.x) || isNaN(point.y));
           //
-          svgPath.push([point.x, point.y].join(","));
+          if (valid) {
+            minX = Math.min(minX, point.x);
+            minY = Math.min(minY, point.y);
+            maxX = Math.max(maxX, point.x);
+            maxY = Math.max(maxY, point.y);
+            //
+            svgPath.push([point.x, point.y].join(","));
+          }
         }
         //
-        svgPaths.push(svgPath.join(" "));
+        if (svgPath.length) {
+          svgPaths.push(svgPath.join(" "));
+        }
       }
 
       return {
@@ -196,13 +207,13 @@ const Map = () => {
     }
 
     const svgProps = convertCoordinatesToSvgPaths(
-      countries.map((c) => c.path),
+      svgCountries.map((c) => c.path),
       (coord: [number, number]) => ({ lat: coord[1], lng: coord[0] })
     );
     //
     //
     return svgProps;
-  }, [countries, svgCanvasWidth, svgCanvasHeight]);
+  }, [svgCountries, svgCanvasWidth, svgCanvasHeight]);
   //
   //
   //
@@ -252,15 +263,54 @@ const Map = () => {
   function mouseLeave() {
     setCountrySelected(null);
   }
+
   //
   //
   //
+  const onCountryClicked = (c: any) => {
+    console.log("country", c);
+    setSelectedWikiCountry(c);
+  };
+
+  //
+  //
+  //
+  const selectedCountryPanel = useMemo(() => {
+    if (selectedWikiCountry) {
+      return (
+        <>
+          {selectedWikiCountry.name}
+          <br />
+          {JSON.stringify(selectedWikiCountry.urls.geo)})
+        </>
+      );
+    }
+  }, [selectedWikiCountry]);
+
   //
   return (
     <div>
       Map ({countrySelected})
       <hr />
-      {countries && (
+      {selectedCountryPanel}
+      <hr />
+      {wikiCountries &&
+        wikiCountries
+          .filter((c) => c.name[0] === "H")
+          .map((c, idx) => (
+            <div
+              key={idx}
+              onClick={() => onCountryClicked(c)}
+              style={{ display: "inline-block" }}
+            >
+              <img src={c.urls.flag} width="40" height="30" alt={c.name} />
+              {(c.population * 0.000001).toFixed(3)}M
+              <br />
+              {c.name}- {c.capital} <br />
+            </div>
+          ))}
+      <hr />
+      {svgCountries && (
         <>
           {svgPathMemo && (
             <Svg
@@ -269,7 +319,7 @@ const Map = () => {
               width={svgCanvasWidth}
               height={svgCanvasHeight}
             >
-              {countries.map(({ id, name, path }, index) => {
+              {svgCountries.map(({ id, name, path }, index) => {
                 // console.log("drawing c path", id, name, path);
                 return (
                   <Path

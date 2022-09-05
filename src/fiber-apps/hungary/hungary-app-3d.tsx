@@ -39,7 +39,7 @@ const HungaryApp3D = (props: {
   maxPop: number;
   themeId: number; //[0..100]
 }) => {
-  const { navigate, path, minPop, maxPop, themeId } = props;
+  const { minPop, maxPop, themeId } = props;
   //
   const isOrtographic = false;
   const { currentColors: adminOneColors } = useColorPalette(themeId);
@@ -52,7 +52,7 @@ const HungaryApp3D = (props: {
   //
 
   //
-  const { loading, tree, keys, nodes, cMemo } = useTreeDataForCountry(
+  const { loading, tree, /* keys, nodes,*/ cMemo } = useTreeDataForCountry(
     countryCode,
     minPop,
     maxPop
@@ -94,7 +94,7 @@ const HungaryApp3D = (props: {
       //
       return Array.from(new Set(parents));
     }
-  }, [loading]);
+  }, [loading, tree]);
 
   const parentColorMemo = useMemo(() => {
     if (parentsMemo) {

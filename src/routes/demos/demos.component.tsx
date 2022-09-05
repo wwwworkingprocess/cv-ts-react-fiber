@@ -7,6 +7,7 @@ import HungaryDemo from "./demo/hungary.demo";
 import NavigateDemo from "./demo/navigate.demo";
 import RandomHeightmapDemo from "./demo/random-heightmap.demo";
 import ShapeLoaderDemo from "./demo/shape-loader.demo";
+import WikiCountryDemo from "./demo/wiki-country.demo";
 
 // import RangeControl from "./range.component";
 
@@ -48,6 +49,11 @@ const Demos = () => {
         idx: 5,
         name: "Cursor move app",
         element: <CursorNavigationDemo path={"../"} />,
+      },
+      {
+        idx: 6,
+        name: "Wiki Country app",
+        element: <WikiCountryDemo navigate={navigate} path={"../"} />,
       },
     ] as Array<Demo>;
   }, [navigate]);
