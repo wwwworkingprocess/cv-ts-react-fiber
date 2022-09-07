@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { NavigateFunction } from "react-router-dom";
-
+import { isMobile } from "react-device-detect";
 import { useFullscreen } from "rooks";
 
 import {
@@ -16,6 +16,7 @@ import {
   CountryListContainer,
   WikiCountryDemoWrapper,
 } from "./wiki-country.styles";
+import useWindowSize from "../../../hooks/useWindowSize";
 
 const useWikiGeoJson = (geojsonUrl: string) => {
   const [selectedWikiCountryGeo, setSelectedWikiCountryGeo] = useState<any>();
@@ -71,7 +72,7 @@ const useWikiGeoJson = (geojsonUrl: string) => {
   return { selectedWikiCountryGeo };
 };
 
-const PAGE_SIZE = 8;
+// const PAGE_SIZE = isMobile ? 4 : 8;
 
 const WikiCountryDemo = (props: {
   navigate: NavigateFunction;
@@ -81,6 +82,15 @@ const WikiCountryDemo = (props: {
   //
   const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   //
+  const { isPortrait } = useWindowSize();
+  //
+  const PAGE_SIZE = useMemo(
+    () => (!isMobile ? 8 : isPortrait ? 3 : 4),
+    [isPortrait]
+  );
+
+  useEffect(() => {}, [isPortrait]);
+
   const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
     useFullscreen({ target: fullscreenContainerRef });
   //
@@ -121,10 +131,28 @@ const WikiCountryDemo = (props: {
   const distanceFrom = (c: WikiCountry, { x, y }: { x: number; y: number }) => {
     if (!c.coords) return 0;
     //
-    const dx = c.coords[0] - x;
-    const dy = c.coords[1] - y;
+
+    // const dx = Math.abs(c.coords[0] - x);
+    // const dy = Math.abs(c.coords[1] - y);
+    // //
+    // return Math.sqrt(dx * dx + dy * dy);
+    const [lat1, lat2] = [c.coords[0], x];
+    const [lon1, lon2] = [c.coords[1], y];
+
+    const R = 6371e3; // metres
+    const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
+    const φ2 = (lat2 * Math.PI) / 180;
+    const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+    const Δλ = ((lon2 - lon1) * Math.PI) / 180;
+
+    const a =
+      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+    const side = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+    const d = R * side; // in metres
     //
-    return Math.sqrt(dx * dx + dy * dy);
+    return d * 10e-4; // todo check why -4 instead of -3
   };
   //
   //
@@ -145,15 +173,19 @@ const WikiCountryDemo = (props: {
       // const indices = diffs.map((d) => d[0].idx).slice(0, PAGE_SIZE);
       const ds = diffs.map((d) => d[1]).slice(0, PAGE_SIZE);
       const countries = diffs.map((d) => d[0]).slice(0, PAGE_SIZE);
+      const countriesWithDistance = countries.map((c, i) => ({
+        ...c,
+        distance: ds[i],
+      }));
       //
       console.log("nearby", ds);
       //
       // return wikiCountries.slice(originCountry.idx, originCountry.idx + 5);
-      return countries;
+      return countriesWithDistance; //countries;
     }
     //
     return undefined; // instead of empty list
-  }, [wikiCountries, originCountry]);
+  }, [wikiCountries, originCountry, PAGE_SIZE]);
 
   //
   // providing the next page from the resultset
@@ -161,11 +193,12 @@ const WikiCountryDemo = (props: {
   const listMemo = useMemo(() => {
     if (wikiCountries) {
       if (nearbyCountries) return nearbyCountries;
+      //
       const pi = pageIndex || 0;
       const [from, to] = [pi, pi + 1].map((i) => i * PAGE_SIZE);
       return wikiCountries.slice(from, to);
     }
-  }, [wikiCountries, pageIndex, nearbyCountries]);
+  }, [wikiCountries, pageIndex, nearbyCountries, PAGE_SIZE]);
   //
 
   const onCountryClicked = (c: any, origIndex: number) => {
@@ -236,6 +269,9 @@ const WikiCountryDemo = (props: {
               onClick={() => onCountryClicked(c, c.idx)}
             >
               <BackgroundImage imageUrl={c.urls.flag}>
+                <small>
+                  {c.distance ? `${c.distance.toFixed(1)} km away` : ""}
+                </small>
                 <b>{(c.population * 0.000001).toFixed(2)}M</b>
               </BackgroundImage>
               <CountryItemBody>

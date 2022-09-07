@@ -18,13 +18,8 @@ const Demos = () => {
   //
   const [index, setIndex] = useState<number>(0);
   //
-  const demos = useMemo(() => {
-    return [
-      {
-        idx: 0,
-        name: "Shape loader app",
-        element: <ShapeLoaderDemo navigate={navigate} path={"../"} />,
-      },
+  const otherDemos = useMemo(
+    () => [
       {
         idx: 1,
         name: "Navigate app",
@@ -36,9 +31,25 @@ const Demos = () => {
         element: <RandomHeightmapDemo />,
       },
       {
-        idx: 3,
-        name: "Globe 3D app",
-        element: <GlobeDemo />,
+        idx: 6,
+        name: "Shape loader app",
+        element: <ShapeLoaderDemo navigate={navigate} path={"../"} />,
+      },
+    ],
+    [navigate]
+  );
+  //
+  const demos = useMemo(() => {
+    return [
+      {
+        idx: 0,
+        name: "Wiki Country app",
+        element: <WikiCountryDemo navigate={navigate} path={"../"} />,
+      },
+      {
+        idx: 1,
+        name: "Cursor move app",
+        element: <CursorNavigationDemo path={"../"} />,
       },
       {
         idx: 4,
@@ -46,16 +57,11 @@ const Demos = () => {
         element: <HungaryDemo navigate={navigate} path={"../"} />,
       },
       {
-        idx: 5,
-        name: "Cursor move app",
-        element: <CursorNavigationDemo path={"../"} />,
+        idx: 3,
+        name: "Globe 3D app",
+        element: <GlobeDemo />,
       },
-      {
-        idx: 6,
-        name: "Wiki Country app",
-        element: <WikiCountryDemo navigate={navigate} path={"../"} />,
-      },
-    ].reverse() as Array<Demo>;
+    ] as Array<Demo>;
   }, [navigate]);
   //
   const currentDemo = useMemo(() => demos[index || 0], [demos, index]);
@@ -66,7 +72,11 @@ const Demos = () => {
       Demos
       <hr />
       {demos.map((b) => (
-        <button key={b.idx} onClick={(e) => setIndex(b.idx)}>
+        <button
+          key={b.idx}
+          onClick={(e) => setIndex(b.idx)}
+          style={{ width: "20%", padding: "5px" }}
+        >
           {b.name}
         </button>
       ))}

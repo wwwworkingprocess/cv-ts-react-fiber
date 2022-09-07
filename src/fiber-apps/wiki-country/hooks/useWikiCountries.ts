@@ -7,6 +7,7 @@ export type WikiCountry = {
   //
   coords?: [number, number];
   minElevation: number;
+  distance?: number;
   //
   name: string;
   capital: string;

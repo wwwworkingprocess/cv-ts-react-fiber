@@ -8,7 +8,11 @@ interface Size {
 //
 //
 //
-const useWindowSize = (): { windowSize: Size; screenSizeName: string } => {
+const useWindowSize = (): {
+  isPortrait: boolean;
+  windowSize: Size;
+  screenSizeName: string;
+} => {
   const [windowSize, setWindowSize] = useState<Size>({
     width: window.innerWidth,
     height: window.innerHeight,
@@ -58,7 +62,9 @@ const useWindowSize = (): { windowSize: Size; screenSizeName: string } => {
   //
   //
   const m = useMemo(() => {
+    const isPortrait = windowSize.height > windowSize.width;
     return {
+      isPortrait,
       windowSize,
       screenSizeName,
     };

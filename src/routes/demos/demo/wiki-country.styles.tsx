@@ -30,14 +30,24 @@ export const BackgroundImage = styled.div`
     opacity: 0.7;
     filter: drop-shadow(1px 3px 4px #000000);
   }
+
+  small {
+    position: absolute;
+    font-size: 10px;
+    padding-left: 20px;
+    padding-top: 2px;
+    margin: 4px;
+    color: white;
+    opacity: 0.7;
+    filter: drop-shadow(1px 3px 4px #000000);
+  }
 `;
 
 export const CountryItemContainer = styled.div`
   display: flex;
-  border: solid 1px gold;
+  margin: 5px;
   width: 120px;
   height: 90px;
-  alignitems: center;
 `;
 
 export const CountryItemBody = styled.div`
