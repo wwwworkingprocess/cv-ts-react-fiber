@@ -55,7 +55,7 @@ const Demos = () => {
         name: "Wiki Country app",
         element: <WikiCountryDemo navigate={navigate} path={"../"} />,
       },
-    ] as Array<Demo>;
+    ].reverse() as Array<Demo>;
   }, [navigate]);
   //
   const currentDemo = useMemo(() => demos[index || 0], [demos, index]);

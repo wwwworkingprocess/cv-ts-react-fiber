@@ -27,23 +27,10 @@ const Authentication = lazy(
 const PageFrame = () => {
   const [theme] = useLocalStorage("theme", "dark");
   //
-
-  const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
-    useFullscreen();
-  //
   console.log("page using theme", theme);
   //
   return (
     <>
-      {isFullscreenAvailable && (
-        <button
-          onClick={toggleFullscreen}
-          style={{ position: "absolute", top: "40px", fontSize: "10px" }}
-        >
-          {isFullscreenEnabled ? "Fullscreen" : "Fullscreen off"}
-          {isMobile ? "(M)" : "(D)"}
-        </button>
-      )}
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Navigation />}>

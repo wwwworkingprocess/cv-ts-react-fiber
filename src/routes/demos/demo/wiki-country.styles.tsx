@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const WikiCountryDemoWrapper = styled.div`
-  max-width: 600px;
-  height: 400px;
   margin: auto;
   border: solid 1px black;
 `;
@@ -21,6 +19,17 @@ export const BackgroundImage = styled.div`
   background-position: center;
   background-image: ${({ imageUrl }: { imageUrl: string }) =>
     `url(${imageUrl})`};
+
+  b {
+    position: relative;
+    float: right;
+    padding: 4px;
+    font-size: 14px;
+    color: white;
+    top: 66px;
+    opacity: 0.7;
+    filter: drop-shadow(1px 3px 4px #000000);
+  }
 `;
 
 export const CountryItemContainer = styled.div`
@@ -32,8 +41,10 @@ export const CountryItemContainer = styled.div`
 `;
 
 export const CountryItemBody = styled.div`
-  height: 60px;
+  height: 40px;
+  margin-top: 25px;
   width: 120px;
+  overflow: hidden;
   padding: 0 15px;
   display: flex;
   flex-direction: column;
@@ -46,8 +57,9 @@ export const CountryItemBody = styled.div`
 
   h2 {
     font-weight: bold;
-    margin: 0 6px 0;
+    margin: 4px 6px 0;
     font-size: 14px;
+    white-space: nowrap;
 
     color: #4a4a4a;
     text-transform: uppercase;
@@ -57,5 +69,6 @@ export const CountryItemBody = styled.div`
     font-weight: lighter;
     font-size: 12px;
     color: black;
+    white-space: nowrap;
   }
 `;

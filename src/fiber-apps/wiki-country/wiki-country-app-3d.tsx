@@ -1,18 +1,26 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { NavigateFunction } from "react-router-dom";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, Stage } from "@react-three/drei";
 
 import PlacedCountryShape from "./fibers/placed-country-shape";
 import PlacedCountryBillboard from "./fibers/placed-country-billboard";
+import { Color } from "three";
 
 const WikiCountryApp3D = (props: {
   navigate: NavigateFunction;
   path?: string;
-  rawWikiJson?: Record<string, any>;
+  applicationProps?: {
+    capital: Record<string, any>;
+    geo: Record<string, any>;
+  };
+  isFullscreenEnabled: boolean;
 }) => {
-  const { rawWikiJson } = props;
+  const { applicationProps, isFullscreenEnabled } = props;
+  //
+  const capital = applicationProps ? applicationProps.capital : undefined;
+  const rawWikiJson = applicationProps ? applicationProps.geo : undefined;
   //
   const hasInput = rawWikiJson !== undefined;
   const [hadInput, setHadInput] = useState<boolean>(false);
@@ -26,9 +34,9 @@ const WikiCountryApp3D = (props: {
   const [showGroupBounds, setShowGroupBounds] = useState<boolean>(true);
   const [showFeatureBounds, setShowFeatureBounds] = useState<boolean>(true);
   //
+
   //
-  // TODO: flatmap all the features, instead of
-  // using the 'first features coordinates'
+  //
   //
   const firstFeatureCoordinates = useMemo(() => {
     if (rawWikiJson) {
@@ -36,18 +44,35 @@ const WikiCountryApp3D = (props: {
       return arrs; //
     } else return [];
   }, [rawWikiJson]);
+
   //
-  const rawFeatureCount = useMemo(
+  //
+  //
+
+  const capitalMemo = useMemo(
     () =>
-      rawWikiJson
-        ? rawWikiJson.data.features[0].geometry.coordinates.length
-        : 0,
-    [rawWikiJson]
+      capital
+        ? {
+            name: capital.name,
+            lat: capital.lat,
+            lng: capital.lng,
+            population: capital.population,
+            color: new Color(Math.random(), Math.random(), Math.random()),
+          }
+        : undefined,
+    [capital]
   );
 
+  //
   return (
-    <>
-      <div>
+    <div
+      style={{
+        height: isFullscreenEnabled
+          ? "calc(100vh - 200px)"
+          : "calc(100vh - 400px)",
+      }}
+    >
+      <div style={{ position: "absolute", zIndex: 1 }}>
         Bounds:{" "}
         <input
           type="checkbox"
@@ -60,13 +85,13 @@ const WikiCountryApp3D = (props: {
           checked={showFeatureBounds}
           onChange={() => setShowFeatureBounds(!showFeatureBounds)}
         />
-        Features: {rawFeatureCount}
       </div>
       <Canvas shadows dpr={[1, 2]} camera={{ position: [0, 10, 0.1] }}>
         <OrbitControls />
 
-        <spotLight position={[10, 20, 10]} angle={0.15} penumbra={1} />
-        <pointLight position={[-10, -10, -10]} />
+        <ambientLight intensity={0.3} />
+        <spotLight position={[10, 20, 10]} angle={0.25} penumbra={1} />
+        <pointLight position={[-10, -4, -10]} decay={0.44} power={3} />
 
         <PlacedCountryBillboard
           hasInput={hasInput}
@@ -79,9 +104,10 @@ const WikiCountryApp3D = (props: {
           showGroupBounds={showGroupBounds}
           showFeatureBounds={showFeatureBounds}
           firstFeatureCoordinates={firstFeatureCoordinates}
+          capital={capitalMemo}
         />
       </Canvas>
-    </>
+    </div>
   );
 };
 

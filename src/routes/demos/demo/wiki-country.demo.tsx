@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { NavigateFunction } from "react-router-dom";
+
+import { useFullscreen } from "rooks";
 
 import {
   useWikiCountries,
@@ -69,7 +71,7 @@ const useWikiGeoJson = (geojsonUrl: string) => {
   return { selectedWikiCountryGeo };
 };
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 8;
 
 const WikiCountryDemo = (props: {
   navigate: NavigateFunction;
@@ -77,9 +79,11 @@ const WikiCountryDemo = (props: {
 }) => {
   const { navigate, path } = props;
   //
-  // Listing random 5 countries
+  const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   //
-
+  const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
+    useFullscreen({ target: fullscreenContainerRef });
+  //
   //
   const { data: wikiCountries } = useWikiCountries();
   const [pageIndex, setPageIndex] = useState<number>();
@@ -130,19 +134,13 @@ const WikiCountryDemo = (props: {
     //
     if (originCountry) {
       console.log("nearby countries from", originCountry);
-      //const c = origin as unknown as WikiCountry;
       const [ox, oy] = originCountry.coords ?? [0, 0];
       //
       const diffs = wikiCountries
         .map(
           (c) => [c, distanceFrom(c, { x: ox, y: oy })] as [WikiCountry, number]
         )
-        .sort((a, b) => {
-          const [countryA, distanceA] = a;
-          const [countryB, distanceB] = b;
-          //
-          return distanceA - distanceB;
-        });
+        .sort((a, b) => a[1] - b[1]);
       //
       // const indices = diffs.map((d) => d[0].idx).slice(0, PAGE_SIZE);
       const ds = diffs.map((d) => d[1]).slice(0, PAGE_SIZE);
@@ -176,29 +174,37 @@ const WikiCountryDemo = (props: {
   };
 
   //
+  // Properties of selected country's capital
+  //
+  const capitalProps = useMemo(() => {
+    if (selectedWikiCountry) {
+      const { capital, capitalPopulation, coords } = selectedWikiCountry;
+      const [lng, lat] = coords.map(parseFloat) as [number, number];
+      //
+      return {
+        name: String(capital),
+        population: parseInt(capitalPopulation),
+        lat,
+        lng,
+      };
+    }
+    //
+    return undefined;
+  }, [selectedWikiCountry]);
+
+  const applicationProps = useMemo(
+    () =>
+      selectedWikiCountryGeo && capitalProps
+        ? {
+            capital: capitalProps,
+            geo: selectedWikiCountryGeo,
+          }
+        : undefined,
+    [capitalProps, selectedWikiCountryGeo]
+  );
+  //
   return (
-    <>
-      List:
-      <hr />
-      {originCountry && `Nearby ${originCountry.name}`}
-      {listMemo && (
-        <CountryListContainer>
-          {listMemo.map((c, idx) => (
-            <CountryItemContainer
-              key={c.idx}
-              onClick={() => onCountryClicked(c, c.idx)}
-            >
-              <BackgroundImage imageUrl={c.urls.flag}>
-                {(c.population * 0.000001).toFixed(3)}M
-              </BackgroundImage>
-              <CountryItemBody>
-                <h2>{c.name}</h2>
-                <span>{c.capital}</span>
-              </CountryItemBody>
-            </CountryItemContainer>
-          ))}
-        </CountryListContainer>
-      )}
+    <div ref={fullscreenContainerRef}>
       <button
         onClick={() => {
           if (nearbyCountries) {
@@ -208,18 +214,48 @@ const WikiCountryDemo = (props: {
           }
         }}
       >
-        [more ({pageIndex})]
+        {nearbyCountries
+          ? "Back to alphabetical"
+          : !pageIndex
+          ? "Show Next page"
+          : `Next page (${pageIndex})`}
       </button>
-      <hr />
-      Demo:
+      {isFullscreenAvailable && (
+        <button onClick={toggleFullscreen} style={{ float: "right" }}>
+          {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}
+        </button>
+      )}
+      <span style={{ marginLeft: "30%", width: "200px" }}>
+        {originCountry && `Nearby ${originCountry.name}`}
+      </span>
+      {listMemo && (
+        <CountryListContainer>
+          {listMemo.map((c, idx) => (
+            <CountryItemContainer
+              key={c.idx}
+              onClick={() => onCountryClicked(c, c.idx)}
+            >
+              <BackgroundImage imageUrl={c.urls.flag}>
+                <b>{(c.population * 0.000001).toFixed(2)}M</b>
+              </BackgroundImage>
+              <CountryItemBody>
+                <h2>{c.name}</h2>
+                <span>{c.capital}</span>
+              </CountryItemBody>
+            </CountryItemContainer>
+          ))}
+        </CountryListContainer>
+      )}
+
       <WikiCountryDemoWrapper>
         <WikiCountryApp3D
           navigate={navigate}
           path={path}
-          rawWikiJson={selectedWikiCountryGeo}
+          applicationProps={applicationProps}
+          isFullscreenEnabled={isFullscreenEnabled}
         />
       </WikiCountryDemoWrapper>
-    </>
+    </div>
   );
 };
 

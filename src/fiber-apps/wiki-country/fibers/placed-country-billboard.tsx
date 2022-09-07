@@ -12,23 +12,24 @@ const PlacedCountryBillboard = (
   //
   return (
     <group>
-      <Billboard position={hasInput ? [0, 0, -6] : [0, 0, 0]} follow={true}>
+      <Billboard
+        // position={hasInput ? [0, 0, 0] : [0, 0, 0]}
+        follow={true}
+        visible={hasInput}
+      >
         {!hasInput && (
           <Text fontSize={1} fillOpacity={hadInput ? 0.3 : 1}>
-            {hadInput ? "Loading..." : "Please select a country"}
+            {hadInput ? "Loading..." : ""}
           </Text>
         )}
         {hasInput && rawWikiJson && (
           <>
-            <Text fontSize={1}>
-              [{rawWikiJson.latitude.toFixed(2)},
-              {rawWikiJson.longitude.toFixed(2)}]
-            </Text>
-            <Text fontSize={1} position={[0, 2, 0]}>
+            <Text fontSize={1} position={[0, -1.5, 0]} fillOpacity={0.4}>
               {rawWikiJson.description.en}
             </Text>
-            <Text fontSize={1} position={[0, 4, 0]}>
-              {firstFeatureCoordinates.length}
+            <Text fontSize={0.4} position={[0, -2.2, 0]} fillOpacity={0.33}>
+              {firstFeatureCoordinates.length > 1 &&
+                `${firstFeatureCoordinates.length} features`}
             </Text>
           </>
         )}
