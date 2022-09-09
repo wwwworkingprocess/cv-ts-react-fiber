@@ -15,15 +15,15 @@ class ColorHelper {
       const hap2000 = hap - 2155;
       //
       if (height_at_point < 0) {
-        c.r = Math.max(0, 100 + Math.floor(height_at_point / 2)) % 100;
-        c.g = Math.max(0, 100 + height_at_point) % 100;
-        c.b = 80 + (Math.abs(140 - height_at_point) % 145);
+        c.r = Math.max(0, 20 + Math.abs(height_at_point)) % 55;
+        c.g = Math.max(0, 38 + Math.abs(height_at_point)) % 55;
+        c.b = 0; // 80 + (Math.abs(40 - height_at_point) % 145);
       } else {
         //
         if (hap < 255) {
           c.r = Math.max(0, 85 - Math.floor(hap / 9)) % 255;
           c.g = Math.max(0, 190 - Math.floor(hap / 2.456)) % 255;
-          c.b = Math.max(0, Math.abs(70 - Math.floor(hap / 8))) % 255;
+          c.b = Math.max(0, 40 - Math.floor(hap / 255)) % 255;
         } else {
           if (hap < 755) {
             c.r = 120 + (Math.floor(hap700 / 6) % 255);

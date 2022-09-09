@@ -25,11 +25,7 @@ const Demos = () => {
         name: "Navigate app",
         element: <NavigateDemo navigate={navigate} path={"../"} />,
       },
-      {
-        idx: 2,
-        name: "Random heightmap app",
-        element: <RandomHeightmapDemo />,
-      },
+
       {
         idx: 6,
         name: "Shape loader app",
@@ -52,7 +48,7 @@ const Demos = () => {
         element: <CursorNavigationDemo path={"../"} />,
       },
       {
-        idx: 4,
+        idx: 2,
         name: "Hungary app",
         element: <HungaryDemo navigate={navigate} path={"../"} />,
       },
@@ -61,10 +57,18 @@ const Demos = () => {
         name: "Globe 3D app",
         element: <GlobeDemo />,
       },
+      {
+        idx: 4,
+        name: "Heightmap app",
+        element: <RandomHeightmapDemo />,
+      },
     ] as Array<Demo>;
   }, [navigate]);
   //
-  const currentDemo = useMemo(() => demos[index || 0], [demos, index]);
+  const currentDemo = useMemo(
+    () => demos.filter((d) => d.idx === index)[0],
+    [demos, index]
+  );
 
   //
   return (

@@ -33,7 +33,7 @@ export const Heightfield: FC<{
 
   return (
     <mesh ref={ref as any} castShadow receiveShadow>
-      <meshPhongMaterial color={"white"} />
+      <meshStandardMaterial color={"#44ffaa"} />
       <HeightmapGeometry heights={heights} elementSize={elementSize} />
     </mesh>
   );
