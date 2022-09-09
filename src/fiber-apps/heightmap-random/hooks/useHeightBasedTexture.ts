@@ -82,6 +82,8 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
       setDataTexture(texture);
       //
       return () => texture.dispose();
+    } else {
+      setDataTexture(undefined);
     }
   }, [heightsAsColors]);
 

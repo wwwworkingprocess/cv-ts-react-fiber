@@ -24,7 +24,9 @@ const TileMesh = (
           />
         </planeBufferGeometry>
       )}
-      <meshStandardMaterial attach="material" map={dataTexture} />
+      {dataTexture && (
+        <meshStandardMaterial attach="material" map={dataTexture} />
+      )}
     </mesh>
   );
 };
