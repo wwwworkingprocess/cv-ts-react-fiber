@@ -141,15 +141,6 @@ const HeightMapRandomApp3D = () => {
     return [] as Array<Array<number>>;
   }, [heights1200]);
   //
-
-  const tileMeshProps = useMemo(
-    () => ({
-      scalePositionY,
-      positions,
-      dataTexture,
-    }),
-    [scalePositionY, positions, dataTexture]
-  );
   //
   return (
     <>
@@ -196,7 +187,13 @@ const HeightMapRandomApp3D = () => {
           {...boundsProps}
           onFit={(e) => console.log("transition finished", e)}
         >
-          <TileMesh {...tileMeshProps} />
+          {positions && dataTexture && (
+            <TileMesh
+              scalePositionY={scalePositionY}
+              positions={positions}
+              dataTexture={dataTexture}
+            />
+          )}
         </Bounds>
       </Canvas>
       <div style={{ position: "relative", top: "-20px" }}>
