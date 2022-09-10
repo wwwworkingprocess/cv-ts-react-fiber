@@ -16,7 +16,7 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
   const [dataTexture, setDataTexture] = useState<Texture>();
 
   //
-  // creating array of RGBA colors, color is based on height and self shade
+  // creating array of RGBA colors, color is based on height and self shaded
   //
   const heightsAsColors: Uint8Array | undefined = useMemo(() => {
     if (heights1200) {
@@ -32,12 +32,11 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
         //
         // apply height based self-shading
         //
-
-        //
         v3.x = (heights1200[i - 2] || 0) - (heights1200[i + 2] || 0);
         v3.y = 2;
         v3.z =
           (heights1200[i - width * 2] || 0) - (heights1200[i + width * 2] || 0);
+        //
         v3.normalize();
         //
         const shade = v3.dot(sun) || 0;
@@ -76,8 +75,6 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
       texture.encoding = sRGBEncoding;
       //
       texture.needsUpdate = true;
-      //
-      console.log("using data texture", texture);
       //
       setDataTexture(texture);
       //

@@ -1,5 +1,3 @@
-import { Billboard, Text } from "@react-three/drei";
-import { InstancedMeshProps, ThreeEvent, useFrame } from "@react-three/fiber";
 import {
   useCallback,
   useEffect,
@@ -8,19 +6,18 @@ import {
   useRef,
   useState,
 } from "react";
+
 import {
   BoxGeometry,
   Color,
-  DoubleSide,
   InstancedMesh,
   MeshStandardMaterial,
   Object3D,
   Vector3,
 } from "three";
+import { ThreeEvent, useFrame } from "@react-three/fiber";
 
 const tempBoxes = new Object3D();
-
-// const tempObject = new Object3D();
 const tempColor = new Color();
 const data = Array.from({ length: 1000 }, () => ({
   color: ["#72aac6", "#72aac6", "#72aac6", "#72aac6", "#72aac6"][
@@ -40,43 +37,136 @@ const GridFloorCells = (
     >;
   }
 ) => {
-  const { i, j, idx, baseColor, setCrossHairPosition } = props;
+  const { i, j, baseColor, setCrossHairPosition } = props;
   //
-  const material = new MeshStandardMaterial({
-    color: baseColor,
-  });
+  const material = new MeshStandardMaterial({ color: baseColor });
 
-  const ref = useRef<InstancedMesh>(null!);
-  const prevRef = useRef<number | undefined>(); // instanceID
-  const zShift = (idx ?? 0) * 1;
+  const crossHairHeight = 0.75;
+  const shiftCrosshairY = crossHairHeight * 0.5;
+  const instanceCount = i * j;
 
   const [hoveredId, setHoveredId] = useState<number | undefined>();
-  const crossHairHeight = 0.75;
-  // const [crossHairPosition, setCrossHairPosition] = useState<Vector3>();
+  const prevRef = useRef<number | undefined>(); // instanceID
+  const ref = useRef<InstancedMesh>(null!);
+  const geometryRef = useRef<BoxGeometry>(null!);
 
   useEffect(() => {
-    if (prevRef && prevRef.current) {
-      prevRef.current = hoveredId;
-    }
+    if (prevRef && prevRef.current) prevRef.current = hoveredId;
   }, [hoveredId]);
 
+  const colorArray = useMemo(
+    () =>
+      Float32Array.from(
+        new Array(1000)
+          .fill(0)
+          .flatMap((_, i) => tempColor.set(data[i].color).toArray())
+      ),
+    []
+  );
+
+  const getGridPointById = (id: number) => {
+    const x = id % i;
+    const z = (id - x) / i;
+    //
+    return [x, z];
+  };
+  //
+  // assuming xz plane is 1x1 and 'height' is (shiftCrosshairY*2)
+  //
+  const getCellCenterPointById = useCallback(
+    (id: number): Vector3 => {
+      //
+      // const id = x * i + z;
+      //
+      const x = id % i;
+      const z = (id - x) / i;
+      //
+      const newPoint = new Vector3(
+        i * 0.5 - x - 0.5,
+        0 + shiftCrosshairY,
+        j * 0.5 - z - 0.5
+      );
+      //
+      return newPoint;
+    },
+    [i, j, shiftCrosshairY]
+  );
+
+  //
+  // translate floor before first render
+  //
+  useLayoutEffect(() => {
+    geometryRef.current && geometryRef.current.translate(0, -0.02, 0);
+  }, []);
+
+  const onClick = (e: ThreeEvent<MouseEvent>) => {
+    console.log("clicked", e.instanceId, e.object.userData);
+    //
+    if (e.instanceId) {
+      const gp = getGridPointById(e.instanceId);
+      console.log("clicked-gp", gp);
+    }
+    //
+  };
+
+  //
+  // reset selection when leaving a cell
+  //
+  const onPointerOut = (e: ThreeEvent<PointerEvent>) => {
+    setHoveredId(undefined);
+    setCrossHairPosition(undefined);
+  };
+
+  //
+  // move crosshair to cell and set selected instanceId
+  //
+  const onPointerMove = useCallback(
+    (e: ThreeEvent<PointerEvent>) => {
+      e.stopPropagation();
+      //
+      if (e.instanceId) {
+        if (hoveredId !== e.instanceId) {
+          const newPoint = getCellCenterPointById(e.instanceId);
+          //
+          setCrossHairPosition((prev) => (prev === newPoint ? prev : newPoint));
+          setHoveredId(e.instanceId);
+        }
+      }
+    },
+    [hoveredId, setCrossHairPosition, getCellCenterPointById]
+  );
+
+  //
+  // automaticaly remove selection after 3 seconds
+  //
+  useEffect(() => {
+    const timeoutId = setTimeout(() => setCrossHairPosition(undefined), 3000);
+    //
+    return () => timeoutId && clearTimeout(timeoutId);
+  }, [setCrossHairPosition]);
+
+  //
+  // set the position & color on render
+  //
   useFrame(({ clock }) => {
     if (ref.current) {
       const t = clock.oldTime * 0.0001;
+      const sinT = Math.sin(t);
+      const [posY, posHoverY] = [0, sinT * 0.065 + 0.065];
+
       //
       // instances are positioned on the xz plane
       //
       for (let x = 0; x < i; x++) {
         for (let z = 0; z < j; z++) {
-          // const id = counter++;
           const id = z * i + x;
-          tempBoxes.position.set(i * 0.5 - x - 0.5, 0, j * 0.5 - z - 0.5);
-          tempBoxes.position.y =
-            id === hoveredId ? Math.sin(t) * 0.065 + 0.065 : 0;
-          // tempBoxes.rotation.y = t;
-          tempBoxes.updateMatrix();
-          ref.current.setMatrixAt(id, tempBoxes.matrix);
           //
+          tempBoxes.position.set(i * 0.5 - x - 0.5, 0, j * 0.5 - z - 0.5);
+          tempBoxes.position.y = id === hoveredId ? posHoverY : posY;
+          //
+          tempBoxes.updateMatrix();
+          //
+          ref.current.setMatrixAt(id, tempBoxes.matrix); // reposition vertex
           //
           // highlighting hovered instance
           //
@@ -95,76 +185,21 @@ const GridFloorCells = (
     }
   });
 
-  const colorArray = useMemo(
-    () =>
-      Float32Array.from(
-        new Array(1000)
-          .fill(0)
-          .flatMap((_, i) => tempColor.set(data[i].color).toArray())
-      ),
-    []
-  );
-
-  const geometryRef = useRef<BoxGeometry>(null!);
-
-  useLayoutEffect(() => {
-    geometryRef.current && geometryRef.current.translate(0, -0.02, 0);
-  }, []);
-
-  //
-
-  const onPointerMove = useCallback(
-    (e: ThreeEvent<PointerEvent>) => {
-      e.stopPropagation();
-
-      // const id = x * i + z;
-      const MODULO_BASE = i; // 9; // todo inherit j
-      const id = e.instanceId ?? 0;
-      const x = id % MODULO_BASE;
-      const z = (id - x) / MODULO_BASE;
-      //
-      // console.log("new crosshair pos", { x, z, i, j, id });
-      //
-      const shift_y = crossHairHeight * 0.5;
-      //
-      const newPoint = new Vector3(
-        i * 0.5 - x - 0.5,
-        0 + shift_y,
-        j * 0.5 - z - 0.5
-      );
-
-      //setCrossHairPosition(e.point);
-      setCrossHairPosition(newPoint);
-      setHoveredId(e.instanceId);
-    },
-    [i, j, setCrossHairPosition]
-  );
   //
   //
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => setCrossHairPosition(undefined), 3000);
-    //
-    return () => timeoutId && clearTimeout(timeoutId);
-  }, [hoveredId, setCrossHairPosition]);
-
+  //
   return (
     <instancedMesh
       ref={ref}
-      args={[geometryRef.current, material, i * j]}
-      onClick={(e) => {
-        console.log("clicked", e.instanceId, e.object.userData);
-      }}
+      args={[geometryRef.current, material, instanceCount]}
+      onClick={onClick}
       onPointerMove={onPointerMove}
-      onPointerOut={(e) => {
-        setHoveredId(undefined);
-        setCrossHairPosition(undefined);
-      }}
+      onPointerOut={onPointerOut}
     >
       <boxGeometry
+        ref={geometryRef}
         attach="geometry"
         args={[0.95, 0.04, 0.95]}
-        ref={geometryRef}
       >
         <instancedBufferAttribute
           attach="attributes-color"

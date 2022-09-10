@@ -1,11 +1,11 @@
 import { useRef, useEffect } from "react";
-import { BufferGeometry, Float32BufferAttribute } from "three";
+import { BufferGeometry, Float32BufferAttribute, PlaneGeometry } from "three";
 
 const HeightmapGeometry: React.FC<{
   elementSize: number;
   heights: number[][];
 }> = ({ elementSize, heights }) => {
-  const ref = useRef<BufferGeometry>(null);
+  const ref = useRef<PlaneGeometry>(null);
 
   useEffect(() => {
     if (!ref.current) return;
@@ -36,9 +36,9 @@ const HeightmapGeometry: React.FC<{
     ref.current.computeVertexNormals();
     ref.current.computeBoundingBox();
     ref.current.computeBoundingSphere();
-  }, [heights]);
+  }, [heights, elementSize]);
 
-  return <bufferGeometry ref={ref} />;
+  return <planeBufferGeometry ref={ref} args={[1, 1, 120 - 1, 120 - 1]} />;
 };
 
 export default HeightmapGeometry;

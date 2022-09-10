@@ -1,10 +1,8 @@
-import { useState, useMemo, memo } from "react";
+import { useState, useMemo, memo, useRef } from "react";
 
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Bounds, BoundsProps, OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
-
-import { Color } from "three";
 
 import { Heightfield } from "../../three-components/height-field/height-field.component";
 import GridFloor from "./fibers/grid/grid-floor";
@@ -12,6 +10,17 @@ import GridFloor from "./fibers/grid/grid-floor";
 import useHgtSource from "./hooks/useHgtSource";
 import useHeightBasedTexture from "./hooks/useHeightBasedTexture";
 import TileMesh from "./fibers/tile-mesh";
+import {
+  DataTexture,
+  LinearFilter,
+  PointLight,
+  RGBAFormat,
+  SpotLight,
+  sRGBEncoding,
+  UnsignedByteType,
+  Vector2,
+} from "three";
+import { useFullscreen } from "rooks";
 
 export type GenerateHeightmapArgs = {
   height: number;
@@ -39,32 +48,152 @@ const hgtOptions = [
 ] as Array<[string, string]>;
 
 //
-const GridFloors: React.FC<{ n: number }> = memo((props) => (
+const GridFloors: React.FC<{
+  side: number;
+  setHeightViewPort: React.Dispatch<
+    React.SetStateAction<[number, number, number, number] | undefined>
+  >;
+}> = memo((props) => (
   <>
     {[1].map((n) => (
       <GridFloor
         key={n}
         position={[0, 1 - n - 0.03, 0]}
-        i={10}
-        j={10}
+        i={props.side}
+        j={props.side}
         idx={n}
-        baseColor={new Color(Math.random(), Math.random(), Math.random())}
+        //
+        setHeightViewPort={props.setHeightViewPort}
       />
     ))}
   </>
 ));
 
-const HeightMapRandomApp3D = () => {
+const MovingSpotLight = () => {
+  const ref = useRef<SpotLight>(null!);
+  //
+  useFrame(({ clock }) => {
+    const tick = clock.elapsedTime * 0.3;
+    //
+    if (ref.current) ref.current.position.x = Math.sin(tick) * 7;
+    if (ref.current) ref.current.position.z = Math.cos(tick) * 7;
+    if (ref.current) ref.current.position.y = 0.5 + Math.cos(tick) * 0.25;
+    //
+    ref.current.intensity = 10 + Math.sin(tick) * 10;
+  });
+  //
+  return (
+    <spotLight
+      ref={ref}
+      color={0xfff1b0}
+      position={[6, 0.1, 6]}
+      intensity={30}
+      power={2}
+      angle={0.75}
+      penumbra={0.72}
+      castShadow
+      shadowCameraNear={0.1}
+      shadowCameraFar={100}
+      shadow-mapSize-height={1024}
+      shadow-mapSize-width={1024}
+    />
+  );
+};
+
+const HeightMapRandomApp3D = (props: {
+  isFullscreenEnabled: boolean;
+  isFullscreenAvailable: boolean;
+  toggleFullscreen: () => Promise<void>;
+}) => {
+  const { isFullscreenEnabled, isFullscreenAvailable, toggleFullscreen } =
+    props;
+  //
   const [hgtUrl, setHgtUrl] = useState<string>("data/hgt/N42E011.hgt");
-  const [rotating, setRotating] = useState<boolean>(true);
+  const [rotating, setRotating] = useState<boolean>(false);
   const [showGrid, setShowGrid] = useState<boolean>(true);
+  const [showWireframe, setShowWireframe] = useState<boolean>(false);
+
   const [scalePositionY, setScalePositionY] = useState<number>(0.00043);
+  const [heightViewPort, setHeightViewPort] = useState<
+    [number, number, number, number] | undefined
+  >([0, 0, 120, 120]);
   //
   //
   const heights1200: Int16Array | undefined = useHgtSource(hgtUrl); // 1* (1200*1200) = 1.44m int16s
   //
   const dataTexture = useHeightBasedTexture(heights1200);
+  //
+  const dataTextureHeightfield = useMemo(() => {
+    if (dataTexture && heightViewPort) {
+      console.log("creating DTHF from", dataTexture);
+      //
+      const [min_x, min_y, max_x, max_y] = heightViewPort; //  viewport
 
+      const imageData = dataTexture?.source.data.data as Uint8Array; // 4*1200*1200 items
+      //
+      if (imageData) {
+        const heightsRows = [];
+        for (let row_idx = min_x; row_idx < max_x; row_idx++) {
+          const currentRow = [];
+          //
+          for (let col_idx = min_y; col_idx < max_y; col_idx++) {
+            //
+            // core operation: keep when within viewport [0,0,120,120]
+            // intervals are [0,120)   (first item inclusive, 120 exclusive)
+            //
+            const inBoundsHorizontal = min_x <= row_idx && row_idx < max_x;
+            const inBoundsVertical = min_y <= col_idx && col_idx < max_y;
+            //
+            const inBounds = inBoundsHorizontal && inBoundsVertical;
+            //
+            if (inBounds) {
+              const offset = row_idx * (1200 * 4) + col_idx * 4;
+              //
+              currentRow.push(
+                imageData[offset] ?? 0,
+                imageData[offset + 1] ?? 0,
+                imageData[offset + 2] ?? 0,
+                imageData[offset + 3] ?? 0
+              );
+            }
+          }
+          //
+          if (currentRow.length) heightsRows.push(...currentRow);
+        }
+        //
+        const uint8arr = Uint8Array.from(heightsRows);
+        //
+        console.log("HF ui8", uint8arr);
+
+        //
+        const texture = new DataTexture(
+          uint8arr,
+          120,
+          120,
+          RGBAFormat,
+          UnsignedByteType
+        );
+        //
+        texture.flipY = true; // flipping image on vertical axis
+        //
+        texture.wrapS = 120;
+        texture.wrapT = 120;
+        //
+        texture.minFilter = LinearFilter;
+        texture.magFilter = LinearFilter;
+        texture.encoding = sRGBEncoding;
+        //
+        texture.needsUpdate = true;
+        //
+        console.log("HF tex", texture);
+        //
+        return texture;
+      }
+    }
+
+    //
+    return undefined;
+  }, [dataTexture, heightViewPort]);
   //
   // BufferAttribute, height information for TileMesh (1200*1200)
   //
@@ -102,11 +231,11 @@ const HeightMapRandomApp3D = () => {
   // height information for the heightfield component (100*100)
   //
   const heightMemo = useMemo(() => {
-    if (heights1200) {
+    if (heights1200 && heightViewPort) {
       //
-      // return first 100x100 result is Array<Array<number>>
+      // return first 120x120 result is Array<Array<number>>
       //
-      const [min_x, min_y, max_x, max_y] = [0, 0, 100, 100]; // viewport
+      const [min_x, min_y, max_x, max_y] = heightViewPort; //  viewport
       //
       const heightsRows = [];
       for (let row_idx = min_x; row_idx < max_x; row_idx++) {
@@ -114,8 +243,8 @@ const HeightMapRandomApp3D = () => {
         //
         for (let col_idx = min_y; col_idx < max_y; col_idx++) {
           //
-          // core operation: keep when within viewport [0,0,100,100]
-          // intervals are [0,100)   (first item inclusive, 100 exclusive)
+          // core operation: keep when within viewport [0,0,120,120]
+          // intervals are [0,120)   (first item inclusive, 120 exclusive)
           //
           const inBoundsHorizontal = min_x <= row_idx && row_idx < max_x;
           const inBoundsVertical = min_y <= col_idx && col_idx < max_y;
@@ -132,15 +261,13 @@ const HeightMapRandomApp3D = () => {
         if (currentRow.length) heightsRows.push(currentRow);
       }
       //
-      //
-      console.log("heightMemo", heightsRows);
+      // console.log("heightMemo", heightsRows);
       //
       return heightsRows;
     }
     //
     return [] as Array<Array<number>>;
-  }, [heights1200]);
-  //
+  }, [heights1200, heightViewPort]);
   //
   return (
     <>
@@ -154,12 +281,13 @@ const HeightMapRandomApp3D = () => {
         {showGrid && (
           <>
             <gridHelper position={[0, 0, 0]} />
-            <GridFloors n={1} />
+            <GridFloors side={10} setHeightViewPort={setHeightViewPort} />
           </>
         )}
 
-        <ambientLight intensity={0.3} />
-        <spotLight position={[10, 20, 10]} angle={0.15} penumbra={1} />
+        <ambientLight intensity={0.35} />
+        <MovingSpotLight />
+
         <OrbitControls
           enableZoom={true}
           autoRotate={rotating}
@@ -168,35 +296,40 @@ const HeightMapRandomApp3D = () => {
 
         <Physics>
           <group
-            position={[-heightMapScale / 2, 0 + 0.5, heightMapScale / 2]}
-            scale={[1, 0.00075, 1]}
+            position={[0 - heightMapScale / 2, 0 + 2, heightMapScale / 2]}
+            scale={[3, 0.00075, 3]}
           >
-            {heightMemo && (
+            {heightMemo && dataTextureHeightfield && (
               <Heightfield
                 elementSize={(heightMapScale * 1) / 128}
                 heights={heightMemo}
                 position={[0, 0, 0]}
                 rotation={[0, Math.PI / 2, 0]}
-                // autoRotate={rotating}
+                dataTextureHeightfield={dataTextureHeightfield}
+                showWireframe={showWireframe}
               />
             )}
           </group>
         </Physics>
-
-        <Bounds
+        {/* <Bounds
           {...boundsProps}
           onFit={(e) => console.log("transition finished", e)}
-        >
-          {positions && dataTexture && (
-            <TileMesh
-              scalePositionY={scalePositionY}
-              positions={positions}
-              dataTexture={dataTexture}
-            />
-          )}
-        </Bounds>
+        > */}
+        {positions && dataTexture && (
+          <TileMesh
+            scalePositionY={scalePositionY}
+            positions={positions}
+            dataTexture={dataTexture}
+          />
+        )}
+        {/* </Bounds> */}
       </Canvas>
       <div style={{ position: "relative", top: "-20px" }}>
+        {isFullscreenAvailable && (
+          <button onClick={toggleFullscreen} style={{ float: "right" }}>
+            {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}
+          </button>
+        )}
         HGT:
         {hgtOptions.map(([label, url], idx) => (
           <button key={idx} onClick={(e) => setHgtUrl(url)}>
@@ -211,7 +344,7 @@ const HeightMapRandomApp3D = () => {
           style={{ width: "75px" }}
           onChange={(e) => setScalePositionY(parseFloat(e.target.value))}
         />
-        Rotation:
+        Auto rotate:
         <input
           type="checkbox"
           checked={rotating}
@@ -222,6 +355,12 @@ const HeightMapRandomApp3D = () => {
           type="checkbox"
           checked={showGrid}
           onChange={(e) => setShowGrid(!showGrid)}
+        />
+        Wirefr.:
+        <input
+          type="checkbox"
+          checked={showWireframe}
+          onChange={(e) => setShowWireframe(!showWireframe)}
         />
       </div>
     </>

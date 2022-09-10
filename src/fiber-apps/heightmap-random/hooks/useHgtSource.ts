@@ -4,7 +4,7 @@ const useHgtSource = (url: string) => {
   const [value, setValue] = useState<Int16Array | undefined>();
   //
   const onDataReceived = useCallback((data: ArrayBuffer) => {
-    console.log("processing hgt", data);
+    // console.log("processing hgt", data);
 
     //
     // data is 1201x1201 with 1*1200 and 1200*1 overlap
@@ -18,27 +18,29 @@ const useHgtSource = (url: string) => {
     //
     // changing endianness, this should be fixed
     //
-    const arr = [];
-    for (var i = 0; i < bitmap_1200_1200.length; i++) {
-      const v = bitmap_1200_1200[i];
+    const arr = bitmap_1200_1200.map((v, i) => {
       const b = v % 256;
       const a = (v - b) / 256;
       //
-      arr.push(b * 256 + a);
-    }
+      return b * 256 + a;
+    });
 
     //
-    // Replacing nodata value, consider averaging nearby pixels
-    // instead of using zeros, to fix 'crappy mountains
+    // Replacing nodata value and extremal values
+    // consider averaging nearby pixels instead
+    // to fix 'crappy looking mountains'
     //
+    const MIN_ACCEPTED_HEIGHT = -10; // -128;
     const SRTM_NODATA_VALUE = 32768;
-    // const nodata_at_zero = arr.map((x) => (x === SRTM_NODATA_VALUE ? 0 : x));
-    const nodata_at_minus_one = arr.map((x) =>
-      x === SRTM_NODATA_VALUE ? -1 : x
-    );
     //
-    // setValue(Int16Array.from(nodata_at_minus_one));
-    return new Int16Array(nodata_at_minus_one);
+    const arr_at_min_elevation = arr.map((x) =>
+      x === SRTM_NODATA_VALUE
+        ? MIN_ACCEPTED_HEIGHT
+        : Math.max(x, MIN_ACCEPTED_HEIGHT)
+    );
+
+    //
+    return new Int16Array(arr_at_min_elevation);
   }, []);
   //
   useEffect(() => {
