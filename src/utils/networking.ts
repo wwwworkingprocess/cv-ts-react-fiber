@@ -13,7 +13,7 @@ export const responseAsBlob = (response: Response) => {
 };
 
 export const onNetworkError = (reject: any, error: Error) => {
-  console.log(error);
+  console.error(error);
   reject("There has been a problem with your fetch operation:", error);
 };
 

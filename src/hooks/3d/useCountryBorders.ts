@@ -19,7 +19,7 @@ const useCountryBorders = (
 ) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [countries, setCountries] = useState<CountryGeoJson>();
-  const [lineObjs /*, setLineObjs*/] = useState<Array<LineSegments>>([]);
+  const [lineObjs] = useState<Array<LineSegments>>([]);
   //
   //
   //
@@ -35,15 +35,8 @@ const useCountryBorders = (
     (countries: CountryGeoJson) => {
       setCountries(countries);
       setLoading(false);
-      console.log("LOADED", countries);
-
-      const fs = countries.features;
       //
-      const huf = fs.filter(
-        (f) => (f.properties as any)["ISO3166-1-Alpha-3"] === "HUN"
-      );
-
-      console.log("huf", huf);
+      // const huf = countries.features.filter( (f) => (f.properties as any)["ISO3166-1-Alpha-3"] === "HUN" );
     },
     [setCountries]
   );
@@ -55,7 +48,6 @@ const useCountryBorders = (
     if (countries && e3d) {
       e3d.mesh_lines.clear(); // reset target
       //
-      console.log("loaded countries");
       const alt = 1.03;
       //
       const materials = [
@@ -82,14 +74,14 @@ const useCountryBorders = (
   //
   useEffect(() => {
     if (parentReady) {
-      const fn = () => {
+      const fetchGeoJson = () => {
         fetch(datasourceUrl)
           .then((res) => res.json())
           .then(afterDataLoaded);
       };
-      console.log("loading geojson");
+      //
       setLoading(true);
-      fn();
+      fetchGeoJson();
     }
   }, [parentReady, datasourceUrl, afterDataLoaded]);
   //

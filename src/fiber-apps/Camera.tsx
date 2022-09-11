@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState } from "react";
 import { ControlledCameras } from "./ControlledCameras";
 import CameraControls from "camera-controls";
 import { Vector3Tuple } from "three";
@@ -30,12 +30,7 @@ export default function Camera(props: {
       setMode((state) => {
         const newMode =
           state === "perspective" ? "orthographic" : "perspective";
-
-        console.log("new mode", newMode);
-        //   document.querySelector(
-        //   "#currentView"
-        // ).textContent = `Changing view from ${state} to ${newMode}`;
-
+        //
         return newMode;
       });
     };
@@ -44,23 +39,15 @@ export default function Camera(props: {
     return () => window.removeEventListener("keyup", changeView);
   }, []);
 
-  const onRest = useCallback(() => {
-    // Need to wait a frame here because the camera is also being changed when
-    // the rest event fires
-    requestAnimationFrame(() => {
-      const currentMode = (controls.current as any).camera.isPerspectiveCamera
-        ? "perspective"
-        : "orthographic";
-      //
-      console.log("rest mode", currentMode);
-
-      //   document.querySelector(
-      //     "#currentView"
-      //   ).textContent = `Current view: ${currentMode}`;
-    });
-  }, [controls]);
-
-  // const logEvent = (e) => console.log(e.type);
+  // const onRest = useCallback(() => {
+  //   // Need to wait a frame here because the camera is also being changed when
+  //   // the rest event fires
+  //   requestAnimationFrame(() => {
+  //     const currentMode = (controls.current as any).camera.isPerspectiveCamera
+  //       ? "perspective"
+  //       : "orthographic";
+  //   });
+  // }, [controls]);
 
   return (
     <ControlledCameras
@@ -111,7 +98,9 @@ export default function Camera(props: {
       // onWake={logEvent}
       // Note: onRest will fire when the controls *appear* to have stopped.
       // You can fine tune this with restThreshold
-      onRest={onRest}
+
+      // onRest={onRest}
+
       // Sleep will fire some time later when when all damped movement has been applied
       // onSleep={logEvent}
 

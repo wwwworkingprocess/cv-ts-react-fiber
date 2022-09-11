@@ -3,11 +3,8 @@ import coloring from "./colors";
 
 class TextureFactorySingleton {
   circle_ctx: CanvasRenderingContext2D | null = null;
-
   //
-  constructor() {
-    console.log("TextureFactorySingleton created");
-  }
+  // constructor() {}
   //
   create_mask_texture = (_hgt: any) => {
     const mask = _hgt.data;
@@ -75,19 +72,12 @@ class TextureFactorySingleton {
       const loader = new THREE.TextureLoader();
       // loader.crossOrigin = 'anonymous'; // to allow nonCORS content
       //
-      console.log(["LOADING_URL", url, loader]);
-
       try {
         const texture = await loader.loadAsync(url);
-        // loader.load(url, (texture) => {
-        //   console.log(["LOADED_URL", url]);
-        //   if (texture) {
-        //     resolve(texture);
-        //   }
-        // });
+        //
         resolve(texture);
       } catch (ex) {
-        console.log("failed to load img", ex);
+        console.error("failed to load img", ex);
         reject(ex);
       }
     });
@@ -147,12 +137,6 @@ class TextureFactorySingleton {
         );
         //
         texture = new THREE.CanvasTexture(canvas as any);
-        console.log([
-          "using rgb texture",
-          texture,
-          texture.image.width,
-          texture.image.height,
-        ]);
       } else {
         texture = (await this.generateTextureData_STA(
           data,
@@ -247,19 +231,6 @@ class TextureFactorySingleton {
         //
         id = image?.data ?? new Uint8ClampedArray(0);
         //
-        const mul = (rgb: THREE.Color, sh: number, tint: number = 1) => {
-          const v0 = new THREE.Vector3(rgb.r, rgb.g, rgb.b);
-          const v1 = new THREE.Vector3(
-            128 - sh,
-            128 - sh,
-            128 - sh
-          ).multiplyScalar(tint);
-          const v = v1.multiply(v0); //.normalize();
-          //
-          return [v.x, v.y, v.z];
-        };
-        //
-
         for (let i = 0, j = 0, l = id.length; i < l; i += 4, j++) {
           v3.x = (data[j - 2] || 0) - (data[j + 2] || 0);
           v3.y = 2;
@@ -270,7 +241,18 @@ class TextureFactorySingleton {
           //
           const c = coloring.get_color_by_height(data[j]);
           //
-          //const sh = 100 + (1 + shade * 0.5) * 128;
+          // const mul = (rgb: THREE.Color, sh: number, tint: number = 1) => {
+          //   const v0 = new THREE.Vector3(rgb.r, rgb.g, rgb.b);
+          //   const v1 = new THREE.Vector3(
+          //     128 - sh,
+          //     128 - sh,
+          //     128 - sh
+          //   ).multiplyScalar(tint);
+          //   const v = v1.multiply(v0); //.normalize();
+          //   //
+          //   return [v.x, v.y, v.z];
+          // };
+          //
           // const sh = 128 + (shade * 0.5) * 128;
           // const tint_factor = 0.1;
           // const arr = mul(c, sh, tint_factor);
@@ -288,8 +270,6 @@ class TextureFactorySingleton {
           id[i + 1] = c.g * (0.75 + shade * 0.725); // original 'blending' G
           id[i + 2] = c.b * (0.75 + shade * 0.725); // original 'blending' B
         }
-        //
-        console.log(["SOURCE", image]);
         //
         if (image) ctx?.putImageData(image, 0, 0);
         //
@@ -329,11 +309,6 @@ class TextureFactorySingleton {
             ctx_scaled.scale(SCALE, SCALE);
             ctx_scaled.drawImage(canvas, 0, 0);
           }
-          //
-          console.log([
-            "USING SCALED TEXTURE:",
-            (SCALE * 100).toFixed(0) + "%",
-          ]); //console.log(['OUTPUT', image]);
           //
           resolve(canvasScaled);
         }

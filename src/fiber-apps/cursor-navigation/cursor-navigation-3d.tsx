@@ -1,14 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh, Vector3 } from "three";
-import {
-  Billboard,
-  Box,
-  OrbitControls,
-  Plane,
-  RoundedBox,
-  Text,
-} from "@react-three/drei";
+import { Billboard, Box, OrbitControls, Plane, Text } from "@react-three/drei";
 import styled from "styled-components";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
 import DynamicBox from "./fibers/dynamic-box";
@@ -19,8 +12,6 @@ const Scene = ({ x, y, z }: Position3D) => {
   const vec = new Vector3(x, y, z);
   //
   useFrame(() => box.current.position.lerp(vec, 0.1));
-  //
-  console.log("scene x,y,z", { x, y, z });
   //
   return (
     <Box ref={box} castShadow>
@@ -59,7 +50,6 @@ const ControlsContainer = styled.div`
 `;
 
 const startPosition = { x: 1, y: 0, z: 0 };
-//const [MIN_X, MAX_X, MIN_Y, MAX_Y] = [-3, 3, -2, 2];
 
 const CursorNavigationDemo3D = (props: {
   isCameraEnabled: boolean;
@@ -78,9 +68,8 @@ const CursorNavigationDemo3D = (props: {
     () => new Vector3(areaWidth, areaHeight, 0.15),
     [areaWidth, areaHeight]
   );
-
+  //
   useKeyboardNavigation({ bounds, setPosition });
-
   //
   // reposition the box when it gets ouf of bounds
   //
@@ -91,10 +80,8 @@ const CursorNavigationDemo3D = (props: {
     //
     return valid_x && valid_y;
   }, [position, MIN_X, MAX_X, MIN_Y, MAX_Y]);
-
-  useEffect(() => {
-    setPosition(startPosition);
-  }, [isInBounds]);
+  //
+  useEffect(() => setPosition(startPosition), [isInBounds]);
   //
   return (
     <>
@@ -114,14 +101,8 @@ const CursorNavigationDemo3D = (props: {
           shadow-mapSize-height={512}
           shadow-mapSize-width={512}
         />
-        <Billboard
-          position={[0, 3.25, 0]}
-          follow={true}
-          lockX={false}
-          lockY={false}
-          lockZ={false} // Lock the rotation on the z axis (default=false)
-        >
-          <Text fontSize={0.4} color={"#ffaa22"}>
+        <Billboard position={[0, 2.25, 0]} follow={true}>
+          <Text fontSize={0.3} color={"#ffaa22"}>
             Use arrow keys for navigation and space for jump
           </Text>
         </Billboard>

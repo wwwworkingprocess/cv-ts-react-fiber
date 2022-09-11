@@ -9,8 +9,6 @@ const CountryAdminOneFeatures = (
 ) => {
   const { featuresA1, colors } = props;
   //
-  console.log("rendering features", featuresA1, colors);
-  //
   return (
     <group {...props}>
       {featuresA1?.map((f, idx) => {

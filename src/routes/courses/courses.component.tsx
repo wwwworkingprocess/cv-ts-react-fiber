@@ -30,38 +30,25 @@ const Courses = () => {
   //
   const items = useSelector(selectUdemyItems);
   //
-  const fetchGraphData = () => {
-    fetch("./data/index.json", { mode: "same-origin" })
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        console.log(json);
-        const with_id = json.nodes.filter((n: any) => n.data_id);
-        console.log("wid", with_id);
-        setLoading(false);
-        setData(json);
-      });
-  };
-
   useEffect(() => {
+    const fetchGraphData = () => {
+      fetch("./data/index.json", { mode: "same-origin" })
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          // const with_id = json.nodes.filter((n: any) => n.data_id);
+          //
+          setLoading(false);
+          setData(json);
+        });
+    };
+    //
     fetchGraphData();
   }, []);
-  //
-  useEffect(() => {
-    if (fgRef.current) {
-      console.log("eff:", selectedId);
-    }
-  }, [selectedId]);
 
   useEffect(() => {
-    if (windowSize) {
-      const { width, height } = windowSize;
-      //
-      console.log("windowSize", [width, height].join("x"));
-      //
-      setGraphWidth(width * 0.95);
-    }
+    if (windowSize) setGraphWidth(windowSize.width * 0.95);
   }, [windowSize]);
 
   //
@@ -90,10 +77,8 @@ const Courses = () => {
 
   //
   const onEngineStop = useCallback(() => {
-    console.log("onEngineStop");
     if (fgRef.current) {
       (fgRef.current as any).zoomToFit(400);
-      console.log("zoom complete");
     }
   }, [fgRef]);
 
@@ -141,26 +126,34 @@ const Courses = () => {
           </CardList>
         )}
       </div>
-      aaa
       {data ? (
         <div
           style={{
             width: "100%",
             height: "10%",
             display: "flex",
+            flexDirection: "column",
             justifyContent: "space-between",
           }}
         >
-          {[1, 2, 3].map((rootId) => (
-            <div style={{ display: "flex" }}>
+          {[2].map((rootId) => (
+            <div
+              style={{
+                display: "flex",
+                width: "70%",
+                margin: "auto",
+                maxWidth: "600px",
+              }}
+              key={rootId}
+            >
               <ExpandableGraph
                 rootId={rootId}
                 graphData={{
                   nodes: [...data.nodes.map((n) => Object.assign({}, n))],
                   links: [...data.links.map((l) => Object.assign({}, l))],
                 }}
-                width={300}
-                height={300}
+                width={600}
+                height={450}
               />
             </div>
           ))}
@@ -168,7 +161,6 @@ const Courses = () => {
       ) : (
         <Spinner />
       )}
-      bbb
     </>
   );
 };

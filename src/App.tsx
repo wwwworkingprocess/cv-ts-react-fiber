@@ -7,11 +7,7 @@ import "./App.css";
 import Navigation from "./components/navigation/navigation.component";
 import { Spinner } from "./components/spinner/spinner.component";
 
-import useLocalStorage from "./hooks/useLocalStorage";
-
 import GlobalStyle from "./global.styles";
-import { useFullscreen } from "rooks";
-import { isMobile } from "react-device-detect";
 
 //
 // lazy loading main routes
@@ -25,9 +21,7 @@ const Authentication = lazy(
 );
 
 const PageFrame = () => {
-  const [theme] = useLocalStorage("theme", "dark");
-  //
-  console.log("page using theme", theme);
+  // const [theme] = useLocalStorage("theme", "dark");
   //
   return (
     <>

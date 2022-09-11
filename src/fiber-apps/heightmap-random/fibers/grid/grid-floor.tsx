@@ -21,36 +21,32 @@ const GridFloor = (
   const [crossHairPosition, setCrossHairPosition] = useState<Vector3>();
 
   const activeViewPort = useMemo(() => {
-    const defaultViewport = [0, 0, 120, 120];
+    if (crossHairPosition) {
+      //
+      // Assuming floor size is 10x10 units (xz) with 10 divisions
+      // on each axis, and centerpoint is at (0,0,0)
+      //
+      // 1. transform crosshair_pos => xz
+      // 2. transform xz to viewport
+      //
+      const { x, z } = crossHairPosition;
+      //
+      const px = x + 4.5; // (5-0.5)
+      const pz = 4.5 - z; // px and pz is in range [0..9]
+      //
+      const [pixelPerX, pixelPerZ] = [120, 120];
+      //
+      const newViewport = [
+        px * pixelPerX,
+        pz * pixelPerZ,
+        (px + 1) * pixelPerX,
+        (pz + 1) * pixelPerZ,
+      ];
+      //
+      return newViewport as [number, number, number, number];
+    }
     //
-    if (!crossHairPosition) return undefined;
-    // return defaultViewport as [number, number, number, number];
-    //
-    // 1. transform  crosshair_pos => xz
-    // 2. transform xz to viewport
-    //
-    console.log("activeViewPort, cp:", crossHairPosition);
-    //
-    const { x, z } = crossHairPosition;
-    //
-    const px = x + 4.5; // (5-0.5)
-    const pz = 4.5 - z; // px and pz is in range [0..9]
-    //
-    //  console.log("activeViewPort, vp:", { x, z, px, pz });
-    //
-    const [pixelPerX, pixelPerZ] = [120, 120];
-    //
-    const newViewport = [
-      px * pixelPerX,
-      pz * pixelPerZ,
-      (px + 1) * pixelPerX,
-      (pz + 1) * pixelPerZ,
-    ];
-
-    console.log("activeViewPort, vp:", { px, pz }, newViewport);
-
-    //
-    return newViewport as [number, number, number, number];
+    return undefined;
   }, [crossHairPosition]);
 
   useEffect(() => {

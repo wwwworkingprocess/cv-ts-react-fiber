@@ -42,18 +42,20 @@ const Boxes = ({
       for (let x = 0; x < i; x++) {
         for (let z = 0; z < j; z++) {
           const id = counter++;
+          //
           tempBoxes.position.set(i / 2 - x, id % 10, j / 2 - z);
           tempBoxes.rotation.y = t;
           tempBoxes.updateMatrix();
+          //
           ref.current.setMatrixAt(id, tempBoxes.matrix);
-
+          //
           ref.current.setColorAt(
             id,
             new Color(
-              0.9 * Math.abs(1 - Math.cos(t * 1000 * x)) * baseColor.r,
-              ((0.15 * (Math.abs(Math.sin(t)) * 1 + 0.1)) / (z + 1)) *
+              0.2 * Math.abs(1 - Math.cos(t * 1000 * x)) * baseColor.r,
+              ((0.9 * (Math.abs(Math.sin(t)) * 1 + 0.1)) / (z + 1)) *
                 baseColor.g,
-              0.1 * Math.abs(Math.cos(t)) * baseColor.b
+              0.2 * Math.abs(Math.cos(t)) * baseColor.b
             )
           );
         }
@@ -89,7 +91,7 @@ const App3D = (props: {
   //const extrudeArgs = [shapeFromCoords(countryBorderPoints), extrudeOptions];
 
   const [boxColor] = useState<Color>(
-    new Color(Math.random(), Math.random(), Math.random())
+    new Color(0.3 * Math.random(), 0.9 * Math.random(), 0.2 * Math.random())
   );
   //
   return (
@@ -108,7 +110,7 @@ const App3D = (props: {
 
         <mesh {...props}>
           <shapeGeometry args={[shapeRoundedRectangle(2.5, 5, 0.2)]} />
-          <meshBasicMaterial color="red" side={DoubleSide} />
+          <meshLambertMaterial color="gold" side={DoubleSide} />
         </mesh>
 
         <Dice />
@@ -119,7 +121,7 @@ const App3D = (props: {
           // anchorX="center"
           // anchorY="middle"
         >
-          Welcome to 3D!
+          Welcome to Reactive 3D!
         </MyText>
         <Extrude
           position={[-1, -5, -2]}

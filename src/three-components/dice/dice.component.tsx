@@ -12,7 +12,7 @@ export const Dice = () => {
 
   //
   return (
-    <mesh ref={mesh} onContextMenu={(e) => console.log("context menu")}>
+    <mesh ref={mesh}>
       <boxBufferGeometry attach="geometry" />
       {textures.map((texture, idx) => (
         <meshBasicMaterial

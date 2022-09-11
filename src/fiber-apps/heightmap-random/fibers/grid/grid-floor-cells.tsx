@@ -100,13 +100,12 @@ const GridFloorCells = (
   }, []);
 
   const onClick = (e: ThreeEvent<MouseEvent>) => {
-    console.log("clicked", e.instanceId, e.object.userData);
     //
     if (e.instanceId) {
       const gp = getGridPointById(e.instanceId);
-      console.log("clicked-gp", gp);
+      //
+      console.info("clicked", e.instanceId, e.object.userData, gp);
     }
-    //
   };
 
   //

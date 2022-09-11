@@ -1,7 +1,7 @@
 import { useState, useMemo, memo, useRef } from "react";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Bounds, BoundsProps, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Physics } from "@react-three/cannon";
 
 import { Heightfield } from "../../three-components/height-field/height-field.component";
@@ -13,14 +13,11 @@ import TileMesh from "./fibers/tile-mesh";
 import {
   DataTexture,
   LinearFilter,
-  PointLight,
   RGBAFormat,
   SpotLight,
   sRGBEncoding,
   UnsignedByteType,
-  Vector2,
 } from "three";
-import { useFullscreen } from "rooks";
 
 export type GenerateHeightmapArgs = {
   height: number;
@@ -33,18 +30,9 @@ export type GenerateHeightmapArgs = {
 // settings
 //
 const heightMapScale: number = 1;
-const boundsProps: BoundsProps = {
-  fit: true,
-  clip: true,
-  observe: true,
-  damping: 6,
-  margin: 0.9,
-};
-//
 const hgtOptions = [
   ["A", "data/hgt/N42E011.hgt"],
   ["B", "data/hgt/N42E019.hgt"],
-  // ["C", "data/hgt/N44E010.hgt"],
 ] as Array<[string, string]>;
 
 //
@@ -125,8 +113,6 @@ const HeightMapRandomApp3D = (props: {
   //
   const dataTextureHeightfield = useMemo(() => {
     if (dataTexture && heightViewPort) {
-      console.log("creating DTHF from", dataTexture);
-      //
       const [min_x, min_y, max_x, max_y] = heightViewPort; //  viewport
 
       const imageData = dataTexture?.source.data.data as Uint8Array; // 4*1200*1200 items
@@ -163,9 +149,6 @@ const HeightMapRandomApp3D = (props: {
         //
         const uint8arr = Uint8Array.from(heightsRows);
         //
-        console.log("HF ui8", uint8arr);
-
-        //
         const texture = new DataTexture(
           uint8arr,
           120,
@@ -185,8 +168,6 @@ const HeightMapRandomApp3D = (props: {
         //
         texture.needsUpdate = true;
         //
-        console.log("HF tex", texture);
-        //
         return texture;
       }
     }
@@ -194,6 +175,7 @@ const HeightMapRandomApp3D = (props: {
     //
     return undefined;
   }, [dataTexture, heightViewPort]);
+
   //
   // BufferAttribute, height information for TileMesh (1200*1200)
   //
@@ -228,7 +210,7 @@ const HeightMapRandomApp3D = (props: {
   }, [heights1200]);
 
   //
-  // height information for the heightfield component (100*100)
+  // height information for the heightfield component (120*120)
   //
   const heightMemo = useMemo(() => {
     if (heights1200 && heightViewPort) {
@@ -260,8 +242,6 @@ const HeightMapRandomApp3D = (props: {
         //
         if (currentRow.length) heightsRows.push(currentRow);
       }
-      //
-      // console.log("heightMemo", heightsRows);
       //
       return heightsRows;
     }
@@ -311,10 +291,7 @@ const HeightMapRandomApp3D = (props: {
             )}
           </group>
         </Physics>
-        {/* <Bounds
-          {...boundsProps}
-          onFit={(e) => console.log("transition finished", e)}
-        > */}
+
         {positions && dataTexture && (
           <TileMesh
             scalePositionY={scalePositionY}
@@ -322,9 +299,8 @@ const HeightMapRandomApp3D = (props: {
             dataTexture={dataTexture}
           />
         )}
-        {/* </Bounds> */}
       </Canvas>
-      <div style={{ position: "relative", top: "-20px" }}>
+      <div style={{ position: "relative", top: "-20px", userSelect: "none" }}>
         {isFullscreenAvailable && (
           <button onClick={toggleFullscreen} style={{ float: "right" }}>
             {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}

@@ -25,7 +25,7 @@ const CursorNavigationDemo = (props: { path?: string | undefined }) => {
     -3, 3, -2, 2,
   ]);
 
-  const [cameraEnabled, setCameraEnabled] = useState<boolean>(false);
+  const [cameraEnabled, setCameraEnabled] = useState<boolean>(true);
 
   return (
     <>

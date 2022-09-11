@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { isMobile } from "react-device-detect";
 
 import styled from "styled-components";
 
@@ -59,15 +60,15 @@ const Map = () => {
       setSvgCountries(mapped);
     };
 
-    const fn = () => {
+    const fetchGeoJsonAllCountries = () => {
       // fetch("data/geojson/countries.geojson")
       // fetch("data/geojson/admin1.geojson")
       fetch("data/geojson/ne_110m_admin_0_countries.geojson")
         .then((res) => res.json())
         .then(afterDataLoaded);
     };
-    console.log("loading geojson");
-    fn();
+    //
+    fetchGeoJsonAllCountries();
   }, []);
   //
 
@@ -75,8 +76,7 @@ const Map = () => {
   const [countryCode, setCountryCode] = useState<string>("28");
   const [selectedCode, setSelectedCode] = useState<string>("Q28");
   //
-  const { loading, tree, keys, nodes, path_hierarchy } =
-    useTreeHelper(countryCode);
+  const { loading, tree, keys, nodes } = useTreeHelper(countryCode);
   //
   const { loading: wikiLoading, data } = useWikidata(selectedCode);
   //
@@ -122,11 +122,6 @@ const Map = () => {
     const matchingNames = nodes.filter(
       (node) => node.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
     );
-
-    //
-    console.log("searchResultsMemo", nodes.length, nodes[10]);
-    console.log("matchingNames", matchingNames);
-
     //
     // sort by name before returning result
     //
@@ -162,8 +157,6 @@ const Map = () => {
       coordArrays: Array<Array<[number, number]>>,
       fx: any
     ) {
-      console.log("gmpath", coordArrays);
-      //
       const svgPaths = [];
       //
       let minX = svgCanvasWidth;
@@ -172,7 +165,6 @@ const Map = () => {
       let maxY = 0;
 
       for (let pp = 0; pp < coordArrays.length; ++pp) {
-        // console.log("feature", pp);
         const [coords /*, outterRingCoords*/] = coordArrays[pp];
         const svgPath = [];
         //
@@ -205,12 +197,11 @@ const Map = () => {
         height: maxY - minY,
       };
     }
-
+    //
     const svgProps = convertCoordinatesToSvgPaths(
       svgCountries.map((c) => c.path),
       (coord: [number, number]) => ({ lat: coord[1], lng: coord[0] })
     );
-    //
     //
     return svgProps;
   }, [svgCountries, svgCanvasWidth, svgCanvasHeight]);
@@ -239,13 +230,7 @@ const Map = () => {
               margin: "2px",
             }}
             key={a1[0]}
-            onClick={() => {
-              console.log("selecting", a1[0], a1[1], a1[2]);
-              console.log("node", tree?._search(a1[1]));
-              console.log("node", a1[0], tree?._find(tree?._qq(a1[0])));
-
-              setSelectedCode(a1[0]);
-            }}
+            onClick={() => setSelectedCode(a1[0])}
           >
             {a1[1]}
           </span>
@@ -256,23 +241,9 @@ const Map = () => {
 
   const [countrySelected, setCountrySelected] = useState<string | null>();
   //
-  function mouseEnter(country: any) {
-    setCountrySelected(country.name);
-  }
-
-  function mouseLeave() {
-    setCountrySelected(null);
-  }
-
-  //
-  //
-  //
-  const onCountryClicked = (c: any) => {
-    console.log("country", c);
-    setSelectedWikiCountry(c);
-  };
-
-  //
+  const mouseEnter = (country: any) => setCountrySelected(country.name);
+  const mouseLeave = () => setCountrySelected(null);
+  const onCountryClicked = (c: any) => setSelectedWikiCountry(c);
   //
   //
   const selectedCountryPanel = useMemo(() => {
@@ -286,7 +257,6 @@ const Map = () => {
       );
     }
   }, [selectedWikiCountry]);
-
   //
   return (
     <div>
@@ -311,16 +281,18 @@ const Map = () => {
           ))}
       <hr />
       {svgCountries && (
-        <>
+        <div style={{ margin: "auto", width: isMobile ? "100%" : "80vw" }}>
           {svgPathMemo && (
             <Svg
-              style={{ border: "solid 1px red" }}
+              style={{
+                border: "solid 1px silver",
+                zoom: isMobile ? 0.5 : 1,
+              }}
               {...svgPathMemo}
               width={svgCanvasWidth}
               height={svgCanvasHeight}
             >
               {svgCountries.map(({ id, name, path }, index) => {
-                // console.log("drawing c path", id, name, path);
                 return (
                   <Path
                     key={index}
@@ -336,7 +308,7 @@ const Map = () => {
             </Svg>
           )}
           {countrySelected && JSON.stringify(countrySelected)}
-        </>
+        </div>
       )}
       <hr />
       Keyword:{" "}
@@ -365,25 +337,15 @@ const Map = () => {
           : "no results"}
       </div>
       <hr />
-      Country code: {countryCode}
+      Country code: {countryCode}{" "}
       <button onClick={loadHungary}>Change (HUN)</button>
       <button onClick={loadPoland}>Change (POL)</button>
       <button onClick={loadIndia}>Change (IND)</button>
       <hr />
-      {path_hierarchy}
-      <hr />
-      {String(loading)};
       {loading || !tree ? (
         <Spinner />
       ) : (
         <>
-          {tree ? Object.keys(tree.NODES).length : "loading"}
-          <hr />
-          {keys[0]}
-          <hr />
-          {nodes ? JSON.stringify(nodes[keys[0]]) : "loading"}
-          <hr />
-          MEMO:
           {nodes ? renderAsList(adminOneMemo) : "loading"}
           <hr />
           Selected code: {selectedCode}
@@ -394,23 +356,19 @@ const Map = () => {
           {wikiLoading || !data ? (
             <Spinner />
           ) : (
-            <>
-              WIKI LOADED
-              <div>
-                {wikiEntry ? Object.keys(wikiEntry).join(" -- ") : "loading"}
-              </div>
-            </>
+            <div>
+              {wikiEntry ? Object.keys(wikiEntry).join(" -- ") : "loading"}
+            </div>
           )}
           <hr />
           CLAIMS:
           {wikiLoading || !data ? (
             <Spinner />
           ) : (
-            <>
-              WIKI LOADED
+            <div>
               <div>
                 {wikiEntry
-                  ? Object.keys(wikiEntry.claims).join(" -- ")
+                  ? `${Object.keys(wikiEntry.claims).length} claims`
                   : "loading"}
               </div>
               <div>
@@ -420,7 +378,7 @@ const Map = () => {
               <div>
                 {wikiImageUrl ? <img src={wikiImageUrl} alt="" /> : "no img"}
               </div>
-            </>
+            </div>
           )}
         </>
       )}

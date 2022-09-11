@@ -31,7 +31,6 @@ const Scene = ({ locale, rotating }: any) => {
   useEffect(() => {
     if (ref.current && scene) {
       const createE3d = async () => {
-        console.log("effect earth");
         const e3d = new EarthD3D(0);
         const mesh_earth = await e3d.init(scene);
         //
@@ -45,8 +44,6 @@ const Scene = ({ locale, rotating }: any) => {
     }
     //
     return () => {
-      console.log("cleaning up globe");
-      //
       scene.clear();
       //
       setE3d(undefined);
@@ -55,12 +52,7 @@ const Scene = ({ locale, rotating }: any) => {
   }, [scene]);
 
   useEffect(() => {
-    if (scene && earth) {
-      //
-      scene.add(earth);
-      //
-      console.log("Added globe ", scene);
-    }
+    if (scene && earth) scene.add(earth);
   }, [scene, earth]);
 
   useFrame((state, delta) => {
@@ -106,10 +98,7 @@ const GlobeApp3D = () => {
         {...bind}
         camera={{ position: [5, 0, 5], zoom: 50, near: 1, far: 1000 }}
       >
-        <OrbitControls
-          enableZoom={true}
-          onEnd={(e) => console.log("camera stopped", e)}
-        />
+        <OrbitControls enableZoom={true} />
 
         <ambientLight intensity={0.5} />
         <pointLight position={[-10, -10, -10]} />

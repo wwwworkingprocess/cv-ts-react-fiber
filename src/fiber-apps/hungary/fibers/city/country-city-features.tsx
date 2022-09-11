@@ -5,7 +5,7 @@ import { Instances } from "@react-three/drei";
 import { BoxBufferGeometry, Color, MeshBasicMaterial, Vector3 } from "three";
 import CountryCityFeature from "./country-city-feature";
 
-const randomEuler = () => [0, 0, 0]; //   Math.random() * Math.PI
+const randomEuler = () => [0, 0, 0];
 
 const CountryCityFeatures = (
   props: JSX.IntrinsicElements["group"] & {
@@ -21,7 +21,9 @@ const CountryCityFeatures = (
   }
 ) => {
   const { treeNodes, parentColors, range } = props;
-
+  //
+  //
+  //
   const getCityPositionAtIdx = useCallback(
     (idx: number) => {
       const node = treeNodes ? treeNodes[idx] : undefined;
@@ -39,53 +41,34 @@ const CountryCityFeatures = (
     },
     [treeNodes]
   );
-
+  //
+  //
+  //
   const renderMemo = useMemo(() => {
     const randomData = Array.from(
       { length: treeNodes.length },
       (r: number = 1, idx: number) => ({
         position: getCityPositionAtIdx(idx),
         rotation: randomEuler(),
-        // color: colorByParent(x),
       })
     );
-
-    console.log("new rendermemo", randomData.length);
-
+    //
     return randomData;
-  }, [getCityPositionAtIdx, treeNodes]); // [getCityPositionAtIdx, treeNodes.length]);
-
-  // const colorByParent = useCallback(
-  //   (node: { parent: number }) => {
-  //     if (parentColors) {
-  //       const parentCode = node.parent || 3;
-  //       const parentColor = parentColors[parentCode];
-  //       //
-  //       return parentColor;
-  //     }
-
-  //     return new Color("white");
-  //   },
-  //   [] //  [treeNodes, parentColors]
-  // );
-
+  }, [getCityPositionAtIdx, treeNodes]);
+  //
   return (
     <group {...props}>
       <Instances
         count={range}
-        // range={range}
-
         material={new MeshBasicMaterial()}
         geometry={new BoxBufferGeometry(0.025, 0.025, 0.025)}
       >
         {renderMemo.map((props, i) => (
           <CountryCityFeature
             key={treeNodes[i].code}
-            //   {...props}
             position={new Vector3(...props.position)}
             rotation={props.rotation as any}
             node={treeNodes[i]}
-            // color={colorByParent(treeNodes[i])}
             color={parentColors[treeNodes[i].parent]}
           />
         ))}

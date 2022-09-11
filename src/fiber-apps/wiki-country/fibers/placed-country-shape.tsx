@@ -41,14 +41,7 @@ const PlacedCountryShape = (
   return (
     <group>
       {/* <gridHelper /> */}
-      <Bounds
-        fit
-        clip
-        observe
-        damping={6}
-        margin={0.9}
-        onFit={(e) => console.log("transition finished", e)}
-      >
+      <Bounds fit clip observe damping={6} margin={0.9}>
         <group
           rotation={groupToStageRotation as any}
           visible={capital !== undefined}
@@ -86,13 +79,10 @@ const PlacedCountryShape = (
                 <>
                   {firstFeatureCoordinates.map(
                     (coords: Array<[number, number]>, idx: number) => {
-                      // console.log( "rendering coord arr", idx, coords.length, "points" );
-                      //
                       const isNested = coords.length === 1;
                       const points = (isNested ? coords[0] : coords) as Array<
                         [number, number]
                       >;
-
                       //
                       return (
                         <CountryBorder

@@ -42,9 +42,7 @@ const Box = (
         click(!clicked);
         onNavigate();
         //
-        if (ref.current) {
-          console.log(ref.current.userData.tooltipText);
-        }
+        if (ref.current) console.info(ref.current.userData.tooltipText);
       }}
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}

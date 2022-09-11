@@ -98,14 +98,12 @@ const HungaryApp3D = (props: {
 
   const parentColorMemo = useMemo(() => {
     if (parentsMemo) {
-      console.log("NEW COLOR MEMO", parentsMemo);
       const colorRange = palettes.flat();
       //
       return Object.fromEntries(
         parentsMemo.map((i: any) => [
           String(i),
           new Color(colorRange[i % parentsMemo.length]),
-          //  new Color(cityColors[i % cityColors.length]),
         ])
       ) as Record<string, Color>;
     }

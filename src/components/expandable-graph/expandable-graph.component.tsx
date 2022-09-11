@@ -25,23 +25,15 @@ const ExpandableGraph = ({
   rootId: number;
 }) => {
   const graphRef = useRef();
-
   //
-  // const rootId = 2;
-  // const rootId = 1;
-  // const rootId = 700002;
-  console.log("rootId", rootId);
-  console.log("GD rnd", graphData);
-
   const nodesById = useMemo(() => {
     if (graphData) {
-      console.log("memo input", graphData);
       const nodes = Object.fromEntries(
         graphData.nodes.map((node: NodeObject) => [node.id, node])
       );
-
-      console.log("nodes", nodes);
+      //
       // link parent/children
+      //
       graphData.nodes.forEach(
         // (node: NodeObject & { collapsed: boolean; childLinks: Array<any> }) => {
         (node: any) => {
@@ -50,28 +42,20 @@ const ExpandableGraph = ({
         }
       );
       graphData.links.forEach((link: any) => {
-        // console.log("adding link", link.source, link);
-
         // nodes[link.source].childLinks.push(link);   // using source
-
         nodes[link.target]?.childLinks.push(link); // using target
       });
-
-      console.log("memo output", nodes);
-
+      //
       return nodes;
     } else return {};
-  }, [graphData]);
+  }, [graphData, rootId]);
 
   const getPrunedTree = useCallback(() => {
     if (nodesById) {
-      console.log("nodesById changed", nodesById);
       const visibleNodes = [];
       const visibleLinks = [];
       //
-      //
       (function traverseTree(node = nodesById[rootId]) {
-        // console.log("traversing", node?.id, node.childLinks?.length);
         if (node) {
           visibleNodes.push(node);
           //
@@ -89,15 +73,10 @@ const ExpandableGraph = ({
                 ? link.source
                 : nodesById[link.source]
             ) // get child node
-            .forEach((n: any) => {
-              console.log("traversing on n", n);
-              traverseTree(n);
-            });
+            .forEach((n: any) => traverseTree(n));
         }
       })();
       //
-      //
-      console.log("pruned", { nodes: visibleNodes, links: visibleLinks });
       return { nodes: visibleNodes, links: visibleLinks };
     } else return { nodes: [], links: [] };
   }, [nodesById, rootId]);
@@ -109,7 +88,6 @@ const ExpandableGraph = ({
       if (graphRef.current) {
         const distance = 100;
         const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
-
         //
         const zoom = () =>
           (graphRef.current as any).cameraPosition(
@@ -135,7 +113,7 @@ const ExpandableGraph = ({
       //
       centerViewOnNode(node);
     },
-    [rootId]
+    [centerViewOnNode, getPrunedTree]
   );
 
   return (

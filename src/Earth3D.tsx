@@ -14,7 +14,6 @@ class EarthD3D {
   is_rotating: boolean = false;
   //
   constructor(idx: number, init_on_create: boolean = false) {
-    console.log(["EarthD3D", idx]);
     this.idx = idx;
     //
     if (init_on_create) {
@@ -23,8 +22,6 @@ class EarthD3D {
   }
   //
   init = async (scene?: THREE.Scene) => {
-    console.log(["EarthD3D", "init"]);
-    //
     const { mesh_earth, mesh_cloud } = await this.create_earth();
     //
     this.mesh_cloud = mesh_cloud;
@@ -40,8 +37,6 @@ class EarthD3D {
   };
   //
   create_earth = async () => {
-    console.log(["EarthD3D", "create_earth"]);
-    //
     const mat_earth = await this.create_earth_material(),
       mat_cloud = await this.create_cloud_material();
     //
@@ -69,20 +64,12 @@ class EarthD3D {
     const { diffuse_map, normal_map, specular_map, displacement_map } =
       await this.init_textures_earth();
     //
-    console.log("TEXTURES", {
-      diffuse_map,
-      normal_map,
-      specular_map,
-      displacement_map,
-    });
     mat_earth.map = diffuse_map;
     mat_earth.normalMap = normal_map;
     mat_earth.specularMap = specular_map;
     mat_earth.specular = new THREE.Color("grey");
     mat_earth.displacementMap = displacement_map;
     mat_earth.displacementScale = 0.055;
-    //
-    console.log("earth material", mat_earth);
     //
     return mat_earth;
   };
@@ -122,7 +109,6 @@ class EarthD3D {
   init_textures_clouds = async () => {
     const w = 1024,
       h = 512;
-    console.log(["EarthD3D", "init_textures_clouds"]);
     //
     let cloud_diffuse = await cu.load_img_as_context(
       "data/earth/cloud1.jpg",
@@ -141,9 +127,6 @@ class EarthD3D {
     const data8alpha = cloud_alpha
       ? cu.get_context_as_uint8_array(cloud_alpha, w, h)
       : new Uint8Array(0); // new Uint8Array(idataalpha.data.buffer);
-    //
-    console.log(["clouds diffuse: ", cloud_diffuse, data8]);
-    console.log(["clouds alpha: ", cloud_alpha, data8alpha]);
     //
     // now after both the diffuse and the alpha map is present we load the image and apply the mask to it
     //

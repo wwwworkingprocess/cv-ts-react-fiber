@@ -2,49 +2,48 @@
 // buffer to ndode
 //
 export const fn_from_ab = (buffer: ArrayBufferLike) => {
-  const view = new DataView(buffer); // console.log(['fn_from_ab received', buffer]); console.log(['view', view]);
+  const view = new DataView(buffer);
+  //
   let id, p, c, pop, km2, lat, lng;
   //
   try {
     id = view.getInt32(0);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     p = view.getInt32(4);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     c = view.getInt32(8);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     pop = view.getInt32(12);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     km2 = view.getInt32(16);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     lat = view.getFloat32(20);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   try {
     lng = view.getFloat32(24);
   } catch (ex) {
-    console.log(ex);
+    console.error(ex);
   }
   //
   return { id, p, c, pop, km2, lat, lng };
 };
-//
-
 //
 //
 //
@@ -54,8 +53,8 @@ export const fn_blob_to_hierarchy = (event: any) =>
 //
 //
 export const fn_blob_to_nodedata = (event: any) => {
-  const nodedata = [],
-    byteArray = new Uint8Array(event.target.result); // console.log(byteArray); console.log(byteArray.byteLength); console.log(byteArray.byteLength / 28);
+  const nodedata = [];
+  const byteArray = new Uint8Array(event.target.result);
   //
   for (let i = 0; i < byteArray.byteLength; i += 28) {
     nodedata.push(byteArray.slice(i, i + 28));
@@ -87,11 +86,8 @@ class TreeHelper {
   _qq = (s: string) => parseInt(s.replace("Q", ""));
   //
   _has = (code: number) => this.NODES.hasOwnProperty(this._qc(code));
-  _find = (code: number) => {
-    //   console.log(Object.keys(this.NODES));
-    return this.NODES[this._qc(code)] || undefined;
-  };
-  //_find = (code) => { return this.NODES[this._qc(code)]; };
+  _find = (code: number) => this.NODES[this._qc(code)] || undefined;
+  //
   _get_type = (code: number) => this._find(code).type;
   _get_name = (code: number) => this._find(code).name;
   _search = (name: string) =>
@@ -106,7 +102,6 @@ class TreeHelper {
   };
   _rebuild = () => {
     this._keys_cache = Object.keys(this.NODES);
-    console.log(this._keys_cache.length + " keys");
   };
   //
   _label_of = (code: number) => (this._find(code) || {}).name;
@@ -145,21 +140,18 @@ class TreeHelper {
       this._node(-1, id, def_name, { code: pid });
     }
     //
-    this._rebuild(); //validate: console.log(tree._deserialize());
+    this._rebuild();
   };
   //
   _build_labels = (labels: Array<any>) => {
     const bound = labels.map((pair) => [pair[0], pair[1], this._find(pair[0])]);
     const failed = bound.filter((x) => x[2] === undefined);
-    const ok = bound
-      .filter((x) => x[2] !== undefined)
-      .map((x) => {
-        x[2].name = x[1];
-        //
-        return x;
-      });
     //
-    console.log(["NAMED ", bound.length, "items ", ok.length, " ok."]);
+    bound
+      .filter((x) => x[2] !== undefined)
+      .forEach((x) => {
+        x[2].name = x[1];
+      });
     //
     return failed;
   };
@@ -175,7 +167,7 @@ class TreeHelper {
         x[1].data = { lat, lng, pop, km2 };
       });
     //
-    console.log(["LINKED ", bound?.length, "items ", ok?.length, " ok."]);
+    console.info(["LINKED ", bound?.length, "items ", ok?.length, " ok."]);
     //
     return failed;
   };
@@ -212,11 +204,11 @@ class TreeHelper {
   //
   print_n = (node: any) => {
     if (node) {
-      console.log(node);
-      console.log(this.get_pnames(node));
-      console.log(this.get_pcodes(node));
+      console.info(node);
+      console.info(this.get_pnames(node));
+      console.info(this.get_pcodes(node));
     } else {
-      console.log("node was null");
+      console.info("node was null");
     }
   };
   //

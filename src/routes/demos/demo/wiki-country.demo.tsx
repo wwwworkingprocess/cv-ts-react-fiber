@@ -20,7 +20,6 @@ import useWindowSize from "../../../hooks/useWindowSize";
 
 const useWikiGeoJson = (geojsonUrl: string) => {
   const [selectedWikiCountryGeo, setSelectedWikiCountryGeo] = useState<any>();
-
   //
   // when [selectedWikiCountry] triggering load of
   // the country from wikidata in geojson format
@@ -37,7 +36,6 @@ const useWikiGeoJson = (geojsonUrl: string) => {
           const page = Object.values(r.query.pages)[0];
           //
           if (page) {
-            console.log("txt page", page);
             const revision = (page as any).revisions[0];
             //
             if (revision) {
@@ -52,15 +50,9 @@ const useWikiGeoJson = (geojsonUrl: string) => {
           .then((r) => r.json())
           .then((json) => {
             const geojsonAsText = txtFromResult(json);
-
-            console.log("got shape", new_url, json);
-            console.log("got geojsonAsText", geojsonAsText.length);
+            //
             if (geojsonAsText) {
-              const gjson = JSON.parse(geojsonAsText);
-              //
-              console.log("got geojson from wiki", gjson);
-              //
-              setSelectedWikiCountryGeo(gjson);
+              setSelectedWikiCountryGeo(JSON.parse(geojsonAsText));
             }
           });
       }
@@ -116,14 +108,9 @@ const WikiCountryDemo = (props: {
   useEffect(() => {
     const ci = countryIndex ?? 0; // accept undefined
     //
-    console.log("countryIndex changed");
     const origin = wikiCountries
       ? wikiCountries.find((c) => c.idx === ci)
       : undefined;
-    //
-    if (origin) {
-      console.log("new origin", origin);
-    }
     //
     setOriginCountry(origin);
   }, [countryIndex, wikiCountries]);
@@ -131,11 +118,6 @@ const WikiCountryDemo = (props: {
   const distanceFrom = (c: WikiCountry, { x, y }: { x: number; y: number }) => {
     if (!c.coords) return 0;
     //
-
-    // const dx = Math.abs(c.coords[0] - x);
-    // const dy = Math.abs(c.coords[1] - y);
-    // //
-    // return Math.sqrt(dx * dx + dy * dy);
     const [lat1, lat2] = [c.coords[0], x];
     const [lon1, lon2] = [c.coords[1], y];
 
@@ -152,7 +134,7 @@ const WikiCountryDemo = (props: {
 
     const d = R * side; // in metres
     //
-    return d * 10e-4; // todo check why -4 instead of -3
+    return d * 10e-4; //TODO: check why -4 instead of -3
   };
   //
   //
@@ -161,7 +143,6 @@ const WikiCountryDemo = (props: {
     if (!wikiCountries) return undefined;
     //
     if (originCountry) {
-      console.log("nearby countries from", originCountry);
       const [ox, oy] = originCountry.coords ?? [0, 0];
       //
       const diffs = wikiCountries
@@ -170,7 +151,6 @@ const WikiCountryDemo = (props: {
         )
         .sort((a, b) => a[1] - b[1]);
       //
-      // const indices = diffs.map((d) => d[0].idx).slice(0, PAGE_SIZE);
       const ds = diffs.map((d) => d[1]).slice(0, PAGE_SIZE);
       const countries = diffs.map((d) => d[0]).slice(0, PAGE_SIZE);
       const countriesWithDistance = countries.map((c, i) => ({
@@ -178,10 +158,7 @@ const WikiCountryDemo = (props: {
         distance: ds[i],
       }));
       //
-      console.log("nearby", ds);
-      //
-      // return wikiCountries.slice(originCountry.idx, originCountry.idx + 5);
-      return countriesWithDistance; //countries;
+      return countriesWithDistance;
     }
     //
     return undefined; // instead of empty list

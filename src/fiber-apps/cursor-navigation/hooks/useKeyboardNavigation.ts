@@ -13,8 +13,6 @@ const useKeyboardNavigation = (props: {
   //
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      console.log("handleKeyDown", e.code);
-      //
       const handled = [
         "ArrowLeft",
         "ArrowUp",
@@ -22,7 +20,6 @@ const useKeyboardNavigation = (props: {
         "ArrowRight",
         "Space",
       ];
-      //
       //
       if (handled.includes(e.code)) {
         switch (e.code) {
@@ -52,9 +49,8 @@ const useKeyboardNavigation = (props: {
       //
       e.preventDefault();
     },
-    [MIN_X, MAX_X, MIN_Y, MAX_Y]
+    [MIN_X, MAX_X, MIN_Y, MAX_Y, setPosition]
   );
-
   //
   // (re)attach keydown handler, whenever (area) bounds changes
   //
@@ -65,7 +61,7 @@ const useKeyboardNavigation = (props: {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [handleKeyDown]);
-
+  //
   return { bounds };
 };
 

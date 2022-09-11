@@ -3,9 +3,7 @@ import * as THREE from "three";
 class CanvasUtilsSingleton {
   circle_ctx: CanvasRenderingContext2D | null = null;
   //
-  constructor() {
-    console.log("CanvasUtilsSingleton created");
-  }
+  // constructor() {}
   //
   canvas_to_texture_power_of_two = (canvas: HTMLCanvasElement) => {
     const ct = new THREE.CanvasTexture(canvas);
@@ -64,7 +62,7 @@ class CanvasUtilsSingleton {
         //
         img.src = url; // start loading
       } catch (ex) {
-        console.log(ex);
+        console.error(ex);
         reject(ex);
       }
     });

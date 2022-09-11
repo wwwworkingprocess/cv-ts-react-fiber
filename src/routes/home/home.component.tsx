@@ -26,7 +26,6 @@ export const Timer = ({ isActive, seconds, setSeconds }: TimerProps) => {
       const interval = setInterval(() => {
         setSeconds((prevSeconds) => prevSeconds + 1);
       }, 1000);
-      console.log("created timer", interval);
       //
       return () => clearInterval(interval);
     }
@@ -38,27 +37,25 @@ export const Timer = ({ isActive, seconds, setSeconds }: TimerProps) => {
 const DataLoadTest = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<Array<any> | null>(null);
-
-  const fetchApi = () => {
-    fetch("data/course/3792262.json", { mode: "no-cors" })
-      //fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        console.log(json);
-        setLoading(false);
-        setData(json);
-      });
-  };
-
+  //
   useEffect(() => {
+    const fetchApi = () => {
+      fetch("data/course/3792262.json", { mode: "no-cors" })
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          setLoading(false);
+          setData(json);
+        });
+    };
+    //
     fetchApi();
   }, []);
-
-  if (loading) return <h1>Loading</h1>;
-
-  return (
+  //
+  return loading ? (
+    <h1>Loading</h1>
+  ) : (
     <div>
       <h1>Data fetched successfully.</h1>
       {data && data.length} items
@@ -69,26 +66,6 @@ const DataLoadTest = () => {
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   //
-  /*
-  const [count, setCount] = useState<number>(0);
-  //
-  // const MINUTE_MS = 60000;
-  //
-  const cb = async () => {
-    const MAX_API_TRIES = 1;
-    const nextCount = Math.min((count || 0) + 1, MAX_API_TRIES);
-    //
-    console.log("running callback", count, "next", nextCount);
-    //
-    if (nextCount === MAX_API_TRIES) {
-      console.log("remove effect after last try (max)", "SKIP");
-    } else {
-      setCount(nextCount);
-    }
-  };
-  */
-
-  //
   const [seconds, setSeconds] = useState(0);
   const [isActive, setIsActive] = useState(true);
   //
@@ -97,7 +74,6 @@ const Home = () => {
       setIsActive(false);
     }
   }, [seconds]);
-
   //
   return (
     <>

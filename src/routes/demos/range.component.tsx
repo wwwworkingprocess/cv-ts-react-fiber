@@ -11,7 +11,7 @@ const RangeControl = (props: {
   const MIN = 0;
   const MAX = 50000;
   const [values, setValues] = useState([MIN, MAX]);
-
+  //
   return (
     <Range
       values={values}
@@ -19,7 +19,6 @@ const RangeControl = (props: {
       min={MIN}
       max={MAX}
       onChange={(values) => {
-        console.log(values);
         setValues(values);
         setMinPop(values[0]);
         setMaxPop(values[1]);

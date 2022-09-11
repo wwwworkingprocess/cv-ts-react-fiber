@@ -4,8 +4,6 @@ const useHgtSource = (url: string) => {
   const [value, setValue] = useState<Int16Array | undefined>();
   //
   const onDataReceived = useCallback((data: ArrayBuffer) => {
-    // console.log("processing hgt", data);
-
     //
     // data is 1201x1201 with 1*1200 and 1200*1 overlap
     // on 'right' and 'bottom' part, cropping to 1200x1200

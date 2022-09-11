@@ -14,7 +14,7 @@ const HungaryDemo = (props: {
   navigate: NavigateFunction;
   path?: string | undefined;
 }) => {
-  const [minPop, setMinPop] = useState<number>(100);
+  const [minPop, setMinPop] = useState<number>(5000);
   const [maxPop, setMaxPop] = useState<number>(1000000);
   const [themeId, setThemeId] = useState<number>(
     Math.floor(Math.random() * 100)
@@ -26,6 +26,7 @@ const HungaryDemo = (props: {
       <input
         type="number"
         min={0}
+        step={1}
         max={100}
         value={themeId}
         onChange={(e) => setThemeId(parseInt(e.target.value))}
