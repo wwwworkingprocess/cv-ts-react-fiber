@@ -101,11 +101,13 @@ const GridFloorCells = (
 
   const onClick = (e: ThreeEvent<MouseEvent>) => {
     //
+    /*
     if (e.instanceId) {
       const gp = getGridPointById(e.instanceId);
       //
       console.info("clicked", e.instanceId, e.object.userData, gp);
     }
+    */
   };
 
   //
@@ -192,7 +194,7 @@ const GridFloorCells = (
     <instancedMesh
       ref={ref}
       args={[geometryRef.current, material, instanceCount]}
-      onClick={onClick}
+      // onClick={onClick}
       onPointerMove={onPointerMove}
       onPointerOut={onPointerOut}
     >

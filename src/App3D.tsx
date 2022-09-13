@@ -1,27 +1,24 @@
 import { useState, useRef, useMemo } from "react";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Billboard, OrbitControls, Sky, Text } from "@react-three/drei";
+import { Billboard, Bounds, OrbitControls, Sky, Text } from "@react-three/drei";
 
 import MyText from "./three-components/text-3d/text-3d.component";
 import {
   BoxBufferGeometry,
   Color,
-  Group,
   InstancedMesh,
-  Mesh,
   MeshStandardMaterial,
   Object3D,
 } from "three";
 
 //import { shapeFromCoords, shapeRoundedRectangle } from "./utils/d3d";
 
-import hungarianBorder from "./fiber-apps/hungary/border.28.json";
+// import hungarianBorder from "./fiber-apps/hungary/border.28.json";
 import { ShaderPlaneMesh } from "./three-components/image-plane/shader-material";
-import ImagePlane from "./three-components/image-plane/image-plane.component";
+// import ImagePlane from "./three-components/image-plane/image-plane.component";
 import GridFloor from "./fiber-apps/heightmap-random/fibers/grid/grid-floor";
 import { Draggable } from "./three-components/draggable/draggable.component";
-import { Dice } from "./three-components/dice/dice.component";
 
 const tempBoxes = new Object3D();
 
@@ -43,7 +40,7 @@ const Boxes = ({
   useFrame(({ clock }) => {
     if (ref.current) {
       let counter = 0;
-      const t = clock.oldTime * 0.01;
+      const t = clock.oldTime * 0.0051;
       //
       //
       for (let x = 0; x < i; x++) {
@@ -108,16 +105,19 @@ const App3D = (props: {
   //   new Color(0.3 * Math.random(), 0.9 * Math.random(), 0.2 * Math.random())
   // );
 
-  const [heightViewPort, setHeightViewPort] = useState<
-    [number, number, number, number] | undefined
-  >([0, 0, 120, 120]);
+  const [
+    heightViewPort,
+    //  , setHeightViewPort
+  ] = useState<[number, number, number, number] | undefined>([0, 0, 120, 120]);
 
   //
   const refDynamicText = useRef<string>("");
   //
   const [drag, setDrag] = useState(false);
   const dragProps = {
-    onDragStart: (event: any) => setDrag(true),
+    onDragStart: (event: any) => {
+      setDrag(true);
+    },
     onDragEnd: (event: any) => {
       setDrag(false);
       console.log("dragend", event);
@@ -128,6 +128,7 @@ const App3D = (props: {
       );
     },
   };
+
   //
   const boxesMemo = useMemo(
     () => (
@@ -137,6 +138,7 @@ const App3D = (props: {
     ),
     []
   );
+  //
   //
   return (
     <>
@@ -148,13 +150,14 @@ const App3D = (props: {
       <Canvas
         camera={{
           // far: 5,
-          far: 50,
+          far: 5000,
           fov: 50,
           position: [0.16, 0.22, 0.55],
           aspect: 16 / 9,
         }}
       >
         <OrbitControls
+          // enabled={!dragRef.current}
           enabled={!drag}
           enableZoom={true}
           autoRotate
@@ -162,22 +165,36 @@ const App3D = (props: {
           minPolarAngle={0}
           maxPolarAngle={Math.PI / 2.5}
           maxDistance={8}
+          makeDefault
         />
 
-        <group position={[0, 0.05, 0]}>
-          <Draggable {...dragProps}>
-            <Billboard>
-              <Text fontSize={0.01} position={[0, 0.051, 0]}>
-                Drag me!
-              </Text>
-            </Billboard>
-            <mesh>
-              <boxGeometry args={[0.051, 0.051, 0.051]} />
-              <meshLambertMaterial color={"pink"} />
-            </mesh>
-          </Draggable>
-        </group>
-
+        <Bounds
+          fit
+          clip
+          observe
+          damping={0.6}
+          margin={5.19}
+          onFit={(e) => {
+            console.log("onfit", e);
+          }}
+        >
+          <group position={[0, 0.05, 0]}>
+            <Draggable {...dragProps}>
+              <Billboard>
+                <Text fontSize={0.01} position={[0, 0.051, 0]}>
+                  Drag me!
+                </Text>
+                <Text fontSize={0.00521} position={[0, 0.041, 0]}>
+                  {refDynamicText.current}
+                </Text>
+              </Billboard>
+              <mesh>
+                <boxGeometry args={[0.051, 0.051, 0.051]} />
+                <meshLambertMaterial color={"pink"} />
+              </mesh>
+            </Draggable>
+          </group>
+        </Bounds>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
         <pointLight position={[-10, -10, -10]} />
@@ -199,7 +216,7 @@ const App3D = (props: {
         >
           Welcome to Reactive 3D!
         </MyText>
-        <MyText
+        {/* <MyText
           position={[0, 0.38, -2.8]}
           fontSize={0.125}
           bevelSize={0.051}
@@ -209,7 +226,7 @@ const App3D = (props: {
           // anchorY="middle"
         >
           {refDynamicText.current}
-        </MyText>
+        </MyText> */}
 
         {/* <Extrude
           position={[-1, -5, -2]}
@@ -253,7 +270,7 @@ const App3D = (props: {
         <GridFloor
           i={36 * 3}
           j={18 * 3}
-          setHeightViewPort={setHeightViewPort}
+          setHeightViewPort={() => {}}
           position={[0, -0.0111, 0]}
           scale={[10 / (36 * 3), 1 / (2 * 3), 10 / (36 * 3)]}
         />

@@ -51,7 +51,8 @@ const GridFloor = (
 
   useEffect(() => {
     setHeightViewPort(activeViewPort);
-  }, [activeViewPort, setHeightViewPort]);
+    //  }, [activeViewPort, setHeightViewPort]);
+  }, [activeViewPort]);
 
   //
   return (
