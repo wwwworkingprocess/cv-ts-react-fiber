@@ -57,11 +57,11 @@ const GridFloorCells = (
   const colorArray = useMemo(
     () =>
       Float32Array.from(
-        new Array(1000)
+        new Array(instanceCount ?? 10000)
           .fill(0)
-          .flatMap((_, i) => tempColor.set(data[i].color).toArray())
+          .flatMap((_, i) => tempColor.set("#72aac6").toArray())
       ),
-    []
+    [instanceCount]
   );
 
   const getGridPointById = (id: number) => {
@@ -172,8 +172,9 @@ const GridFloorCells = (
           if (hoveredId !== prevRef.current) {
             (id === hoveredId
               ? tempColor.setRGB(10, 10, 10)
-              : tempColor.set(data[id].color)
-            ).toArray(colorArray, id * 3);
+              : tempColor.set("#72aac6")
+            ) /// .set(data[id].color)
+              .toArray(colorArray, id * 3);
             //
             ref.current.geometry.attributes.color.needsUpdate = true;
           }

@@ -67,17 +67,17 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   //
   const [seconds, setSeconds] = useState(0);
-  const [isActive, setIsActive] = useState(true);
-  //
-  useEffect(() => {
-    if (seconds > 10) {
-      setIsActive(false);
-    }
-  }, [seconds]);
+  // const [isActive, setIsActive] = useState(false); // true
+  // //
+  // useEffect(() => {
+  //   if (seconds > 10) {
+  //     setIsActive(false);
+  //   }
+  // }, [seconds]);
   //
   return (
     <>
-      <Timer isActive={isActive} seconds={seconds} setSeconds={setSeconds} />
+      {/* <Timer isActive={isActive} seconds={seconds} setSeconds={setSeconds} /> */}
       <App3D setIsOpen={setIsOpen} />
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />

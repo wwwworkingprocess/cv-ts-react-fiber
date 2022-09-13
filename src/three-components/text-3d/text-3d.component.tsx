@@ -8,19 +8,25 @@ const vAlign = "center";
 const hAlign = "center";
 const size = 1.5;
 
-const MyText = ({ children, ...props }: any) => {
+const MyText = ({
+  children,
+  fontSize,
+  bevelSize,
+  fontColor,
+  ...props
+}: any) => {
   const config = useMemo(
     () => ({
-      size: 4,
+      size: 4 * fontSize,
       height: 3,
       curveSegments: 32,
       bevelEnabled: true,
-      bevelThickness: 0.6,
-      bevelSize: 0.25,
+      bevelThickness: 0.6 * fontSize,
+      bevelSize: bevelSize * fontSize,
       bevelOffset: 0,
       bevelSegments: 8,
     }),
-    []
+    [fontSize, bevelSize]
   );
   const mesh = useRef<THREE.Mesh>(null!);
   //
@@ -42,10 +48,10 @@ const MyText = ({ children, ...props }: any) => {
 
   //
   return (
-    <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
+    <group {...props} scale={[0.1 * size, 0.1 * size, 0.1 * bevelSize * size]}>
       <Text3D ref={mesh} font={"data/Roboto_Regular.json"} {...config}>
         {children}
-        <meshNormalMaterial />
+        <meshLambertMaterial color={fontColor} />
       </Text3D>
     </group>
   );
