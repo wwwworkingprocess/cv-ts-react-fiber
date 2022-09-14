@@ -11,6 +11,8 @@ import CompletedCourseCard from "../../components/card-completed/card-completed.
 import CardList from "../../components/card-list/card-list.component";
 import ExpandableGraph from "../../components/expandable-graph/expandable-graph.component";
 
+import linkedInSkills from "./linked-in.json";
+
 const ids = [
   50522, 3792262, 2034156, 1594488, 1329100, 3138058, 851712, 2365628, 995016,
   159070,
@@ -82,10 +84,53 @@ const Courses = () => {
     }
   }, [fgRef]);
 
+  const formatPeople = (p: number): string => {
+    if (p < 1000) return p.toFixed(2);
+    if (p < 1000000) return `${(p * 10e-4).toFixed(2)}k`;
+    if (p < 1000000000) return `${(p * 10e-7).toFixed(2)}M`;
+    return String(p);
+  };
   //
   return (
     <>
+      LinkedIn Skill Badges
+      <div
+        style={{
+          alignItems: "center",
+          display: "flex",
+          margin: "auto",
+          flexWrap: "wrap",
+        }}
+      >
+        {linkedInSkills
+          .sort((a, b) => a.top - b.top)
+          .map(({ url, name, top, people }, i) => (
+            <div
+              key={i}
+              style={{
+                border: "solid 1px yellow",
+                padding: "5px",
+                margin: "4px",
+                height: "55px",
+                textAlign: "center",
+                flexGrow: 1,
+                maxWidth: "30%",
+              }}
+            >
+              <b>{decodeURIComponent(name)}</b>
+              <br />
+              <span style={{ lineHeight: "35px", fontSize: "13px" }}>
+                in top {top}%
+              </span>
+              {/* <small>
+                (in top {top}% of {formatPeople(people)})
+              </small> */}
+            </div>
+          ))}
+      </div>
+      <hr />
       Graph ID: {selectedId}
+      <hr />
       <div
         style={{
           border: "solid 1px black",

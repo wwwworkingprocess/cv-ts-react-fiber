@@ -19,12 +19,12 @@ import { ThreeEvent, useFrame } from "@react-three/fiber";
 
 const tempBoxes = new Object3D();
 const tempColor = new Color();
-const data = Array.from({ length: 1000 }, () => ({
-  color: ["#72aac6", "#72aac6", "#72aac6", "#72aac6", "#72aac6"][
-    Math.floor(Math.random() * 5)
-  ],
-  scale: 1,
-}));
+// const data = Array.from({ length: 1000 }, () => ({
+//   color: ["#72aac6", "#72aac6", "#72aac6", "#72aac6", "#72aac6"][
+//     Math.floor(Math.random() * 5)
+//   ],
+//   scale: 1,
+// }));
 
 const GridFloorCells = (
   props: JSX.IntrinsicElements["instancedMesh"] & {
@@ -64,12 +64,12 @@ const GridFloorCells = (
     [instanceCount]
   );
 
-  const getGridPointById = (id: number) => {
-    const x = id % i;
-    const z = (id - x) / i;
-    //
-    return [x, z];
-  };
+  // const getGridPointById = (id: number) => {
+  //   const x = id % i;
+  //   const z = (id - x) / i;
+  //   //
+  //   return [x, z];
+  // };
   //
   // assuming xz plane is 1x1 and 'height' is (shiftCrosshairY*2)
   //
@@ -99,16 +99,16 @@ const GridFloorCells = (
     geometryRef.current && geometryRef.current.translate(0, -0.02, 0);
   }, []);
 
-  const onClick = (e: ThreeEvent<MouseEvent>) => {
-    //
-    /*
-    if (e.instanceId) {
-      const gp = getGridPointById(e.instanceId);
-      //
-      console.info("clicked", e.instanceId, e.object.userData, gp);
-    }
-    */
-  };
+  // const onClick = (e: ThreeEvent<MouseEvent>) => {
+  //   //
+  //   /*
+  //   if (e.instanceId) {
+  //     const gp = getGridPointById(e.instanceId);
+  //     //
+  //     console.info("clicked", e.instanceId, e.object.userData, gp);
+  //   }
+  //   */
+  // };
 
   //
   // reset selection when leaving a cell

@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 
 import CursorNavigationDemo3D from "../../../fiber-apps/cursor-navigation/cursor-navigation-3d";
+import useCursorAppStore from "../../../fiber-apps/cursor-navigation/stores/useCursorAppStore";
 
 const CursorNavigationDemoWrapper = styled.div`
   max-width: 600px;
@@ -13,7 +14,7 @@ const CursorNavigationControls = styled.div`
   width: 350px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 `;
 const CursorNavigationDemoControlButton = styled.button`
   padding: 3px;
@@ -21,15 +22,20 @@ const CursorNavigationDemoControlButton = styled.button`
 `;
 
 const CursorNavigationDemo = (props: { path?: string | undefined }) => {
-  const [bounds, setBounds] = useState<[number, number, number, number]>([
-    -3, 3, -2, 2,
-  ]);
+  const setBounds = useCursorAppStore((state) => state.setBounds);
 
   const [cameraEnabled, setCameraEnabled] = useState<boolean>(true);
+  const [frameCounterEnabled, setFrameCounterEnabled] =
+    useState<boolean>(false);
 
   return (
     <>
       <CursorNavigationControls>
+        <CursorNavigationDemoControlButton
+          onClick={(e) => setFrameCounterEnabled((b) => !b)}
+        >
+          {!frameCounterEnabled ? "Enable counter" : "Disable counter"}
+        </CursorNavigationDemoControlButton>
         <CursorNavigationDemoControlButton
           onClick={(e) => setCameraEnabled((b) => !b)}
         >
@@ -54,8 +60,8 @@ const CursorNavigationDemo = (props: { path?: string | undefined }) => {
       <CursorNavigationDemoWrapper>
         <CursorNavigationDemo3D
           path={props.path}
-          bounds={bounds}
           isCameraEnabled={cameraEnabled}
+          isFrameCounterEnabled={frameCounterEnabled}
         />
       </CursorNavigationDemoWrapper>
     </>
