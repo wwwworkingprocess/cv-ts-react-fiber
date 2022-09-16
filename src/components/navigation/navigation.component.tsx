@@ -1,14 +1,10 @@
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-/*
 import { selectCurrentUser } from "../../store/user/user.selector";
-
-*/
-
-import { ReactComponent as AppLogo } from "../../assets/svg/test.svg";
+import { signOutStart } from "../../store/user/user.action";
 
 import {
   NavigationContainer,
@@ -17,12 +13,14 @@ import {
   NavLink,
 } from "./navigation.styles";
 
+import { ReactComponent as AppLogo } from "../../assets/svg/test.svg";
+
 const Navigation = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   //
-  const currentUser = null; // useSelector(selectCurrentUser);
+  const currentUser = useSelector(selectCurrentUser);
   //
-  const signOutUser = () => null; // dispatch(signOutStart());
+  const signOutUser = () => dispatch(signOutStart());
   //
   return (
     <>

@@ -6,13 +6,13 @@ import type { PersistConfig } from "redux-persist";
 
 import storage from "redux-persist/lib/storage";
 // import thunk from 'redux-thunk';
-// import createSagaMiddleware from "redux-saga";
+import createSagaMiddleware from "redux-saga";
 
 import logger from "redux-logger";
 // import { loggerMiddleware } from './middleware/logger';
 
 import { rootReducer } from "./root-reducer";
-// import { rootSaga } from "./root-saga";
+import { rootSaga } from "./root-saga";
 
 export type RootState = ReturnType<typeof rootReducer>;
 
@@ -33,14 +33,14 @@ const persistConfig: ExtendedPersistConfig = {
   whitelist: ["udemy"], // ONLY persist the udemySlice
 };
 
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const enhancers = undefined;
 const middlewares = [
   process.env.NODE_ENV !== "production" && logger,
-  // sagaMiddleware,
+  sagaMiddleware,
 ].filter((middleware): middleware is Middleware => Boolean(middleware)); // [loggerMiddleware]
 
 const composeEnhancer =
@@ -59,6 +59,6 @@ export const store = createStore(
   composedEnhancers
 );
 
-// sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 export const persistor = persistStore(store);

@@ -1,4 +1,5 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -8,6 +9,7 @@ import Navigation from "./components/navigation/navigation.component";
 import { Spinner } from "./components/spinner/spinner.component";
 
 import GlobalStyle from "./global.styles";
+import { checkUserSession } from "./store/user/user.action";
 
 //
 // lazy loading main routes
@@ -43,6 +45,12 @@ const PageFrame = () => {
 };
 
 const App = () => {
+  const dispatch = useDispatch();
+  //
+  useEffect(() => {
+    dispatch(checkUserSession());
+  }, [dispatch]);
+  //
   return (
     <Suspense fallback={<Spinner />}>
       <PageFrame />
