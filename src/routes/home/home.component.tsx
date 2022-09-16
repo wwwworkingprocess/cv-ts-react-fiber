@@ -1,6 +1,6 @@
 import { SetStateAction, useEffect, useState } from "react";
 
-import App3D from "../../App3D";
+import AppHome3D from "../../fiber-apps/app-3d/app-home-3d";
 
 import Dialog from "../../components/dialog/dialog.component";
 
@@ -65,24 +65,16 @@ const DataLoadTest = () => {
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
-  //
-  const [seconds, setSeconds] = useState(0);
-  // const [isActive, setIsActive] = useState(false); // true
-  // //
-  // useEffect(() => {
-  //   if (seconds > 10) {
-  //     setIsActive(false);
-  //   }
-  // }, [seconds]);
+  const [showGrid, setShowGrid] = useState(false);
   //
   return (
     <>
-      {/* <Timer isActive={isActive} seconds={seconds} setSeconds={setSeconds} /> */}
-      <App3D setIsOpen={setIsOpen} />
+      <AppHome3D setIsOpen={setIsOpen} showGrid={showGrid} />
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />
       </Dialog>
       <button onClick={(e) => setIsOpen(true)}>Open Dialog</button>
+      <button onClick={(e) => setShowGrid((b) => !b)}>Toggle Grid</button>
     </>
   );
 };

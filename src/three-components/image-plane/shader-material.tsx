@@ -1,12 +1,14 @@
+import { useMemo, useRef } from "react";
+
 import { useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef, useState } from "react";
 import {
-  LinearFilter,
-  NearestMipmapLinearFilter,
-  RepeatWrapping,
+  Color,
+  LinearMipmapLinearFilter,
+  LinearMipMapLinearFilter,
+  ShaderChunk,
   ShaderMaterial,
-  sRGBEncoding,
+  Texture,
   UniformsLib,
   UniformsUtils,
 } from "three";
@@ -32,6 +34,8 @@ const shaders = {
         varying float vAmount; // A variable to store the height of the point
         varying vec2 vUV; // The UV mapping coordinates of a vertex
     
+        ${ShaderChunk["common"]}
+        ${ShaderChunk["shadowmap_pars_vertex"]}
       void main() 
       {
         // The "coordinates" in UV mapping representation
@@ -52,30 +56,53 @@ const shaders = {
         vec3 newPosition = position + normal *  vAmount * bumpScale;
 
 
+        
+        // vec4 worldPosition = modelMatrix * vec4(pos, 1.0);
+        // vLightDir = mat3(viewMatrix) * (lightPosition - vWorldPosition);
+
         // Compute the position of the vertex using a standard formula
         gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
+
+        // vec4 worldPosition = vec4(newPosition, 1.0);
+        vec4 worldPosition = modelViewMatrix * vec4(newPosition, 1.0);
+        
+        vec3 objectNormal = vec3( normal );
+        vec3 transformedNormal = normalMatrix * objectNormal;
+
+
+        ${ShaderChunk["shadowmap_vertex"]}
       }
-    `,
+      `,
 
   fragmentShader: `
+  ${ShaderChunk["common"]}
+  ${ShaderChunk["packing"]}
+  
   uniform sampler2D uTexture;
 
       uniform float foo;
       varying vec2 vUV;
       varying float vAmount;
       
+      ${ShaderChunk["shadowmap_pars_fragment"]}
+      
+      
+
       void main()
       {
         
            vec4 texture = texture2D(uTexture, vUV);
 
           gl_FragColor = vAmount > 0.0 ? vec4(texture.r, texture.g, texture.b, 1.0) : vec4(0, 0, 0, 0.0);
-      }
-    `,
+        }
+        `,
 };
+//
+// ${ShaderChunk["shadowmap_fragment"]}   <-- missing from three :-(
 
-function MyShaderMaterial(props: any) {
-  const { foo, heightMap, tex, normTex } = props;
+export const MyShaderMaterial = (props: any) => {
+  //function MyShaderMaterial(props: any) {
+  const { heightMap, tex, normTex } = props;
   //
   const ref = useRef<ShaderMaterial>(null!);
   const uniforms = useMemo(
@@ -84,6 +111,7 @@ function MyShaderMaterial(props: any) {
         UniformsLib.lights,
         shaders.uniforms,
         {
+          receiveShadow: { value: true },
           // Feed the heightmap
           uTime: { value: 0.0 },
           uTexture: { value: tex },
@@ -98,13 +126,11 @@ function MyShaderMaterial(props: any) {
   );
 
   useFrame((state) => {
-    ref.current.uniforms.foo.value = foo;
-
     ref.current.uniforms.uTime.value =
       -0.0518 + 0.03 * (1 - Math.sin(state.clock.elapsedTime * 0.2));
     ref.current.uniformsNeedUpdate = true;
   });
-
+  //
   return (
     <shaderMaterial
       ref={ref}
@@ -116,51 +142,51 @@ function MyShaderMaterial(props: any) {
       transparent={true}
     />
   );
-}
+};
 
 export function ShaderPlaneMesh() {
-  const [foo, setFoo] = useState(0.0);
-
-  const heightMap = useTexture("/data/earth/bump.jpg");
+  const heightMap = useTexture(
+    "/data/earth/bump.jpg",
+    (tx: Texture | Texture[]) => {
+      const t = tx as Texture;
+      //
+      t.generateMipmaps = true;
+      t.minFilter = LinearMipMapLinearFilter;
+      t.magFilter = LinearMipMapLinearFilter;
+    }
+  );
   const tex = useTexture("./data/earth/3_no_ice_clouds_8k.jpg");
-  const normTex = useTexture("./data/earth/normal2.png"); // lo-res
-  // const normTex = useTexture("./data/earth/normal3.png"); // hi-res
+  const specular = useTexture("./data/earth/specular.jpg");
+  const normTex = useTexture(
+    "./data/earth/normal3.png",
+    (tx: Texture | Texture[]) => {
+      const t = tx as Texture;
+      //
+      t.minFilter = LinearMipmapLinearFilter;
+      t.magFilter = LinearMipmapLinearFilter;
+    }
+  ); // lo-res
 
-  tex.wrapS = RepeatWrapping;
-  tex.wrapT = RepeatWrapping;
-
-  normTex.wrapS = RepeatWrapping;
-  normTex.wrapT = RepeatWrapping;
-
-  normTex.minFilter = LinearFilter;
-  normTex.magFilter = LinearFilter;
-
-  // Apply some properties to ensure it renders correctly
-  heightMap.encoding = sRGBEncoding;
-  heightMap.wrapS = RepeatWrapping;
-  heightMap.wrapT = RepeatWrapping;
-  heightMap.minFilter = NearestMipmapLinearFilter;
-  heightMap.magFilter = NearestMipmapLinearFilter;
-  heightMap.anisotropy = 16;
-
-  const handleClick = () => {
-    console.log(foo);
-    setFoo(foo + 0.3);
-  };
+  // const shaderPropsMemo = useMemo(
+  //   () =>
+  //     !heightMap || !tex || !normTex ? undefined : { heightMap, tex, normTex },
+  //   [tex, normTex, heightMap]
+  // );
+  //
 
   return (
-    <mesh onClick={handleClick}>
+    <mesh receiveShadow castShadow position={[0, 0, 0.011]}>
       <planeBufferGeometry attach="geometry" args={[10, 5, 1000, 500]} />
-      {heightMap ? (
-        <MyShaderMaterial
-          foo={foo}
-          heightMap={heightMap}
-          tex={tex}
-          normTex={normTex}
-        />
-      ) : (
-        <></>
-      )}
+      <meshPhongMaterial
+        map={tex}
+        normalMap={normTex}
+        displacementMap={heightMap}
+        specular={new Color(0x111111)}
+        specularMap={specular}
+        displacementScale={0.215155}
+      />
+
+      {/* {shaderPropsMemo ? <MyShaderMaterial {...shaderPropsMemo} /> : <></>} */}
     </mesh>
   );
 }
