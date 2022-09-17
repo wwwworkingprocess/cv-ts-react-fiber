@@ -2,15 +2,16 @@ import { takeLatest, all, call, put } from "typed-redux-saga/macro";
 
 import type { User } from "firebase/auth";
 
+import { signInWithGooglePopup } from "../../utils/firebase/provider";
+
+import { createUserDocumentFromAuth } from "../../utils/firebase";
+import type { AdditionalInformation } from "../../utils/firebase";
 import {
-  AdditionalInformation,
   createAuthUserWithEmailAndPassword,
-  createUserDocumentFromAuth,
   getCurrentUser,
   signInAuthUserWithEmailAndPassword,
-  signInWithGooglePopup,
   signOutUser,
-} from "../../utils/firebase";
+} from "../../utils/firebase/user-auth";
 
 import {
   EmailSignInStart,

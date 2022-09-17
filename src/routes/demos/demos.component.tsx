@@ -1,5 +1,6 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getFirestoreCollection } from "../../utils/firebase/firestore";
 
 import CursorNavigationDemo from "./demo/cursor-navigation.demo";
 import GlobeDemo from "./demo/globe.demo";
@@ -9,13 +10,28 @@ import RandomHeightmapDemo from "./demo/random-heightmap.demo";
 import ShapeLoaderDemo from "./demo/shape-loader.demo";
 import WikiCountryDemo from "./demo/wiki-country.demo";
 
-// import RangeControl from "./range.component";
+type UserDocType = {
+  displayName: string | null;
+  email: string | null;
+  createdAt: Date;
+};
 
 type Demo = { idx: number; name: string; element?: JSX.Element };
 
 const Demos = () => {
   const navigate = useNavigate();
+
   //
+  useEffect(() => {
+    const queryUsers = async () => {
+      const users = await getFirestoreCollection<UserDocType>("users");
+      //
+      console.log("snap u", users);
+    };
+    //
+    queryUsers();
+  }, []);
+
   const [index, setIndex] = useState<number>(0);
   //
   const otherDemos = useMemo(
