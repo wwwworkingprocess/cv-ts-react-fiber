@@ -20,7 +20,7 @@ export const heading = (from: [number, number], to: [number, number]) => {
 export const distance = (
   from: [number, number],
   to: [number, number],
-  radius: number
+  radius?: number
 ) => {
   radius = radius || EARTH_RADIUS;
   //
@@ -35,6 +35,18 @@ export const distance = (
       Math.cos((Math.PI * to[1]) / 180);
   //
   return 2 * radius * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+};
+
+export const distanceFromCoords = (
+  c: { coords?: Array<number> | undefined },
+  { x, y }: { x: number; y: number }
+) => {
+  if (!c.coords) return 0;
+  //
+  const [lat1, lat2] = [c.coords[0], x];
+  const [lon1, lon2] = [c.coords[1], y];
+  //
+  return distance([lon1, lat1], [lon2, lat2]) * 10e-4; // return km
 };
 
 export const radial = (

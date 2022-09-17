@@ -25,8 +25,6 @@ const getConfig = () => {
   //
   const configWithSecret = { ...cfg, ...getConfigFromEnv() };
   //
-  console.log("configWithSecret", configWithSecret);
-  //
   return configWithSecret;
 };
 

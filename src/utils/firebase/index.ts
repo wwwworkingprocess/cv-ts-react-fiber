@@ -1,11 +1,13 @@
 import { User } from "firebase/auth";
 import { doc, getDoc, QueryDocumentSnapshot, setDoc } from "firebase/firestore";
+
 import { db } from "./provider";
 
 //
 // Typings for user creation
 //
-export type ObjectToAdd = { title: string };
+//export type ObjectToAdd = { title: string };
+export type ObjectToAdd = Record<string, any>; // { title: string };
 export type AdditionalInformation = { displayName?: string };
 export type UserData = {
   createdAt: Date;

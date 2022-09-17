@@ -3,12 +3,14 @@ import { NavigateFunction } from "react-router-dom";
 import { isMobile } from "react-device-detect";
 import { useFullscreen } from "rooks";
 
-import {
-  useWikiCountries,
-  WikiCountry,
-} from "../../../fiber-apps/wiki-country/hooks/useWikiCountries";
+import { useWikiCountries } from "../../../fiber-apps/wiki-country/hooks/useWikiCountries";
 
 import WikiCountryApp3D from "../../../fiber-apps/wiki-country/wiki-country-app-3d";
+import { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
+
+import useWindowSize from "../../../hooks/useWindowSize";
+import useWikiGeoJson from "../../../hooks/wiki/useWikiGeoJson";
+
 import {
   BackgroundImage,
   CountryItemBody,
@@ -16,56 +18,11 @@ import {
   CountryListContainer,
   WikiCountryDemoWrapper,
 } from "./wiki-country.styles";
-import useWindowSize from "../../../hooks/useWindowSize";
+import { distanceFromCoords } from "../../../utils/geo";
 
-const useWikiGeoJson = (geojsonUrl: string) => {
-  const [selectedWikiCountryGeo, setSelectedWikiCountryGeo] = useState<any>();
-  //
-  // when [selectedWikiCountry] triggering load of
-  // the country from wikidata in geojson format
-  //
-  useEffect(() => {
-    if (geojsonUrl) {
-      const origUrl = geojsonUrl;
-      const resource = origUrl.split("/").pop();
-      //
-      const new_url = `https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&rvslots=*&rvprop=content&format=json&titles=${resource}&origin=*`;
-      //
-      const txtFromResult = (r: any) => {
-        if (r.query) {
-          const page = Object.values(r.query.pages)[0];
-          //
-          if (page) {
-            const revision = (page as any).revisions[0];
-            //
-            if (revision) {
-              return revision.slots.main["*"];
-            }
-          }
-        }
-      };
-      //
-      if (new_url) {
-        fetch(new_url)
-          .then((r) => r.json())
-          .then((json) => {
-            const geojsonAsText = txtFromResult(json);
-            //
-            if (geojsonAsText) {
-              setSelectedWikiCountryGeo(JSON.parse(geojsonAsText));
-            }
-          });
-      }
-    }
-    //
-    return () => setSelectedWikiCountryGeo(undefined); // reset on unmount
-  }, [geojsonUrl]);
-  //
-  return { selectedWikiCountryGeo };
-};
-
-// const PAGE_SIZE = isMobile ? 4 : 8;
-
+//
+//
+//
 const WikiCountryDemo = (props: {
   navigate: NavigateFunction;
   path?: string | undefined;
@@ -80,26 +37,25 @@ const WikiCountryDemo = (props: {
     () => (!isMobile ? 8 : isPortrait ? 3 : 4),
     [isPortrait]
   );
-
-  useEffect(() => {}, [isPortrait]);
-
+  //
   const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
     useFullscreen({ target: fullscreenContainerRef });
   //
+  // Loading list of countries from either local or remote storage
   //
-  const { data: wikiCountries } = useWikiCountries();
+  const useFirestore = true;
+  const { data: wikiCountries } = useWikiCountries(useFirestore);
+  //
   const [pageIndex, setPageIndex] = useState<number>();
-
   const [countryIndex, setCountryIndex] = useState<number>();
   const [originCountry, setOriginCountry] = useState<WikiCountry>(); // selection for 'nearby listing'
-
   const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>(); // selection for 3d app
   //
   const selectedWikiCountryUrl = useMemo(
     () => (selectedWikiCountry ? selectedWikiCountry.urls.geo : undefined),
     [selectedWikiCountry]
   );
-
+  //
   const { selectedWikiCountryGeo } = useWikiGeoJson(selectedWikiCountryUrl);
 
   //
@@ -115,27 +71,6 @@ const WikiCountryDemo = (props: {
     setOriginCountry(origin);
   }, [countryIndex, wikiCountries]);
 
-  const distanceFrom = (c: WikiCountry, { x, y }: { x: number; y: number }) => {
-    if (!c.coords) return 0;
-    //
-    const [lat1, lat2] = [c.coords[0], x];
-    const [lon1, lon2] = [c.coords[1], y];
-
-    const R = 6371e3; // metres
-    const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
-    const φ2 = (lat2 * Math.PI) / 180;
-    const Δφ = ((lat2 - lat1) * Math.PI) / 180;
-    const Δλ = ((lon2 - lon1) * Math.PI) / 180;
-
-    const a =
-      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-    const side = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-
-    const d = R * side; // in metres
-    //
-    return d * 10e-4; //TODO: check why -4 instead of -3
-  };
   //
   //
   //
@@ -147,7 +82,11 @@ const WikiCountryDemo = (props: {
       //
       const diffs = wikiCountries
         .map(
-          (c) => [c, distanceFrom(c, { x: ox, y: oy })] as [WikiCountry, number]
+          (c) =>
+            [c, distanceFromCoords(c, { x: ox, y: oy })] as [
+              WikiCountry,
+              number
+            ]
         )
         .sort((a, b) => a[1] - b[1]);
       //
