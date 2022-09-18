@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { useFrame } from "@react-three/fiber";
 import { Triplet, useHeightfield } from "@react-three/cannon";
@@ -47,23 +47,27 @@ export const Heightfield = (
       : () => null
   );
 
-  useEffect(() => {
-    if (dataTextureHeightfield) dataTextureHeightfield.needsUpdate = true;
-    //
-    //TODO: check warning    WebGL: INVALID_ENUM: texParameter: invalid parameter
-    //
-  }, [dataTextureHeightfield]);
+  // useLayoutEffect(() => {
+  //   if (dataTextureHeightfield) dataTextureHeightfield.needsUpdate = true;
+  //   //
+  //   //TODO: check warning    WebGL: INVALID_ENUM: texParameter: invalid parameter
+  //   //
+  // }, [dataTextureHeightfield]);
 
   //
   return (
     <mesh ref={ref as any} castShadow receiveShadow>
-      <HeightmapGeometry heights={heights} elementSize={elementSize} />
+      {heights && (
+        <HeightmapGeometry heights={heights} elementSize={elementSize} />
+      )}
 
-      <meshStandardMaterial
-        wireframe={showWireframe}
-        colorWrite={true}
-        map={dataTextureHeightfield}
-      />
+      {dataTextureHeightfield && (
+        <meshStandardMaterial
+          wireframe={showWireframe}
+          colorWrite={true}
+          map={dataTextureHeightfield}
+        />
+      )}
     </mesh>
   );
 };

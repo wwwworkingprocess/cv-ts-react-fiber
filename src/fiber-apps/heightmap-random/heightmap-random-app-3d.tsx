@@ -169,7 +169,7 @@ const HeightMapRandomApp3D = (props: {
           texture.magFilter = LinearFilter;
           texture.encoding = sRGBEncoding;
           //
-          // texture.needsUpdate = true;
+          texture.needsUpdate = true;
           //
           return texture;
         }
@@ -277,21 +277,23 @@ const HeightMapRandomApp3D = (props: {
           autoRotateSpeed={0.3}
         />
 
-        <Physics>
-          <group
-            position={[0 - heightMapScale / 2, 0 + 2, heightMapScale / 2]}
-            scale={[3, 0.00075, 3]}
-          >
-            <Heightfield
-              elementSize={(heightMapScale * 1) / 128}
-              heights={heightMemo}
-              position={[0, 0, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-              dataTextureHeightfield={dataTextureHeightfield}
-              showWireframe={showWireframe}
-            />
-          </group>
-        </Physics>
+        {heightMemo && dataTextureHeightfield && (
+          <Physics>
+            <group
+              position={[0 - heightMapScale / 2, 0 + 2, heightMapScale / 2]}
+              scale={[3, 0.00075, 3]}
+            >
+              <Heightfield
+                elementSize={(heightMapScale * 1) / 128}
+                heights={heightMemo}
+                position={[0, 0, 0]}
+                rotation={[0, Math.PI / 2, 0]}
+                dataTextureHeightfield={dataTextureHeightfield}
+                showWireframe={showWireframe}
+              />
+            </group>
+          </Physics>
+        )}
 
         {positions && dataTexture && (
           <TileMesh

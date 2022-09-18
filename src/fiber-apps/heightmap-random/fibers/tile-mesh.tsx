@@ -4,7 +4,7 @@ const TileMesh = (
   props: JSX.IntrinsicElements["mesh"] & {
     scalePositionY: number;
     positions: Float32Array; // positions of vertices or empty array
-    dataTexture?: Texture | undefined;
+    dataTexture: Texture | null;
   }
 ) => {
   const { scalePositionY, positions, dataTexture, ...meshProps } = props;
