@@ -7,6 +7,8 @@ import {
   useState,
 } from "react";
 
+import { ThreeEvent, useFrame } from "@react-three/fiber";
+
 import {
   BoxGeometry,
   Color,
@@ -15,16 +17,9 @@ import {
   Object3D,
   Vector3,
 } from "three";
-import { ThreeEvent, useFrame } from "@react-three/fiber";
 
 const tempBoxes = new Object3D();
 const tempColor = new Color();
-// const data = Array.from({ length: 1000 }, () => ({
-//   color: ["#72aac6", "#72aac6", "#72aac6", "#72aac6", "#72aac6"][
-//     Math.floor(Math.random() * 5)
-//   ],
-//   scale: 1,
-// }));
 
 const GridFloorCells = (
   props: JSX.IntrinsicElements["instancedMesh"] & {
@@ -70,14 +65,12 @@ const GridFloorCells = (
   //   //
   //   return [x, z];
   // };
+
   //
   // assuming xz plane is 1x1 and 'height' is (shiftCrosshairY*2)
   //
   const getCellCenterPointById = useCallback(
-    (id: number): Vector3 => {
-      //
-      // const id = x * i + z;
-      //
+    (id: number /* = x * i + z */): Vector3 => {
       const x = id % i;
       const z = (id - x) / i;
       //
@@ -98,17 +91,6 @@ const GridFloorCells = (
   useLayoutEffect(() => {
     geometryRef.current && geometryRef.current.translate(0, -0.02, 0);
   }, []);
-
-  // const onClick = (e: ThreeEvent<MouseEvent>) => {
-  //   //
-  //   /*
-  //   if (e.instanceId) {
-  //     const gp = getGridPointById(e.instanceId);
-  //     //
-  //     console.info("clicked", e.instanceId, e.object.userData, gp);
-  //   }
-  //   */
-  // };
 
   //
   // reset selection when leaving a cell
@@ -175,8 +157,7 @@ const GridFloorCells = (
             (id === hoveredId
               ? tempColor.setRGB(10, 10, 10)
               : tempColor.set("#72aac6")
-            ) /// .set(data[id].color)
-              .toArray(colorArray, id * 3);
+            ).toArray(colorArray, id * 3);
             //
             ref.current.geometry.attributes.color.needsUpdate = true;
           }
@@ -194,7 +175,6 @@ const GridFloorCells = (
     <instancedMesh
       ref={ref}
       args={[geometryRef.current, material, instanceCount]}
-      // onClick={onClick}
       onPointerMove={onPointerMove}
       onPointerOut={onPointerOut}
     >

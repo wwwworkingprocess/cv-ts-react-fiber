@@ -1,4 +1,4 @@
-import { FC, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import { useFrame } from "@react-three/fiber";
 import { Triplet, useHeightfield } from "@react-three/cannon";
@@ -6,23 +6,26 @@ import { Triplet, useHeightfield } from "@react-three/cannon";
 import HeightmapGeometry from "../height-map-geometry/height-map-geometry.component";
 import { Texture } from "three";
 
-export const Heightfield: FC<{
-  elementSize: number;
-  heights: number[][];
-  position: Triplet;
-  rotation: Triplet;
-  autoRotate?: boolean;
-  showWireframe?: boolean;
-  dataTextureHeightfield: Texture | undefined;
-}> = ({
-  elementSize,
-  heights,
-  position,
-  rotation,
-  autoRotate,
-  showWireframe,
-  dataTextureHeightfield,
-}) => {
+export const Heightfield = (
+  props: JSX.IntrinsicElements["mesh"] & {
+    elementSize: number;
+    heights: number[][];
+    position: Triplet;
+    rotation: Triplet;
+    autoRotate?: boolean;
+    showWireframe?: boolean;
+    dataTextureHeightfield: Texture | null;
+  }
+) => {
+  const {
+    elementSize,
+    heights,
+    position,
+    rotation,
+    autoRotate,
+    showWireframe,
+    dataTextureHeightfield,
+  } = props;
   //
   const ref = useRef<THREE.Object3D<Event>>(
     useHeightfield(() => ({
@@ -36,6 +39,7 @@ export const Heightfield: FC<{
       rotation,
     })) as any
   );
+  //
 
   useFrame(
     autoRotate
@@ -43,24 +47,23 @@ export const Heightfield: FC<{
       : () => null
   );
 
+  useEffect(() => {
+    if (dataTextureHeightfield) dataTextureHeightfield.needsUpdate = true;
+    //
+    //TODO: check warning    WebGL: INVALID_ENUM: texParameter: invalid parameter
+    //
+  }, [dataTextureHeightfield]);
+
+  //
   return (
-    <mesh
-      ref={ref as any}
-      castShadow
-      receiveShadow
-      // {...{ castShadow: !showWireframe, receiveShadow: !showWireframe }}
-    >
-      {/* <meshStandardMaterial color={"#44ffaa"} /> */}
+    <mesh ref={ref as any} castShadow receiveShadow>
       <HeightmapGeometry heights={heights} elementSize={elementSize} />
-      {showWireframe ? (
-        <meshBasicMaterial
-          wireframe
-          colorWrite={true}
-          map={dataTextureHeightfield}
-        />
-      ) : (
-        <meshStandardMaterial attach="material" map={dataTextureHeightfield} />
-      )}
+
+      <meshStandardMaterial
+        wireframe={showWireframe}
+        colorWrite={true}
+        map={dataTextureHeightfield}
+      />
     </mesh>
   );
 };

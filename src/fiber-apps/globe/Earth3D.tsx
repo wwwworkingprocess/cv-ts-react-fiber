@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
-import tfs from "./utils/textures";
-import cu from "./utils/canvasutils";
+import tfs from "../../utils/textures";
+import cu from "../../utils/canvasutils";
 
 class EarthD3D {
   idx: number;

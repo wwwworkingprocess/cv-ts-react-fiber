@@ -1,11 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 import {
   DataTexture,
   LinearFilter,
   RGBAFormat,
   sRGBEncoding,
-  Texture,
   UnsignedByteType,
   Vector3,
 } from "three";
@@ -13,8 +12,6 @@ import {
 import coloring from "../../../utils/colors";
 
 const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
-  const [dataTexture, setDataTexture] = useState<Texture>();
-
   //
   // creating array of RGBA colors, color is based on height and self shaded
   //
@@ -58,9 +55,11 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
   //
   // create Texture once each pixel has its color
   //
-  useEffect(() => {
+  const dataTexture: DataTexture | null = useMemo(() => {
+    let texture = null;
+    //
     if (heightsAsColors) {
-      const texture = new DataTexture(
+      texture = new DataTexture(
         heightsAsColors,
         1200,
         1200,
@@ -75,13 +74,9 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
       texture.encoding = sRGBEncoding;
       //
       texture.needsUpdate = true;
-      //
-      setDataTexture(texture);
-      //
-      return () => texture.dispose();
-    } else {
-      setDataTexture(undefined);
     }
+    //
+    return texture;
   }, [heightsAsColors]);
 
   return dataTexture;

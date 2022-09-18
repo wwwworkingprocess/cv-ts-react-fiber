@@ -3,11 +3,13 @@ import { Texture } from "three";
 const TileMesh = (
   props: JSX.IntrinsicElements["mesh"] & {
     scalePositionY: number;
-    positions: Float32Array;
+    positions: Float32Array; // positions of vertices or empty array
     dataTexture?: Texture | undefined;
   }
 ) => {
   const { scalePositionY, positions, dataTexture, ...meshProps } = props;
+  //
+  const [wSegments, hSegments] = [1200 - 1, 1200 - 1]; // 1200x1200 vertices
   //
   return (
     <mesh
@@ -17,10 +19,9 @@ const TileMesh = (
       scale={[1, 1, scalePositionY]}
       {...meshProps}
     >
-      {/* {positions.length && ( */}
       <planeBufferGeometry
         attach="geometry"
-        args={[10, 10, 1200 - 1, 1200 - 1]}
+        args={[1, 1, wSegments, hSegments]}
       >
         <bufferAttribute
           attach="attributes-position"
@@ -29,10 +30,8 @@ const TileMesh = (
           count={positions.length / 3}
         />
       </planeBufferGeometry>
-      {/* )} */}
       {dataTexture && (
         <meshLambertMaterial attach="material" map={dataTexture} />
-        // <meshStandardMaterial attach="material" map={dataTexture} />
       )}
     </mesh>
   );

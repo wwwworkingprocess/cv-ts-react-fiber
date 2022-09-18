@@ -16,7 +16,9 @@ import {
   RGBAFormat,
   SpotLight,
   sRGBEncoding,
+  Texture,
   UnsignedByteType,
+  WebGLRenderer,
 } from "three";
 
 export type GenerateHeightmapArgs = {
@@ -147,33 +149,34 @@ const HeightMapRandomApp3D = (props: {
           if (currentRow.length) heightsRows.push(...currentRow);
         }
         //
-        const uint8arr = Uint8Array.from(heightsRows);
-        //
-        const texture = new DataTexture(
-          uint8arr,
-          120,
-          120,
-          RGBAFormat,
-          UnsignedByteType
-        );
-        //
-        texture.flipY = true; // flipping image on vertical axis
-        //
-        texture.wrapS = 120;
-        texture.wrapT = 120;
-        //
-        texture.minFilter = LinearFilter;
-        texture.magFilter = LinearFilter;
-        texture.encoding = sRGBEncoding;
-        //
-        texture.needsUpdate = true;
-        //
-        return texture;
+        if (heightsRows) {
+          const uint8arr = Uint8Array.from(heightsRows);
+          //
+          const texture = new DataTexture(
+            uint8arr,
+            120,
+            120,
+            RGBAFormat,
+            UnsignedByteType
+          );
+          //
+          texture.flipY = true; // flipping image on vertical axis
+          //
+          texture.wrapS = 120;
+          texture.wrapT = 120;
+          //
+          texture.minFilter = LinearFilter;
+          texture.magFilter = LinearFilter;
+          texture.encoding = sRGBEncoding;
+          //
+          // texture.needsUpdate = true;
+          //
+          return texture;
+        }
       }
     }
-
     //
-    return undefined;
+    return null;
   }, [dataTexture, heightViewPort]);
 
   //
@@ -279,16 +282,14 @@ const HeightMapRandomApp3D = (props: {
             position={[0 - heightMapScale / 2, 0 + 2, heightMapScale / 2]}
             scale={[3, 0.00075, 3]}
           >
-            {heightMemo && dataTextureHeightfield && (
-              <Heightfield
-                elementSize={(heightMapScale * 1) / 128}
-                heights={heightMemo}
-                position={[0, 0, 0]}
-                rotation={[0, Math.PI / 2, 0]}
-                dataTextureHeightfield={dataTextureHeightfield}
-                showWireframe={showWireframe}
-              />
-            )}
+            <Heightfield
+              elementSize={(heightMapScale * 1) / 128}
+              heights={heightMemo}
+              position={[0, 0, 0]}
+              rotation={[0, Math.PI / 2, 0]}
+              dataTextureHeightfield={dataTextureHeightfield}
+              showWireframe={showWireframe}
+            />
           </group>
         </Physics>
 

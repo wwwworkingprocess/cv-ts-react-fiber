@@ -6,8 +6,7 @@ import { db } from "./provider";
 //
 // Typings for user creation
 //
-//export type ObjectToAdd = { title: string };
-export type ObjectToAdd = Record<string, any>; // { title: string };
+export type ObjectToAdd = Record<string, any>;
 export type AdditionalInformation = { displayName?: string };
 export type UserData = {
   createdAt: Date;

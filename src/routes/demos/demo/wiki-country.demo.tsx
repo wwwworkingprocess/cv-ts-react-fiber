@@ -56,7 +56,7 @@ const WikiCountryDemo = (props: {
     [selectedWikiCountry]
   );
   //
-  const { selectedWikiCountryGeo } = useWikiGeoJson(selectedWikiCountryUrl);
+  const selectedWikiCountryGeo = useWikiGeoJson(selectedWikiCountryUrl);
 
   //
   //
