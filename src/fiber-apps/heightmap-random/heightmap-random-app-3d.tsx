@@ -16,9 +16,7 @@ import {
   RGBAFormat,
   SpotLight,
   sRGBEncoding,
-  Texture,
   UnsignedByteType,
-  WebGLRenderer,
 } from "three";
 
 export type GenerateHeightmapArgs = {

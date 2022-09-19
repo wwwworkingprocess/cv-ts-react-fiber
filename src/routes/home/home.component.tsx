@@ -3,6 +3,12 @@ import { SetStateAction, useEffect, useState } from "react";
 import AppHome3D from "../../fiber-apps/app-3d/app-home-3d";
 
 import Dialog from "../../components/dialog/dialog.component";
+import {
+  selectCountries,
+  selectIsLoading,
+} from "../../store/countries/countries.selector";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCountriesStart } from "../../store/countries/countries.action";
 
 type TimerProps = {
   isActive: boolean;
@@ -67,8 +73,18 @@ const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showGrid, setShowGrid] = useState(false);
   //
+  const countries = useSelector(selectCountries);
+  const isLoading = useSelector(selectIsLoading);
+  //
+  const dispatch = useDispatch();
+  //
+  useEffect(() => {
+    dispatch(fetchCountriesStart());
+  }, [dispatch]);
+  //
   return (
     <>
+      {countries.length} - {isLoading ? "Loading..." : "Ready"}
       <AppHome3D setIsOpen={setIsOpen} showGrid={showGrid} />
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />

@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { NavigateFunction } from "react-router-dom";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Stage } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 import PlacedCountryShape from "./fibers/placed-country-shape";
 import PlacedCountryBillboard from "./fibers/placed-country-billboard";
@@ -29,7 +29,6 @@ const WikiCountryApp3D = (props: {
     //
     return () => {}; // no cleanup for effect
   }, [hasInput]);
-
   //
   const [showGroupBounds, setShowGroupBounds] = useState<boolean>(true);
   const [showFeatureBounds, setShowFeatureBounds] = useState<boolean>(true);

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 
 import { useFrame } from "@react-three/fiber";
 import { Triplet, useHeightfield } from "@react-three/cannon";
