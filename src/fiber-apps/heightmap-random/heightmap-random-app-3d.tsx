@@ -7,7 +7,6 @@ import { Physics } from "@react-three/cannon";
 import { Heightfield } from "../../three-components/height-field/height-field.component";
 import GridFloor from "./fibers/grid/grid-floor";
 
-import useHgtSource from "./hooks/useHgtSource";
 import useHeightBasedTexture from "./hooks/useHeightBasedTexture";
 import TileMesh from "./fibers/tile-mesh";
 import {
@@ -18,6 +17,9 @@ import {
   sRGBEncoding,
   UnsignedByteType,
 } from "three";
+
+import useSrtmTile from "../../hooks/srtm/useSrtmTile"; // zip - with single entry
+//import useSrtmTiles from "../../hooks/srtm/useSrtmTiles"; // zip - with multiple hgts
 
 export type GenerateHeightmapArgs = {
   height: number;
@@ -31,8 +33,9 @@ export type GenerateHeightmapArgs = {
 //
 const heightMapScale: number = 1;
 const hgtOptions = [
-  ["A", "data/hgt/N42E011.hgt"],
-  ["B", "data/hgt/N42E019.hgt"],
+  ["A", "N00E006"],
+  ["B", "N42E011"],
+  ["C", "N42E019"],
 ] as Array<[string, string]>;
 
 //
@@ -96,7 +99,6 @@ const HeightMapRandomApp3D = (props: {
   const { isFullscreenEnabled, isFullscreenAvailable, toggleFullscreen } =
     props;
   //
-  const [hgtUrl, setHgtUrl] = useState<string>("data/hgt/N42E011.hgt");
   const [rotating, setRotating] = useState<boolean>(false);
   const [showGrid, setShowGrid] = useState<boolean>(true);
   const [showWireframe, setShowWireframe] = useState<boolean>(false);
@@ -107,7 +109,17 @@ const HeightMapRandomApp3D = (props: {
   >([0, 0, 120, 120]);
   //
   //
-  const heights1200: Int16Array | undefined = useHgtSource(hgtUrl); // 1* (1200*1200) = 1.44m int16s
+  const [hgtLocator, setHgtLocator] = useState<string>("N00E006");
+  /*
+  // test multi-zip  ---   N * (1200*1200) = N * 1.44m int16s
+
+  const [hgtLocator, setHgtLocator] = useState<string>("J26"); 
+  const { values: heights } = useSrtmTiles(hgtLocator);
+  const heights1200 = heights ? Object.values(heights)[0] : undefined; // first entry
+  console.log("values", heights);   
+  */
+
+  const { value: heights1200 } = useSrtmTile(hgtLocator); // 1* (1200*1200) = 1.44m int16s
   //
   const dataTexture = useHeightBasedTexture(heights1200);
   //
@@ -308,8 +320,8 @@ const HeightMapRandomApp3D = (props: {
           </button>
         )}
         HGT:
-        {hgtOptions.map(([label, url], idx) => (
-          <button key={idx} onClick={(e) => setHgtUrl(url)}>
+        {hgtOptions.map(([label, locator], idx) => (
+          <button key={idx} onClick={(e) => setHgtLocator(locator)}>
             {label}
           </button>
         ))}
