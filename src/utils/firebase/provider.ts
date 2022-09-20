@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 //
 // Firebase configuration
@@ -48,3 +49,4 @@ export const signInWithGoogleRedirect = () =>
 // Setting up Firestore
 //
 export const db = getFirestore();
+export const storage = getStorage(firebaseApp);

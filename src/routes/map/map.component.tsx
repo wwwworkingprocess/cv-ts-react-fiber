@@ -5,6 +5,8 @@ import styled from "styled-components";
 
 import { Spinner } from "../../components/spinner/spinner.component";
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
+import useFirestoreDocument from "../../hooks/firestore/useFirestoreDocument";
+import useRawHgtSampler from "../../hooks/srtm/useRawHgtSampler";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 
 import { useWikidata } from "../../hooks/useWikidata";
@@ -38,7 +40,14 @@ const Map = () => {
   //
   const { data: wikiCountries } = useWikiCountries();
   const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>();
-
+  //
+  // const firestoreDocumentUrl = `data/hgt/N00E006.hgt.zip`;
+  const firestoreDocumentUrl = `data/hgt/N42E011.hgt.zip`;
+  //
+  const { data: firestoreHgt } = useFirestoreDocument(firestoreDocumentUrl);
+  console.log("HGT from Firestore", firestoreHgt);
+  const boundsCheck = useRawHgtSampler(firestoreHgt);
+  console.log("SAMPLES", boundsCheck);
   //
   // loading geojson
   //
@@ -380,6 +389,9 @@ const Map = () => {
               </div>
             </div>
           )}
+          <hr />
+          Bounds:
+          {boundsCheck ? JSON.stringify(boundsCheck) : "Loading hgt..."}
         </>
       )}
     </div>
