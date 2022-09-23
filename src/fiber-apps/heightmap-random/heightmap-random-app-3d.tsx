@@ -19,6 +19,7 @@ import {
 } from "three";
 
 import useSrtmTile from "../../hooks/srtm/useSrtmTile"; // zip - with single entry
+import useSrtmTiles, { SAMPLING_MODE } from "../../hooks/srtm/useSrtmTiles";
 //import useSrtmTiles from "../../hooks/srtm/useSrtmTiles"; // zip - with multiple hgts
 
 export type GenerateHeightmapArgs = {
@@ -44,6 +45,7 @@ const GridFloors: React.FC<{
   setHeightViewPort: React.Dispatch<
     React.SetStateAction<[number, number, number, number] | undefined>
   >;
+  sampling: SAMPLING_MODE;
 }> = memo((props) => (
   <>
     {[1].map((n) => (
@@ -54,6 +56,7 @@ const GridFloors: React.FC<{
         j={props.side}
         idx={n}
         //
+        sampling={props.sampling}
         setHeightViewPort={props.setHeightViewPort}
       />
     ))}
@@ -103,34 +106,63 @@ const HeightMapRandomApp3D = (props: {
   const [showGrid, setShowGrid] = useState<boolean>(true);
   const [showWireframe, setShowWireframe] = useState<boolean>(false);
 
+  const gridDivisions = 10;
+  const [sampling, setSampling] = useState<SAMPLING_MODE>(
+    // 1200
+    // 600
+    300
+    // 150
+    // SAMPLING_MODE.SAMPLE_TO_600X600
+  );
+  const heightViewportSize = useMemo(
+    () => Math.floor(sampling / gridDivisions),
+    [sampling]
+  );
+
   const [scalePositionY, setScalePositionY] = useState<number>(0.00043);
   const [heightViewPort, setHeightViewPort] = useState<
     [number, number, number, number] | undefined
-  >([0, 0, 120, 120]);
+  >([0, 0, heightViewportSize, heightViewportSize]);
   //
   //
-  const [hgtLocator, setHgtLocator] = useState<string>("N00E006");
-  /*
+
+  // const [sampling, setSampling] = useState<SAMPLING_MODE>(1200);
+  // const [hgtLocator, setHgtLocator] = useState<string>("N00E006");
+
   // test multi-zip  ---   N * (1200*1200) = N * 1.44m int16s
 
-  const [hgtLocator, setHgtLocator] = useState<string>("J26"); 
-  const { values: heights } = useSrtmTiles(hgtLocator);
-  const heights1200 = heights ? Object.values(heights)[0] : undefined; // first entry
-  console.log("values", heights);   
-  */
+  const [hgtLocator, setHgtLocator] = useState<string>("J26"); // J26 / SM42
+  // const [hgtLocator, setHgtLocator] = useState<string>("SM42"); // J26 / SM42
+  const { values: heights } = useSrtmTiles(
+    hgtLocator,
+    // SAMPLING_MODE.SAMPLE_TO_1200X1200
+    // SAMPLING_MODE.SKIP_SAMPLING
+    // 1201 as SAMPLING_MODE
+    sampling
+  );
 
-  const { value: heights1200 } = useSrtmTile(hgtLocator); // 1* (1200*1200) = 1.44m int16s
+  const [hgtSelectedIndex, setHgtSelectedIndex] = useState<number>(0); // heights ? Object.values(heights)[0] : undefined; // first entry
+  const heights1200 = heights
+    ? Object.values(heights)[hgtSelectedIndex]
+    : undefined; // first entry
+
   //
-  const dataTexture = useHeightBasedTexture(heights1200);
+  //
+  //
+  const dataTexture = useHeightBasedTexture(heights1200, sampling);
   //
   const dataTextureHeightfield = useMemo(() => {
     if (dataTexture && heightViewPort) {
       const [min_x, min_y, max_x, max_y] = heightViewPort; //  viewport
 
       const imageData = dataTexture?.source.data.data as Uint8Array; // 4*1200*1200 items
+      // const SIZE = Math.sqrt(imageData.byteLength / 4);
+      //
+      // console.log("dth SIZE", SIZE); console.log("dth vp", { min_x, max_x, min_y, max_y });
       //
       if (imageData) {
         const heightsRows = [];
+        //
         for (let row_idx = min_x; row_idx < max_x; row_idx++) {
           const currentRow = [];
           //
@@ -145,7 +177,8 @@ const HeightMapRandomApp3D = (props: {
             const inBounds = inBoundsHorizontal && inBoundsVertical;
             //
             if (inBounds) {
-              const offset = row_idx * (1200 * 4) + col_idx * 4;
+              const BYTES_PER_PIXEL = 4;
+              const offset = (row_idx * sampling + col_idx) * BYTES_PER_PIXEL;
               //
               currentRow.push(
                 imageData[offset] ?? 0,
@@ -159,21 +192,24 @@ const HeightMapRandomApp3D = (props: {
           if (currentRow.length) heightsRows.push(...currentRow);
         }
         //
+        // console.log("heightsRows", heightsRows);
+        //
         if (heightsRows) {
           const uint8arr = Uint8Array.from(heightsRows);
           //
+          // const width = heightViewportSize;
           const texture = new DataTexture(
             uint8arr,
-            120,
-            120,
+            heightViewportSize,
+            heightViewportSize,
             RGBAFormat,
             UnsignedByteType
           );
           //
           texture.flipY = true; // flipping image on vertical axis
           //
-          texture.wrapS = 120;
-          texture.wrapT = 120;
+          // texture.wrapS = width;
+          // texture.wrapT = width;
           //
           texture.minFilter = LinearFilter;
           texture.magFilter = LinearFilter;
@@ -187,7 +223,7 @@ const HeightMapRandomApp3D = (props: {
     }
     //
     return null;
-  }, [dataTexture, heightViewPort]);
+  }, [dataTexture, heightViewPort, sampling, heightViewportSize]);
 
   //
   // BufferAttribute, height information for TileMesh (1200*1200)
@@ -196,7 +232,7 @@ const HeightMapRandomApp3D = (props: {
     if (heights1200) {
       const SCALE_Z = 1; // TODO: unit_per_y x2 as (lat,lng) needs 2x1 rectanle
       //
-      const count = 1200; // number of vertices across one axis
+      const count = sampling; // number of vertices across one axis
       //
       const width = 10; // scale in x dimension
       const height = 10; // scale in z dimension
@@ -210,7 +246,7 @@ const HeightMapRandomApp3D = (props: {
         for (let zi = 0; zi < count; zi++) {
           let x = (xi - count / 2) * unit_per_x; // - 5;
           let z = (zi - count / 2) * unit_per_z; // - 5;
-          let y = heights1200[xi * 1200 + zi];
+          let y = heights1200[xi * sampling + zi];
           //
           arr.push(x, z, y); // positions.push(x, y, z);
         }
@@ -220,7 +256,7 @@ const HeightMapRandomApp3D = (props: {
     }
     //
     return new Float32Array(0); // empty array
-  }, [heights1200]);
+  }, [heights1200, sampling]);
 
   //
   // height information for the heightfield component (120*120)
@@ -247,9 +283,9 @@ const HeightMapRandomApp3D = (props: {
           const inBounds = inBoundsHorizontal && inBoundsVertical;
           //
           if (inBounds) {
-            const offset = row_idx * 1200 + col_idx;
+            const offset = row_idx * sampling + col_idx;
             //
-            currentRow.push(heights1200[offset]);
+            currentRow.push(heights1200[offset] || -1); // ignore errors
           }
         }
         //
@@ -260,10 +296,65 @@ const HeightMapRandomApp3D = (props: {
     }
     //
     return [] as Array<Array<number>>;
-  }, [heights1200, heightViewPort]);
+  }, [heights1200, heightViewPort, sampling]);
+
+  //
+  //
+  //
+
+  //
+  const imageMemo = useMemo(() => {
+    if (!dataTexture) return null;
+    if (!dataTexture.image.data) return null;
+    //
+    const imagedata_to_image = (imagedata: ImageData) => {
+      var canvas = document.createElement("canvas");
+      var ctx = canvas.getContext("2d");
+      canvas.width = imagedata.width;
+      canvas.height = imagedata.height;
+      //
+      if (ctx) ctx.putImageData(imagedata, 0, 0);
+      //
+      return (
+        <img
+          alt=""
+          src={canvas.toDataURL()}
+          style={{ width: `${sampling}px`, height: `${sampling}px`, zoom: 0.5 }}
+        />
+      );
+    };
+    //
+    const ids = {
+      dataArray: dataTexture.image.data,
+    } as ImageDataSettings;
+    const id = new ImageData(sampling, sampling, ids);
+    //
+    const d = dataTexture.image.data;
+    for (let i = 0; i < id.data.length; i += 4) {
+      // Modify pixel data
+      id.data[i + 0] = d[i + 0]; // R value
+      id.data[i + 1] = d[i + 1]; // G value
+      id.data[i + 2] = d[i + 2]; // B value
+      id.data[i + 3] = d[i + 3]; // A value
+    }
+    //
+    return imagedata_to_image(id);
+  }, [dataTexture, sampling]);
   //
   return (
     <>
+      <div style={{ height: "300px" }}>
+        {heights &&
+          Object.entries(heights).map(([hgtName, heights1200], idx) => (
+            <div key={idx} onClick={() => setHgtSelectedIndex(idx)}>
+              [{idx}]<span>{hgtName}</span> {heights1200.length}
+            </div>
+          ))}
+      </div>
+      {imageMemo}
+      {sampling} | {heightViewportSize} | {heightViewPort?.join("-")} |{" "}
+      {dataTextureHeightfield?.source.data.data.byteLength} | HM:
+      {heightMemo.length}
       <Canvas
         camera={{
           position: [5, 10, 5],
@@ -274,7 +365,11 @@ const HeightMapRandomApp3D = (props: {
         {showGrid && (
           <>
             <gridHelper position={[0, 0, 0]} />
-            <GridFloors side={10} setHeightViewPort={setHeightViewPort} />
+            <GridFloors
+              side={10}
+              setHeightViewPort={setHeightViewPort}
+              sampling={sampling}
+            />
           </>
         )}
 
@@ -297,7 +392,7 @@ const HeightMapRandomApp3D = (props: {
                 elementSize={(heightMapScale * 1) / 128}
                 heights={heightMemo}
                 position={[0, 0, 0]}
-                rotation={[0, Math.PI / 2, 0]}
+                rotation={[0, 0, 0]}
                 dataTextureHeightfield={dataTextureHeightfield}
                 showWireframe={showWireframe}
               />
@@ -305,14 +400,38 @@ const HeightMapRandomApp3D = (props: {
           </Physics>
         )}
 
+        <group position={[0, 3, -3]} rotation={[0, Math.PI / 2, 0]}>
+          <mesh rotation={[0, -Math.PI / 2, Math.PI / 2]} position={[3, 0, 0]}>
+            <planeBufferGeometry args={[4, 4, 1, 1]} />
+            {dataTexture && (
+              <meshStandardMaterial wireframe={false} map={dataTexture} />
+            )}
+          </mesh>
+          <mesh rotation={[0, -Math.PI / 2, Math.PI / 2]}>
+            <planeBufferGeometry
+              args={[3, 3, heightViewportSize - 1, heightViewportSize - 1]}
+            />
+            {dataTextureHeightfield && (
+              <meshStandardMaterial
+                wireframe={false}
+                colorWrite={true}
+                map={dataTextureHeightfield}
+              />
+            )}
+          </mesh>
+        </group>
+
         {positions && dataTexture && (
           <TileMesh
+            wSegments={sampling - 1}
+            hSegments={sampling - 1}
             scalePositionY={scalePositionY}
             positions={positions}
             dataTexture={dataTexture}
           />
         )}
       </Canvas>
+      <hr />
       <div style={{ position: "relative", top: "-20px", userSelect: "none" }}>
         {isFullscreenAvailable && (
           <button onClick={toggleFullscreen} style={{ float: "right" }}>

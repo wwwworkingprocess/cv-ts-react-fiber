@@ -5,11 +5,20 @@ const TileMesh = (
     scalePositionY: number;
     positions: Float32Array; // positions of vertices or empty array
     dataTexture: Texture | null;
+    wSegments: number;
+    hSegments: number;
   }
 ) => {
-  const { scalePositionY, positions, dataTexture, ...meshProps } = props;
+  const {
+    scalePositionY,
+    positions,
+    dataTexture,
+    wSegments,
+    hSegments,
+    ...meshProps
+  } = props;
   //
-  const [wSegments, hSegments] = [1200 - 1, 1200 - 1]; // 1200x1200 vertices
+  // const [wSegments, hSegments] = [1200 - 1, 1200 - 1]; // 1200x1200 vertices
   //
   return (
     <mesh

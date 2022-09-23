@@ -8,10 +8,14 @@ import {
   UnsignedByteType,
   Vector3,
 } from "three";
+import { SAMPLING_MODE } from "../../../hooks/srtm/useSrtmTiles";
 
 import coloring from "../../../utils/colors";
 
-const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
+const useHeightBasedTexture = (
+  heights1200: Int16Array | undefined,
+  mode: SAMPLING_MODE
+) => {
   //
   // creating array of RGBA colors, color is based on height and self shaded
   //
@@ -19,7 +23,7 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
     if (heights1200) {
       const trios = [] as Array<number>;
 
-      const width = 1200; // todo check
+      const width = mode; // todo check
       const v3 = new Vector3(0, 0, 0),
         sun = new Vector3(1, 1, 1);
       sun.normalize();
@@ -50,7 +54,7 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
     }
     //
     return undefined;
-  }, [heights1200]);
+  }, [heights1200, mode]);
 
   //
   // create Texture once each pixel has its color
@@ -61,8 +65,8 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
     if (heightsAsColors) {
       texture = new DataTexture(
         heightsAsColors,
-        1200,
-        1200,
+        mode,
+        mode,
         RGBAFormat,
         UnsignedByteType
       );
@@ -74,10 +78,12 @@ const useHeightBasedTexture = (heights1200: Int16Array | undefined) => {
       texture.encoding = sRGBEncoding;
       //
       texture.needsUpdate = true;
+      //
+      console.log("new texture", mode, texture);
     }
     //
     return texture;
-  }, [heightsAsColors]);
+  }, [heightsAsColors, mode]);
 
   return dataTexture;
 };

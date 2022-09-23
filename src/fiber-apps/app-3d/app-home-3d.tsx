@@ -165,6 +165,7 @@ const AppHome3D = (props: {
             setHeightViewPort={() => {}}
             position={[0, -0.0111, 0]}
             scale={[10 / (36 * 3), 1 / (2 * 3), 10 / (36 * 3)]}
+            sampling={1200}
           />
         )}
 

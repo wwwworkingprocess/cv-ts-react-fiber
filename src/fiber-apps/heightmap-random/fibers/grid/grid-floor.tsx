@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { Color, Vector3 } from "three";
+import { SAMPLING_MODE } from "../../../../hooks/srtm/useSrtmTiles";
 
 import GridCrossHair from "./grid-crosshair";
 import GridFloorCells from "./grid-floor-cells";
@@ -13,12 +14,21 @@ const GridFloor = (
     setHeightViewPort: React.Dispatch<
       React.SetStateAction<[number, number, number, number] | undefined>
     >;
+    sampling: SAMPLING_MODE;
   }
 ) => {
-  const { i, j, setHeightViewPort } = props;
+  const { i, j, setHeightViewPort, sampling } = props;
   //
   const crossHairHeight = 0.75;
   const [crossHairPosition, setCrossHairPosition] = useState<Vector3>();
+  //
+  const unitMemo = useMemo(() => {
+    const totalWidthInUnits = 10;
+    //
+    //TODO: ensure valid input
+    //
+    return [sampling / totalWidthInUnits, sampling / totalWidthInUnits];
+  }, [sampling]);
 
   const activeViewPort = useMemo(() => {
     if (crossHairPosition) {
@@ -34,7 +44,8 @@ const GridFloor = (
       const px = x + 4.5; // (5-0.5)
       const pz = 4.5 - z; // px and pz is in range [0..9]
       //
-      const [pixelPerX, pixelPerZ] = [120, 120];
+      // const [pixelPerX, pixelPerZ] = [120, 120]; // sampling / 10
+      const [pixelPerX, pixelPerZ] = unitMemo; // [1200 / 10, 1200 / 10]; // sampling / 10
       //
       const newViewport = [
         px * pixelPerX,
@@ -47,7 +58,7 @@ const GridFloor = (
     }
     //
     return undefined;
-  }, [crossHairPosition]);
+  }, [crossHairPosition, unitMemo]);
 
   useEffect(() => {
     setHeightViewPort(activeViewPort);

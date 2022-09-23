@@ -27,8 +27,26 @@ export const Heightfield = (
     dataTextureHeightfield,
   } = props;
   //
-  const ref = useRef<THREE.Object3D<Event>>(
-    useHeightfield(() => ({
+  // const ref = useRef<THREE.Object3D<Event>>(
+  //   useHeightfield(
+  //     () => ({
+  //       args: [
+  //         heights,
+  //         {
+  //           elementSize,
+  //         },
+  //       ],
+  //       position,
+  //       rotation,
+  //     }),
+  //     undefined,
+  //     [heights, dataTextureHeightfield]
+  //   ) as any
+  // );
+  const ref = useRef<THREE.Object3D<Event>>(null!);
+  //
+  const hf = useHeightfield(
+    () => ({
       args: [
         heights,
         {
@@ -37,9 +55,10 @@ export const Heightfield = (
       ],
       position,
       rotation,
-    })) as any
-  );
-  //
+    }),
+    ref,
+    [heights, dataTextureHeightfield]
+  ) as any;
 
   useFrame(
     autoRotate
@@ -53,7 +72,6 @@ export const Heightfield = (
   //   //TODO: check warning    WebGL: INVALID_ENUM: texParameter: invalid parameter
   //   //
   // }, [dataTextureHeightfield]);
-
   //
   return (
     <mesh ref={ref as any} castShadow receiveShadow>

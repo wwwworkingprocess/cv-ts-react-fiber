@@ -30,7 +30,8 @@ const Navigation = () => {
         </LogoContainer>
         <NavLinks>
           <NavLink to="/map">MAP</NavLink>
-          <NavLink to="/courses">COURSES</NavLink>
+          <NavLink to="/viewer">VIEWER</NavLink>
+          <NavLink to="/skills">SKILLS</NavLink>
           <NavLink to="/demos">DEMOS</NavLink>
 
           {currentUser ? (

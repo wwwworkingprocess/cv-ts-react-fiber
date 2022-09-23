@@ -78,3 +78,25 @@ export const radial = (
   //
   return [deg(lon), deg(lat)];
 };
+
+const _padLeft = (num: number, len: number) => {
+  let s = String(num);
+  //
+  while (s.length < len) s = `0${s}`;
+  //
+  return s;
+};
+
+export const _xy_to_loc = (xy: [number, number]) => {
+  return [
+    xy[0] >= 0 ? "N" : "S",
+    _padLeft((xy[0] > 0 ? 1 : -1) * xy[0], 2),
+    xy[1] >= 0 ? "E" : "W",
+    _padLeft((xy[1] > 0 ? 1 : -1) * xy[1], 3),
+  ].join("");
+};
+//
+export const _loc_to_xy = (s: string) => [
+  (s.substring(0, 1) === "N" ? 1 : -1) * +s.substring(1, 3),
+  (s.substring(3, 4) === "E" ? 1 : -1) * +s.substring(4, 7),
+];
