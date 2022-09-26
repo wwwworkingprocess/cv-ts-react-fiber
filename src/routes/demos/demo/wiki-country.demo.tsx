@@ -90,8 +90,8 @@ const WikiCountryDemo = (props: {
         )
         .sort((a, b) => a[1] - b[1]);
       //
-      const ds = diffs.map((d) => d[1]).slice(0, PAGE_SIZE);
-      const countries = diffs.map((d) => d[0]).slice(0, PAGE_SIZE);
+      const ds = diffs.map((d) => d[1]).slice(1, PAGE_SIZE);
+      const countries = diffs.map((d) => d[0]).slice(1, PAGE_SIZE);
       const countriesWithDistance = countries.map((c, i) => ({
         ...c,
         distance: ds[i],

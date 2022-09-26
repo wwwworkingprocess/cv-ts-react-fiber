@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import panoramas from "./panoramas.json";
 
 const SERVICE_ROOT = "http://viewfinderpanoramas.org/dem3/";
@@ -25,11 +25,12 @@ const DownloadSet = () => {
               shape={"rect"}
               coords={coords}
               href={keyToUrl(key)}
-              onMouseEnter={(e) => {
-                console.log(e.target);
-                const area = e.target as HTMLAreaElement;
-                setSelectedKey(area.alt);
-              }}
+              onPointerDown={(e) =>
+                setSelectedKey((e.target as HTMLAreaElement).alt)
+              }
+              onMouseEnter={(e) =>
+                setSelectedKey((e.target as HTMLAreaElement).alt)
+              }
             />
           ))}
         </map>

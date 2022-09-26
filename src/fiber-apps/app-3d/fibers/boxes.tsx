@@ -82,6 +82,7 @@ const Boxes = (
       castShadow
       ref={ref}
       args={[boxesGeometry, material, i * j]}
+      {...props}
     />
   );
 };

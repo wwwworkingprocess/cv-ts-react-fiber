@@ -31,7 +31,7 @@ const transformInput = (first: ArrayBuffer | undefined) => {
 const canvas = document.createElement("canvas");
 const ctx = canvas.getContext("2d");
 
-const imagedata_to_dataurl = (
+export const imagedata_to_dataurl = (
   imagedata: ImageData,
   width: number,
   height: number
@@ -44,26 +44,6 @@ const imagedata_to_dataurl = (
   if (ctx) ctx.putImageData(imagedata, 0, 0);
   //
   return canvas.toDataURL();
-};
-
-const imagedata_to_image = (
-  imagedata: ImageData,
-  width: number,
-  height: number
-) => {
-  const dataUrl = imagedata_to_dataurl(imagedata, width, height);
-  //
-  return (
-    <img
-      alt=""
-      src={dataUrl}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        zoom: 1,
-      }}
-    />
-  );
 };
 
 const sampling = 150;
@@ -122,17 +102,22 @@ const HgtThumbnail = (props: { hgtBuffer1201: ArrayBuffer | undefined }) => {
     }
   }, [thumbsMemo]);
   //
-  const imgMemo = useMemo(() => {
-    if (idMemo) {
-      const sampling = 150;
-      //
-      return imagedata_to_image(idMemo, sampling, sampling);
-    }
-    //
-    return null;
-  }, [idMemo]);
+  const dataUrl = useMemo(
+    () => idMemo && imagedata_to_dataurl(idMemo, sampling, sampling),
+    [idMemo]
+  );
   //
-  return imgMemo;
+  return dataUrl ? (
+    <img
+      alt=""
+      src={dataUrl}
+      style={{
+        width: `${sampling}px`,
+        height: `${sampling}px`,
+        zoom: 1,
+      }}
+    />
+  ) : null;
 };
 
 export default HgtThumbnail;

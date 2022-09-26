@@ -36,9 +36,15 @@ const HgtGrid2D = (props: {
                     key={`cell_${ri}_${cidx}`}
                     width={150}
                     height={150}
-                    onClick={(e) => handleCellClick(e, ri, cidx, zi)}
+                    // onClick={(e) => handleCellClick(e, ri, cidx, zi)}
                   >
-                    <HgtGridCell2D locator={l} zipIndex={zi}>
+                    <HgtGridCell2D
+                      locator={l}
+                      rowIndex={ri}
+                      colIndex={ci}
+                      zipIndex={zi}
+                      handleCellClick={handleCellClick}
+                    >
                       {zipResults && zi !== -1 ? (
                         <HgtThumbnail hgtBuffer1201={zipResults[zi]} />
                       ) : (

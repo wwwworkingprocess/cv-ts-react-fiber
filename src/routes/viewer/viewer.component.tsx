@@ -1,4 +1,11 @@
-import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  ChangeEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { _loc_to_xy, _xy_to_loc } from "../../utils/geo";
 
@@ -6,6 +13,10 @@ import FileInputZip from "../../components/hgt-viewer/file-input-zip/file-input-
 import HgtGrid2D from "../../components/hgt-viewer/hgt-grid-2d/hgt-grid-2d.component";
 import MiniMap from "../../components/hgt-viewer/mini-map/mini-map.component";
 import DownloadSet from "../../components/hgt-viewer/download-set/download-set.component";
+import { changeEndianness, normalizeElevationData } from "../../utils/srtm";
+import { imagedata_to_dataurl } from "../../components/hgt-viewer/hgt-thumbnail/hgt-thumbnail.component";
+import coloring from "../../utils/colors";
+import HgtSetViewer3D from "../../fiber-apps/hgt-set-viewer/hgt-set-viewer-3d";
 
 export const useXyMemo = (
   heights:
@@ -104,21 +115,26 @@ export const useXyMemo = (
     [min_x, max_x, min_y, max_y]
   );
   //
-  return {
-    grid,
-    d: { sizex, sizey },
-    b: bounds,
-    xys,
-    find: locatorByGridIndices,
-  };
+  return useMemo(
+    () => ({
+      grid,
+      d: { sizex, sizey },
+      b: bounds,
+      xys,
+      find: locatorByGridIndices,
+    }),
+    [grid, sizex, sizey, bounds, xys, locatorByGridIndices]
+  );
 };
 
 const HgtZipContents = ({
   filenames,
   zipResults,
+  setSelectedOrigin,
 }: {
   filenames: Array<string> | undefined;
   zipResults: Array<ArrayBuffer> | undefined;
+  setSelectedOrigin: React.Dispatch<React.SetStateAction<Origin | undefined>>;
 }) => {
   const heights = useMemo(
     () =>
@@ -134,14 +150,21 @@ const HgtZipContents = ({
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     rowIndex: number,
     colIndex: number,
-    zipDirectoryIndex: number
+    zipDirectoryIndex: number,
+    x: number,
+    y: number,
+    newOrigin?: Origin
   ) => {
-    console.log("cell clicked", e);
+    console.log("cell clicked", newOrigin, e);
+    console.log("x,y", x, y);
     //
     console.log("grid: ", rowIndex, colIndex, zipDirectoryIndex);
     const locator = xyMemo.find(rowIndex, colIndex, zipDirectoryIndex);
     //
     console.log("locator: ", locator, "filename: ", locator + ".hgt");
+    //
+    // const newOrigin = { locator x, y}
+    if (newOrigin) setSelectedOrigin(newOrigin);
   };
   //
   const [selectedFilename, setSelectedFilename] = useState<
@@ -157,7 +180,13 @@ const HgtZipContents = ({
     if (zipResults && selectedFilename) {
       const idx = filenames?.indexOf(selectedFilename);
       //
-      return idx !== undefined ? zipResults[idx] : undefined;
+      const nextBuffer = idx !== undefined ? zipResults[idx] : undefined;
+      const nextBufferLength = nextBuffer?.byteLength ?? 0;
+      const validBuffer = nextBufferLength === 2884802;
+      //
+      if (!validBuffer) alert(`Invalid file size: ${nextBufferLength}`);
+      //
+      return validBuffer ? nextBuffer : undefined;
     }
     //
     return undefined;
@@ -224,9 +253,95 @@ const HgtZipContents = ({
   ) : null;
 };
 
+export type Origin = {
+  locator: string;
+  lat: number;
+  lon: number;
+  zipIndex: number;
+};
+
+const HgtTileDetails = (props: { tileBuffer: ArrayBuffer | undefined }) => {
+  const { tileBuffer } = props;
+  //
+  const transformInput = (buffer: ArrayBuffer | undefined) => {
+    //
+    // [1201x1201] >> endian + normalize
+    //
+    const transform = (e: ArrayBuffer) =>
+      normalizeElevationData(changeEndianness(new Int16Array(e)));
+    //
+    return buffer ? transform(buffer) : undefined;
+  };
+  //
+  const createImageData = (i16: Int16Array | undefined) => {
+    if (!i16) return undefined;
+    //
+    const id = new ImageData(1201, 1201);
+    //
+    for (let i = 0; i < i16.length; i++) {
+      const height = i16[i];
+      const c = coloring.get_color_by_height(height);
+      //
+      const offset = i * 4;
+      id.data[offset] = c.r; // R value
+      id.data[offset + 1] = c.g; // G value
+      id.data[offset + 2] = c.b; // B value
+      id.data[offset + 3] = 255; // A value
+    }
+    //
+    return id;
+  };
+  //
+  const dataurl = useMemo(() => {
+    if (tileBuffer) {
+      //
+      const i16 = transformInput(tileBuffer);
+      const imagedata = createImageData(i16);
+      //
+      return imagedata
+        ? imagedata_to_dataurl(imagedata, 1201, 1201)
+        : undefined;
+    }
+  }, [tileBuffer]);
+
+  //
+  return (
+    <div>
+      <div>
+        1201x1201 image
+        <img
+          alt={""}
+          src={dataurl}
+          style={{ width: "1201px", height: "1201px", zoom: 0.5 }}
+        />
+      </div>
+    </div>
+  );
+};
+
 const Viewer = () => {
   const [filenames, setFilenames] = useState<Array<string>>();
   const [zipResults, setZipResults] = useState<Array<ArrayBuffer>>();
+  const [selectedOrigin, setSelectedOrigin] = useState<Origin>();
+  //
+  const tileBuffer = useMemo(() => {
+    if (zipResults) {
+      if (selectedOrigin && selectedOrigin.zipIndex !== -1) {
+        const result = zipResults[selectedOrigin.zipIndex];
+        //
+        return result;
+      }
+    }
+    //
+    return undefined; // consider empty arraybuffer
+  }, [selectedOrigin, zipResults]);
+  //
+  const heights = useMemo(() => {
+    if (!filenames || !zipResults) return undefined;
+    //
+    return Object.fromEntries(filenames.map((f, idx) => [f, zipResults[idx]]));
+  }, [filenames, zipResults]);
+  //
   //
   return (
     <>
@@ -235,7 +350,26 @@ const Viewer = () => {
       <hr />
       <FileInputZip setFilenames={setFilenames} setZipResults={setZipResults} />
       <hr />
-      <HgtZipContents filenames={filenames} zipResults={zipResults} />
+      <HgtZipContents
+        filenames={filenames}
+        zipResults={zipResults}
+        setSelectedOrigin={setSelectedOrigin}
+      />
+      <hr />
+      {selectedOrigin ? JSON.stringify(selectedOrigin) : ""}
+      <hr />
+      {/* {selectedOrigin ? <HgtTileDetails tileBuffer={tileBuffer} /> : ""} */}
+      <hr />
+      {selectedOrigin ? (
+        <HgtSetViewer3D
+          heights={heights}
+          selectedOrigin={selectedOrigin}
+          isCameraEnabled={true}
+          isFrameCounterEnabled={false}
+        />
+      ) : (
+        ""
+      )}
       <div>
         Prepare:
         <ol>
