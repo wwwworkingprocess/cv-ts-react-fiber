@@ -59,7 +59,8 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   //
   // sampling points within a 300x300 area
   //
-  const [takePixel /*, setTakePixel*/] = useState<number>(10);
+  const [takePixel, setTakePixel] = useState<number>(6);
+  const [heightScale, setHeightScale] = useState<number>(1.0);
   //
   const dimensionMemo = useMemo(
     () =>
@@ -69,6 +70,22 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
 
   return (
     <>
+      <div style={{ position: "relative" }}>
+        Sample:
+        {[2, 3, 5, 6, 10, 15, 30].map((takeEveryNthPixel, idx) => (
+          <button key={idx} onClick={(e) => setTakePixel(takeEveryNthPixel)}>
+            {takeEveryNthPixel}
+          </button>
+        ))}
+        Height:
+        <input
+          type="number"
+          step={0.05}
+          value={heightScale}
+          onChange={(e) => setHeightScale(parseFloat(e.target.value))}
+          style={{ width: "60px" }}
+        />
+      </div>
       <Canvas shadows dpr={[1, 2]}>
         <DefaultLightRig castShadow={true} />
         <ambientLight intensity={0.3} />
@@ -122,10 +139,11 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
         {/* Grid of 1x1 planes, orienting upwards */}
         <SampledTileGrid
           values={values}
-          dimensionMemo={dimensionMemo}
           xyMemo={xyMemo}
+          dimensionMemo={dimensionMemo}
           areaScaleX={areaScale.x}
           areaScaleY={areaScale.y}
+          heightScale={heightScale}
         />
       </Canvas>
       <ControlsContainer>

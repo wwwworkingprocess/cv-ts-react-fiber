@@ -11,8 +11,10 @@ import { changeEndianness } from "../../../utils/srtm";
 import SampledTile3D from "./sampled-tile-3d";
 
 const useBlockOperations = (
+  values: Array<ArrayBuffer> | undefined,
   xyMemo: any,
-  values: Array<ArrayBuffer> | undefined
+  dimensionMemo: Array<number>,
+  heightScale: number
 ) => {
   const ops = useMemo(() => {
     const findContentBufferByBlock = (blockX: number, blockY: number) => {
@@ -29,7 +31,7 @@ const useBlockOperations = (
       createTextureFromColors,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values]);
+  }, [values, dimensionMemo, heightScale]);
   //
   return ops;
 };
@@ -44,6 +46,7 @@ const SampledTileGrid = (
     xyMemo: any;
     areaScaleX: number;
     areaScaleY: number;
+    heightScale: number;
   }
 ) => {
   const {
@@ -52,10 +55,11 @@ const SampledTileGrid = (
     xyMemo,
     areaScaleX,
     areaScaleY,
+    heightScale,
     ...groupProps
   } = props;
   //
-  const ops = useBlockOperations(xyMemo, values);
+  const ops = useBlockOperations(values, xyMemo, dimensionMemo, heightScale);
   //
   const renderedGridMemo = useMemo(() => {
     // console.log("RERENDERING GRID", ops);
@@ -75,7 +79,7 @@ const SampledTileGrid = (
     //
     return newArray(areaScaleX).map((n) =>
       newArray(areaScaleY).map((m) => {
-        const key = `${n}_${m}`;
+        const key = `${n}_${m}_${dimensionMemo.length}`;
         const scale = 4; // [1200x1200] ->  [300x300]
         //
         const blockX = Math.floor(n / scale); // rows
@@ -106,7 +110,7 @@ const SampledTileGrid = (
           //
           // filling position data for vertices, based on the height data
           //
-          positions = ops.createPositionsFromHeights(hs, G); // new Float32Array(arr);
+          positions = ops.createPositionsFromHeights(hs, G, 0.75, 0.75, 1); // new Float32Array(arr);
         } else {
           positions = new Float32Array(0);
           texture = undefined;
@@ -127,10 +131,14 @@ const SampledTileGrid = (
     );
     // excluding xyMemo.grid intended!
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [values, dimensionMemo, areaScaleX, areaScaleY]);
+  }, [values, dimensionMemo.length, areaScaleX, areaScaleY]);
 
   //
-  return <group {...groupProps}>{renderedGridMemo}</group>;
+  return (
+    <group scale={[1, heightScale, 1]} {...groupProps}>
+      {renderedGridMemo}
+    </group>
+  );
 };
 
 export default SampledTileGrid;

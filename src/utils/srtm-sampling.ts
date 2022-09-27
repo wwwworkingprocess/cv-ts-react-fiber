@@ -16,13 +16,16 @@ export const createOffsetsForBlock = (
   m: number,
   scale: number // block splitting factor e.g 4 -> 4x4 block per tile (16)
 ) => {
-  const sub_x = (n % scale) * (1200 / scale);
-  const sub_y = (m % scale) * (1200 / scale);
+  const downscale = 1200 / scale;
+  //
+  const sub_x = (n % scale) * downscale;
+  const sub_y = (m % scale) * downscale;
   const target_offset = sub_y * 1201 * 2 + sub_x * 2;
   //
   const offsets = G.map((r, ri) =>
     G.map((c, ci) => {
-      const o: number = target_offset + (300 - r) * 1201 * 2 + c * 2;
+      // const o: number = target_offset + (300 - r) * 1201 * 2 + c * 2;
+      const o: number = target_offset + (downscale - 1 - r) * 1201 * 2 + c * 2;
 
       return Math.floor(o);
     })
@@ -74,7 +77,8 @@ export const createPositionsFromHeights = (
   heightStripe: Array<number>,
   G: Array<number>,
   magic_x: number = 0.75, // adjust value to increase tile size on primary axis
-  magic_y: number = 0.75 // adjust value to increase tile size on secondary axis
+  magic_y: number = 0.75, // adjust value to increase tile size on secondary axis
+  heightScale: number
 ) => {
   const l = G.length;
   let maxLength = l * l - 1;
@@ -82,19 +86,19 @@ export const createPositionsFromHeights = (
   //
   const f32 = new Float32Array(coordsLength);
   //
-  const unit_per_x = 1 / (l - 1 - magic_x);
-  const unit_per_z = 1 / (l - magic_y);
+  const unit_per_x = (1 / (l - magic_x)) * 1.03;
+  const unit_per_z = (1 / (l - magic_y)) * 1.03;
   //
   for (let xi = 0; xi < l; xi++) {
     for (let zi = 0; zi < l; zi++) {
       let x = (xi - l / 2) * unit_per_x;
       let z = (zi - l / 2) * unit_per_z;
       //
-      const rawValue = heightStripe[maxLength - xi * l + zi];
+      const rawValue = heightStripe[maxLength - (xi + 1) * l + zi + 1];
       //
       //TODO: rawValue gets out of bounds, that's why we are reading NaNs
       //
-      let HEIGHT = (isNaN(rawValue) ? 0 : rawValue) * 0.00041;
+      let HEIGHT = (isNaN(rawValue) ? 0 : rawValue) * heightScale * 0.00021;
       //
       const coordsOffset = (xi * l + zi) * 3;
       f32[coordsOffset] = z;
