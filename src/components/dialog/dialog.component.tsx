@@ -8,15 +8,14 @@ const Dialog: FC<DialogProps> = (props: DialogProps) => {
   //
   let dialog = (
     <div style={dialogStyles as any}>
-      <button style={dialogCloseButtonStyles} onClick={onClose}>
+      <button style={dialogCloseButtonStyles as any} onClick={onClose}>
         x
       </button>
-
       <div>{children}</div>
     </div>
   );
 
-  return !isOpen ? null : <div>{dialog}</div>;
+  return !isOpen ? null : dialog;
 };
 
 export default Dialog;

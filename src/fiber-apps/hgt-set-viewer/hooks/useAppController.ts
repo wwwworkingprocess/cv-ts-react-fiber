@@ -37,16 +37,8 @@ const useAppController = (xyMemo: any) => {
   useEffect(() => {
     if (xyMemo) {
       const d = xyMemo.d ?? { sizex: 0, sizey: 0 };
-      const b = xyMemo.b ?? { min_x: 0, max_x: 0, min_y: 0, max_y: 0 };
-      //const scale = 1201; // both axis
-      // const scale = 3; // both axis
       const scale = 4;
 
-      // const newBounds = [b.min_x, b.max_x, b.min_y, b.max_y].map(
-      //   (x) => x * scale
-      // ) as [number, number, number, number];
-      //
-      //const newBounds = [0, d.sizex * scale - 1, 0, d.sizey * scale - 1] as [
       const newBounds = [0, d.sizey * scale - 1, 0, d.sizex * scale - 1] as [
         number,
         number,

@@ -2,8 +2,6 @@ import { useMemo } from "react";
 
 import { _xy_to_loc } from "../../../utils/geo";
 
-import HgtThumbnail from "../hgt-thumbnail/hgt-thumbnail.component";
-
 import {
   MiniMapContainer,
   MiniMapCrosshair,
@@ -48,11 +46,8 @@ const useCrossHairMemo = (xyMemo: any, downscale: number) => {
   return crossHairMemo;
 };
 
-const MiniMap = (props: {
-  xyMemo: any;
-  selectedBuffer: ArrayBuffer | undefined;
-}) => {
-  const { xyMemo, selectedBuffer } = props;
+const MiniMap = (props: { xyMemo: any }) => {
+  const { xyMemo } = props;
   //
   const downscale = 0.5; // image is 180x90 not 360x180
   //
@@ -66,7 +61,6 @@ const MiniMap = (props: {
         alt="minimap"
         src="data/earth/diffuse.jpg"
       />
-      {selectedBuffer && <HgtThumbnail hgtBuffer1201={selectedBuffer} />}
       {crossHairMemo && (
         <MiniMapCrosshair
           width={10}

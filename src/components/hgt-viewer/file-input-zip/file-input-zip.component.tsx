@@ -7,13 +7,20 @@ const FileUploader = ({ onFileSelect }: any) => {
   const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => onFileSelect(e);
   //
   return (
-    <div className="file-uploader">
-      <input ref={fileInput} type="file" onChange={handleFileInput} />
+    <span className="file-uploader" style={{ display: "inline" }}>
+      <input
+        ref={fileInput}
+        type="file"
+        onChange={handleFileInput}
+        style={{ display: "none" }}
+      />
       <button
         onClick={(e) => fileInput.current && fileInput.current.click()}
         className="btn btn-primary"
-      />
-    </div>
+      >
+        Upload
+      </button>
+    </span>
   );
 };
 
@@ -108,11 +115,11 @@ const FileInputZip = ({ setZipResults, setFilenames }: any) => {
   };
   //
   return (
-    <div>
-      Select a file:
+    <>
+      or
       <FileUploader onFileSelect={handleChange} />
-      {error && error}
-    </div>
+      {error && error} a file
+    </>
   );
 };
 

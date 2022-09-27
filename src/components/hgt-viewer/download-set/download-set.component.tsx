@@ -11,9 +11,8 @@ const DownloadSet = () => {
   );
 
   return (
-    <div>
-      Download one
-      <hr />
+    <div style={{ color: "black" }}>
+      <h2>Download one</h2>
       {selectedKey} <small>- Click on the map to download set</small>
       <div>
         <map name={"areas"}>

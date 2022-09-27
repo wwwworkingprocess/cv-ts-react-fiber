@@ -74,8 +74,12 @@ export const HgtThumbnailWater = (props: { sampling: number }) => {
   return <img alt="" src={src} style={styles} />;
 };
 
-const HgtThumbnail = (props: { hgtBuffer1201: ArrayBuffer | undefined }) => {
-  const { hgtBuffer1201 } = props;
+const HgtThumbnail = (props: {
+  hgtBuffer1201: ArrayBuffer | undefined;
+  zoom?: number; // 1, 0.75, 0.5, 0.25 etc
+}) => {
+  const { hgtBuffer1201, zoom } = props;
+  const zoomUsed = zoom ?? 1;
   //
   const thumbsMemo = useMemo(
     () => (hgtBuffer1201 ? transformInput(hgtBuffer1201) : undefined),
@@ -114,7 +118,7 @@ const HgtThumbnail = (props: { hgtBuffer1201: ArrayBuffer | undefined }) => {
       style={{
         width: `${sampling}px`,
         height: `${sampling}px`,
-        zoom: 1,
+        zoom: zoomUsed,
       }}
     />
   ) : null;

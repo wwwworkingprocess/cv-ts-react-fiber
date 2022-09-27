@@ -24,6 +24,7 @@ const HgtGrid2D = (props: {
   return (
     <div
       style={{
+        position: "relative",
         width: xyMemo ? `${xyMemo.grid?.[0]?.[0].length * (150 + 2)}px` : "0px",
       }}
     >

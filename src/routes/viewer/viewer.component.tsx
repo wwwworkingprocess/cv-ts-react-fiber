@@ -1,11 +1,4 @@
-import {
-  ChangeEvent,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { ChangeEvent, useCallback, useEffect, useMemo, useState } from "react";
 
 import { _loc_to_xy, _xy_to_loc } from "../../utils/geo";
 
@@ -14,9 +7,19 @@ import HgtGrid2D from "../../components/hgt-viewer/hgt-grid-2d/hgt-grid-2d.compo
 import MiniMap from "../../components/hgt-viewer/mini-map/mini-map.component";
 import DownloadSet from "../../components/hgt-viewer/download-set/download-set.component";
 import { changeEndianness, normalizeElevationData } from "../../utils/srtm";
-import { imagedata_to_dataurl } from "../../components/hgt-viewer/hgt-thumbnail/hgt-thumbnail.component";
+import HgtThumbnail, {
+  imagedata_to_dataurl,
+} from "../../components/hgt-viewer/hgt-thumbnail/hgt-thumbnail.component";
 import coloring from "../../utils/colors";
 import HgtSetViewer3D from "../../fiber-apps/hgt-set-viewer/hgt-set-viewer-3d";
+import { unzipBufferMulti } from "../../utils/deflate";
+import Dialog from "../../components/dialog/dialog.component";
+import {
+  HgtScrollable2DGrid,
+  HgtZipContentFileDetailsContainer,
+  HgtZipContentLayoutGrid,
+  HgtZipContentLayoutGridCell,
+} from "./viewer.styles";
 
 export const useXyMemo = (
   heights:
@@ -177,14 +180,19 @@ const HgtZipContents = ({
   useEffect(() => setSelectedFilename(filenames?.[0]), [filenames]);
 
   const selectedBuffer = useMemo(() => {
-    if (zipResults && selectedFilename) {
+    if (zipResults && filenames && selectedFilename) {
       const idx = filenames?.indexOf(selectedFilename);
       //
-      const nextBuffer = idx !== undefined ? zipResults[idx] : undefined;
+      const nextBuffer = idx !== -1 ? zipResults[idx] : undefined;
       const nextBufferLength = nextBuffer?.byteLength ?? 0;
       const validBuffer = nextBufferLength === 2884802;
       //
-      if (!validBuffer) alert(`Invalid file size: ${nextBufferLength}`);
+      if (!validBuffer) {
+        // alert(`Invalid file size: ${nextBufferLength} [${selectedFilename}]`);
+        //
+        // when switching between zips, filenames and selectedFilename gets out of sync
+        //
+      }
       //
       return validBuffer ? nextBuffer : undefined;
     }
@@ -197,7 +205,7 @@ const HgtZipContents = ({
   //
   const renderFileOptions = () =>
     filenames && (
-      <select onChange={(e) => onSelectChanged(e)}>
+      <select onChange={(e) => onSelectChanged(e)} style={{ fontSize: "14px" }}>
         {filenames.map((f, i) => (
           <option key={f} value={f}>
             {f}
@@ -210,44 +218,42 @@ const HgtZipContents = ({
     () => (zipResults ? zipResults.length * 1201 * 1201 : 0),
     [zipResults]
   );
+
   //
-  const totalPoints = useMemo(
-    () => (xyMemo ? xyMemo.d.sizex * xyMemo.d.sizey * 1201 * 1201 : 0),
-    [xyMemo]
-  );
-  //
-  const displayedPoints = useMemo(
-    () => (xyMemo ? xyMemo.d.sizex * xyMemo.d.sizey * 150 * 150 : 0),
-    [xyMemo]
-  );
+  // 3 column layout,  [minimap, filemeta, selectedbuffer]
   //
   return filenames ? (
     <>
-      Details
-      {renderFileOptions()}
+      File contents
+      <HgtZipContentLayoutGrid>
+        <HgtZipContentLayoutGridCell>
+          <MiniMap xyMemo={xyMemo} />
+        </HgtZipContentLayoutGridCell>
+        <HgtZipContentLayoutGridCell>
+          <HgtZipContentFileDetailsContainer>
+            <div style={{ textAlign: "center", marginTop: "-4px" }}>
+              {renderFileOptions()}
+            </div>
+            {zipResults ? `Tiles: ${zipResults.length}` : ""}
+            <br />
+            {xyMemo ? `Area: ${xyMemo.d.sizex}x${xyMemo.d.sizey}` : ""}
+            <br />
+            {dataPoints
+              ? `Size: ${((2 * dataPoints) / Math.pow(2, 20)).toFixed(2)} MB`
+              : ""}
+          </HgtZipContentFileDetailsContainer>
+        </HgtZipContentLayoutGridCell>
+        <HgtZipContentLayoutGridCell style={{ width: "120px" }}>
+          {selectedBuffer && (
+            <HgtThumbnail hgtBuffer1201={selectedBuffer} zoom={0.75} />
+          )}
+        </HgtZipContentLayoutGridCell>
+      </HgtZipContentLayoutGrid>
       <br />
-      {zipResults ? `${zipResults.length} tiles` : ""}
-      {xyMemo ? ` ${xyMemo.d.sizex}x${xyMemo.d.sizey}` : ""}
-      <br />
-      <br />
-      {dataPoints
-        ? `${(dataPoints / Math.pow(10, 6)).toFixed(2)} datapoints` +
-          `${((2 * dataPoints) / Math.pow(2, 20)).toFixed(2)} MB`
-        : ""}
-      <br />
-      {displayedPoints
-        ? `${(displayedPoints / Math.pow(10, 6)).toFixed(2)} points displayed` +
-          `${((2 * displayedPoints) / Math.pow(2, 20)).toFixed(2)} MB`
-        : ""}
-      <br />
-      {totalPoints
-        ? `${(totalPoints / Math.pow(10, 6)).toFixed(2)} points total` +
-          `${((2 * totalPoints) / Math.pow(2, 20)).toFixed(2)} MB`
-        : ""}
-      <br />
-      <MiniMap xyMemo={xyMemo} selectedBuffer={selectedBuffer} />
       <hr />
-      <HgtGrid2D heights={heights} handleCellClick={handleCellClick} />
+      <HgtScrollable2DGrid>
+        <HgtGrid2D heights={heights} handleCellClick={handleCellClick} />
+      </HgtScrollable2DGrid>
       <hr />
     </>
   ) : null;
@@ -260,7 +266,9 @@ export type Origin = {
   zipIndex: number;
 };
 
-const HgtTileDetails = (props: { tileBuffer: ArrayBuffer | undefined }) => {
+export const HgtTileDetails = (props: {
+  tileBuffer: ArrayBuffer | undefined;
+}) => {
   const { tileBuffer } = props;
   //
   const transformInput = (buffer: ArrayBuffer | undefined) => {
@@ -324,17 +332,17 @@ const Viewer = () => {
   const [zipResults, setZipResults] = useState<Array<ArrayBuffer>>();
   const [selectedOrigin, setSelectedOrigin] = useState<Origin>();
   //
-  const tileBuffer = useMemo(() => {
-    if (zipResults) {
-      if (selectedOrigin && selectedOrigin.zipIndex !== -1) {
-        const result = zipResults[selectedOrigin.zipIndex];
-        //
-        return result;
-      }
-    }
-    //
-    return undefined; // consider empty arraybuffer
-  }, [selectedOrigin, zipResults]);
+  // const tileBuffer = useMemo(() => {
+  //   if (zipResults) {
+  //     if (selectedOrigin && selectedOrigin.zipIndex !== -1) {
+  //       const result = zipResults[selectedOrigin.zipIndex];
+  //       //
+  //       return result;
+  //     }
+  //   }
+  //   //
+  //   return undefined; // consider empty arraybuffer
+  // }, [selectedOrigin, zipResults]);
   //
   const heights = useMemo(() => {
     if (!filenames || !zipResults) return undefined;
@@ -343,48 +351,115 @@ const Viewer = () => {
   }, [filenames, zipResults]);
   //
   //
+
+  const [has2D, setHas2D] = useState<boolean>(true);
+  const [has3D, setHas3D] = useState<boolean>(true);
+  const [is3dGridEnabled, setIs3dGridEnabled] = useState<boolean>(true);
+  const [isDownloadDialogOpen, setIsDownloadDialogOpen] =
+    useState<boolean>(false);
+
+  //
+  const onUseLocalDataset = (locator: string) => {
+    //
+    // fetching local data instead of the user provided input
+    // works for mobile devices, instead of the HtmlInputFile control
+    //
+    const SERVICE_ROOT = "data/hgt/";
+    const url = `${SERVICE_ROOT}${locator}.hgt.zip`;
+    //
+    const createResultObject = async ({
+      files,
+      results,
+    }: {
+      files: Array<string>;
+      results: Promise<Array<ArrayBuffer>>;
+    }) => {
+      console.log("received", files, results);
+      //
+      const buffers = await results;
+      //
+
+      return { files, buffers };
+    };
+    //
+    if (locator) {
+      setFilenames(undefined);
+      setZipResults(undefined);
+      //
+      fetch(url)
+        .then((res) => res.arrayBuffer())
+        .then(unzipBufferMulti)
+        .then(createResultObject)
+        .then(({ files, buffers }) => {
+          console.log("retrieved from url", { files, buffers });
+          //
+          setFilenames(files);
+          setZipResults(buffers);
+        });
+    }
+  };
+  //
   return (
     <>
-      Viewer{/*  {countries.length} - {isLoading ? "Loading..." : "Ready"} */}
-      <DownloadSet />
-      <hr />
-      <FileInputZip setFilenames={setFilenames} setZipResults={setZipResults} />
-      <hr />
-      <HgtZipContents
-        filenames={filenames}
-        zipResults={zipResults}
-        setSelectedOrigin={setSelectedOrigin}
+      Viewer --- 2D:{" "}
+      <input
+        type="checkbox"
+        checked={has2D}
+        onChange={(e) => setHas2D((b) => !b)}
+      />{" "}
+      - 3D:{" "}
+      <input
+        type="checkbox"
+        checked={has3D}
+        onChange={(e) => setHas3D((b) => !b)}
+      />
+      - 3D show grid:{" "}
+      <input
+        type="checkbox"
+        checked={is3dGridEnabled}
+        onChange={(e) => setIs3dGridEnabled((b) => !b)}
       />
       <hr />
-      {selectedOrigin ? JSON.stringify(selectedOrigin) : ""}
+      <button onClick={(e) => onUseLocalDataset("J26")}>Use Sample A</button>
+      <button onClick={(e) => onUseLocalDataset("SC56")}>Use Sample B</button>
+      <FileInputZip setFilenames={setFilenames} setZipResults={setZipResults} />
+      <span style={{ float: "right" }}>
+        <button onClick={(e) => setIsDownloadDialogOpen((b) => !b)}>
+          Find a set
+        </button>
+      </span>
+      <Dialog
+        isOpen={isDownloadDialogOpen}
+        onClose={(e: CloseEvent) => setIsDownloadDialogOpen(false)}
+      >
+        <DownloadSet />
+      </Dialog>
+      <hr />
+      {has2D && (
+        <HgtZipContents
+          filenames={filenames}
+          zipResults={zipResults}
+          setSelectedOrigin={setSelectedOrigin}
+        />
+      )}
+      <hr />
+      {selectedOrigin && selectedOrigin.locator !== "-"
+        ? `${selectedOrigin.locator}, ${selectedOrigin.lat.toFixed(
+            4
+          )}, ${selectedOrigin.lon.toFixed(4)} `
+        : ""}
       <hr />
       {/* {selectedOrigin ? <HgtTileDetails tileBuffer={tileBuffer} /> : ""} */}
       <hr />
-      {selectedOrigin ? (
+      {has3D && zipResults && selectedOrigin && (
         <HgtSetViewer3D
           heights={heights}
           selectedOrigin={selectedOrigin}
           isCameraEnabled={true}
           isFrameCounterEnabled={false}
+          is3dGridEnabled={is3dGridEnabled}
         />
-      ) : (
-        ""
       )}
-      <div>
-        Prepare:
-        <ol>
-          <li>+Select a file</li>
-          <li>+Read compressed bytes</li>
-          <li>+Decompress data</li>
-        </ol>
-        Process:
-        <ol>
-          <li>+Locate tiles by filename</li>
-          <li>+Create grid helper</li>
-          <li>+Render 2D grid</li>
-          <li>Render 2D selected tile</li>
-        </ol>
-      </div>
     </>
   );
 };

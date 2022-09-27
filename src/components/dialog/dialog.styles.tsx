@@ -24,4 +24,5 @@ export const dialogCloseButtonStyles = {
   height: "30px",
   fontWeight: "bold",
   alignSelf: "flex-end",
+  position: "absolute",
 };
