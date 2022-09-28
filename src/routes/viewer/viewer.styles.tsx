@@ -3,18 +3,17 @@ import styled from "styled-components";
 export const HgtZipContentLayoutGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  max-width: 900px;
+  max-width: 720px;
   margin: auto;
 `;
 
 export const HgtZipContentLayoutGridCell = styled.div`
   flex-grow: 1;
-  width: 35%;
+  width: 30%;
   background-color: black;
   min-width: 120px;
-  max-width: 300px;
+  max-width: 240px;
   height: 120px;
-  border: solid 1px red;
 `;
 
 export const HgtZipContentFileDetailsContainer = styled.div`

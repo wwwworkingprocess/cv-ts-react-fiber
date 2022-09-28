@@ -58,10 +58,36 @@ const AxisValueInput = (props: {
   ) : (
     <>
       <label>
-        {axis}{" "}
-        <button onClick={() => onSafeDecreaseOne(position, axis)}>-</button>
-        {position[axis]}{" "}
-        <button onClick={() => onSafeIncreaseOne(position, axis)}>+</button>
+        <div
+          style={{
+            height: "0px",
+            position: "relative",
+            top: "-25px",
+            left: "8px",
+          }}
+        >
+          {axis} {position[axis]} <br />
+        </div>
+        <button
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundColor: "rgba(255,255,255,0.55)",
+          }}
+          onClick={() => onSafeDecreaseOne(position, axis)}
+        >
+          -
+        </button>
+        <button
+          style={{
+            width: "40px",
+            height: "40px",
+            backgroundColor: "rgba(255,255,255,0.55)",
+          }}
+          onClick={() => onSafeIncreaseOne(position, axis)}
+        >
+          +
+        </button>
       </label>
     </>
   );

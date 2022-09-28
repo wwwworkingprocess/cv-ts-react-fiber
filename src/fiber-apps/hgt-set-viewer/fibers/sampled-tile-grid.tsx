@@ -47,6 +47,7 @@ const SampledTileGrid = (
     areaScaleX: number;
     areaScaleY: number;
     heightScale: number;
+    heightShift: number;
   }
 ) => {
   const {
@@ -56,6 +57,7 @@ const SampledTileGrid = (
     areaScaleX,
     areaScaleY,
     heightScale,
+    heightShift,
     ...groupProps
   } = props;
   //
@@ -135,7 +137,11 @@ const SampledTileGrid = (
 
   //
   return (
-    <group scale={[1, heightScale, 1]} {...groupProps}>
+    <group
+      position={[0, -1 + heightShift + 0.05, 0]}
+      scale={[1, heightScale, 1]}
+      {...groupProps}
+    >
       {renderedGridMemo}
     </group>
   );

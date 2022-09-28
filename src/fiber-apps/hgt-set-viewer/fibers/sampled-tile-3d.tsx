@@ -10,7 +10,12 @@ const SampledTile3D = (
   const { positions, texture, segments, ...meshProps } = props;
   //
   return (
-    <mesh rotation={[-Math.PI / 2, 0, 0]} {...meshProps}>
+    <mesh
+      castShadow
+      receiveShadow
+      rotation={[-Math.PI / 2, 0, 0]}
+      {...meshProps}
+    >
       {positions.length ? (
         <planeBufferGeometry
           attach="geometry"
@@ -29,7 +34,8 @@ const SampledTile3D = (
       {texture ? (
         <meshStandardMaterial map={texture} />
       ) : (
-        <meshStandardMaterial color={0x5056b9} />
+        // <meshStandardMaterial color={0x5056b9} />
+        <meshLambertMaterial color={0x5056b9} />
       )}
     </mesh>
   );

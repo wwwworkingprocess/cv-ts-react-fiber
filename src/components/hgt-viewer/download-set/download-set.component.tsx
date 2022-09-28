@@ -42,6 +42,19 @@ const DownloadSet = () => {
       </div>
       <div>
         <small>
+          Please visit the{" "}
+          <a
+            href={
+              "http://viewfinderpanoramas.org/Coverage%20map%20viewfinderpanoramas_org3.htm"
+            }
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: "gold" }}
+          >
+            original site
+          </a>
+          , if you have issues when downloading.
+          <br />
           Datasource:{" "}
           <a
             title="viewfinderpanoramas.org"

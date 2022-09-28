@@ -133,10 +133,12 @@ export const useXyMemo = (
 const HgtZipContents = ({
   filenames,
   zipResults,
+  selectedOrigin,
   setSelectedOrigin,
 }: {
   filenames: Array<string> | undefined;
   zipResults: Array<ArrayBuffer> | undefined;
+  selectedOrigin: Origin | undefined;
   setSelectedOrigin: React.Dispatch<React.SetStateAction<Origin | undefined>>;
 }) => {
   const heights = useMemo(
@@ -224,16 +226,14 @@ const HgtZipContents = ({
   //
   return filenames ? (
     <>
-      File contents
       <HgtZipContentLayoutGrid>
         <HgtZipContentLayoutGridCell>
           <MiniMap xyMemo={xyMemo} />
         </HgtZipContentLayoutGridCell>
         <HgtZipContentLayoutGridCell>
           <HgtZipContentFileDetailsContainer>
-            <div style={{ textAlign: "center", marginTop: "-4px" }}>
-              {renderFileOptions()}
-            </div>
+            Files: {renderFileOptions()}
+            <br />
             {zipResults ? `Tiles: ${zipResults.length}` : ""}
             <br />
             {xyMemo ? `Area: ${xyMemo.d.sizex}x${xyMemo.d.sizey}` : ""}
@@ -250,6 +250,11 @@ const HgtZipContents = ({
         </HgtZipContentLayoutGridCell>
       </HgtZipContentLayoutGrid>
       <br />
+      {!selectedOrigin && (
+        <div style={{ textAlign: "center" }}>
+          Please click the map below to start
+        </div>
+      )}
       <hr />
       <HgtScrollable2DGrid>
         <HgtGrid2D heights={heights} handleCellClick={handleCellClick} />
@@ -332,18 +337,6 @@ const Viewer = () => {
   const [zipResults, setZipResults] = useState<Array<ArrayBuffer>>();
   const [selectedOrigin, setSelectedOrigin] = useState<Origin>();
   //
-  // const tileBuffer = useMemo(() => {
-  //   if (zipResults) {
-  //     if (selectedOrigin && selectedOrigin.zipIndex !== -1) {
-  //       const result = zipResults[selectedOrigin.zipIndex];
-  //       //
-  //       return result;
-  //     }
-  //   }
-  //   //
-  //   return undefined; // consider empty arraybuffer
-  // }, [selectedOrigin, zipResults]);
-  //
   const heights = useMemo(() => {
     if (!filenames || !zipResults) return undefined;
     //
@@ -351,10 +344,8 @@ const Viewer = () => {
   }, [filenames, zipResults]);
   //
   //
-
   const [has2D, setHas2D] = useState<boolean>(true);
   const [has3D, setHas3D] = useState<boolean>(true);
-  const [is3dGridEnabled, setIs3dGridEnabled] = useState<boolean>(true);
   const [isDownloadDialogOpen, setIsDownloadDialogOpen] =
     useState<boolean>(false);
 
@@ -374,11 +365,8 @@ const Viewer = () => {
       files: Array<string>;
       results: Promise<Array<ArrayBuffer>>;
     }) => {
-      console.log("received", files, results);
-      //
       const buffers = await results;
       //
-
       return { files, buffers };
     };
     //
@@ -391,8 +379,6 @@ const Viewer = () => {
         .then(unzipBufferMulti)
         .then(createResultObject)
         .then(({ files, buffers }) => {
-          console.log("retrieved from url", { files, buffers });
-          //
           setFilenames(files);
           setZipResults(buffers);
         });
@@ -401,27 +387,29 @@ const Viewer = () => {
   //
   return (
     <>
-      Viewer --- 2D:{" "}
-      <input
-        type="checkbox"
-        checked={has2D}
-        onChange={(e) => setHas2D((b) => !b)}
-      />{" "}
-      - 3D:{" "}
-      <input
-        type="checkbox"
-        checked={has3D}
-        onChange={(e) => setHas3D((b) => !b)}
-      />
-      - 3D show grid:{" "}
-      <input
-        type="checkbox"
-        checked={is3dGridEnabled}
-        onChange={(e) => setIs3dGridEnabled((b) => !b)}
-      />
+      <h2>Topographic MapViewer</h2>
+      <p>
+        Please provide a .zip archive, with elevation data in .hgt format.
+        <br /> Use sample file A - B - C or click the 'Find a set' button.
+      </p>
+      <div style={{ width: "120px", textAlign: "right", float: "right" }}>
+        2D:{" "}
+        <input
+          type="checkbox"
+          checked={has2D}
+          onChange={(e) => setHas2D((b) => !b)}
+        />{" "}
+        3D:{" "}
+        <input
+          type="checkbox"
+          checked={has3D}
+          onChange={(e) => setHas3D((b) => !b)}
+        />
+      </div>
       <hr />
-      <button onClick={(e) => onUseLocalDataset("J26")}>Use Sample A</button>
-      <button onClick={(e) => onUseLocalDataset("SC56")}>Use Sample B</button>
+      File: <button onClick={(e) => onUseLocalDataset("J26")}>A</button>
+      <button onClick={(e) => onUseLocalDataset("SC56")}>B</button>
+      <button onClick={(e) => onUseLocalDataset("B44")}>C</button>
       <FileInputZip setFilenames={setFilenames} setZipResults={setZipResults} />
       <span style={{ float: "right" }}>
         <button onClick={(e) => setIsDownloadDialogOpen((b) => !b)}>
@@ -439,6 +427,7 @@ const Viewer = () => {
         <HgtZipContents
           filenames={filenames}
           zipResults={zipResults}
+          selectedOrigin={selectedOrigin}
           setSelectedOrigin={setSelectedOrigin}
         />
       )}
@@ -449,15 +438,12 @@ const Viewer = () => {
           )}, ${selectedOrigin.lon.toFixed(4)} `
         : ""}
       <hr />
-      {/* {selectedOrigin ? <HgtTileDetails tileBuffer={tileBuffer} /> : ""} */}
-      <hr />
       {has3D && zipResults && selectedOrigin && (
         <HgtSetViewer3D
           heights={heights}
           selectedOrigin={selectedOrigin}
           isCameraEnabled={true}
           isFrameCounterEnabled={false}
-          is3dGridEnabled={is3dGridEnabled}
         />
       )}
     </>
