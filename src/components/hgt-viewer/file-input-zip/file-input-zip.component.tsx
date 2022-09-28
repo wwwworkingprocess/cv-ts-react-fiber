@@ -96,20 +96,23 @@ const FileInputZip = ({ setZipResults, setFilenames }: any) => {
     if (e) {
       let selectedFile = e.target.files?.[0];
       if (selectedFile) {
-        if (types.includes(selectedFile.type)) {
-          if (selectedFile.size < 1024 * 1024 * 50) {
-            setError(undefined);
-            setSelectedFile(selectedFile);
-            //
-            fileReader.readAsArrayBuffer(selectedFile);
-          } else {
-            setSelectedFile(undefined);
-            setError("Please select a smaller input file (max 50mb)");
-          }
+        if (!types.includes(selectedFile.type)) {
+          alert(selectedFile.type + "|" + selectedFile.size);
+        }
+        //  if (types.includes(selectedFile.type)) {
+        if (selectedFile.size < 1024 * 1024 * 50) {
+          setError(undefined);
+          setSelectedFile(selectedFile);
+          //
+          fileReader.readAsArrayBuffer(selectedFile);
         } else {
           setSelectedFile(undefined);
-          setError("Please select a zip file with a tileset");
+          setError("Please select a smaller input file (max 50mb)");
         }
+        // } else {
+        //   setSelectedFile(undefined);
+        //   setError("Please select a zip file with a tileset");
+        // }
       }
     }
   };
