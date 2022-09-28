@@ -78,8 +78,6 @@ const useHeightBasedTexture = (
       texture.encoding = sRGBEncoding;
       //
       texture.needsUpdate = true;
-      //
-      console.log("new texture", mode, texture);
     }
     //
     return texture;

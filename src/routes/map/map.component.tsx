@@ -41,7 +41,6 @@ const Map = () => {
   const { data: wikiCountries } = useWikiCountries();
   const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>();
   //
-  // const firestoreDocumentUrl = `data/hgt/N00E006.hgt.zip`;
   const firestoreDocumentUrl = `data/hgt/N42E011.hgt.zip`;
   //
   const { data: firestoreHgt } = useFirestoreDocument(firestoreDocumentUrl);
@@ -70,8 +69,6 @@ const Map = () => {
     };
 
     const fetchGeoJsonAllCountries = () => {
-      // fetch("data/geojson/countries.geojson")
-      // fetch("data/geojson/admin1.geojson")
       fetch("data/geojson/ne_110m_admin_0_countries.geojson")
         .then((res) => res.json())
         .then(afterDataLoaded);

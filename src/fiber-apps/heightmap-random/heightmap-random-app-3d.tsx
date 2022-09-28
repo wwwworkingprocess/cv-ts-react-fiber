@@ -124,8 +124,6 @@ const HeightMapRandomApp3D = (props: {
     [number, number, number, number] | undefined
   >([0, 0, heightViewportSize, heightViewportSize]);
   //
-  //
-
   // const [sampling, setSampling] = useState<SAMPLING_MODE>(1200);
   // const [hgtLocator, setHgtLocator] = useState<string>("N00E006");
 
@@ -133,13 +131,7 @@ const HeightMapRandomApp3D = (props: {
 
   const [hgtLocator, setHgtLocator] = useState<string>("J26"); // J26 / SM42
   // const [hgtLocator, setHgtLocator] = useState<string>("SM42"); // J26 / SM42
-  const { values: heights } = useSrtmTiles(
-    hgtLocator,
-    // SAMPLING_MODE.SAMPLE_TO_1200X1200
-    // SAMPLING_MODE.SKIP_SAMPLING
-    // 1201 as SAMPLING_MODE
-    sampling
-  );
+  const { values: heights } = useSrtmTiles(hgtLocator, sampling);
 
   const [hgtSelectedIndex, setHgtSelectedIndex] = useState<number>(0); // heights ? Object.values(heights)[0] : undefined; // first entry
   const heights1200 = heights
@@ -154,11 +146,8 @@ const HeightMapRandomApp3D = (props: {
   const dataTextureHeightfield = useMemo(() => {
     if (dataTexture && heightViewPort) {
       const [min_x, min_y, max_x, max_y] = heightViewPort; //  viewport
-
-      const imageData = dataTexture?.source.data.data as Uint8Array; // 4*1200*1200 items
-      // const SIZE = Math.sqrt(imageData.byteLength / 4);
       //
-      // console.log("dth SIZE", SIZE); console.log("dth vp", { min_x, max_x, min_y, max_y });
+      const imageData = dataTexture?.source.data.data as Uint8Array; // 4*1200*1200 items
       //
       if (imageData) {
         const heightsRows = [];
@@ -197,7 +186,6 @@ const HeightMapRandomApp3D = (props: {
         if (heightsRows) {
           const uint8arr = Uint8Array.from(heightsRows);
           //
-          // const width = heightViewportSize;
           const texture = new DataTexture(
             uint8arr,
             heightViewportSize,
@@ -207,9 +195,6 @@ const HeightMapRandomApp3D = (props: {
           );
           //
           texture.flipY = true; // flipping image on vertical axis
-          //
-          // texture.wrapS = width;
-          // texture.wrapT = width;
           //
           texture.minFilter = LinearFilter;
           texture.magFilter = LinearFilter;

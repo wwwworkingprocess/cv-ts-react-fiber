@@ -74,7 +74,7 @@ export const uploadWikiCountriesToFirestore = async () => {
         (a: { code: string }, b: { code: string }) => w(a.code) - w(b.code)
       );
       //
-      console.log("countriesWithCoordinates", countriesWithCoordinates);
+      // console.log("countriesWithCoordinates", countriesWithCoordinates);
       //
       // Batch insert array of countries, using [code] attribute as unique key
       //

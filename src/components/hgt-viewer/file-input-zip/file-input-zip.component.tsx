@@ -7,7 +7,7 @@ const FileUploader = ({ onFileSelect }: any) => {
   const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => onFileSelect(e);
   //
   return (
-    <span className="file-uploader" style={{ display: "inline" }}>
+    <span style={{ display: "inline" }}>
       <input
         ref={fileInput}
         type="file"
@@ -76,13 +76,12 @@ const FileInputZip = ({ setZipResults, setFilenames }: any) => {
         console.log("unzipping finished...");
         //
         setZipResults(inflatedResults);
-      } else console.log("no file selected");
+      }
     };
     //
     asyncUnzip();
     //
     return () => {
-      console.log("freeing up memory on onmount");
       setZipResults(undefined);
     };
   }, [rawUnzipOpenResult, setZipResults]); //todo decompose effect
@@ -91,28 +90,25 @@ const FileInputZip = ({ setZipResults, setFilenames }: any) => {
   // Select a zip file, max 50 MB
   //
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const types = ["application/x-zip-compressed"];
+    const types = ["application/x-zip-compressed", "application/zip"];
     //
     if (e) {
       let selectedFile = e.target.files?.[0];
       if (selectedFile) {
-        if (!types.includes(selectedFile.type)) {
-          alert(selectedFile.type + "|" + selectedFile.size);
-        }
-        //  if (types.includes(selectedFile.type)) {
-        if (selectedFile.size < 1024 * 1024 * 50) {
-          setError(undefined);
-          setSelectedFile(selectedFile);
-          //
-          fileReader.readAsArrayBuffer(selectedFile);
+        if (types.includes(selectedFile.type)) {
+          if (selectedFile.size < 1024 * 1024 * 50) {
+            setError(undefined);
+            setSelectedFile(selectedFile);
+            //
+            fileReader.readAsArrayBuffer(selectedFile);
+          } else {
+            setSelectedFile(undefined);
+            setError("Please select a smaller input file (max 50mb)");
+          }
         } else {
           setSelectedFile(undefined);
-          setError("Please select a smaller input file (max 50mb)");
+          setError("Please select a zip file with a tileset");
         }
-        // } else {
-        //   setSelectedFile(undefined);
-        //   setError("Please select a zip file with a tileset");
-        // }
       }
     }
   };
@@ -121,7 +117,7 @@ const FileInputZip = ({ setZipResults, setFilenames }: any) => {
     <>
       or
       <FileUploader onFileSelect={handleChange} />
-      {error && error} a file
+      {error && error} {!error && "a file"}
     </>
   );
 };

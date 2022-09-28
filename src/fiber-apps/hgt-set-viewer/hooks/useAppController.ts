@@ -7,7 +7,7 @@ import useHgtSetViewerStore from "../stores/useHgtSetViewerStore";
 const startPosition = { x: 1, y: 0, z: 0 };
 
 const useAppController = (xyMemo: any) => {
-  console.log("viewer controller", xyMemo);
+  // console.log("viewer controller", xyMemo);
   //
   const bounds = useHgtSetViewerStore((state) => state.bounds);
   const position = useHgtSetViewerStore((state) => state.position);
@@ -38,16 +38,13 @@ const useAppController = (xyMemo: any) => {
     if (xyMemo) {
       const d = xyMemo.d ?? { sizex: 0, sizey: 0 };
       const scale = 4;
-
+      //
       const newBounds = [0, d.sizey * scale - 1, 0, d.sizex * scale - 1] as [
         number,
         number,
         number,
         number
       ];
-
-      //
-      console.log("applying new bounds", newBounds);
       //
       setBounds(newBounds);
     }

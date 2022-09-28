@@ -45,7 +45,7 @@ const useSrtmTile = (locator: string) => {
   //
   const onDownloadSuccess = useCallback(
     (ab: ArrayBuffer | null) => {
-      console.log("downloaded zip", ab);
+      // console.log("downloaded zip", ab);
       //
       if (ab) {
         unzipBuffer(ab)
@@ -64,8 +64,6 @@ const useSrtmTile = (locator: string) => {
   const fetchApi = useCallback(
     (code: string) => {
       if (code) {
-        console.log("fetching", locator);
-        //
         const url = `${SERVICE_ROOT}${locator}.hgt.zip`;
         //
         fetch(url)

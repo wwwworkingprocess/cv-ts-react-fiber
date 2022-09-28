@@ -61,8 +61,6 @@ const useSrtmTiles = (locator: string, mode: SAMPLING_MODE) => {
       if (ab) {
         let transform: (int16a: ArrayBuffer) => Int16Array;
         //
-        // let transform = (e: ArrayBuffer) =>
-        //   normalizeElevationData(changeEndianness(removeLastRowAndColumn(e)));
         switch (mode) {
           case SAMPLING_MODE.SKIP_SAMPLING:
             transform = (e: ArrayBuffer) =>
@@ -193,8 +191,6 @@ const useSrtmTiles = (locator: string, mode: SAMPLING_MODE) => {
   const fetchApi = useCallback(
     (code: string) => {
       if (code) {
-        console.log("fetching", locator);
-        //
         const url = `${SERVICE_ROOT}${locator}.hgt.zip`;
         //
         fetch(url)

@@ -26,7 +26,7 @@ const Demos = () => {
     const queryUsers = async () => {
       const users = await getFirestoreCollection<UserDocType>("users");
       //
-      console.log("snap u", users);
+      console.log("snap u", users.length);
     };
     //
     queryUsers();

@@ -39,8 +39,6 @@ export const imagedata_to_dataurl = (
   canvas.width = imagedata.width;
   canvas.height = imagedata.height;
   //
-  // console.log("imagedata_to_dataurl");
-  //
   if (ctx) ctx.putImageData(imagedata, 0, 0);
   //
   return canvas.toDataURL();
@@ -60,8 +58,6 @@ const createWaterTileDataUrl = () => {
     id.data[offset + 2] = 185; // B value
     id.data[offset + 3] = 255; // A value
   }
-  //
-  console.log("CREATING HgtThumbnailWater");
   //
   return imagedata_to_dataurl(id, sampling, sampling);
 };

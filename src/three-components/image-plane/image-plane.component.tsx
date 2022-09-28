@@ -1,11 +1,10 @@
-import { ThreeEvent, useFrame, useLoader } from "@react-three/fiber";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useFrame, useLoader } from "@react-three/fiber";
+import { useMemo, useRef, useState } from "react";
 import {
   Color,
   DoubleSide,
   ImageLoader,
   Mesh,
-  Raycaster,
   ShaderMaterial,
   TextureLoader,
   UniformsLib,
@@ -95,16 +94,10 @@ const vertexShader = `
 `;
 
 //
-// const IMG_SRC = "./logo512.png";
 const IMG_SRC = "./data/earth/3_no_ice_clouds_8k.jpg";
 
 const ImagePlane = (
-  props: JSX.IntrinsicElements["mesh"] & {
-    planeSize: number;
-    // setIsOpen: any;
-    // onNavigate: () => void;
-    // tooltipText: string;
-  }
+  props: JSX.IntrinsicElements["mesh"] & { planeSize: number }
 ) => {
   const { planeSize } = props;
   const ref = useRef<Mesh>(null!);
@@ -114,40 +107,33 @@ const ImagePlane = (
   const tex = useLoader(TextureLoader, IMG_SRC);
   const img = useLoader(ImageLoader, IMG_SRC);
   //
-  const raycaster = new Raycaster();
-
   const PLANE_SIZE = planeSize || 4.0;
-  const speed = {
-    value: 0.006,
-  };
-  const tilt = {
-    x: 0,
-    y: 0,
-  };
+
+  // const raycaster = new Raycaster();
+  // const speed = { value: 0.006 };
+  // const tilt = { x: 0, y: 0 };
 
   let mouse = useRef<Vector2 | null>(null);
 
   //
   // track mouse movement
   //
-  const updateMousePosition = (e: ThreeEvent<PointerEvent>) => {
-    const v2 = new Vector2(
-      e.uv?.x ?? 0,
-      e.uv?.y ?? 0
-      // (e.clientX / window.innerWidth) * 2 - 1,
-      // -(e.clientY / window.innerHeight) * 2 + 1
-    );
-    console.log("pointer track", v2);
-    //
-    mouse.current = v2;
-    //
-  };
+  // const updateMousePosition = (e: ThreeEvent<PointerEvent>) => {
+  //   const v2 = new Vector2(
+  //     e.uv?.x ?? 0,
+  //     e.uv?.y ?? 0
+  //     // (e.clientX / window.innerWidth) * 2 - 1,
+  //     // -(e.clientY / window.innerHeight) * 2 + 1
+  //   );
+  //   //
+  //   mouse.current = v2;
+  //   //
+  // };
 
   // Hold state for hovered and clicked events
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
 
-  // Rotate mesh every frame, this is outside of React without overhead
   useFrame((state, delta) => {
     const { camera, scene, clock } = state;
     //

@@ -160,15 +160,13 @@ const HgtZipContents = ({
     y: number,
     newOrigin?: Origin
   ) => {
-    console.log("cell clicked", newOrigin, e);
-    console.log("x,y", x, y);
+    // const locator = xyMemo.find(rowIndex, colIndex, zipDirectoryIndex);
     //
-    console.log("grid: ", rowIndex, colIndex, zipDirectoryIndex);
-    const locator = xyMemo.find(rowIndex, colIndex, zipDirectoryIndex);
+    // console.log("cell clicked", newOrigin, e);
+    // console.log("x,y", x, y);
+    // console.log("grid: ", rowIndex, colIndex, zipDirectoryIndex);
+    // console.log("locator: ", locator, "filename: ", locator + ".hgt");
     //
-    console.log("locator: ", locator, "filename: ", locator + ".hgt");
-    //
-    // const newOrigin = { locator x, y}
     if (newOrigin) setSelectedOrigin(newOrigin);
   };
   //
@@ -188,13 +186,6 @@ const HgtZipContents = ({
       const nextBuffer = idx !== -1 ? zipResults[idx] : undefined;
       const nextBufferLength = nextBuffer?.byteLength ?? 0;
       const validBuffer = nextBufferLength === 2884802;
-      //
-      if (!validBuffer) {
-        // alert(`Invalid file size: ${nextBufferLength} [${selectedFilename}]`);
-        //
-        // when switching between zips, filenames and selectedFilename gets out of sync
-        //
-      }
       //
       return validBuffer ? nextBuffer : undefined;
     }
@@ -387,7 +378,7 @@ const Viewer = () => {
   //
   return (
     <>
-      <h2>Topographic MapViewer</h2>
+      <h2>Topographic Map Viewer</h2>
       <p>
         Provide a .zip archive, with elevation data in .hgt format.
         <br /> Use sample file A - B - C or click the 'Find a set' button.
