@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const SettingsContainer = styled.div`
+  position: relative;
+`;
+
 export const ControlsContainer = styled.div`
   position: relative;
   top: -50px;

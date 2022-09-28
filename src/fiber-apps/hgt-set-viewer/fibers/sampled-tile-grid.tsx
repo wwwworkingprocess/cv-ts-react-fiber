@@ -10,6 +10,16 @@ import { changeEndianness } from "../../../utils/srtm";
 
 import SampledTile3D from "./sampled-tile-3d";
 
+type SampledTileGridProps = {
+  values: Array<ArrayBuffer>;
+  dimensionMemo: Array<number>;
+  xyMemo: any;
+  areaScaleX: number;
+  areaScaleY: number;
+  heightScale: number;
+  heightShift: number;
+};
+
 const useBlockOperations = (
   values: Array<ArrayBuffer> | undefined,
   xyMemo: any,
@@ -40,15 +50,16 @@ const useBlockOperations = (
 //
 //
 const SampledTileGrid = (
-  props: JSX.IntrinsicElements["group"] & {
-    values: Array<ArrayBuffer>;
-    dimensionMemo: Array<number>;
-    xyMemo: any;
-    areaScaleX: number;
-    areaScaleY: number;
-    heightScale: number;
-    heightShift: number;
-  }
+  props: JSX.IntrinsicElements["group"] & SampledTileGridProps
+  // {
+  //   values: Array<ArrayBuffer>;
+  //   dimensionMemo: Array<number>;
+  //   xyMemo: any;
+  //   areaScaleX: number;
+  //   areaScaleY: number;
+  //   heightScale: number;
+  //   heightShift: number;
+  // }
 ) => {
   const {
     values,

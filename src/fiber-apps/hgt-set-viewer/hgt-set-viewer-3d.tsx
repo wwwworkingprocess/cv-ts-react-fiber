@@ -1,27 +1,39 @@
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+
 import { isMobile } from "react-device-detect";
 
 import { Canvas } from "@react-three/fiber";
 import { Billboard, Bounds, OrbitControls, Text } from "@react-three/drei";
+import { Color } from "three";
+
+import { Spinner } from "../../components/spinner/spinner.component";
+import ViewerSettings from "./components/viewer-settings/viewer-settings";
+import AxisValueInput from "./components/axis-value-input/axis-value-input";
 
 import Floor from "./fibers/floor";
 import Player from "./fibers/player";
 import FrameCounter from "./fibers/frame-counter";
 import DefaultLightRig from "../DefaultLightRig";
-// import Boxes from "../app-3d/fibers/boxes"; // use for debugging
-
-import { ControlsContainer } from "./hgt-set-viewer-3d.styles";
-import AxisValueInput from "./components/axis-value-input";
+import SampledTileGrid from "./fibers/sampled-tile-grid";
+import Boxes from "../app-3d/fibers/boxes";
 
 import useHgtSetViewerStore from "./stores/useHgtSetViewerStore";
 import useAppController from "./hooks/useAppController";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
 
 import { Origin, useXyMemo } from "../../routes/viewer/viewer.component"; //TODO: move
-import SampledTileGrid from "./fibers/sampled-tile-grid";
-import { Color } from "three";
-import Boxes from "../app-3d/fibers/boxes";
-import { Spinner } from "../../components/spinner/spinner.component";
+
+import {
+  ControlsContainer,
+  SettingsContainer,
+} from "./hgt-set-viewer-3d.styles";
 
 type HgtSetViewer3DProps = {
   selectedOrigin: Origin;
@@ -35,13 +47,12 @@ type HgtSetViewer3DProps = {
   path?: string;
 };
 
+const optTop = { top: 0, behavior: "smooth" } as ScrollToOptions;
+const optCanvas = { behavior: "smooth", block: "end" } as ScrollIntoViewOptions;
+
 const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   const { isCameraEnabled, isFrameCounterEnabled, heights, selectedOrigin } =
     props;
-  //
-
-  const [isFloorEnabled, setIsFloorEnabled] = useState<boolean>(false);
-  const [is3dGridEnabled, setIs3dGridEnabled] = useState<boolean>(false);
   //
   const xyMemo = useXyMemo(heights);
   const values = useMemo(
@@ -60,98 +71,71 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   //
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   //
+  const [isFloorEnabled, setIsFloorEnabled] = useState<boolean>(false);
+  const [is3dGridEnabled, setIs3dGridEnabled] = useState<boolean>(false);
   const [takePixel, setTakePixel] = useState<number>(6);
   const [heightScale, setHeightScale] = useState<number>(1.0);
   const [heightShift, setHeightShift] = useState<number>(0.0 + 0.0025);
   //
+  const scrollToTop = () => window.scrollTo(optTop);
+  const scrollToCanvas = useCallback(
+    () => canvasRef.current.scrollIntoView(optCanvas),
+    []
+  );
+  //
+  const viewerSettingsProps = {
+    isFloorEnabled,
+    is3dGridEnabled,
+    takePixel,
+    heightScale,
+    heightShift,
+    setIsFloorEnabled,
+    setIs3dGridEnabled,
+    setTakePixel,
+    setHeightScale,
+    setHeightShift,
+    scrollToTop,
+    scrollToCanvas,
+  };
+  //
+  const sampling = 4;
   const dimensionMemo = useMemo(
-    //TODO: fix this, 300 is 1200 / sampling, result needs to be an integer
     () =>
-      Array.from(new Array(300 / takePixel).keys()).map((v) => v * takePixel),
-    [takePixel]
+      Array.from(new Array(Math.floor(1200 / sampling) / takePixel).keys()).map(
+        (v) => v * takePixel
+      ),
+    [takePixel, sampling]
   );
 
+  const sampledTileGridProps = {
+    values,
+    xyMemo,
+    dimensionMemo,
+    areaScaleX: areaScale.x,
+    areaScaleY: areaScale.y,
+    heightScale,
+    heightShift,
+  };
+
   //
-  //TODO: fix scroll behavior, when the origin is selected for the first time
+  // Scroll the canvas into view when selected origin changes
   //
   useEffect(() => {
     if (selectedOrigin) {
-      const timeout = setTimeout(() => {
-        canvasRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-        } as ScrollIntoViewOptions);
-      }, 0);
+      const timeout = setTimeout(scrollToCanvas, 100);
       //
       return () => clearTimeout(timeout);
     }
-  }, [selectedOrigin]);
+  }, [selectedOrigin, scrollToCanvas]);
   //
   return (
     <>
-      <div style={{ position: "relative" }}>
-        Sample:
-        {[2, 3, 5, 6, 10, 15, 30].map((takeEveryNthPixel, idx) => (
-          <button
-            key={idx}
-            onClick={(e) => setTakePixel(takeEveryNthPixel)}
-            style={{
-              backgroundColor: takePixel === takeEveryNthPixel ? "#aaaaff" : "",
-            }}
-          >
-            {takeEveryNthPixel}
-          </button>
-        ))}
-        Height:
-        <input
-          type="number"
-          step={0.05}
-          value={heightScale}
-          onChange={(e) => setHeightScale(parseFloat(e.target.value))}
-          style={{ width: "60px" }}
-        />
-        Shift:
-        <input
-          type="number"
-          step={0.025}
-          value={heightShift}
-          onChange={(e) => setHeightShift(parseFloat(e.target.value))}
-          style={{ width: "70px" }}
-        />
-        Helpers:
-        <input
-          type="checkbox"
-          checked={is3dGridEnabled}
-          onChange={(e) => setIs3dGridEnabled((b) => !b)}
-        />
-        <input
-          type="checkbox"
-          checked={isFloorEnabled}
-          onChange={(e) => setIsFloorEnabled((b) => !b)}
-        />
-        <div style={{ float: "right", width: "160px" }}>
-          <button
-            onClick={() => {
-              canvasRef.current.scrollIntoView({
-                behavior: "smooth",
-                block: "end",
-              } as ScrollIntoViewOptions);
-            }}
-          >
-            Scroll Here
-          </button>
-          <button
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              } as ScrollToOptions);
-            }}
-          >
-            Scroll Top
-          </button>
-        </div>
-      </div>
+      {/* Used to control display and elevation rendering properties */}
+      <SettingsContainer>
+        <ViewerSettings {...viewerSettingsProps}></ViewerSettings>
+      </SettingsContainer>
+
+      {/* The canvas only attached to the DOM, after all components are loaded */}
       <Suspense fallback={<Spinner />}>
         <Canvas ref={canvasRef} shadows dpr={[1, 2]}>
           <DefaultLightRig castShadow={true} />
@@ -160,7 +144,7 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
             <OrbitControls
               makeDefault // needed to tell Bounds that the camera controlls are limited (e.g. angle / distance)
               minPolarAngle={0}
-              maxPolarAngle={(Math.PI / 7) * 2}
+              maxPolarAngle={0 + (7 * Math.PI) / 15}
               maxDistance={10}
             />
           )}
@@ -170,10 +154,6 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
             <Billboard position={[0, 2.25, 0]} follow={true}>
               <Text fontSize={0.23} color={"#ffaa22"}>
                 Use arrow keys for navigation and space for jump
-                {/* {selectedOrigin.locator}, idx: {selectedOrigin.zipIndex} [
-                {selectedOrigin.lat.toFixed(3)},{selectedOrigin.lon.toFixed(3)}]
-                {JSON.stringify({ x, y, z })}
-                {JSON.stringify(bounds)} */}
               </Text>
             </Billboard>
           )}
@@ -206,22 +186,29 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
           )}
 
           {/* Grid of 1x1 planes, orienting upwards */}
-          <SampledTileGrid
-            values={values}
-            xyMemo={xyMemo}
-            dimensionMemo={dimensionMemo}
-            areaScaleX={areaScale.x}
-            areaScaleY={areaScale.y}
-            heightScale={heightScale}
-            heightShift={heightShift}
-          />
+          <SampledTileGrid {...sampledTileGridProps} />
         </Canvas>
       </Suspense>
       <ControlsContainer>
         <AxisValueInput axis={"x"} min={MIN_X} max={MAX_X} />
         <AxisValueInput axis={"y"} min={0} max={10} />
         <AxisValueInput axis={"z"} min={MIN_Y} max={MAX_Y} />
-        {isMobile ? <button onClick={onJump}>Jump</button> : undefined}
+        {isMobile ? (
+          <div style={{ width: "20%" }}>
+            <button
+              style={{
+                width: "70px",
+                height: "40px",
+                position: "relative",
+                top: "-30px",
+                backgroundColor: "rgba(255,255,255,0.55)",
+              }}
+              onClick={onJump}
+            >
+              Jump
+            </button>
+          </div>
+        ) : undefined}
       </ControlsContainer>
     </>
   );

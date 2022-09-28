@@ -389,7 +389,7 @@ const Viewer = () => {
     <>
       <h2>Topographic MapViewer</h2>
       <p>
-        Please provide a .zip archive, with elevation data in .hgt format.
+        Provide a .zip archive, with elevation data in .hgt format.
         <br /> Use sample file A - B - C or click the 'Find a set' button.
       </p>
       <div style={{ width: "120px", textAlign: "right", float: "right" }}>

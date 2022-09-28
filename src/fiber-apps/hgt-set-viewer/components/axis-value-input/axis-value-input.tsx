@@ -1,5 +1,12 @@
 import { isMobile } from "react-device-detect";
-import useCursorAppStore from "../stores/useHgtSetViewerStore";
+
+import useCursorAppStore from "../../stores/useHgtSetViewerStore";
+
+import {
+  MobileViewButton,
+  MobileViewButtons,
+  MobileViewContainer,
+} from "./axis-value-input.styles";
 
 const AxisValueInput = (props: {
   axis: "x" | "y" | "z";
@@ -15,11 +22,7 @@ const AxisValueInput = (props: {
     setPosition({ ...position, [axis]: parseInt(e.target.value) });
   //
   const onSafeDecreaseOne = (
-    position: {
-      x: number;
-      y: number;
-      z: number;
-    },
+    position: { x: number; y: number; z: number },
     axis: "x" | "y" | "z"
   ) => {
     const oldValue = position[axis];
@@ -29,11 +32,7 @@ const AxisValueInput = (props: {
   };
   //
   const onSafeIncreaseOne = (
-    position: {
-      x: number;
-      y: number;
-      z: number;
-    },
+    position: { x: number; y: number; z: number },
     axis: "x" | "y" | "z"
   ) => {
     const oldValue = position[axis];
@@ -41,9 +40,7 @@ const AxisValueInput = (props: {
     //
     if (nextValue !== oldValue) setPosition({ ...position, [axis]: nextValue });
   };
-
   //
-
   return !isMobile ? (
     <>
       <label>{axis}</label>
@@ -56,40 +53,19 @@ const AxisValueInput = (props: {
       />
     </>
   ) : (
-    <>
-      <label>
-        <div
-          style={{
-            height: "0px",
-            position: "relative",
-            top: "-25px",
-            left: "8px",
-          }}
-        >
-          {axis} {position[axis]} <br />
-        </div>
-        <button
-          style={{
-            width: "40px",
-            height: "40px",
-            backgroundColor: "rgba(255,255,255,0.55)",
-          }}
-          onClick={() => onSafeDecreaseOne(position, axis)}
-        >
+    <MobileViewContainer>
+      <MobileViewButtons>
+        <MobileViewButton onClick={() => onSafeDecreaseOne(position, axis)}>
           -
-        </button>
-        <button
-          style={{
-            width: "40px",
-            height: "40px",
-            backgroundColor: "rgba(255,255,255,0.55)",
-          }}
-          onClick={() => onSafeIncreaseOne(position, axis)}
-        >
+        </MobileViewButton>
+        <MobileViewButton onClick={() => onSafeIncreaseOne(position, axis)}>
           +
-        </button>
+        </MobileViewButton>
+      </MobileViewButtons>
+      <label>
+        {axis} {position[axis]} <br />
       </label>
-    </>
+    </MobileViewContainer>
   );
 };
 

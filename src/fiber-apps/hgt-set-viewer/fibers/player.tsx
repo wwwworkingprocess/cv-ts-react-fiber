@@ -25,8 +25,13 @@ const Player = ({
   //
   return (
     <group {...props}>
-      <Box ref={box} castShadow>
-        <meshLambertMaterial attach="material" color="white" />
+      <Box ref={box} castShadow receiveShadow scale={[1, 1.05, 1]}>
+        <meshPhongMaterial
+          attach="material"
+          color="white"
+          opacity={0.15}
+          transparent={true}
+        />
       </Box>
     </group>
   );
