@@ -34,7 +34,6 @@ const SampledTile3D = (
       {texture ? (
         <meshStandardMaterial map={texture} />
       ) : (
-        // <meshStandardMaterial color={0x5056b9} />
         <meshLambertMaterial color={0x5056b9} />
       )}
     </mesh>

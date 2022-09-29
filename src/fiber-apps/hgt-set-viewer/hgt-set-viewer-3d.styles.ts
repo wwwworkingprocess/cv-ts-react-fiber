@@ -4,8 +4,8 @@ type HgtSetViewerContainerProps = { isMobile: boolean };
 
 export const HgtSetViewerContainer = styled.div<HgtSetViewerContainerProps>`
   margin: auto;
-  ${({ isMobile }) => `height: ${isMobile ? "80vh" : "90vh"};`}
-  ${({ isMobile }) => `width: ${isMobile ? "70vw" : "auto"};`};
+  ${({ isMobile }) => (isMobile ? { height: "80vh" } : { height: "90vh" })}
+  ${({ isMobile }) => (isMobile ? { width: "70vw" } : { width: "auto" })}
 `;
 
 export const SettingsContainer = styled.div`

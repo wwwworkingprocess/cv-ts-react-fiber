@@ -1,28 +1,30 @@
-export const dialogStyles = {
-  width: "500px",
-  maxWidth: "100%",
-  margin: "0 auto",
-  position: "fixed",
-  left: "50%",
-  top: "50%",
-  transform: "translate(-50%,-50%)",
-  zIndex: "999",
-  backgroundColor: "#eee",
-  padding: "10px 20px 40px",
-  borderRadius: "8px",
-  display: "flex",
-  flexDirection: "column",
-};
+import styled from "styled-components";
 
-export const dialogCloseButtonStyles = {
-  marginBottom: "15px",
-  padding: "3px 8px",
-  cursor: "pointer",
-  borderRadius: "50%",
-  border: "none",
-  width: "30px",
-  height: "30px",
-  fontWeight: "bold",
-  alignSelf: "flex-end",
-  position: "absolute",
-};
+export const StyledDialog = styled.div`
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  background-color: #eeeeee;
+  padding: 10px 20px 40px;
+  border-radius: 8px;
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  align-self: flex-end;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 15px;
+  padding: 3px 8px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  font-weight: bold;
+`;

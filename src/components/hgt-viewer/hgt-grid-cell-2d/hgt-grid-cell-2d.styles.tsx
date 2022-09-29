@@ -6,13 +6,16 @@ type HgtGridCellForegroundProps = { width?: number; height?: number };
 export const HgtGridCellBackground = styled.div<HgtGridCellBackgroundProps>`
   position: relative;
   height: 0px;
-  ${({ width }) => width && { width: `${width || 150}px` }}
+  ${({ width }) =>
+    width !== undefined ? { width: `${width}px` } : { width: `150px` }}
 `;
 export const HgtGridCellForeground = styled.div<HgtGridCellForegroundProps>`
   position: absolute;
   text-align: center;
-  ${({ width }) => width && { width: `${width || 150}px` }}
-  ${({ height }) => height && { height: `${height || 150}px` }}
+  ${({ width }) =>
+    width !== undefined ? { width: `${width}px` } : { width: `150px` }}
+  ${({ height }) =>
+    height !== undefined ? { height: `${height}px` } : { height: `150px` }}
 
   h5 {
     margin-top: 4px;

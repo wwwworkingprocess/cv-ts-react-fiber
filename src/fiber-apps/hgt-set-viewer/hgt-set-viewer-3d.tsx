@@ -27,8 +27,9 @@ import Boxes from "../app-3d/fibers/boxes";
 import useHgtSetViewerStore from "./stores/useHgtSetViewerStore";
 import useAppController from "./hooks/useAppController";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
+import useXyMemo from "../../hooks/srtm/useXyMemo";
 
-import { Origin, useXyMemo } from "../../routes/viewer/viewer.component"; //TODO: move
+import type { Origin } from "../../routes/viewer/viewer.types";
 
 import {
   ControlsContainer,

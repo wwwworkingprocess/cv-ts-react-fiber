@@ -1,26 +1,24 @@
 import { FC, MouseEvent } from "react";
-import useMousePosition from "../../../hooks/useMousePosition";
+
 import { _loc_to_xy } from "../../../utils/geo";
+
+import useMousePosition from "../../../hooks/useMousePosition";
+
 import {
   HgtGridCellBackground,
   HgtGridCellForeground,
 } from "./hgt-grid-cell-2d.styles";
 
-const HgtGridCell2D: FC<{
+type HgtGridCell2DProps = {
   locator: string;
   rowIndex: number;
   colIndex: number;
   zipIndex: number;
   handleCellClick: any;
   children: any;
-}> = (props: {
-  locator: string;
-  rowIndex: number;
-  colIndex: number;
-  zipIndex: number;
-  handleCellClick: any;
-  children: any;
-}) => {
+};
+
+const HgtGridCell2D: FC<HgtGridCell2DProps> = (props: HgtGridCell2DProps) => {
   const { locator, rowIndex, colIndex, zipIndex, handleCellClick, children } =
     props;
   //

@@ -1,5 +1,21 @@
 import * as THREE from "three";
 
+const canvas = document.createElement("canvas");
+const ctx = canvas.getContext("2d");
+
+export const imagedata_to_dataurl = (
+  imagedata: ImageData,
+  width: number,
+  height: number
+) => {
+  canvas.width = imagedata.width;
+  canvas.height = imagedata.height;
+  //
+  if (ctx) ctx.putImageData(imagedata, 0, 0);
+  //
+  return canvas.toDataURL();
+};
+
 class CanvasUtilsSingleton {
   circle_ctx: CanvasRenderingContext2D | null = null;
   //

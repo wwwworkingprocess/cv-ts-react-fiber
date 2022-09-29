@@ -1,5 +1,7 @@
 import { useMemo } from "react";
+
 import coloring from "../../../utils/colors";
+import { imagedata_to_dataurl } from "../../../utils/canvasutils";
 import {
   changeEndianness,
   normalizeElevationData,
@@ -26,22 +28,6 @@ const transformInput = (first: ArrayBuffer | undefined) => {
     );
   //
   return first ? transform(first) : undefined;
-};
-
-const canvas = document.createElement("canvas");
-const ctx = canvas.getContext("2d");
-
-export const imagedata_to_dataurl = (
-  imagedata: ImageData,
-  width: number,
-  height: number
-) => {
-  canvas.width = imagedata.width;
-  canvas.height = imagedata.height;
-  //
-  if (ctx) ctx.putImageData(imagedata, 0, 0);
-  //
-  return canvas.toDataURL();
 };
 
 const sampling = 150;
