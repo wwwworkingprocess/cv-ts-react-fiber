@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 
-export const useAdminOneGeoData = (country_code: string) => {
+export const useAdminOneGeoData = (
+  country_code: string,
+  path?: string | undefined
+) => {
+  const p = path ? path : "";
+  //
   const [loading, setLoading] = useState<boolean>(false);
   const [features, setFeatures] =
     useState<Array<{ properties: any; geometry: any }>>();
 
-  const fetchApi = (country_code: string) => {
+  const fetchApi = (p: string, country_code: string) => {
     if (country_code) {
-      const url = `data/geojson/admin1.${country_code}.geojson`;
+      const url = `${p}data/geojson/admin1.${country_code}.geojson`;
       //
       fetch(url)
         .then((response) => response.json())
@@ -24,8 +29,9 @@ export const useAdminOneGeoData = (country_code: string) => {
 
   useEffect(() => {
     setLoading(true);
-    fetchApi(country_code);
-  }, [country_code]);
+
+    fetchApi(p, country_code);
+  }, [country_code, p]);
 
   return { loading, features };
 };

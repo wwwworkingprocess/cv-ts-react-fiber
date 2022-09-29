@@ -4,10 +4,11 @@ import { useTreeHelper } from "../../../hooks/useTreeHelper";
 export const useTreeDataForCountry = (
   countryCode: string,
   minPop?: number,
-  maxPop?: number
+  maxPop?: number,
+  path?: string
 ) => {
   //
-  const { loading, tree, keys, nodes } = useTreeHelper(countryCode);
+  const { loading, tree, keys, nodes } = useTreeHelper(countryCode, path);
   //
 
   //

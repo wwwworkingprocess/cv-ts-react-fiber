@@ -12,7 +12,7 @@ const GlobeDemoWrapper = styled.div`
   border: solid 1px black;
 `;
 
-const GlobeDemo = () => {
+const GlobeDemo = ({ path }: { path?: string | undefined }) => {
   const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   //
   const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
@@ -25,7 +25,7 @@ const GlobeDemo = () => {
           {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}
         </button>
       )}
-      <GlobeApp3D />
+      <GlobeApp3D path={path} />
     </GlobeDemoWrapper>
   );
 };

@@ -5,6 +5,7 @@ import cu from "../../utils/canvasutils";
 
 class EarthD3D {
   idx: number;
+  path: string;
   //
   mesh: THREE.Mesh = new THREE.Mesh();
   mesh_lines: THREE.Object3D = new THREE.Object3D();
@@ -13,8 +14,9 @@ class EarthD3D {
   //
   is_rotating: boolean = false;
   //
-  constructor(idx: number, init_on_create: boolean = false) {
+  constructor(idx: number, init_on_create: boolean = false, path: string = "") {
     this.idx = idx;
+    this.path = path;
     //
     if (init_on_create) {
       this.init();
@@ -85,19 +87,15 @@ class EarthD3D {
   };
   //
   init_textures_earth = async () => {
-    const diffuse_map: THREE.Texture = await tfs.load_from_url(
-      process.env.PUBLIC_URL + "data/earth/_test_world_16bpp_32x_for.png"
+    const p = `${this.path ?? process.env.PUBLIC_URL}data/earth/`;
+    //
+    const diffuse_map = await tfs.load_from_url(
+      `${p}_test_world_16bpp_32x_for.png`
     );
 
-    const normal_map: THREE.Texture = await tfs.load_from_url(
-      process.env.PUBLIC_URL + "data/earth/normal3.png"
-    );
-    const specular_map: THREE.Texture = await tfs.load_from_url(
-      process.env.PUBLIC_URL + "data/earth/specular.jpg"
-    );
-    const displacement_map: THREE.Texture = await tfs.load_from_url(
-      process.env.PUBLIC_URL + "data/earth/bump.jpg"
-    );
+    const normal_map = await tfs.load_from_url(`${p}normal3.png`);
+    const specular_map = await tfs.load_from_url(`${p}specular.jpg`);
+    const displacement_map = await tfs.load_from_url(`${p}bump.jpg`);
     //
     displacement_map.generateMipmaps = true;
     displacement_map.minFilter = THREE.LinearMipMapLinearFilter;
@@ -107,19 +105,18 @@ class EarthD3D {
   };
   //
   init_textures_clouds = async () => {
-    const w = 1024,
-      h = 512;
+    const p = `${this.path ?? process.env.PUBLIC_URL}data/earth/`;
+    //    const p = this.path ?? process.env.PUBLIC_URL;
+    //
+    const w = 1024;
+    const h = 512;
     //
     let cloud_diffuse = await cu.load_img_as_context(
-      "data/earth/cloud1.jpg",
+      `${p}cloud1.jpg`,
       1024,
       512
     );
-    let cloud_alpha = await cu.load_img_as_context(
-      "data/earth/cloud2.jpg",
-      1024,
-      512
-    );
+    let cloud_alpha = await cu.load_img_as_context(`${p}cloud2.jpg`, 1024, 512);
     //
     const idata =
       cloud_diffuse?.getImageData(0, 0, w, h) ?? new ImageData(0, 0);

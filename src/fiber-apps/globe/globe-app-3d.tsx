@@ -6,7 +6,9 @@ import { OrbitControls } from "@react-three/drei";
 import useMousePosition from "../../hooks/useMousePosition";
 import EarthScene from "./earth-scene";
 
-const GlobeApp3D = () => {
+const GlobeApp3D = (props: { path?: string | undefined }) => {
+  const { path } = props;
+  //
   const [rotating, setRotating] = useState<boolean>(true);
   //
   const [x, y, bind] = useMousePosition();
@@ -44,6 +46,7 @@ const GlobeApp3D = () => {
         <pointLight position={[-10, -10, -10]} />
 
         <EarthScene
+          path={path}
           rotating={rotating}
           isHighRes={isHighRes}
           isSingleCountry={isSingleCountry}

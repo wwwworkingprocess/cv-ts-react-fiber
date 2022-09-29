@@ -2,13 +2,6 @@ import { useMemo, useEffect, useState } from "react";
 import { LineBasicMaterial, LineSegments } from "three";
 import { GeoJsonGeometry } from "three-geojson-geometry";
 
-const geojsonUrlSmallCountry =
-  "data/geojson/ne_110m_admin_0_only_hungary.geojson";
-const geojsonUrlLargeCountry = "data/geojson/admin1.28.geojson";
-
-const geojsonUrlSmall = "data/geojson/ne_110m_admin_0_countries.geojson";
-const geojsonUrlLarge = "data/geojson/admin1.geojson";
-
 export type CountryGeoJson = {
   features: Array<{ properties: Array<any>; geometry: any }>;
 };
@@ -19,21 +12,24 @@ export type CountryGeoJson = {
 const useCountryBorders = (
   parentReady: boolean,
   isHighResolution: boolean,
-  isSingleCountry: boolean
+  isSingleCountry: boolean,
+  path: string | undefined
 ) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [countries, setCountries] = useState<CountryGeoJson>();
+  //
+  const p = `${path ?? ""}data/geojson/`;
   //
   const datasourceUrl = useMemo(
     () =>
       isSingleCountry
         ? isHighResolution
-          ? geojsonUrlLargeCountry
-          : geojsonUrlSmallCountry
+          ? `${p}admin1.28.geojson`
+          : `${p}ne_110m_admin_0_only_hungary.geojson`
         : isHighResolution
-        ? geojsonUrlLarge
-        : geojsonUrlSmall,
-    [isHighResolution, isSingleCountry]
+        ? `${p}admin1.geojson`
+        : `${p}ne_110m_admin_0_countries.geojson`,
+    [p, isHighResolution, isSingleCountry]
   );
 
   //

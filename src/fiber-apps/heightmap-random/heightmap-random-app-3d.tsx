@@ -98,8 +98,9 @@ const HeightMapRandomApp3D = (props: {
   isFullscreenEnabled: boolean;
   isFullscreenAvailable: boolean;
   toggleFullscreen: () => Promise<void>;
+  path?: string | undefined;
 }) => {
-  const { isFullscreenEnabled, isFullscreenAvailable, toggleFullscreen } =
+  const { isFullscreenEnabled, isFullscreenAvailable, toggleFullscreen, path } =
     props;
   //
   const [rotating, setRotating] = useState<boolean>(false);
@@ -131,7 +132,7 @@ const HeightMapRandomApp3D = (props: {
 
   const [hgtLocator, setHgtLocator] = useState<string>("J26"); // J26 / SM42
   // const [hgtLocator, setHgtLocator] = useState<string>("SM42"); // J26 / SM42
-  const { values: heights } = useSrtmTiles(hgtLocator, sampling);
+  const { values: heights } = useSrtmTiles(hgtLocator, sampling, path);
 
   const [hgtSelectedIndex, setHgtSelectedIndex] = useState<number>(0); // heights ? Object.values(heights)[0] : undefined; // first entry
   const heights1200 = heights

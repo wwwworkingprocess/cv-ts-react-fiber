@@ -7,8 +7,6 @@ import {
   removeLastRowAndColumn,
 } from "../../utils/srtm";
 
-const SERVICE_ROOT = "data/hgt/";
-
 export enum SAMPLING_MODE {
   SKIP_SAMPLING = 1201,
   SAMPLE_TO_1200X1200 = 1200,
@@ -20,7 +18,13 @@ export enum SAMPLING_MODE {
 //
 // Retrieves HGT information based on SRTM 3.0
 //
-const useSrtmTiles = (locator: string, mode: SAMPLING_MODE) => {
+const useSrtmTiles = (
+  locator: string,
+  mode: SAMPLING_MODE,
+  path?: string | undefined
+) => {
+  const SERVICE_ROOT = path ? `${path}/data/hgt/` : "data/hgt/";
+  //
   const [loading, setLoading] = useState<boolean>(false);
   const [values, setValues] = useState<
     Record<string, Int16Array> | undefined

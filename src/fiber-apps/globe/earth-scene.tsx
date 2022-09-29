@@ -12,9 +12,10 @@ const EarthScene = (
     rotating: boolean;
     isHighRes: boolean;
     isSingleCountry: boolean;
+    path: string | undefined;
   }
 ) => {
-  const { rotating, isHighRes, isSingleCountry } = props;
+  const { rotating, isHighRes, isSingleCountry, path } = props;
   //
   const { scene } = useThree();
 
@@ -29,7 +30,8 @@ const EarthScene = (
   const { loading: loadingBorders, lineObjs } = useCountryBorders(
     isReady,
     isHighRes,
-    isSingleCountry
+    isSingleCountry,
+    path
   );
 
   //
@@ -38,7 +40,7 @@ const EarthScene = (
   useEffect(() => {
     if (scene) {
       const createE3d = async () => {
-        const e3d = new EarthD3D(0);
+        const e3d = new EarthD3D(0, false, path);
         const mesh_earth = await e3d.init(scene);
         //
         setE3d(e3d);
@@ -54,7 +56,7 @@ const EarthScene = (
       setE3d(undefined);
       setEarth(undefined);
     };
-  }, [scene]);
+  }, [scene, path]);
 
   //
   // Attach mesh to scene

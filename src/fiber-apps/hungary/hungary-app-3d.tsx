@@ -39,7 +39,7 @@ const HungaryApp3D = (props: {
   maxPop: number;
   themeId: number; //[0..100]
 }) => {
-  const { minPop, maxPop, themeId } = props;
+  const { path, minPop, maxPop, themeId } = props;
   //
   const isOrtographic = false;
   const { currentColors: adminOneColors } = useColorPalette(themeId);
@@ -55,7 +55,8 @@ const HungaryApp3D = (props: {
   const { loading, tree, /* keys, nodes,*/ cMemo } = useTreeDataForCountry(
     countryCode,
     minPop,
-    maxPop
+    maxPop,
+    path
   );
   //
 
@@ -84,7 +85,7 @@ const HungaryApp3D = (props: {
   const controls = useRef(null);
   const camera = useRef();
 
-  const { features: featuresA1 } = useAdminOneGeoData(countryCode);
+  const { features: featuresA1 } = useAdminOneGeoData(countryCode, path);
 
   const parentsMemo = useMemo(() => {
     if (loading) return [] as Array<number>;

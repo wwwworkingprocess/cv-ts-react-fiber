@@ -37,7 +37,7 @@ const PageFrame = () => {
           <Route path="viewer/*" element={<Viewer />} />
 
           <Route path="map" element={<Map />} />
-          <Route path="demos" element={<Demos />} />
+          <Route path="demos/*" element={<Demos />} />
 
           <Route path="auth" element={<Authentication />} />
         </Route>

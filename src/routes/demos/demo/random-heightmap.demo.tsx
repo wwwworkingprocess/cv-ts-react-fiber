@@ -10,7 +10,7 @@ const RandomHeightmapDemoWrapper = styled.div`
   border: solid 1px black;
 `;
 
-const RandomHeightmapDemo = () => {
+const RandomHeightmapDemo = ({ path }: { path?: string | undefined }) => {
   const fullscreenContainerRef = useRef<HTMLDivElement>(null);
   const { isFullscreenAvailable, isFullscreenEnabled, toggleFullscreen } =
     useFullscreen({ target: fullscreenContainerRef });
@@ -19,6 +19,7 @@ const RandomHeightmapDemo = () => {
   return (
     <RandomHeightmapDemoWrapper ref={fullscreenContainerRef}>
       <HeightMapRandomApp3D
+        path={path}
         isFullscreenAvailable={isFullscreenAvailable}
         isFullscreenEnabled={isFullscreenEnabled}
         toggleFullscreen={toggleFullscreen}

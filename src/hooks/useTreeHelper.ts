@@ -16,7 +16,10 @@ import {
 // Use hierarchical population & geodata for a specific country
 // currently supported countries: Q28, Q36, Q668
 //
-export const useTreeHelper = (countryCode: string) => {
+export const useTreeHelper = (
+  countryCode: string,
+  path?: string | undefined
+) => {
   //
   // COUNTRY CODE >> URLS >> PROMISES >> DATA
   //
@@ -39,12 +42,14 @@ export const useTreeHelper = (countryCode: string) => {
   // STEP 2 update path for each file when countryCode changes
   //
   const urls = useMemo(() => {
-    const path_hierarchy = `data/wikidata/Q${countryCode}.tree.hierarchy.bin`;
-    const path_labels = `data/wikidata/Q${countryCode}.tree.labels.json`;
-    const path_nodedata = `data/wikidata/Q${countryCode}.tree.nodedata.bin`;
+    const p = path ? `${path}` : "";
+
+    const path_hierarchy = `${p}data/wikidata/Q${countryCode}.tree.hierarchy.bin`;
+    const path_labels = `${p}data/wikidata/Q${countryCode}.tree.labels.json`;
+    const path_nodedata = `${p}data/wikidata/Q${countryCode}.tree.nodedata.bin`;
     //
     return [path_hierarchy, path_labels, path_nodedata];
-  }, [countryCode]);
+  }, [countryCode, path]);
   //
   // STEP 4 processing loaded data
   //

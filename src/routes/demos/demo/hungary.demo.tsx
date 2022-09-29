@@ -14,6 +14,8 @@ const HungaryDemo = (props: {
   navigate: NavigateFunction;
   path?: string | undefined;
 }) => {
+  const { path } = props;
+  //
   const [minPop, setMinPop] = useState<number>(5000);
   const [maxPop, setMaxPop] = useState<number>(1000000);
   const [themeId, setThemeId] = useState<number>(
@@ -59,7 +61,7 @@ const HungaryDemo = (props: {
       >
         <HungaryApp3D
           navigate={props.navigate}
-          path={".."}
+          path={path}
           minPop={minPop}
           maxPop={maxPop}
           themeId={themeId}
