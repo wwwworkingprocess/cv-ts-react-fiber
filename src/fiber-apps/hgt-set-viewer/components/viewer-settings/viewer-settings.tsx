@@ -3,12 +3,14 @@ import { isMobile } from "react-device-detect";
 import { SettingsContainer } from "../../hgt-set-viewer-3d.styles";
 
 type ViewerSettingsProps = {
+  isShadowEnabled: boolean;
   isFloorEnabled: boolean;
   is3dGridEnabled: boolean;
   takePixel: number;
   heightScale: number;
   heightShift: number;
   //
+  setIsShadowEnabled: React.Dispatch<React.SetStateAction<boolean>>;
   setTakePixel: React.Dispatch<React.SetStateAction<number>>;
   setHeightScale: React.Dispatch<React.SetStateAction<number>>;
   setHeightShift: React.Dispatch<React.SetStateAction<number>>;
@@ -21,11 +23,13 @@ type ViewerSettingsProps = {
 
 const ViewerSettings = (props: ViewerSettingsProps) => {
   const {
+    isShadowEnabled,
     isFloorEnabled,
     is3dGridEnabled,
     takePixel,
     heightScale,
     heightShift,
+    setIsShadowEnabled,
     setIsFloorEnabled,
     setIs3dGridEnabled,
     setTakePixel,
@@ -37,12 +41,13 @@ const ViewerSettings = (props: ViewerSettingsProps) => {
   //
   return (
     <SettingsContainer>
-      Sample:
+      <label>Sample:</label>
       {[2, 3, 5, 6, 10, 15, 30].map((takeEveryNthPixel, idx) => (
         <button
           key={idx}
           onClick={(e) => setTakePixel(takeEveryNthPixel)}
           style={{
+            fontSize: "9px",
             backgroundColor: takePixel === takeEveryNthPixel ? "#aaaaff" : "",
           }}
         >
@@ -50,7 +55,9 @@ const ViewerSettings = (props: ViewerSettingsProps) => {
         </button>
       ))}
       {isMobile && <br />}
-      Height {!isMobile && <small>({heightScale.toFixed(2)})</small>}:
+      <label>
+        Elevate {!isMobile && <small>({heightScale.toFixed(2)})</small>}:
+      </label>
       <input
         type="range"
         min={0.1}
@@ -60,7 +67,9 @@ const ViewerSettings = (props: ViewerSettingsProps) => {
         onChange={(e) => setHeightScale(parseFloat(e.target.value))}
         style={{ width: "80px" }}
       />
-      Shift {!isMobile && <small>({heightShift.toFixed(4)})</small>}:
+      <label>
+        Y: {!isMobile && <small>({heightShift.toFixed(4)})</small>}:
+      </label>
       <input
         type="range"
         min={0.0}
@@ -70,7 +79,7 @@ const ViewerSettings = (props: ViewerSettingsProps) => {
         onChange={(e) => setHeightShift(parseFloat(e.target.value))}
         style={{ width: "80px" }}
       />
-      Helpers:
+      <label>Debug:</label>
       <input
         type="checkbox"
         checked={is3dGridEnabled}
@@ -81,7 +90,13 @@ const ViewerSettings = (props: ViewerSettingsProps) => {
         checked={isFloorEnabled}
         onChange={(e) => setIsFloorEnabled((b) => !b)}
       />
-      <div style={{ float: "right", width: "160px" }}>
+      <label>Shadows:</label>
+      <input
+        type="checkbox"
+        checked={isShadowEnabled}
+        onChange={(e) => setIsShadowEnabled((b) => !b)}
+      />
+      <div>
         <button onClick={scrollToCanvas}>Scroll Here</button>
         <button onClick={scrollToTop}>Scroll Top</button>
       </div>

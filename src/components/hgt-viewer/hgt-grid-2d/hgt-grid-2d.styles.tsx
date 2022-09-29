@@ -15,6 +15,7 @@ export const HgtGridColumns = styled.div<HgtGridColumnsProps>`
 
 export const HgtGridCell = styled.div<HgtGridCellProps>`
   float: left;
+  user-select: none;
   ${({ width }) => width && { width: `${width || 150}px` }}
   ${({ height }) => height && { height: `${height || 150}px` }}
 `;

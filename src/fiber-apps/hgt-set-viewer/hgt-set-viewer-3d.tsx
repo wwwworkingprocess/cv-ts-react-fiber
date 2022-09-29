@@ -32,6 +32,10 @@ import { Origin, useXyMemo } from "../../routes/viewer/viewer.component"; //TODO
 
 import {
   ControlsContainer,
+  HgtSetViewerContainer,
+  JumpButton,
+  JumpButtonContainer,
+  MobileScrollToTopContainer,
   SettingsContainer,
 } from "./hgt-set-viewer-3d.styles";
 
@@ -71,6 +75,7 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   //
   const canvasRef = useRef<HTMLCanvasElement>(null!);
   //
+  const [isShadowEnabled, setIsShadowEnabled] = useState<boolean>(!isMobile);
   const [isFloorEnabled, setIsFloorEnabled] = useState<boolean>(false);
   const [is3dGridEnabled, setIs3dGridEnabled] = useState<boolean>(false);
   const [takePixel, setTakePixel] = useState<number>(6);
@@ -84,11 +89,13 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   );
   //
   const viewerSettingsProps = {
+    isShadowEnabled,
     isFloorEnabled,
     is3dGridEnabled,
     takePixel,
     heightScale,
     heightShift,
+    setIsShadowEnabled,
     setIsFloorEnabled,
     setIs3dGridEnabled,
     setTakePixel,
@@ -129,7 +136,7 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
   }, [selectedOrigin, scrollToCanvas]);
   //
   return (
-    <>
+    <HgtSetViewerContainer isMobile={isMobile}>
       {/* Used to control display and elevation rendering properties */}
       <SettingsContainer>
         <ViewerSettings {...viewerSettingsProps}></ViewerSettings>
@@ -137,8 +144,8 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
 
       {/* The canvas only attached to the DOM, after all components are loaded */}
       <Suspense fallback={<Spinner />}>
-        <Canvas ref={canvasRef} shadows dpr={[1, 2]}>
-          <DefaultLightRig castShadow={true} />
+        <Canvas ref={canvasRef} shadows={isShadowEnabled} dpr={[1, 2]}>
+          <DefaultLightRig castShadow={isShadowEnabled} />
           <ambientLight intensity={0.3} />
           {isCameraEnabled && (
             <OrbitControls
@@ -150,13 +157,13 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
           )}
           <FrameCounter enabled={isFrameCounterEnabled} />
 
-          {!isMobile && (
-            <Billboard position={[0, 2.25, 0]} follow={true}>
-              <Text fontSize={0.23} color={"#ffaa22"}>
-                Use arrow keys for navigation and space for jump
-              </Text>
-            </Billboard>
-          )}
+          <Billboard position={[0, 2.25, 0]} follow={true}>
+            <Text fontSize={0.23} color={"#ffaa22"}>
+              {!isMobile
+                ? "Use arrow keys for navigation and space for jump"
+                : "Use the buttons for navigation and jump"}
+            </Text>
+          </Billboard>
 
           {/* 
           The white box, representing the player.
@@ -194,23 +201,17 @@ const HgtSetViewer3D = (props: HgtSetViewer3DProps) => {
         <AxisValueInput axis={"y"} min={0} max={10} />
         <AxisValueInput axis={"z"} min={MIN_Y} max={MAX_Y} />
         {isMobile ? (
-          <div style={{ width: "20%" }}>
-            <button
-              style={{
-                width: "70px",
-                height: "40px",
-                position: "relative",
-                top: "-30px",
-                backgroundColor: "rgba(255,255,255,0.55)",
-              }}
-              onClick={onJump}
-            >
-              Jump
-            </button>
-          </div>
+          <JumpButtonContainer>
+            <JumpButton onClick={onJump}>Jump</JumpButton>
+          </JumpButtonContainer>
         ) : undefined}
       </ControlsContainer>
-    </>
+      {isMobile && (
+        <MobileScrollToTopContainer>
+          <button onClick={scrollToTop}>Scroll to top</button>
+        </MobileScrollToTopContainer>
+      )}
+    </HgtSetViewerContainer>
   );
 };
 
