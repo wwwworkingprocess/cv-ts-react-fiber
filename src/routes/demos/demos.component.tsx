@@ -8,6 +8,7 @@ import GlobeDemo from "./demo/globe.demo";
 import HungaryDemo from "./demo/hungary.demo";
 import RandomHeightmapDemo from "./demo/random-heightmap.demo";
 import WikiCountryDemo from "./demo/wiki-country.demo";
+import { DemoList, DemoWrapper } from "./demos.styles";
 
 // import NavigateDemo from "./demo/navigate.demo";
 // import ShapeLoaderDemo from "./demo/shape-loader.demo";
@@ -18,31 +19,65 @@ type UserDocType = {
   createdAt: Date;
 };
 
-type Demo = { idx: number; name: string; path: string };
+type Demo = { idx: number; name: string; git: string; path: string };
 
 const demos = [
-  { idx: 0, path: "wiki-countries", name: "Wiki Country app" },
-  { idx: 1, path: "cursor-navigation", name: "Cursor move app" },
-  { idx: 2, path: "hungarian-cities", name: "Hungary app" },
-  { idx: 3, path: "globe-3d", name: "Globe 3D app" },
-  { idx: 4, path: "hgt-elevation", name: "Heightmap app" },
+  {
+    idx: 0,
+    git: "wiki-country",
+    path: "wiki-countries",
+    name: "Wiki Countries",
+  },
+  {
+    idx: 1,
+    git: "cursor-navigation",
+    path: "cursor-navigation",
+    name: "Cursor movement",
+  },
+  {
+    idx: 2,
+    git: "hungary",
+    path: "hungarian-cities",
+    name: "Hungarian Settlements",
+  },
+  { idx: 3, git: "globe", path: "globe-3d", name: "Globe with Countries" },
+  {
+    idx: 4,
+    git: "heightmap-random",
+    path: "hgt-elevation",
+    name: "Heightmap Tile Viewer",
+  },
 ] as Array<Demo>;
 
-// type DemoRouteParams = { demo: string };
+const GITHUB_ROOT =
+  "https://github.com/wwwworkingprocess/cv-ts-react-fiber/tree/main/src/fiber-apps";
 
 const DemoPreview = () => (
   <>
-    Demos
-    <hr />
-    {demos.map((b) => (
-      <NavLink
-        key={b.idx}
-        to={`${b.path}`}
-        style={{ width: "20%", padding: "5px", color: "white" }}
-      >
-        {b.name}
-      </NavLink>
-    ))}
+    <h2>Fiber micro-applications</h2>
+    <DemoList>
+      {demos.map((b, idx) => (
+        <DemoWrapper key={idx}>
+          <NavLink
+            to={`${b.path}`}
+            style={{ width: "20%", padding: "5px", color: "white" }}
+          >
+            {b.name}
+            <img src={`img/demo/${b.path}.600x400.png`} alt={b.name} />
+          </NavLink>
+          <div style={{ textAlign: "right", paddingRight: "2px" }}>
+            <a
+              href={`${GITHUB_ROOT}/${b.git}`}
+              target={"_blank"}
+              title={"Check source"}
+              rel="noreferrer"
+            >
+              <small style={{ color: "#444444" }}>Open source</small>
+            </a>
+          </div>
+        </DemoWrapper>
+      ))}
+    </DemoList>
   </>
 );
 
