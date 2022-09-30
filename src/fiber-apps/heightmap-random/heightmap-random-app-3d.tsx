@@ -19,7 +19,7 @@ import {
 } from "three";
 
 import useSrtmTile from "../../hooks/srtm/useSrtmTile"; // zip - with single entry
-import useSrtmTiles, { SAMPLING_MODE } from "../../hooks/srtm/useSrtmTiles";
+import { SAMPLING_MODE } from "../../hooks/srtm/useSrtmTiles";
 //import useSrtmTiles from "../../hooks/srtm/useSrtmTiles"; // zip - with multiple hgts
 
 export type GenerateHeightmapArgs = {
@@ -111,7 +111,7 @@ const HeightMapRandomApp3D = (props: {
   const [sampling, setSampling] = useState<SAMPLING_MODE>(
     // 1200
     // 600
-    300
+    1200
     // 150
     // SAMPLING_MODE.SAMPLE_TO_600X600
   );
@@ -125,19 +125,16 @@ const HeightMapRandomApp3D = (props: {
     [number, number, number, number] | undefined
   >([0, 0, heightViewportSize, heightViewportSize]);
   //
-  // const [sampling, setSampling] = useState<SAMPLING_MODE>(1200);
-  // const [hgtLocator, setHgtLocator] = useState<string>("N00E006");
 
-  // test multi-zip  ---   N * (1200*1200) = N * 1.44m int16s
-
-  const [hgtLocator, setHgtLocator] = useState<string>("J26"); // J26 / SM42
+  const [hgtLocator, setHgtLocator] = useState<string>("N42E011"); // N00E006 / N42E011 / N42E019
   // const [hgtLocator, setHgtLocator] = useState<string>("SM42"); // J26 / SM42
-  const { values: heights } = useSrtmTiles(hgtLocator, sampling, path);
-
-  const [hgtSelectedIndex, setHgtSelectedIndex] = useState<number>(0); // heights ? Object.values(heights)[0] : undefined; // first entry
-  const heights1200 = heights
-    ? Object.values(heights)[hgtSelectedIndex]
-    : undefined; // first entry
+  const { value: heights1200 } = useSrtmTile(hgtLocator, path);
+  //
+  //const { values: heights } = useSrtmTiles(hgtLocator, sampling, path);
+  // const [hgtSelectedIndex, setHgtSelectedIndex] = useState<number>(0); // heights ? Object.values(heights)[0] : undefined; // first entry
+  // const heights1200 = heights
+  //   ? Object.values(heights)[hgtSelectedIndex]
+  //   : undefined; // first entry
 
   //
   //
@@ -329,18 +326,51 @@ const HeightMapRandomApp3D = (props: {
   //
   return (
     <>
-      <div style={{ height: "300px" }}>
-        {heights &&
-          Object.entries(heights).map(([hgtName, heights1200], idx) => (
-            <div key={idx} onClick={() => setHgtSelectedIndex(idx)}>
-              [{idx}]<span>{hgtName}</span> {heights1200.length}
-            </div>
-          ))}
-      </div>
-      {imageMemo}
-      {sampling} | {heightViewportSize} | {heightViewPort?.join("-")} |{" "}
+      {/* {imageMemo} */}
+      {/* {sampling} | {heightViewportSize} | {heightViewPort?.join("-")} |{" "}
       {dataTextureHeightfield?.source.data.data.byteLength} | HM:
-      {heightMemo.length}
+      {heightMemo.length} */}
+      <div style={{ userSelect: "none" }}>
+        {isFullscreenAvailable && (
+          <button onClick={toggleFullscreen} style={{ float: "right" }}>
+            {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}
+          </button>
+        )}
+        HGT:
+        {hgtOptions.map(([label, locator], idx) => (
+          <button key={idx} onClick={(e) => setHgtLocator(locator)}>
+            {label}
+          </button>
+        ))}
+        Scale:{" "}
+        <input
+          type="number"
+          value={scalePositionY}
+          step={0.0001}
+          style={{ width: "75px" }}
+          onChange={(e) => setScalePositionY(parseFloat(e.target.value))}
+        />
+        Auto rotate:
+        <input
+          type="checkbox"
+          checked={rotating}
+          onChange={(e) => setRotating(!rotating)}
+        />
+        Grid:
+        <input
+          type="checkbox"
+          checked={showGrid}
+          onChange={(e) => setShowGrid(!showGrid)}
+        />
+        Wirefr.:
+        <input
+          type="checkbox"
+          checked={showWireframe}
+          onChange={(e) => setShowWireframe(!showWireframe)}
+        />
+      </div>
+      <hr />
+
       <Canvas
         camera={{
           position: [5, 10, 5],
@@ -417,46 +447,6 @@ const HeightMapRandomApp3D = (props: {
           />
         )}
       </Canvas>
-      <hr />
-      <div style={{ position: "relative", top: "-20px", userSelect: "none" }}>
-        {isFullscreenAvailable && (
-          <button onClick={toggleFullscreen} style={{ float: "right" }}>
-            {isFullscreenEnabled ? "Disable fullscreen" : "Enable fullscreen"}
-          </button>
-        )}
-        HGT:
-        {hgtOptions.map(([label, locator], idx) => (
-          <button key={idx} onClick={(e) => setHgtLocator(locator)}>
-            {label}
-          </button>
-        ))}
-        Scale:{" "}
-        <input
-          type="number"
-          value={scalePositionY}
-          step={0.0001}
-          style={{ width: "75px" }}
-          onChange={(e) => setScalePositionY(parseFloat(e.target.value))}
-        />
-        Auto rotate:
-        <input
-          type="checkbox"
-          checked={rotating}
-          onChange={(e) => setRotating(!rotating)}
-        />
-        Grid:
-        <input
-          type="checkbox"
-          checked={showGrid}
-          onChange={(e) => setShowGrid(!showGrid)}
-        />
-        Wirefr.:
-        <input
-          type="checkbox"
-          checked={showWireframe}
-          onChange={(e) => setShowWireframe(!showWireframe)}
-        />
-      </div>
     </>
   );
 };

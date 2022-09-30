@@ -7,12 +7,12 @@ import {
   removeLastRowAndColumn,
 } from "../../utils/srtm";
 
-const SERVICE_ROOT = "data/hgt/";
-
 //
 // Retrieves HGT information based on SRTM 3.0
 //
-const useSrtmTile = (locator: string) => {
+const useSrtmTile = (locator: string, path?: string | undefined) => {
+  const SERVICE_ROOT = path ? `${path}data/hgt/` : "data/hgt/";
+
   const [loading, setLoading] = useState<boolean>(false);
   const [value, setValue] = useState<Int16Array | undefined>();
   const [error, setError] = useState<Error | undefined>();
@@ -45,7 +45,7 @@ const useSrtmTile = (locator: string) => {
   //
   const onDownloadSuccess = useCallback(
     (ab: ArrayBuffer | null) => {
-      // console.log("downloaded zip", ab);
+      console.log("downloaded zip", ab);
       //
       if (ab) {
         unzipBuffer(ab)
@@ -73,7 +73,7 @@ const useSrtmTile = (locator: string) => {
           .finally(() => setLoading(false));
       }
     },
-    [locator, onDownloadSuccess, onNetworkError]
+    [SERVICE_ROOT, locator, onDownloadSuccess, onNetworkError]
   );
   //
   useEffect(() => {
