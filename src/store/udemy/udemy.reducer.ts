@@ -1,12 +1,6 @@
 import { AnyAction } from "redux";
 import udemyItems from "./udemy.data.json";
 
-// export type UdemyItem = {
-//   id: number;
-//   title: string;
-//   imageUrl: string;
-//   linkUrl: string;
-// };
 export type UdemyItem = {
   id: number;
   title: string;

@@ -4,7 +4,6 @@ export const CompletedCourseContainer = styled.div`
   width: 22vw;
   display: flex;
   flex-direction: column;
-  height: 150px;
   align-items: center;
   position: relative;
 
@@ -59,9 +58,15 @@ export const Footer = styled.div`
 
 export const Name = styled.span`
   width: 90%;
+  margin: auto;
+  text-align: center;
   margin-bottom: 15px;
 `;
 
-export const Price = styled.span`
-  width: 10%;
+export const Lectures = styled.span`
+  position: absolute;
+  width: 100%;
+  text-align: right;
+  padding: 8px;
+  font-size: 11px;
 `;

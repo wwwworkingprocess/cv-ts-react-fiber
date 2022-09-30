@@ -3,13 +3,15 @@ import styled from "styled-components";
 export const CardListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 0.9fr);
-  grid-gap: 0.3vw;
+  grid-gap: 0.5vw;
   padding: auto;
   align-self: center;
 
   & > div {
     margin-bottom: 30px;
-    border: solid 1px red;
+    padding-bottom: 15px;
+    background-color: blue;
+    overflow: hidden;
   }
 
   @media screen and (max-width: 800px) {

@@ -15,7 +15,7 @@ import { checkUserSession } from "./store/user/user.action";
 // lazy loading main routes
 //
 const Home = lazy(() => import("./routes/home/home.component"));
-const Courses = lazy(() => import("./routes/courses/courses.component"));
+const Skills = lazy(() => import("./routes/skills/skills.component"));
 const Viewer = lazy(() => import("./routes/viewer/viewer.component"));
 const Map = lazy(() => import("./routes/map/map.component"));
 const Demos = lazy(() => import("./routes/demos/demos.component"));
@@ -33,7 +33,7 @@ const PageFrame = () => {
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
 
-          <Route path="skills/*" element={<Courses />} />
+          <Route path="skills/*" element={<Skills />} />
           <Route path="viewer/*" element={<Viewer />} />
 
           <Route path="map" element={<Map />} />

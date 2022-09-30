@@ -8,7 +8,7 @@ import {
   CompletedCourseContainer,
   Footer,
   Name,
-  Price,
+  Lectures,
 } from "./card-completed.styles";
 
 const DEFAULT_URL =
@@ -23,7 +23,7 @@ const CompletedCourseCard: FC<CompletedCourseCardProps> = ({
   course,
   setSelectedId,
 }: CompletedCourseCardProps) => {
-  const { title, image_240x135, num_lectures } = course;
+  const { title, image_240x135, num_lectures, url } = course;
   //
   const [x, y, bind] = useMousePosition();
   //
@@ -31,21 +31,27 @@ const CompletedCourseCard: FC<CompletedCourseCardProps> = ({
   // const cartItems = useSelector(selectCartItems);
   // const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
   //
-
-  //
+  //  transform: `rotateX(${x / 15}deg) rotateY(${y / -5}deg)`,
   //
   return (
     <CompletedCourseContainer
       onClick={() => setSelectedId(course.id)}
       {...bind}
-      style={{
-        transform: `rotateX(${x / 15}deg) rotateY(${y / -5}deg)`,
-      }}
     >
       <img src={image_240x135 || DEFAULT_URL} alt={title} />
+      <Lectures>
+        <a
+          href={`https://www.udemy.com${url}`}
+          target={"_blank"}
+          rel={"noreferrer"}
+          title={title}
+          style={{ color: "gold" }}
+        >
+          {num_lectures} lectures
+        </a>
+      </Lectures>
       <Footer>
         <Name>{title}</Name>
-        <Price>{num_lectures}</Price>
       </Footer>
     </CompletedCourseContainer>
   );
