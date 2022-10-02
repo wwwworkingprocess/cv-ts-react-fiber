@@ -45,7 +45,6 @@ const WikiCountryDemo = (props: {
   // Loading list of countries from either local or remote storage
   //
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED, path);
-  console.log("wc", IS_CLOUD_ENABLED, wikiCountries?.length);
   //
   const [pageIndex, setPageIndex] = useState<number>();
   const [countryIndex, setCountryIndex] = useState<number>();

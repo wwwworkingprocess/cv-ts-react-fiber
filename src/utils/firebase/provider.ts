@@ -36,8 +36,6 @@ const getConfig = () => {
   //
   const configWithSecret = { ...cfg, ...getConfigFromEnv() };
   //
-  alert(JSON.stringify(configWithSecret));
-  //
   return configWithSecret;
 };
 

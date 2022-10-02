@@ -85,6 +85,7 @@ const Demos = () => {
   const navigate = useNavigate();
   const basePath = "../../";
   //
+  /*
   useEffect(() => {
     const queryUsers = async () => {
       const users = await getFirestoreCollection<UserDocType>("users");
@@ -94,6 +95,7 @@ const Demos = () => {
     //
     queryUsers();
   }, []);
+  */
   //
   return (
     <Routes>
