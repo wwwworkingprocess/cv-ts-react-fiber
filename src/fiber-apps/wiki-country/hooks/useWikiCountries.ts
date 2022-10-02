@@ -10,7 +10,10 @@ import type {
 
 const WIKI_COUNTRIES_LOCAL_URL = `data/wikidata/json/countries_with_flags_and_arms_elevation_and_pop.json`;
 
-export const useWikiCountries = (useStore: boolean | undefined = true) => {
+export const useWikiCountries = (
+  useStore: boolean,
+  path?: string | undefined
+) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Array<WikiCountry> | null>(null);
   const [error, setError] = useState<Error | null>(null);
@@ -63,8 +66,11 @@ export const useWikiCountries = (useStore: boolean | undefined = true) => {
   useEffect(() => {
     onStart();
     //
-    useStore ? fetchFromFirestore() : fetchFromLocal(WIKI_COUNTRIES_LOCAL_URL);
-  }, [useStore, fetchFromFirestore, fetchFromLocal]);
+    const p = path ? `${path}` : "";
+    const url = `${p}${WIKI_COUNTRIES_LOCAL_URL}`;
+    //
+    useStore ? fetchFromFirestore() : fetchFromLocal(url);
+  }, [useStore, path, fetchFromFirestore, fetchFromLocal]);
 
   return { loading, data, error };
 };

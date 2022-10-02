@@ -10,6 +10,7 @@ import useRawHgtSampler from "../../hooks/srtm/useRawHgtSampler";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 
 import { useWikidata } from "../../hooks/useWikidata";
+import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 
 type TSvg = {
   width: number;
@@ -38,15 +39,14 @@ export const Path = styled.path`
 const Map = () => {
   const [svgCountries, setSvgCountries] = useState<Array<any>>();
   //
-  const { data: wikiCountries } = useWikiCountries();
+  const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED);
   const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>();
   //
   const firestoreDocumentUrl = `data/hgt/N42E011.hgt.zip`;
   //
   const { data: firestoreHgt } = useFirestoreDocument(firestoreDocumentUrl);
-  console.log("HGT from Firestore", firestoreHgt);
   const boundsCheck = useRawHgtSampler(firestoreHgt);
-  console.log("SAMPLES", boundsCheck);
+
   //
   // loading geojson
   //

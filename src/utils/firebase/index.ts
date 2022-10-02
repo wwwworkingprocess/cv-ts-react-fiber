@@ -22,6 +22,11 @@ export const createUserDocumentFromAuth = async (
   userAuth: User,
   additionalInformation = {} as AdditionalInformation
 ): Promise<void | QueryDocumentSnapshot<UserData>> => {
+  if (!db) {
+    console.warn("Cloud functionality seems disabled.");
+    return;
+  }
+  //
   if (!userAuth) return;
   //
   const userDocRef = doc(db, "users", userAuth.uid);

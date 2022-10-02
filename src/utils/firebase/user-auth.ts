@@ -14,14 +14,18 @@ import { auth } from "./provider";
 //
 export const getCurrentUser = (): Promise<User | null> =>
   new Promise((resolve, reject) => {
-    const unsubscribe = onAuthStateChanged(
-      auth,
-      (userAuth: User | null) => {
-        unsubscribe();
-        resolve(userAuth);
-      },
-      reject
-    );
+    if (auth) {
+      const unsubscribe = onAuthStateChanged(
+        auth,
+        (userAuth: User | null) => {
+          unsubscribe();
+          resolve(userAuth);
+        },
+        reject
+      );
+    } else {
+      console.warn("No authentication provider.");
+    }
   });
 
 //
@@ -32,6 +36,8 @@ export const createAuthUserWithEmailAndPassword = async (
   password: string
 ) => {
   if (!email || !password) return;
+  //
+  if (!auth) return;
   //
   return await createUserWithEmailAndPassword(auth, email, password);
 };
@@ -45,16 +51,22 @@ export const signInAuthUserWithEmailAndPassword = async (
 ) => {
   if (!email || !password) return;
   //
+  if (!auth) return;
+  //
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
 //
 // Sign out the authenticated user
 //
-export const signOutUser = async () => await signOut(auth);
+export const signOutUser = async () => {
+  if (!auth) return;
+  //
+  await signOut(auth);
+};
 
 //
 // Propagate event to the callback provided, when auth state changes
 //
 export const onAuthStateChangedListener = (callback: NextOrObserver<User>) =>
-  onAuthStateChanged(auth, callback);
+  auth && onAuthStateChanged(auth, callback);

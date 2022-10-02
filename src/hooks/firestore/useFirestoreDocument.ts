@@ -23,6 +23,8 @@ const useFirestoreDocument = (url: string) => {
   };
   //
   const fetchApi = useCallback((url: string) => {
+    if (!storage) return;
+    //
     if (url) {
       const pathReference = ref(storage, url);
       //

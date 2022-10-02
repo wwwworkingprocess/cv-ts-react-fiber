@@ -14,6 +14,7 @@ import {
 } from "./navigation.styles";
 
 import { ReactComponent as AppLogo } from "../../assets/svg/test.svg";
+import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 
 const Navigation = () => {
   const dispatch = useDispatch();
@@ -34,13 +35,14 @@ const Navigation = () => {
           <NavLink to="/skills">SKILLS</NavLink>
           <NavLink to="/demos">DEMOS</NavLink>
 
-          {currentUser ? (
-            <NavLink as="span" onClick={signOutUser}>
-              SIGN OUT
-            </NavLink>
-          ) : (
-            <NavLink to="/auth">SIGN IN</NavLink>
-          )}
+          {IS_CLOUD_ENABLED &&
+            (currentUser ? (
+              <NavLink as="span" onClick={signOutUser}>
+                SIGN OUT
+              </NavLink>
+            ) : (
+              <NavLink to="/auth">SIGN IN</NavLink>
+            ))}
         </NavLinks>
       </NavigationContainer>
       <Outlet />

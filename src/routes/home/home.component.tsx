@@ -106,14 +106,14 @@ const Home = () => {
           Shadows: {isShadowEnabled ? "ON" : "OFF"}
         </button>
       </div>
-      {countries.length && (
+      {
         <AppHome3D
           isShadowEnabled={isShadowEnabled}
           showGrid={showGrid}
           countries={countries}
           setIsOpen={setIsOpen}
         />
-      )}
+      }
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />
       </Dialog>

@@ -8,6 +8,13 @@ import {
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+const getCloudEnabled = () => {
+  const configFromEnv = process.env.REACT_APP_FIREBASE_ENABLED ?? "FALSE";
+  //
+  return configFromEnv === "TRUE";
+};
+
+export const IS_CLOUD_ENABLED = getCloudEnabled();
 //
 // Firebase configuration
 //
@@ -19,6 +26,9 @@ const getConfig = () => {
   };
   //
   const getConfigFromEnv = () => ({
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ?? "",
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ?? "",
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET ?? "",
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY ?? "",
     appId: process.env.REACT_APP_FIREBASE_APP_ID ?? "",
     messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID ?? "",
@@ -26,13 +36,17 @@ const getConfig = () => {
   //
   const configWithSecret = { ...cfg, ...getConfigFromEnv() };
   //
+  alert(JSON.stringify(configWithSecret));
+  //
   return configWithSecret;
 };
 
 //
 // Exporting Firebase App instance to ease testing & mocking
 //
-export const firebaseApp = initializeApp(getConfig());
+export const firebaseApp = IS_CLOUD_ENABLED
+  ? initializeApp(getConfig())
+  : undefined;
 
 //
 // Setting up Auth
@@ -40,13 +54,14 @@ export const firebaseApp = initializeApp(getConfig());
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 
-export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const auth = IS_CLOUD_ENABLED ? getAuth() : undefined;
+export const signInWithGooglePopup = () =>
+  auth ? signInWithPopup(auth, provider) : Promise.resolve(undefined);
 export const signInWithGoogleRedirect = () =>
-  signInWithRedirect(auth, provider);
+  auth && signInWithRedirect(auth, provider);
 
 //
 // Setting up Firestore
 //
-export const db = getFirestore();
-export const storage = getStorage(firebaseApp);
+export const db = IS_CLOUD_ENABLED ? getFirestore() : undefined;
+export const storage = IS_CLOUD_ENABLED ? getStorage(firebaseApp) : undefined;

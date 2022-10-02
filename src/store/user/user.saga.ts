@@ -2,7 +2,10 @@ import { takeLatest, all, call, put } from "typed-redux-saga/macro";
 
 import type { User } from "firebase/auth";
 
-import { signInWithGooglePopup } from "../../utils/firebase/provider";
+import {
+  IS_CLOUD_ENABLED,
+  signInWithGooglePopup,
+} from "../../utils/firebase/provider";
 
 import { createUserDocumentFromAuth } from "../../utils/firebase";
 import type { AdditionalInformation } from "../../utils/firebase";
@@ -61,12 +64,17 @@ export function* isUserAuthenticated() {
 }
 
 export function* signInWithGoogle() {
-  try {
-    const { user } = yield* call(signInWithGooglePopup);
-    //
-    yield* call(getSnapshotFromUserAuth, user);
-  } catch (error) {
-    yield* put(signInFailed(error as Error));
+  if (IS_CLOUD_ENABLED) {
+    try {
+      const yieldResult = yield* call(signInWithGooglePopup);
+      const { user } = yieldResult ?? { user: undefined };
+      //
+      if (user) {
+        yield* call(getSnapshotFromUserAuth, user);
+      }
+    } catch (error) {
+      yield* put(signInFailed(error as Error));
+    }
   }
 }
 

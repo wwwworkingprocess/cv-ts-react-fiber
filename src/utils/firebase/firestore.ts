@@ -17,6 +17,8 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
   objectsToAdd: Array<T>,
   documentKeysToUse?: Array<string> // omit to use auto-generated unique ids
 ): Promise<void> => {
+  if (!db) return;
+  //
   const collectionRef = collection(db, collectionKey);
   const batch = writeBatch(db);
   //
@@ -42,6 +44,8 @@ export const addCollectionAndDocuments = async <T extends ObjectToAdd>(
 export async function getFirestoreCollection<T>(
   path: string
 ): Promise<Array<T>> {
+  if (!db) return [] as Array<T>;
+  //
   const collectionRef = collection(db, path);
   //
   const q = query(collectionRef);
