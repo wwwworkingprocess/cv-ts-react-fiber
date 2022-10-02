@@ -9,6 +9,8 @@ import {
 } from "../../store/countries/countries.selector";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCountriesStart } from "../../store/countries/countries.action";
+import { isMobile } from "react-device-detect";
+import { NavLink } from "react-router-dom";
 
 type TimerProps = {
   isActive: boolean;
@@ -70,11 +72,12 @@ const DataLoadTest = () => {
 };
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [showGrid, setShowGrid] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [showGrid, setShowGrid] = useState<boolean>(false);
+  const [isShadowEnabled, setIsShadowEnabled] = useState<boolean>(!isMobile);
   //
   const countries = useSelector(selectCountries);
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
   //
   const dispatch = useDispatch();
   //
@@ -84,13 +87,56 @@ const Home = () => {
   //
   return (
     <>
-      {countries.length} - {isLoading ? "Loading..." : "Ready"}
-      <AppHome3D setIsOpen={setIsOpen} showGrid={showGrid} />
+      <h2>Good to see You here!</h2>
+      <p>
+        This site is a collection of micro applications, created during
+        September 2022, written in TypeScript using React and 3D.
+      </p>
+      <p>
+        Please have a look around, check my{" "}
+        <NavLink to="viewer">Topographic Map Viewer </NavLink>
+        or the <NavLink to="demos">Demos Page</NavLink> for some simpler
+        applications of 'Reactive 3D' in action.
+      </p>
+      <div style={{ textAlign: "right" }}>
+        <button onClick={(e) => setShowGrid((b) => !b)}>
+          Grid: {showGrid ? "ON" : "OFF"}
+        </button>
+        <button onClick={(e) => setIsShadowEnabled((b) => !b)}>
+          Shadows: {isShadowEnabled ? "ON" : "OFF"}
+        </button>
+      </div>
+      {countries.length && (
+        <AppHome3D
+          isShadowEnabled={isShadowEnabled}
+          showGrid={showGrid}
+          countries={countries}
+          setIsOpen={setIsOpen}
+        />
+      )}
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />
       </Dialog>
-      <button onClick={(e) => setIsOpen(true)}>Open Dialog</button>
-      <button onClick={(e) => setShowGrid((b) => !b)}>Toggle Grid</button>
+      <div style={{ textAlign: "center", padding: "10px" }}>
+        This project is open source, please feel free to visit &amp; fork the{" "}
+        <a
+          href="https://github.com/wwwworkingprocess/cv-ts-react-fiber"
+          title="Github"
+          target="_blank"
+          rel="noreferrer"
+        >
+          repo on Github.
+        </a>
+        or find{" "}
+        <a
+          href="https://www.linkedin.com/in/gergely-marton-a75402a1"
+          title="LinkedIn"
+          target="_blank"
+          rel="noreferrer"
+        >
+          me on LinkedIn.
+        </a>
+      </div>
     </>
   );
 };

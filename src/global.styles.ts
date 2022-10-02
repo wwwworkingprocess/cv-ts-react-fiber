@@ -20,7 +20,7 @@ body {
   
   a {
     text-decoration: none;
-    color: black;
+    color: gold;
   }
   
   * {
