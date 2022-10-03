@@ -78,6 +78,8 @@ const DemoPreview = () => (
         </DemoWrapper>
       ))}
     </DemoList>
+    <h2>Next Feature in Development</h2>
+    <NavLink to={"../../map"}>Wiki demography</NavLink>
   </>
 );
 

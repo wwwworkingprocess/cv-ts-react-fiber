@@ -30,7 +30,7 @@ const Navigation = () => {
           <AppLogo className="logo" style={{ width: "50px", height: "50px" }} />
         </LogoContainer>
         <NavLinks>
-          <NavLink to="/map">MAP</NavLink>
+          {/* <NavLink to="/map">MAP</NavLink> */}
           <NavLink to="/viewer">VIEWER</NavLink>
           <NavLink to="/skills">SKILLS</NavLink>
           <NavLink to="/demos">DEMOS</NavLink>

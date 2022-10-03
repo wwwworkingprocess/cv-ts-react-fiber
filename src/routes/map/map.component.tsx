@@ -2,50 +2,27 @@ import { useEffect, useMemo, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import styled from "styled-components";
+import CountryList from "../../components/demography/country-list/country-list.component";
+import SettlementSearch from "../../components/demography/settlement-search/settlement-search.component";
+import SvgWorldMap from "../../components/demography/svg-world-map/svg-world-map.component";
 
 import { Spinner } from "../../components/spinner/spinner.component";
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 import useFirestoreDocument from "../../hooks/firestore/useFirestoreDocument";
-import useRawHgtSampler from "../../hooks/srtm/useRawHgtSampler";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 
 import { useWikidata } from "../../hooks/useWikidata";
 import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 
-type TSvg = {
-  width: number;
-  height: number;
-};
-
-export const Svg = styled.svg.attrs<TSvg>((props) => ({
-  viewBox: `0 0 ` + props.width + ` ` + props.height,
-  preserveAspectRatio: `xMidYMid meet`,
-  width: props.width,
-  height: props.height,
-}))``;
-
-export const Path = styled.path`
-  cursor: pointer;
-  fill: #fff;
-  stroke: #ccc;
-  :hover {
-    fill: #ada;
-  }
-  :active {
-    opacity: 0.8;
-  }
-`;
-
-const Map = () => {
+const WikiDemography = () => {
   const [svgCountries, setSvgCountries] = useState<Array<any>>();
   //
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED);
   const [selectedWikiCountry, setSelectedWikiCountry] = useState<any>();
   //
-  const firestoreDocumentUrl = `data/hgt/N42E011.hgt.zip`;
+  // const firestoreDocumentUrl = `data/hgt/N42E011.hgt.zip`;
+  // const { data: firestoreHgt } = useFirestoreDocument(firestoreDocumentUrl);
   //
-  const { data: firestoreHgt } = useFirestoreDocument(firestoreDocumentUrl);
-  const boundsCheck = useRawHgtSampler(firestoreHgt);
 
   //
   // loading geojson
@@ -120,97 +97,6 @@ const Map = () => {
     return undefined;
   }, [wikiEntry]);
 
-  const [keyword, setKeyword] = useState<string>("");
-  //
-  const searchResultsMemo = useMemo(() => {
-    const nodes = tree && keyword && keyword.length > 1 ? tree.list_all() : [];
-    //
-    const matchingNames = nodes.filter(
-      (node) => node.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
-    );
-    //
-    // sort by name before returning result
-    //
-    matchingNames.sort((a, b) => a.name.localeCompare(b.name));
-
-    return matchingNames;
-  }, [tree, keyword]);
-
-  const [svgCanvasWidth, svgCanvasHeight] = [720, 360];
-  const svgPathMemo = useMemo(() => {
-    if (!svgCountries) return { paths: [undefined] };
-
-    const projectToCanvas = (latLng: { lat: number; lng: number }) => {
-      //
-      // projecting from [ lat:[-90, +90], lng: [-180, +180] ]
-      //            to   [ x: [0, canvasWidth], y: [0, canvasHeight] ]
-      //
-      return {
-        x: (latLng.lng + 180) * (svgCanvasWidth / 360),
-        y:
-          svgCanvasHeight / 2 -
-          ((svgCanvasHeight *
-            Math.log(
-              Math.tan(Math.PI / 4 + (latLng.lat * Math.PI) / 180 / 2)
-            )) /
-            (2 * Math.PI)) *
-            (svgCanvasWidth / svgCanvasHeight),
-      };
-    };
-
-    //
-    function convertCoordinatesToSvgPaths(
-      coordArrays: Array<Array<[number, number]>>,
-      fx: any
-    ) {
-      const svgPaths = [];
-      //
-      let minX = svgCanvasWidth;
-      let minY = svgCanvasHeight;
-      let maxX = 0;
-      let maxY = 0;
-
-      for (let pp = 0; pp < coordArrays.length; ++pp) {
-        const [coords /*, outterRingCoords*/] = coordArrays[pp];
-        const svgPath = [];
-        //
-        for (let p = 0; p < coords.length; ++p) {
-          const point = projectToCanvas(fx(coords[p]));
-          //
-          const valid = !(isNaN(point.x) || isNaN(point.y));
-          //
-          if (valid) {
-            minX = Math.min(minX, point.x);
-            minY = Math.min(minY, point.y);
-            maxX = Math.max(maxX, point.x);
-            maxY = Math.max(maxY, point.y);
-            //
-            svgPath.push([point.x, point.y].join(","));
-          }
-        }
-        //
-        if (svgPath.length) {
-          svgPaths.push(svgPath.join(" "));
-        }
-      }
-
-      return {
-        //path: "M" + svgPaths.join("z M") + "z",   // single path
-        paths: svgPaths.map((svgp) => `M${svgp}z`), // one path per feature
-        x: minX,
-        y: minY,
-        width: maxX - minX,
-        height: maxY - minY,
-      };
-    }
-    //
-    const svgProps = convertCoordinatesToSvgPaths(
-      svgCountries.map((c) => c.path),
-      (coord: [number, number]) => ({ lat: coord[1], lng: coord[0] })
-    );
-    //
-    return svgProps;
-  }, [svgCountries, svgCanvasWidth, svgCanvasHeight]);
   //
   //
   //
@@ -245,10 +131,10 @@ const Map = () => {
     );
   };
 
-  const [countrySelected, setCountrySelected] = useState<string | null>();
+  const [countrySelected, setCountrySelected] = useState<string>();
   //
   const mouseEnter = (country: any) => setCountrySelected(country.name);
-  const mouseLeave = () => setCountrySelected(null);
+  const mouseLeave = () => setCountrySelected(undefined);
   const onCountryClicked = (c: any) => setSelectedWikiCountry(c);
   //
   //
@@ -268,85 +154,20 @@ const Map = () => {
     <div>
       Map ({countrySelected})
       <hr />
-      {selectedCountryPanel}
-      <hr />
-      {wikiCountries &&
-        wikiCountries
-          .filter((c) => c.name[0] === "H")
-          .map((c, idx) => (
-            <div
-              key={idx}
-              onClick={() => onCountryClicked(c)}
-              style={{ display: "inline-block" }}
-            >
-              <img src={c.urls.flag} width="40" height="30" alt={c.name} />
-              {(c.population * 0.000001).toFixed(3)}M
-              <br />
-              {c.name}- {c.capital} <br />
-            </div>
-          ))}
-      <hr />
-      {svgCountries && (
-        <div style={{ margin: "auto", width: isMobile ? "100%" : "80vw" }}>
-          {svgPathMemo && (
-            <Svg
-              style={{
-                border: "solid 1px silver",
-                zoom: isMobile ? 0.5 : 1,
-              }}
-              {...svgPathMemo}
-              width={svgCanvasWidth}
-              height={svgCanvasHeight}
-            >
-              {svgCountries.map(({ id, name, path }, index) => {
-                return (
-                  <Path
-                    key={index}
-                    color={"white"}
-                    strokeWidth={0.5}
-                    data-testid={name}
-                    onMouseEnter={mouseEnter.bind(null, { name })}
-                    onMouseLeave={mouseLeave}
-                    d={svgPathMemo.paths[index]}
-                  />
-                );
-              })}
-            </Svg>
-          )}
-          {countrySelected && JSON.stringify(countrySelected)}
-        </div>
-      )}
-      <hr />
-      Keyword:{" "}
-      <input
-        type="text"
-        value={keyword}
-        onChange={(e) => setKeyword(e.target.value)}
-      />{" "}
-      {keyword}
-      <hr />
-      searchResults:{" "}
-      {searchResultsMemo ? searchResultsMemo.length : "no results"}
-      <hr />
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-        }}
-      >
-        {searchResultsMemo
-          ? searchResultsMemo.map((sr) => (
-              <div>
-                {sr.name} ({sr.data ? sr.data.pop : "-"})
-              </div>
-            ))
-          : "no results"}
-      </div>
       <hr />
       Country code: {countryCode}{" "}
       <button onClick={loadHungary}>Change (HUN)</button>
       <button onClick={loadPoland}>Change (POL)</button>
       <button onClick={loadIndia}>Change (IND)</button>
+      <hr />
+      <CountryList
+        wikiCountries={wikiCountries}
+        onCountryClicked={onCountryClicked}
+      />
+      <hr />
+      {selectedCountryPanel}
+      <hr />
+      <SettlementSearch tree={tree} />
       <hr />
       {loading || !tree ? (
         <Spinner />
@@ -387,12 +208,18 @@ const Map = () => {
             </div>
           )}
           <hr />
-          Bounds:
-          {boundsCheck ? JSON.stringify(boundsCheck) : "Loading hgt..."}
+          {/* Bounds: {boundsCheck ? JSON.stringify(boundsCheck) : "Loading hgt..."} */}
+          <SvgWorldMap
+            svgCountries={svgCountries}
+            countrySelected={countrySelected}
+            mouseEnter={mouseEnter}
+            mouseLeave={mouseLeave}
+          />
+          <hr />
         </>
       )}
     </div>
   );
 };
 
-export default Map;
+export default WikiDemography;
