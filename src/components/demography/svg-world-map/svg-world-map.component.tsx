@@ -1,5 +1,6 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { isMobile } from "react-device-detect";
+import { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
 
 import {
   Path,
@@ -7,16 +8,59 @@ import {
   SvgCanvasContainer,
 } from "./svg-world-map.styles";
 
+type CountryWithPath = {
+  id: string;
+  name: string;
+  path: Array<[number, number]>;
+};
+
 type SvgWorldMapProps = {
-  svgCountries: Array<any> | undefined;
-  countrySelected: any;
+  selectedCountry: WikiCountry | undefined;
   //
   mouseEnter: (country: any) => void;
   mouseLeave: () => void;
 };
 
+const useSvgWorldMapData = () => {
+  const [values, setValues] = useState<Array<CountryWithPath>>();
+
+  //
+  // loading geojson
+  //
+  useEffect(() => {
+    const afterDataLoaded = (countries: any) => {
+      const fs = countries.features;
+      const mapped = fs.map(
+        (f: {
+          properties: Record<string, any>;
+          geometry: { coordinates: Array<[number, number]> };
+        }) => ({
+          id: f.properties.id,
+          name: f.properties.name,
+          path: f.geometry.coordinates,
+        })
+      );
+      //
+      setValues(mapped);
+    };
+
+    //
+    const fetchGeoJsonAllCountries = () => {
+      fetch("data/geojson/ne_110m_admin_0_countries.geojson")
+        .then((res) => res.json())
+        .then(afterDataLoaded);
+    };
+    //
+    fetchGeoJsonAllCountries();
+  }, []);
+  //
+  return values;
+};
+
 const SvgWorldMap = (props: SvgWorldMapProps) => {
-  const { svgCountries, countrySelected, mouseEnter, mouseLeave } = props;
+  const { selectedCountry, mouseEnter, mouseLeave } = props;
+  //
+  const svgCountries = useSvgWorldMapData();
   //
   const [svgCanvasWidth, svgCanvasHeight] = [720, 360];
   //
@@ -104,7 +148,7 @@ const SvgWorldMap = (props: SvgWorldMapProps) => {
           width={svgCanvasWidth}
           height={svgCanvasHeight}
         >
-          {svgCountries.map(({ id, name, path }, index) => {
+          {svgCountries.map(({ id, name, path }: CountryWithPath, index) => {
             return (
               <Path
                 key={index}
@@ -119,7 +163,7 @@ const SvgWorldMap = (props: SvgWorldMapProps) => {
           })}
         </StyledSvgCanvas>
       )}
-      {countrySelected && JSON.stringify(countrySelected)}
+      {selectedCountry && selectedCountry.name}
     </SvgCanvasContainer>
   ) : null;
 };
