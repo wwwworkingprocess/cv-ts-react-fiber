@@ -1,77 +1,204 @@
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 
 import CountryList from "../../components/demography/country-list/country-list.component";
 import SettlementSearch from "../../components/demography/settlement-search/settlement-search.component";
+import TreeBreadCrumb from "../../components/demography/tree-bread-crumb/tree-bread-crumb.component";
+import WikiItemDetails from "../../components/demography/wiki-item-details/wiki-item-details.component";
 // import SvgWorldMap from "../../components/demography/svg-world-map/svg-world-map.component";
 
 import { Spinner } from "../../components/spinner/spinner.component";
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 
-import { useWikidata } from "../../hooks/useWikidata";
-
 import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 import { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
+import { distance } from "../../utils/geo";
 import type TreeHelper from "../../utils/tree-helper";
 
 const availableCountryCodes = ["Q28", "Q36", "Q668"];
 
-const TreeBreadCrumb = (props: {
+type NearbyTreeItemProps = {
+  tree: TreeHelper | undefined;
   selectedCode: string | undefined;
-  tree: TreeHelper;
-  //
   setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
-}) => {
-  const { selectedCode, setSelectedCode, tree } = props;
+};
+
+const NearbyTreeItem = (props: NearbyTreeItemProps) => {
+  const { tree, selectedCode, setSelectedCode } = props;
   //
-  if (!tree) return null;
+  const isReady = tree && selectedCode;
+  const node = isReady ? tree._n(selectedCode) : undefined;
   //
-  const node = selectedCode ? tree._n(selectedCode) : undefined;
-  const pcodes = node ? tree.get_pcodes(node) : [];
+  console.log("node", node);
   //
-  const parents = pcodes.map((code, idx) => ({
-    code: pcodes[idx] ?? "",
-    name: tree._find(code)?.name ?? "",
-  }));
-  //
-  const RegionHeader = (props: {
-    parents: Array<{ code: number; name: string }>;
-  }) => {
-    if (!parents || parents.length < 3) return null;
-    //
-    const [earth, continent, subContinent] = parents;
-    //
-    return (
-      <h3 style={{ marginBottom: "5px", marginTop: "5px" }}>
-        {earth.name}, {continent.name}, {subContinent.name}
-      </h3>
-    );
-  };
+  const [range, setRange] = useState<number>(3);
 
   //
-  return (
-    <>
-      <RegionHeader parents={parents} />
-      {parents
-        ? parents.map((p, level, arr) => (
-            <>
-              {/* Rendering item */}
-              {level > 2 ? (
-                <span>
-                  <button
-                    onClick={() => p.code && setSelectedCode(`Q${p.code}`)}
-                  >
-                    {p.name}
-                  </button>
-                </span>
-              ) : null}
-              {/* Rendering separator */}
-              {level > 2 && level < arr.length - 1 && <span> &gt;&gt; </span>}
-            </>
-          ))
-        : null}
-    </>
+  const top10 = useMemo(() => {
+    const data = node ? node.data : {};
+    const { lat, lng } = data;
+    //
+    const all = tree ? tree.list_all() : [];
+    //
+    const nodes = all
+      .map((n) => ({
+        ...n,
+        distance: distance([lat, lng], [n.data?.lat ?? 0, n.data?.lng ?? 0]),
+      }))
+      .filter((n) => n.distance * 10e-4 < range)
+      .sort((a, b) => a.distance - b.distance);
+    //
+    nodes.shift(); // removing 'selectedCode' as it is closest to itself
+    //
+    return nodes;
+  }, [tree, node, range]);
+  //
+  //
+  return tree && selectedCode ? (
+    <div>
+      Nearby Tree Item, Center {selectedCode}, range
+      <input
+        type="number"
+        value={range}
+        style={{ width: "50px" }}
+        onChange={(e) => setRange(parseInt(e.target.value))}
+      />{" "}
+      km
+      <br />
+      <br />
+      Match: {top10.length}
+      <div>
+        {top10.map((n, idx) => (
+          <div key={n.code}>
+            <button onClick={(e) => setSelectedCode(`Q${n.code}`)}>
+              {n.code}
+            </button>
+            {n.name} -- {(n.distance * 10e-4).toFixed(2)} km - {n.data?.pop}
+          </div>
+        ))}
+      </div>
+    </div>
+  ) : null;
+};
+
+const findTreeNodesInRange = (
+  tree: TreeHelper | undefined,
+  node: any,
+  range: number,
+  keepFirst: boolean
+) => {
+  if (!node || !tree) return [];
+  //
+  const data = node ? node.data : {};
+  const { lat, lng } = data;
+  //
+  const all = tree ? tree.list_all() : [];
+  //
+  const nodes = all
+    .map((n) => ({
+      ...n,
+      distance: distance([lat, lng], [n.data?.lat ?? 0, n.data?.lng ?? 0]),
+    }))
+    .filter((n) => n.distance * 10e-4 <= range)
+    .sort((a, b) => a.distance - b.distance);
+  //
+  if (!keepFirst) nodes.shift(); // removing 'selectedCode' as it is closest to itself
+  //
+  return nodes;
+};
+
+const NearbyToTreeItems = (props: {
+  tree: TreeHelper | undefined;
+  selectedCode: string | undefined;
+}) => {
+  const { tree, selectedCode } = props;
+  //
+  const [codes, setCodes] = useState<Array<string>>(
+    // []
+    selectedCode ? [selectedCode] : []
   );
+  const addCode = (c: string) => !codes.includes(c) && setCodes([...codes, c]);
+  const delCode = (c: string) =>
+    codes.length > 1 &&
+    setCodes([...(codes.filter((code) => code !== c) ?? [])]);
+  //
+  const [range, setRange] = useState<number>(4);
+
+  const top10 = useMemo(() => {
+    if (tree && selectedCode && codes.length) {
+      const results = [] as Array<any>;
+      //
+      for (const c of codes) {
+        results.push(...findTreeNodesInRange(tree, tree._n(c), range, true));
+      }
+      //
+      const qs = results.map((r) => r.code);
+      //
+      // all unique matching items, unsorted
+      //
+      const uresults = qs
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .map((q) => results.find((r) => r.code === q));
+      //
+      // find lat&lng of first point, calc distance from 'origin'
+      //
+      const firstNode = tree._n(selectedCode);
+      //
+      const data = firstNode && firstNode.data ? firstNode.data : {};
+      const { lat, lng } = data;
+      //
+      const resultsWithDistance = uresults.map((n) => ({
+        ...n,
+        distance: distance([lat, lng], [n.data?.lat ?? 0, n.data?.lng ?? 0]),
+      }));
+      //
+      return resultsWithDistance.sort((a, b) => a.distance - b.distance);
+    }
+    //
+    return [];
+  }, [tree, selectedCode, codes, range]);
+
+  //
+  //
+  //
+  return tree ? (
+    <div>
+      Nearby To Tree Items , showing distance from {selectedCode}
+      <br />
+      Center points:{" "}
+      {codes.map((c) => (
+        <span
+          key={c}
+          style={{
+            padding: "4px",
+            border: "solid 1px rgba(255,255,255,0.3)",
+          }}
+          onClick={(e) => delCode(c)}
+        >
+          {c}
+        </span>
+      ))}
+      <input
+        type="number"
+        value={range}
+        step={0.1}
+        style={{ width: "50px" }}
+        onChange={(e) => setRange(parseFloat(e.target.value))}
+      />{" "}
+      km
+      <br />
+      Match: {top10.length}
+      <div>
+        {top10.map((n, idx) => (
+          <div key={`${n.code}_${n.distance}`}>
+            <button onClick={(e) => addCode(`Q${n.code}`)}>+</button>
+            {n.name} -- {(n.distance * 10e-4).toFixed(2)} km - {n.data?.pop}
+          </div>
+        ))}
+      </div>
+      <hr />
+    </div>
+  ) : null;
 };
 
 //
@@ -80,40 +207,16 @@ const TreeBreadCrumb = (props: {
 const WikiDemography = () => {
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED);
   //
-  console.log(
-    wikiCountries
-      ? wikiCountries
-          .map((w) => w.code)
-          .sort()
-          .join("-")
-      : ""
-  );
-  //
-  const [countryCode, setCountryCode] = useState<string>("28");
+  const [countryCode, setCountryCode] = useState<string>("28"); // pre-load tree helper
   const [selectedCountry, setSelectedCountry] = useState<WikiCountry>();
-  const [selectedCode, setSelectedCode] = useState<string>(); // "Q28");
-  // const [countrySelected, setCountrySelected] = useState<string>();
+  const [selectedCode, setSelectedCode] = useState<string>();
   //
   //
   const { loading, tree, keys, nodes } = useTreeHelper(countryCode);
-  //
-  const { loading: wikiLoading, data } = useWikidata(selectedCode);
-  //
-  const loadHungary = (e: any) => {
-    setCountryCode("28");
-    setSelectedCountry(wikiCountries?.filter((c) => c.code === "Q28")[0]);
-  };
-  const loadPoland = (e: any) => {
-    setCountryCode("36");
-    setSelectedCountry(wikiCountries?.filter((c) => c.code === "Q36")[0]);
-  };
-  const loadIndia = (e: any) => {
-    setCountryCode("668");
-    setSelectedCountry(wikiCountries?.filter((c) => c.code === "Q668")[0]);
-  };
+  // const { loading: wikiLoading, data } = useWikidata(selectedCode);
   //
 
-  const availableCountries = useMemo(
+  const countries = useMemo(
     () =>
       wikiCountries
         ? wikiCountries.filter((c) => availableCountryCodes.includes(c.code))
@@ -169,30 +272,6 @@ const WikiDemography = () => {
     //
     return expanded;
   }, [loading, keys, tree, selectedCode]);
-
-  //
-  //
-  //
-  const wikiEntry = useMemo(
-    () => (selectedCode ? (data as any)?.entities[selectedCode] : undefined),
-    [data, selectedCode]
-  );
-
-  const wikiImageUrl = useMemo(() => {
-    if (wikiEntry) {
-      const { claims } = wikiEntry;
-      const firstImageClaim = claims["P41"]?.[0];
-      const firstImageName = firstImageClaim?.mainsnak?.datavalue?.value;
-      //
-      const url = firstImageName
-        ? `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${firstImageName}&width=300`
-        : undefined;
-      //
-      return url;
-    }
-    //
-    return undefined;
-  }, [wikiEntry]);
 
   const formatPopulation = (p: number) => {
     if (p === -1) return "";
@@ -320,21 +399,15 @@ const WikiDemography = () => {
       Map ({selectedCountry ? selectedCountry.name : ""})
       <hr />
       <h3>Available Countries</h3>
-      Country code: {countryCode}{" "}
-      <button onClick={loadHungary}>Change (HUN)</button>
-      <button onClick={loadPoland}>Change (POL)</button>
-      <button onClick={loadIndia}>Change (IND)</button>
+      Country code: {countryCode} <p>Please select a country to start.</p>
       <hr />
-      <CountryList
-        wikiCountries={availableCountries}
-        onCountryClicked={onCountryClicked}
-      />
-      <hr />
-      <h3>Country Details</h3>
-      {selectedCountryPanel}
-      <hr />
+      <CountryList countries={countries} onClicked={onCountryClicked} />
       {selectedCountry && (
         <>
+          <hr />
+          <h3>Country Details</h3>
+          {selectedCountryPanel}
+          <hr />
           <h3>Search for a Settlement</h3>
           <SettlementSearch
             tree={tree}
@@ -346,60 +419,24 @@ const WikiDemography = () => {
       )}
       {loading || !tree ? (
         <Spinner />
-      ) : (
+      ) : !loading ? (
         <>
           A1: [{new Array(adminOneMemo.length).fill(".").join("")}]
           {nodes && selectedCountry
             ? renderAdminOneList(adminOneMemo)
             : "loading"}
-          <hr />
-          Selected code: {selectedCode}
-          <hr />
+          {selectedCode ? (
+            <>
+              <hr />
+              Selected code: {selectedCode}
+              <hr />
+            </>
+          ) : null}
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}
             setSelectedCode={setSelectedCode}
           />
-          <hr />
-          A2: [{new Array(adminTwoMemo.length).fill(".").join("")}]
-          {selectedCode ? renderAdminTwoList(adminTwoMemo) : "loading"}
-          <hr />
-          {selectedCode && (
-            <>
-              {wikiLoading && <div>Loading...</div>}
-              {wikiLoading || !data ? (
-                <Spinner />
-              ) : (
-                <div>
-                  {/* {wikiEntry ? Object.keys(wikiEntry).join(" -- ") : "loading"} */}
-                  {wikiEntry ? <h3>{wikiEntry.labels["en"]?.value}</h3> : ""}
-                </div>
-              )}
-              CLAIMS:
-              {wikiLoading || !data ? (
-                <Spinner />
-              ) : (
-                <div>
-                  <div>
-                    {wikiEntry
-                      ? `${Object.keys(wikiEntry.claims).length} claims`
-                      : "loading"}
-                  </div>
-                  <div>
-                    imageURL:
-                    {wikiEntry && wikiImageUrl ? wikiImageUrl : "no img"}
-                  </div>
-                  <div>
-                    {wikiImageUrl ? (
-                      <img src={wikiImageUrl} alt="" />
-                    ) : (
-                      "no img"
-                    )}
-                  </div>
-                </div>
-              )}
-            </>
-          )}
           {/* Bounds: {boundsCheck ? JSON.stringify(boundsCheck) : "Loading hgt..."} */}
           {/* <SvgWorldMap
             selectedCountry={selectedCountry}
@@ -407,7 +444,32 @@ const WikiDemography = () => {
             mouseLeave={mouseLeave}
           /> */}
         </>
+      ) : (
+        "Loading..."
       )}
+      <hr />
+      {tree && selectedCode ? (
+        <div>
+          Nearby {selectedCode}
+          <NearbyToTreeItems tree={tree} selectedCode={selectedCode} />
+          <NearbyTreeItem
+            tree={tree}
+            selectedCode={selectedCode}
+            setSelectedCode={setSelectedCode}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+      {selectedCode ? (
+        <>
+          <hr />
+          A2: [{new Array(adminTwoMemo.length).fill(".").join("")}]
+          {selectedCode ? renderAdminTwoList(adminTwoMemo) : "loading"}
+          <hr />
+        </>
+      ) : null}
+      <WikiItemDetails selectedCode={selectedCode} />
     </div>
   );
 };

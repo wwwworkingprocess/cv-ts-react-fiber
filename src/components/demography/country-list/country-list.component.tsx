@@ -3,17 +3,17 @@ import type { WikiCountry } from "../../../utils/firebase/repo/wiki-country.type
 import { CountryListItem } from "./country-list.styles";
 
 type CountryListProps = {
-  wikiCountries: Array<WikiCountry> | null;
-  onCountryClicked: (c: WikiCountry) => void;
+  countries: Array<WikiCountry> | null;
+  onClicked: (c: WikiCountry) => void;
 };
 
 const CountryList = (props: CountryListProps) => {
-  const { wikiCountries, onCountryClicked } = props;
+  const { countries, onClicked } = props;
   //
-  return wikiCountries ? (
+  return countries ? (
     <>
-      {wikiCountries.map((c, idx) => (
-        <CountryListItem key={idx} onClick={() => onCountryClicked(c)}>
+      {countries.map((c, idx) => (
+        <CountryListItem key={idx} onClick={() => onClicked(c)}>
           <img src={c.urls.flag} alt={c.name} />
           <small>{(c.population * 0.000001).toFixed(3)}M</small>
           <br />
