@@ -60,8 +60,8 @@ const SettlementSearch = (props: SettlementSearchProps) => {
       <input
         type="text"
         value={keyword}
-        style={{ width: "100px" }}
-        placeholder={"min 3 chars..."}
+        style={{ width: "80px" }}
+        placeholder={"min 2 chars..."}
         onChange={(e) => setKeyword(e.target.value)}
       />{" "}
       Exclude falsy:{" "}
@@ -76,31 +76,40 @@ const SettlementSearch = (props: SettlementSearchProps) => {
         checked={sortByPopulation}
         onChange={(e) => setSortByPopulation((b) => !b)}
       />{" "}
-      show max:
+      Max:
       <input
         type="number"
         step={10}
         min={10}
         max={10000}
         value={maxItems}
-        style={{ width: "55px" }}
+        style={{ width: "50px" }}
         onChange={(e) => setMaxItems(parseInt(e.target.value))}
       />{" "}
       results
-      <hr />
-      <SettlementSearchResults columns={4}>
-        {searchResultsMemo
-          ? searchResultsMemo.reduced.map((sr: any, idx) => (
-              <SettlementSearchResult
-                key={idx}
-                onClick={(e) => setSelectedCode(`Q${sr.code}`)}
-              >
-                {sr.name} <small>({sr.data ? sr.data.pop : "-"})</small>
-              </SettlementSearchResult>
-            ))
-          : "no results"}
-      </SettlementSearchResults>
-      {resultAsText}
+      {searchResultsMemo.reduced.length ? (
+        <>
+          <hr />
+          <SettlementSearchResults columns={4}>
+            {searchResultsMemo
+              ? searchResultsMemo.reduced.map((sr: any, idx) => (
+                  <SettlementSearchResult
+                    key={idx}
+                    onClick={(e) => setSelectedCode(`Q${sr.code}`)}
+                  >
+                    {sr.name} <small>({sr.data ? sr.data.pop : "-"})</small>
+                  </SettlementSearchResult>
+                ))
+              : "no results"}
+          </SettlementSearchResults>
+        </>
+      ) : null}
+      {resultAsText ? (
+        <>
+          <hr />
+          {resultAsText}
+        </>
+      ) : null}
     </>
   );
 };

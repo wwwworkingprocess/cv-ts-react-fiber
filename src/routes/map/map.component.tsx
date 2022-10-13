@@ -237,6 +237,9 @@ const NearbyToTreeItems = (props: {
 const WikiDemography = () => {
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED);
   //
+  const tabs = ["Main Info", "Search", "Browse", "Nearby"];
+  const [tabsIndex, setTabsIndex] = useState<number>(0);
+  //
   const [countryCode, setCountryCode] = useState<string>("28"); // pre-load tree helper
   const [selectedCountry, setSelectedCountry] = useState<WikiCountry>();
   const [selectedCode, setSelectedCode] = useState<string>();
@@ -334,21 +337,79 @@ const WikiDemography = () => {
   return (
     <div>
       {/* COUNTRY SELECTION */}
-      <h3>Available Countries</h3>
-      {!selectedCountry ? <p>Please select a country to start.</p> : null}
-      <hr />
-      <CountryList countries={countries} onClicked={onCountryClicked} />
-      {/* COUNTRY DETAILS */}
-      {selectedCountry && (
+      {!selectedCountry ? (
         <>
-          <hr />
-          <h3>Country Details</h3>
-          {selectedCountryPanel}
-          <hr />
-          {!selectedCode ? (
-            <p>Please search for a settlement to continue.</p>
-          ) : null}
+          <h3>Available Countries</h3>
+          <p>Please select a country to start.</p>
+          <CountryList countries={countries} onClicked={onCountryClicked} />
+        </>
+      ) : (
+        <>
+          <h3>{selectedCountry.name}</h3>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              textAlign: "center",
+            }}
+          >
+            {tabs.map((t, idx) =>
+              idx === tabsIndex ? (
+                <div
+                  key={idx}
+                  style={{
+                    border: "1px solid gold",
+                    flexGrow: 1,
+                    padding: "3px",
+                  }}
+                >
+                  <b style={{ color: "gold" }}>{t}</b>
+                </div>
+              ) : (
+                <div
+                  key={idx}
+                  style={{
+                    border: "1px solid silver",
+                    flexGrow: 1,
+                    padding: "3px",
+                  }}
+                  onClick={() => setTabsIndex(idx)}
+                >
+                  {t}
+                </div>
+              )
+            )}
+          </div>
+        </>
+      )}
 
+      {tabsIndex === 0 ? (
+        <>
+          {/* COUNTRY DETAILS */}
+          {selectedCountry && (
+            <>
+              <h3>Country Details</h3>
+              {selectedCountryPanel}
+              {!selectedCode ? (
+                <p>
+                  Please{" "}
+                  <span
+                    style={{ color: "gold" }}
+                    onClick={(e) => setTabsIndex(1)}
+                  >
+                    search
+                  </span>{" "}
+                  for a settlement to continue.
+                </p>
+              ) : null}
+            </>
+          )}
+        </>
+      ) : null}
+
+      {tabsIndex === 1 ? (
+        <>
           <h3>Search for a Settlement</h3>
           <SettlementSearch
             tree={tree}
@@ -356,110 +417,127 @@ const WikiDemography = () => {
             setSelectedCode={setSelectedCode}
           />
         </>
-      )}
-      {/* ADMINISTRATIVE ZONES */}
-      {selectedCountry && (
+      ) : null}
+      {tabsIndex === 2 ? (
         <>
-          <h3>Browse for a Settlement</h3>
-          <div
-            style={{ display: "flex", maxHeight: "400px", overflow: "hidden" }}
-          >
-            <div
-              style={{
-                minWidth: "300px",
-                maxWidth: "50%",
-                flexGrow: 1,
-                maxHeight: "400px",
-                overflowX: "hidden",
-                border: "solid 1px blue",
-              }}
-            >
-              A1
-              {nodes && selectedCountry ? (
-                <AdminOneList
-                  items={adminOneMemo}
-                  setSelectedCode={setSelectedCode}
-                />
-              ) : null}
-            </div>
-            <div
-              style={{
-                minWidth: "300px",
-                maxWidth: "50%",
-                flexGrow: 1,
-                maxHeight: "400px",
-                overflowX: "hidden",
-                border: "solid 1px blue",
-              }}
-            >
-              A2
-              {selectedCode ? (
-                <AdminTwoList
-                  items={adminTwoMemo}
-                  setSelectedCode={setSelectedCode}
-                />
-              ) : null}
-            </div>
-          </div>
+          {/* ADMINISTRATIVE ZONES */}
+          {selectedCountry && (
+            <>
+              <h3>Browse for a Settlement</h3>
+              <div
+                style={{
+                  display: "flex",
+                  maxHeight: "400px",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    minWidth: "300px",
+                    maxWidth: "50%",
+                    flexGrow: 1,
+                    maxHeight: "400px",
+                    overflowX: "hidden",
+                    border: "solid 1px blue",
+                  }}
+                >
+                  A1
+                  {nodes && selectedCountry ? (
+                    <AdminOneList
+                      items={adminOneMemo}
+                      setSelectedCode={setSelectedCode}
+                    />
+                  ) : null}
+                </div>
+                <div
+                  style={{
+                    minWidth: "300px",
+                    maxWidth: "50%",
+                    flexGrow: 1,
+                    maxHeight: "400px",
+                    overflowX: "hidden",
+                    border: "solid 1px blue",
+                  }}
+                >
+                  A2
+                  {selectedCode ? (
+                    <AdminTwoList
+                      items={adminTwoMemo}
+                      setSelectedCode={setSelectedCode}
+                    />
+                  ) : null}
+                </div>
+              </div>
+            </>
+          )}
         </>
-      )}
-      {/* NEARBY ITEMS */}
-      {tree && selectedCountry && selectedCode ? (
-        <div style={{ width: "100%" }}>
-          <h3>
-            Nearby {tree._n(selectedCode)?.name} ({selectedCode})
-          </h3>
+      ) : null}
 
-          <div
-            style={{ display: "flex", maxHeight: "250px", overflow: "hidden" }}
-          >
-            <div
-              style={{
-                minWidth: "300px",
-                maxWidth: "50%",
-                flexGrow: 1,
-                maxHeight: "400px",
-                overflowX: "hidden",
-                border: "solid 1px blue",
-              }}
-            >
-              <NearbyTreeItem
-                tree={tree}
-                selectedCode={selectedCode}
-                setSelectedCode={setSelectedCode}
-              />
+      {tabsIndex === 3 ? (
+        <>
+          {/* NEARBY ITEMS */}
+          {tree && selectedCountry && selectedCode ? (
+            <div style={{ width: "100%" }}>
+              <h3>
+                Nearby {tree._n(selectedCode)?.name} ({selectedCode})
+              </h3>
+
+              <div
+                style={{
+                  display: "flex",
+                  maxHeight: "250px",
+                  overflow: "hidden",
+                }}
+              >
+                <div
+                  style={{
+                    minWidth: "300px",
+                    maxWidth: "50%",
+                    flexGrow: 1,
+                    maxHeight: "400px",
+                    overflowX: "hidden",
+                    border: "solid 1px blue",
+                  }}
+                >
+                  <NearbyTreeItem
+                    tree={tree}
+                    selectedCode={selectedCode}
+                    setSelectedCode={setSelectedCode}
+                  />
+                </div>
+                <div
+                  style={{
+                    minWidth: "300px",
+                    maxWidth: "50%",
+                    flexGrow: 1,
+                    maxHeight: "400px",
+                    overflowX: "hidden",
+                    border: "solid 1px blue",
+                  }}
+                >
+                  <NearbyToTreeItems tree={tree} selectedCode={selectedCode} />
+                </div>
+              </div>
             </div>
-            <div
-              style={{
-                minWidth: "300px",
-                maxWidth: "50%",
-                flexGrow: 1,
-                maxHeight: "400px",
-                overflowX: "hidden",
-                border: "solid 1px blue",
-              }}
-            >
-              <NearbyToTreeItems tree={tree} selectedCode={selectedCode} />
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
-      <br />
+          ) : (
+            ""
+          )}
+        </>
+      ) : null}
+
       {/* BREAD CRUMB NAVIGATION */}
       {loading || !tree ? (
         <Spinner />
       ) : loading ? (
         "Loading..."
       ) : (
-        <>
+        <div style={{ marginTop: "15px" }}>
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}
             setSelectedCode={setSelectedCode}
           />
-        </>
+        </div>
       )}
       {/* SELECTION DETAILS */}
       <WikiItemDetails selectedCode={selectedCode} />
