@@ -27,6 +27,7 @@ export const ClaimItemMedia = styled.div`
   b {
     position: absolute;
     margin: auto;
+    filter: drop-shadow(2px 2px 2px #000000);
   }
 `;
 

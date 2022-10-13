@@ -14,12 +14,19 @@ const propsMeta = {
   P625: { name: "coordinate location" },
   P856: { name: "official website" },
   P1082: { name: "population" },
+  P1538: { "name": "number of households" },
+  P1539: { "name": "female population" },
+  P1540: { "name": "male population" },
   P2044: { name: "elevation above sea level" },
   P2046: { name: "area" },
   P3896: { name: "geoshape" },
+  P6343: { "name": "urban population" },
+  P6344: { "name": "rural population" },
+  P6498: { "name": "illiterate population" },
+  P6499: { "name": "literate population" },
 };
 */
-import propsMeta from "./useWikiEntryReader.propertymap.json";
+import propsMeta from "../../assets/json/wiki/properties.labels.json";
 
 const WIKI_LABEL_QUERY_URL =
   "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&languages=en&format=json&origin=*";
@@ -77,7 +84,7 @@ const findType = (st: any) =>
 const readValue = (st: any) => (st ? st.mainsnak?.datavalue : undefined);
 const toRawResult = ([code, claim]: [string, any]) => ({
   code,
-  property: (propsMeta as Record<string, any>)[code],
+  property: { code, ...(propsMeta as Record<string, any>)[code] },
   raw: claim,
 });
 

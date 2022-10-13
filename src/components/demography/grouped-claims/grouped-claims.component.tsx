@@ -2,6 +2,8 @@ import { useMemo } from "react";
 
 import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
 
+import externalMap from "../../../assets/json/wiki/properties.formatterurls.json";
+
 import {
   ClaimItem,
   ClaimItemMedia,
@@ -11,6 +13,7 @@ import {
 
 type GroupedClaimsProps = { wikiEntry: any };
 
+const formatterUrls = externalMap as Record<string, any>;
 const toMediaUrl = (mediaName: string, width?: number): string =>
   `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${mediaName}&width=${
     width ?? 300
@@ -41,6 +44,15 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   //
   // console.log("claimsMeta", claimsMeta, "labels", labels);
   //
+  const buildUrl = (propertyCode: string, value: string) => {
+    const idPlaceholder = "###ID###";
+    const formatterUrl = (formatterUrls[propertyCode] ?? "") as string;
+    //
+    return formatterUrl.includes(idPlaceholder)
+      ? formatterUrl.replace(idPlaceholder, value)
+      : `${formatterUrl}${value}`;
+  };
+  //
   return (
     <div>
       {groupedClaims ? (
@@ -60,57 +72,87 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
             )}
           </FlexContainer>
 
-          <h3>Related Wiki Pages</h3>
-          <FlexContainer>
-            {labels &&
-              groupedClaims.wiki.map(
-                ({ type, val, value, property, l }, idx) => (
-                  <ClaimItem
-                    key={idx}
-                    height={32}
-                    minWidth={100}
-                    maxWidth={200}
-                  >
-                    <div style={{ fontSize: "10px" }}>
-                      {property.name}
-                      <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
-                    </div>
-                    <label style={{ fontSize: "12px" }}>
-                      {labels[value] || value}
-                    </label>
-                  </ClaimItem>
-                )
-              )}
-          </FlexContainer>
+          {groupedClaims.wiki.length && (
+            <>
+              <h3>Related Wiki Pages</h3>
+              <FlexContainer>
+                {labels &&
+                  groupedClaims.wiki.map(
+                    ({ type, val, value, property, l }, idx) => (
+                      <ClaimItem
+                        key={idx}
+                        height={32}
+                        minWidth={100}
+                        maxWidth={200}
+                      >
+                        <div style={{ fontSize: "10px" }}>
+                          {property.name}
+                          <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
+                        </div>
+                        <label style={{ fontSize: "12px" }}>
+                          {labels[value] || value}
+                        </label>
+                      </ClaimItem>
+                    )
+                  )}
+              </FlexContainer>
+            </>
+          )}
 
-          <h3>Images of {name}</h3>
-          <FlexMediaContainer>
-            {groupedClaims.media.map(
-              ({ type, val, value, property, l }, idx) => (
-                <ClaimItemMedia>
-                  <img src={toMediaUrl(value, 200)} alt={property.name} />
-                  <b>
-                    {property.name}
-                    <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
-                  </b>
-                </ClaimItemMedia>
-              )
-            )}
-          </FlexMediaContainer>
+          {groupedClaims.media.length && (
+            <>
+              <h3>Images of {name}</h3>
+              <FlexMediaContainer>
+                {groupedClaims.media.map(
+                  ({ type, val, value, property, l }, idx) => (
+                    <ClaimItemMedia key={idx}>
+                      <img src={toMediaUrl(value, 200)} alt={property.name} />
+                      <b>
+                        {property.name}
+                        <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
+                      </b>
+                    </ClaimItemMedia>
+                  )
+                )}
+              </FlexMediaContainer>
+            </>
+          )}
 
-          <h3>External Sources</h3>
-          <FlexContainer>
-            {groupedClaims.external.map(
-              ({ type, val, value, property }, idx) => (
-                <ClaimItem key={idx} height={34} minWidth={100} maxWidth={200}>
-                  <div style={{ fontSize: "10px", height: "14px" }}>
-                    {property.name}
-                  </div>
-                  <label>{value}</label>
-                </ClaimItem>
-              )
-            )}
-          </FlexContainer>
+          {groupedClaims.external.length && (
+            <>
+              <h3>External Sources</h3>
+              <FlexContainer>
+                {groupedClaims.external.map(
+                  ({ type, val, value, property }, idx) => (
+                    <ClaimItem
+                      key={idx}
+                      height={16}
+                      minWidth={100}
+                      maxWidth={200}
+                    >
+                      <div style={{ fontSize: "11px", height: "14px" }}>
+                        {formatterUrls[property.code] ? (
+                          <a
+                            target="_blank"
+                            rel="noreferrer"
+                            title={`${property.name} # ${value}`}
+                            href={buildUrl(property.code, value)}
+                            style={{ color: "gold" }}
+                          >
+                            {property.name}
+                          </a>
+                        ) : (
+                          <label>
+                            {value} ({property.name})
+                          </label>
+                        )}
+                      </div>
+                    </ClaimItem>
+                  )
+                )}
+              </FlexContainer>
+            </>
+          )}
         </div>
       ) : null}
       {claimsMeta && claimsMeta.other.length ? (

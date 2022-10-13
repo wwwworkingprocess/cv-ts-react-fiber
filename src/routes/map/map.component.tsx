@@ -1,4 +1,6 @@
 import { Fragment, useMemo, useState } from "react";
+import AdminOneList from "../../components/demography/admin-one-list/admin-one-list.component";
+import AdminTwoList from "../../components/demography/admin-two-list/admin-two-list.component";
 
 import CountryList from "../../components/demography/country-list/country-list.component";
 import SettlementSearch from "../../components/demography/settlement-search/settlement-search.component";
@@ -56,11 +58,11 @@ const NearbyTreeItem = (props: NearbyTreeItemProps) => {
   //
   return tree && selectedCode ? (
     <div>
-      Nearby Tree Item, Center {selectedCode}, range
+      {tree._n(selectedCode)?.name}, range
       <input
         type="number"
         value={range}
-        style={{ width: "50px" }}
+        style={{ width: "50px", margin: "0px 5px 0px 5px" }}
         onChange={(e) => setRange(parseInt(e.target.value))}
       />{" "}
       km
@@ -161,37 +163,65 @@ const NearbyToTreeItems = (props: {
   //
   //
   //
-  return tree ? (
+  return tree && selectedCode ? (
     <div>
-      Nearby To Tree Items , showing distance from {selectedCode}
-      <br />
-      Center points:{" "}
-      {codes.map((c) => (
-        <span
-          key={c}
-          style={{
-            padding: "4px",
-            border: "solid 1px rgba(255,255,255,0.3)",
-          }}
-          onClick={(e) => delCode(c)}
-        >
-          {c}
-        </span>
-      ))}
+      Distance from {tree._n(selectedCode)?.name}, range:
       <input
         type="number"
         value={range}
         step={0.1}
-        style={{ width: "50px" }}
+        style={{ width: "50px", margin: "0px 5px 0px 5px" }}
         onChange={(e) => setRange(parseFloat(e.target.value))}
       />{" "}
       km
+      <br />
+      Center points:
+      <div
+        style={{
+          display: "flex",
+          maxWidth: "400px",
+          flexWrap: "wrap",
+        }}
+      >
+        {codes.map((c) => (
+          <>
+            <span
+              key={c}
+              style={{
+                padding: "4px",
+                border: "solid 1px rgba(255,255,255,0.3)",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                maxWidth:
+                  codes.length === 1 ? "95%" : codes.length < 3 ? "49%" : "23%",
+              }}
+              onClick={(e) => delCode(c)}
+            >
+              {tree._n(c)?.name}
+            </span>
+            &nbsp;
+          </>
+        ))}
+      </div>
       <br />
       Match: {top10.length}
       <div>
         {top10.map((n, idx) => (
           <div key={`${n.code}_${n.distance}`}>
-            <button onClick={(e) => addCode(`Q${n.code}`)}>+</button>
+            {!codes.includes(`Q${n.code}`) ? (
+              <button onClick={(e) => addCode(`Q${n.code}`)}>+</button>
+            ) : (
+              <div
+                style={{
+                  width: "25px",
+                  height: "20px",
+                  display: "inline-block",
+                }}
+              >
+                &nbsp;
+              </div>
+            )}
             {n.name} -- {(n.distance * 10e-4).toFixed(2)} km - {n.data?.pop}
           </div>
         ))}
@@ -213,7 +243,6 @@ const WikiDemography = () => {
   //
   //
   const { loading, tree, keys, nodes } = useTreeHelper(countryCode);
-  // const { loading: wikiLoading, data } = useWikidata(selectedCode);
   //
 
   const countries = useMemo(
@@ -223,6 +252,21 @@ const WikiDemography = () => {
         : [],
     [wikiCountries]
   );
+
+  //
+  const selectedCountryPanel = useMemo(() => {
+    if (selectedCountry) {
+      return (
+        <>
+          {selectedCountry.name}
+          {/* {JSON.stringify(selectedCountry.urls.geo)}) */}
+        </>
+      );
+    }
+  }, [selectedCountry]);
+
+  //
+  //
   //
   const adminOneMemo = useMemo(() => {
     const arr =
@@ -243,14 +287,19 @@ const WikiDemography = () => {
       }
     };
     //
-    return arr.map(([code, name, countryCode]) => ({
-      code,
-      name: beautifyName(countryCode, name),
-      countryCode,
-      size: tree?._children_of(tree._qq(code)).length ?? 0,
-      data: tree?._n(code).data,
-    }));
+    return arr
+      .map(([code, name, countryCode]) => ({
+        code,
+        name: beautifyName(countryCode, name),
+        countryCode,
+        size: tree?._children_of(tree._qq(code)).length ?? 0,
+        data: tree?._n(code).data,
+      }))
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [loading, keys, tree, selectedCountry]);
+
+  //
+  //
   //
   const adminTwoMemo = useMemo(() => {
     const arr =
@@ -258,12 +307,10 @@ const WikiDemography = () => {
         ? tree._children_of(tree._qq(selectedCode))
         : [];
     //
-
-    //
-    const expanded = arr.map(([code, name, countryCode]) => [
+    const expanded = arr.map(([code, name, parentCode]) => [
       code,
       name,
-      countryCode,
+      parentCode,
       tree?._children_of(tree._qq(code || "")).length ?? 0,
       tree?._n(code).data,
     ]);
@@ -273,106 +320,6 @@ const WikiDemography = () => {
     return expanded;
   }, [loading, keys, tree, selectedCode]);
 
-  const formatPopulation = (p: number) => {
-    if (p === -1) return "";
-    if (p < 1000) return `${p}🧍`;
-    if (p < 1000000) return `${(p * 0.001).toFixed(1)}k 🧍`;
-    else return `${(p * 0.000001).toFixed(1)}M 🧍`;
-  };
-  //
-  //
-  //
-  const renderAdminOneList = (
-    a1s: Array<{
-      code: string;
-      name: string;
-      countryCode: number;
-      size: number;
-      data: Record<string, any>;
-    }>
-  ) => {
-    console.log("renderAdminOneList", a1s.length);
-    console.log("renderAdminOneList", a1s[0]);
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-        }}
-      >
-        {a1s.map(({ code, name, countryCode, size, data }) => {
-          //
-
-          return (
-            <span
-              style={{
-                flex: "1 1 0px",
-                flexGrow: "1",
-                textAlign: "center",
-                border: "1px solid black",
-                minWidth: "200px",
-                maxWidth: "400px",
-                padding: "5px",
-                margin: "2px",
-              }}
-              key={code}
-              onClick={() => setSelectedCode(code)}
-            >
-              {name}
-              <br />
-              <small>
-                {size} 🏠 {formatPopulation(data.pop)}
-              </small>
-            </span>
-          );
-        })}
-      </div>
-    );
-  };
-
-  //
-  //
-  //
-  const renderAdminTwoList = (a2s: Array<any>) => {
-    const sumPop = a2s
-      .map((a2) => a2[4].pop ?? -1)
-      .filter((pop) => pop > 1)
-      .reduce((a, b) => a + b, 0);
-    //
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-        }}
-      >
-        {a2s.map((a2) => (
-          <span
-            style={{
-              flex: "1 1 0px",
-              flexGrow: "1",
-              textAlign: "center",
-              border: "1px solid black",
-              minWidth: "200px",
-              maxWidth: "400px",
-              padding: "5px",
-              margin: "2px",
-            }}
-            key={a2[0]}
-            onClick={() => setSelectedCode(a2[0])}
-          >
-            {a2[1]} {a2[3] > 0 ? `(${a2[3]})` : ""} (
-            {formatPopulation(a2[4]?.pop)})
-          </span>
-        ))}
-        SUM: {sumPop}
-      </div>
-    );
-  };
-  //
-
   //
   // const mouseEnter = (country: any) => setCountrySelected(country.name);
   // const mouseLeave = () => setCountrySelected(undefined);
@@ -380,95 +327,141 @@ const WikiDemography = () => {
     setCountryCode(c.code.replace("Q", ""));
     setSelectedCountry(c);
   };
+
   //
-  //
-  const selectedCountryPanel = useMemo(() => {
-    if (selectedCountry) {
-      return (
-        <>
-          {selectedCountry.name}
-          <br />
-          {JSON.stringify(selectedCountry.urls.geo)})
-        </>
-      );
-    }
-  }, [selectedCountry]);
+  //  loading >> selectedCountry >> selectedCode
   //
   return (
     <div>
-      Map ({selectedCountry ? selectedCountry.name : ""})
-      <hr />
+      {/* COUNTRY SELECTION */}
       <h3>Available Countries</h3>
-      Country code: {countryCode} <p>Please select a country to start.</p>
+      {!selectedCountry ? <p>Please select a country to start.</p> : null}
       <hr />
       <CountryList countries={countries} onClicked={onCountryClicked} />
+      {/* COUNTRY DETAILS */}
       {selectedCountry && (
         <>
           <hr />
           <h3>Country Details</h3>
           {selectedCountryPanel}
           <hr />
+          {!selectedCode ? (
+            <p>Please search for a settlement to continue.</p>
+          ) : null}
+
           <h3>Search for a Settlement</h3>
           <SettlementSearch
             tree={tree}
             countryCode={countryCode}
             setSelectedCode={setSelectedCode}
           />
-          <hr />
         </>
       )}
+      {/* ADMINISTRATIVE ZONES */}
+      {selectedCountry && (
+        <>
+          <h3>Browse for a Settlement</h3>
+          <div
+            style={{ display: "flex", maxHeight: "400px", overflow: "hidden" }}
+          >
+            <div
+              style={{
+                minWidth: "300px",
+                maxWidth: "50%",
+                flexGrow: 1,
+                maxHeight: "400px",
+                overflowX: "hidden",
+                border: "solid 1px blue",
+              }}
+            >
+              A1
+              {nodes && selectedCountry ? (
+                <AdminOneList
+                  items={adminOneMemo}
+                  setSelectedCode={setSelectedCode}
+                />
+              ) : null}
+            </div>
+            <div
+              style={{
+                minWidth: "300px",
+                maxWidth: "50%",
+                flexGrow: 1,
+                maxHeight: "400px",
+                overflowX: "hidden",
+                border: "solid 1px blue",
+              }}
+            >
+              A2
+              {selectedCode ? (
+                <AdminTwoList
+                  items={adminTwoMemo}
+                  setSelectedCode={setSelectedCode}
+                />
+              ) : null}
+            </div>
+          </div>
+        </>
+      )}
+      {/* NEARBY ITEMS */}
+      {tree && selectedCountry && selectedCode ? (
+        <div style={{ width: "100%" }}>
+          <h3>
+            Nearby {tree._n(selectedCode)?.name} ({selectedCode})
+          </h3>
+
+          <div
+            style={{ display: "flex", maxHeight: "250px", overflow: "hidden" }}
+          >
+            <div
+              style={{
+                minWidth: "300px",
+                maxWidth: "50%",
+                flexGrow: 1,
+                maxHeight: "400px",
+                overflowX: "hidden",
+                border: "solid 1px blue",
+              }}
+            >
+              <NearbyTreeItem
+                tree={tree}
+                selectedCode={selectedCode}
+                setSelectedCode={setSelectedCode}
+              />
+            </div>
+            <div
+              style={{
+                minWidth: "300px",
+                maxWidth: "50%",
+                flexGrow: 1,
+                maxHeight: "400px",
+                overflowX: "hidden",
+                border: "solid 1px blue",
+              }}
+            >
+              <NearbyToTreeItems tree={tree} selectedCode={selectedCode} />
+            </div>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      <br />
+      {/* BREAD CRUMB NAVIGATION */}
       {loading || !tree ? (
         <Spinner />
-      ) : !loading ? (
+      ) : loading ? (
+        "Loading..."
+      ) : (
         <>
-          A1: [{new Array(adminOneMemo.length).fill(".").join("")}]
-          {nodes && selectedCountry
-            ? renderAdminOneList(adminOneMemo)
-            : "loading"}
-          {selectedCode ? (
-            <>
-              <hr />
-              Selected code: {selectedCode}
-              <hr />
-            </>
-          ) : null}
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}
             setSelectedCode={setSelectedCode}
           />
-          {/* Bounds: {boundsCheck ? JSON.stringify(boundsCheck) : "Loading hgt..."} */}
-          {/* <SvgWorldMap
-            selectedCountry={selectedCountry}
-            mouseEnter={mouseEnter}
-            mouseLeave={mouseLeave}
-          /> */}
         </>
-      ) : (
-        "Loading..."
       )}
-      <hr />
-      {tree && selectedCode ? (
-        <div>
-          Nearby {selectedCode}
-          <NearbyToTreeItems tree={tree} selectedCode={selectedCode} />
-          <NearbyTreeItem
-            tree={tree}
-            selectedCode={selectedCode}
-            setSelectedCode={setSelectedCode}
-          />
-        </div>
-      ) : (
-        ""
-      )}
-      {selectedCode ? (
-        <>
-          <hr />
-          A2: [{new Array(adminTwoMemo.length).fill(".").join("")}]
-          {selectedCode ? renderAdminTwoList(adminTwoMemo) : "loading"}
-          <hr />
-        </>
-      ) : null}
+      {/* SELECTION DETAILS */}
       <WikiItemDetails selectedCode={selectedCode} />
     </div>
   );
