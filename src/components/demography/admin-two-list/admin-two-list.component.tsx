@@ -27,9 +27,10 @@ const AdminTwoList = (props: AdminTwoListProps) => {
         //
         return (
           <AdminTwoListItem key={code} onClick={() => setSelectedCode(code)}>
-            {name}
+            <label>{name}</label>
             <small style={{ float: "right" }}>
-              {size} 🏠 {formatPopulation(data.pop)}
+              {size ? `${size} 🏠 ` : ""}
+              {formatPopulation(data.pop)}
             </small>
           </AdminTwoListItem>
         );

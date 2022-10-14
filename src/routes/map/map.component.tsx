@@ -433,7 +433,7 @@ const WikiDemography = () => {
               >
                 <div
                   style={{
-                    minWidth: "300px",
+                    minWidth: "30%",
                     maxWidth: "50%",
                     flexGrow: 1,
                     maxHeight: "400px",
@@ -451,7 +451,7 @@ const WikiDemography = () => {
                 </div>
                 <div
                   style={{
-                    minWidth: "300px",
+                    minWidth: "30%",
                     maxWidth: "50%",
                     flexGrow: 1,
                     maxHeight: "400px",

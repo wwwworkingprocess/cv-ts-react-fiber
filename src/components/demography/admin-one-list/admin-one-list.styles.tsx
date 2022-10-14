@@ -17,4 +17,29 @@ export const AdminOneListItem = styled.span`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+
+  small {
+    display: inline-block;
+    width: 40px;
+    margin-right: 4px;
+
+    @media screen and (max-width: 400px) {
+      zoom: 0.8;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  label {
+    max-width: 100px;
+
+    @media screen and (max-width: 400px) {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      width: 20%px;
+      font-size: 12px;
+    }
+  }
 `;
