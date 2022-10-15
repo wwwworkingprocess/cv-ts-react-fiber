@@ -9,6 +9,7 @@ import WikiItemDetails from "../../components/demography/wiki-item-details/wiki-
 // import SvgWorldMap from "../../components/demography/svg-world-map/svg-world-map.component";
 
 import { Spinner } from "../../components/spinner/spinner.component";
+import DemographyGame3D from "../../fiber-apps/demography-game/demography-game-3d";
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 
@@ -346,6 +347,7 @@ const WikiDemography = () => {
       ) : (
         <>
           <h3>{selectedCountry.name}</h3>
+
           <div
             style={{
               display: "flex",
@@ -536,6 +538,14 @@ const WikiDemography = () => {
             tree={tree}
             selectedCode={selectedCode}
             setSelectedCode={setSelectedCode}
+          />
+          <DemographyGame3D
+            tree={tree}
+            selectedCountry={selectedCountry}
+            selectedCode={selectedCode}
+            isCameraEnabled={true}
+            isFrameCounterEnabled={false}
+            path=".."
           />
         </div>
       )}
