@@ -546,6 +546,7 @@ const WikiDemography = () => {
             isCameraEnabled={true}
             isFrameCounterEnabled={false}
             path=".."
+            setSelectedCode={setSelectedCode}
           />
         </div>
       )}

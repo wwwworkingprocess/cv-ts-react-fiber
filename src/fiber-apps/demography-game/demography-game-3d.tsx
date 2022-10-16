@@ -28,8 +28,17 @@ import {
 import { Spinner } from "../../components/spinner/spinner.component";
 import { Mesh, Vector3 } from "three";
 import TreeHelper from "../../utils/tree-helper";
+import { distance } from "../../utils/geo";
 
-const City = ({ data, zoomToView }: { data: any; zoomToView: any }) => {
+const City = ({
+  data,
+  zoomToView,
+  setSelectedCode,
+}: {
+  data: any;
+  zoomToView: any;
+  setSelectedCode: any;
+}) => {
   const meshRef = useRef<Mesh>(null!);
 
   const [hover, setHover] = useState(false);
@@ -54,11 +63,12 @@ const City = ({ data, zoomToView }: { data: any; zoomToView: any }) => {
         setClicked(!clicked);
         zoomToView(meshRef);
         console.log(meshRef.current.position);
+        setSelectedCode(`Q${data.code}`);
       }}
       scale={[1 / 4, 1 / 4, 1 / 4]}
     >
       {clicked && (
-        <Billboard position={[0, 0.025, 0]} follow={true}>
+        <Billboard position={[0, 0.035, 0]} follow={true}>
           <Text fontSize={0.13} color={"#ffaa22"}>
             {/* Use arrow keys for navigation */}
             {data.name}
@@ -80,6 +90,7 @@ const Cities = ({
   setFocus,
   //
   zoomToView,
+  setSelectedCode,
 }: {
   momentsData: any;
   zoom: any;
@@ -88,9 +99,10 @@ const Cities = ({
   setFocus: any;
   //
   zoomToView: (focusRef: React.MutableRefObject<Mesh>) => void;
+  setSelectedCode: React.Dispatch<string | undefined>;
 }) => {
-  const vDef = [-23 + 1, 0 + 30, 43 - 0.65 + 1];
-  const vDef2 = [-20 + 1, 0 + 0.1, 47.5 - 0.65 + 0];
+  const vDef = [-21 + 1, 0 + 50, 40 - 0.65 + 1];
+  const vDef2 = [-20.5 + 1, 0 + 0.1, 47.5 - 0.65 + 0];
   //
   const crosshairMesh = useRef<Mesh>(null!);
   const positionVec = new Vector3();
@@ -128,14 +140,21 @@ const Cities = ({
   //
   return (
     <instancedMesh>
-      {momentsData.map((moment: any, i: number) => {
+      {momentsData.map((node: any, i: number) => {
         // Set position here so it isn't reset on state change
         // for individual city
-        return <City key={i} data={moment} zoomToView={zoomToView} />;
+        return (
+          <City
+            key={i}
+            data={node}
+            zoomToView={zoomToView}
+            setSelectedCode={setSelectedCode}
+          />
+        );
       })}
       <mesh ref={crosshairMesh} position={[-15, 0, 45]}>
         <boxBufferGeometry attach="geometry" args={[0.1, 0.08, 0.003]} />
-        <meshStandardMaterial wireframe color="red" />
+        <meshStandardMaterial wireframe color="white" />
       </mesh>
     </instancedMesh>
   );
@@ -148,8 +167,16 @@ const DemographyGame3D = (props: {
   selectedCode: string | undefined;
   path?: string;
   tree: TreeHelper;
+  //
+  setSelectedCode: React.Dispatch<string | undefined>;
 }) => {
-  const { tree, isCameraEnabled, isFrameCounterEnabled, selectedCode } = props;
+  const {
+    tree,
+    isCameraEnabled,
+    isFrameCounterEnabled,
+    selectedCode,
+    setSelectedCode,
+  } = props;
   //
   useKeyboardNavigation();
   //
@@ -160,7 +187,37 @@ const DemographyGame3D = (props: {
   //
 
   const cities = useMemo(() => {
-    const arr = tree.list_all().slice(143); // skip continents and countries except hungary
+    const nodes = tree.list_all().slice(143); // skip continents and countries except hungary
+    let filtered;
+    //
+    if (!selectedCode) {
+      //
+      // showing max 300 cities, sort by population
+      //
+      filtered = nodes
+        .filter((n) => n.data?.pop || -2)
+        .sort((na, nb) => (nb.data?.pop || -2) - (na.data?.pop || -2))
+        .slice(0, 300);
+      //
+    } else {
+      //
+      // showing max 500 cities, sort by proximity
+      //
+      const selectedNode = tree._n(selectedCode);
+      const data = selectedNode ? selectedNode.data : {};
+      const { lat, lng } = data;
+      //
+      const range = 50;
+      //
+      filtered = nodes
+        .filter((n) => !n.data || n.data.lat || n.data.lng)
+        .map((n) => ({
+          ...n,
+          distance: distance([lat, lng], [n.data?.lat ?? 0, n.data?.lng ?? 0]),
+        }))
+        .filter((n) => n.distance * 10e-4 <= range)
+        .sort((a, b) => a.distance - b.distance);
+    }
     //
     // code, name, position
     //
@@ -172,7 +229,7 @@ const DemographyGame3D = (props: {
     });
 
     //
-    return arr.map(toItem);
+    return filtered.map(toItem);
   }, [tree, selectedCode]);
   //
   console.log("cities", cities.length, cities[0]);
@@ -181,15 +238,11 @@ const DemographyGame3D = (props: {
     cities.length,
     cities[Math.floor(Math.random() * 100)]
   );
-  //useTreeDataForCountry()
   //
   //
   //
 
   const [zoom, setZoom] = useState<boolean>();
-  //const [focus, setFocus] = useState(new Vector3(0, 0, 0));
-  //const [focus, setFocus] = useState(new Vector3(49 - 1, 0 + 1, 17 - 1));
-  // const [focus, setFocus] = useState(new Vector3(-17 + 1, 0 + 1, 45 + 1));
   const [focus, setFocus] = useState(new Vector3(-17, 0 + 1, 45 + 1));
   //
   //
@@ -202,6 +255,7 @@ const DemographyGame3D = (props: {
       setFocus(focusRef.current.position);
     } else {
       setZoom(false);
+      setSelectedCode(undefined);
     }
   };
 
@@ -241,9 +295,11 @@ const DemographyGame3D = (props: {
         focus={focus}
         setFocus={setFocus}
         zoomToView={zoomToView}
+        //
+        setSelectedCode={setSelectedCode}
       />
     ),
-    [cities, zoom, focus]
+    [cities, zoom, focus, setSelectedCode]
   );
   //
   //
@@ -253,7 +309,7 @@ const DemographyGame3D = (props: {
     <>
       <Suspense fallback={<Spinner />}>
         <Canvas
-          style={{ height: "450px" }}
+          style={{ height: "350px" }}
           linear
           dpr={[1, 2]}
           camera={{ position: [19, 2, 46], zoom: 30 }}
@@ -304,7 +360,7 @@ const DemographyGame3D = (props: {
         )}
 
         <AxisValueInput axis={"x"} min={MIN_X} max={MAX_X} />
-        <AxisValueInput axis={"y"} min={0} max={10} />
+        {/* <AxisValueInput axis={"y"} min={0} max={10} /> */}
         <AxisValueInput axis={"z"} min={MIN_Y} max={MAX_Y} />
         {isMobile ? <button onClick={onJump}>Jump</button> : undefined}
       </ControlsContainer>
