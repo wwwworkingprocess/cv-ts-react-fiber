@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const ControlsContainer = styled.div`
   position: relative;
-  top: -50px;
+  z-index: 1000;
+  top: 20px;
   display: flex;
   font-size: 2rem;
   user-select: none;
 
   align-items: center;
-  justify-content: center;
+  justify-content: right;
 
   label {
     background: none;

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   AdminTwoListContainer,
   AdminTwoListItem,
@@ -19,14 +21,27 @@ const formatPopulation = (p: number) => {
 const AdminTwoList = (props: AdminTwoListProps) => {
   const { items, setSelectedCode } = props;
   //
+  const [myCode, setMyCode] = useState<string>();
+  //
   return (
     <AdminTwoListContainer>
       {items.map((item) => {
         //
         const [code, name /*parentCode*/, , size, data] = item;
+        // const hasChildNodes = size > 0;
+        const isSelected = code === myCode;
         //
         return (
-          <AdminTwoListItem key={code} onClick={() => setSelectedCode(code)}>
+          <AdminTwoListItem
+            key={code}
+            onClick={() => {
+              setSelectedCode(code);
+              setMyCode(code);
+            }}
+            style={{
+              background: isSelected ? "rgba(255,255,255,0.3)" : "none",
+            }}
+          >
             <label>{name}</label>
             <small style={{ float: "right" }}>
               {size ? `${size} 🏠 ` : ""}

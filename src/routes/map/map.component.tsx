@@ -306,10 +306,39 @@ const WikiDemography = () => {
   //
   //
   const adminTwoMemo = useMemo(() => {
-    const arr =
-      !loading && keys.length && tree && selectedCode
-        ? tree._children_of(tree._qq(selectedCode))
-        : [];
+    const isReady = !loading && keys.length && tree && selectedCode;
+    const selectedNode = isReady ? tree._n(selectedCode) : undefined;
+    //
+    // when [selectedNode] is [selectedCountryCode], returning empty list
+    // when [selectedNode] is leaf, returning siblings instead of children
+    //
+    let arr;
+    //
+    if (isReady && selectedNode) {
+      const isAdminOneLevel = selectedCode === "Q28";
+      const isLeaf = tree?._is_leaf(selectedNode.code);
+      //
+      if (isAdminOneLevel) {
+        //skip
+        arr = [] as Array<Array<any>>;
+      } else {
+        if (isLeaf) {
+          const parentCode = parseInt(selectedNode.p || "3");
+          //
+          arr =
+            !loading && keys.length && tree && selectedCode
+              ? tree._children_of(parentCode)
+              : [];
+        } else {
+          arr =
+            !loading && keys.length && tree && selectedCode
+              ? tree._children_of(tree._qq(selectedCode))
+              : [];
+        }
+      }
+    } else arr = [] as Array<Array<any>>;
+    //
+    // resolving item-details (number of children, treeNode)
     //
     const expanded = arr.map(([code, name, parentCode]) => [
       code,
@@ -318,19 +347,52 @@ const WikiDemography = () => {
       tree?._children_of(tree._qq(code || "")).length ?? 0,
       tree?._n(code).data,
     ]);
-
+    //
+    // sorting resultset by population descending
+    //
     expanded.sort((a, b) => (b[4].pop || 0) - (a[4].pop || 0));
     //
     return expanded;
   }, [loading, keys, tree, selectedCode]);
 
   //
-  // const mouseEnter = (country: any) => setCountrySelected(country.name);
-  // const mouseLeave = () => setCountrySelected(undefined);
   const onCountryClicked = (c: WikiCountry) => {
     setCountryCode(c.code.replace("Q", ""));
     setSelectedCountry(c);
   };
+
+  const backToParentMemo = useMemo(() => {
+    if (!tree || !selectedCode) return null;
+    //
+    const isAminOneLevel = selectedCode === "Q28";
+    //
+    if (isAminOneLevel) return null;
+    //
+    // the button is visible, we need to know, [selectedNode]
+    // is a leaf or not, to navigate correctly
+    //
+    const selectedNode = tree._n(selectedCode);
+    const isLeaf = tree._is_leaf(selectedNode.code);
+    //
+    const selectedParent = tree._n(tree._qc(selectedNode.p));
+    const selectedGrandParent = isLeaf
+      ? tree._n(tree._qc(selectedParent.p))
+      : undefined;
+    //
+    const activeParent = isLeaf ? selectedGrandParent : selectedParent;
+    //
+    return (
+      <button
+        onClick={() => {
+          if (tree && selectedCode && activeParent) {
+            setSelectedCode(tree._qc(activeParent.code));
+          }
+        }}
+      >
+        [..]
+      </button>
+    );
+  }, [tree, selectedCode]);
 
   //
   //  loading >> selectedCountry >> selectedCode
@@ -438,7 +500,7 @@ const WikiDemography = () => {
                     minWidth: "30%",
                     maxWidth: "50%",
                     flexGrow: 1,
-                    maxHeight: "400px",
+                    maxHeight: "280px",
                     overflowX: "hidden",
                     border: "solid 1px blue",
                   }}
@@ -456,12 +518,12 @@ const WikiDemography = () => {
                     minWidth: "30%",
                     maxWidth: "50%",
                     flexGrow: 1,
-                    maxHeight: "400px",
+                    maxHeight: "280px",
                     overflowX: "hidden",
                     border: "solid 1px blue",
                   }}
                 >
-                  A2
+                  A2 {backToParentMemo}
                   {selectedCode ? (
                     <AdminTwoList
                       items={adminTwoMemo}
@@ -496,7 +558,7 @@ const WikiDemography = () => {
                     minWidth: "300px",
                     maxWidth: "50%",
                     flexGrow: 1,
-                    maxHeight: "400px",
+                    maxHeight: "280px",
                     overflowX: "hidden",
                     border: "solid 1px blue",
                   }}
@@ -512,7 +574,7 @@ const WikiDemography = () => {
                     minWidth: "300px",
                     maxWidth: "50%",
                     flexGrow: 1,
-                    maxHeight: "400px",
+                    maxHeight: "280px",
                     overflowX: "hidden",
                     border: "solid 1px blue",
                   }}

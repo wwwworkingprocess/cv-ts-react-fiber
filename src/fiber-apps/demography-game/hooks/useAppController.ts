@@ -43,15 +43,6 @@ const useAppController = () => {
   }, [isWithinBounds, setPosition]);
 
   //
-  // debug: jump on start
-  //
-
-  // useEffect(() => {
-  //   const t = setTimeout(onJump, 1000);
-  //   //
-  //   return clearTimeout(t);
-  // }, [bounds]);
-  //
   return useMemo(
     () => ({
       x,
