@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { isMobile } from "react-device-detect";
 
 import TreeHelper from "../../../utils/tree-helper";
 
@@ -15,7 +16,14 @@ const RegionHeader = (props: {
   const [earth, continent, subContinent] = parents;
   //
   return (
-    <h3 style={{ marginBottom: "5px", marginTop: "5px" }}>
+    <h3
+      style={{
+        marginBottom: "5px",
+        marginTop: "10px",
+        marginRight: "10px",
+        display: isMobile ? "block" : "inline-block",
+      }}
+    >
       {earth.name}, {continent.name}, {subContinent.name}
     </h3>
   );

@@ -21,11 +21,11 @@ const useMapAutoPanningAnimation = (
     const step = 0.01;
     //
     zoom
-      ? positionVec.set(focus.x, focus.y, focus.z + 0.01)
+      ? positionVec.set(focus.x, focus.y, focus.z + 0.001)
       : positionVec.set(vDef[0], vDef[1], vDef[2]);
     //
     zoom
-      ? lookatVec.set(focus.x, focus.y, focus.z - 0.01)
+      ? lookatVec.set(focus.x, focus.y, focus.z - 0.001)
       : lookatVec.set(vDef2[0], vDef2[1], vDef2[2]);
     //
     state.camera.position.lerp(positionVec, step);
@@ -40,9 +40,9 @@ const useMapAutoPanningAnimation = (
     // animate viewport
     //
     if (zoom) {
-      if (state.camera.zoom < 100) state.camera.zoom += 0.1;
+      if (state.camera.zoom < 120) state.camera.zoom += 0.25;
     } else {
-      if (state.camera.zoom > 25) state.camera.zoom -= 0.2;
+      if (state.camera.zoom > 25) state.camera.zoom -= 0.3;
     }
   });
 };

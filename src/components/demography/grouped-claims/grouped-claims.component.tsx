@@ -57,7 +57,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
     <div>
       {groupedClaims ? (
         <div>
-          <h3>Information about {name}</h3>
+          {/* <h3>Information about {name}</h3> */}
           <FlexContainer>
             {groupedClaims.rest.map(
               ({ type, val, value, property, l }, idx) => (

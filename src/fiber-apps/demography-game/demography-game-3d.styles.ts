@@ -7,6 +7,8 @@ export const ControlsContainer = styled.div`
   display: flex;
   font-size: 2rem;
   user-select: none;
+  width: 85px;
+  float: right;
 
   align-items: center;
   justify-content: right;

@@ -49,9 +49,13 @@ const CityFeatures = (
           setSelectedCode={setSelectedCode}
         />
       ))}
-      <mesh ref={crosshairMesh} position={[-15, 0, 45]}>
-        <boxBufferGeometry attach="geometry" args={[0.1, 0.08, 0.003]} />
-        <meshStandardMaterial wireframe color="white" />
+      <mesh
+        ref={crosshairMesh}
+        position={[-15, 0.01, 45]}
+        rotation={[Math.PI / 2, 0, 0]}
+      >
+        <torusBufferGeometry attach="geometry" args={[0.05, 0.0025, 8, 24]} />
+        <meshStandardMaterial color="gold" />
       </mesh>
     </instancedMesh>
   );

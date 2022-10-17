@@ -15,9 +15,10 @@ const CountryList = (props: CountryListProps) => {
       {countries.map((c, idx) => (
         <CountryListItem key={idx} onClick={() => onClicked(c)}>
           <img src={c.urls.flag} alt={c.name} />
-          <small>{(c.population * 0.000001).toFixed(3)}M</small>
           <br />
-          {c.name}- {c.capital} <br />
+          {c.name}
+          <br />
+          <small>{(c.population * 0.000001).toFixed(2)}M</small>
         </CountryListItem>
       ))}
     </>

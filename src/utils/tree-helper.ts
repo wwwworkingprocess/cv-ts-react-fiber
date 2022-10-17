@@ -1,5 +1,8 @@
 //
 // buffer to ndode
+
+import { distance } from "./geo";
+
 //
 export const fn_from_ab = (buffer: ArrayBufferLike) => {
   const view = new DataView(buffer);
@@ -63,6 +66,39 @@ export const fn_blob_to_nodedata = (event: any) => {
   return nodedata;
 };
 
+//
+// Find nodes, in proximity of the provided node
+// using 'slow' but accurate distance function
+//
+export const findTreeNodesInRange = (
+  tree: TreeHelper | undefined,
+  node: any,
+  range: number,
+  keepFirst: boolean
+) => {
+  if (!node || !tree) return [];
+  //
+  const data = node ? node.data : {};
+  const { lat, lng } = data;
+  //
+  const all = tree ? tree.list_all() : [];
+  //
+  const nodes = all
+    .map((n) => ({
+      ...n,
+      distance: distance([lat, lng], [n.data?.lat ?? 0, n.data?.lng ?? 0]),
+    }))
+    .filter((n) => n.distance * 10e-4 <= range)
+    .sort((a, b) => a.distance - b.distance);
+  //
+  if (!keepFirst) nodes.shift(); // removing 'selectedCode' as it is closest to itself
+  //
+  return nodes;
+};
+
+//
+//
+//
 class TreeHelper {
   NODES;
   //

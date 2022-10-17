@@ -1,9 +1,9 @@
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import { Canvas } from "@react-three/fiber";
 import { Billboard, OrbitControls, Text } from "@react-three/drei";
-import { Mesh, Vector3 } from "three";
+import { MOUSE, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
 import useAppController from "./hooks/useAppController";
@@ -148,13 +148,24 @@ const DemographyGame3D = (props: {
           camera={{ position: [19, 2, 46], zoom: 30 }}
         >
           <OrbitControls
-            enableZoom={false}
             position={[19, 0, 46]}
+            enableDamping={false}
+            panSpeed={0.1}
+            enablePan={selectedCode !== undefined}
+            enableZoom={selectedCode !== undefined}
+            enableRotate={false}
             minPolarAngle={0}
             maxPolarAngle={(Math.PI / 7) * 2}
+            maxZoom={100}
             maxDistance={100}
+            mouseButtons={{
+              LEFT: MOUSE.PAN,
+              MIDDLE: MOUSE.ROTATE,
+              RIGHT: MOUSE.DOLLY,
+            }}
           />
           <gridHelper />
+          <ambientLight intensity={0.2} />
           <group position={[-1 * MIN_X, 0, MIN_Y]}>
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>

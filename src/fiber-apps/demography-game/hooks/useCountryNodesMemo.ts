@@ -69,7 +69,9 @@ const useCountryNodesMemo = (
         let next = mostPopulatadNodes[extendedFromPop];
         //
         while (res.length < MAX_ITEMS_TO_SHOW || !next) {
-          const alreadyInResults = nearestCodesLookup.has(next.code);
+          const alreadyInResults = next
+            ? nearestCodesLookup.has(next.code)
+            : true;
           //
           if (!alreadyInResults)
             res.push({
