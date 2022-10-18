@@ -1,9 +1,9 @@
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import { Canvas } from "@react-three/fiber";
-import { Billboard, OrbitControls, Text } from "@react-three/drei";
-import { MOUSE, Vector3 } from "three";
+import { Billboard, OrbitControls, Text, useHelper } from "@react-three/drei";
+import { BoxHelper, Color, Group, MOUSE, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
 import useAppController from "./hooks/useAppController";
@@ -23,6 +23,8 @@ import TreeHelper from "../../utils/tree-helper";
 import { ControlsContainer } from "./demography-game-3d.styles";
 import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
+import CountryBorder from "./fibers/country-border";
+import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 
 const DemographyGame3D = (props: {
   isCameraEnabled: boolean;
@@ -36,8 +38,9 @@ const DemographyGame3D = (props: {
 }) => {
   const {
     tree,
-    isCameraEnabled,
+    // isCameraEnabled,
     isFrameCounterEnabled,
+    selectedCountry,
     selectedCode,
     setSelectedCode,
   } = props;
@@ -47,10 +50,10 @@ const DemographyGame3D = (props: {
   const bounds = useGameAppStore((state) => state.bounds);
   const [MIN_X, MAX_X, MIN_Y, MAX_Y] = bounds;
   //
-  const { x, y, z, areaScale, onJump } = useAppController();
+  const { x, y, z /*, areaScale, onJump*/ } = useAppController();
   //
   const MAX_RANGE_TO_SHOW = 50;
-  const MAX_ITEMS_TO_SHOW = 400;
+  const MAX_ITEMS_TO_SHOW = isMobile ? 300 : 500;
   //
   const { displayedNodes } = useCountryNodesMemo(
     tree,
@@ -68,11 +71,40 @@ const DemographyGame3D = (props: {
       -1 + 0.06,
       node.data?.lat,
     ];
+    //
+    const colorByPop = (node: any) => {
+      const toValue = (node: any): number =>
+        Math.log(Math.max(0, node?.data?.pop ?? 0)) * 14 + 10;
+      const [r, g, b] = [
+        Math.max(0, 155 - toValue(node) * 0.35),
+        toValue(node),
+        0,
+      ];
+      //
+      const hex = new Color(r / 256, g / 256, b / 256).getHexString();
+      //
+      return `#${hex}`;
+    };
+    //
+    const scaleByPop = (node: any) => {
+      const toValue = (node: any): number =>
+        Math.log(Math.max(0, node?.data?.pop ?? 0)) * 0.25;
+      //
+      const v = Math.max(0.1, toValue(node)) * 0.12;
+      //
+      return [v, v, v];
+    };
+    //
     const toItem = (node: any) => ({
       code: node.code,
       name: node.name,
+      pop: node.data.pop,
       position: toWorldPosition(node),
-      color: selectedCode === `Q${node.code}` ? "blue" : "red",
+      color: selectedCode === `Q${node.code}` ? "orange" : colorByPop(node),
+      scale:
+        selectedCode === `Q${node.code}`
+          ? [0.51, 0.51, 0.51]
+          : scaleByPop(node),
       //
       isSelected: selectedCode === `Q${node.code}`,
     });
@@ -119,6 +151,19 @@ const DemographyGame3D = (props: {
     [cities, zoom, focus, setSelectedCode, zoomToView]
   );
 
+  const selectedWikiCountryUrl = useMemo(
+    () => (selectedCountry ? selectedCountry.urls.geo : ""),
+    [selectedCountry]
+  );
+  //
+  const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
+  const firstFeatureCoordinates = useMemo(() => {
+    if (rawWikiJson) {
+      const arrs = rawWikiJson.data.features[0].geometry.coordinates;
+      //
+      return arrs;
+    } else return [];
+  }, [rawWikiJson]);
   //
   //
   //
@@ -130,15 +175,6 @@ const DemographyGame3D = (props: {
             Zoom out
           </button>
         )}
-        {/* {!zoom && (
-          <button onClick={(e) => focus && zoomToViewByCode(selectedCode)}>
-            Zoom In
-          </button>
-        )} */}
-        {/* <AxisValueInput axis={"x"} min={MIN_X} max={MAX_X} /> */}
-        {/* <AxisValueInput axis={"y"} min={0} max={10} /> */}
-        {/* <AxisValueInput axis={"z"} min={MIN_Y} max={MAX_Y} /> */}
-        {isMobile ? <button onClick={onJump}>Jump</button> : undefined}
       </ControlsContainer>
       <Suspense fallback={<Spinner />}>
         <Canvas
@@ -148,9 +184,10 @@ const DemographyGame3D = (props: {
           camera={{ position: [19, 2, 46], zoom: 30 }}
         >
           <OrbitControls
+            makeDefault
             position={[19, 0, 46]}
+            panSpeed={0.061}
             enableDamping={false}
-            panSpeed={0.1}
             enablePan={selectedCode !== undefined}
             enableZoom={selectedCode !== undefined}
             enableRotate={false}
@@ -180,6 +217,14 @@ const DemographyGame3D = (props: {
               </Text>
             </Billboard>
           )}
+          {/* ref={groupRef} */}
+          <group>
+            {/* <group position={[-1 * MIN_X, 0, MIN_Y]}> */}
+            <PlacedCountry
+              zoomToView={zoomToView}
+              firstFeatureCoordinates={firstFeatureCoordinates}
+            />
+          </group>
 
           {/* <Floor
             areaScale={areaScale}
@@ -192,6 +237,51 @@ const DemographyGame3D = (props: {
         </Canvas>
       </Suspense>
     </>
+  );
+};
+
+const PlacedCountry = ({
+  firstFeatureCoordinates,
+  zoomToView,
+}: {
+  firstFeatureCoordinates: any;
+  zoomToView: any;
+}) => {
+  const groupToStageRotation = [-Math.PI / 2, 0, 0];
+  //
+  const groupRef = useRef<Group>(null!);
+  useHelper(groupRef, BoxHelper, "red");
+  //
+
+  return (
+    <group position={[0, 0, 0]} scale={[1, 0.01, 1]}>
+      <group rotation={groupToStageRotation as any}>
+        <group ref={groupRef} position={[0, 0, -95]}>
+          {firstFeatureCoordinates && (
+            <>
+              {firstFeatureCoordinates.map(
+                (coords: Array<[number, number]>, idx: number) => {
+                  const isNested = coords.length === 1;
+                  const points = (isNested ? coords[0] : coords) as Array<
+                    [number, number]
+                  >;
+                  //
+                  return (
+                    <CountryBorder
+                      key={idx}
+                      countryBorderPoints={points}
+                      showFeatureBounds={true}
+                      color={new Color("blue")}
+                      capitalRef={undefined}
+                    />
+                  );
+                }
+              )}
+            </>
+          )}
+        </group>
+      </group>
+    </group>
   );
 };
 
