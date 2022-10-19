@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
+import "./assets/font/Roboto_Slab.ttf";
 
 import Navigation from "./components/navigation/navigation.component";
 import { Spinner } from "./components/spinner/spinner.component";

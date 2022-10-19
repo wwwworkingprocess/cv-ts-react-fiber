@@ -6,6 +6,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import "./index.css";
+import "./dat-gui.css";
+
 import { persistor, store } from "./store/store";
 
 import { Provider } from "react-redux";

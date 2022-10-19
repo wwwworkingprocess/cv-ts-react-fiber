@@ -1,9 +1,13 @@
 import create from "zustand";
 
 export type GameAppStore = {
+  moving: boolean;
+  //
   count: number;
   bounds: [number, number, number, number];
   position: { x: number; y: number; z: number };
+  //
+  setMoving: (b: boolean) => void;
   //
   add: (n: number) => void;
   setBounds: (b: [number, number, number, number]) => void;
@@ -22,9 +26,14 @@ const startPosition = { x: 17, y: 0, z: 45 } as {
 const defaultBounds = [16, 23, 45, 49] as [number, number, number, number];
 
 const useGameAppStore = create<GameAppStore>((set) => ({
+  moving: false,
+  //
   count: 0,
   bounds: defaultBounds,
   position: startPosition,
+  //
+  setMoving: (b) =>
+    set((prev) => (prev.moving ? { moving: false } : { moving: true })),
   //
   add: (n) => set((prev) => ({ count: prev.count + n })),
   setBounds: (b) => set((prev) => ({ bounds: b })),

@@ -116,7 +116,13 @@ const WikiDemography = () => {
           {/* COUNTRY DETAILS */}
           {selectedCountry && (
             <>
-              <h3>Country Details</h3>
+              <h3
+                style={{
+                  fontFamily: "RobotoSlab",
+                }}
+              >
+                Country Details
+              </h3>
               {!selectedCode ? (
                 <p>
                   Please{" "}

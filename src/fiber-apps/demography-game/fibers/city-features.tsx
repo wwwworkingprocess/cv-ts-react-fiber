@@ -1,9 +1,11 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Mesh, Vector3 } from "three";
 
 import CityFeature from "./city-feature";
 import useMapAutoPanningAnimation from "../hooks/useMapAutoPanningAnimation";
+import { useFrame } from "@react-three/fiber";
+import useGameAppStore from "../stores/useGameAppStore";
 
 type CityFeaturesOwnProps = {
   cities: any;
@@ -34,9 +36,49 @@ const CityFeatures = (
   } = props;
   const crosshairMesh = useRef<Mesh>(null!);
   //
+  // const [isMoving, setIsMoving] = useState<boolean>(false);
+  const moving = useGameAppStore((state) => state.moving);
+  const setMoving = useGameAppStore((state) => state.setMoving);
+
   //
   useMapAutoPanningAnimation(crosshairMesh, zoom, focus);
   //
+  useFrame((state) => {
+    if (zoom) {
+      const p1 = crosshairMesh.current.position.clone();
+      const p2 = focus.clone();
+      //
+      const crosshairDistanceFromDestination = p2.sub(p1).length();
+      const epsilon = 0.02;
+      //
+      const hasArrived = crosshairDistanceFromDestination < epsilon;
+      //
+      if (!hasArrived) {
+        //
+        //TODO: aggregate distance traveled here
+        //
+        // console.log(crosshairDistanceFromDestination);
+      } else {
+        if (moving) {
+          setMoving(false);
+          console.log("Arrived.");
+        }
+        //
+      }
+    }
+    // else skip
+  });
+
+  //
+  // temporary solution, until 'moving' can be set
+  // via change of 'selectedCode' or 'focus' in store
+  //
+  useEffect(() => {
+    if (!moving) {
+      setMoving(true);
+      console.log("Started moving towards.", focus);
+    }
+  }, [focus]);
   //
   return (
     <instancedMesh {...instancedMeshProps}>

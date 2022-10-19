@@ -2,7 +2,8 @@ import { useLayoutEffect, useMemo, useRef } from "react";
 import { Text3D } from "@react-three/drei";
 import * as THREE from "three";
 
-// import Roboto from "../../Roboto_Regular.json";
+//
+import Roboto from "../../Roboto_Regular.json";
 
 const vAlign = "center";
 const hAlign = "center";

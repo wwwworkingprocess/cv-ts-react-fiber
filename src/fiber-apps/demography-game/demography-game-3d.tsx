@@ -26,6 +26,30 @@ import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
 import CountryBorder from "./fibers/country-border";
 import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 
+import DatGui, { DatColor, DatNumber, DatSelect } from "react-dat-gui";
+
+const UserGui = () => {
+  const [opts, setOpts] = useState({
+    maxItems: 300,
+    maxRange: 100,
+    color: "#99ccff",
+    materialType: "MeshPhongMaterial",
+  });
+  //
+  return (
+    <DatGui data={opts} onUpdate={setOpts}>
+      <DatNumber path="maxItems" min={50} max={500} step={1} />
+      <DatNumber path="maxRange" min={1} max={100} step={0.1} />
+      <DatSelect
+        path="materialType"
+        label="material"
+        options={["MeshBasicMaterial", "MeshPhongMaterial"]}
+      />
+      <DatColor path="color" />
+    </DatGui>
+  );
+};
+
 const DemographyGame3D = (props: {
   isCameraEnabled: boolean;
   isFrameCounterEnabled: boolean;
@@ -46,6 +70,8 @@ const DemographyGame3D = (props: {
   } = props;
   //
   useKeyboardNavigation();
+  //
+  const moving = useGameAppStore((state) => state.moving);
   //
   const bounds = useGameAppStore((state) => state.bounds);
   const [MIN_X, MAX_X, MIN_Y, MAX_Y] = bounds;
@@ -166,16 +192,17 @@ const DemographyGame3D = (props: {
   }, [rawWikiJson]);
   //
   //
+  const [showUI, setShowUI] = useState<boolean>(false);
   //
   return (
     <>
-      <ControlsContainer>
+      {/* <ControlsContainer>
         {zoom && (
           <button onClick={(e) => focus && zoomToView(undefined)}>
             Zoom out
           </button>
         )}
-      </ControlsContainer>
+      </ControlsContainer> */}
       <Suspense fallback={<Spinner />}>
         <Canvas
           style={{ height: "350px", border: "solid 1px white" }}
@@ -201,6 +228,7 @@ const DemographyGame3D = (props: {
               RIGHT: MOUSE.DOLLY,
             }}
           />
+          <Text font={"data/Roboto_Slab.ttf"}>hello</Text>
           <gridHelper />
           <ambientLight intensity={0.2} />
           <group position={[-1 * MIN_X, 0, MIN_Y]}>
@@ -235,6 +263,56 @@ const DemographyGame3D = (props: {
             ]}
           /> */}
         </Canvas>
+        <div
+          style={{
+            float: "right",
+            position: "relative",
+            height: "14px",
+            top: "-345px",
+            right: "5px",
+          }}
+        >
+          {zoom && (
+            <button onClick={(e) => focus && zoomToView(undefined)}>
+              Zoom out
+            </button>
+          )}
+        </div>
+        <div
+          style={{
+            position: "relative",
+            top: "-345px",
+            left: "5px",
+            height: "0px",
+            width: showUI ? "282px" : "75px",
+            border: "solid 1px green",
+          }}
+        >
+          {showUI ? (
+            <>
+              <UserGui />
+              <button onClick={(e) => setShowUI(false)}>Close</button>
+            </>
+          ) : (
+            <button onClick={(e) => setShowUI(true)}>Settings</button>
+          )}
+        </div>
+        <div
+          style={{
+            position: "relative",
+            top: "-24px",
+            left: "5px",
+            display: "inline-block",
+            border: "solid 1px green",
+          }}
+        >
+          {!zoom
+            ? "Select a city"
+            : moving
+            ? "Moving..."
+            : "Arrived at destination."}
+        </div>
+        <div style={{ clear: "both" }} />
       </Suspense>
     </>
   );
