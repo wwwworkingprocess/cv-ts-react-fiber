@@ -6,6 +6,7 @@ import CityFeature from "./city-feature";
 import useMapAutoPanningAnimation from "../hooks/useMapAutoPanningAnimation";
 import { useFrame } from "@react-three/fiber";
 import useGameAppStore from "../stores/useGameAppStore";
+import FrameCounter from "./frame-counter";
 
 type CityFeaturesOwnProps = {
   cities: any;
@@ -37,6 +38,8 @@ const CityFeatures = (
   const crosshairMesh = useRef<Mesh>(null!);
   //
   // const [isMoving, setIsMoving] = useState<boolean>(false);
+  const selectedCode = useGameAppStore((state) => state.selectedCode);
+  //
   const moving = useGameAppStore((state) => state.moving);
   const setMoving = useGameAppStore((state) => state.setMoving);
 
@@ -59,9 +62,9 @@ const CityFeatures = (
         //
         // console.log(crosshairDistanceFromDestination);
       } else {
-        if (moving) {
-          setMoving(false);
-          console.log("Arrived.");
+        if (moving && selectedCode) {
+          console.log("Arrived.", selectedCode);
+          setMoving(false, selectedCode);
         }
         //
       }
@@ -74,9 +77,9 @@ const CityFeatures = (
   // via change of 'selectedCode' or 'focus' in store
   //
   useEffect(() => {
-    if (!moving) {
-      setMoving(true);
-      console.log("Started moving towards.", focus);
+    if (!moving && selectedCode) {
+      setMoving(true, selectedCode);
+      console.log("Started moving towards.", selectedCode, focus);
     }
   }, [focus]);
   //
@@ -98,6 +101,9 @@ const CityFeatures = (
       >
         <torusBufferGeometry attach="geometry" args={[0.05, 0.0025, 8, 24]} />
         <meshStandardMaterial color="gold" />
+        <group scale={[-1, 1, 1]} position={[0, 0, -0.3]}>
+          <FrameCounter enabled={true} />
+        </group>
       </mesh>
     </instancedMesh>
   );

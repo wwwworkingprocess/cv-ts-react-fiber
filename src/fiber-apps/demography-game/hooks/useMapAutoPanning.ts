@@ -13,9 +13,9 @@ const useMapAutoPanningActions = (
     color: string;
     isSelected: boolean;
   }>,
-  setZoom: any,
+  setZoom: (b: boolean) => void,
   setFocus: any,
-  setSelectedCode: any
+  setSelectedCode: (c: string | undefined) => void
 ) => {
   const zoomToView = useCallback(
     (focusRef?: React.MutableRefObject<Mesh>) => {

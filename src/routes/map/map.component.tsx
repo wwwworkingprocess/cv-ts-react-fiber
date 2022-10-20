@@ -222,11 +222,11 @@ const WikiDemography = () => {
             <DemographyGame3D
               tree={tree}
               selectedCountry={selectedCountry}
-              selectedCode={selectedCode}
+              // selectedCode={selectedCode}
               isCameraEnabled={true}
               isFrameCounterEnabled={false}
               path=".."
-              setSelectedCode={setSelectedCode}
+              // setSelectedCode={setSelectedCode}
             />
           ) : null}
           <TreeBreadCrumb

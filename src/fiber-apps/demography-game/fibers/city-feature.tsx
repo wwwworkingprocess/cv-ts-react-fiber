@@ -4,6 +4,7 @@ import { Billboard, Text } from "@react-three/drei";
 
 import { Mesh } from "three";
 import { useFrame } from "@react-three/fiber";
+import useGameAppStore from "../stores/useGameAppStore";
 
 type CityFeatureOwnProps = {
   data: any;
@@ -61,12 +62,24 @@ const CityFeature = (
   props: JSX.IntrinsicElements["mesh"] & CityFeatureOwnProps
 ) => {
   const { data, zoom, zoomToView, setSelectedCode, ...meshProps } = props;
+  const code = `Q${data.code}`;
   //
+  // const progressConverting = useGameAppStore( (state) => state.progressConverting );
+  const myProgressConverting = useGameAppStore(
+    (state) => state.progressConverting[code] ?? 0
+  );
+  const isCityTaken = useGameAppStore((state) =>
+    state.codesTaken.includes(code)
+  );
+  //
+  const setProgressCompleted = useGameAppStore(
+    (state) => state.setProgressCompleted
+  );
 
   const minScale = [...data.scale];
   //const minScale = [0.13, 0.13, 0.13];
-  const maxScale = [1.15, 1.15, 1.15];
-  const noPopulationInfo = data.pop < 1;
+  const maxScale =
+    !zoom && isCityTaken ? [0.01, 0.01, 0.01] : [1.15, 1.15, 1.15];
   //
   const meshRef = useRef<Mesh>(null!);
   //
@@ -106,7 +119,18 @@ const CityFeature = (
   //
   // each city will receive progress from game-store (module state)
   //
-  const randomProgress = Math.random();
+  const remains = Math.max(0, data.pop - myProgressConverting);
+  const progressOffset = 1 - remains / (data.pop || remains);
+  //
+  const isConversionComplete = progressOffset === 1;
+  //
+  useEffect(() => {
+    if (!isCityTaken && isConversionComplete) {
+      setProgressCompleted(code);
+    }
+  }, [isConversionComplete, isCityTaken]);
+  //
+  // console.log("prog", prog);
   //
   return (
     <mesh
@@ -119,7 +143,7 @@ const CityFeature = (
     >
       {clicked && (
         <Billboard position={[0, 0.065, 0]} follow={true}>
-          <CircularProgress progressOffset={randomProgress} />
+          {!isCityTaken && <CircularProgress progressOffset={progressOffset} />}
 
           <Text
             position={[0, 0.055, 0]}
@@ -142,7 +166,11 @@ const CityFeature = (
       )}
       <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
       {zoom ? (
-        <meshStandardMaterial color={hover ? "white" : data.color} />
+        isCityTaken ? (
+          <meshPhongMaterial color={"#0022aa"} transparent opacity={0.7} />
+        ) : (
+          <meshStandardMaterial color={hover ? "white" : data.color} />
+        )
       ) : (
         <meshBasicMaterial color={hover ? "orange" : data.color} />
       )}

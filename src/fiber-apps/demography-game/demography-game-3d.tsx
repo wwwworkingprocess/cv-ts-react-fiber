@@ -20,7 +20,7 @@ import { Spinner } from "../../components/spinner/spinner.component";
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
 import TreeHelper from "../../utils/tree-helper";
-import { ControlsContainer } from "./demography-game-3d.styles";
+// import { ControlsContainer } from "./demography-game-3d.styles";
 import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
 import CountryBorder from "./fibers/country-border";
@@ -54,20 +54,22 @@ const DemographyGame3D = (props: {
   isCameraEnabled: boolean;
   isFrameCounterEnabled: boolean;
   selectedCountry: WikiCountry | undefined;
-  selectedCode: string | undefined;
+  // selectedCode: string | undefined;
   path?: string;
   tree: TreeHelper;
   //
-  setSelectedCode: React.Dispatch<string | undefined>;
+  // setSelectedCode: React.Dispatch<string | undefined>;
 }) => {
   const {
     tree,
     // isCameraEnabled,
     isFrameCounterEnabled,
     selectedCountry,
-    selectedCode,
-    setSelectedCode,
   } = props;
+  //
+  const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
+  const selectedCode = useGameAppStore((state) => state.selectedCode);
+  const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
   //
   useKeyboardNavigation();
   //
@@ -138,10 +140,15 @@ const DemographyGame3D = (props: {
     return displayedNodes.map(toItem);
   }, [displayedNodes, selectedCode]);
 
+  // const codesTaken = useGameAppStore((state) => state.codesTaken);
+  // const codesConverting = useGameAppStore((state) => state.codesConverting);
+
   //
   // zooming and panning
   //
-  const [zoom, setZoom] = useState<boolean>(selectedCode !== undefined);
+  const zoom = useGameAppStore((state) => state.zoom);
+  const setZoom = useGameAppStore((state) => state.setZoom);
+  //const [zoom, setZoom] = useState<boolean>(selectedCode !== undefined);
   const [focus, setFocus] = useState(new Vector3(-17, 0 + 1, 45 + 1));
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
@@ -236,7 +243,7 @@ const DemographyGame3D = (props: {
           </group>
           {memoizedCities}
           <Player x={x} y={y} z={z} position={[0, -0.5 + 0.05, 0]} />
-          <FrameCounter enabled={isFrameCounterEnabled} />
+
           {!isMobile && (
             <Billboard position={[0, 2.25, 0]} follow={true}>
               <Text fontSize={0.3} color={"#ffaa22"}>
@@ -312,9 +319,39 @@ const DemographyGame3D = (props: {
             ? "Moving..."
             : "Arrived at destination."}
         </div>
+        <DebugStorePanel />
         <div style={{ clear: "both" }} />
       </Suspense>
     </>
+  );
+};
+
+const DebugStorePanel = () => {
+  const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
+  const selectedCode = useGameAppStore((state) => state.selectedCode);
+  //
+  const codesTaken = useGameAppStore((state) => state.codesTaken);
+  const codesConverting = useGameAppStore((state) => state.codesConverting);
+  const progressConverting = useGameAppStore(
+    (state) => state.progressConverting
+  );
+  //
+  // console.log("DebugStorePanel, converting", codesConverting, selectedCode);
+  //
+  return (
+    <div style={{ fontSize: "9px" }}>
+      {lastSelectedCode} &gt;&gt; {selectedCode}
+      <hr />
+      TAKEN: {codesTaken.length}
+      {codesTaken.join(" - ")}
+      <br />
+      CONVERTING: {codesConverting.length}
+      {codesConverting.join(" - ")}
+      <br />
+      PROGRESS: {Object.keys(progressConverting).length}
+      {JSON.stringify(progressConverting)}
+      <br />
+    </div>
   );
 };
 
@@ -328,7 +365,7 @@ const PlacedCountry = ({
   const groupToStageRotation = [-Math.PI / 2, 0, 0];
   //
   const groupRef = useRef<Group>(null!);
-  useHelper(groupRef, BoxHelper, "red");
+  // useHelper(groupRef, BoxHelper, "red");
   //
 
   return (
@@ -348,7 +385,7 @@ const PlacedCountry = ({
                     <CountryBorder
                       key={idx}
                       countryBorderPoints={points}
-                      showFeatureBounds={true}
+                      showFeatureBounds={false}
                       color={new Color("blue")}
                       capitalRef={undefined}
                     />

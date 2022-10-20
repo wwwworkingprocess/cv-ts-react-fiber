@@ -1,26 +1,25 @@
 import { Billboard, BillboardProps, Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-import useCursorAppStore from "../stores/useGameAppStore";
+import useGameAppStore from "../stores/useGameAppStore";
 
 const FrameCounter = (props: BillboardProps & { enabled: boolean }) => {
-  const { enabled } = props;
+  // const { enabled } = props;
+  const enabled = true;
   //
-  const count = useCursorAppStore((state) => state.count);
-  const bounds = useCursorAppStore((state) => state.bounds);
+  const count = useGameAppStore((state) => state.count);
+  const selectedCode = useGameAppStore((state) => state.selectedCode);
   //
-  const add = useCursorAppStore((state) => state.add);
-  //
-  const [MIN_X, MAX_X, MIN_Y, MAX_Y] = bounds;
+  const add = useGameAppStore((state) => state.add);
   //
   useFrame(() => enabled && add(1));
   //
   if (!enabled) return null;
   //
   return enabled ? (
-    <Billboard {...props}>
-      <Text fontSize={0.3} onClick={() => add(3)}>
-        {count} - {[MIN_X, MAX_X, MIN_Y, MAX_Y].join(" - ")}
+    <Billboard {...props} follow={true} lockY={true}>
+      <Text fontSize={0.03} onClick={() => add(3)}>
+        {count} - {selectedCode}
       </Text>
     </Billboard>
   ) : null;
