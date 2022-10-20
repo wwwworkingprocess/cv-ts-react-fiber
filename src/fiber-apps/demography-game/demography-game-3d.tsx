@@ -336,6 +336,7 @@ const DebugStorePanel = () => {
     (state) => state.progressConverting
   );
   //
+  const resetStore = useGameAppStore((state) => state.reset);
   // console.log("DebugStorePanel, converting", codesConverting, selectedCode);
   //
   return (
@@ -343,14 +344,21 @@ const DebugStorePanel = () => {
       {lastSelectedCode} &gt;&gt; {selectedCode}
       <hr />
       TAKEN: {codesTaken.length}
-      {codesTaken.join(" - ")}
+      {/* {codesTaken.join(" - ")} */}
       <br />
       CONVERTING: {codesConverting.length}
-      {codesConverting.join(" - ")}
       <br />
       PROGRESS: {Object.keys(progressConverting).length}
-      {JSON.stringify(progressConverting)}
       <br />
+      <button
+        onClick={(e) => {
+          const approved = window.confirm("This will erase your progress");
+          //
+          if (approved) resetStore();
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 };

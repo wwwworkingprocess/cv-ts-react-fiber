@@ -63,6 +63,7 @@ const CityFeature = (
 ) => {
   const { data, zoom, zoomToView, setSelectedCode, ...meshProps } = props;
   const code = `Q${data.code}`;
+  const population = data.pop ?? 1; // 1 instead of -1 so, feature won't autocomplete once appears
   //
   // const progressConverting = useGameAppStore( (state) => state.progressConverting );
   const myProgressConverting = useGameAppStore(
@@ -76,10 +77,15 @@ const CityFeature = (
     (state) => state.setProgressCompleted
   );
 
-  const minScale = [...data.scale];
+  const minScale = !isCityTaken
+    ? [...data.scale]
+    : [...data.scale.map((x: number) => x * 0.5)];
   //const minScale = [0.13, 0.13, 0.13];
-  const maxScale =
-    !zoom && isCityTaken ? [0.01, 0.01, 0.01] : [1.15, 1.15, 1.15];
+  const maxScale = !isCityTaken
+    ? [1.15, 1.15, 1.15]
+    : zoom
+    ? [0.21, 0.21, 0.21]
+    : [0.02, 0.02, 0.02];
   //
   const meshRef = useRef<Mesh>(null!);
   //
@@ -114,23 +120,24 @@ const CityFeature = (
     setClicked(!clicked);
     zoomToView(meshRef);
     //
-    setSelectedCode(`Q${data.code}`);
+    setSelectedCode(code);
   };
   //
-  // each city will receive progress from game-store (module state)
+  // each city receives progress from store
   //
-  const remains = Math.max(0, data.pop - myProgressConverting);
-  const progressOffset = 1 - remains / (data.pop || remains);
+  const remains = Math.max(0, population - myProgressConverting);
+  const progressOffset = 1 - remains / (population || remains);
   //
   const isConversionComplete = progressOffset === 1;
   //
   useEffect(() => {
     if (!isCityTaken && isConversionComplete) {
-      setProgressCompleted(code);
+      setProgressCompleted(code, population);
     }
   }, [isConversionComplete, isCityTaken]);
+
   //
-  // console.log("prog", prog);
+  //
   //
   return (
     <mesh

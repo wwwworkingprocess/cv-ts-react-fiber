@@ -1,7 +1,14 @@
 import create from "zustand";
 import { persist } from "zustand/middleware";
 
-export type GameAppStore = {
+export type PlayerStats = {
+  takenPopulation: number;
+  takenCities: number;
+  baseConversionSpeed: number;
+  conversionSpeed: number;
+};
+
+export type GameState = {
   zoom: boolean;
   moving: boolean;
   selectedCode: string | undefined;
@@ -15,29 +22,63 @@ export type GameAppStore = {
   bounds: [number, number, number, number];
   position: { x: number; y: number; z: number };
   //
+  player: PlayerStats;
+};
+
+export type GameActions = {
   setMoving: (b: boolean, code: string) => void;
   setSelectedCode: (c: string | undefined) => void;
   setZoom: (b: boolean) => void;
-  setProgressCompleted: (code: string) => void;
+  setProgressCompleted: (code: string, population: number) => void;
   //
   add: (n: number) => void;
   setBounds: (b: [number, number, number, number]) => void;
   setPosition: (p: { x: number; y: number; z: number }) => void;
   decreasePositionY: (timeout: number) => void;
+  //
+  reset: () => void;
 };
 
+export type GameAppStore = GameState & GameActions;
+
+//
+//
+//
+//'HU': ('Hungary', (16.2022982113, 45.7594811061, 22.710531447, 48.6238540716)),
+const defaultBounds = [16, 23, 45, 49] as [number, number, number, number];
 const startPosition = { x: 17, y: 0, z: 45 } as {
   x: number;
   y: number;
   z: number;
 };
 
-//'HU': ('Hungary', (16.2022982113, 45.7594811061, 22.710531447, 48.6238540716)),
-// const defaultBounds = [-3, 3, -2, 2] as [number, number, number, number];
-const defaultBounds = [16, 23, 45, 49] as [number, number, number, number];
+//
+// Initial store state
+//
+const initialState: GameState = {
+  zoom: false,
+  moving: false,
+  selectedCode: undefined,
+  lastSelectedCode: undefined,
+  //
+  codesTaken: [] as Array<string>,
+  codesConverting: [] as Array<string>,
+  progressConverting: {} as Record<string, number>,
+  //
+  count: 0,
+  bounds: defaultBounds,
+  position: startPosition,
+  //
+  player: {
+    baseConversionSpeed: 2,
+    conversionSpeed: 2,
+    takenCities: 0,
+    takenPopulation: 0,
+  } as PlayerStats,
+};
 
 const onGameTick = (s: GameAppStore, nextTick: number) => {
-  const CONVERSION_SPEED = 10;
+  const CONVERSION_SPEED = s.player.conversionSpeed;
   //
   // progress with constant speed, when player is
   // - not moving
@@ -99,8 +140,8 @@ const onArrived = (s: GameAppStore, code: string) => {
   };
 };
 //
-const onCityTaken = (s: GameAppStore, code: string) => {
-  console.warn("onCityTaken", code);
+const onCityTaken = (s: GameAppStore, code: string, population: number) => {
+  // console.warn("onCityTaken", code);
   /*
     codesTaken: [] as Array<string>,
       codesConverting: [] as Array<string>,
@@ -119,29 +160,56 @@ const onCityTaken = (s: GameAppStore, code: string) => {
   );
 
   //
+  //
+  //
+  const stats = s.player;
+  const nextTakenPopulation = stats.takenPopulation + population;
+  const nextTakenCities = nextCodesTaken.length;
+  //
+  const nextPlayerStats = {
+    ...stats,
+    takenPopulation: nextTakenPopulation,
+    takenCities: nextTakenCities,
+    conversionSpeed:
+      stats.baseConversionSpeed +
+      nextTakenCities * 0.01 +
+      nextTakenPopulation * 0.0001,
+  };
+
+  //
   return {
     //selectedCode: undefined,
     codesTaken: nextCodesTaken,
     codesConverting: nextCodesConverting,
     progressConverting: nextProgressConverting,
+    //
+    player: nextPlayerStats,
   };
 };
 //
 const useGameAppStore = create<GameAppStore>(
   persist(
     (set, get, api) => ({
-      zoom: false,
-      moving: false,
-      selectedCode: undefined,
-      lastSelectedCode: undefined,
-      //
-      codesTaken: [] as Array<string>,
-      codesConverting: [] as Array<string>,
-      progressConverting: {} as Record<string, number>,
-      //
-      count: 0,
-      bounds: defaultBounds,
-      position: startPosition,
+      ...initialState,
+      // zoom: false,
+      // moving: false,
+      // selectedCode: undefined,
+      // lastSelectedCode: undefined,
+      // //
+      // codesTaken: [] as Array<string>,
+      // codesConverting: [] as Array<string>,
+      // progressConverting: {} as Record<string, number>,
+      // //
+      // count: 0,
+      // bounds: defaultBounds,
+      // position: startPosition,
+      // //
+      // player: {
+      //   baseConversionSpeed: 10,
+      //   conversionSpeed: 10,
+      //   takenCities: 0,
+      //   takenPopulation: 0,
+      // } as PlayerStats,
       //
       setMoving: (b, code) =>
         set((prev) => {
@@ -174,7 +242,8 @@ const useGameAppStore = create<GameAppStore>(
       //
       // add to codeTaken, remove from codesConverting&progressConverting
       //
-      setProgressCompleted: (c) => set((prev) => onCityTaken(prev, c)),
+      setProgressCompleted: (c, pop) =>
+        set((prev) => onCityTaken(prev, c, pop)),
       //
       setZoom: (b) => set((prev) => ({ zoom: b })),
       //
@@ -189,7 +258,8 @@ const useGameAppStore = create<GameAppStore>(
             : { count: nextTick, progressConverting: prev.progressConverting };
         }),
       //
-
+      reset: () => set(initialState),
+      //
       setBounds: (b) => set((prev) => ({ bounds: b })),
       setPosition: (p) => set((prev) => ({ position: p })),
       decreasePositionY: (timeout) => {
