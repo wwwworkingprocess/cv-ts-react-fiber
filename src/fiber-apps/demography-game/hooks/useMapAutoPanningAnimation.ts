@@ -7,6 +7,7 @@ const vDef2 = [-20.5 + 1, 0 + 0.1, 47.5 - 0.65 + 0];
 //
 const positionVec = new Vector3();
 const lookatVec = new Vector3();
+
 //
 // auto zooming and panning, using the provided setters
 //
@@ -14,6 +15,7 @@ const useMapAutoPanningAnimation = (
   crosshairMesh: React.MutableRefObject<Mesh<any>>,
   //
   zoom: boolean,
+  extra: boolean,
   focus: Vector3
 ) => {
   //
@@ -40,7 +42,12 @@ const useMapAutoPanningAnimation = (
     // animate viewport
     //
     if (zoom) {
-      if (state.camera.zoom < 120) state.camera.zoom += 0.25;
+      if (extra) {
+        if (state.camera.zoom < 180) state.camera.zoom += 0.45;
+      } else {
+        if (state.camera.zoom < 120) state.camera.zoom += 0.25;
+        if (state.camera.zoom > 121) state.camera.zoom -= 0.45;
+      }
     } else {
       if (state.camera.zoom > 25) state.camera.zoom -= 0.3;
     }

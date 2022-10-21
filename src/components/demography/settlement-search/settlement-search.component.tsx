@@ -11,7 +11,7 @@ import {
 type SettlementSearchProps = {
   tree: TreeHelper | undefined;
   countryCode: string;
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setSelectedCode: (c: string | undefined) => void;
 };
 
 const MAX_RESULTS_KEYWORD_SEARCH = 25;

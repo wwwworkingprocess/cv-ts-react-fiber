@@ -8,7 +8,7 @@ import {
 type AdminTwoListProps = {
   items: Array<Array<any>>;
   //
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setSelectedCode: (c: string | undefined) => void;
 };
 
 const formatPopulation = (p: number) => {

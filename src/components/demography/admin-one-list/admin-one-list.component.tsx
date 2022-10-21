@@ -14,7 +14,7 @@ type AdminOneListProps = {
     data: Record<string, any>;
   }>;
   //
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setSelectedCode: (c: string | undefined) => void;
 };
 
 const AdminOneList = (props: AdminOneListProps) => {

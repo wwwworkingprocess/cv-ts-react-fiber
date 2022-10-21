@@ -12,7 +12,7 @@ type CityFeatureOwnProps = {
   zoom: boolean;
   //
   zoomToView: (focusRef: React.MutableRefObject<Mesh>) => void;
-  setSelectedCode: React.Dispatch<string | undefined>;
+  // setSelectedCode: React.Dispatch<string | undefined>;
 };
 
 const formatPopulation = (p: number) => {
@@ -61,11 +61,10 @@ const CircularProgress = (
 const CityFeature = (
   props: JSX.IntrinsicElements["mesh"] & CityFeatureOwnProps
 ) => {
-  const { data, zoom, zoomToView, setSelectedCode, ...meshProps } = props;
+  const { data, zoom, zoomToView, ...meshProps } = props;
   const code = `Q${data.code}`;
-  const population = data.pop ?? 1; // 1 instead of -1 so, feature won't autocomplete once appears
+  const population = data.pop < 1 ? 1000 : data.pop; // 1 instead of -1 so, feature won't autocomplete once appears
   //
-  // const progressConverting = useGameAppStore( (state) => state.progressConverting );
   const myProgressConverting = useGameAppStore(
     (state) => state.progressConverting[code] ?? 0
   );
@@ -73,14 +72,20 @@ const CityFeature = (
     state.codesTaken.includes(code)
   );
   //
+  // actions
+  //
   const setProgressCompleted = useGameAppStore(
     (state) => state.setProgressCompleted
   );
+  const selectedCode = useGameAppStore((state) => state.selectedCode);
+  const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
+  const isSelected = selectedCode === code;
+  //
 
   const minScale = !isCityTaken
     ? [...data.scale]
     : [...data.scale.map((x: number) => x * 0.5)];
-  //const minScale = [0.13, 0.13, 0.13];
+  //;
   const maxScale = !isCityTaken
     ? [1.15, 1.15, 1.15]
     : zoom
@@ -90,7 +95,7 @@ const CityFeature = (
   const meshRef = useRef<Mesh>(null!);
   //
   const [hover, setHover] = useState(false);
-  const [clicked, setClicked] = useState(data.isSelected);
+  const [clicked, setClicked] = useState(isSelected);
   //
   useEffect(() => {
     document.body.style.cursor = hover ? "pointer" : "default";
@@ -134,7 +139,13 @@ const CityFeature = (
     if (!isCityTaken && isConversionComplete) {
       setProgressCompleted(code, population);
     }
-  }, [isConversionComplete, isCityTaken]);
+  }, [
+    isConversionComplete,
+    isCityTaken,
+    setProgressCompleted,
+    code,
+    population,
+  ]);
 
   //
   //
@@ -148,7 +159,7 @@ const CityFeature = (
       scale={[...data.scale] as any}
       {...meshProps}
     >
-      {clicked && (
+      {(isSelected || clicked) && (
         <Billboard position={[0, 0.065, 0]} follow={true}>
           {!isCityTaken && <CircularProgress progressOffset={progressOffset} />}
 
@@ -174,7 +185,7 @@ const CityFeature = (
       <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
       {zoom ? (
         isCityTaken ? (
-          <meshPhongMaterial color={"#0022aa"} transparent opacity={0.7} />
+          <meshBasicMaterial color={"#000055"} />
         ) : (
           <meshStandardMaterial color={hover ? "white" : data.color} />
         )

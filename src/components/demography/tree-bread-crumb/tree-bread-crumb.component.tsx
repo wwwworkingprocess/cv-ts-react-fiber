@@ -36,7 +36,7 @@ const TreeBreadCrumb = (props: {
   selectedCode: string | undefined;
   tree: TreeHelper;
   //
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setSelectedCode: (c: string | undefined) => void;
 }) => {
   const { selectedCode, setSelectedCode, tree } = props;
   //

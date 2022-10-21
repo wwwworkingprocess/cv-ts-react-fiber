@@ -23,6 +23,7 @@ import {
   BrowseSettlementContainer,
   NearbyItemsContainer,
 } from "./map.styles";
+import useGameAppStore from "../../fiber-apps/demography-game/stores/useGameAppStore";
 
 //
 //
@@ -35,7 +36,12 @@ const WikiDemography = () => {
   //
   const [countryCode, setCountryCode] = useState<string>("28"); // pre-load tree helper
   const [selectedCountry, setSelectedCountry] = useState<WikiCountry>();
-  const [selectedCode, setSelectedCode] = useState<string>();
+  // const [selectedCode, setSelectedCode] = useState<string>();
+
+  const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
+    s.selectedCode,
+    s.setSelectedCode,
+  ]);
   //
   const {
     countries,
@@ -88,7 +94,7 @@ const WikiDemography = () => {
     };
     //
     return <button onClick={() => onBackToParentClicked()}>[..]</button>;
-  }, [tree, selectedCountry, selectedCode]);
+  }, [tree, selectedCountry, selectedCode, setSelectedCode]);
 
   //
   //  loading >> selectedCountry >> selectedCode
@@ -222,11 +228,7 @@ const WikiDemography = () => {
             <DemographyGame3D
               tree={tree}
               selectedCountry={selectedCountry}
-              // selectedCode={selectedCode}
-              isCameraEnabled={true}
-              isFrameCounterEnabled={false}
               path=".."
-              // setSelectedCode={setSelectedCode}
             />
           ) : null}
           <TreeBreadCrumb

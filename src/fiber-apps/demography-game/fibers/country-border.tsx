@@ -1,53 +1,52 @@
-import { MutableRefObject, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
-import { useHelper } from "@react-three/drei";
 import { ThreeEvent, useFrame } from "@react-three/fiber";
-import {
-  BoxHelper,
-  Color,
-  DoubleSide,
-  Group,
-  Mesh,
-  MeshStandardMaterial,
-  ShapeGeometry,
-} from "three";
+import { Color, DoubleSide, Mesh, MeshStandardMaterial } from "three";
 
-import { lerp } from "three/src/math/MathUtils";
 import { shapeFromCoords } from "../../../utils/d3d";
 
 const colorHelper = new Color();
+
+const COLOR_WHITE = new Color("white");
+const COLOR_HOVER = new Color("#0000cf");
 
 const CountryBorder = (
   props: JSX.IntrinsicElements["mesh"] & {
     countryBorderPoints: Array<[number, number]> | null;
     color?: Color;
-    showFeatureBounds: boolean;
-    capitalRef: MutableRefObject<Group> | undefined;
   }
 ) => {
-  const { countryBorderPoints, color, showFeatureBounds, capitalRef } = props;
+  const { countryBorderPoints, color } = props;
   //
   const ref = useRef<Mesh>(null!);
   const materialRef = useRef<MeshStandardMaterial>(null!);
   const [hovered, setHover] = useState(false);
+
   //
-  useHelper(showFeatureBounds ? ref : undefined, BoxHelper, color);
+  //
+  //
+  const shape = useMemo(() => {
+    const toWorldPosition = ([lat, lng]: [number, number]) =>
+      [-1 * lat, -1 * lng] as [number, number];
+    //
+    return countryBorderPoints ? (
+      <shapeGeometry
+        args={[
+          shapeFromCoords(countryBorderPoints.map((p) => toWorldPosition(p))),
+        ]}
+      />
+    ) : null;
+  }, [countryBorderPoints]);
+
+  //
+  //
   //
   useFrame((state) => {
     if (ref.current) {
-      ref.current.position.z = lerp(
-        ref.current.position.z,
-        hovered ? 0.5 : 0,
-        0.1
-      );
-      if (capitalRef && capitalRef.current) {
-        capitalRef.current.position.z = ref.current.position.z;
-      }
-      //
       if (materialRef.current)
         materialRef.current.color.lerp(
-          colorHelper.set(hovered ? "#0000cf" : color || new Color("white")),
-          hovered ? 1 : 0.1
+          colorHelper.set(hovered ? COLOR_HOVER : color || COLOR_WHITE),
+          hovered ? 0.3 : 0.1
         );
     }
   });
@@ -60,43 +59,20 @@ const CountryBorder = (
     e.stopPropagation();
     setHover(true);
   };
-  //
 
-  const toWorldPosition = ([lat, lng]: [number, number]) =>
-    [
-      // -1 * lng,
-      // -1 + 0.06,
-      -1 * lat,
-      -1 * lng,
-    ] as [number, number];
-  //
-  //
-  //
-  const shape = countryBorderPoints
-    ? //? shapeFromCoords(countryBorderPoints)
-      shapeFromCoords(countryBorderPoints.map((p) => toWorldPosition(p)))
-    : undefined;
-
-  const geoRef = useRef<ShapeGeometry>(null!);
   //
   return countryBorderPoints && shape ? (
     <mesh
       ref={ref}
-      {...props}
       onPointerOver={onPointerOver}
       onPointerOut={onPointerOut}
+      {...props}
     >
-      <shapeGeometry
-        ref={geoRef}
-        args={[
-          shape,
-          //shapeFromCoords(countryBorderPoints.map((p) => [-1 * p[0], p[1]])),
-        ]}
-      />
+      {shape}
       <meshStandardMaterial
         ref={materialRef}
         side={DoubleSide}
-        color={"white"}
+        color={COLOR_WHITE}
       />
     </mesh>
   ) : null;

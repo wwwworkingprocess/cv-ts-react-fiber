@@ -1,87 +1,52 @@
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import { isMobile } from "react-device-detect";
 
 import { Canvas } from "@react-three/fiber";
-import { Billboard, OrbitControls, Text, useHelper } from "@react-three/drei";
-import { BoxHelper, Color, Group, MOUSE, Vector3 } from "three";
+import { OrbitControls, Text } from "@react-three/drei";
+import { Color, MOUSE, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
+
 import useAppController from "./hooks/useAppController";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
-
-// import Floor from "./fibers/floor";
-import Player from "./fibers/player";
-import FrameCounter from "./fibers/frame-counter";
-import CityFeatures from "./fibers/city-features";
-
-// import AxisValueInput from "./components/axis-value-input";
-import { Spinner } from "../../components/spinner/spinner.component";
-
-import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
-
-import TreeHelper from "../../utils/tree-helper";
-// import { ControlsContainer } from "./demography-game-3d.styles";
+import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
-import CountryBorder from "./fibers/country-border";
-import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 
-import DatGui, { DatColor, DatNumber, DatSelect } from "react-dat-gui";
+import CountryFeature from "./fibers/country-feature";
+import CityFeatures from "./fibers/city-features";
 
-const UserGui = () => {
-  const [opts, setOpts] = useState({
-    maxItems: 300,
-    maxRange: 100,
-    color: "#99ccff",
-    materialType: "MeshPhongMaterial",
-  });
-  //
-  return (
-    <DatGui data={opts} onUpdate={setOpts}>
-      <DatNumber path="maxItems" min={50} max={500} step={1} />
-      <DatNumber path="maxRange" min={1} max={100} step={0.1} />
-      <DatSelect
-        path="materialType"
-        label="material"
-        options={["MeshBasicMaterial", "MeshPhongMaterial"]}
-      />
-      <DatColor path="color" />
-    </DatGui>
-  );
-};
+import { Spinner } from "../../components/spinner/spinner.component";
+import GameControls from "./components/game-controls/game-controls.component";
+
+import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
+import TreeHelper from "../../utils/tree-helper";
 
 const DemographyGame3D = (props: {
-  isCameraEnabled: boolean;
-  isFrameCounterEnabled: boolean;
   selectedCountry: WikiCountry | undefined;
-  // selectedCode: string | undefined;
+  //
   path?: string;
   tree: TreeHelper;
-  //
-  // setSelectedCode: React.Dispatch<string | undefined>;
 }) => {
-  const {
-    tree,
-    // isCameraEnabled,
-    isFrameCounterEnabled,
-    selectedCountry,
-  } = props;
+  const { tree, selectedCountry } = props;
   //
-  const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
+  // const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
+  const moving = useGameAppStore((state) => state.moving);
+  const bounds = useGameAppStore((state) => state.bounds);
   const selectedCode = useGameAppStore((state) => state.selectedCode);
+  //
   const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
+  const setZoom = useGameAppStore((state) => state.setZoom);
   //
   useKeyboardNavigation();
   //
-  const moving = useGameAppStore((state) => state.moving);
   //
-  const bounds = useGameAppStore((state) => state.bounds);
   const [MIN_X, MAX_X, MIN_Y, MAX_Y] = bounds;
   //
-  const { x, y, z /*, areaScale, onJump*/ } = useAppController();
+  useAppController(); // const { x, y, z /*, areaScale, onJump*/ } = useAppController();
   //
   const MAX_RANGE_TO_SHOW = 50;
-  const MAX_ITEMS_TO_SHOW = isMobile ? 300 : 500;
+  const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
   //
   const { displayedNodes } = useCountryNodesMemo(
     tree,
@@ -140,16 +105,11 @@ const DemographyGame3D = (props: {
     return displayedNodes.map(toItem);
   }, [displayedNodes, selectedCode]);
 
-  // const codesTaken = useGameAppStore((state) => state.codesTaken);
-  // const codesConverting = useGameAppStore((state) => state.codesConverting);
-
   //
   // zooming and panning
   //
-  const zoom = useGameAppStore((state) => state.zoom);
-  const setZoom = useGameAppStore((state) => state.setZoom);
-  //const [zoom, setZoom] = useState<boolean>(selectedCode !== undefined);
   const [focus, setFocus] = useState(new Vector3(-17, 0 + 1, 45 + 1));
+  const [extra, setExtra] = useState(false);
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
     cities,
@@ -166,6 +126,24 @@ const DemographyGame3D = (props: {
   }, [selectedCode, zoomToViewByCode, zoomToView]);
 
   //
+  // temporary solution, until 'moving' can be set
+  // via change of 'selectedCode' or 'focus' in store
+  //
+  const setMoving = useGameAppStore((state) => state.setMoving);
+  const setStartedMoving = useCallback(
+    (towards: Vector3) => {
+      if (selectedCode) setMoving(true, selectedCode);
+    },
+    [setMoving, selectedCode]
+  );
+  //
+  const isNotMoving = !moving && selectedCode;
+  //
+  useEffect(() => {
+    if (isNotMoving) setStartedMoving(focus);
+  }, [focus, setStartedMoving]); // !!!
+
+  //
   // rendered city fibers
   //
   const memoizedCities = useMemo(
@@ -173,15 +151,12 @@ const DemographyGame3D = (props: {
       <CityFeatures
         cities={cities}
         focus={focus}
-        zoom={zoom}
+        extra={extra}
         //
-        setZoom={setZoom}
-        setFocus={setFocus}
         zoomToView={zoomToView}
-        setSelectedCode={setSelectedCode}
       />
     ),
-    [cities, zoom, focus, setSelectedCode, zoomToView]
+    [cities, focus, extra, zoomToView]
   );
 
   const selectedWikiCountryUrl = useMemo(
@@ -197,19 +172,12 @@ const DemographyGame3D = (props: {
       return arrs;
     } else return [];
   }, [rawWikiJson]);
+
   //
   //
-  const [showUI, setShowUI] = useState<boolean>(false);
   //
   return (
     <>
-      {/* <ControlsContainer>
-        {zoom && (
-          <button onClick={(e) => focus && zoomToView(undefined)}>
-            Zoom out
-          </button>
-        )}
-      </ControlsContainer> */}
       <Suspense fallback={<Spinner />}>
         <Canvas
           style={{ height: "350px", border: "solid 1px white" }}
@@ -235,176 +203,37 @@ const DemographyGame3D = (props: {
               RIGHT: MOUSE.DOLLY,
             }}
           />
-          <Text font={"data/Roboto_Slab.ttf"}>hello</Text>
-          <gridHelper />
-          <ambientLight intensity={0.2} />
+
+          {/* Forcing font to load */}
+          <Text font={"data/Roboto_Slab.ttf"}>
+            {selectedCountry?.name || "..."}
+          </Text>
+
+          {/* Light Rig */}
           <group position={[-1 * MIN_X, 0, MIN_Y]}>
+            <ambientLight intensity={0.2} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
+
+          {/* Country feature (consider position={[-1 * MIN_X, 0, MIN_Y]}) */}
+          <CountryFeature
+            zoomToView={zoomToView}
+            firstFeatureCoordinates={firstFeatureCoordinates}
+          />
+
+          {/* City features (instancedMesh + crossHair) */}
           {memoizedCities}
-          <Player x={x} y={y} z={z} position={[0, -0.5 + 0.05, 0]} />
-
-          {!isMobile && (
-            <Billboard position={[0, 2.25, 0]} follow={true}>
-              <Text fontSize={0.3} color={"#ffaa22"}>
-                {/* Use arrow keys for navigation */}
-                {JSON.stringify([MIN_X, MAX_X, MIN_Y, MAX_Y])}
-              </Text>
-            </Billboard>
-          )}
-          {/* ref={groupRef} */}
-          <group>
-            {/* <group position={[-1 * MIN_X, 0, MIN_Y]}> */}
-            <PlacedCountry
-              zoomToView={zoomToView}
-              firstFeatureCoordinates={firstFeatureCoordinates}
-            />
-          </group>
-
-          {/* <Floor
-            areaScale={areaScale}
-            position={[
-              -1 * (MIN_X + (MAX_X - MIN_X) * 0.5),
-              0,
-              MIN_Y + (MAX_Y - MIN_Y) * 0.5,
-            ]}
-          /> */}
         </Canvas>
-        <div
-          style={{
-            float: "right",
-            position: "relative",
-            height: "14px",
-            top: "-345px",
-            right: "5px",
-          }}
-        >
-          {zoom && (
-            <button onClick={(e) => focus && zoomToView(undefined)}>
-              Zoom out
-            </button>
-          )}
-        </div>
-        <div
-          style={{
-            position: "relative",
-            top: "-345px",
-            left: "5px",
-            height: "0px",
-            width: showUI ? "282px" : "75px",
-            border: "solid 1px green",
-          }}
-        >
-          {showUI ? (
-            <>
-              <UserGui />
-              <button onClick={(e) => setShowUI(false)}>Close</button>
-            </>
-          ) : (
-            <button onClick={(e) => setShowUI(true)}>Settings</button>
-          )}
-        </div>
-        <div
-          style={{
-            position: "relative",
-            top: "-24px",
-            left: "5px",
-            display: "inline-block",
-            border: "solid 1px green",
-          }}
-        >
-          {!zoom
-            ? "Select a city"
-            : moving
-            ? "Moving..."
-            : "Arrived at destination."}
-        </div>
-        <DebugStorePanel />
-        <div style={{ clear: "both" }} />
+
+        {/* Game UI (DOM) */}
+        <GameControls
+          focus={focus}
+          extra={extra}
+          setExtra={setExtra}
+          zoomToView={zoomToView}
+        />
       </Suspense>
     </>
-  );
-};
-
-const DebugStorePanel = () => {
-  const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
-  const selectedCode = useGameAppStore((state) => state.selectedCode);
-  //
-  const codesTaken = useGameAppStore((state) => state.codesTaken);
-  const codesConverting = useGameAppStore((state) => state.codesConverting);
-  const progressConverting = useGameAppStore(
-    (state) => state.progressConverting
-  );
-  //
-  const resetStore = useGameAppStore((state) => state.reset);
-  // console.log("DebugStorePanel, converting", codesConverting, selectedCode);
-  //
-  return (
-    <div style={{ fontSize: "9px" }}>
-      {lastSelectedCode} &gt;&gt; {selectedCode}
-      <hr />
-      TAKEN: {codesTaken.length}
-      {/* {codesTaken.join(" - ")} */}
-      <br />
-      CONVERTING: {codesConverting.length}
-      <br />
-      PROGRESS: {Object.keys(progressConverting).length}
-      <br />
-      <button
-        onClick={(e) => {
-          const approved = window.confirm("This will erase your progress");
-          //
-          if (approved) resetStore();
-        }}
-      >
-        Reset
-      </button>
-    </div>
-  );
-};
-
-const PlacedCountry = ({
-  firstFeatureCoordinates,
-  zoomToView,
-}: {
-  firstFeatureCoordinates: any;
-  zoomToView: any;
-}) => {
-  const groupToStageRotation = [-Math.PI / 2, 0, 0];
-  //
-  const groupRef = useRef<Group>(null!);
-  // useHelper(groupRef, BoxHelper, "red");
-  //
-
-  return (
-    <group position={[0, 0, 0]} scale={[1, 0.01, 1]}>
-      <group rotation={groupToStageRotation as any}>
-        <group ref={groupRef} position={[0, 0, -95]}>
-          {firstFeatureCoordinates && (
-            <>
-              {firstFeatureCoordinates.map(
-                (coords: Array<[number, number]>, idx: number) => {
-                  const isNested = coords.length === 1;
-                  const points = (isNested ? coords[0] : coords) as Array<
-                    [number, number]
-                  >;
-                  //
-                  return (
-                    <CountryBorder
-                      key={idx}
-                      countryBorderPoints={points}
-                      showFeatureBounds={false}
-                      color={new Color("blue")}
-                      capitalRef={undefined}
-                    />
-                  );
-                }
-              )}
-            </>
-          )}
-        </group>
-      </group>
-    </group>
   );
 };
 

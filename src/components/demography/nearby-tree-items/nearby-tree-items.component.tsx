@@ -6,7 +6,8 @@ import TreeHelper from "../../../utils/tree-helper";
 type NearbyTreeItemProps = {
   tree: TreeHelper | undefined;
   selectedCode: string | undefined;
-  setSelectedCode: React.Dispatch<React.SetStateAction<string | undefined>>;
+  //
+  setSelectedCode: (c: string | undefined) => void;
 };
 
 const NearbyTreeItems = (props: NearbyTreeItemProps) => {

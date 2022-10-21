@@ -4,10 +4,8 @@ import { useFrame } from "@react-three/fiber";
 import useGameAppStore from "../stores/useGameAppStore";
 
 const FrameCounter = (props: BillboardProps & { enabled: boolean }) => {
-  // const { enabled } = props;
-  const enabled = true;
+  const { enabled } = props;
   //
-  const count = useGameAppStore((state) => state.count);
   const selectedCode = useGameAppStore((state) => state.selectedCode);
   const conversionSpeed = useGameAppStore(
     (state) => state.player.conversionSpeed
@@ -26,13 +24,11 @@ const FrameCounter = (props: BillboardProps & { enabled: boolean }) => {
   //
   useFrame(() => enabled && add(1));
   //
-  if (!enabled) return null;
-  //
   //
   return enabled ? (
     <Billboard {...props} follow={true} lockY={true}>
       <Text fontSize={0.023} onClick={() => add(3)}>
-        {count} - {selectedCode ? conversionSpeed.toFixed(3) : takenPopulation}-{" "}
+        {selectedCode ? `${conversionSpeed.toFixed(2)}/s` : takenPopulation}-{" "}
         {totalCompletion.toFixed(3)}% - {totalCompletionPop.toFixed(3)}%
       </Text>
     </Billboard>
