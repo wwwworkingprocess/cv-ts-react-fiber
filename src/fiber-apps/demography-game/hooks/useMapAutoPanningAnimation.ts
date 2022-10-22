@@ -43,13 +43,13 @@ const useMapAutoPanningAnimation = (
     //
     if (zoom) {
       if (extra) {
-        if (state.camera.zoom < 180) state.camera.zoom += 0.45;
+        if (state.camera.zoom < 180) state.camera.zoom += 0.85;
       } else {
         if (state.camera.zoom < 120) state.camera.zoom += 0.25;
-        if (state.camera.zoom > 121) state.camera.zoom -= 0.45;
+        if (state.camera.zoom > 121) state.camera.zoom -= 0.85;
       }
     } else {
-      if (state.camera.zoom > 25) state.camera.zoom -= 0.3;
+      if (state.camera.zoom > 25) state.camera.zoom -= 0.55;
     }
   });
 };

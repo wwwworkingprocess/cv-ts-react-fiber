@@ -46,6 +46,8 @@ const useGameAppStore = create<GameAppStore>(
       //
       setZoom: (b) => set((prev) => ({ zoom: b })),
       //
+      setUserColor: (s: string) => set((prev) => ({ userColor: s })),
+      //
       add: (n) =>
         set((prev) => {
           const nextTick = prev.count + n;

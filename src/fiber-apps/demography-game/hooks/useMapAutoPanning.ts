@@ -7,12 +7,12 @@ import { Mesh, Vector3 } from "three";
 //
 const useMapAutoPanningActions = (
   cities: Array<{
-    code: any;
-    name: any;
+    code: number;
+    name: string;
     position: any[];
     color: string;
-    isSelected: boolean;
   }>,
+  //
   setZoom: (b: boolean) => void,
   setFocus: any,
   setSelectedCode: (c: string | undefined) => void
@@ -39,9 +39,7 @@ const useMapAutoPanningActions = (
       const node = cities.filter((c) => c.code === numericCode)[0];
       //
       if (node) {
-        const { code, name, position } = node;
-        //
-        console.log("zooming to node", code, name);
+        const { position } = node;
         //
         setZoom(true);
         setFocus(new Vector3(position[0], position[1], position[2]));

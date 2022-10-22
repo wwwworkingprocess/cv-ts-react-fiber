@@ -23,6 +23,8 @@ export type GameState = {
   position: { x: number; y: number; z: number };
   //
   player: PlayerStats;
+  //
+  userColor: string;
 };
 
 export type GameActions = {
@@ -30,6 +32,8 @@ export type GameActions = {
   setSelectedCode: (c: string | undefined) => void;
   setZoom: (b: boolean) => void;
   setProgressCompleted: (code: string, population: number) => void;
+  //
+  setUserColor: (s: string) => void;
   //
   add: (n: number) => void;
   setBounds: (b: [number, number, number, number]) => void;

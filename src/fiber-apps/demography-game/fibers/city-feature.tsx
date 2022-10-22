@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
 import { Billboard, Text } from "@react-three/drei";
 
@@ -12,7 +12,6 @@ type CityFeatureOwnProps = {
   zoom: boolean;
   //
   zoomToView: (focusRef: React.MutableRefObject<Mesh>) => void;
-  // setSelectedCode: React.Dispatch<string | undefined>;
 };
 
 const formatPopulation = (p: number) => {
@@ -82,9 +81,14 @@ const CityFeature = (
   const isSelected = selectedCode === code;
   //
 
-  const minScale = !isCityTaken
-    ? [...data.scale]
-    : [...data.scale.map((x: number) => x * 0.5)];
+  const minScale =
+    isCityTaken && isSelected
+      ? [...data.scale.map((x: number) => x * 1.5)]
+      : isSelected
+      ? [...data.scale.map((x: number) => x * 2)]
+      : isCityTaken
+      ? [...data.scale.map((x: number) => x * 0.5)]
+      : [...data.scale];
   //;
   const maxScale = !isCityTaken
     ? [1.15, 1.15, 1.15]
@@ -150,16 +154,34 @@ const CityFeature = (
   //
   //
   //
+  const userColor = useGameAppStore((state) => state.userColor);
+  const dataColor = data.color;
+  //
+  const activeColor = useMemo(() => {
+    if (zoom) {
+      //
+      if (hover) return "white";
+      if (isSelected) return "orange";
+      if (isCityTaken) return userColor;
+    } else {
+      if (hover) return "orange";
+    }
+    //
+    return dataColor;
+  }, [zoom, isCityTaken, isSelected, hover, userColor, dataColor]);
+  //
+  //
+  //
   return (
     <mesh
       ref={meshRef}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
       onPointerDown={onClick}
-      scale={[...data.scale] as any}
+      scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
       {...meshProps}
     >
-      {(isSelected || clicked) && (
+      {isSelected && (
         <Billboard position={[0, 0.065, 0]} follow={true}>
           {!isCityTaken && <CircularProgress progressOffset={progressOffset} />}
 
@@ -185,12 +207,12 @@ const CityFeature = (
       <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
       {zoom ? (
         isCityTaken ? (
-          <meshBasicMaterial color={"#000055"} />
+          <meshBasicMaterial color={activeColor} />
         ) : (
-          <meshStandardMaterial color={hover ? "white" : data.color} />
+          <meshStandardMaterial color={activeColor} />
         )
       ) : (
-        <meshBasicMaterial color={hover ? "orange" : data.color} />
+        <meshBasicMaterial color={activeColor} />
       )}
     </mesh>
   );

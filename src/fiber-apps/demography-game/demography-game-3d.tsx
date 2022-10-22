@@ -93,17 +93,12 @@ const DemographyGame3D = (props: {
       name: node.name,
       pop: node.data.pop,
       position: toWorldPosition(node),
-      color: selectedCode === `Q${node.code}` ? "orange" : colorByPop(node),
-      scale:
-        selectedCode === `Q${node.code}`
-          ? [0.51, 0.51, 0.51]
-          : scaleByPop(node),
-      //
-      isSelected: selectedCode === `Q${node.code}`,
+      color: colorByPop(node),
+      scale: scaleByPop(node),
     });
     //
     return displayedNodes.map(toItem);
-  }, [displayedNodes, selectedCode]);
+  }, [displayedNodes]);
 
   //
   // zooming and panning

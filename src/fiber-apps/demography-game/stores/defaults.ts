@@ -34,4 +34,6 @@ export const initialGameState: GameState = {
     takenCities: 0,
     takenPopulation: 0,
   } as PlayerStats,
+  //
+  userColor: "#000055",
 };
