@@ -34,7 +34,11 @@ const WIKI_LABEL_QUERY_URL =
 const accessors = {
   url: (v: any) => v.value,
   string: (v: any) => v.value,
-  "external-id": (v: any) => v.value, // e.g. '/m/02r2yz_'
+  "external-id": (v: any) => {
+    if (v === undefined) return ""; // when received data is errorous e.g. props of Q922851
+    //
+    return v.value; // e.g. '/m/02r2yz_'
+  },
   commonsMedia: (v: any) => v.value,
   "geo-shape": (v: any) => v.value, // e.g. Data:Hungary/Szekszárd.map
   //
