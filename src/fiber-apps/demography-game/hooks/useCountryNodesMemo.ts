@@ -7,7 +7,8 @@ const useCountryNodesMemo = (
   tree: TreeHelper,
   selectedCode: string | undefined,
   MAX_ITEMS_TO_SHOW: number,
-  MAX_RANGE_TO_SHOW: number
+  MAX_RANGE_TO_SHOW: number,
+  SORT_ORDER_ASCENDING: boolean
 ) => {
   const getTreeNode = useCallback((code: string) => tree._n(code), [tree]);
   //
@@ -17,12 +18,25 @@ const useCountryNodesMemo = (
     [tree]
   );
   //
+  const currentSort = useMemo(() => {
+    const byPopulationDesc = (na: any, nb: any) =>
+      (nb.data?.pop || -2) - (na.data?.pop || -2);
+    const byPopulationAsc = (na: any, nb: any) =>
+      (na.data?.pop || -2) - (nb.data?.pop || -2);
+    //
+    return SORT_ORDER_ASCENDING ? byPopulationDesc : byPopulationAsc;
+  }, [SORT_ORDER_ASCENDING]);
+  //
   const mostPopulatadNodes = useMemo(() => {
-    return nodesWithinCountry
-      .filter((n) => n.data?.pop || -2 > 0)
-      .sort((na, nb) => (nb.data?.pop || -2) - (na.data?.pop || -2))
-      .slice(0, MAX_ITEMS_TO_SHOW);
-  }, [nodesWithinCountry, MAX_ITEMS_TO_SHOW]);
+    //
+    return (
+      nodesWithinCountry
+        .filter((n) => n.data?.pop || -2 > 0)
+        .sort(currentSort)
+        //.sort((na, nb) => (nb.data?.pop || -2) - (na.data?.pop || -2))
+        .slice(0, MAX_ITEMS_TO_SHOW)
+    );
+  }, [nodesWithinCountry, currentSort, MAX_ITEMS_TO_SHOW]);
   //
   const nearestNodes = useMemo(() => {
     if (selectedCode) {
@@ -39,14 +53,21 @@ const useCountryNodesMemo = (
             distance: distance([lat, lng], [n.data.lat ?? 0, n.data.lng ?? 0]),
           }))
           .filter((n) => n.distance * 10e-4 <= MAX_RANGE_TO_SHOW)
-          .sort((a, b) => a.distance - b.distance);
+          .sort((a, b) => a.distance - b.distance)
+          .slice(0, MAX_ITEMS_TO_SHOW);
       }
       //
       return [];
     }
     //
     return [];
-  }, [getTreeNode, nodesWithinCountry, selectedCode, MAX_RANGE_TO_SHOW]);
+  }, [
+    getTreeNode,
+    nodesWithinCountry,
+    selectedCode,
+    MAX_ITEMS_TO_SHOW,
+    MAX_RANGE_TO_SHOW,
+  ]);
 
   const displayedNodes = useMemo(() => {
     if (!selectedCode) {
@@ -68,7 +89,7 @@ const useCountryNodesMemo = (
         let extendedFromPop = 0;
         let next = mostPopulatadNodes[extendedFromPop];
         //
-        while (res.length < MAX_ITEMS_TO_SHOW || !next) {
+        while (res.length < MAX_ITEMS_TO_SHOW || next !== undefined) {
           const alreadyInResults = next
             ? nearestCodesLookup.has(next.code)
             : true;

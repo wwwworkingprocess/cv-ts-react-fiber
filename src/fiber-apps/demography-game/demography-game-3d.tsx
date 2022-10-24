@@ -1,5 +1,4 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
-import { isMobile } from "react-device-detect";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Text } from "@react-three/drei";
@@ -27,13 +26,19 @@ const DemographyGame3D = (props: {
   //
   path?: string;
   tree: TreeHelper;
+  scrollToDetails: () => void;
 }) => {
-  const { tree, selectedCountry } = props;
+  const { tree, selectedCountry, scrollToDetails } = props;
   //
   // const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
   const moving = useGameAppStore((state) => state.moving);
   const bounds = useGameAppStore((state) => state.bounds);
   const selectedCode = useGameAppStore((state) => state.selectedCode);
+  const citiesMaxRangeKm = useGameAppStore((state) => state.citiesMaxRangeKm);
+  const citiesMaxItems = useGameAppStore((state) => state.citiesMaxItems);
+  const citiesShowPopulated = useGameAppStore(
+    (state) => state.citiesShowPopulated
+  );
   //
   const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
   const setZoom = useGameAppStore((state) => state.setZoom);
@@ -45,14 +50,15 @@ const DemographyGame3D = (props: {
   //
   useAppController(); // const { x, y, z /*, areaScale, onJump*/ } = useAppController();
   //
-  const MAX_RANGE_TO_SHOW = 50;
-  const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
+  // const MAX_RANGE_TO_SHOW = 50;
+  // const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
   //
   const { displayedNodes } = useCountryNodesMemo(
     tree,
     selectedCode,
-    MAX_ITEMS_TO_SHOW,
-    MAX_RANGE_TO_SHOW
+    citiesMaxItems,
+    citiesMaxRangeKm,
+    citiesShowPopulated
   );
 
   //
@@ -81,7 +87,7 @@ const DemographyGame3D = (props: {
     //
     const scaleByPop = (node: any) => {
       const toValue = (node: any): number =>
-        Math.log(Math.max(0, node?.data?.pop ?? 0)) * 0.25;
+        Math.log(Math.max(20, node?.data?.pop ?? 0)) * 0.25;
       //
       const v = Math.max(0.1, toValue(node)) * 0.12;
       //
@@ -226,6 +232,7 @@ const DemographyGame3D = (props: {
           extra={extra}
           setExtra={setExtra}
           zoomToView={zoomToView}
+          scrollToDetails={scrollToDetails}
         />
       </Suspense>
     </>

@@ -1,4 +1,4 @@
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useCallback, useMemo, useRef, useState } from "react";
 
 import ActionTabs from "../../components/demography/action-tabs/action-tabs.component";
 import CountryList from "../../components/demography/country-list/country-list.component";
@@ -96,6 +96,15 @@ const WikiDemography = () => {
     return <button onClick={() => onBackToParentClicked()}>[..]</button>;
   }, [tree, selectedCountry, selectedCode, setSelectedCode]);
 
+  const itemDetailsRef = useRef<HTMLDivElement>(null!);
+  const scrollToDetails = useCallback(
+    () =>
+      itemDetailsRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      }),
+    []
+  );
   //
   //  loading >> selectedCountry >> selectedCode
   //
@@ -229,6 +238,7 @@ const WikiDemography = () => {
               tree={tree}
               selectedCountry={selectedCountry}
               path=".."
+              scrollToDetails={scrollToDetails}
             />
           ) : null}
           <TreeBreadCrumb
@@ -240,7 +250,9 @@ const WikiDemography = () => {
       )}
 
       {/* SELECTION DETAILS */}
-      <WikiItemDetails selectedCode={selectedCode} />
+      <div ref={itemDetailsRef}>
+        <WikiItemDetails selectedCode={selectedCode} />
+      </div>
     </div>
   );
 };

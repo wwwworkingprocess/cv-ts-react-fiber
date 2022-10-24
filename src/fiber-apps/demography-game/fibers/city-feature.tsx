@@ -62,7 +62,7 @@ const CityFeature = (
 ) => {
   const { data, zoom, zoomToView, ...meshProps } = props;
   const code = `Q${data.code}`;
-  const population = data.pop < 1 ? 1000 : data.pop; // 1 instead of -1 so, feature won't autocomplete once appears
+  const population = data.pop < 1 ? 100 : data.pop; // 1 instead of -1 so, feature won't autocomplete once appears
   //
   const myProgressConverting = useGameAppStore(
     (state) => state.progressConverting[code] ?? 0
@@ -181,7 +181,7 @@ const CityFeature = (
       scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
       {...meshProps}
     >
-      {isSelected && (
+      {(isSelected || (zoom && hover)) && (
         <Billboard position={[0, 0.065, 0]} follow={true}>
           {!isCityTaken && <CircularProgress progressOffset={progressOffset} />}
 

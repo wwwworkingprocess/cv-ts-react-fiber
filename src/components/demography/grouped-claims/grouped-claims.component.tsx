@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
 
@@ -10,6 +10,8 @@ import {
   FlexContainer,
   FlexMediaContainer,
 } from "./grouped-claims.styles";
+import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
+import { group } from "console";
 
 type GroupedClaimsProps = { wikiEntry: any };
 
@@ -52,6 +54,38 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       ? formatterUrl.replace(idPlaceholder, value)
       : `${formatterUrl}${value}`;
   };
+
+  //
+  //
+
+  // const lastTakenPlaceImageUrl = useGameAppStore( (s) => s.lastTakenPlaceImageUrl)
+  const setLastTakenPlaceImageUrl = useGameAppStore(
+    (s) => s.setLastTakenPlaceImageUrl
+  );
+
+  //
+  // URL to display 'Location Image' for selectedCode
+  // using 'image' (P18) or fallback 'coat of arms' (P94)
+  //
+  useEffect(() => {
+    let entry;
+    let value;
+    //
+    if (groupedClaims) {
+      const image = groupedClaims.media.filter((c) => c.code === "P18")[0];
+      const coatOfArms = groupedClaims.media.filter((c) => c.code === "P94")[0];
+      //
+      entry = image ?? coatOfArms;
+      //
+      if (entry) {
+        value = entry.value;
+        //
+        const url = toMediaUrl(value, 95);
+        //
+        setLastTakenPlaceImageUrl(url);
+      } else setLastTakenPlaceImageUrl(undefined);
+    } else setLastTakenPlaceImageUrl(undefined);
+  }, [groupedClaims, groupedClaims?.media, setLastTakenPlaceImageUrl]);
   //
   return (
     <div>
@@ -72,7 +106,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
             )}
           </FlexContainer>
 
-          {groupedClaims.wiki.length && (
+          {groupedClaims.wiki.length ? (
             <>
               <h3>Related Wiki Pages</h3>
               <FlexContainer>
@@ -97,9 +131,9 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                   )}
               </FlexContainer>
             </>
-          )}
+          ) : null}
 
-          {groupedClaims.media.length && (
+          {groupedClaims.media.length ? (
             <>
               <h3>Images of {name}</h3>
               <FlexMediaContainer>
@@ -116,9 +150,9 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                 )}
               </FlexMediaContainer>
             </>
-          )}
+          ) : null}
 
-          {groupedClaims.external.length && (
+          {groupedClaims.external.length ? (
             <>
               <h3>External Sources</h3>
               <FlexContainer>
@@ -152,7 +186,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                 )}
               </FlexContainer>
             </>
-          )}
+          ) : null}
         </div>
       ) : null}
       {claimsMeta && claimsMeta.other.length ? (

@@ -7,29 +7,52 @@ const defaultOpts = {
   maxItems: 200,
   maxRange: 50,
   color: "#000055",
-  materialType: "MeshPhongMaterial",
+  citiesSortType: "MeshPhongMaterial",
 };
 
 const UserGui = () => {
   const userColor = useGameAppStore((state) => state.userColor);
+  const citiesMaxRangeKm = useGameAppStore((state) => state.citiesMaxRangeKm);
+  const citiesMaxItems = useGameAppStore((state) => state.citiesMaxItems);
+  const citiesShowPopulated = useGameAppStore(
+    (state) => state.citiesShowPopulated
+  );
+
+  //
   const setUserColor = useGameAppStore((state) => state.setUserColor);
+  const setCitiesMaxRangeKm = useGameAppStore(
+    (state) => state.setCitiesMaxRangeKm
+  );
+  const setCitiesMaxItems = useGameAppStore((state) => state.setCitiesMaxItems);
+  const setCitiesShowPopulated = useGameAppStore(
+    (state) => state.setCitiesShowPopulated
+  );
   //
   const getDefaultOptions = useMemo(
     () => ({
       ...defaultOpts,
       color: userColor,
+      maxItems: citiesMaxItems,
+      maxRange: citiesMaxRangeKm,
+      citiesSortType: citiesShowPopulated
+        ? "Most populated"
+        : "Least populated.",
     }),
-    [userColor]
+    [userColor, citiesMaxItems, citiesMaxRangeKm, citiesShowPopulated]
   );
   //
   const [opts, setOpts] = useState(getDefaultOptions);
 
   //
   const onOptionsChanged = (data: any) => {
-    console.log("data", data);
+    if (data.color !== userColor) setUserColor(data.color); // update state
+    if (data.maxItems !== userColor) setCitiesMaxItems(data.maxItems); // update state
+    if (data.maxRange !== userColor) setCitiesMaxRangeKm(data.maxRange); // update state
     //
-    if (data.color !== userColor) {
-      setUserColor(data.color); // update state
+    if (data.citiesSortType === "Most populated") {
+      if (!citiesShowPopulated) setCitiesShowPopulated(true); // update state
+    } else {
+      if (citiesShowPopulated) setCitiesShowPopulated(false); // update state
     }
     //
     setOpts(data); // update ui
@@ -38,14 +61,26 @@ const UserGui = () => {
   //
   return (
     <DatGui data={opts} onUpdate={onOptionsChanged}>
-      <DatNumber path="maxItems" min={50} max={500} step={1} />
-      <DatNumber path="maxRange" min={1} max={100} step={0.1} />
-      <DatSelect
-        path="materialType"
-        label="material"
-        options={["MeshBasicMaterial", "MeshPhongMaterial"]}
+      <DatNumber
+        label="Max Features"
+        path="maxItems"
+        min={50}
+        max={500}
+        step={1}
       />
-      <DatColor path="color" />
+      <DatNumber
+        label="Max Range(km)"
+        path="maxRange"
+        min={1}
+        max={100}
+        step={0.5}
+      />
+      <DatSelect
+        path="citiesSortType"
+        label="Display cities"
+        options={["Most populated", "Least populated."]}
+      />
+      <DatColor label="Your color" path="color" />
     </DatGui>
   );
 };

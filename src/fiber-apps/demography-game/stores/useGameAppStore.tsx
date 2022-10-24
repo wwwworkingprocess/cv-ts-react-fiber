@@ -47,6 +47,13 @@ const useGameAppStore = create<GameAppStore>(
       setZoom: (b) => set((prev) => ({ zoom: b })),
       //
       setUserColor: (s: string) => set((prev) => ({ userColor: s })),
+      setCitiesMaxRangeKm: (km: number) =>
+        set((prev) => ({ citiesMaxRangeKm: km })),
+      setCitiesMaxItems: (n: number) => set((prev) => ({ citiesMaxItems: n })),
+      setCitiesShowPopulated: (b) =>
+        set((prev) => ({ citiesShowPopulated: b })),
+      setLastTakenPlaceImageUrl: (url: string | undefined) =>
+        set((prev) => ({ lastTakenPlaceImageUrl: url })),
       //
       add: (n) =>
         set((prev) => {

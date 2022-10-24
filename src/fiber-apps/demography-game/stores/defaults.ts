@@ -1,3 +1,5 @@
+import { isMobile } from "react-device-detect";
+
 import { GameState, PlayerStats } from "./types";
 
 //TODO: fix this, when enabling other countries
@@ -7,6 +9,9 @@ const startPosition = { x: 17, y: 0, z: 45 } as {
   y: number;
   z: number;
 };
+
+const MAX_RANGE_TO_SHOW = 50;
+const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
 
 //
 // Initial store state
@@ -30,10 +35,14 @@ export const initialGameState: GameState = {
   //
   player: {
     baseConversionSpeed: 20,
-    conversionSpeed: 2,
+    conversionSpeed: 10,
     takenCities: 0,
     takenPopulation: 0,
   } as PlayerStats,
   //
   userColor: "#000055",
+  citiesMaxRangeKm: MAX_RANGE_TO_SHOW,
+  citiesMaxItems: MAX_ITEMS_TO_SHOW,
+  citiesShowPopulated: true,
+  lastTakenPlaceImageUrl: undefined,
 };

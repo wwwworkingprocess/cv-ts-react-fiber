@@ -6,21 +6,27 @@ import UserGui from "../user-gui";
 
 import {
   CloseWrap,
+  LastTakenPlace,
   WrapToBottomLeft,
   WrapToLeft,
   WrapToRight,
 } from "./game-controls.styles";
 
 const GameControls = (props: any) => {
-  const { focus, zoomToView, extra, setExtra } = props;
+  const { focus, zoomToView, extra, setExtra, scrollToDetails } = props;
   //
   const [showUI, setShowUI] = useState<boolean>(false);
   //
+
+  const lastTakenPlaceImageUrl = useGameAppStore(
+    (s) => s.lastTakenPlaceImageUrl
+  );
   const [zoom, moving, detectedFps] = useGameAppStore((s) => [
     s.zoom,
     s.moving,
     s.detectedFps,
   ]);
+  //
 
   //
   const displayedText = useMemo(
@@ -33,12 +39,19 @@ const GameControls = (props: any) => {
     [zoom, moving]
   );
   //
+  const lastTakenPlaceImage = useMemo(() => {
+    return lastTakenPlaceImageUrl ? (
+      <LastTakenPlace>
+        <img src={lastTakenPlaceImageUrl} alt="" onClick={scrollToDetails} />
+      </LastTakenPlace>
+    ) : null;
+  }, [lastTakenPlaceImageUrl, scrollToDetails]);
+  //
   return (
     <>
       <WrapToRight>
         {zoom && (
           <>
-            {/* extra={extra} setExtra={setExtra} */}
             {extra ? (
               <button onClick={(e) => setExtra(false)}>-</button>
             ) : (
@@ -47,6 +60,7 @@ const GameControls = (props: any) => {
             <button onClick={(e) => focus && zoomToView(undefined)}>
               Zoom out
             </button>
+            {lastTakenPlaceImage}
           </>
         )}
       </WrapToRight>

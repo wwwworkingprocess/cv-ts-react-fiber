@@ -31,3 +31,16 @@ export const WrapToBottomLeft = styled.div`
 export const CloseWrap = styled.div`
   clear: both;
 `;
+
+export const LastTakenPlace = styled.div`
+  width: 90px;
+  margin: auto;
+  overflow: hidden;
+  margin-top: 3px;
+  max-height: 250px;
+
+  img {
+    width: 100%;
+    cursor: pointer;
+  }
+`;

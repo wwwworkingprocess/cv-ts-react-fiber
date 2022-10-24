@@ -4,7 +4,7 @@ import { useTreeHelper } from "../../hooks/useTreeHelper";
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
-const availableCountryCodes = ["Q28", "Q36", "Q668"];
+const availableCountryCodes = ["Q28"]; // , "Q36", "Q668"];
 
 const useMapMemos = (
   countryCode: string /* e.g. "28" */,

@@ -10,6 +10,7 @@ export type GameState = {
   moving: boolean;
   selectedCode: string | undefined;
   lastSelectedCode: string | undefined;
+  lastTakenPlaceImageUrl: string | undefined;
   //
   codesTaken: Array<string>;
   codesConverting: Array<string>;
@@ -25,6 +26,9 @@ export type GameState = {
   player: PlayerStats;
   //
   userColor: string;
+  citiesMaxRangeKm: number;
+  citiesMaxItems: number;
+  citiesShowPopulated: boolean;
 };
 
 export type GameActions = {
@@ -34,6 +38,10 @@ export type GameActions = {
   setProgressCompleted: (code: string, population: number) => void;
   //
   setUserColor: (s: string) => void;
+  setCitiesMaxRangeKm: (km: number) => void;
+  setCitiesMaxItems: (n: number) => void;
+  setCitiesShowPopulated: (b: boolean) => void;
+  setLastTakenPlaceImageUrl: (s: string | undefined) => void;
   //
   add: (n: number) => void;
   setBounds: (b: [number, number, number, number]) => void;
