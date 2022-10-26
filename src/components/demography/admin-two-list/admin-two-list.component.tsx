@@ -28,8 +28,9 @@ const AdminTwoList = (props: AdminTwoListProps) => {
       {items.map((item) => {
         //
         const [code, name /*parentCode*/, , size, data] = item;
-        // const hasChildNodes = size > 0;
+        //
         const isSelected = code === myCode;
+        const hasPosition = data && data.lat && data.lng;
         //
         return (
           <AdminTwoListItem
@@ -42,6 +43,7 @@ const AdminTwoList = (props: AdminTwoListProps) => {
               background: isSelected ? "rgba(255,255,255,0.3)" : "none",
             }}
           >
+            {!hasPosition ? "[!] " : ""}
             <label>{name}</label>
             <small style={{ float: "right" }}>
               {size ? `${size} 🏠 ` : ""}

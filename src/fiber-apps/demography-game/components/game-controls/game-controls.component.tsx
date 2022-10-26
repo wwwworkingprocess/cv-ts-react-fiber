@@ -48,7 +48,7 @@ const GameControls = (props: any) => {
   }, [lastTakenPlaceImageUrl, scrollToDetails]);
   //
   return (
-    <>
+    <div style={{ userSelect: "none" }}>
       <WrapToRight>
         {zoom && (
           <>
@@ -80,7 +80,7 @@ const GameControls = (props: any) => {
       </WrapToBottomLeft>
       <DebugStorePanel />
       <CloseWrap />
-    </>
+    </div>
   );
 };
 

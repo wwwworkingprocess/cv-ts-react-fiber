@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 
 import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
 
@@ -6,12 +6,20 @@ import externalMap from "../../../assets/json/wiki/properties.formatterurls.json
 
 import {
   ClaimItem,
+  ClaimItemDialogImage,
+  ClaimItemDialogImageWrap,
+  ClaimItemDialogOptionsPanel,
   ClaimItemMedia,
+  ClaimItemMediaDialogFrame,
+  ClaimItemMediaMoreImages,
   FlexContainer,
   FlexMediaContainer,
 } from "./grouped-claims.styles";
 import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
 import { group } from "console";
+import Dialog from "../../dialog/dialog.component";
+import { Spinner } from "../../spinner/spinner.component";
+import { IncomingWorkerMessage } from "@react-three/cannon";
 
 type GroupedClaimsProps = { wikiEntry: any };
 
@@ -72,10 +80,14 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
     let value;
     //
     if (groupedClaims) {
-      const image = groupedClaims.media.filter((c) => c.code === "P18")[0];
-      const coatOfArms = groupedClaims.media.filter((c) => c.code === "P94")[0];
+      const props = groupedClaims.media;
       //
-      entry = image ?? coatOfArms;
+      const image = props.filter((c) => c.code === "P18")[0];
+      const coatOfArms = !image && props.filter((c) => c.code === "P94")[0];
+      const locator =
+        !image && !coatOfArms && props.filter((c) => c.code === "P242")[0];
+      //
+      entry = image ?? coatOfArms ?? locator;
       //
       if (entry) {
         value = entry.value;
@@ -86,6 +98,52 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       } else setLastTakenPlaceImageUrl(undefined);
     } else setLastTakenPlaceImageUrl(undefined);
   }, [groupedClaims, groupedClaims?.media, setLastTakenPlaceImageUrl]);
+
+  //
+  //
+  //
+  const [imageFitWidth, setImageFitWidth] = useState<boolean>(true);
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+  const [dialogUrl, setDialogUrl] = useState<string>();
+  const [dialogExtraUrls, setDialogExtraUrls] = useState<Array<string>>([]);
+  const [dialogWidth, setDialogWidth] = useState<number>(500);
+  //
+  const onMediaItemClicked = (
+    target: any,
+    property: any,
+    value: any,
+    raw: any
+  ) => {
+    let extraUrls = [] as Array<string>;
+    //
+    if (raw.length > 1) {
+      extraUrls = raw
+        .map((c: any) => c.mainsnak?.datavalue.value ?? "")
+        .filter((s: string) => s.length > 0)
+        .map((s: string) => toMediaUrl(s, 50)); // includes first
+    }
+    //
+    const cropFactor = 0.8;
+    const cropFactorFitHeight = 0.95;
+    //
+    const [w, h] = [window.innerWidth, window.innerHeight];
+    const [iw, ih] = [target.width, target.height];
+    const [screenAspect, imageAspect] = [w / h, iw / ih];
+    //
+    const width = w * (imageFitWidth ? cropFactor : cropFactorFitHeight);
+    //
+    const url = toMediaUrl(value, Math.floor(width));
+    //
+    // console.log("dim", w, "x", h, "target", iw, ih, "url", url);
+    console.log("aspect (s)", screenAspect, "image (s)", imageAspect);
+    //
+    setIsDialogOpen(true);
+    setDialogWidth(Math.floor(width));
+    setDialogUrl(url);
+    setDialogExtraUrls(extraUrls);
+  };
+  //
+  //
   //
   return (
     <div>
@@ -138,8 +196,13 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
               <h3>Images of {name}</h3>
               <FlexMediaContainer>
                 {groupedClaims.media.map(
-                  ({ type, val, value, property, l }, idx) => (
-                    <ClaimItemMedia key={idx}>
+                  ({ type, val, value, property, l, raw }, idx) => (
+                    <ClaimItemMedia
+                      key={idx}
+                      onClick={(e) =>
+                        onMediaItemClicked(e.target, property, value, raw)
+                      }
+                    >
                       <img src={toMediaUrl(value, 200)} alt={property.name} />
                       <b>
                         {property.name}
@@ -149,6 +212,50 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                   )
                 )}
               </FlexMediaContainer>
+              <Dialog
+                isOpen={isDialogOpen}
+                width={!imageFitWidth ? dialogWidth : window.innerWidth * 0.9}
+                onClose={(e: CloseEvent) => {
+                  setIsDialogOpen(false);
+                  setDialogUrl(undefined);
+                }}
+              >
+                <ClaimItemMediaDialogFrame imageFitWidth={imageFitWidth}>
+                  <ClaimItemDialogOptionsPanel>
+                    <button onClick={() => setImageFitWidth((b) => !b)}>
+                      Fit: {imageFitWidth ? "Width" : "Height"}
+                    </button>
+                  </ClaimItemDialogOptionsPanel>
+                  <ClaimItemDialogImageWrap>
+                    <ClaimItemDialogImage
+                      width={imageFitWidth ? "100%" : "auto"}
+                      height={imageFitWidth ? "auto" : "90vh"}
+                      src={dialogUrl}
+                      alt=""
+                      onClick={(e) => {
+                        setIsDialogOpen(false);
+                        setDialogUrl(undefined);
+                      }}
+                    />
+                  </ClaimItemDialogImageWrap>
+                  {dialogExtraUrls ? (
+                    <ClaimItemMediaMoreImages>
+                      {dialogExtraUrls.map((url, idx) => (
+                        <img
+                          key={idx}
+                          src={url}
+                          alt=""
+                          onClick={(e) => {
+                            setDialogUrl(
+                              url.replace(`width=50`, `width=${dialogWidth}`)
+                            );
+                          }}
+                        />
+                      ))}
+                    </ClaimItemMediaMoreImages>
+                  ) : null}
+                </ClaimItemMediaDialogFrame>
+              </Dialog>
             </>
           ) : null}
 

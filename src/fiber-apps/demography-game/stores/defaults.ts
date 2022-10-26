@@ -11,7 +11,7 @@ const startPosition = { x: 17, y: 0, z: 45 } as {
 };
 
 const MAX_RANGE_TO_SHOW = 50;
-const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
+const MAX_ITEMS_TO_SHOW = isMobile ? 100 : 350;
 
 //
 // Initial store state

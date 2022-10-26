@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
 
 import useSettlementSearch from "../../../hooks/wiki/useSettlementSearch";
 
@@ -11,13 +12,17 @@ import {
 type SettlementSearchProps = {
   tree: TreeHelper | undefined;
   countryCode: string;
-  setSelectedCode: (c: string | undefined) => void;
 };
 
 const MAX_RESULTS_KEYWORD_SEARCH = 25;
 
 const SettlementSearch = (props: SettlementSearchProps) => {
-  const { tree, countryCode, setSelectedCode } = props;
+  const { tree, countryCode } = props;
+  //
+  const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
+    s.selectedCode,
+    s.setSelectedCode,
+  ]);
   //
   const [sortByPopulation, setSortByPopulation] = useState<boolean>(true);
   const [showOnlyApplicable, setShowOnlyApplicable] = useState<boolean>(true);
@@ -46,7 +51,7 @@ const SettlementSearch = (props: SettlementSearchProps) => {
             } results for '${keyword}', showing ${Math.min(
               searchResultsMemo.reduced.length,
               maxItems
-            )}.`
+            )} / ${searchResultsMemo.orig.length}.`
           : keyword.length < 2
           ? "" // "Keyword is too short."
           : `No results for '${keyword}'`
@@ -96,8 +101,11 @@ const SettlementSearch = (props: SettlementSearchProps) => {
                   <SettlementSearchResult
                     key={idx}
                     onClick={(e) => setSelectedCode(`Q${sr.code}`)}
+                    style={{
+                      color: selectedCode === `Q${sr.code}` ? "gold" : "white",
+                    }}
                   >
-                    {sr.name} <small>({sr.data ? sr.data.pop : "-"})</small>
+                    {sr.name}
                   </SettlementSearchResult>
                 ))
               : "no results"}

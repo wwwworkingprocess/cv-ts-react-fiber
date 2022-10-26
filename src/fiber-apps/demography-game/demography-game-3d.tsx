@@ -50,9 +50,6 @@ const DemographyGame3D = (props: {
   //
   useAppController(); // const { x, y, z /*, areaScale, onJump*/ } = useAppController();
   //
-  // const MAX_RANGE_TO_SHOW = 50;
-  // const MAX_ITEMS_TO_SHOW = isMobile ? 220 : 550;
-  //
   const { displayedNodes } = useCountryNodesMemo(
     tree,
     selectedCode,
@@ -175,6 +172,36 @@ const DemographyGame3D = (props: {
   }, [rawWikiJson]);
 
   //
+  // loading geojson
+  //
+  const [linesLoading, setLinesLoading] = useState<boolean>(false);
+  const [features, setFeatures] = useState<Array<any>>([]);
+  //
+  useEffect(() => {
+    const datasourceUrl = `../../data/geojson/admin1.28.geojson`;
+    //
+    const fetchGeoJson = (url: string) => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data: any) => {
+          console.log("data", data);
+          const first = data.features[14];
+          console.log("first", first);
+          //
+          const toFeature = (f: any) => f.geometry.coordinates;
+          //
+          const newFeatures = first ? data.features.map(toFeature) : [];
+          //
+          setFeatures(newFeatures);
+          //
+          setLinesLoading(false);
+        });
+    };
+    //
+    setLinesLoading(true);
+    fetchGeoJson(datasourceUrl);
+  }, []);
+
   //
   //
   return (
@@ -182,9 +209,13 @@ const DemographyGame3D = (props: {
       <Suspense fallback={<Spinner />}>
         <Canvas
           style={{ height: "350px", border: "solid 1px white" }}
+          frameloop="demand"
           linear
           dpr={[1, 2]}
-          camera={{ position: [19, 2, 46], zoom: 30 }}
+          camera={{
+            position: [19, 2, 46],
+            zoom: 30,
+          }}
         >
           <OrbitControls
             makeDefault
@@ -217,10 +248,27 @@ const DemographyGame3D = (props: {
           </group>
 
           {/* Country feature (consider position={[-1 * MIN_X, 0, MIN_Y]}) */}
-          <CountryFeature
+          {/* <CountryFeature
             zoomToView={zoomToView}
             firstFeatureCoordinates={firstFeatureCoordinates}
-          />
+            color={"blue"}
+          /> */}
+
+          {/* Admin Zone 1 features */}
+          {!linesLoading ? (
+            <group position={[0, 0, 0]}>
+              {features.length
+                ? features.map((f, idx) => (
+                    <CountryFeature
+                      key={idx}
+                      zoomToView={zoomToView}
+                      firstFeatureCoordinates={f}
+                      color={"#2233dd"}
+                    />
+                  ))
+                : null}
+            </group>
+          ) : null}
 
           {/* City features (instancedMesh + crossHair) */}
           {memoizedCities}

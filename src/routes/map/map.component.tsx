@@ -131,13 +131,7 @@ const WikiDemography = () => {
           {/* COUNTRY DETAILS */}
           {selectedCountry && (
             <>
-              <h3
-                style={{
-                  fontFamily: "RobotoSlab",
-                }}
-              >
-                Country Details
-              </h3>
+              <h3>Country Details</h3>
               {!selectedCode ? (
                 <p>
                   Please{" "}
@@ -158,11 +152,7 @@ const WikiDemography = () => {
       {tabsIndex === 1 ? (
         <>
           <h3>Search for a Settlement</h3>
-          <SettlementSearch
-            tree={tree}
-            countryCode={countryCode}
-            setSelectedCode={setSelectedCode}
-          />
+          <SettlementSearch tree={tree} countryCode={countryCode} />
         </>
       ) : null}
 

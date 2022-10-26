@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 type ClaimItemProps = { height: number; minWidth: number; maxWidth: number };
+type ClaimItemDialogImageProps = { width: string; height: string };
 
 export const FlexContainer = styled.div`
   display: flex;
@@ -55,5 +56,56 @@ export const ClaimItem = styled.div<ClaimItemProps>`
     text-overflow: ellipsis;
 
     ${({ maxWidth }) => ({ maxWidth: `${maxWidth}px` })}
+  }
+`;
+
+type ClaimItemMediaDialogFrameProps = { imageFitWidth: boolean };
+
+export const ClaimItemMediaDialogFrame = styled.div<ClaimItemMediaDialogFrameProps>`
+  border-radius: 20px;
+  max-height: 94vh;
+  user-select: none;
+  ${({ imageFitWidth }) =>
+    imageFitWidth ? { overflowX: `hidden` } : { overflowY: `hidden` }}
+`;
+
+export const ClaimItemMediaMoreImages = styled.div`
+  height: 100px;
+  width: 85%;
+  position: fixed;
+  top: 32px;
+  margin-left: 3px;
+  display: flex;
+
+  img {
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.8));
+    width: auto;
+    height: 50px;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+`;
+
+export const ClaimItemDialogImageWrap = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ClaimItemDialogImage = styled.img<ClaimItemDialogImageProps>`
+  ${({ width }) => ({ width: width })}
+  ${({ height }) => ({ height: height })};
+`;
+
+export const ClaimItemDialogOptionsPanel = styled.div`
+  width: 90px;
+  position: fixed;
+  height: 0px;
+  margin: auto;
+  text-align: left;
+  top: 10px;
+  z-index: 1003;
+
+  button {
+    cursor: pointer;
   }
 `;
