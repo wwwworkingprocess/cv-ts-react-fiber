@@ -38,12 +38,7 @@ const AdminOneList = (props: AdminOneListProps) => {
             }}
           >
             <small>
-              {size}{" "}
-              <span
-                style={{ float: "right", position: "relative", top: "-2px" }}
-              >
-                🏠
-              </span>
+              {size} <span>🏠</span>
             </small>
             <label>{name}</label>
           </AdminOneListItem>

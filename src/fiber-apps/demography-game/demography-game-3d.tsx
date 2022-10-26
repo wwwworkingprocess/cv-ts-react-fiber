@@ -2,13 +2,13 @@ import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Text } from "@react-three/drei";
-import { Color, MOUSE, Vector3 } from "three";
+import { MOUSE, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
 
 import useAppController from "./hooks/useAppController";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
-import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
+// import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
 
@@ -20,6 +20,7 @@ import GameControls from "./components/game-controls/game-controls.component";
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import TreeHelper from "../../utils/tree-helper";
+import { toDisplayNode } from "../../utils/wiki";
 
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
@@ -30,7 +31,6 @@ const DemographyGame3D = (props: {
 }) => {
   const { tree, selectedCountry, scrollToDetails } = props;
   //
-  // const lastSelectedCode = useGameAppStore((state) => state.lastSelectedCode);
   const moving = useGameAppStore((state) => state.moving);
   const bounds = useGameAppStore((state) => state.bounds);
   const selectedCode = useGameAppStore((state) => state.selectedCode);
@@ -68,39 +68,7 @@ const DemographyGame3D = (props: {
       node.data?.lat,
     ];
     //
-    const colorByPop = (node: any) => {
-      const toValue = (node: any): number =>
-        Math.log(Math.max(0, node?.data?.pop ?? 0)) * 14 + 10;
-      const [r, g, b] = [
-        Math.max(0, 155 - toValue(node) * 0.35),
-        toValue(node),
-        0,
-      ];
-      //
-      const hex = new Color(r / 256, g / 256, b / 256).getHexString();
-      //
-      return `#${hex}`;
-    };
-    //
-    const scaleByPop = (node: any) => {
-      const toValue = (node: any): number =>
-        Math.log(Math.max(20, node?.data?.pop ?? 0)) * 0.25;
-      //
-      const v = Math.max(0.1, toValue(node)) * 0.12;
-      //
-      return [v, v, v];
-    };
-    //
-    const toItem = (node: any) => ({
-      code: node.code,
-      name: node.name,
-      pop: node.data.pop,
-      position: toWorldPosition(node),
-      color: colorByPop(node),
-      scale: scaleByPop(node),
-    });
-    //
-    return displayedNodes.map(toItem);
+    return displayedNodes.map((n) => toDisplayNode(n, toWorldPosition));
   }, [displayedNodes]);
 
   //
@@ -156,20 +124,20 @@ const DemographyGame3D = (props: {
     ),
     [cities, focus, extra, zoomToView]
   );
-
-  const selectedWikiCountryUrl = useMemo(
-    () => (selectedCountry ? selectedCountry.urls.geo : ""),
-    [selectedCountry]
-  );
   //
-  const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
-  const firstFeatureCoordinates = useMemo(() => {
-    if (rawWikiJson) {
-      const arrs = rawWikiJson.data.features[0].geometry.coordinates;
-      //
-      return arrs;
-    } else return [];
-  }, [rawWikiJson]);
+  // const selectedWikiCountryUrl = useMemo(
+  //   () => (selectedCountry ? selectedCountry.urls.geo : ""),
+  //   [selectedCountry]
+  // );
+  //
+  // const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
+  // const firstFeatureCoordinates = useMemo(() => {
+  //   if (rawWikiJson) {
+  //     const arrs = rawWikiJson.data.features[0].geometry.coordinates;
+  //     //
+  //     return arrs;
+  //   } else return [];
+  // }, [rawWikiJson]);
 
   //
   // loading geojson
@@ -184,13 +152,9 @@ const DemographyGame3D = (props: {
       fetch(url)
         .then((res) => res.json())
         .then((data: any) => {
-          console.log("data", data);
-          const first = data.features[14];
-          console.log("first", first);
-          //
           const toFeature = (f: any) => f.geometry.coordinates;
           //
-          const newFeatures = first ? data.features.map(toFeature) : [];
+          const newFeatures = data.features?.map(toFeature) ?? [];
           //
           setFeatures(newFeatures);
           //
@@ -263,7 +227,7 @@ const DemographyGame3D = (props: {
                       key={idx}
                       zoomToView={zoomToView}
                       firstFeatureCoordinates={f}
-                      color={"#2233dd"}
+                      color={"#3344ff"}
                     />
                   ))
                 : null}

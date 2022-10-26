@@ -46,8 +46,11 @@ const accessors = {
   //
   "wikibase-item": (v: any) => v.value.id, // e.g. Q2590631
   //
-  "globe-coordinate": (v: any) =>
-    `[${v.value.latitude.toFixed(5)}, ${v.value.longitude.toFixed(5)}]`,
+  "globe-coordinate": (v: any) => {
+    if (v === undefined) return "No data."; // consider empty
+    //
+    return `[${v.value.latitude.toFixed(5)}, ${v.value.longitude.toFixed(5)}]`;
+  },
   //
   quantity: (v: any) => {
     let q = 0.0;

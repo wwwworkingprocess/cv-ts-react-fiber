@@ -22,6 +22,7 @@ export const AdminOneListItem = styled.span`
     display: inline-block;
     width: 40px;
     margin-right: 4px;
+    padding-left: 4px;
 
     @media screen and (max-width: 400px) {
       zoom: 0.8;
@@ -41,5 +42,11 @@ export const AdminOneListItem = styled.span`
       width: 20%px;
       font-size: 12px;
     }
+  }
+
+  span {
+    float: right;
+    position: relative;
+    top: -2px;
   }
 `;

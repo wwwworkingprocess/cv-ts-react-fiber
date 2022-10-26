@@ -1,8 +1,16 @@
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+
+import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
+
+import {
+  toExternalSourceUrl,
+  hasFormatterUrl,
+  toWikiCommonsMediaUrl,
+} from "../../../utils/wiki";
 
 import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
 
-import externalMap from "../../../assets/json/wiki/properties.formatterurls.json";
+import Dialog from "../../dialog/dialog.component";
 
 import {
   ClaimItem,
@@ -15,24 +23,29 @@ import {
   FlexContainer,
   FlexMediaContainer,
 } from "./grouped-claims.styles";
-import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
-import { group } from "console";
-import Dialog from "../../dialog/dialog.component";
-import { Spinner } from "../../spinner/spinner.component";
-import { IncomingWorkerMessage } from "@react-three/cannon";
 
 type GroupedClaimsProps = { wikiEntry: any };
 
-const formatterUrls = externalMap as Record<string, any>;
-const toMediaUrl = (mediaName: string, width?: number): string =>
-  `https://commons.wikimedia.org/w/index.php?title=Special:Redirect/file/${mediaName}&width=${
-    width ?? 300
-  }`;
-
+//
+//
+//
 const GroupedClaims = (props: GroupedClaimsProps) => {
   const { wikiEntry } = props;
   //
+  const setLastTakenPlaceImageUrl = useGameAppStore(
+    (s) => s.setLastTakenPlaceImageUrl
+  );
+  //
   const { name, labels, claimsMeta } = useWikiEntryReader(wikiEntry);
+  //
+  const [imageFitWidth, setImageFitWidth] = useState<boolean>(true);
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+  const [dialogUrl, setDialogUrl] = useState<string>();
+  const [dialogExtraUrls, setDialogExtraUrls] = useState<Array<string>>([]);
+  const [dialogWidth, setDialogWidth] = useState<number>(500);
+
+  //
+  //
   //
   const groupedClaims = useMemo(() => {
     if (claimsMeta && claimsMeta.values) {
@@ -51,25 +64,6 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
     //
     return undefined;
   }, [claimsMeta]);
-  //
-  // console.log("claimsMeta", claimsMeta, "labels", labels);
-  //
-  const buildUrl = (propertyCode: string, value: string) => {
-    const idPlaceholder = "###ID###";
-    const formatterUrl = (formatterUrls[propertyCode] ?? "") as string;
-    //
-    return formatterUrl.includes(idPlaceholder)
-      ? formatterUrl.replace(idPlaceholder, value)
-      : `${formatterUrl}${value}`;
-  };
-
-  //
-  //
-
-  // const lastTakenPlaceImageUrl = useGameAppStore( (s) => s.lastTakenPlaceImageUrl)
-  const setLastTakenPlaceImageUrl = useGameAppStore(
-    (s) => s.setLastTakenPlaceImageUrl
-  );
 
   //
   // URL to display 'Location Image' for selectedCode
@@ -92,7 +86,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       if (entry) {
         value = entry.value;
         //
-        const url = toMediaUrl(value, 95);
+        const url = toWikiCommonsMediaUrl(value, 95);
         //
         setLastTakenPlaceImageUrl(url);
       } else setLastTakenPlaceImageUrl(undefined);
@@ -101,12 +95,6 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
 
   //
   //
-  //
-  const [imageFitWidth, setImageFitWidth] = useState<boolean>(true);
-  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
-  const [dialogUrl, setDialogUrl] = useState<string>();
-  const [dialogExtraUrls, setDialogExtraUrls] = useState<Array<string>>([]);
-  const [dialogWidth, setDialogWidth] = useState<number>(500);
   //
   const onMediaItemClicked = (
     target: any,
@@ -120,27 +108,29 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       extraUrls = raw
         .map((c: any) => c.mainsnak?.datavalue.value ?? "")
         .filter((s: string) => s.length > 0)
-        .map((s: string) => toMediaUrl(s, 50)); // includes first
+        .map((s: string) => toWikiCommonsMediaUrl(s, 50)); // includes first
     }
     //
-    const cropFactor = 0.8;
-    const cropFactorFitHeight = 0.95;
+    const cropFitWidth = 0.8;
+    const cropFitHeight = 0.95;
+    const w = window.innerWidth;
     //
-    const [w, h] = [window.innerWidth, window.innerHeight];
-    const [iw, ih] = [target.width, target.height];
-    const [screenAspect, imageAspect] = [w / h, iw / ih];
-    //
-    const width = w * (imageFitWidth ? cropFactor : cropFactorFitHeight);
-    //
-    const url = toMediaUrl(value, Math.floor(width));
-    //
-    // console.log("dim", w, "x", h, "target", iw, ih, "url", url);
-    console.log("aspect (s)", screenAspect, "image (s)", imageAspect);
+    const width = w * (imageFitWidth ? cropFitWidth : cropFitHeight);
+    const url = toWikiCommonsMediaUrl(value, Math.floor(width));
     //
     setIsDialogOpen(true);
     setDialogWidth(Math.floor(width));
     setDialogUrl(url);
     setDialogExtraUrls(extraUrls);
+  };
+  //
+  const onDialogImageClicked = () => {
+    setIsDialogOpen(false);
+    setDialogUrl(undefined);
+  };
+  //
+  const onDialogMoreImageClicked = (url: string) => {
+    setDialogUrl(url.replace(`width=50`, `width=${dialogWidth}`));
   };
   //
   //
@@ -203,7 +193,10 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                         onMediaItemClicked(e.target, property, value, raw)
                       }
                     >
-                      <img src={toMediaUrl(value, 200)} alt={property.name} />
+                      <img
+                        src={toWikiCommonsMediaUrl(value, 200)}
+                        alt={property.name}
+                      />
                       <b>
                         {property.name}
                         <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
@@ -232,10 +225,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                       height={imageFitWidth ? "auto" : "90vh"}
                       src={dialogUrl}
                       alt=""
-                      onClick={(e) => {
-                        setIsDialogOpen(false);
-                        setDialogUrl(undefined);
-                      }}
+                      onClick={onDialogImageClicked}
                     />
                   </ClaimItemDialogImageWrap>
                   {dialogExtraUrls ? (
@@ -245,11 +235,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                           key={idx}
                           src={url}
                           alt=""
-                          onClick={(e) => {
-                            setDialogUrl(
-                              url.replace(`width=50`, `width=${dialogWidth}`)
-                            );
-                          }}
+                          onClick={() => onDialogMoreImageClicked(url)}
                         />
                       ))}
                     </ClaimItemMediaMoreImages>
@@ -272,12 +258,12 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                       maxWidth={200}
                     >
                       <div style={{ fontSize: "11px", height: "14px" }}>
-                        {formatterUrls[property.code] ? (
+                        {hasFormatterUrl(property.code) ? (
                           <a
                             target="_blank"
                             rel="noreferrer"
                             title={`${property.name} # ${value}`}
-                            href={buildUrl(property.code, value)}
+                            href={toExternalSourceUrl(property.code, value)}
                             style={{ color: "gold" }}
                           >
                             {property.name}

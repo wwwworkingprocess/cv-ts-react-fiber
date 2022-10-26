@@ -31,7 +31,7 @@ import useGameAppStore from "../../fiber-apps/demography-game/stores/useGameAppS
 const WikiDemography = () => {
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED);
   //
-  const tabs = ["Main Info", "Search", "Browse", "Nearby"];
+  const tabs = ["Main Info", "Browse", "Search", "Nearby"];
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
   const [countryCode, setCountryCode] = useState<string>("28"); // pre-load tree helper
@@ -93,7 +93,17 @@ const WikiDemography = () => {
       }
     };
     //
-    return <button onClick={() => onBackToParentClicked()}>[..]</button>;
+    return (
+      <>
+        <button
+          style={{ float: "right" }}
+          onClick={() => onBackToParentClicked()}
+        >
+          Back
+        </button>
+        <div style={{ clear: "both" }} />
+      </>
+    );
   }, [tree, selectedCountry, selectedCode, setSelectedCode]);
 
   const itemDetailsRef = useRef<HTMLDivElement>(null!);
@@ -151,20 +161,13 @@ const WikiDemography = () => {
 
       {tabsIndex === 1 ? (
         <>
-          <h3>Search for a Settlement</h3>
-          <SettlementSearch tree={tree} countryCode={countryCode} />
-        </>
-      ) : null}
-
-      {tabsIndex === 2 ? (
-        <>
           {/* ADMINISTRATIVE ZONES */}
           {selectedCountry && (
             <>
               <h3>Browse for a Settlement</h3>
               <BrowseSettlementContainer>
                 <HalfContentBlock minWidth={"30%"}>
-                  A1
+                  <b>Administrative Areas</b>
                   {adminOneMemo && selectedCountry ? (
                     <AdminOneList
                       items={adminOneMemo}
@@ -173,7 +176,7 @@ const WikiDemography = () => {
                   ) : null}
                 </HalfContentBlock>
                 <HalfContentBlock minWidth={"30%"}>
-                  A2 {backToParentMemo}
+                  <b>Located in Area</b> {backToParentMemo}
                   {selectedCode ? (
                     <AdminTwoList
                       items={adminTwoMemo}
@@ -184,6 +187,13 @@ const WikiDemography = () => {
               </BrowseSettlementContainer>
             </>
           )}
+        </>
+      ) : null}
+
+      {tabsIndex === 2 ? (
+        <>
+          <h3>Search for a Settlement</h3>
+          <SettlementSearch tree={tree} countryCode={countryCode} />
         </>
       ) : null}
 

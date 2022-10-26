@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { formatPopulation } from "../../../utils/wiki";
+
 import {
   AdminTwoListContainer,
   AdminTwoListItem,
@@ -9,13 +11,6 @@ type AdminTwoListProps = {
   items: Array<Array<any>>;
   //
   setSelectedCode: (c: string | undefined) => void;
-};
-
-const formatPopulation = (p: number) => {
-  if (p === -1) return "";
-  if (p < 1000) return `${p}🧍`;
-  if (p < 1000000) return `${(p * 0.001).toFixed(1)}k 🧍`;
-  else return `${(p * 0.000001).toFixed(1)}M 🧍`;
 };
 
 const AdminTwoList = (props: AdminTwoListProps) => {
@@ -45,7 +40,7 @@ const AdminTwoList = (props: AdminTwoListProps) => {
           >
             {!hasPosition ? "[!] " : ""}
             <label>{name}</label>
-            <small style={{ float: "right" }}>
+            <small>
               {size ? `${size} 🏠 ` : ""}
               {formatPopulation(data.pop)}
             </small>

@@ -47,7 +47,13 @@ const demos = [
     path: "hgt-elevation",
     name: "Heightmap Tile Viewer",
   },
-] as Array<Demo>;
+  {
+    idx: 5,
+    git: "demography",
+    path: "demography",
+    name: "Wiki Demography",
+  },
+].reverse() as Array<Demo>;
 
 const GITHUB_ROOT =
   "https://github.com/wwwworkingprocess/cv-ts-react-fiber/tree/main/src/fiber-apps";
@@ -57,9 +63,9 @@ const DemoPreview = () => (
     <h2>Fiber micro-applications</h2>
     <DemoList>
       {demos.map((b, idx) => (
-        <DemoWrapper key={idx}>
+        <DemoWrapper key={b.idx}>
           <NavLink
-            to={`${b.path}`}
+            to={b.idx !== 5 ? `${b.path}` : "../../map"}
             style={{ width: "20%", padding: "5px", color: "white" }}
           >
             {b.name}
@@ -78,8 +84,6 @@ const DemoPreview = () => (
         </DemoWrapper>
       ))}
     </DemoList>
-    <h2>Next Feature in Development</h2>
-    <NavLink to={"../../map"}>Wiki demography</NavLink>
   </>
 );
 

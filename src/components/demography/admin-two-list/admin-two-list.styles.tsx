@@ -33,4 +33,8 @@ export const AdminTwoListItem = styled.span`
       font-size: 12px;
     }
   }
+
+  small {
+    float: right;
+  }
 `;
