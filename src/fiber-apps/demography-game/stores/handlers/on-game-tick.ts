@@ -1,6 +1,6 @@
 import { GameAppStore } from "../types";
 
-export const onGameTick = (s: GameAppStore, nextTick: number) => {
+export const onGameTick = (s: GameAppStore, nextTick: number, t: number) => {
   const code = s.selectedCode;
   const notMoving = !s.moving && code !== undefined;
   //
@@ -8,10 +8,13 @@ export const onGameTick = (s: GameAppStore, nextTick: number) => {
   let nextTargetProgress = 0;
   //
   const now = new Date().getTime();
-  const last = s.lastTickTime ?? now;
+  const lastFrameTime = s.lastTickTime ?? now;
+  const seconds = t ?? 0; // Passed seconds since last GameTick
+  const scoreScale = 190; // Magic number to match displayed speed :)
   //
-  const passed = (now - last) * 0.001;
-  const fps = 10 / passed;
+  //
+  const passed = (now - lastFrameTime) * 0.001;
+  const fps = 20 / passed;
   //
   if (notMoving) {
     isUpdatingProgress =
@@ -21,13 +24,15 @@ export const onGameTick = (s: GameAppStore, nextTick: number) => {
     if (isUpdatingProgress) {
       const speed = s.player.conversionSpeed;
       const currentTargetProgress = s.progressConverting[code];
+      const increment = speed * seconds * scoreScale;
       //
-      nextTargetProgress = currentTargetProgress + speed;
+      nextTargetProgress = currentTargetProgress + increment;
     }
     //
     return {
-      count: nextTick,
+      frame: nextTick,
       lastTickTime: now,
+      sinceLastGameTick: 0,
       detectedFps: fps,
       progressConverting: {
         ...s.progressConverting,
@@ -37,8 +42,9 @@ export const onGameTick = (s: GameAppStore, nextTick: number) => {
   }
   //
   return {
-    count: nextTick,
+    frame: nextTick,
     lastTickTime: now,
+    sinceLastGameTick: 0,
     detectedFps: fps,
     progressConverting: s.progressConverting,
   };

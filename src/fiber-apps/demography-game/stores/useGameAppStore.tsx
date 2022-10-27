@@ -55,16 +55,18 @@ const useGameAppStore = create<GameAppStore>(
       setLastTakenPlaceImageUrl: (url: string | undefined) =>
         set((prev) => ({ lastTakenPlaceImageUrl: url })),
       //
-      add: (n) =>
+      setNextFrame: (n, t) =>
         set((prev) => {
-          const nextTick = prev.count + n;
-          const isGameTick = nextTick % 10 === 0;
+          const nextTick = prev.frame + n;
+          const totalTimePassed = prev.sinceLastGameTick + t;
+          const isGameTick = nextTick % 20 === 0;
           //
           return isGameTick
-            ? onGameTick(prev, nextTick)
+            ? onGameTick(prev, nextTick, totalTimePassed)
             : {
-                count: nextTick,
+                frame: nextTick,
                 lastTickTime: prev.lastTickTime,
+                sinceLastGameTick: totalTimePassed,
                 detectedFps: prev.detectedFps,
                 progressConverting: prev.progressConverting,
               };

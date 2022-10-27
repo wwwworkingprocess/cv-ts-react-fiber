@@ -16,7 +16,8 @@ export type GameState = {
   codesConverting: Array<string>;
   progressConverting: Record<string, number>;
   //
-  count: number;
+  frame: number;
+  sinceLastGameTick: number;
   lastTickTime: number;
   detectedFps: number;
   //
@@ -43,7 +44,7 @@ export type GameActions = {
   setCitiesShowPopulated: (b: boolean) => void;
   setLastTakenPlaceImageUrl: (s: string | undefined) => void;
   //
-  add: (n: number) => void;
+  setNextFrame: (n: number, t: number) => void;
   setBounds: (b: [number, number, number, number]) => void;
   setPosition: (p: { x: number; y: number; z: number }) => void;
   decreasePositionY: (timeout: number) => void;

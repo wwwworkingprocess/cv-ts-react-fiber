@@ -26,8 +26,10 @@ export const initialGameState: GameState = {
   codesConverting: [] as Array<string>,
   progressConverting: {} as Record<string, number>,
   //
-  count: 0,
+  frame: 0,
+  //
   lastTickTime: 0,
+  sinceLastGameTick: 0,
   detectedFps: 0,
   //
   bounds: defaultBounds,

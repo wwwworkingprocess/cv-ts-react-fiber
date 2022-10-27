@@ -20,14 +20,16 @@ const FrameCounter = (props: BillboardProps & { enabled: boolean }) => {
     (takenPopulation ? takenPopulation / 9999999 : 0) * 100.0;
 
   //
-  const add = useGameAppStore((state) => state.add);
+  const setNextFrame = useGameAppStore((state) => state.setNextFrame);
   //
-  useFrame(() => enabled && add(1));
+  useFrame(({ clock }) => {
+    if (enabled) setNextFrame(1, clock.getDelta());
+  });
   //
   //
   return enabled ? (
     <Billboard {...props} follow={true} lockY={true}>
-      <Text fontSize={0.023} onClick={() => add(3)}>
+      <Text fontSize={0.023}>
         {selectedCode ? `${conversionSpeed.toFixed(2)}/s` : takenPopulation}-{" "}
         {totalCompletion.toFixed(3)}% - {totalCompletionPop.toFixed(3)}%
       </Text>
