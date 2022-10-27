@@ -1,63 +1,26 @@
-import { useEffect } from "react";
 import { Route, Routes, useNavigate, NavLink } from "react-router-dom";
-
-import { getFirestoreCollection } from "../../utils/firebase/firestore";
 
 import CursorNavigationDemo from "./demo/cursor-navigation.demo";
 import GlobeDemo from "./demo/globe.demo";
 import HungaryDemo from "./demo/hungary.demo";
 import RandomHeightmapDemo from "./demo/random-heightmap.demo";
 import WikiCountryDemo from "./demo/wiki-country.demo";
+
+import availableDemos from "../../assets/json/demo/demo.json";
+
 import { DemoList, DemoWrapper } from "./demos.styles";
-
-// import NavigateDemo from "./demo/navigate.demo";
-// import ShapeLoaderDemo from "./demo/shape-loader.demo";
-
-type UserDocType = {
-  displayName: string | null;
-  email: string | null;
-  createdAt: Date;
-};
 
 type Demo = { idx: number; name: string; git: string; path: string };
 
-const demos = [
-  {
-    idx: 0,
-    git: "wiki-country",
-    path: "wiki-countries",
-    name: "Wiki Countries",
-  },
-  {
-    idx: 1,
-    git: "cursor-navigation",
-    path: "cursor-navigation",
-    name: "Cursor movement",
-  },
-  {
-    idx: 2,
-    git: "hungary",
-    path: "hungarian-cities",
-    name: "Hungarian Settlements",
-  },
-  { idx: 3, git: "globe", path: "globe-3d", name: "Globe with Countries" },
-  {
-    idx: 4,
-    git: "heightmap-random",
-    path: "hgt-elevation",
-    name: "Heightmap Tile Viewer",
-  },
-  {
-    idx: 5,
-    git: "demography",
-    path: "demography",
-    name: "Wiki Demography",
-  },
-].reverse() as Array<Demo>;
+const demos = availableDemos.reverse() as Array<Demo>;
 
+const BASE_PATH = "../../";
 const GITHUB_ROOT =
   "https://github.com/wwwworkingprocess/cv-ts-react-fiber/tree/main/src/fiber-apps";
 
+//
+//
+//
 const DemoPreview = () => (
   <>
     <h2>Fiber micro-applications</h2>
@@ -65,7 +28,7 @@ const DemoPreview = () => (
       {demos.map((b, idx) => (
         <DemoWrapper key={b.idx}>
           <NavLink
-            to={b.idx !== 5 ? `${b.path}` : "../../map"}
+            to={b.git !== "demography-game" ? `${b.path}` : "../../map"}
             style={{ width: "20%", padding: "5px", color: "white" }}
           >
             {b.name}
@@ -88,40 +51,29 @@ const DemoPreview = () => (
 );
 
 const Demos = () => {
-  const navigate = useNavigate();
-  const basePath = "../../";
   //
-  /*
-  useEffect(() => {
-    const queryUsers = async () => {
-      const users = await getFirestoreCollection<UserDocType>("users");
-      //
-      console.log("snap u", users.length);
-    };
-    //
-    queryUsers();
-  }, []);
-  */
+  const navigate = useNavigate();
   //
   return (
     <Routes>
       <Route index element={<DemoPreview />} />
+
       <Route
         path="wiki-countries"
-        element={<WikiCountryDemo navigate={navigate} path={basePath} />}
+        element={<WikiCountryDemo navigate={navigate} path={BASE_PATH} />}
       />
       <Route
         path="cursor-navigation"
-        element={<CursorNavigationDemo path={basePath} />}
+        element={<CursorNavigationDemo path={BASE_PATH} />}
       />
       <Route
         path="hungarian-cities"
-        element={<HungaryDemo navigate={navigate} path={basePath} />}
+        element={<HungaryDemo navigate={navigate} path={BASE_PATH} />}
       />
-      <Route path="globe-3d" element={<GlobeDemo path={basePath} />} />
+      <Route path="globe-3d" element={<GlobeDemo path={BASE_PATH} />} />
       <Route
         path="hgt-elevation"
-        element={<RandomHeightmapDemo path={basePath} />}
+        element={<RandomHeightmapDemo path={BASE_PATH} />}
       />
     </Routes>
   );

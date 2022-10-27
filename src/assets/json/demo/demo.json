@@ -1,0 +1,38 @@
+[
+  {
+    "idx": 0,
+    "git": "wiki-country",
+    "path": "wiki-countries",
+    "name": "Wiki Countries"
+  },
+  {
+    "idx": 1,
+    "git": "cursor-navigation",
+    "path": "cursor-navigation",
+    "name": "Cursor movement"
+  },
+  {
+    "idx": 2,
+    "git": "hungary",
+    "path": "hungarian-cities",
+    "name": "Hungarian Settlements"
+  },
+  {
+    "idx": 3,
+    "git": "globe",
+    "path": "globe-3d",
+    "name": "Globe with Countries"
+  },
+  {
+    "idx": 4,
+    "git": "heightmap-random",
+    "path": "hgt-elevation",
+    "name": "Heightmap Tile Viewer"
+  },
+  {
+    "idx": 5,
+    "git": "demography-game",
+    "path": "demography",
+    "name": "Wiki Demography"
+  }
+]
