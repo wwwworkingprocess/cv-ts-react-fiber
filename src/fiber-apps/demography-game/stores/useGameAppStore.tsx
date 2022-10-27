@@ -8,8 +8,20 @@ import { onArrived } from "./handlers/on-arrived";
 import { onCityTaken } from "./handlers/on-city-taken";
 import { onGameTick } from "./handlers/on-game-tick";
 
+const blacklist = [
+  "frame",
+  "detectedFps",
+  "sinceLastGameTick",
+] as Array<string>;
+//
 const persistOptions = {
   name: "game-storage",
+  //
+  partialize: (state: GameAppStore) =>
+    Object.fromEntries(
+      Object.entries(state).filter(([key]) => !blacklist.includes(key))
+    ),
+  //
   onRehydrateStorage: () => (state: GameAppStore | undefined) => {
     console.log("onRehydrateStorage", state);
     // state.setHasHydrated(true);
