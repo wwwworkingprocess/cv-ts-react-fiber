@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 
+import { colorByHeight } from "../../../utils/colors";
+import { changeEndianness } from "../../../utils/srtm";
 import {
   createOffsetsForBlock,
   createPositionsFromHeights,
   createTextureFromColors,
 } from "../../../utils/srtm-sampling";
-import coloring from "../../../utils/colors";
-import { changeEndianness } from "../../../utils/srtm";
 
 import SampledTile3D from "./sampled-tile-3d";
 
@@ -114,7 +114,7 @@ const SampledTileGrid = (
             )[0];
           //
           const hs = offsets.map(takeByOffset); // height information ( 1 value per sample)
-          const cols = hs.map(coloring.get_color_by_height); // rgba   ( 4 value per sample)
+          const cols = hs.map(colorByHeight); // rgba   ( 4 value per sample)
           //
           // creating a downsampled datatexture for the tile, based on the height data
           //

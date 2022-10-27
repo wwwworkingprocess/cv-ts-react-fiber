@@ -8,9 +8,10 @@ import {
   UnsignedByteType,
   Vector3,
 } from "three";
-import { SAMPLING_MODE } from "../../../hooks/srtm/useSrtmTiles";
 
-import coloring from "../../../utils/colors";
+import { colorByHeight } from "../../../utils/colors";
+
+import { SAMPLING_MODE } from "../../../hooks/srtm/useSrtmTiles";
 
 const useHeightBasedTexture = (
   heights1200: Int16Array | undefined,
@@ -41,7 +42,7 @@ const useHeightBasedTexture = (
         v3.normalize();
         //
         const shade = v3.dot(sun) || 0;
-        const c = coloring.get_color_by_height(height);
+        const c = colorByHeight(height);
         //
         const r = c.r * (0.75 + shade * 0.525); // original 'blending' R
         const g = c.g * (0.75 + shade * 0.525); // original 'blending' G

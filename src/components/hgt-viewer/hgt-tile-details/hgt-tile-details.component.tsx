@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-import coloring from "../../../utils/colors";
-import { imagedata_to_dataurl } from "../../../utils/canvasutils";
+import { toDataUrl } from "../../../utils/canvas";
+import { colorByHeight } from "../../../utils/colors";
 import { changeEndianness, normalizeElevationData } from "../../../utils/srtm";
 
 const HgtTileDetails = (props: { tileBuffer: ArrayBuffer | undefined }) => {
@@ -24,7 +24,7 @@ const HgtTileDetails = (props: { tileBuffer: ArrayBuffer | undefined }) => {
     //
     for (let i = 0; i < i16.length; i++) {
       const height = i16[i];
-      const c = coloring.get_color_by_height(height);
+      const c = colorByHeight(height);
       //
       const offset = i * 4;
       id.data[offset] = c.r; // R value
@@ -42,9 +42,7 @@ const HgtTileDetails = (props: { tileBuffer: ArrayBuffer | undefined }) => {
       const i16 = transformInput(tileBuffer);
       const imagedata = createImageData(i16);
       //
-      return imagedata
-        ? imagedata_to_dataurl(imagedata, 1201, 1201)
-        : undefined;
+      return imagedata ? toDataUrl(imagedata) : undefined;
     }
   }, [tileBuffer]);
 

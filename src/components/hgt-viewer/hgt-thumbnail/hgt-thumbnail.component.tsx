@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
-import coloring from "../../../utils/colors";
-import { imagedata_to_dataurl } from "../../../utils/canvasutils";
+import { toDataUrl } from "../../../utils/canvas";
+import { colorByHeight } from "../../../utils/colors";
 import {
   changeEndianness,
   normalizeElevationData,
@@ -45,7 +45,7 @@ const createWaterTileDataUrl = () => {
     id.data[offset + 3] = 255; // A value
   }
   //
-  return imagedata_to_dataurl(id, sampling, sampling);
+  return toDataUrl(id);
 };
 
 const waterTileDataUrl = createWaterTileDataUrl();
@@ -75,7 +75,7 @@ const HgtThumbnail = (props: {
       //
       for (let i = 0; i < thumbsMemo.length; i++) {
         const height = thumbsMemo[i];
-        const c = coloring.get_color_by_height(height);
+        const c = colorByHeight(height);
         //
         const offset = i * 4;
         id.data[offset] = c.r; // R value
@@ -88,10 +88,7 @@ const HgtThumbnail = (props: {
     }
   }, [thumbsMemo]);
   //
-  const dataUrl = useMemo(
-    () => idMemo && imagedata_to_dataurl(idMemo, sampling, sampling),
-    [idMemo]
-  );
+  const dataUrl = useMemo(() => idMemo && toDataUrl(idMemo), [idMemo]);
   //
   return dataUrl ? (
     <img

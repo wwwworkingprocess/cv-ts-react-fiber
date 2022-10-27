@@ -1,128 +1,87 @@
-import * as THREE from "three";
-import coloring from "./colors";
+import {
+  Vector3,
+  //
+  Texture,
+  DataTexture,
+  CanvasTexture,
+  //
+  ClampToEdgeWrapping,
+  LinearFilter,
+  LinearMipMapLinearFilter,
+  //
+  LuminanceFormat,
+  RGBFormat,
+  sRGBEncoding,
+  UnsignedByteType,
+  //
+  TextureLoader,
+} from "three";
 
-class TextureFactorySingleton {
-  circle_ctx: CanvasRenderingContext2D | null = null;
-  //
-  // constructor() {}
-  //
-  create_mask_texture = (_hgt: any) => {
-    const mask = _hgt.data;
-    const data = new Uint8Array(mask.length);
+import { colorByHeight } from "./colors";
+
+/**
+ * Promise for loading image information, using TextureLoader of THREE.js,
+ * returning the result as a Texture
+ *
+ * @param url The url to read data from.
+ */
+export const loadTexture = (url: string): Promise<Texture> => {
+  return new Promise(async (resolve, reject) => {
+    const loader = new TextureLoader();
     //
-    data.set(mask.map((v: number) => (v === 0 ? 0 : 255)));
-    //
-    const texture = new THREE.DataTexture(
-      data,
-      1200,
-      1200,
-      THREE.LuminanceFormat,
-      THREE.UnsignedByteType
-    );
-    //
-    texture.flipY = true;
-    texture.wrapS = THREE.ClampToEdgeWrapping;
-    texture.wrapT = THREE.ClampToEdgeWrapping;
-    texture.generateMipmaps = false; //it's likely that our texture will not have "power of two" size, meaning that mipmaps are not going to be supported on WebGL 1.0, so let's turn them off
-    texture.minFilter = THREE.LinearFilter;
-    texture.magFilter = THREE.LinearFilter; //texture.magFilter = THREE.NearestFilter;    texture.minFilter = THREE.NearestFilter;
-    //
-    return texture;
-  };
-  //
-  draw_circle = () => {
-    const rnd = (from: number, to: number) =>
-      (from = Math.random() * (to - from));
-    //
-    if (this.circle_ctx) {
-      const x = rnd(50, 1150),
-        y = rnd(50, 1150),
-        radius = rnd(150, 350);
+    try {
+      const texture = await loader.loadAsync(url);
       //
-      const ctx = this.circle_ctx;
-      //
-      ctx.beginPath();
-      ctx.arc(x, y, radius, 0, Math.PI * 2, true); // Outer circle
-      ctx.fill();
+      resolve(texture);
+    } catch (ex) {
+      console.error("failed to load img", ex);
+      reject(ex);
     }
-  };
+  });
+};
+
+/**
+ * Creates a new mask based on the provided height information.
+ * Where the elevation is above 'water level' the mask reveals.
+ *
+ * @param heights The height information as input
+ * @param water_level The number used to represent water in the input (default 0, consider -99)
+ */
+export const createWaterMaskForHgt = (
+  heights: Array<number>,
+  water_level?: number
+) => {
+  const [w, h] = [1200, 1200];
+  const water = water_level ?? 0;
+  const toMaskValue = (v: number) => (v === water ? 0 : 255);
   //
-  draw_rectangle = () => {
-    const rnd = (from: number, to: number) =>
-      (from = Math.random() * (to - from));
-    //
-    if (this.circle_ctx) {
-      const x = rnd(50, 1150),
-        y = rnd(50, 1150),
-        radius = rnd(150, 350);
-      //
-      const ctx = this.circle_ctx;
-      //
-      ctx.beginPath();
-      ctx.fillRect(x, y, radius, radius); // Outer circle
-      //ctx.fill();
-    }
-  };
+  const data = new Uint8Array(heights.length);
+  data.set(heights.map(toMaskValue));
   //
-  load_from_url_sync = (url: string) => THREE.ImageUtils.loadTexture(url);
+  const t = new DataTexture(data, w, h, LuminanceFormat, UnsignedByteType);
   //
-  load_from_url = (url: string): Promise<THREE.Texture> => {
-    return new Promise(async (resolve, reject) => {
-      //
-      const loader = new THREE.TextureLoader();
-      // loader.crossOrigin = 'anonymous'; // to allow nonCORS content
-      //
-      try {
-        const texture = await loader.loadAsync(url);
-        //
-        resolve(texture);
-      } catch (ex) {
-        console.error("failed to load img", ex);
-        reject(ex);
-      }
-    });
-  };
+  t.flipY = true;
+  t.wrapS = ClampToEdgeWrapping;
+  t.wrapT = ClampToEdgeWrapping;
+  t.minFilter = LinearFilter;
+  t.magFilter = LinearFilter;
   //
-  create_mask_texture_circular = (x: number, y: number, radius: number) => {
-    let canvas, ctx;
-    //
-    //
-    const w = 1200,
-      h = 1200;
-    canvas = document.createElement("canvas");
-    canvas.width = w;
-    canvas.height = h;
-    //
-    ctx = canvas.getContext("2d");
-    //
-    if (ctx) {
-      this.circle_ctx = ctx;
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, w, h);
-      ctx.fillStyle = "#fff";
-      //      ctx.drawCircle(0, 0, w, h);
-      this.draw_circle();
-    }
-    //
-    const texture = new THREE.CanvasTexture(canvas, 1200, 1200);
-    //
-    texture.flipY = true;
-    texture.wrapS = THREE.ClampToEdgeWrapping;
-    texture.wrapT = THREE.ClampToEdgeWrapping;
-    texture.generateMipmaps = false; //it's likely that our texture will not have "power of two" size, meaning that mipmaps are not going to be supported on WebGL 1.0, so let's turn them off
-    texture.minFilter = THREE.LinearFilter;
-    texture.magFilter = THREE.LinearFilter; //texture.magFilter = THREE.NearestFilter;    texture.minFilter = THREE.NearestFilter;
-    //
-    return { texture, canvas };
-  };
+  return t;
+};
+
+//
+// Helper functions to create textures based on height information
+//
+export class TextureFactorySingleton {
   //
   generateTextureData = async (
     is_height: boolean,
     data: any,
     width: number,
     height: number
-  ) => {
-    let texture: THREE.DataTexture | THREE.CanvasTexture; //  new THREE.DataTexture
+  ): Promise<DataTexture | CanvasTexture> => {
+    let t: DataTexture | CanvasTexture;
+    const [w, h] = [width, height];
     //
     const use_canvas = true;
     //
@@ -130,71 +89,66 @@ class TextureFactorySingleton {
       if (use_canvas) {
         const canvas = await this.generateTexture_STA(
           data,
-          width,
-          height,
+          w,
+          h,
           2,
           "debug_txt"
         );
         //
-        texture = new THREE.CanvasTexture(canvas as any);
+        t = new CanvasTexture(canvas as any);
       } else {
-        texture = (await this.generateTextureData_STA(
-          data,
-          width,
-          height
-        )) as any;
+        t = (await this.generateTextureData_STA(data, w, h)) as any;
       }
-    } else
-      texture = (await this.generateTextureData_HEIGHT(
-        data,
-        width,
-        height
-      )) as any;
+    } else t = (await this.generateTextureData_HEIGHT(data, w, h)) as any;
     //
-    //texture.generateMipmaps = false; //it's likely that our texture will not have "power of two" size, meaning that mipmaps are not going to be supported on WebGL 1.0, so let's turn them off
-    texture.generateMipmaps = true; //it's likely that our texture will not have "power of two" size, meaning that mipmaps are not going to be supported on WebGL 1.0, so let's turn them off
-    //texture.minFilter = THREE.NearestFilter;
-    //texture.magFilter = THREE.NearestFilter;
-    /*default: */ texture.minFilter = THREE.LinearMipMapLinearFilter;
-    texture.magFilter = THREE.LinearMipMapLinearFilter;
-    texture.needsUpdate = true;
+    t.generateMipmaps = false;
+    t.minFilter = LinearMipMapLinearFilter;
+    t.magFilter = LinearMipMapLinearFilter;
     //
-    return texture;
+    t.needsUpdate = true;
+    //
+    return t;
   };
   //
-  generateTextureData_STA = (data: any, width: number, height: number) => {
+  // STA based promise, resolves by drawing one tile
+  //
+  generateTextureData_STA = (
+    heights: Array<number>,
+    width: number,
+    height: number
+  ): Promise<DataTexture> => {
     return new Promise(async (resolve, reject) => {
-      // STA based promise, resolves by drawing one tile
+      const [w, h] = [width, height];
+      //
+      const v = new Vector3(0, 0, 0);
+      const sun = new Vector3(1, 1, 1).normalize();
+      //
       try {
-        const v = new THREE.Vector3(0, 0, 0),
-          sun = new THREE.Vector3(1, 1, 1).normalize();
-        //
-        const w = width,
-          h = height,
-          tdata = new Uint8Array(3 * w * h);
+        const tdata = new Uint8Array(3 * w * h);
         //
         for (let i = 0, j = 0, l = tdata.length; i < l; i += 3, j++) {
-          v.x = data[j - 2] - data[j + 2];
+          v.x = heights[j - 2] - heights[j + 2];
           v.y = 2;
-          v.z = data[j - width * 2] - data[j + width * 2];
+          v.z = heights[j - w * 2] - heights[j + w * 2];
           v.normalize();
           //
           const shade = v.dot(sun);
           //
-          const c = coloring.get_color_by_height(data[j]);
+          const c = colorByHeight(heights[j]);
           //
           tdata[i] = c.r * (0.75 + shade * 0.5);
           tdata[i + 1] = c.g * (0.75 + shade * 0.5);
           tdata[i + 2] = c.b * (0.75 + shade * 0.5);
         }
         //
-        const texture = new THREE.DataTexture(tdata, w, h, THREE.RGBFormat);
-        texture.magFilter = THREE.LinearFilter;
-        texture.minFilter = THREE.LinearFilter;
-        texture.flipY = true;
-        texture.anisotropy = 16;
+        const t = new DataTexture(tdata, w, h, RGBFormat);
         //
-        resolve(texture);
+        t.magFilter = LinearFilter;
+        t.minFilter = LinearFilter;
+        t.flipY = true;
+        t.anisotropy = 16;
+        //
+        resolve(t);
       } catch (ex) {
         reject(ex);
       }
@@ -202,48 +156,49 @@ class TextureFactorySingleton {
   };
   //
   generateTexture_STA = (
-    data: any,
+    heights: Array<number>,
     width: number,
     height: number,
     SCALE: number,
     txt: string
-  ) => {
+  ): Promise<HTMLCanvasElement> => {
     return new Promise(async (resolve, reject) => {
+      const [w, h] = [width, height];
+      //
+      const v3 = new Vector3(0, 0, 0);
+      const sun = new Vector3(1, 1, 1).normalize();
+      //
       try {
-        let canvas, ctx, image, id, shade;
-        //
-        const v3 = new THREE.Vector3(0, 0, 0),
-          sun = new THREE.Vector3(1, 1, 1);
-        sun.normalize();
+        let canvas, ctx, image, id;
         //
         canvas = document.createElement("canvas");
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = w;
+        canvas.height = h;
         //
         ctx = canvas.getContext("2d");
         //
         if (ctx) {
           ctx.fillStyle = "#000";
-          ctx.fillRect(0, 0, width, height);
+          ctx.fillRect(0, 0, w, h);
           //
-          image = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          image = ctx.getImageData(0, 0, w, h);
         }
         //
         id = image?.data ?? new Uint8ClampedArray(0);
         //
         for (let i = 0, j = 0, l = id.length; i < l; i += 4, j++) {
-          v3.x = (data[j - 2] || 0) - (data[j + 2] || 0);
+          v3.x = (heights[j - 2] || 0) - (heights[j + 2] || 0);
           v3.y = 2;
-          v3.z = (data[j - width * 2] || 0) - (data[j + width * 2] || 0);
+          v3.z = (heights[j - w * 2] || 0) - (heights[j + w * 2] || 0);
           v3.normalize();
           //
-          shade = v3.dot(sun) || 0;
+          const shade = v3.dot(sun) || 0;
           //
-          const c = coloring.get_color_by_height(data[j]);
+          const c = colorByHeight(heights[j]);
           //
-          // const mul = (rgb: THREE.Color, sh: number, tint: number = 1) => {
-          //   const v0 = new THREE.Vector3(rgb.r, rgb.g, rgb.b);
-          //   const v1 = new THREE.Vector3(
+          // const mul = (rgb: Color, sh: number, tint: number = 1) => {
+          //   const v0 = new Vector3(rgb.r, rgb.g, rgb.b);
+          //   const v1 = new Vector3(
           //     128 - sh,
           //     128 - sh,
           //     128 - sh
@@ -284,16 +239,11 @@ class TextureFactorySingleton {
         //
         if (SCALE === 1) resolve(canvas);
         else {
-          const canvasScaled = document.createElement("canvas");
-          canvasScaled.width = width * SCALE;
-          canvasScaled.height = height * SCALE;
+          const scaled = document.createElement("canvas");
+          scaled.width = width * SCALE;
+          scaled.height = height * SCALE;
           //
-          image = ctx?.getImageData(
-            0,
-            0,
-            canvasScaled.width,
-            canvasScaled.height
-          );
+          image = ctx?.getImageData(0, 0, scaled.width, scaled.height);
           id = image?.data ?? new Uint8ClampedArray(0);
           //
           for (let i = 0, l = id.length; i < l; i += 4) {
@@ -303,14 +253,14 @@ class TextureFactorySingleton {
             id[i + 2] += v;
           }
           //
-          const ctx_scaled = canvasScaled.getContext("2d");
+          const ctx_scaled = scaled.getContext("2d");
           //
           if (ctx_scaled) {
             ctx_scaled.scale(SCALE, SCALE);
             ctx_scaled.drawImage(canvas, 0, 0);
           }
           //
-          resolve(canvasScaled);
+          resolve(scaled);
         }
       } catch (ex) {
         reject(ex);
@@ -318,37 +268,36 @@ class TextureFactorySingleton {
     });
   };
   //
-  generateTextureData_HEIGHT = (data: any, width: number, height: number) => {
+  generateTextureData_HEIGHT = (
+    heights: Array<number>,
+    width: number,
+    height: number
+  ): Promise<DataTexture> => {
     return new Promise(async (resolve, reject) => {
       try {
-        const w = width,
-          h = height,
-          tdata = new Uint8Array(3 * w * h);
+        const [w, h] = [width, height];
+        const tdata = new Uint8Array(3 * w * h);
         //
         for (let i = 0, j = 0, l = tdata.length; i < l; i += 3, j++) {
-          const v = data[j],
-            c = { r: 0, g: (v - (v % 256)) / 256, b: v % 256 };
+          const v = heights[j];
           //
-          tdata[i] = c.r;
-          tdata[i + 1] = c.g;
-          tdata[i + 2] = c.b;
+          tdata[i] = 0;
+          tdata[i + 1] = (v - (v % 256)) / 256;
+          tdata[i + 2] = v % 256;
         }
         //
-        const texture = new THREE.DataTexture(tdata, w, h, THREE.RGBFormat);
-        texture.minFilter = THREE.LinearFilter;
-        texture.magFilter = THREE.LinearFilter;
-        texture.encoding = THREE.sRGBEncoding;
-        texture.flipY = true;
-        texture.anisotropy = 16;
+        const t = new DataTexture(tdata, w, h, RGBFormat);
         //
-        resolve(texture);
+        t.minFilter = LinearFilter;
+        t.magFilter = LinearFilter;
+        t.encoding = sRGBEncoding;
+        t.flipY = true;
+        t.anisotropy = 16;
+        //
+        resolve(t);
       } catch (ex) {
         reject(ex);
       }
     });
   };
 }
-
-const tfs = new TextureFactorySingleton();
-
-export default tfs;

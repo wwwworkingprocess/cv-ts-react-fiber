@@ -40,7 +40,7 @@ const GlobeApp3D = (props: { path?: string | undefined }) => {
         {...bind}
         camera={{ position: [5, 0, 5], zoom: 50, near: 1, far: 1000 }}
       >
-        <OrbitControls enableZoom={true} />
+        <OrbitControls enableZoom={true} enablePan={false} />
 
         <ambientLight intensity={0.5} />
         <pointLight position={[-10, -10, -10]} />
