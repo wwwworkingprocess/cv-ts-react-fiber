@@ -1,30 +1,35 @@
 import { useFrame } from "@react-three/fiber";
-import { BufferGeometry, Material, Mesh, Vector3 } from "three";
+import { Mesh, Vector3 } from "three";
+
 import useGameAppStore from "../stores/useGameAppStore";
+
 import FrameCounter from "./frame-counter";
 
-const CrossHair = (props: {
-  crosshairMesh: React.MutableRefObject<
-    Mesh<BufferGeometry, Material | Material[]>
-  >;
+type CrossHairOwnProps = {
+  mutableRef: React.MutableRefObject<Mesh<any, any>>;
   focus: Vector3;
-  crosshairStartPosition: Vector3;
-}) => {
-  const { crosshairMesh, crosshairStartPosition, focus } = props;
+};
+
+const CrossHair = (
+  props: JSX.IntrinsicElements["mesh"] & CrossHairOwnProps
+) => {
+  const { mutableRef, position, focus, ...meshProps } = props;
   //
   const paused = false; //TODO: from store
+  const setMoving = useGameAppStore((s) => s.setMoving); //TODO: via controller
   //
-  const zoom = useGameAppStore((state) => state.zoom);
-  const moving = useGameAppStore((state) => state.moving);
-  const selectedCode = useGameAppStore((state) => state.selectedCode);
+  const [zoom, moving, selectedCode] = useGameAppStore((s) => [
+    s.zoom,
+    s.moving,
+    s.selectedCode,
+  ]);
+
   //
-  const setMoving = useGameAppStore((state) => state.setMoving);
-  //
-  //
+  // Detecting if the crosshair has reached the 'focus' point
   //
   useFrame((state) => {
     if (zoom) {
-      const p1 = crosshairMesh.current.position.clone();
+      const p1 = mutableRef.current.position.clone();
       const p2 = focus.clone();
       //
       const crosshairDistanceFromDestination = p2.sub(p1).length();
@@ -32,26 +37,26 @@ const CrossHair = (props: {
       //
       const hasArrived = crosshairDistanceFromDestination < epsilon;
       //
-      if (!hasArrived) {
-        //TODO: aggregate distance traveled here
-        // console.log(crosshairDistanceFromDestination);
-      } else {
-        if (moving && selectedCode) {
-          console.log("Arrived.", selectedCode);
-          setMoving(false, selectedCode);
-        }
+      if (moving && hasArrived && selectedCode) {
+        console.log("Arrived.", selectedCode);
+        setMoving(false, selectedCode);
       }
     }
   });
+
+  //
+  //
   //
   return (
     <mesh
-      ref={crosshairMesh}
-      position={crosshairStartPosition}
+      ref={mutableRef}
+      position={position}
       rotation={[Math.PI / 2, 0, 0]}
+      {...meshProps}
     >
       <torusBufferGeometry attach="geometry" args={[0.05, 0.0025, 8, 24]} />
       <meshStandardMaterial color="gold" />
+
       <group scale={[-1, 1, 1]} position={[0, 0, -0.3]}>
         <FrameCounter enabled={!paused} />
       </group>

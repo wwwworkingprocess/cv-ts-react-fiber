@@ -11,7 +11,7 @@ import CrossHair from "./cross-hair";
 type CityFeaturesOwnProps = {
   cities: any;
   focus: Vector3;
-  extra: boolean;
+  extraZoom: boolean;
   //
   zoomToView: (focusRef: React.MutableRefObject<Mesh>) => void;
 };
@@ -23,20 +23,18 @@ const CityFeatures = (
     cities,
     focus,
     //
-    extra,
+    extraZoom,
     //
     zoomToView,
     ...instancedMeshProps
   } = props;
-  const crosshairMesh = useRef<Mesh>(null!);
+  const crosshairRef = useRef<Mesh>(null!);
   //
   const crosshairStartPosition = useMemo(() => new Vector3(-15, 0.01, 45), []); // bounds/country dependent default
   //
   const zoom = useGameAppStore((state) => state.zoom);
   //
-  //
-  useMapAutoPanningAnimation(crosshairMesh, zoom, extra, focus);
-
+  useMapAutoPanningAnimation(crosshairRef, zoom, extraZoom, focus);
   //
   //
   //
@@ -46,14 +44,13 @@ const CityFeatures = (
         <CityFeature
           key={`${node.code}_${node.isSelected}`}
           data={node}
-          zoom={zoom}
           zoomToView={zoomToView}
         />
       ))}
       <CrossHair
+        mutableRef={crosshairRef}
         focus={focus}
-        crosshairMesh={crosshairMesh}
-        crosshairStartPosition={crosshairStartPosition}
+        position={crosshairStartPosition}
       />
     </instancedMesh>
   );

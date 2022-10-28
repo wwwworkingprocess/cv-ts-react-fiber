@@ -117,7 +117,7 @@ const DemographyGame3D = (props: {
       <CityFeatures
         cities={cities}
         focus={focus}
-        extra={extra}
+        extraZoom={extra}
         //
         zoomToView={zoomToView}
       />

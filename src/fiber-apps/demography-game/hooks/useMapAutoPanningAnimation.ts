@@ -12,44 +12,48 @@ const lookatVec = new Vector3();
 // auto zooming and panning, using the provided setters
 //
 const useMapAutoPanningAnimation = (
-  crosshairMesh: React.MutableRefObject<Mesh<any>>,
+  crosshair: React.MutableRefObject<Mesh<any>>,
   //
   zoom: boolean,
-  extra: boolean,
+  extraZoom: boolean,
   focus: Vector3
 ) => {
   //
   useFrame((state) => {
     const step = 0.01;
     //
-    zoom
-      ? positionVec.set(focus.x, focus.y, focus.z + 0.001)
-      : positionVec.set(vDef[0], vDef[1], vDef[2]);
+    const camera = state.camera;
+    const cross = crosshair.current;
     //
-    zoom
-      ? lookatVec.set(focus.x, focus.y, focus.z - 0.001)
-      : lookatVec.set(vDef2[0], vDef2[1], vDef2[2]);
+    if (zoom) {
+      positionVec.set(focus.x, focus.y, focus.z + 0.001);
+      lookatVec.set(focus.x, focus.y, focus.z - 0.001);
+    } else {
+      positionVec.set(vDef[0], vDef[1], vDef[2]);
+      lookatVec.set(vDef2[0], vDef2[1], vDef2[2]);
+    }
     //
-    state.camera.position.lerp(positionVec, step);
-    crosshairMesh.current.position.lerp(lookatVec, step);
     //
-    const cp = crosshairMesh.current.position;
+    camera.position.lerp(positionVec, step);
+    cross.position.lerp(lookatVec, step);
     //
-    state.camera.lookAt(cp.x, cp.y, cp.z);
-    crosshairMesh.current.updateMatrix();
-    state.camera.updateProjectionMatrix();
+    const cp = cross.position; // retrieving updated value
+    //
+    camera.lookAt(cp.x, cp.y, cp.z);
+    cross.updateMatrix();
+    camera.updateProjectionMatrix();
     //
     // animate viewport
     //
     if (zoom) {
-      if (extra) {
-        if (state.camera.zoom < 180) state.camera.zoom += 0.85;
+      if (extraZoom) {
+        if (camera.zoom < 180) camera.zoom += 0.85;
       } else {
-        if (state.camera.zoom < 120) state.camera.zoom += 0.25;
-        if (state.camera.zoom > 121) state.camera.zoom -= 0.85;
+        if (camera.zoom < 120) camera.zoom += 0.25;
+        if (camera.zoom > 121) camera.zoom -= 0.85;
       }
     } else {
-      if (state.camera.zoom > 25) state.camera.zoom -= 0.55;
+      if (camera.zoom > 25) camera.zoom -= 0.55;
     }
   });
 };

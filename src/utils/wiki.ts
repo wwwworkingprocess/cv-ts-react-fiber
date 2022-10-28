@@ -52,9 +52,11 @@ export const toDisplayNode = (node: any, toWorldPosition: any) => {
   };
 };
 
-export const formatPopulation = (p: number) => {
+export const formatPopulation = (p: number, omitEmoji?: boolean) => {
+  const suffix = !omitEmoji ? "🧍" : "";
+  //
   if (p === -1) return "";
-  if (p < 1000) return `${p}🧍`;
-  if (p < 1000000) return `${(p * 0.001).toFixed(1)}k 🧍`;
-  else return `${(p * 0.000001).toFixed(1)}M 🧍`;
+  if (p < 1000) return `${p}${suffix}`;
+  if (p < 1000000) return `${(p * 0.001).toFixed(1)}k ${suffix}`;
+  else return `${(p * 0.000001).toFixed(1)}M ${suffix}`;
 };

@@ -2,17 +2,16 @@ import { useCallback, useEffect, useMemo } from "react";
 
 import { Vector3 } from "three";
 
-import useCursorAppStore from "../stores/useGameAppStore";
+import useGameAppStore from "../stores/useGameAppStore";
 
 const startPosition = { x: -17, y: 0, z: 45 };
 
 const useAppController = () => {
-  const bounds = useCursorAppStore((state) => state.bounds);
-  const position = useCursorAppStore((state) => state.position);
-  const setPosition = useCursorAppStore((state) => state.setPosition);
-  const decreasePositionY = useCursorAppStore(
-    (state) => state.decreasePositionY
-  );
+  const bounds = useGameAppStore((state) => state.bounds);
+  const position = useGameAppStore((state) => state.position);
+  const setPosition = useGameAppStore((state) => state.setPosition);
+  const decreasePositionY = useGameAppStore((state) => state.decreasePositionY);
+  //
   const onJump = useCallback(() => {
     setPosition({ ...position, y: position.y + 1 });
     decreasePositionY(500);
