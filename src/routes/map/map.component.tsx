@@ -34,10 +34,10 @@ const WikiDemography = () => {
   const tabs = ["Main Info", "Browse", "Search", "Nearby"];
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
-  const [countryCode, setCountryCode] = useState<string>("28"); // pre-load tree helper
+  //const [countryCode, setCountryCode] = useState<string>("Q28"); // pre-load tree helper
+  const [countryCode, setCountryCode] = useState<string>(); // pre-load tree helper
   const [selectedCountry, setSelectedCountry] = useState<WikiCountry>();
-  // const [selectedCode, setSelectedCode] = useState<string>();
-
+  //
   const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
     s.selectedCode,
     s.setSelectedCode,
@@ -57,8 +57,13 @@ const WikiDemography = () => {
   //
   //
   const onCountryClicked = (c: WikiCountry) => {
-    setCountryCode(c.code.replace("Q", ""));
+    console.log("clicked", c, c?.code);
+    setCountryCode(c.code);
     setSelectedCountry(c);
+  };
+  const onCountryReset = () => {
+    setCountryCode(undefined);
+    setSelectedCountry(undefined);
   };
 
   //
@@ -80,10 +85,17 @@ const WikiDemography = () => {
     //
     const isLeaf = tree._is_leaf(selectedNode.code);
     //
-    const selectedParent = tree._n(tree._qc(selectedNode.p));
-    const selectedGrandParent = isLeaf
-      ? tree._n(tree._qc(selectedParent.p))
+    const selectedParent = selectedNode.p
+      ? tree._n(tree._qc(selectedNode.p))
       : undefined;
+
+    if (!selectedParent)
+      console.warn("Invalid tree node, no parent for ", selectedNode);
+
+    const selectedGrandParent =
+      isLeaf && selectedParent
+        ? tree._n(tree._qc(selectedParent.p))
+        : undefined;
     //
     const activeParent = isLeaf ? selectedGrandParent : selectedParent;
     //
@@ -115,6 +127,24 @@ const WikiDemography = () => {
       }),
     []
   );
+
+  //
+  const gameInCountry = useMemo(() => {
+    if (!selectedCountry) return null;
+    if (!tree) return null;
+    //
+    console.log("Game in country, ", selectedCountry);
+    console.log("Country in tree, ", tree._n(`Q${selectedCountry.code}`));
+    //
+    return selectedCountry ? (
+      <DemographyGame3D
+        tree={tree}
+        selectedCountry={selectedCountry}
+        path=".."
+        scrollToDetails={scrollToDetails}
+      />
+    ) : null;
+  }, [selectedCountry, tree, scrollToDetails]);
   //
   //  loading >> selectedCountry >> selectedCode
   //
@@ -151,7 +181,15 @@ const WikiDemography = () => {
                   >
                     search
                   </span>{" "}
-                  for a settlement to continue.
+                  for a settlement to continue
+                  {selectedCountry ? (
+                    <>
+                      or{" "}
+                      <button onClick={onCountryReset}>
+                        select another country
+                      </button>{" "}
+                    </>
+                  ) : null}
                 </p>
               ) : null}
             </>
@@ -193,7 +231,9 @@ const WikiDemography = () => {
       {tabsIndex === 2 ? (
         <>
           <h3>Search for a Settlement</h3>
-          <SettlementSearch tree={tree} countryCode={countryCode} />
+          {countryCode ? (
+            <SettlementSearch tree={tree} countryCode={countryCode} />
+          ) : null}
         </>
       ) : null}
 
@@ -233,14 +273,15 @@ const WikiDemography = () => {
         <Spinner />
       ) : (
         <div style={{ marginTop: "15px" }}>
-          {selectedCountry ? (
+          {gameInCountry}
+          {/* {selectedCountry ? (
             <DemographyGame3D
               tree={tree}
               selectedCountry={selectedCountry}
               path=".."
               scrollToDetails={scrollToDetails}
             />
-          ) : null}
+          ) : null} */}
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}

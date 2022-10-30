@@ -1,17 +1,17 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Text } from "@react-three/drei";
-import { MOUSE, Vector3 } from "three";
+import { Text } from "@react-three/drei";
+import { Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
 
 import useAppController from "./hooks/useAppController";
 import useKeyboardNavigation from "./hooks/useKeyboardNavigation";
-// import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
 
+import CameraControls from "./fibers/camera-controls";
 import CountryFeature from "./fibers/country-feature";
 import CityFeatures from "./fibers/city-features";
 
@@ -21,6 +21,8 @@ import GameControls from "./components/game-controls/game-controls.component";
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import TreeHelper from "../../utils/tree-helper";
 import { toDisplayNode } from "../../utils/wiki";
+import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
+import { getCountryBoundsByCode } from "../../utils/country-helper";
 
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
@@ -51,12 +53,28 @@ const DemographyGame3D = (props: {
   useAppController(); // const { x, y, z /*, areaScale, onJump*/ } = useAppController();
   //
   const { displayedNodes } = useCountryNodesMemo(
+    selectedCountry,
     tree,
     selectedCode,
     citiesMaxItems,
     citiesMaxRangeKm,
     citiesShowPopulated
   );
+
+  //
+  // When selectedCountry is changing (component state),
+  // updating bounds in store (module state)
+  //
+  const setBounds = useGameAppStore((state) => state.setBounds);
+  //
+  useEffect(() => {
+    if (selectedCountry) {
+      const code = selectedCountry.code;
+      const b = getCountryBoundsByCode(code);
+      //
+      if (b) setBounds(b);
+    }
+  }, [selectedCountry, setBounds]);
 
   //
   //
@@ -72,9 +90,41 @@ const DemographyGame3D = (props: {
   }, [displayedNodes]);
 
   //
+  // Placement helper memo, some of the components are 'flipped', kind of hacky ATM
+  // Vectors for positioning fibers, depending on selectedCountry (bounds of country)
+  //
+  const pos = useMemo(() => {
+    const v3 = (x: number, y: number, z: number) => new Vector3(x, y, z);
+    const avg = (a: number, b: number) =>
+      b > a ? a + (b - a) * 0.5 : b + (a - b) * 0.5;
+    //
+    const cp = { x: avg(MIN_X, MAX_X), y: avg(MIN_Y, MAX_Y) };
+    //
+    const placement = {
+      controls: v3(cp.x, 0, cp.y),
+      camera: v3(cp.x, 2, cp.y),
+      crosshair: v3(-1 * cp.x, 0.001, cp.y), // in city-features
+      lights: v3(-1 * cp.x, 0, cp.y),
+      //
+      focus: v3(-1 * cp.x - 1, 0 + 1, MIN_Y + 1),
+      //
+      country: v3(0, 0, -2 * cp.y),
+      //
+      defaultPanPosition: v3(-1 * (cp.x + 2) + 1, 0 + 50, cp.y - 7 - 0.65 + 1),
+      defaultPanLookAt: v3(
+        -1 * (cp.x + 1.5) + 1,
+        0 + 0.1,
+        cp.y + 0.5 - 0.65 + 0
+      ),
+    };
+    //
+    return placement;
+  }, [MIN_X, MAX_X, MIN_Y, MAX_Y]);
+
+  //
   // zooming and panning
   //
-  const [focus, setFocus] = useState(new Vector3(-17, 0 + 1, 45 + 1));
+  const [focus, setFocus] = useState(pos.focus);
   const [extra, setExtra] = useState(false);
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
@@ -117,55 +167,41 @@ const DemographyGame3D = (props: {
       <CityFeatures
         cities={cities}
         focus={focus}
+        start={pos.crosshair}
         extraZoom={extra}
+        //
+        defaultPanPosition={pos.defaultPanPosition}
+        defaultPanLookAt={pos.defaultPanLookAt}
         //
         zoomToView={zoomToView}
       />
     ),
-    [cities, focus, extra, zoomToView]
+    [
+      cities,
+      focus,
+      extra,
+      pos.crosshair,
+      pos.defaultPanLookAt,
+      pos.defaultPanPosition,
+      zoomToView,
+    ]
   );
   //
-  // const selectedWikiCountryUrl = useMemo(
-  //   () => (selectedCountry ? selectedCountry.urls.geo : ""),
-  //   [selectedCountry]
-  // );
-  //
-  // const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
-  // const firstFeatureCoordinates = useMemo(() => {
-  //   if (rawWikiJson) {
-  //     const arrs = rawWikiJson.data.features[0].geometry.coordinates;
-  //     //
-  //     return arrs;
-  //   } else return [];
-  // }, [rawWikiJson]);
+  const selectedWikiCountryUrl = useMemo(
+    () => (selectedCountry ? selectedCountry.urls.geo : ""),
+    [selectedCountry]
+  );
+
+  const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
+  const firstFeatureCoordinates = useMemo(() => {
+    if (rawWikiJson) {
+      const arrs = rawWikiJson.data.features[0].geometry.coordinates;
+      //
+      return arrs;
+    } else return [];
+  }, [rawWikiJson]);
 
   //
-  // loading geojson
-  //
-  const [linesLoading, setLinesLoading] = useState<boolean>(false);
-  const [features, setFeatures] = useState<Array<any>>([]);
-  //
-  useEffect(() => {
-    const datasourceUrl = `../../data/geojson/admin1.28.geojson`;
-    //
-    const fetchGeoJson = (url: string) => {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data: any) => {
-          const toFeature = (f: any) => f.geometry.coordinates;
-          //
-          const newFeatures = data.features?.map(toFeature) ?? [];
-          //
-          setFeatures(newFeatures);
-          //
-          setLinesLoading(false);
-        });
-    };
-    //
-    setLinesLoading(true);
-    fetchGeoJson(datasourceUrl);
-  }, []);
-
   //
   //
   return (
@@ -173,66 +209,34 @@ const DemographyGame3D = (props: {
       <Suspense fallback={<Spinner />}>
         <Canvas
           style={{ height: "350px", border: "solid 1px white" }}
-          frameloop="demand"
           linear
           dpr={[1, 2]}
-          camera={{
-            position: [19, 2, 46],
-            zoom: 30,
-          }}
+          // frameloop="demand"
+          camera={{ position: pos.camera, zoom: 30 }}
         >
-          <OrbitControls
-            makeDefault
-            position={[19, 0, 46]}
-            panSpeed={0.061}
-            enableDamping={false}
-            enablePan={selectedCode !== undefined}
-            enableZoom={selectedCode !== undefined}
-            enableRotate={false}
-            minPolarAngle={0}
-            maxPolarAngle={(Math.PI / 7) * 2}
-            maxZoom={100}
-            maxDistance={100}
-            mouseButtons={{
-              LEFT: MOUSE.PAN,
-              MIDDLE: MOUSE.ROTATE,
-              RIGHT: MOUSE.DOLLY,
-            }}
-          />
+          <CameraControls position={pos.controls} selectedCode={selectedCode} />
 
           {/* Forcing font to load */}
           <Text font={"data/Roboto_Slab.ttf"}>
             {selectedCountry?.name || "..."}
           </Text>
 
+          <gridHelper position={pos.focus} />
+
           {/* Light Rig */}
-          <group position={[-1 * MIN_X, 0, MIN_Y]}>
+          <group position={pos.lights}>
             <ambientLight intensity={0.2} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
 
-          {/* Country feature (consider position={[-1 * MIN_X, 0, MIN_Y]}) */}
-          {/* <CountryFeature
+          {/* Country feature */}
+          <CountryFeature
             zoomToView={zoomToView}
             firstFeatureCoordinates={firstFeatureCoordinates}
             color={"blue"}
-          /> */}
+          />
 
-          {/* Admin Zone 1 features */}
-          {!linesLoading ? (
-            <group position={[0, 0, 0]}>
-              {features.length
-                ? features.map((f, idx) => (
-                    <CountryFeature
-                      key={idx}
-                      zoomToView={zoomToView}
-                      firstFeatureCoordinates={f}
-                      color={"#3344ff"}
-                    />
-                  ))
-                : null}
-            </group>
-          ) : null}
+          {/* Admin Zone 1 features - DISABLED, needs external datasource */}
 
           {/* City features (instancedMesh + crossHair) */}
           {memoizedCities}

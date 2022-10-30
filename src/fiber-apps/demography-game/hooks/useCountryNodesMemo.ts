@@ -2,8 +2,11 @@ import { useCallback, useMemo } from "react";
 
 import TreeHelper from "../../../utils/tree-helper";
 import { distance } from "../../../utils/geo";
+import { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
+import { getCountryNodesFromTree } from "../../../utils/country-helper";
 
 const useCountryNodesMemo = (
+  selectedCountry: WikiCountry | undefined,
   tree: TreeHelper,
   selectedCode: string | undefined,
   MAX_ITEMS_TO_SHOW: number,
@@ -13,9 +16,14 @@ const useCountryNodesMemo = (
   const getTreeNode = useCallback((code: string) => tree._n(code), [tree]);
   //
   const nodesWithinCountry = useMemo(
-    () => (tree ? tree.list_all().slice(143) : []), // skip continents and countries except hungary
+    () => {
+      if (!tree) return [];
+      if (!selectedCountry) return [];
+      //
+      return getCountryNodesFromTree(selectedCountry, tree);
+    },
     //
-    [tree]
+    [selectedCountry, tree]
   );
   //
   const currentSort = useMemo(() => {
@@ -46,8 +54,10 @@ const useCountryNodesMemo = (
         const data = selectedNode ? selectedNode.data : {};
         const { lat, lng } = data;
         //
+        if (!lat || !lng) return [];
+        //
         return nodesWithinCountry
-          .filter((n) => !n.data || n.data.lat || n.data.lng)
+          .filter((n) => n.data !== undefined && n.data.lat && n.data.lng)
           .map((n) => ({
             ...n,
             distance: distance([lat, lng], [n.data.lat ?? 0, n.data.lng ?? 0]),

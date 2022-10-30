@@ -1,3 +1,5 @@
+import { TreeNodeNumericProps } from "./tree-helper";
+
 export const responseAsJson = (response: Response) => {
   if (!response.ok) {
     throw new Error("Network response was not ok");
@@ -21,15 +23,18 @@ export const onNetworkError = (reject: any, error: Error) => {
 // Loading country data
 //
 
-export const load_labels = (fn: string) =>
+export const load_labels = (fn: string): Promise<Array<[number, string]>> =>
   new Promise((resolve, reject) => {
     fetch(fn)
       .then(responseAsJson)
-      .then((json) => resolve(json))
+      .then((json) => resolve(json as Array<[number, string]>))
       .catch((error) => onNetworkError(reject, error));
   });
 //
-export const load_hierarchy = (fn: string, fn_blob_to_hierarchy: any) =>
+export const load_hierarchy = (
+  fn: string,
+  fn_blob_to_hierarchy: (event: any) => Int32Array
+): Promise<Int32Array> =>
   new Promise((resolve, reject) => {
     fetch(fn)
       .then(responseAsBlob)
@@ -47,7 +52,7 @@ export const load_nodedata = (
   fn: string,
   fn_blob_to_nodedata: any,
   fn_from_ab: any
-) =>
+): Promise<Array<TreeNodeNumericProps>> =>
   new Promise((resolve, reject) => {
     fetch(fn)
       .then(responseAsBlob)

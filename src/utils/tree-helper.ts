@@ -3,6 +3,15 @@
 
 import { distance } from "./geo";
 
+export type TreeNodeNumericProps = {
+  id: number | undefined;
+  p: number | undefined;
+  c: number | undefined;
+  pop: number | undefined;
+  km2: number | undefined;
+  lat: number | undefined;
+  lng: number | undefined;
+};
 //
 export const fn_from_ab = (buffer: ArrayBufferLike) => {
   const view = new DataView(buffer);
@@ -45,7 +54,7 @@ export const fn_from_ab = (buffer: ArrayBufferLike) => {
     console.error(ex);
   }
   //
-  return { id, p, c, pop, km2, lat, lng };
+  return { id, p, c, pop, km2, lat, lng } as TreeNodeNumericProps;
 };
 //
 //
@@ -221,14 +230,24 @@ class TreeHelper {
     let n = this.NODES[this._qc(node.p)],
       end = !n || n.p === undefined;
     //
-    return !end ? [...this.get_pcodes(n), node.code] : [n.code, node.code];
+    if (!n) console.warn("invalid node parent", node.p, node, n);
+    //
+    return !n
+      ? []
+      : !end
+      ? [...this.get_pcodes(n), node.code]
+      : [n.code, node.code];
   };
   //
   get_types = (node: any): Array<number> => {
     let n = this.NODES[this._qc(node.p)],
       end = !n || n.p === undefined;
     //
-    return !end ? [...this.get_types(n), node.type] : [n.type, node.type];
+    return !n
+      ? []
+      : !end
+      ? [...this.get_types(n), node.type]
+      : [n.type, node.type];
   };
   //
   get_depth = (node: any): number => {

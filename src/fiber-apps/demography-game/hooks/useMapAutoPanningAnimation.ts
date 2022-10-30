@@ -2,8 +2,8 @@ import { useFrame } from "@react-three/fiber";
 
 import { Mesh, Vector3 } from "three";
 
-const vDef = [-21 + 1, 0 + 50, 40 - 0.65 + 1];
-const vDef2 = [-20.5 + 1, 0 + 0.1, 47.5 - 0.65 + 0];
+// const vDef = [-21 + 1, 0 + 50, 40 - 0.65 + 1];
+// const vDef2 = [-20.5 + 1, 0 + 0.1, 47.5 - 0.65 + 0];
 //
 const positionVec = new Vector3();
 const lookatVec = new Vector3();
@@ -16,7 +16,10 @@ const useMapAutoPanningAnimation = (
   //
   zoom: boolean,
   extraZoom: boolean,
-  focus: Vector3
+  focus: Vector3,
+  //
+  defaultPanPosition: Vector3,
+  defaultPanLookAt: Vector3
 ) => {
   //
   useFrame((state) => {
@@ -29,8 +32,13 @@ const useMapAutoPanningAnimation = (
       positionVec.set(focus.x, focus.y, focus.z + 0.001);
       lookatVec.set(focus.x, focus.y, focus.z - 0.001);
     } else {
-      positionVec.set(vDef[0], vDef[1], vDef[2]);
-      lookatVec.set(vDef2[0], vDef2[1], vDef2[2]);
+      const vDef = defaultPanPosition;
+      const vDef2 = defaultPanLookAt;
+
+      positionVec.set(vDef.x, vDef.y, vDef.z);
+      lookatVec.set(vDef2.x, vDef2.y, vDef2.z);
+      // positionVec.set(vDef[0], vDef[1], vDef[2]);
+      // lookatVec.set(vDef2[0], vDef2[1], vDef2[2]);
     }
     //
     //

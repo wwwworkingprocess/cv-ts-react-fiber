@@ -12,7 +12,8 @@ export const useAdminOneGeoData = (
 
   const fetchApi = (p: string, country_code: string) => {
     if (country_code) {
-      const url = `${p}data/geojson/admin1.${country_code}.geojson`;
+      const code = country_code.replace("Q", "");
+      const url = `${p}data/geojson/admin1.${code}.geojson`;
       //
       fetch(url)
         .then((response) => response.json())

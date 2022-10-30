@@ -1,10 +1,11 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import TreeHelper, {
+  fn_from_ab,
   fn_blob_to_hierarchy,
   fn_blob_to_nodedata,
-  fn_from_ab,
 } from "../utils/tree-helper";
+import type { TreeNodeNumericProps } from "../utils/tree-helper";
 
 import {
   load_hierarchy,
@@ -12,84 +13,148 @@ import {
   load_nodedata,
 } from "../utils/networking";
 
+type TreeRawData = {
+  hierarchy: Int32Array;
+  labels: Array<any>;
+  nodedata: Array<any>;
+};
+
+type LoaderResult = [
+  Int32Array,
+  Array<[number, string]>,
+  Array<TreeNodeNumericProps>
+];
+
+type LoaderResultPromises = [
+  Promise<Int32Array>,
+  Promise<Array<[number, string]>>,
+  Promise<Array<TreeNodeNumericProps>>
+];
+
 //
 // Use hierarchical population & geodata for a specific country
-// currently supported countries: Q28, Q36, Q668
 //
 export const useTreeHelper = (
-  countryCode: string,
+  countryCode: string | undefined, // e.g. Q28, Q215, Q218
   path?: string | undefined
 ) => {
   //
-  // COUNTRY CODE >> URLS >> PROMISES >> DATA
+  // COUNTRY CODE >> URLS >> PROMISES >> LOADERRESULT >> VALUE
   //
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
+  const [dataLoading, setDataLoading] = useState<boolean>(false);
+  const [dataResult, setDataResult] = useState<TreeRawData>();
   const [tree, setTree] = useState<TreeHelper>();
   const [keys, setKeys] = useState<Array<string>>([]);
   //
-  // STEP 1 create the tree
-  //
-  useEffect(() => {
-    setLoading(true);
+  const resetTree = () => {
+    setLoading(false);
+    setDataLoading(false);
+    setDataResult(undefined);
     setTree(undefined);
     setKeys([]);
-    //
+    setValue(undefined);
+  };
+
+  //
+  // STEP 1 Creating tree instance
+  //
+  useEffect(() => {
     const fn_create_tree = () => new TreeHelper({});
     //
-    setTree(fn_create_tree);
+    if (countryCode) {
+      resetTree();
+      //
+      setLoading(true);
+      setTree(fn_create_tree);
+    }
+    //
+    return () => resetTree();
   }, [countryCode]); // reset state when countryCode changes
+
   //
-  // STEP 2 update path for each file when countryCode changes
+  // STEP 2 Updating path for each file when countryCode is changing
   //
   const urls = useMemo(() => {
     const p = path ? `${path}` : "";
-
-    const path_hierarchy = `${p}data/wikidata/Q${countryCode}.tree.hierarchy.bin`;
-    const path_labels = `${p}data/wikidata/Q${countryCode}.tree.labels.json`;
-    const path_nodedata = `${p}data/wikidata/Q${countryCode}.tree.nodedata.bin`;
     //
-    return [path_hierarchy, path_labels, path_nodedata];
+    const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.hierarchy.bin`;
+    const pathLabels = `${p}data/wikidata/${countryCode}.tree.labels.json`;
+    const pathNodeData = `${p}data/wikidata/${countryCode}.tree.nodedata.bin`;
+    //
+    return [pathHierarchy, pathLabels, pathNodeData];
   }, [countryCode, path]);
+
   //
-  // STEP 4 processing loaded data
+  // STEP 3 Loading tree data files, after path variables are ready
   //
-  const afterDataLoaded = useCallback(
-    (loaded: Array<any>) => {
-      if (!tree) return;
+  const updateDataResult = (r: LoaderResult) => {
+    const [hierarchy, labels, nodedata] = r;
+    //
+    setDataResult({ hierarchy, labels, nodedata } as TreeRawData);
+  };
+  //
+  useEffect(() => {
+    //
+    const loadTreeData = async (urls: Array<string>) => {
+      const [path_hierarchy, path_labels, path_nodedata] = urls;
+      const dataPromises = [
+        load_hierarchy(path_hierarchy, fn_blob_to_hierarchy),
+        load_labels(path_labels),
+        load_nodedata(path_nodedata, fn_blob_to_nodedata, fn_from_ab),
+      ] as LoaderResultPromises;
       //
-      // initializing tree from loaded data
+      setDataLoading(true);
       //
-      const [hierarchy_flatmap, labels, nodedata] = loaded;
+      return await Promise.all(dataPromises)
+        .then(updateDataResult)
+        .finally(() => setDataLoading(false));
+    };
+    //
+    //
+    if (tree) loadTreeData(urls);
+  }, [tree, urls]);
+
+  //
+  // STEP 4 Processing loaded data, building tree nodes
+  //
+  useEffect(() => {
+    const isReady = tree && !dataLoading && dataResult !== undefined;
+    //
+    if (isReady) {
+      const { hierarchy, labels, nodedata } = dataResult;
       //
-      tree._build_from_flatmap(hierarchy_flatmap); // creating tree hieararcy (nodes & edges)
+      tree._build_from_flatmap(hierarchy); // creating tree hieararcy (nodes & edges)
       tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
       //
       tree._build_labels(labels as any); // decorating nodes (localizable)
       tree._build_nodedata(nodedata); // decorating nodes (numeric data)
       //
       setKeys(tree._keys_cache); // passing reference of helper-result
+      setValue(tree);
       setLoading(false);
-    },
-    [tree]
-  );
-  //
-  // STEP 3 load tree data after the page is loaded
-  //
-  useEffect(() => {
-    if (tree) {
-      const fn_load_all = async () => {
-        const [path_hierarchy, path_labels, path_nodedata] = urls;
-        //
-        return await Promise.all([
-          load_hierarchy(path_hierarchy, fn_blob_to_hierarchy),
-          load_labels(path_labels),
-          load_nodedata(path_nodedata, fn_blob_to_nodedata, fn_from_ab),
-        ]);
-      };
-      //
-      fn_load_all().then(afterDataLoaded);
     }
-  }, [tree, urls, afterDataLoaded]);
+  }, [tree, dataLoading, dataResult]);
+
   //
-  return { loading, tree, keys, nodes: tree?.NODES, path_hierarchy: urls[0] };
+  // Returning memoized result
+  //
+  const val = useMemo(
+    () =>
+      !loading && !dataLoading && dataResult && keys.length > 0
+        ? tree
+        : undefined,
+    [tree, loading, dataLoading, dataResult, keys]
+  );
+  const [value, setValue] = useState<TreeHelper | undefined>(val);
+  //
+  return useMemo(
+    () => ({
+      loading,
+      keys,
+      tree: value,
+      nodes: value?.NODES,
+    }),
+    [loading, keys, value]
+  );
 };

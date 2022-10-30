@@ -47,7 +47,8 @@ const HungaryApp3D = (props: {
     [number, number]
   >;
   //
-  const [countryCode /*, setCountryCode*/] = useState<string>("28");
+  //const [countryCode /*, setCountryCode*/] = useState<string>("28");
+  const [countryCode /*, setCountryCode*/] = useState<string>("Q28");
   // const [selectedCode, setSelectedCode] = useState<string>("Q28");
   //
 

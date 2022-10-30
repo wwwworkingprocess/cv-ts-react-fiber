@@ -1,20 +1,38 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import { useTreeHelper } from "../../hooks/useTreeHelper";
+import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
-const availableCountryCodes = ["Q28"]; // , "Q36", "Q668"];
+const availableCountryCodes = getAvailableCountryCodes();
 
 const useMapMemos = (
-  countryCode: string /* e.g. "28" */,
+  countryCode: string | undefined /* e.g. "Q28" */,
   wikiCountries: Array<WikiCountry> | null,
   selectedCountry: WikiCountry | undefined,
   selectedCode: string | undefined
 ) => {
   const { loading, tree, keys } = useTreeHelper(countryCode);
   //
-  const isTreeReady = useMemo(() => !loading && tree, [loading, tree]);
+  const isTreeReady = useMemo(
+    () => !loading && tree !== undefined,
+    [loading, tree]
+  );
+  //
+  const selectedCountryCode = useMemo(
+    () => (selectedCountry ? selectedCountry.code : undefined),
+    [selectedCountry]
+  );
+
+  useEffect(() => {
+    if (selectedCountry) {
+      console.log("country set", selectedCountry, "applying bounds change");
+    } else {
+      // reset & save game state here
+      console.log("country cleared", "TODO: reset & save game state here");
+    }
+  }, [selectedCountry]);
   //
   // Countries level
   //
@@ -48,10 +66,10 @@ const useMapMemos = (
       switch (countryCode) {
         case 28:
           return s.replaceAll(" County", "").replaceAll(" District", "");
-        case 36:
-          return s.replaceAll(" Voivodeship", "").replaceAll(" province", "");
-        case 668:
-          return s.replaceAll(" Pradesh", "");
+        // case 36:
+        //   return s.replaceAll(" Voivodeship", "").replaceAll(" province", "");
+        // case 668:
+        //   return s.replaceAll(" Pradesh", "");
         default:
           return s;
       }
@@ -85,7 +103,7 @@ const useMapMemos = (
     let arr;
     //
     if (isReady && selectedNode) {
-      const isAdminOneLevel = selectedCode === "Q28";
+      const isAdminOneLevel = selectedCode === selectedCountryCode;
       const isLeaf = tree?._is_leaf(selectedNode.code);
       //
       if (isAdminOneLevel) {
@@ -116,7 +134,7 @@ const useMapMemos = (
     expanded.sort((a, b) => (b[4].pop || 0) - (a[4].pop || 0));
     //
     return expanded;
-  }, [tree, isAdminTwoReady, selectedCode]);
+  }, [tree, isAdminTwoReady, selectedCountryCode, selectedCode]);
   //
   //
   //
