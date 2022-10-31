@@ -12,6 +12,7 @@ import useCountryNodesMemo from "./hooks/useCountryNodesMemo";
 import useMapAutoPanningActions from "./hooks/useMapAutoPanning";
 
 import CameraControls from "./fibers/camera-controls";
+import WorldPlane from "./fibers/world-plane";
 import CountryFeature from "./fibers/country-feature";
 import CityFeatures from "./fibers/city-features";
 
@@ -244,6 +245,9 @@ const DemographyGame3D = (props: {
             <ambientLight intensity={0.2} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
+
+          {/* World feature */}
+          <WorldPlane />
 
           {/* Country feature */}
           <CountryFeature coords={countryCoords} color={"blue"} />

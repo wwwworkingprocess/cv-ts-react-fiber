@@ -35,7 +35,7 @@ const colorByPop = (node: any) => {
 //
 const scaleByPop = (node: any) => {
   const toValue = (node: any): number =>
-    Math.log(Math.max(20, node?.data?.pop ?? 0)) * 0.25;
+    Math.log(Math.max(200, node?.data?.pop ?? 0)) * 0.25;
   //
   const v = Math.max(0.1, toValue(node)) * 0.12;
   //

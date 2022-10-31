@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 
 import { ThreeEvent, useFrame } from "@react-three/fiber";
-import { Color, DoubleSide, Mesh, MeshStandardMaterial } from "three";
+import { Color, DoubleSide, Mesh, MeshPhongMaterial } from "three";
 
 import { shapeFromCoords } from "../../../utils/d3d";
 
@@ -19,7 +19,7 @@ const CountryBorder = (
   const { points, color } = props;
   //
   const ref = useRef<Mesh>(null!);
-  const materialRef = useRef<MeshStandardMaterial>(null!);
+  const materialRef = useRef<MeshPhongMaterial>(null!);
   const [hovered, setHover] = useState(false);
 
   //
@@ -67,10 +67,12 @@ const CountryBorder = (
       {...props}
     >
       {shape}
-      <meshStandardMaterial
+      <meshPhongMaterial
         ref={materialRef}
         side={DoubleSide}
         color={COLOR_WHITE}
+        transparent={true}
+        opacity={0.5}
       />
     </mesh>
   ) : null;
