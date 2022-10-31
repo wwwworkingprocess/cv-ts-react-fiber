@@ -51,7 +51,7 @@ const useCountryNodesMemo = (
       const selectedNode = getTreeNode(selectedCode);
       //
       if (selectedNode) {
-        const data = selectedNode ? selectedNode.data : {};
+        const data = selectedNode.data ?? {};
         const { lat, lng } = data;
         //
         if (!lat || !lng) return [];
@@ -91,7 +91,7 @@ const useCountryNodesMemo = (
       const selectedNode = getTreeNode(selectedCode);
       //
       if (selectedNode) {
-        const data = selectedNode ? selectedNode.data : {};
+        const data = selectedNode.data ?? {};
         const { lat, lng } = data;
         //
         const nearestCodesLookup = new Set(nearestNodes.map((n) => n.code));

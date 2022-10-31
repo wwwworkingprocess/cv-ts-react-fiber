@@ -76,6 +76,8 @@ export const useTreeHelper = (
   // STEP 2 Updating path for each file when countryCode is changing
   //
   const urls = useMemo(() => {
+    if (!countryCode) return [];
+    //
     const p = path ? `${path}` : "";
     //
     const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.hierarchy.bin`;
@@ -108,11 +110,20 @@ export const useTreeHelper = (
       //
       return await Promise.all(dataPromises)
         .then(updateDataResult)
+        .catch((ex) => {
+          console.error("ERROR", ex, "in tree");
+          setDataResult(undefined);
+        })
         .finally(() => setDataLoading(false));
     };
     //
     //
-    if (tree) loadTreeData(urls);
+    if (tree && urls.length) loadTreeData(urls);
+    //
+    return () => {
+      setDataResult(undefined);
+      setDataLoading(false);
+    };
   }, [tree, urls]);
 
   //

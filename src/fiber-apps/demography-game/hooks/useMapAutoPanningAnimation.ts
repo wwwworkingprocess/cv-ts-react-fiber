@@ -1,4 +1,6 @@
 import { useFrame } from "@react-three/fiber";
+import { useMemo } from "react";
+import { isMobile } from "react-device-detect";
 
 import { Mesh, Vector3 } from "three";
 
@@ -19,8 +21,14 @@ const useMapAutoPanningAnimation = (
   focus: Vector3,
   //
   defaultPanPosition: Vector3,
-  defaultPanLookAt: Vector3
+  defaultPanLookAt: Vector3,
+  //
+  countryZoomFix: number
 ) => {
+  const applizedZoom = useMemo(
+    () => Math.max(0, (25 - countryZoomFix) * (isMobile ? 0.75 : 1)),
+    [countryZoomFix]
+  );
   //
   useFrame((state) => {
     const step = 0.01;
@@ -61,7 +69,8 @@ const useMapAutoPanningAnimation = (
         if (camera.zoom > 121) camera.zoom -= 0.85;
       }
     } else {
-      if (camera.zoom > 25) camera.zoom -= 0.55;
+      if (camera.zoom > applizedZoom) camera.zoom -= 0.45;
+      if (camera.zoom < applizedZoom - 1) camera.zoom += 0.45;
     }
   });
 };

@@ -16,6 +16,8 @@ export type TreeNodeNumericProps = {
 export const fn_from_ab = (buffer: ArrayBufferLike) => {
   const view = new DataView(buffer);
   //
+  if (view.byteLength !== 28) return undefined;
+  //
   let id, p, c, pop, km2, lat, lng;
   //
   try {

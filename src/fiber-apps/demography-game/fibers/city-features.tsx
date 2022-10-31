@@ -17,6 +17,8 @@ type CityFeaturesOwnProps = {
   defaultPanPosition: Vector3;
   defaultPanLookAt: Vector3;
   //
+  countryZoomFix: number;
+  //
   zoomToView: (focusRef: React.MutableRefObject<Mesh>) => void;
 };
 
@@ -32,6 +34,8 @@ const CityFeatures = (
     defaultPanPosition,
     defaultPanLookAt,
     //
+    countryZoomFix,
+    //
     zoomToView,
     ...instancedMeshProps
   } = props;
@@ -45,7 +49,8 @@ const CityFeatures = (
     extraZoom,
     focus,
     defaultPanPosition,
-    defaultPanLookAt
+    defaultPanLookAt,
+    countryZoomFix
   );
   //
   //

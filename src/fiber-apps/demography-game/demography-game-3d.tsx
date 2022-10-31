@@ -22,7 +22,10 @@ import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import TreeHelper from "../../utils/tree-helper";
 import { toDisplayNode } from "../../utils/wiki";
 import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
-import { getCountryBoundsByCode } from "../../utils/country-helper";
+import {
+  getCountryBoundsByCode,
+  getCountryZoomFixByCode,
+} from "../../utils/country-helper";
 
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
@@ -61,6 +64,16 @@ const DemographyGame3D = (props: {
     citiesShowPopulated
   );
 
+  const [countryZoomFix, setCountryZoomFix] = useState<number>(0);
+  useEffect(() => {
+    if (selectedCountry) {
+      const code = selectedCountry.code;
+      const zoomFix = getCountryZoomFixByCode(code);
+      //
+      if (zoomFix) setCountryZoomFix(zoomFix);
+    }
+  }, [selectedCountry, setCountryZoomFix]);
+
   //
   // When selectedCountry is changing (component state),
   // updating bounds in store (module state)
@@ -72,9 +85,12 @@ const DemographyGame3D = (props: {
       const code = selectedCountry.code;
       const b = getCountryBoundsByCode(code);
       //
-      if (b) setBounds(b);
+      if (b) {
+        setBounds(b);
+        setZoom(false);
+      }
     }
-  }, [selectedCountry, setBounds]);
+  }, [selectedCountry, setBounds, setZoom]);
 
   //
   //
@@ -110,12 +126,12 @@ const DemographyGame3D = (props: {
       //
       country: v3(0, 0, -2 * cp.y),
       //
-      defaultPanPosition: v3(-1 * (cp.x + 2) + 1, 0 + 50, cp.y - 7 - 0.65 + 1),
-      defaultPanLookAt: v3(
+      defaultPanPosition: v3(
         -1 * (cp.x + 1.5) + 1,
-        0 + 0.1,
-        cp.y + 0.5 - 0.65 + 0
+        0 + 50,
+        cp.y - 7 - 0.65 + 1
       ),
+      defaultPanLookAt: v3(-1 * (cp.x + 1) + 1, 0 + 0.1, cp.y + 0.5 - 0.65 + 0),
     };
     //
     return placement;
@@ -172,6 +188,7 @@ const DemographyGame3D = (props: {
         //
         defaultPanPosition={pos.defaultPanPosition}
         defaultPanLookAt={pos.defaultPanLookAt}
+        countryZoomFix={countryZoomFix}
         //
         zoomToView={zoomToView}
       />
@@ -184,6 +201,7 @@ const DemographyGame3D = (props: {
       pos.defaultPanLookAt,
       pos.defaultPanPosition,
       zoomToView,
+      countryZoomFix,
     ]
   );
   //
@@ -193,7 +211,7 @@ const DemographyGame3D = (props: {
   );
 
   const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
-  const firstFeatureCoordinates = useMemo(() => {
+  const countryCoords = useMemo(() => {
     if (rawWikiJson) {
       const arrs = rawWikiJson.data.features[0].geometry.coordinates;
       //
@@ -221,8 +239,6 @@ const DemographyGame3D = (props: {
             {selectedCountry?.name || "..."}
           </Text>
 
-          <gridHelper position={pos.focus} />
-
           {/* Light Rig */}
           <group position={pos.lights}>
             <ambientLight intensity={0.2} />
@@ -230,11 +246,7 @@ const DemographyGame3D = (props: {
           </group>
 
           {/* Country feature */}
-          <CountryFeature
-            zoomToView={zoomToView}
-            firstFeatureCoordinates={firstFeatureCoordinates}
-            color={"blue"}
-          />
+          <CountryFeature coords={countryCoords} color={"blue"} />
 
           {/* Admin Zone 1 features - DISABLED, needs external datasource */}
 

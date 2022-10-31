@@ -57,7 +57,6 @@ const WikiDemography = () => {
   //
   //
   const onCountryClicked = (c: WikiCountry) => {
-    console.log("clicked", c, c?.code);
     setCountryCode(c.code);
     setSelectedCountry(c);
   };
@@ -132,9 +131,7 @@ const WikiDemography = () => {
   const gameInCountry = useMemo(() => {
     if (!selectedCountry) return null;
     if (!tree) return null;
-    //
-    console.log("Game in country, ", selectedCountry);
-    console.log("Country in tree, ", tree._n(`Q${selectedCountry.code}`));
+    if (!isTreeReady) return null;
     //
     return selectedCountry ? (
       <DemographyGame3D
@@ -144,7 +141,7 @@ const WikiDemography = () => {
         scrollToDetails={scrollToDetails}
       />
     ) : null;
-  }, [selectedCountry, tree, scrollToDetails]);
+  }, [selectedCountry, tree, isTreeReady, scrollToDetails]);
   //
   //  loading >> selectedCountry >> selectedCode
   //
@@ -184,10 +181,12 @@ const WikiDemography = () => {
                   for a settlement to continue
                   {selectedCountry ? (
                     <>
+                      {" "}
                       or{" "}
                       <button onClick={onCountryReset}>
                         select another country
-                      </button>{" "}
+                      </button>
+                      .
                     </>
                   ) : null}
                 </p>
@@ -269,7 +268,7 @@ const WikiDemography = () => {
       ) : null}
 
       {/* MAP AND BREAD CRUMB NAVIGATION */}
-      {!tree || !isTreeReady ? (
+      {!selectedCountry ? null : !tree || !isTreeReady ? (
         <Spinner />
       ) : (
         <div style={{ marginTop: "15px" }}>

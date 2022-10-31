@@ -12,11 +12,11 @@ const COLOR_HOVER = new Color("#0000cf");
 
 const CountryBorder = (
   props: JSX.IntrinsicElements["mesh"] & {
-    countryBorderPoints: Array<[number, number]> | null;
+    points: Array<[number, number]> | null;
     color?: Color;
   }
 ) => {
-  const { countryBorderPoints, color } = props;
+  const { points, color } = props;
   //
   const ref = useRef<Mesh>(null!);
   const materialRef = useRef<MeshStandardMaterial>(null!);
@@ -29,14 +29,12 @@ const CountryBorder = (
     const toWorldPosition = ([lat, lng]: [number, number]) =>
       [-1 * lat, -1 * lng] as [number, number];
     //
-    return countryBorderPoints ? (
+    return points ? (
       <shapeGeometry
-        args={[
-          shapeFromCoords(countryBorderPoints.map((p) => toWorldPosition(p))),
-        ]}
+        args={[shapeFromCoords(points.map((p) => toWorldPosition(p)))]}
       />
     ) : null;
-  }, [countryBorderPoints]);
+  }, [points]);
 
   //
   //
@@ -61,7 +59,7 @@ const CountryBorder = (
   };
 
   //
-  return countryBorderPoints && shape ? (
+  return points && shape ? (
     <mesh
       ref={ref}
       onPointerOver={onPointerOver}

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 
 import { useTreeHelper } from "../../hooks/useTreeHelper";
 import { getAvailableCountryCodes } from "../../utils/country-helper";
@@ -15,24 +15,16 @@ const useMapMemos = (
 ) => {
   const { loading, tree, keys } = useTreeHelper(countryCode);
   //
-  const isTreeReady = useMemo(
-    () => !loading && tree !== undefined,
-    [loading, tree]
-  );
-  //
   const selectedCountryCode = useMemo(
     () => (selectedCountry ? selectedCountry.code : undefined),
     [selectedCountry]
   );
+  //
+  const isTreeReady = useMemo(
+    () => selectedCountryCode && !loading && tree !== undefined,
+    [selectedCountryCode, loading, tree]
+  );
 
-  useEffect(() => {
-    if (selectedCountry) {
-      console.log("country set", selectedCountry, "applying bounds change");
-    } else {
-      // reset & save game state here
-      console.log("country cleared", "TODO: reset & save game state here");
-    }
-  }, [selectedCountry]);
   //
   // Countries level
   //
@@ -118,16 +110,20 @@ const useMapMemos = (
         }
       }
     } else arr = [] as Array<Array<any>>;
+
     //
     // resolving item-details (number of children, treeNode)
     //
-    const expanded = arr.map(([code, name, parentCode]) => [
-      code,
-      name,
-      parentCode,
-      tree?._children_of(tree._qq(code || "")).length ?? 0,
-      tree?._n(code).data,
-    ]);
+    const expanded = arr
+      .map(([code, name, parentCode]) => [
+        code,
+        name,
+        parentCode,
+        tree?._children_of(tree._qq(code || "")).length ?? 0,
+        tree?._n(code).data,
+      ])
+      .filter((arr) => arr[4] !== undefined);
+
     //
     // sorting resultset by population descending
     //
