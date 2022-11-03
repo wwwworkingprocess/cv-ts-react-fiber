@@ -63,7 +63,7 @@ const useMapMemos = (
         // case 668:
         //   return s.replaceAll(" Pradesh", "");
         default:
-          return s;
+          return s ? s : "";
       }
     };
     //

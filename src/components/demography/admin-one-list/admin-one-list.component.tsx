@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import {
   AdminOneListContainer,
@@ -22,9 +22,16 @@ const AdminOneList = (props: AdminOneListProps) => {
   //
   const [myCode, setMyCode] = useState<string>();
   //
+  const MAX_TO_SHOW = 150;
+  //
+  const itemsMemo = useMemo(
+    () => (items ? items.slice(0, MAX_TO_SHOW) : []),
+    [items, MAX_TO_SHOW]
+  );
+  //
   return (
     <AdminOneListContainer>
-      {items.map(({ code, name, countryCode, size, data }) => {
+      {itemsMemo.map(({ code, name, countryCode, size, data }) => {
         //
         return (
           <AdminOneListItem

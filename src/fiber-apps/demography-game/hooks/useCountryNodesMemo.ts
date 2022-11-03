@@ -60,7 +60,11 @@ const useCountryNodesMemo = (
           .filter((n) => n.data !== undefined && n.data.lat && n.data.lng)
           .map((n) => ({
             ...n,
-            distance: distance([lat, lng], [n.data.lat ?? 0, n.data.lng ?? 0]),
+            // distance: distance([lat, lng], [n.data.lat ?? 0, n.data.lng ?? 0]),
+            distance: distance(
+              [lat, lng],
+              [n.data.lat ?? lat, n.data.lng ?? lng]
+            ),
           }))
           .filter((n) => n.distance * 10e-4 <= MAX_RANGE_TO_SHOW)
           .sort((a, b) => a.distance - b.distance)

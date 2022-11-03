@@ -13,7 +13,9 @@ const useSettlementSearch = (
   const searchResultsMemo = useMemo(() => {
     const nodes = tree && keyword && keyword.length > 1 ? tree.list_all() : [];
     //
-    const matchingNames = nodes.filter(
+    const validNodes = nodes.filter((n) => n && n.name);
+
+    const matchingNames = validNodes.filter(
       (node: any) =>
         node.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1
     );

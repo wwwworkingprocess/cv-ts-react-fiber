@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useMemo } from "react";
 import { isMobile } from "react-device-detect";
 
 import TreeHelper from "../../../utils/tree-helper";
@@ -40,10 +40,15 @@ const TreeBreadCrumb = (props: {
 }) => {
   const { selectedCode, setSelectedCode, tree } = props;
   //
-  if (!tree) return null;
+  const node = useMemo(
+    () => (tree && selectedCode ? tree._n(selectedCode) : undefined),
+    [tree, selectedCode]
+  );
+  const pcodes = useMemo(
+    () => (tree && node ? tree.get_pcodes(node) : []),
+    [tree, node]
+  );
   //
-  const node = selectedCode ? tree._n(selectedCode) : undefined;
-  const pcodes = node ? tree.get_pcodes(node) : [];
   //
   const parents = pcodes.map((code, idx) => ({
     code: pcodes[idx] ?? "",

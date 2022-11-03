@@ -16,8 +16,7 @@ const CountryList = (props: CountryListProps) => {
         <CountryListItem key={idx} onClick={() => onClicked(c)}>
           <img src={c.urls.flag} alt={c.name} />
           <br />
-          {c.name}
-          <br />
+          <div>{c.name}</div>
           <small>{(c.population * 0.000001).toFixed(2)}M</small>
         </CountryListItem>
       ))}

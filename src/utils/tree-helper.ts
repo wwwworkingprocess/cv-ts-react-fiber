@@ -145,6 +145,7 @@ class TreeHelper {
       : undefined;
   //
   _node = (type: number, code: number, name: string, parent = { code: 3 }) => {
+    // console.log("ADD_NODE", code, name, parent.code);
     this.NODES[this._qc(code)] = { code, name, p: parent.code, type };
   };
   _rebuild = () => {
@@ -222,6 +223,8 @@ class TreeHelper {
   get_pnames = (node: any): string => {
     let n = this.NODES["Q" + node.p],
       end = !n || n.p === undefined;
+    //
+    console.log("get_pnames", node.id);
     //
     return !end
       ? [this.get_pnames(n), node.name].join(" >> ")

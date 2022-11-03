@@ -93,6 +93,8 @@ export const useTreeHelper = (
   const updateDataResult = (r: LoaderResult) => {
     const [hierarchy, labels, nodedata] = r;
     //
+    console.log("in updateDataResult", r);
+    //
     setDataResult({ hierarchy, labels, nodedata } as TreeRawData);
   };
   //

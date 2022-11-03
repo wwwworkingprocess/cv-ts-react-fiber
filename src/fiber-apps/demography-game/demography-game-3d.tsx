@@ -242,7 +242,7 @@ const DemographyGame3D = (props: {
 
           {/* Light Rig */}
           <group position={pos.lights}>
-            <ambientLight intensity={0.2} />
+            <ambientLight intensity={0.33} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
 

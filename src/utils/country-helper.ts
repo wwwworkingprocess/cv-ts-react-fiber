@@ -4,14 +4,33 @@ import TreeHelper from "./tree-helper";
 import countryBoundsRaw from "../assets/json/wiki/countries.bounds.json";
 
 // "Q34", "Q37", "Q38", - no countryborder
-const availableCountryCodes = ["Q28", "Q31", "Q37", "Q38", "Q215", "Q218"];
+const availableCountryCodes = [
+  "Q16",
+  // "Q17", Japan removed, invalid hierarchy
+  "Q28",
+  "Q29",
+  "Q30",
+  "Q31",
+  "Q37",
+  "Q38",
+  // "Q215", Slovenia removed, invalid hierarchy
+  "Q183",
+  "Q218",
+  "Q668",
+];
 const zoomFixes = {
+  Q16: 20,
+  Q17: 0,
   Q28: 2,
+  Q29: 20,
+  Q30: 21,
   Q31: -4,
   Q37: 0,
   Q38: 17,
-  Q215: -17,
+  // Q215: -17,
+  Q183: 15,
   Q218: 8,
+  Q668: 20,
 } as Record<string, number>;
 
 /**

@@ -44,7 +44,7 @@ const accessors = {
   //
   monolingualtext: (v: any) => v.value.text,
   //
-  "wikibase-item": (v: any) => v.value.id, // e.g. Q2590631
+  "wikibase-item": (v: any) => (v && v.value ? v.value.id : ""), // e.g. Q2590631
   //
   "globe-coordinate": (v: any) => {
     if (v === undefined) return "No data."; // consider empty
@@ -152,9 +152,14 @@ export const useWikiEntryReader = (wikiEntry: any) => {
   //
   useEffect(() => {
     //
+
     if (claimsMeta) {
+      const isWikiItem = (c: { type: string }) => c.type === "wikibase-item";
+      const isValid = (c: { val?: any }) => c.val && c.val.value;
+      //
       const ids = claimsMeta.values
-        .filter((c) => c.type === "wikibase-item")
+        .filter(isWikiItem)
+        .filter(isValid)
         .map((c) => c.val.value.id);
       //
       const idString = ids ? ids.join("|") : "";

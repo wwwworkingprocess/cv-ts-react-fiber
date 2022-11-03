@@ -17,4 +17,12 @@ export const CountryListItem = styled.div`
     position: relative;
     top: -2px;
   }
+
+  div {
+    padding: 2px;
+    max-width: 80px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 `;
