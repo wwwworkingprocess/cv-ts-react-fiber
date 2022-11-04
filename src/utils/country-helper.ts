@@ -19,18 +19,18 @@ const availableCountryCodes = [
   "Q668",
 ];
 const zoomFixes = {
-  Q16: 20,
+  Q16: 23,
   Q17: 0,
-  Q28: 2,
-  Q29: 20,
+  Q28: 10,
+  Q29: 21.5,
   Q30: 21,
-  Q31: -4,
+  Q31: 6,
   Q37: 0,
-  Q38: 17,
+  Q38: 21,
   // Q215: -17,
-  Q183: 15,
-  Q218: 8,
-  Q668: 20,
+  Q183: 20,
+  Q218: 17,
+  Q668: 22,
 } as Record<string, number>;
 
 /**

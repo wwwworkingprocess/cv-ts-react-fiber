@@ -94,19 +94,6 @@ const DemographyGame3D = (props: {
   }, [selectedCountry, setBounds, setZoom]);
 
   //
-  //
-  //
-  const cities = useMemo(() => {
-    const toWorldPosition = (node: any) => [
-      -1 * node.data?.lng,
-      -1 + 0.06,
-      node.data?.lat,
-    ];
-    //
-    return displayedNodes.map((n) => toDisplayNode(n, toWorldPosition));
-  }, [displayedNodes]);
-
-  //
   // Placement helper memo, some of the components are 'flipped', kind of hacky ATM
   // Vectors for positioning fibers, depending on selectedCountry (bounds of country)
   //
@@ -114,18 +101,22 @@ const DemographyGame3D = (props: {
     const v3 = (x: number, y: number, z: number) => new Vector3(x, y, z);
     const avg = (a: number, b: number) =>
       b > a ? a + (b - a) * 0.5 : b + (a - b) * 0.5;
+    const lat = (y: number) => +y * 2;
     //
-    const cp = { x: avg(MIN_X, MAX_X), y: avg(MIN_Y, MAX_Y) };
+    const cp = { x: avg(MIN_X, MAX_X), y: lat(avg(MIN_Y, MAX_Y)) };
+    //
     //
     const placement = {
+      lat,
       controls: v3(cp.x, 0, cp.y),
       camera: v3(cp.x, 2, cp.y),
       crosshair: v3(-1 * cp.x, 0.001, cp.y), // in city-features
       lights: v3(-1 * cp.x, 0, cp.y),
       //
-      focus: v3(-1 * cp.x - 1, 0 + 1, MIN_Y + 1),
+      focus: v3(-1 * cp.x - 1, 0 + 1, lat(MIN_Y + 1)),
       //
-      country: v3(0, 0, -2 * cp.y),
+      // country: v3(0, 0, -2 * cp.y),
+      country: v3(0, 0, cp.y),
       //
       defaultPanPosition: v3(
         -1 * (cp.x + 1.5) + 1,
@@ -137,6 +128,19 @@ const DemographyGame3D = (props: {
     //
     return placement;
   }, [MIN_X, MAX_X, MIN_Y, MAX_Y]);
+
+  //
+  //
+  //
+  const cities = useMemo(() => {
+    const toWorldPosition = (node: any) => [
+      -1 * node.data?.lng,
+      -1 + 0.06,
+      pos.lat(node.data?.lat),
+    ];
+    //
+    return displayedNodes.map((n) => toDisplayNode(n, toWorldPosition));
+  }, [displayedNodes, pos]);
 
   //
   // zooming and panning
@@ -240,6 +244,7 @@ const DemographyGame3D = (props: {
             {selectedCountry?.name || "..."}
           </Text>
 
+          <gridHelper />
           {/* Light Rig */}
           <group position={pos.lights}>
             <ambientLight intensity={0.33} />

@@ -42,7 +42,11 @@ const CountryFeature = ({ coords, color }: { coords: any; color: string }) => {
   return (
     <group scale={[1, 1, 1]}>
       <group rotation={groupToStageRotation}>
-        <group ref={groupRef} position={groupShiftBeforeRotation}>
+        <group
+          ref={groupRef}
+          position={groupShiftBeforeRotation}
+          scale={[1, 2, 1]}
+        >
           {memoizedFeatures}
         </group>
       </group>
