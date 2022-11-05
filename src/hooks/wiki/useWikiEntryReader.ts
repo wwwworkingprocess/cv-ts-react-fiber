@@ -27,13 +27,14 @@ const propsMeta = {
 };
 */
 import propsMeta from "../../assets/json/wiki/properties.labels.json";
+import useWikiLabels from "./useWikiLabels";
 
 const WIKI_LABEL_QUERY_URL =
   "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&languages=en&format=json&origin=*";
 
 const accessors = {
   url: (v: any) => v.value,
-  string: (v: any) => v.value,
+  string: (v: any) => (v ? v.value : "[N.A.]"),
   "external-id": (v: any) => {
     if (v === undefined) return ""; // when received data is errorous e.g. props of Q922851
     //
@@ -99,13 +100,11 @@ const toRawResult = ([code, claim]: [string, any]) => ({
 //
 //
 export const useWikiEntryReader = (wikiEntry: any) => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [labels, setLabels] = useState<Record<string, string> | undefined>();
-  //
   const name = useMemo(
     () => (wikiEntry ? String(wikiEntry.labels["en"]?.value ?? "") : undefined),
     [wikiEntry]
   );
+
   //
   const claimsMeta = useMemo(() => {
     if (!wikiEntry) return undefined;
@@ -136,45 +135,23 @@ export const useWikiEntryReader = (wikiEntry: any) => {
     return { values, other: unknown };
   }, [wikiEntry]);
 
-  const processLabelQueryResult = (r: {
-    success: number;
-    entities: Record<string, any>;
-  }) => {
-    if (r.success !== 1) return undefined;
-    //
-    const ent = r.entities ?? ({} as Record<string, any>);
-    //
-    const mapEntry = ([q, res]: any) => [q, res.labels?.en?.value ?? ""];
-    const kvps = Object.entries(ent).map(mapEntry);
-    //
-    return Object.fromEntries(kvps);
-  };
   //
-  useEffect(() => {
-    //
-
+  const ids = useMemo(() => {
     if (claimsMeta) {
       const isWikiItem = (c: { type: string }) => c.type === "wikibase-item";
       const isValid = (c: { val?: any }) => c.val && c.val.value;
       //
-      const ids = claimsMeta.values
+      return claimsMeta.values
         .filter(isWikiItem)
         .filter(isValid)
-        .map((c) => c.val.value.id);
-      //
-      const idString = ids ? ids.join("|") : "";
-      const url = `${WIKI_LABEL_QUERY_URL}&ids=${idString}`;
-      //
-      setLoading(true);
-      //
-      fetch(url)
-        .then((res) => res.json())
-        .then(processLabelQueryResult)
-        .then(setLabels)
-        .finally(() => setLoading(false));
+        .map((c) => c.val.value.id) as Array<string>;
     }
     //
+    return [] as Array<string>;
   }, [claimsMeta]);
+
+  //
+  const { loading, labels } = useWikiLabels(ids);
 
   //
   //

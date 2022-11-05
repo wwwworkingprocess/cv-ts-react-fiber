@@ -137,6 +137,19 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   //
   return (
     <div>
+      {claimsMeta && claimsMeta.other.length ? (
+        <>
+          <div>
+            <hr />
+            Unidentified properties:{" "}
+            {claimsMeta.other
+              .map((p) => p.code)
+              .sort((a, b) => a.length - b.length)
+              .join(" - ")}
+          </div>
+        </>
+      ) : null}
+
       {groupedClaims ? (
         <div>
           {/* <h3>Information about {name}</h3> */}
@@ -282,7 +295,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
           ) : null}
         </div>
       ) : null}
-      {claimsMeta && claimsMeta.other.length ? (
+      {/* {claimsMeta && claimsMeta.other.length ? (
         <>
           <div>
             <hr />
@@ -290,7 +303,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
             {claimsMeta.other.map((p) => p.code).join(" - ")}
           </div>
         </>
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

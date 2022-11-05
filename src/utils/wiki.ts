@@ -19,7 +19,7 @@ export const toExternalSourceUrl = (propertyCode: string, value: string) => {
   const formatterUrl = (formatterUrls[propertyCode] ?? "") as string;
   //
   return formatterUrl.includes(idPlaceholder)
-    ? formatterUrl.replace(idPlaceholder, value)
+    ? formatterUrl.replaceAll(idPlaceholder, value)
     : `${formatterUrl}${value}`;
 };
 
