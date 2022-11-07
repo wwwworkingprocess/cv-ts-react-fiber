@@ -10,7 +10,6 @@ export type GameState = {
   moving: boolean;
   selectedCode: string | undefined;
   lastSelectedCode: string | undefined;
-  lastTakenPlaceImageUrl: string | undefined;
   //
   codesTaken: Array<string>;
   codesConverting: Array<string>;
@@ -30,6 +29,11 @@ export type GameState = {
   citiesMaxRangeKm: number;
   citiesMaxItems: number;
   citiesShowPopulated: boolean;
+  //
+  lastFeature: {
+    imageUrl: string | undefined;
+    geoJsonUrl: string | undefined;
+  };
 };
 
 export type GameActions = {
@@ -42,7 +46,9 @@ export type GameActions = {
   setCitiesMaxRangeKm: (km: number) => void;
   setCitiesMaxItems: (n: number) => void;
   setCitiesShowPopulated: (b: boolean) => void;
+  //
   setLastTakenPlaceImageUrl: (s: string | undefined) => void;
+  setLastTakenPlaceGeoJsonUrl: (s: string | undefined) => void;
   //
   setNextFrame: (n: number, t: number) => void;
   setBounds: (b: [number, number, number, number]) => void;

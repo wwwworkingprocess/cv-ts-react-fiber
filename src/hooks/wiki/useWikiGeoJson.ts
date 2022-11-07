@@ -21,14 +21,17 @@ const readRevisionSlot = (r: Record<string, any>) => {
 // Retrieves geojson country outline from WikiData about the
 // entity specified by the qualifier. (e.g Q28 or Q36)
 //
-const useWikiGeoJson = (geojsonUrl: string) => {
+const useWikiGeoJson = (geojsonUrl: string | undefined) => {
   const [selectedWikiCountryGeo, setSelectedWikiCountryGeo] = useState<any>();
   //
   // Fetch data from WikiData using a no-cors request
   //
   useEffect(() => {
     if (geojsonUrl) {
-      const resource = geojsonUrl.split("/").pop();
+      const resource = geojsonUrl.replace(
+        "https://commons.wikimedia.org/data/main/",
+        ""
+      );
       const url = `https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&rvslots=*&rvprop=content&format=json&titles=${resource}&origin=*`;
       //
       if (url) {
@@ -38,7 +41,7 @@ const useWikiGeoJson = (geojsonUrl: string) => {
           .then(parseJson)
           .then((geoJson) => geoJson && setSelectedWikiCountryGeo(geoJson));
       }
-    }
+    } else setSelectedWikiCountryGeo(undefined);
     //
     return () => setSelectedWikiCountryGeo(undefined); // reset on unmount
   }, [geojsonUrl]);

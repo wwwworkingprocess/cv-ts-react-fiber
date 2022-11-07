@@ -46,5 +46,9 @@ export const initialGameState: GameState = {
   citiesMaxRangeKm: MAX_RANGE_TO_SHOW,
   citiesMaxItems: MAX_ITEMS_TO_SHOW,
   citiesShowPopulated: true,
-  lastTakenPlaceImageUrl: undefined,
+  //
+  lastFeature: {
+    imageUrl: undefined,
+    geoJsonUrl: undefined,
+  },
 };

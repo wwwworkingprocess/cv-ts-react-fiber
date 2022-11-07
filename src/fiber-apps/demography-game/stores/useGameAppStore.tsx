@@ -64,8 +64,16 @@ const useGameAppStore = create<GameAppStore>(
       setCitiesMaxItems: (n: number) => set((prev) => ({ citiesMaxItems: n })),
       setCitiesShowPopulated: (b) =>
         set((prev) => ({ citiesShowPopulated: b })),
+      //
       setLastTakenPlaceImageUrl: (url: string | undefined) =>
-        set((prev) => ({ lastTakenPlaceImageUrl: url })),
+        set((prev) => ({
+          lastFeature: { ...prev.lastFeature, imageUrl: url },
+        })),
+      //
+      setLastTakenPlaceGeoJsonUrl: (url: string | undefined) =>
+        set((prev) => ({
+          lastFeature: { ...prev.lastFeature, geoJsonUrl: url },
+        })),
       //
       setNextFrame: (n, t) =>
         set((prev) => {

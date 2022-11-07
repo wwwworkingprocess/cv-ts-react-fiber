@@ -35,6 +35,9 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   const setLastTakenPlaceImageUrl = useGameAppStore(
     (s) => s.setLastTakenPlaceImageUrl
   );
+  const setLastTakenPlaceGeoJsonUrl = useGameAppStore(
+    (s) => s.setLastTakenPlaceGeoJsonUrl
+  );
   //
   const { name, labels, claimsMeta } = useWikiEntryReader(wikiEntry);
   //
@@ -92,6 +95,36 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       } else setLastTakenPlaceImageUrl(undefined);
     } else setLastTakenPlaceImageUrl(undefined);
   }, [groupedClaims, groupedClaims?.media, setLastTakenPlaceImageUrl]);
+
+  // "P3896" - geoshape
+  //
+  // URL to display 'shape' for selectedCode
+  // using 'geoshape' (P3896) or fallback 'shape' (P1419)
+  //
+  useEffect(() => {
+    let entry;
+    let value;
+    //
+    if (groupedClaims) {
+      const props = groupedClaims.rest;
+      //
+      const geoshape = props.filter((c) => c.code === "P3896")[0];
+      const shape = !geoshape && props.filter((c) => c.code === "P1419")[0];
+      //
+      entry = geoshape ?? shape;
+      //
+      if (entry) {
+        value = entry.value;
+        //
+        const toUrl = (s: string): string =>
+          `https://commons.wikimedia.org/data/main/${s}`;
+        //
+        setLastTakenPlaceGeoJsonUrl(toUrl(value));
+      } else setLastTakenPlaceGeoJsonUrl(undefined);
+    } else setLastTakenPlaceGeoJsonUrl(undefined);
+
+    //
+  }, [groupedClaims, groupedClaims?.media, setLastTakenPlaceGeoJsonUrl]);
 
   //
   //

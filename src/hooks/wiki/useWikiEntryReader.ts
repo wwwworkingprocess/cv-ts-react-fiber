@@ -29,9 +29,6 @@ const propsMeta = {
 import propsMeta from "../../assets/json/wiki/properties.labels.json";
 import useWikiLabels from "./useWikiLabels";
 
-const WIKI_LABEL_QUERY_URL =
-  "https://www.wikidata.org/w/api.php?action=wbgetentities&props=labels&languages=en&format=json&origin=*";
-
 const accessors = {
   url: (v: any) => v.value,
   string: (v: any) => (v ? v.value : "[N.A.]"),

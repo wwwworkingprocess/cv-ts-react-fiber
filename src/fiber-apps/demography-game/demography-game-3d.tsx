@@ -1,7 +1,7 @@
 import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { Text } from "@react-three/drei";
+import { Bounds, Text } from "@react-three/drei";
 import { Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
@@ -27,6 +27,7 @@ import {
   getCountryBoundsByCode,
   getCountryZoomFixByCode,
 } from "../../utils/country-helper";
+import SelectedFeature from "./fibers/selected-feature";
 
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
@@ -238,27 +239,33 @@ const DemographyGame3D = (props: {
           camera={{ position: pos.camera, zoom: 30 }}
         >
           <CameraControls position={pos.controls} selectedCode={selectedCode} />
-
           {/* Forcing font to load */}
           <Text font={"data/Roboto_Slab.ttf"}>
             {selectedCountry?.name || "..."}
           </Text>
 
-          <gridHelper />
           {/* Light Rig */}
           <group position={pos.lights}>
             <ambientLight intensity={0.33} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
-
           {/* World feature */}
           <WorldPlane />
-
           {/* Country feature */}
           <CountryFeature coords={countryCoords} color={"blue"} />
 
-          {/* Admin Zone 1 features - DISABLED, needs external datasource */}
+          {/* Country feature */}
 
+          <gridHelper />
+
+          <SelectedFeature
+            position={[0, 0, -1 + 0.0575]}
+            scale={[1.0, 1.0, 1.0]}
+            // scale={[0.105, 0.105, 0.105]}
+            // scale={[0.0105, 0.0105, 0.0105]}
+          />
+
+          {/* Admin Zone 1 features - DISABLED, needs external datasource */}
           {/* City features (instancedMesh + crossHair) */}
           {memoizedCities}
         </Canvas>

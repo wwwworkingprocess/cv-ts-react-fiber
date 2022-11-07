@@ -18,9 +18,7 @@ const GameControls = (props: any) => {
   const [showUI, setShowUI] = useState<boolean>(false);
   //
 
-  const lastTakenPlaceImageUrl = useGameAppStore(
-    (s) => s.lastTakenPlaceImageUrl
-  );
+  const lastTakenPlaceImageUrl = useGameAppStore((s) => s.lastFeature.imageUrl);
   const [zoom, moving, detectedFps] = useGameAppStore((s) => [
     s.zoom,
     s.moving,
