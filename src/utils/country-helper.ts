@@ -9,13 +9,17 @@ const availableCountryCodes = [
   // "Q17", Japan removed, invalid hierarchy
   "Q28",
   "Q29",
-  "Q30",
+  // "Q30", USA disabled, state level missing from hierarchy
   "Q31",
+  "Q34",
   "Q37",
   "Q38",
+  "Q41",
   // "Q215", Slovenia removed, invalid hierarchy
+  "Q142",
   "Q183",
   "Q218",
+  "Q408",
   "Q668",
 ];
 const zoomFixes = {
@@ -23,13 +27,17 @@ const zoomFixes = {
   Q17: 0,
   Q28: 10,
   Q29: 21.5,
-  Q30: 21,
+  // Q30: 21,
   Q31: 6,
+  Q34: 20.5,
   Q37: 0,
   Q38: 21,
-  // Q215: -17,
+  Q41: 18,
+  Q142: 19,
   Q183: 20,
+  // Q215: -17,
   Q218: 17,
+  Q408: 21.8,
   Q668: 22,
 } as Record<string, number>;
 
