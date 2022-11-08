@@ -17,6 +17,7 @@ const availableCountryCodes = [
   "Q41",
   // "Q215", Slovenia removed, invalid hierarchy
   "Q142",
+  "Q148",
   "Q183",
   "Q218",
   "Q408",
@@ -34,6 +35,7 @@ const zoomFixes = {
   Q38: 21,
   Q41: 18,
   Q142: 19,
+  Q148: 21.6,
   Q183: 20,
   // Q215: -17,
   Q218: 17,

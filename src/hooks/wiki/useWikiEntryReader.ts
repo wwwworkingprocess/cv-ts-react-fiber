@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 
 /*
 Useful properties: 
@@ -30,17 +30,17 @@ import propsMeta from "../../assets/json/wiki/properties.labels.json";
 import useWikiLabels from "./useWikiLabels";
 
 const accessors = {
-  url: (v: any) => v.value,
+  url: (v: any) => (v ? v.value : ""),
   string: (v: any) => (v ? v.value : "[N.A.]"),
   "external-id": (v: any) => {
     if (v === undefined) return ""; // when received data is errorous e.g. props of Q922851
     //
     return v.value; // e.g. '/m/02r2yz_'
   },
-  commonsMedia: (v: any) => v.value,
+  commonsMedia: (v: any) => (v ? v.value : ""),
   "geo-shape": (v: any) => v.value, // e.g. Data:Hungary/Szekszárd.map
   //
-  monolingualtext: (v: any) => v.value.text,
+  monolingualtext: (v: any) => (v && v.value ? v.value.text : "[N.A.]"),
   //
   "wikibase-item": (v: any) => (v && v.value ? v.value.id : ""), // e.g. Q2590631
   //

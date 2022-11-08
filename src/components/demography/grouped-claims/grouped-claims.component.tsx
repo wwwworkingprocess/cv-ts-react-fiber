@@ -6,6 +6,7 @@ import {
   toExternalSourceUrl,
   hasFormatterUrl,
   toWikiCommonsMediaUrl,
+  toWikiEntryUrl,
 } from "../../../utils/wiki";
 
 import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
@@ -26,6 +27,20 @@ import {
 
 type GroupedClaimsProps = { wikiEntry: any };
 
+export type Claim = {
+  // ...
+  l: number;
+  type: string;
+  val: any;
+  value: any;
+  code: string;
+  raw: any;
+  //
+  property: {
+    code: string;
+    name: string;
+  };
+};
 //
 //
 //
@@ -165,6 +180,85 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   const onDialogMoreImageClicked = (url: string) => {
     setDialogUrl(url.replace(`width=50`, `width=${dialogWidth}`));
   };
+
+  //
+  //
+  //
+  const externalCodeClaims = useMemo(() => {
+    if (groupedClaims) {
+      const withoutFormatter = (c: Claim) => !hasFormatterUrl(c.property.code);
+      const byValueAsc = (a: Claim, b: Claim) => a.value.localeCompare(b.value);
+
+      return groupedClaims.external
+        .filter(withoutFormatter)
+        .sort(byValueAsc) as Array<Claim>;
+    }
+
+    return [];
+  }, [groupedClaims]);
+  //
+  //
+  //
+  const externalReferenceClaims = useMemo(() => {
+    if (groupedClaims) {
+      const withFormatter = (c: Claim) => hasFormatterUrl(c.property.code);
+      const byLabelAsc = (a: Claim, b: Claim) =>
+        a.property.name.localeCompare(b.property.name);
+
+      return groupedClaims.external
+        .filter(withFormatter)
+        .sort(byLabelAsc) as Array<Claim>;
+    }
+
+    return [];
+  }, [groupedClaims]);
+  //
+  const hasExternalClaims = useMemo(
+    () => externalCodeClaims.length || externalReferenceClaims.length,
+    [externalCodeClaims, externalReferenceClaims]
+  );
+
+  //
+  //
+  //
+  const wikiCategoryClaims = useMemo(() => {
+    if (groupedClaims) {
+      const isCategoryReference = (c: Claim) =>
+        c.property.name.startsWith("category") ||
+        c.property.name.endsWith("category");
+      const byValueAsc = (a: Claim, b: Claim) => a.value.localeCompare(b.value);
+
+      return groupedClaims.wiki
+        .filter(isCategoryReference)
+        .sort(byValueAsc) as Array<Claim>;
+    }
+
+    return [];
+  }, [groupedClaims]);
+
+  //
+  //
+  //
+  const wikiEntryClaims = useMemo(() => {
+    if (groupedClaims) {
+      const isNonCategoryReference = (c: Claim) =>
+        !c.property.name.startsWith("category") &&
+        !c.property.name.endsWith("category");
+      const byLabelAsc = (a: Claim, b: Claim) =>
+        a.property.name.localeCompare(b.property.name);
+
+      return groupedClaims.wiki
+        .filter(isNonCategoryReference)
+        .sort(byLabelAsc) as Array<Claim>;
+    }
+
+    return [];
+  }, [groupedClaims]);
+  //
+  const hasWikiClaims = useMemo(
+    () => wikiCategoryClaims.length || wikiEntryClaims.length,
+    [wikiCategoryClaims, wikiEntryClaims]
+  );
   //
   //
   //
@@ -200,12 +294,37 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
             )}
           </FlexContainer>
 
-          {groupedClaims.wiki.length ? (
+          {hasWikiClaims ? (
             <>
               <h3>Related Wiki Pages</h3>
               <FlexContainer>
                 {labels &&
-                  groupedClaims.wiki.map(
+                  wikiEntryClaims.map(
+                    ({ type, val, value, property, l }, idx) => (
+                      <ClaimItem
+                        key={idx}
+                        height={32}
+                        minWidth={150}
+                        maxWidth={200}
+                      >
+                        <div style={{ fontSize: "10px" }}>
+                          {property.name}
+                          <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
+                        </div>
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          title={`${property.name}`}
+                          href={toWikiEntryUrl(value)}
+                          style={{ color: "gold", fontSize: "12px" }}
+                        >
+                          {labels[value] || value}
+                        </a>
+                      </ClaimItem>
+                    )
+                  )}
+                {labels &&
+                  wikiCategoryClaims.map(
                     ({ type, val, value, property, l }, idx) => (
                       <ClaimItem
                         key={idx}
@@ -217,9 +336,15 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
                           {property.name}
                           <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
                         </div>
-                        <label style={{ fontSize: "12px" }}>
-                          {labels[value] || value}
-                        </label>
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          title={`${property.name}`}
+                          href={toWikiEntryUrl(value)}
+                          style={{ color: "gold", fontSize: "12px" }}
+                        >
+                          {(labels[value] || value).replace("Category:", "")}
+                        </a>
                       </ClaimItem>
                     )
                   )}
@@ -291,11 +416,27 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
             </>
           ) : null}
 
-          {groupedClaims.external.length ? (
+          {hasExternalClaims ? (
             <>
               <h3>External Sources</h3>
               <FlexContainer>
-                {groupedClaims.external.map(
+                {externalCodeClaims.map(
+                  ({ type, val, value, property }, idx) => (
+                    <ClaimItem
+                      key={idx}
+                      height={16}
+                      minWidth={100}
+                      maxWidth={200}
+                    >
+                      <div style={{ fontSize: "11px", height: "14px" }}>
+                        <label>
+                          {value} ({property.name})
+                        </label>
+                      </div>
+                    </ClaimItem>
+                  )
+                )}
+                {externalReferenceClaims.map(
                   ({ type, val, value, property }, idx) => (
                     <ClaimItem
                       key={idx}
@@ -328,15 +469,6 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
           ) : null}
         </div>
       ) : null}
-      {/* {claimsMeta && claimsMeta.other.length ? (
-        <>
-          <div>
-            <hr />
-            Unidentified properties:{" "}
-            {claimsMeta.other.map((p) => p.code).join(" - ")}
-          </div>
-        </>
-      ) : null} */}
     </div>
   );
 };

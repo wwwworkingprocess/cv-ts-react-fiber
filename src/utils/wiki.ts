@@ -23,6 +23,9 @@ export const toExternalSourceUrl = (propertyCode: string, value: string) => {
     : `${formatterUrl}${value}`;
 };
 
+export const toWikiEntryUrl = (code: string) =>
+  `https://www.wikidata.org/wiki/${code}`;
+
 const colorByPop = (node: any) => {
   const toValue = (node: any): number =>
     Math.log(Math.max(0, node?.data?.pop ?? 0)) * 14 + 10;
