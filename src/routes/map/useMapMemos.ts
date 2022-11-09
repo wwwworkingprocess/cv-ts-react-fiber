@@ -11,7 +11,8 @@ const useMapMemos = (
   countryCode: string | undefined /* e.g. "Q28" */,
   wikiCountries: Array<WikiCountry> | null,
   selectedCountry: WikiCountry | undefined,
-  selectedCode: string | undefined
+  selectedCode: string | undefined,
+  topResultsLength: number
 ) => {
   const { loading, tree, keys } = useTreeHelper(countryCode);
   //
@@ -58,10 +59,6 @@ const useMapMemos = (
       switch (countryCode) {
         case 28:
           return s.replaceAll(" County", "").replaceAll(" District", "");
-        // case 36:
-        //   return s.replaceAll(" Voivodeship", "").replaceAll(" province", "");
-        // case 668:
-        //   return s.replaceAll(" Pradesh", "");
         default:
           return s ? s : "";
       }
@@ -77,8 +74,9 @@ const useMapMemos = (
       }))
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [tree, selectedCountry, isAdminOneReady]);
+
   //
-  // Admin Zone 2 or below level
+  // Admin Zone 2 level
   //
   const isAdminTwoReady = useMemo(
     () => !loading && tree && selectedCode && keys.includes(selectedCode),
@@ -131,6 +129,48 @@ const useMapMemos = (
     //
     return expanded;
   }, [tree, isAdminTwoReady, selectedCountryCode, selectedCode]);
+
+  //
+  // City level - top 10 populated
+  //
+  const topTenCities = useMemo(() => {
+    if (tree && isTreeReady && selectedCountryCode && adminOneMemo) {
+      const all = tree.list_all();
+      //
+      // 1. exclude selected country and extremals
+      // 2. exclude admin ones
+      //
+      const toNum = (s: string): number => parseInt(s.replace("Q", ""));
+      //
+      const adminOneCodes = adminOneMemo.map((a) => toNum(a.code));
+      const excludedCodes = [-1, toNum(selectedCountryCode), ...adminOneCodes];
+      //
+      const filtered = all.filter((n) => !excludedCodes.includes(n.code));
+      //
+      // 3. exclude where parent is not set
+      // 4. exclude where no population info available
+      // 5. (!) exclude where name is NOT one word, (e.g. excludes New York, keeps Toronto)
+      //
+      const hasParent = (n: any) => n.p !== -1;
+      const hasPopulation = (n: any) => (n?.data?.pop ?? -1) > 0;
+      const hasShortName = (n: any) => !n.name.includes(" ");
+      //
+      const populationDesc = (a: any, b: any) => b.data.pop - a.data.pop;
+      const withPopulation = filtered
+        .filter(hasParent)
+        .filter(hasPopulation)
+        .filter(hasShortName) // not perfect, but works well
+        .sort(populationDesc);
+
+      //
+      // only return the desired number of elements
+      //
+      return withPopulation.slice(0, topResultsLength);
+    }
+    //
+    return [];
+  }, [tree, isTreeReady, selectedCountryCode, adminOneMemo, topResultsLength]);
+
   //
   //
   //
@@ -144,8 +184,18 @@ const useMapMemos = (
       countries,
       adminOneMemo,
       adminTwoMemo,
+      //
+      topTenCities,
     }),
-    [tree, isTreeReady, isAdminOneReady, countries, adminOneMemo, adminTwoMemo]
+    [
+      tree,
+      isTreeReady,
+      isAdminOneReady,
+      countries,
+      adminOneMemo,
+      adminTwoMemo,
+      topTenCities,
+    ]
   );
 };
 

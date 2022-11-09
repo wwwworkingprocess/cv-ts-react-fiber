@@ -9,6 +9,7 @@ import NearbyMultiplyTreeItems from "../../components/demography/nearby-multiple
 import SettlementSearch from "../../components/demography/settlement-search/settlement-search.component";
 import TreeBreadCrumb from "../../components/demography/tree-bread-crumb/tree-bread-crumb.component";
 import WikiItemDetails from "../../components/demography/wiki-item-details/wiki-item-details.component";
+import CityList from "../../components/demography/city-list/city-list.component";
 import { Spinner } from "../../components/spinner/spinner.component";
 
 import DemographyGame3D from "../../fiber-apps/demography-game/demography-game-3d";
@@ -18,12 +19,13 @@ import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
 import useMapMemos from "./useMapMemos";
+import useGameAppStore from "../../fiber-apps/demography-game/stores/useGameAppStore";
+
 import {
   HalfContentBlock,
   BrowseSettlementContainer,
   NearbyItemsContainer,
 } from "./map.styles";
-import useGameAppStore from "../../fiber-apps/demography-game/stores/useGameAppStore";
 
 //
 //
@@ -34,8 +36,8 @@ const WikiDemography = () => {
   const tabs = ["Main Info", "Browse", "Search", "Nearby"];
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
-  //const [countryCode, setCountryCode] = useState<string>("Q28"); // pre-load tree helper
-  const [countryCode, setCountryCode] = useState<string>(); // pre-load tree helper
+  const [topResultsLength, setTopResultsLength] = useState<number>(16);
+  const [countryCode, setCountryCode] = useState<string>();
   const [selectedCountry, setSelectedCountry] = useState<WikiCountry>();
   //
   const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
@@ -51,7 +53,15 @@ const WikiDemography = () => {
     //
     adminOneMemo,
     adminTwoMemo,
-  } = useMapMemos(countryCode, wikiCountries, selectedCountry, selectedCode);
+    //
+    topTenCities,
+  } = useMapMemos(
+    countryCode,
+    wikiCountries,
+    selectedCountry,
+    selectedCode,
+    topResultsLength
+  );
 
   //
   //
@@ -133,15 +143,34 @@ const WikiDemography = () => {
     if (!tree) return null;
     if (!isTreeReady) return null;
     //
-    return selectedCountry ? (
+    return (
       <DemographyGame3D
         tree={tree}
         selectedCountry={selectedCountry}
         path=".."
         scrollToDetails={scrollToDetails}
       />
-    ) : null;
+    );
   }, [selectedCountry, tree, isTreeReady, scrollToDetails]);
+
+  //
+  const topOptions = useMemo(() => {
+    // topResultsLength
+    const options = [5, 10, 16, 20, 50];
+    //
+    return (
+      <select
+        value={topResultsLength}
+        onChange={(e) => {
+          setTopResultsLength(parseInt(e.target.value));
+        }}
+      >
+        {options.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
+      </select>
+    );
+  }, [topResultsLength, setTopResultsLength]);
   //
   //  loading >> selectedCountry >> selectedCode
   //
@@ -193,6 +222,19 @@ const WikiDemography = () => {
               ) : null}
             </>
           )}
+          {tree && isTreeReady ? (
+            <div>
+              <h4 style={{ marginBottom: "5px" }}>
+                Top {topOptions} Most Populated Places
+              </h4>
+              <CityList
+                cities={topTenCities}
+                onClicked={() => {
+                  console.log("onCityClicked");
+                }}
+              />
+            </div>
+          ) : null}
         </>
       ) : null}
 

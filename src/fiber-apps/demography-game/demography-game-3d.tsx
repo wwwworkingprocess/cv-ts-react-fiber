@@ -249,21 +249,15 @@ const DemographyGame3D = (props: {
             <ambientLight intensity={0.33} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
+
           {/* World feature */}
           <WorldPlane />
+
           {/* Country feature */}
           <CountryFeature coords={countryCoords} color={"blue"} />
 
-          {/* Country feature */}
-
-          <gridHelper />
-
-          <SelectedFeature
-            position={[0, 0, -1 + 0.0575]}
-            scale={[1.0, 1.0, 1.0]}
-            // scale={[0.105, 0.105, 0.105]}
-            // scale={[0.0105, 0.0105, 0.0105]}
-          />
+          {/* Selected feature's outline */}
+          <SelectedFeature position={[0, 0, -1 + 0.0575]} />
 
           {/* Admin Zone 1 features - DISABLED, needs external datasource */}
           {/* City features (instancedMesh + crossHair) */}
