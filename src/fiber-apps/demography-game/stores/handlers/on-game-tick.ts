@@ -10,7 +10,7 @@ export const onGameTick = (s: GameAppStore, nextTick: number, t: number) => {
   const now = new Date().getTime();
   const lastFrameTime = s.lastTickTime ?? now;
   const seconds = t ?? 0; // Passed seconds since last GameTick
-  const scoreScale = 190; // Magic number to match displayed speed :)
+  const scoreScale = 2000; // Magic number to match displayed speed :)
   //
   //
   const passed = (now - lastFrameTime) * 0.001;
