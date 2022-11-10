@@ -57,9 +57,9 @@ const CrossHair = (
       <torusBufferGeometry attach="geometry" args={[0.05, 0.0025, 8, 24]} />
       <meshStandardMaterial color="gold" />
 
-      {/* <group scale={[-1, 1, 1]} position={[0, 0, -0.3]}>
+      <group scale={[-1, 1, 1]} position={[0, 0, -0.3]}>
         <FrameCounter enabled={!paused} />
-      </group> */}
+      </group>
     </mesh>
   );
 };

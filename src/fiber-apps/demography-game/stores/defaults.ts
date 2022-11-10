@@ -18,6 +18,8 @@ const MAX_ITEMS_TO_SHOW = isMobile ? 100 : 350;
 //
 export const initialGameState: GameState = {
   zoom: false,
+  extraZoom: false,
+
   moving: false,
   selectedCode: undefined,
   lastSelectedCode: undefined,

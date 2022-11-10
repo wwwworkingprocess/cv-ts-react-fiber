@@ -7,7 +7,9 @@ export type PlayerStats = {
 
 export type GameState = {
   zoom: boolean;
+  extraZoom: boolean;
   moving: boolean;
+  //
   selectedCode: string | undefined;
   lastSelectedCode: string | undefined;
   //
@@ -40,6 +42,7 @@ export type GameActions = {
   setMoving: (b: boolean, code: string) => void;
   setSelectedCode: (c: string | undefined) => void;
   setZoom: (b: boolean) => void;
+  setExtraZoom: (b: boolean) => void;
   setProgressCompleted: (code: string, population: number) => void;
   //
   setUserColor: (s: string) => void;

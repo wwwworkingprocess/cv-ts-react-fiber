@@ -57,6 +57,7 @@ const useGameAppStore = create<GameAppStore>(
         set((prev) => onCityTaken(prev, c, pop)),
       //
       setZoom: (b) => set((prev) => ({ zoom: b })),
+      setExtraZoom: (b) => set((prev) => ({ extraZoom: b })),
       //
       setUserColor: (s: string) => set((prev) => ({ userColor: s })),
       setCitiesMaxRangeKm: (km: number) =>

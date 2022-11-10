@@ -39,6 +39,7 @@ const CityFeature = (
   const groupRef = useRef<Group>(null!);
   // const meshRef = useRef<Mesh>(null!);
   const meshRef = useRef<Mesh>(null!);
+  const billboardRef = useRef<Group>(null!);
   //
   const [hover, setHover] = useState(false);
   //
@@ -79,9 +80,13 @@ const CityFeature = (
   //
   // Show billboard for selected item, or when hovering in zoomed mode
   //
+  // const isBillboardVisible = useMemo(
+  //   () => isSelected || (zoom && hover),
+  //   [isSelected, zoom, hover]
+  // );
   const isBillboardVisible = useMemo(
-    () => isSelected || (zoom && hover),
-    [isSelected, zoom, hover]
+    () => isSelected || hover,
+    [isSelected, hover]
   );
 
   //
@@ -131,15 +136,25 @@ const CityFeature = (
   // Placing current feature, before rendering frame
   //
   useLayoutEffect(() => {
-    meshRef.current.position.x = data.position[0];
-    meshRef.current.position.y = data.position[1] + 0.028;
-    meshRef.current.position.z = data.position[2];
+    if (meshRef.current) {
+      meshRef.current.position.x = data.position[0];
+      meshRef.current.position.y = data.position[1] + (isTaken ? 0.028 : 0);
+      meshRef.current.position.z = data.position[2];
+    }
     //
     if (groupRef.current) {
       groupRef.current.position.x = data.position[0];
       groupRef.current.position.y = data.position[1]; // + 0.005;
       groupRef.current.position.z = data.position[2];
     }
+    //
+    if (billboardRef.current) {
+      billboardRef.current.position.x = data.position[0];
+      billboardRef.current.position.y =
+        data.position[1] + (isTaken ? 0.028 : 0);
+      billboardRef.current.position.z = data.position[2];
+    }
+    //
   });
 
   //
@@ -161,7 +176,9 @@ const CityFeature = (
   const onClick = () => {
     setSelectedCode(code);
     //
-    zoomToView(meshRef);
+    const targetRef = isTaken ? meshRef : groupRef;
+    //
+    if (targetRef.current) zoomToView(targetRef as any); // quick and dirty Mesh vs Group
   };
 
   const groupScale = useMemo(
@@ -175,11 +192,25 @@ const CityFeature = (
   const boxScale = useMemo(
     () =>
       new Vector3().fromArray(
-        (isSelected ? [0.5, 0.5, 0.5] : [...data.scale]).map((n) => n * 0.71)
+        (isSelected ? [0.5, 0.5, 0.5] : [...data.scale]).map(
+          (n) => n * (isTaken ? 0.71 : 1)
+        )
       ),
-    [isSelected, data.scale]
+    [isSelected, isTaken, data.scale]
   );
   //
+  const extraZoom = useGameAppStore((state) => state.extraZoom);
+
+  const billboardScale = useMemo(
+    () =>
+      new Vector3().fromArray(
+        (zoom ? [0.5, 0.5, 0.5] : [...data.scale]).map(
+          (n) => n * (extraZoom ? 0.41 : zoom ? 1 : 20)
+        )
+      ),
+    [extraZoom, zoom, data.scale]
+  );
+
   //
   //
   return (
@@ -189,31 +220,38 @@ const CityFeature = (
       onPointerOut={() => setHover(false)}
       onPointerDown={onClick}
     >
-      <mesh
-        ref={meshRef}
-        // scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
-        scale={boxScale}
+      {/* Default city feature */}
+      {!isTaken ? (
+        <mesh
+          ref={meshRef}
+          // scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
+          scale={boxScale}
 
-        // {...meshProps}
-      >
-        <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
-        {currentMaterial}
+          // {...meshProps}
+        >
+          <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
+          {currentMaterial}
+        </mesh>
+      ) : null}
 
-        {isBillboardVisible && (
+      {/* City is taken */}
+      {isTaken ? (
+        <group ref={groupRef} scale={groupScale}>
+          <House />
+        </group>
+      ) : null}
+
+      {/* Billboard Feature */}
+      {isBillboardVisible && (
+        <group ref={billboardRef} scale={billboardScale}>
           <CityBillboard
             data={data}
             isTaken={isTaken}
+            showProgress={zoom}
             progressOffset={progressOffset}
           />
-        )}
-      </mesh>
-      <group
-        ref={groupRef}
-        scale={groupScale}
-        // scale={[0.005, 0.005, 0.005]}
-      >
-        <House />
-      </group>
+        </group>
+      )}
     </group>
   );
 };

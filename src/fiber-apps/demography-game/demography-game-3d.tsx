@@ -46,6 +46,8 @@ const DemographyGame3D = (props: {
 }) => {
   const { tree, selectedCountry, scrollToDetails } = props;
   //
+  const extra = useGameAppStore((state) => state.extraZoom);
+  //
   const moving = useGameAppStore((state) => state.moving);
   const bounds = useGameAppStore((state) => state.bounds);
   const selectedCode = useGameAppStore((state) => state.selectedCode);
@@ -57,6 +59,8 @@ const DemographyGame3D = (props: {
   //
   const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
   const setZoom = useGameAppStore((state) => state.setZoom);
+  const setExtra = useGameAppStore((state) => state.setExtraZoom);
+
   //
   useKeyboardNavigation();
   //
@@ -155,7 +159,7 @@ const DemographyGame3D = (props: {
   // zooming and panning
   //
   const [focus, setFocus] = useState(pos.focus);
-  const [extra, setExtra] = useState(false);
+  // const [extra, setExtra] = useState(false);
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
     cities,
