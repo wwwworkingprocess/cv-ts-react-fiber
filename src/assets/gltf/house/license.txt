@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stilized old university building
+* source:	https://sketchfab.com/3d-models/stilized-old-university-building-b5df66686c2142b49078b656bf214ce0
+* author:	ChojoThePony (https://sketchfab.com/chojothepony)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stilized old university building" (https://sketchfab.com/3d-models/stilized-old-university-building-b5df66686c2142b49078b656bf214ce0) by ChojoThePony (https://sketchfab.com/chojothepony) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

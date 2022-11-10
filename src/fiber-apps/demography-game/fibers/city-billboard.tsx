@@ -17,7 +17,7 @@ const CityBillboard = (props: CityBillboardProps) => {
   const fontFamily = "data/Roboto_Slab.ttf";
   //
   return (
-    <Billboard position={[0, 0.065, 0]} follow={true}>
+    <Billboard position={[0, 0.085, 0]} follow={true}>
       {!isTaken && <CircularProgress progressOffset={progressOffset} />}
 
       <Text

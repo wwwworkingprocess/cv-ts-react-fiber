@@ -1,8 +1,15 @@
-import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { Bounds, Text } from "@react-three/drei";
-import { Vector3 } from "three";
+import { Mesh, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
 
@@ -28,6 +35,7 @@ import {
   getCountryZoomFixByCode,
 } from "../../utils/country-helper";
 import SelectedFeature from "./fibers/selected-feature";
+import Stars from "./fibers/stars";
 
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
@@ -227,16 +235,16 @@ const DemographyGame3D = (props: {
 
   //
   //
+  const starsRef = useRef<Mesh>(null!);
   //
   return (
     <>
       <Suspense fallback={<Spinner />}>
         <Canvas
           style={{ height: "350px", border: "solid 1px white" }}
-          linear
           dpr={[1, 2]}
           // frameloop="demand"
-          camera={{ position: pos.camera, zoom: 30 }}
+          camera={{ position: pos.camera, zoom: 30, near: 1, far: 200 }}
         >
           <CameraControls position={pos.controls} selectedCode={selectedCode} />
           {/* Forcing font to load */}
@@ -249,6 +257,8 @@ const DemographyGame3D = (props: {
             <ambientLight intensity={0.33} />
             <pointLight position={[0, 10, 0]} intensity={0.5} />
           </group>
+
+          <Stars mutableRef={starsRef} />
 
           {/* World feature */}
           <WorldPlane />

@@ -1,11 +1,19 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  Suspense,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
-import { Mesh } from "three";
+import { Group, Mesh, Vector3 } from "three";
 import { useFrame } from "@react-three/fiber";
 
 import useGameAppStore from "../stores/useGameAppStore";
 
 import CityBillboard from "./city-billboard";
+import House from "./house";
 
 type CityFeatureOwnProps = {
   data: any;
@@ -17,9 +25,9 @@ type CityFeatureOwnProps = {
 //
 //
 const CityFeature = (
-  props: JSX.IntrinsicElements["mesh"] & CityFeatureOwnProps
+  props: JSX.IntrinsicElements["group"] & CityFeatureOwnProps
 ) => {
-  const { data, zoomToView, ...meshProps } = props;
+  const { data, zoomToView, ...groupProps } = props;
   //
   // Component props
   //
@@ -28,6 +36,8 @@ const CityFeature = (
   //
   // Component state
   //
+  const groupRef = useRef<Group>(null!);
+  // const meshRef = useRef<Mesh>(null!);
   const meshRef = useRef<Mesh>(null!);
   //
   const [hover, setHover] = useState(false);
@@ -122,8 +132,14 @@ const CityFeature = (
   //
   useLayoutEffect(() => {
     meshRef.current.position.x = data.position[0];
-    meshRef.current.position.y = data.position[1];
+    meshRef.current.position.y = data.position[1] + 0.028;
     meshRef.current.position.z = data.position[2];
+    //
+    if (groupRef.current) {
+      groupRef.current.position.x = data.position[0];
+      groupRef.current.position.y = data.position[1]; // + 0.005;
+      groupRef.current.position.z = data.position[2];
+    }
   });
 
   //
@@ -148,29 +164,57 @@ const CityFeature = (
     zoomToView(meshRef);
   };
 
+  const groupScale = useMemo(
+    () =>
+      new Vector3().fromArray(
+        (isSelected ? [0.5, 0.5, 0.5] : [...data.scale]).map((n) => n * 0.0087)
+      ),
+    [isSelected, data.scale]
+  );
+  //
+  const boxScale = useMemo(
+    () =>
+      new Vector3().fromArray(
+        (isSelected ? [0.5, 0.5, 0.5] : [...data.scale]).map((n) => n * 0.71)
+      ),
+    [isSelected, data.scale]
+  );
   //
   //
   //
   return (
-    <mesh
-      ref={meshRef}
-      scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
+    <group
+      {...groupProps}
       onPointerOver={() => setHover(true)}
       onPointerOut={() => setHover(false)}
       onPointerDown={onClick}
-      {...meshProps}
     >
-      <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
-      {currentMaterial}
+      <mesh
+        ref={meshRef}
+        // scale={isSelected ? [0.5, 0.5, 0.5] : ([...data.scale] as any)}
+        scale={boxScale}
 
-      {isBillboardVisible && (
-        <CityBillboard
-          data={data}
-          isTaken={isTaken}
-          progressOffset={progressOffset}
-        />
-      )}
-    </mesh>
+        // {...meshProps}
+      >
+        <boxBufferGeometry attach="geometry" args={[0.08, 0.03, 0.08]} />
+        {currentMaterial}
+
+        {isBillboardVisible && (
+          <CityBillboard
+            data={data}
+            isTaken={isTaken}
+            progressOffset={progressOffset}
+          />
+        )}
+      </mesh>
+      <group
+        ref={groupRef}
+        scale={groupScale}
+        // scale={[0.005, 0.005, 0.005]}
+      >
+        <House />
+      </group>
+    </group>
   );
 };
 
