@@ -20,6 +20,7 @@ const propsMeta = {
   P2044: { name: "elevation above sea level" },
   P2046: { name: "area" },
   P3896: { name: "geoshape" },
+  P4080: { "name": "number of houses" },
   P6343: { "name": "urban population" },
   P6344: { "name": "rural population" },
   P6498: { "name": "illiterate population" },
