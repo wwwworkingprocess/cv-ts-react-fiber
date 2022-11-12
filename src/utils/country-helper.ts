@@ -18,10 +18,17 @@ const availableCountryCodes = [
   // "Q215", Slovenia removed, invalid hierarchy
   "Q142",
   "Q148",
+  "Q159",
   "Q183",
+  "Q184",
+  "Q213",
   "Q218",
+  "Q219",
+  "Q221",
   "Q408",
   "Q668",
+  "Q794",
+  "Q805",
 ];
 const zoomFixes = {
   Q16: 23,
@@ -36,11 +43,18 @@ const zoomFixes = {
   Q41: 18,
   Q142: 19,
   Q148: 21.6,
+  Q159: 23,
   Q183: 20,
+  Q184: 14,
+  Q213: 6,
   // Q215: -17,
   Q218: 17,
+  Q219: 10,
+  Q221: 0,
   Q408: 21.8,
   Q668: 22,
+  Q794: 20.6,
+  Q805: 17.6,
 } as Record<string, number>;
 
 /**
