@@ -93,6 +93,8 @@ const useCountryNodesMemo = (
       const res = [...nearestNodes];
       const selectedNode = getTreeNode(selectedCode);
       //
+      console.log("filling up list with most populated places");
+      //
       if (selectedNode) {
         const data = selectedNode.data ?? {};
         const { lat, lng } = data;
@@ -102,7 +104,8 @@ const useCountryNodesMemo = (
         let extendedFromPop = 0;
         let next = mostPopulatadNodes[extendedFromPop];
         //
-        while (res.length < MAX_ITEMS_TO_SHOW || next !== undefined) {
+        do {
+          console.log("while-next", next, nearestCodesLookup.size, res.length);
           const alreadyInResults = next
             ? nearestCodesLookup.has(next.code)
             : true;
@@ -116,9 +119,15 @@ const useCountryNodesMemo = (
               ),
             });
           //
+          //
+          //
+          const reachedLimit = res.length >= MAX_ITEMS_TO_SHOW;
+          //
           extendedFromPop++;
-          next = mostPopulatadNodes[extendedFromPop];
-        }
+          next = !reachedLimit
+            ? mostPopulatadNodes[extendedFromPop]
+            : undefined;
+        } while (next !== undefined);
         //
         return res.map((r) => ({ ...r, distance: undefined }));
       }

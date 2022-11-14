@@ -117,7 +117,7 @@ class TreeHelper {
   //
   constructor(nodes: Record<string, any>) {
     this.NODES = nodes;
-    this.NODES["Q3"] = { code: 3, name: "Earth" };
+    this.NODES["Q3"] = { code: 3, name: "Earth", p: undefined, type: 634 };
     this._rebuild(); // = [], //Object.keys(NODES);
   }
   //

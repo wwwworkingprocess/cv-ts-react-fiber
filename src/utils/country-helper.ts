@@ -7,6 +7,7 @@ import countryBoundsRaw from "../assets/json/wiki/countries.bounds.json";
 const availableCountryCodes = [
   "Q16",
   // "Q17", Japan removed, invalid hierarchy
+  "Q20",
   "Q28",
   "Q29",
   // "Q30", USA disabled, state level missing from hierarchy
@@ -15,24 +16,42 @@ const availableCountryCodes = [
   "Q37",
   "Q38",
   "Q41",
-  // "Q215", Slovenia removed, invalid hierarchy
+  "Q96",
   "Q142",
   "Q148",
   "Q159",
   "Q183",
   "Q184",
+  "Q211",
+  "Q212",
   "Q213",
+  // "Q215", // Slovenia removed, invalid hierarchy
   "Q218",
   "Q219",
   "Q221",
+  // "Q224", // Croatia removed, invalid hierarchy
+  // "Q225", // Bosnia and H. removed, invalid hierarchy
+  "Q227",
+  "Q228", // Andorra, best to debug hierarchy issue
+  "Q229",
+  "Q230",
+  "Q232",
+  // "Q236", // Montenegro
+  "Q238", // Montenegro
+  "Q252",
+  "Q262",
+  "Q403",
   "Q408",
   "Q668",
   "Q794",
   "Q805",
+  "Q1028",
+  "Q1032",
 ];
 const zoomFixes = {
   Q16: 23,
   Q17: 0,
+  Q20: 19.5,
   Q28: 10,
   Q29: 21.5,
   // Q30: 21,
@@ -41,20 +60,34 @@ const zoomFixes = {
   Q37: 0,
   Q38: 21,
   Q41: 18,
+  Q96: 21.6,
   Q142: 19,
   Q148: 21.6,
   Q159: 23,
   Q183: 20,
   Q184: 14,
+  Q211: 1,
+  Q212: 17,
   Q213: 6,
   // Q215: -17,
   Q218: 17,
   Q219: 10,
   Q221: 0,
+  Q227: 9,
+  Q228: 0,
+  Q229: -8,
+  Q230: 0,
+  Q232: 20,
+  Q238: -10,
+  Q252: 21.5,
+  Q262: 22.2,
+  Q403: 13,
   Q408: 21.8,
   Q668: 22,
   Q794: 20.6,
   Q805: 17.6,
+  Q1028: 0,
+  Q1032: 20.7,
 } as Record<string, number>;
 
 /**

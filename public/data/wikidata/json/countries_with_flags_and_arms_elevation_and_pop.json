@@ -1193,20 +1193,7 @@
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Jordan.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Jordan.svg"
   },
-  {
-    "country": "https://www.wikidata.org/entity/Q232",
-    "capital": "https://www.wikidata.org/entity/Q1520",
-    "countryLabel": "Kazakhstan",
-    "capitalLabel": "Nur-Sultan",
-    "co_pop": "18276500",
-    "c_pop": "1078362",
-    "c_min_elevation": "347",
-    "c_area": "797.33",
-    "c_ll": "Point(71.433333333 51.133333333)",
-    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Kazakhstan.map",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Kazakhstan.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20Kazakhstan%20latin.svg"
-  },
+
   {
     "country": "https://www.wikidata.org/entity/Q232",
     "capital": "https://www.wikidata.org/entity/Q1520",
