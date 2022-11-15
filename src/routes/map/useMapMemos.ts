@@ -7,6 +7,10 @@ import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
 const availableCountryCodes = getAvailableCountryCodes();
 
+const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
+const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
+  a.name.localeCompare(b.name);
+
 const useMapMemos = (
   countryCode: string | undefined /* e.g. "Q28" */,
   wikiCountries: Array<WikiCountry> | null,
@@ -29,10 +33,11 @@ const useMapMemos = (
   //
   // Countries level
   //
+
   const countries = useMemo(
     () =>
       wikiCountries
-        ? wikiCountries.filter((c) => availableCountryCodes.includes(c.code))
+        ? wikiCountries.filter(isAvailable).sort(sortByNameAsc)
         : [],
     [wikiCountries]
   );

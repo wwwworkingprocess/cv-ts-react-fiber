@@ -86,7 +86,7 @@ const zoomFixes = {
   Q668: 22,
   Q794: 20.6,
   Q805: 17.6,
-  Q1028: 0,
+  Q1028: 21.8,
   Q1032: 20.7,
 } as Record<string, number>;
 
