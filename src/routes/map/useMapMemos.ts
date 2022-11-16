@@ -1,24 +1,18 @@
 import { useMemo } from "react";
 
 import { useTreeHelper } from "../../hooks/useTreeHelper";
-import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
-
-const availableCountryCodes = getAvailableCountryCodes();
-
-const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
-const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
-  a.name.localeCompare(b.name);
 
 const useMapMemos = (
   countryCode: string | undefined /* e.g. "Q28" */,
   wikiCountries: Array<WikiCountry> | null,
   selectedCountry: WikiCountry | undefined,
   selectedCode: string | undefined,
-  topResultsLength: number
+  topResultsLength: number,
+  path?: string
 ) => {
-  const { loading, tree, keys } = useTreeHelper(countryCode);
+  const { loading, tree, keys } = useTreeHelper(countryCode, path);
   //
   const selectedCountryCode = useMemo(
     () => (selectedCountry ? selectedCountry.code : undefined),
@@ -30,17 +24,17 @@ const useMapMemos = (
     [selectedCountryCode, loading, tree]
   );
 
-  //
-  // Countries level
-  //
+  // //
+  // // Countries level
+  // //
 
-  const countries = useMemo(
-    () =>
-      wikiCountries
-        ? wikiCountries.filter(isAvailable).sort(sortByNameAsc)
-        : [],
-    [wikiCountries]
-  );
+  // const countries = useMemo(
+  //   () =>
+  //     wikiCountries
+  //       ? wikiCountries.filter(isAvailable).sort(sortByNameAsc)
+  //       : [],
+  //   [wikiCountries]
+  // );
   //
   // Admin Zone 1 level
   //
@@ -186,7 +180,6 @@ const useMapMemos = (
       isTreeReady,
       isAdminOneReady,
       //
-      countries,
       adminOneMemo,
       adminTwoMemo,
       //
@@ -196,7 +189,6 @@ const useMapMemos = (
       tree,
       isTreeReady,
       isAdminOneReady,
-      countries,
       adminOneMemo,
       adminTwoMemo,
       topTenCities,

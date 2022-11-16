@@ -94,7 +94,8 @@ const vertexShader = `
 `;
 
 //
-const IMG_SRC = "./data/earth/3_no_ice_clouds_8k.jpg";
+// const IMG_SRC = "./data/earth/3_no_ice_clouds_8k.jpg";
+const IMG_SRC = "../../data/earth/3_no_ice_clouds_8k.jpg";
 
 const ImagePlane = (
   props: JSX.IntrinsicElements["mesh"] & { planeSize: number }

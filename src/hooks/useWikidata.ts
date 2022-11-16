@@ -19,7 +19,11 @@ export const useWikidata = (qualifier: string | undefined) => {
   };
   //
   const fetchApi = useCallback((code: string | undefined) => {
-    if (code) {
+    const validCode = code && code !== "Q-1";
+    //
+    if (validCode) {
+      setLoading(true);
+      //
       const url = `https://www.wikidata.org/wiki/Special:EntityData/${code}.json`;
       //
       fetch(url)
@@ -30,7 +34,7 @@ export const useWikidata = (qualifier: string | undefined) => {
   }, []);
   //
   useEffect(() => {
-    setLoading(true);
+    //
     fetchApi(qualifier);
   }, [fetchApi, qualifier]);
   //

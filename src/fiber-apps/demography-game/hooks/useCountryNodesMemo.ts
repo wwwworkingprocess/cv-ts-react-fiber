@@ -93,8 +93,6 @@ const useCountryNodesMemo = (
       const res = [...nearestNodes];
       const selectedNode = getTreeNode(selectedCode);
       //
-      console.log("filling up list with most populated places");
-      //
       if (selectedNode) {
         const data = selectedNode.data ?? {};
         const { lat, lng } = data;
@@ -105,27 +103,19 @@ const useCountryNodesMemo = (
         let next = mostPopulatadNodes[extendedFromPop];
         //
         do {
-          console.log("while-next", next, nearestCodesLookup.size, res.length);
-          const alreadyInResults = next
-            ? nearestCodesLookup.has(next.code)
-            : true;
+          const alreadyInResults = !next || nearestCodesLookup.has(next.code);
           //
-          if (!alreadyInResults)
-            res.push({
-              ...next,
-              distance: distance(
-                [lat, lng],
-                [next.data.lat ?? 0, next.data.lng ?? 0]
-              ),
-            });
-          //
-          //
+          if (!alreadyInResults) {
+            const [latNext, latLng] = [next.data.lat ?? 0, next.data.lng ?? 0];
+            const nextDistance = distance([lat, lng], [latNext, latLng]);
+            //
+            res.push({ ...next, distance: nextDistance });
+          }
           //
           const reachedLimit = res.length >= MAX_ITEMS_TO_SHOW;
           //
-          extendedFromPop++;
           next = !reachedLimit
-            ? mostPopulatadNodes[extendedFromPop]
+            ? mostPopulatadNodes[++extendedFromPop]
             : undefined;
         } while (next !== undefined);
         //

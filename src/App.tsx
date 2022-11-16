@@ -37,7 +37,9 @@ const PageFrame = () => {
           <Route path="skills/*" element={<Skills />} />
           <Route path="viewer/*" element={<Viewer />} />
 
-          <Route path="map" element={<Map />} />
+          {/* <Route path="map" element={<Map />} /> */}
+          <Route path="map/*" element={<Map />} />
+
           <Route path="demos/*" element={<Demos />} />
 
           <Route path="auth" element={<Authentication />} />

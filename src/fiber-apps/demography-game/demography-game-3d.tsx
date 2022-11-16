@@ -40,7 +40,6 @@ import Stars from "./fibers/stars";
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
   //
-  path?: string;
   tree: TreeHelper;
   scrollToDetails: () => void;
 }) => {
@@ -240,6 +239,8 @@ const DemographyGame3D = (props: {
   //
   //
   const starsRef = useRef<Mesh>(null!);
+  const fontFamily = `${process.env.PUBLIC_URL}data/Roboto_Slab.ttf`;
+
   //
   return (
     <>
@@ -252,9 +253,7 @@ const DemographyGame3D = (props: {
         >
           <CameraControls position={pos.controls} selectedCode={selectedCode} />
           {/* Forcing font to load */}
-          <Text font={"data/Roboto_Slab.ttf"}>
-            {selectedCountry?.name || "..."}
-          </Text>
+          {/* <Text font={fontFamily}>{selectedCountry?.name || "..."}</Text> */}
 
           {/* Light Rig */}
           <group position={pos.lights}>
@@ -265,7 +264,7 @@ const DemographyGame3D = (props: {
           <Stars mutableRef={starsRef} />
 
           {/* World feature */}
-          <WorldPlane />
+          <WorldPlane path={"../../"} />
 
           {/* Country feature */}
           <CountryFeature coords={countryCoords} color={"blue"} />

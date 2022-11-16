@@ -15,7 +15,7 @@ type CityBillboardProps = {
 const CityBillboard = (props: CityBillboardProps) => {
   const { data, isTaken, showProgress, progressOffset } = props;
   //
-  const fontFamily = "data/Roboto_Slab.ttf";
+  const fontFamily = `${process.env.PUBLIC_URL}/../data/Roboto_Slab.ttf`;
   //
   return (
     <Billboard position={[0, 0.085, 0]} follow={true}>
