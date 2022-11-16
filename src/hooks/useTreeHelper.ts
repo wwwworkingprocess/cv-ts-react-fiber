@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
+import { getAvailableCountryCodes } from "../utils/country-helper";
+
 import TreeHelper, {
   fn_from_ab,
   fn_blob_to_hierarchy,
@@ -60,13 +62,24 @@ export const useTreeHelper = (
   // STEP 1 Creating tree instance
   //
   useEffect(() => {
+    //
+    // STEP 0 Only allow valid countryCode -s to load
+    //
+    const availableCountryCodes = getAvailableCountryCodes();
+    const isAvailable =
+      countryCode && availableCountryCodes.includes(countryCode);
+    //
     const fn_create_tree = () => new TreeHelper({});
     //
-    if (countryCode) {
-      resetTree();
-      //
-      setLoading(true);
-      setTree(fn_create_tree);
+    if (isAvailable) {
+      if (countryCode) {
+        resetTree();
+        //
+        setLoading(true);
+        setTree(fn_create_tree);
+      }
+    } else {
+      console.log("TREE helper, invalid country code, skipping", countryCode);
     }
     //
     return () => resetTree();
