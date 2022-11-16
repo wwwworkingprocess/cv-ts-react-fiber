@@ -35,10 +35,11 @@ const useGameAppStore = create<GameAppStore>(
       //
       setMoving: (b, code) =>
         set((prev) => {
-          // const hasArrived = !b && prev.moving;
+          const codeChanged = code !== prev.lastSelectedCode;
+          const hasArrived = !b && prev.moving;
           // const hasLeft = b && !prev.moving;
           //
-          return prev.moving
+          return codeChanged && hasArrived
             ? onArrived(prev, code)
             : {
                 moving: true,
@@ -48,10 +49,17 @@ const useGameAppStore = create<GameAppStore>(
         }),
       //
       setSelectedCode: (c) =>
-        set((prev) => ({
-          selectedCode: c,
-          lastSelectedCode: prev.selectedCode,
-        })),
+        set((prev) =>
+          prev.selectedCode !== c // has to code really changed?
+            ? {
+                selectedCode: c,
+                lastSelectedCode: prev.selectedCode,
+              }
+            : {
+                selectedCode: prev.selectedCode,
+                lastSelectedCode: prev.lastSelectedCode,
+              }
+        ),
       //
       setProgressCompleted: (c, pop) =>
         set((prev) => onCityTaken(prev, c, pop)),

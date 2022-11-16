@@ -19,10 +19,11 @@ const GameControls = (props: any) => {
   //
 
   const lastTakenPlaceImageUrl = useGameAppStore((s) => s.lastFeature.imageUrl);
-  const [zoom, moving, detectedFps] = useGameAppStore((s) => [
+  const [zoom, moving, detectedFps, selectedCode] = useGameAppStore((s) => [
     s.zoom,
     s.moving,
     s.detectedFps,
+    s.selectedCode,
   ]);
   //
 
@@ -33,8 +34,8 @@ const GameControls = (props: any) => {
         ? "Select a city"
         : moving
         ? "Moving..."
-        : "Arrived at destination.",
-    [zoom, moving]
+        : `Arrived at ${selectedCode}.`,
+    [zoom, moving, selectedCode]
   );
   //
   const lastTakenPlaceImage = useMemo(() => {

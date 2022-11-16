@@ -1,4 +1,5 @@
 import { useFrame } from "@react-three/fiber";
+import { useEffect, useState } from "react";
 import { Mesh, Vector3 } from "three";
 
 import useGameAppStore from "../stores/useGameAppStore";
@@ -18,12 +19,11 @@ const CrossHair = (
   const paused = false; //TODO: from store
   const setMoving = useGameAppStore((s) => s.setMoving); //TODO: via controller
   //
-  const [zoom, moving, selectedCode] = useGameAppStore((s) => [
-    s.zoom,
-    s.moving,
-    s.selectedCode,
-  ]);
+  const [zoom, moving, selectedCode, lastSelectedCode] = useGameAppStore(
+    (s) => [s.zoom, s.moving, s.selectedCode, s.lastSelectedCode]
+  );
 
+  const [reachedCode, setReachedCode] = useState<string>();
   //
   // Detecting if the crosshair has reached the 'focus' point
   //
@@ -37,9 +37,25 @@ const CrossHair = (
       //
       const hasArrived = crosshairDistanceFromDestination < epsilon;
       //
+      // This is indeed ugly but seems unavoidable (reachedCode)
+      //
       if (moving && hasArrived && selectedCode) {
-        console.log("Arrived.", selectedCode);
-        setMoving(false, selectedCode);
+        setReachedCode(selectedCode);
+        //
+        if (moving && reachedCode) {
+          if (reachedCode === selectedCode) {
+            if (lastSelectedCode !== selectedCode) {
+              console.log(
+                "UserPath:",
+                lastSelectedCode,
+                "->",
+                selectedCode,
+                `Arrived at: (${reachedCode})`
+              );
+              setMoving(false, reachedCode);
+            }
+          }
+        }
       }
     }
   });

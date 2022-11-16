@@ -74,6 +74,7 @@ const WikiDemographyGame = (props: {
     path
   );
 
+  const setMoving = useGameAppStore((state) => state.setMoving);
   //
   // Updating (settlement) selection, when valid route params where provided
   //
@@ -82,8 +83,9 @@ const WikiDemographyGame = (props: {
       const validCode = tree._n(selectedRouteCode) !== undefined;
       //
       setSelectedCode(validCode ? selectedRouteCode : undefined);
+      if (validCode) setMoving(true, selectedRouteCode);
     }
-  }, [selectedRouteCode, tree, setSelectedCode]);
+  }, [selectedRouteCode, tree, setSelectedCode, setMoving]);
   //
   //
   //
