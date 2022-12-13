@@ -30,6 +30,28 @@ export const load_labels = (fn: string): Promise<Array<[number, string]>> =>
       .then((json) => resolve(json as Array<[number, string]>))
       .catch((error) => onNetworkError(reject, error));
   });
+
+export const load_types = (
+  fn: string
+): Promise<
+  Record<
+    string,
+    { code: number; name: string; p: number | undefined; type: number }
+  >
+> =>
+  new Promise((resolve, reject) => {
+    fetch(fn)
+      .then(responseAsJson)
+      .then((json) =>
+        resolve(
+          json as Record<
+            string,
+            { code: number; name: string; p: number | undefined; type: number }
+          >
+        )
+      )
+      .catch((error) => onNetworkError(reject, error));
+  });
 //
 export const load_hierarchy = (
   fn: string,

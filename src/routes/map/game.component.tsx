@@ -28,6 +28,9 @@ import {
   BrowseSettlementContainer,
   NearbyItemsContainer,
 } from "./map.styles";
+import FeaturesSummary from "../../components/demography/features-summary/features-summary.component";
+import FeaturesOverview from "../../components/demography/features-overview/features-overview.component";
+import useWindowSize from "../../hooks/useWindowSize";
 
 //
 // Routing params by
@@ -45,32 +48,46 @@ const WikiDemographyGame = (props: {
   //
   const { data: wikiCountries } = useWikiCountries(IS_CLOUD_ENABLED, path);
   //
-  const tabs = ["Main Info", "Browse", "Search", "Nearby"];
+  const tabs = ["Main Info", "Features", "Browse", "Search", "Nearby"];
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
   const [topResultsLength, setTopResultsLength] = useState<number>(16);
+  const [topTypeResultsLength, setTopTypeResultsLength] = useState<number>(16);
+
   const [countryCode] = useState<string | undefined>(selectedCountry?.code);
   //
   const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
     s.selectedCode,
     s.setSelectedCode,
   ]);
+  const [selectedTypeId, setSelectedTypeId] = useState<number | undefined>();
+  const resetTypeId = () => setSelectedTypeId(undefined);
+
   //
   const {
+    isTreeReady,
     //
     tree,
-    isTreeReady,
+    typeTree,
+    //
+    typeMemo,
     //
     adminOneMemo,
     adminTwoMemo,
     //
     topTenCities,
+    topTypeCities,
+
+    //
+    gData, // force graph data
   } = useMapMemos(
     countryCode,
     wikiCountries,
     selectedCountry,
     selectedCode,
     topResultsLength,
+    topTypeResultsLength,
+    selectedTypeId,
     path
   );
 
@@ -81,6 +98,8 @@ const WikiDemographyGame = (props: {
   useEffect(() => {
     if (selectedRouteCode && tree) {
       const validCode = tree._n(selectedRouteCode) !== undefined;
+      //
+
       //
       setSelectedCode(validCode ? selectedRouteCode : undefined);
       if (validCode) setMoving(true, selectedRouteCode);
@@ -104,10 +123,6 @@ const WikiDemographyGame = (props: {
   //
   const onCountryReset = () => {
     gotoGameLandingPage();
-    //
-    // setCountryCode(undefined);
-    // setSelectedCountry(undefined);
-    //
   };
 
   //
@@ -176,16 +191,26 @@ const WikiDemographyGame = (props: {
   const gameInCountry = useMemo(() => {
     if (!selectedCountry) return null;
     if (!tree) return null;
+    if (!typeTree) return null;
     if (!isTreeReady) return null;
     //
     return (
       <DemographyGame3D
         tree={tree}
+        typeTree={typeTree}
         selectedCountry={selectedCountry}
+        selectedTypeId={selectedTypeId}
         scrollToDetails={scrollToDetails}
       />
     );
-  }, [selectedCountry, tree, isTreeReady, scrollToDetails]);
+  }, [
+    selectedCountry,
+    selectedTypeId,
+    tree,
+    typeTree,
+    isTreeReady,
+    scrollToDetails,
+  ]);
 
   //
   const topOptions = useMemo(() => {
@@ -206,6 +231,65 @@ const WikiDemographyGame = (props: {
     );
   }, [topResultsLength, setTopResultsLength]);
 
+  //
+  const typeTopOptions = useMemo(() => {
+    // topResultsLength
+    const options = [5, 10, 16, 20, 50, 100, 200];
+    //
+    return (
+      <select
+        value={topTypeResultsLength}
+        onChange={(e) => {
+          setTopTypeResultsLength(parseInt(e.target.value));
+        }}
+      >
+        {options.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
+      </select>
+    );
+  }, [topTypeResultsLength, setTopTypeResultsLength]);
+
+  //
+  // Type related hooks below
+  //
+  const fgRef = useRef(); // features graph forward href
+
+  const { windowSize } = useWindowSize();
+  const [graphWidth, setGraphWidth] = useState(400);
+  //
+  useEffect(() => {
+    if (windowSize) setGraphWidth(windowSize.width * 0.9);
+  }, [windowSize]);
+  //
+  const allTypesWithPath = useMemo(() => {
+    // if (!selectedTypeId) return [];
+    if (!typeTree) return [];
+    if (!tree) return [];
+    //
+    const allTypes = typeTree.list_all(); // [  {code: 24017414, name: 'MISC', p: 3, type: 24017414} , ... ]
+    const allTypesWithPathHavingInstances = allTypes
+      .map((t) => ({
+        ...t,
+        path: typeTree.get_pnames(t).replace("ROOT", ""),
+        count: tree.typeSize(t.code),
+      }))
+      .filter((t) => t.count > 0 && t.code !== 6256)
+      .sort((a, b) => b.count - a.count);
+
+    //
+    // Rendering options from [id, path]
+    //
+    return allTypesWithPathHavingInstances;
+  }, [tree, typeTree]);
+  //
+  const enableTypeId = useCallback(() => {
+    if (allTypesWithPath && !selectedTypeId) {
+      const first = allTypesWithPath[0];
+      //
+      if (first) setSelectedTypeId(first.code);
+    }
+  }, [allTypesWithPath, selectedTypeId]);
   //
   //
   //
@@ -248,23 +332,79 @@ const WikiDemographyGame = (props: {
               ) : null}
             </>
           )}
-          {tree && isTreeReady ? (
+          {tree && typeTree && isTreeReady ? (
             <div>
-              <h4 style={{ marginBottom: "5px" }}>
-                Top {topOptions} Most Populated Places
-              </h4>
-              <CityList
-                cities={topTenCities}
-                onClicked={() => {
-                  console.log("onCityClicked");
-                }}
-              />
+              {selectedTypeId !== undefined ? (
+                <button onClick={resetTypeId}>Clear type filter</button>
+              ) : (
+                <button onClick={() => enableTypeId()}>
+                  Enable type filter
+                </button>
+              )}
+              {selectedTypeId === undefined ? (
+                <>
+                  <h4 style={{ marginBottom: "5px" }}>
+                    Top {topOptions} Most Populated Places
+                  </h4>
+                  <CityList
+                    cities={topTenCities}
+                    onClicked={() => console.log("Populated Place Clicked")}
+                  />
+                </>
+              ) : (
+                <>
+                  <h4 style={{ marginBottom: "5px" }}>
+                    Top {typeTopOptions} Places matching type
+                    <select
+                      value={selectedTypeId}
+                      onChange={(e) =>
+                        setSelectedTypeId(parseInt(e.target.value))
+                      }
+                    >
+                      {allTypesWithPath.map((t) => (
+                        <option key={t.code} value={t.code}>
+                          {`[${t.count}] ${
+                            t.path.length > 50
+                              ? `${t.path.substring(0, 47)}...`
+                              : t.path
+                          }`}
+                        </option>
+                      ))}
+                    </select>
+                  </h4>
+                  <CityList
+                    cities={topTypeCities}
+                    onClicked={() => console.log("Feature of a Type Clicked")}
+                  />
+                </>
+              )}
             </div>
           ) : null}
         </>
       ) : null}
 
       {tabsIndex === 1 ? (
+        <>
+          {/* FEATURES SUMMARY */}
+          {tree && typeTree && typeMemo ? (
+            <div style={{ width: "100%" }}>
+              <h3>Feature summary</h3>
+              {countryCode ? (
+                <FeaturesSummary
+                  tree={tree}
+                  typeTree={typeTree}
+                  typeMemo={typeMemo}
+                  countryCode={countryCode}
+                />
+              ) : null}
+            </div>
+          ) : (
+            ""
+          )}
+        </>
+      ) : null}
+
+      {tabsIndex === 2 ? (
         <>
           {/* ADMINISTRATIVE ZONES */}
           {selectedCountry && (
@@ -295,7 +435,7 @@ const WikiDemographyGame = (props: {
         </>
       ) : null}
 
-      {tabsIndex === 2 ? (
+      {tabsIndex === 3 ? (
         <>
           <h3>Search for a Settlement</h3>
           {countryCode ? (
@@ -304,7 +444,7 @@ const WikiDemographyGame = (props: {
         </>
       ) : null}
 
-      {tabsIndex === 3 ? (
+      {tabsIndex === 4 ? (
         <>
           {/* NEARBY ITEMS */}
           {tree && selectedCountry && selectedCode ? (
@@ -340,7 +480,22 @@ const WikiDemographyGame = (props: {
         <Spinner />
       ) : (
         <div style={{ marginTop: "15px" }}>
-          {gameInCountry}
+          {tabsIndex === 1 ? (
+            gData ? (
+              <>
+                <FeaturesOverview
+                  key={"feature_types"}
+                  data={gData}
+                  graphWidth={graphWidth}
+                  fgRef={fgRef}
+                  setSelectedTypeId={setSelectedTypeId}
+                />
+                Type:{selectedTypeId}
+              </>
+            ) : null
+          ) : (
+            gameInCountry
+          )}
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}

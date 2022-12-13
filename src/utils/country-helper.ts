@@ -3,11 +3,25 @@ import TreeHelper from "./tree-helper";
 
 import countryBoundsRaw from "../assets/json/wiki/countries.bounds.json";
 
-// "Q34", "Q37", "Q38", - no countryborder
 const availableCountryCodes = [
-  "Q16",
-  // "Q17", Japan removed, invalid hierarchy
   "Q20",
+  "Q27",
+  "Q28",
+  "Q31",
+  "Q32",
+  "Q33",
+  "Q41",
+  "Q45",
+  "Q55",
+  "Q77",
+  "Q211",
+];
+
+const availableCountryCodesOld = [
+  "Q16",
+  "Q17",
+  "Q20",
+  "Q27",
   "Q28",
   "Q29",
   // "Q30", USA disabled, state level missing from hierarchy
@@ -16,12 +30,18 @@ const availableCountryCodes = [
   "Q37",
   "Q38",
   "Q41",
+  "Q45",
+  "Q55",
   "Q96",
   "Q142",
+  "Q145",
   "Q148",
+  "Q155",
   "Q159",
   "Q183",
   "Q184",
+  "Q189", // Iceland, checking new parent-finder
+  "Q191",
   "Q211",
   "Q212",
   "Q213",
@@ -29,16 +49,23 @@ const availableCountryCodes = [
   "Q218",
   "Q219",
   "Q221",
-  // "Q224", // Croatia removed, invalid hierarchy
+  "Q222",
+  "Q224",
+  "Q225",
   // "Q225", // Bosnia and H. removed, invalid hierarchy
   "Q227",
   "Q228", // Andorra, best to debug hierarchy issue
   "Q229",
   "Q230",
   "Q232",
-  // "Q236", // Montenegro
+  "Q233",
+  "Q236",
   "Q238", // Montenegro
+  "Q241",
+  "Q242",
+  "Q244",
   "Q252",
+  "Q258",
   "Q262",
   "Q403",
   "Q408",
@@ -47,25 +74,41 @@ const availableCountryCodes = [
   "Q805",
   "Q1028",
   "Q1032",
+  //
+  "Q191",
+  "Q217",
+  "Q399",
+  "Q1246",
 ];
+
 const zoomFixes = {
   Q16: 23,
-  Q17: 0,
+  Q17: 17,
   Q20: 19.5,
+  Q27: 11,
   Q28: 10,
-  Q29: 21.5,
+  Q29: 22.5,
   // Q30: 21,
   Q31: 6,
+  Q32: -16,
+  Q33: 17,
   Q34: 20.5,
   Q37: 0,
   Q38: 21,
   Q41: 18,
+  Q45: 20,
+  Q55: 23.5,
+  Q77: 8,
   Q96: 21.6,
   Q142: 19,
+  Q145: 19.8,
   Q148: 21.6,
+  Q155: 0,
   Q159: 23,
   Q183: 20,
   Q184: 14,
+  Q189: 7.6,
+  Q191: 1,
   Q211: 1,
   Q212: 17,
   Q213: 6,
@@ -73,13 +116,22 @@ const zoomFixes = {
   Q218: 17,
   Q219: 10,
   Q221: 0,
+  Q222: 8,
+  Q224: 11,
+  Q225: 7,
   Q227: 9,
-  Q228: 0,
+  Q228: -10,
   Q229: -8,
-  Q230: 0,
-  Q232: 20,
-  Q238: -10,
+  Q230: 3.6,
+  Q232: 21.6,
+  Q233: -20,
+  Q236: 0,
+  Q238: -17,
+  Q241: 16.6,
+  Q242: 0,
+  Q244: -20,
   Q252: 21.5,
+  Q258: 20,
   Q262: 22.2,
   Q403: 13,
   Q408: 21.8,
@@ -88,6 +140,11 @@ const zoomFixes = {
   Q805: 17.6,
   Q1028: 21.8,
   Q1032: 20.7,
+  //
+  //
+  Q217: 7.4,
+  Q399: 0,
+  Q1246: 0,
 } as Record<string, number>;
 
 /**

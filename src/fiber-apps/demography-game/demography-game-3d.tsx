@@ -8,7 +8,6 @@ import {
 } from "react";
 
 import { Canvas } from "@react-three/fiber";
-import { Bounds, Text } from "@react-three/drei";
 import { Mesh, Vector3 } from "three";
 
 import useGameAppStore from "./stores/useGameAppStore";
@@ -41,9 +40,12 @@ const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
   //
   tree: TreeHelper;
+  typeTree: TreeHelper;
+  selectedTypeId: number | undefined;
   scrollToDetails: () => void;
 }) => {
-  const { tree, selectedCountry, scrollToDetails } = props;
+  const { tree, typeTree, selectedCountry, selectedTypeId, scrollToDetails } =
+    props;
   //
   const extra = useGameAppStore((state) => state.extraZoom);
   //
@@ -71,7 +73,9 @@ const DemographyGame3D = (props: {
   const { displayedNodes } = useCountryNodesMemo(
     selectedCountry,
     tree,
+    typeTree,
     selectedCode,
+    selectedTypeId,
     citiesMaxItems,
     citiesMaxRangeKm,
     citiesShowPopulated
@@ -239,8 +243,6 @@ const DemographyGame3D = (props: {
   //
   //
   const starsRef = useRef<Mesh>(null!);
-  const fontFamily = `${process.env.PUBLIC_URL}data/Roboto_Slab.ttf`;
-
   //
   return (
     <>
@@ -253,7 +255,6 @@ const DemographyGame3D = (props: {
         >
           <CameraControls position={pos.controls} selectedCode={selectedCode} />
           {/* Forcing font to load */}
-          {/* <Text font={fontFamily}>{selectedCountry?.name || "..."}</Text> */}
 
           {/* Light Rig */}
           <group position={pos.lights}>

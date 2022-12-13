@@ -107,6 +107,25 @@ export const findTreeNodesInRange = (
   return nodes;
 };
 
+type TreeNodeEntry = {
+  code: number;
+  name: string;
+  p: number | undefined; //parent.code,
+  type: number;
+};
+
+export const treeFromJson = (s: string) => {
+  const nodes = JSON.parse(s);
+  //
+  const skipRootRewrite = true;
+  const tree = new TreeHelper(nodes, skipRootRewrite);
+  tree._rebuild();
+  //
+  console.log("Tree loaded", s.length, "bytes");
+  //console.log("tree from json", tree.list_all());
+  //
+  return tree;
+};
 //
 //
 //
@@ -115,11 +134,35 @@ class TreeHelper {
   //
   _keys_cache = [] as Array<string>; //Object.keys(NODES);
   //
-  constructor(nodes: Record<string, any>) {
+  constructor(nodes: Record<string, any>, skipRootRewrite?: boolean) {
+    const type_planet = 634;
+    const root = { code: 3, name: "Earth", p: undefined, type: type_planet };
+    //
     this.NODES = nodes;
-    this.NODES["Q3"] = { code: 3, name: "Earth", p: undefined, type: 634 };
-    this._rebuild(); // = [], //Object.keys(NODES);
+    if (!skipRootRewrite) this.NODES["Q3"] = root;
+    //
+    this._rebuild();
   }
+  //
+  size = () => Object.keys(this.NODES).length;
+  typeSize = (type: number) =>
+    Object.values(this.NODES)
+      .map((n) => n.type)
+      .filter((t) => t === type).length;
+  //
+  toJson = () => {
+    console.log("tree to json");
+    const s = JSON.stringify(this.NODES);
+    //
+    return s;
+  };
+  //
+  getLeafNodes = () =>
+    Object.keys(this.NODES)
+      .map((code) => [code, this._is_leaf(this._qq(code))])
+      .filter((arr) => Boolean(arr[1]))
+      .map(([code]) => this._n(String(code)));
+  //
   //
   _n = (k: string) => this.NODES[k];
   _q = (s: string) => {
@@ -145,7 +188,7 @@ class TreeHelper {
       : undefined;
   //
   _node = (type: number, code: number, name: string, parent = { code: 3 }) => {
-    // console.log("ADD_NODE", code, name, parent.code);
+    // console.log("ADD_NODE", type, code, name, "parent", parent.code);
     this.NODES[this._qc(code)] = { code, name, p: parent.code, type };
   };
   _rebuild = () => {
@@ -191,6 +234,23 @@ class TreeHelper {
     this._rebuild();
   };
   //
+  _build_from_flatmap_typed = (edges: any) => {
+    const def_name = "node_name";
+    const offset = !this._has(3) ? 3 : 0;
+    const to_proc =
+      offset === 0
+        ? edges
+        : edges.filter((v: number, i: number) => i >= offset);
+    //
+    for (let i = offset; i < to_proc.length; i += 3) {
+      const [id, pid, tid] = [to_proc[i], to_proc[i + 1], to_proc[i + 2]];
+      //
+      this._node(tid, id, def_name, { code: pid });
+    }
+    //
+    this._rebuild();
+  };
+  //
   _build_labels = (labels: Array<any>) => {
     const bound = labels.map((pair) => [pair[0], pair[1], this._find(pair[0])]);
     const failed = bound.filter((x) => x[2] === undefined);
@@ -224,11 +284,9 @@ class TreeHelper {
     let n = this.NODES["Q" + node.p],
       end = !n || n.p === undefined;
     //
-    console.log("get_pnames", node.id);
-    //
     return !end
       ? [this.get_pnames(n), node.name].join(" >> ")
-      : [n.name, node.name].join(" >> ");
+      : [n?.name ?? "", node.name].join(" >> ");
   };
   //
   get_pcodes = (node: any): Array<number> => {
@@ -275,6 +333,24 @@ class TreeHelper {
   list_all = () => {
     this._rebuild();
     return this._keys_cache.map((key) => this.NODES[key]);
+  };
+  //
+  list_by_type = (): Record<string, Array<any>> => {
+    const all = this.list_all();
+    //
+    const memo = {} as Record<string, Array<any>>;
+    //
+    for (const node of all) {
+      const t = node.type;
+      const exists = memo.hasOwnProperty(t);
+      //
+      if (!exists) memo[t] = [node];
+      else memo[t].push(node);
+      //
+    }
+
+    //
+    return memo;
   };
 }
 

@@ -41,8 +41,16 @@ const CityList = (props: CityListProps) => {
         <CityListItem
           key={idx}
           onClick={() => {
-            setSelectedCode(`Q${c.code}`);
-            onClicked(c);
+            //
+            // only allow selection, if coordinates are given
+            //
+            const hasCoords = !isNaN(c?.data?.lng);
+            if (hasCoords) {
+              setSelectedCode(`Q${c.code}`);
+              onClicked(c);
+            } else {
+              alert("Sorry, this item has no geolocation.");
+            }
           }}
           style={{
             color: selectedCode === `Q${c.code}` ? "gold" : "unset",
@@ -58,8 +66,15 @@ const CityList = (props: CityListProps) => {
             </div>
           )}
           <br />
-          <div>{c.name}</div>
-          <small>{(c.data.pop * 0.000001).toFixed(2)}M</small>
+          <div>
+            {isNaN(c.data?.lng) ? "[!]" : ""}
+            {c.name}
+          </div>
+          <small>
+            {(c.data?.pop ?? 0) > 0
+              ? `${(c.data.pop * 0.000001).toFixed(2)}M`
+              : `${idx + 1}.`}
+          </small>
         </CityListItem>
       ))}
     </>

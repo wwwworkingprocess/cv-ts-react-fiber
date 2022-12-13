@@ -8,7 +8,9 @@ import { getCountryNodesFromTree } from "../../../utils/country-helper";
 const useCountryNodesMemo = (
   selectedCountry: WikiCountry | undefined,
   tree: TreeHelper,
+  typeTree: TreeHelper,
   selectedCode: string | undefined,
+  selectedTypeId: number | undefined,
   MAX_ITEMS_TO_SHOW: number,
   MAX_RANGE_TO_SHOW: number,
   SORT_ORDER_ASCENDING: boolean
@@ -20,10 +22,16 @@ const useCountryNodesMemo = (
       if (!tree) return [];
       if (!selectedCountry) return [];
       //
-      return getCountryNodesFromTree(selectedCountry, tree);
+      // when type filter is active, return all nodes matching type
+      //
+      const nodes = getCountryNodesFromTree(selectedCountry, tree);
+      //
+      return selectedTypeId
+        ? nodes.filter((n) => n.type === selectedTypeId)
+        : nodes;
     },
     //
-    [selectedCountry, tree]
+    [selectedCountry, selectedTypeId, tree]
   );
   //
   const currentSort = useMemo(() => {

@@ -1,4 +1,17 @@
 [
+{
+    "country": "https://www.wikidata.org/entity/Q1246",
+    "countryLabel": "Kosovo",
+	"capitalLabel": "Pristina",
+    "co_pop": "1883018",
+    "c_pop": "0",
+    "c_min_elevation": "0",
+    "c_area": "10909",
+    "c_ll": "Point(42.33 20.50)",
+    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Kosovo.map",
+    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Kosovo.svg",
+    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat_of_arms_of_Kosovo.svg"
+  },
   {
     "country": "https://www.wikidata.org/entity/Q98923586",
     "countryLabel": "Q98923586",
@@ -2790,5 +2803,19 @@
     "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Zimbabwe.map",
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Zimbabwe.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Zimbabwe.svg"
+  },
+  {
+    "country": "https://www.wikidata.org/entity/Q55",
+    "capital": "https://www.wikidata.org/entity/Q727",
+    "countryLabel": "Netherlands",
+    "capitalLabel": "Amsterdam",
+    "co_pop": "17282163",
+    "c_pop": "1",
+    "c_min_elevation": "-6",
+    "c_area": "41543",
+    "c_ll": "Point(52.19 5.33)",
+    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Nederland.map",
+    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Netherlands.svg",
+    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Netherlands.svg"
   }
 ]

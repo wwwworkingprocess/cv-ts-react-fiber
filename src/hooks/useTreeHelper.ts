@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { getAvailableCountryCodes } from "../utils/country-helper";
 
@@ -13,22 +13,37 @@ import {
   load_hierarchy,
   load_labels,
   load_nodedata,
+  load_types,
 } from "../utils/networking";
 
 type TreeRawData = {
   hierarchy: Int32Array;
+  types: Record<
+    string,
+    { code: number; name: string; p: number | undefined; type: number }
+  >;
   labels: Array<any>;
   nodedata: Array<any>;
 };
 
 type LoaderResult = [
   Int32Array,
+  Record<
+    string,
+    { code: number; name: string; p: number | undefined; type: number }
+  >,
   Array<[number, string]>,
   Array<TreeNodeNumericProps>
 ];
 
 type LoaderResultPromises = [
   Promise<Int32Array>,
+  Promise<
+    Record<
+      string,
+      { code: number; name: string; p: number | undefined; type: number }
+    >
+  >,
   Promise<Array<[number, string]>>,
   Promise<Array<TreeNodeNumericProps>>
 ];
@@ -56,6 +71,7 @@ export const useTreeHelper = (
     setTree(undefined);
     setKeys([]);
     setValue(undefined);
+    setTypeTree(undefined);
   };
 
   //
@@ -93,30 +109,33 @@ export const useTreeHelper = (
     //
     const p = path ? `${path}` : "";
     //
-    const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.hierarchy.bin`;
+    const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.bin`; // using typed (v2)
+    const pathTypes = `${p}data/wikidata/${countryCode}.tree.types.json`; // using typed (v2)
+    //const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.hierarchy.bin`;
     const pathLabels = `${p}data/wikidata/${countryCode}.tree.labels.json`;
     const pathNodeData = `${p}data/wikidata/${countryCode}.tree.nodedata.bin`;
     //
-    return [pathHierarchy, pathLabels, pathNodeData];
+    return [pathHierarchy, pathTypes, pathLabels, pathNodeData];
   }, [countryCode, path]);
 
   //
   // STEP 3 Loading tree data files, after path variables are ready
   //
   const updateDataResult = (r: LoaderResult) => {
-    const [hierarchy, labels, nodedata] = r;
+    const [hierarchy, types, labels, nodedata] = r;
     //
     console.log("in updateDataResult", r);
     //
-    setDataResult({ hierarchy, labels, nodedata } as TreeRawData);
+    setDataResult({ hierarchy, types, labels, nodedata } as TreeRawData);
   };
   //
   useEffect(() => {
     //
     const loadTreeData = async (urls: Array<string>) => {
-      const [path_hierarchy, path_labels, path_nodedata] = urls;
+      const [path_hierarchy, path_types, path_labels, path_nodedata] = urls;
       const dataPromises = [
         load_hierarchy(path_hierarchy, fn_blob_to_hierarchy),
+        load_types(path_types),
         load_labels(path_labels),
         load_nodedata(path_nodedata, fn_blob_to_nodedata, fn_from_ab),
       ] as LoaderResultPromises;
@@ -141,6 +160,24 @@ export const useTreeHelper = (
     };
   }, [tree, urls]);
 
+  const [typeTree, setTypeTree] = useState<TreeHelper>();
+  const updateTypeTree = useCallback(
+    (
+      types: Record<
+        string,
+        { code: number; name: string; p: number | undefined; type: number }
+      >
+    ) => {
+      if (types) {
+        const tt = new TreeHelper(types, true);
+        //
+        console.log("tt", tt);
+        //
+        setTypeTree(tt);
+      }
+    },
+    [setTypeTree]
+  );
   //
   // STEP 4 Processing loaded data, building tree nodes
   //
@@ -148,9 +185,10 @@ export const useTreeHelper = (
     const isReady = tree && !dataLoading && dataResult !== undefined;
     //
     if (isReady) {
-      const { hierarchy, labels, nodedata } = dataResult;
+      const { hierarchy, types, labels, nodedata } = dataResult;
       //
-      tree._build_from_flatmap(hierarchy); // creating tree hieararcy (nodes & edges)
+      //tree._build_from_flatmap(hierarchy); // creating tree hieararcy (nodes & edges)
+      tree._build_from_flatmap_typed(hierarchy); // creating tree hieararcy (nodes & edges)
       tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
       //
       tree._build_labels(labels as any); // decorating nodes (localizable)
@@ -159,8 +197,10 @@ export const useTreeHelper = (
       setKeys(tree._keys_cache); // passing reference of helper-result
       setValue(tree);
       setLoading(false);
+      //
+      updateTypeTree(types);
     }
-  }, [tree, dataLoading, dataResult]);
+  }, [tree, dataLoading, dataResult, updateTypeTree]);
 
   //
   // Returning memoized result
@@ -180,7 +220,8 @@ export const useTreeHelper = (
       keys,
       tree: value,
       nodes: value?.NODES,
+      typeTree: typeTree,
     }),
-    [loading, keys, value]
+    [loading, keys, value, typeTree]
   );
 };
