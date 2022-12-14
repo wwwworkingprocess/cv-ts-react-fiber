@@ -31,7 +31,8 @@ const AdminTwoList = (props: AdminTwoListProps) => {
           <AdminTwoListItem
             key={code}
             onClick={() => {
-              setSelectedCode(code);
+              if (hasPosition) setSelectedCode(code);
+              //
               setMyCode(code);
             }}
             style={{

@@ -19,16 +19,13 @@ const useGraphHandlers = (fgRef: React.MutableRefObject<any>) => {
   const onNodeClick = useCallback(
     (node: any) => {
       // Aim at node from outside it
-      const distance = 40;
-      const distRatio = 1 + distance / Math.hypot(node.x, node.y, node.z);
-
+      const distance = 70;
+      const r = 1 + distance / Math.hypot(node.x, node.y, node.z);
+      const newPosition = { x: node.x * r, y: node.y * r, z: node.z * r };
+      //
       if (fgRef.current) {
         (fgRef.current as any).cameraPosition(
-          {
-            x: node.x * distRatio,
-            y: node.y * distRatio,
-            z: node.z * distRatio,
-          }, // new position
+          newPosition, // new position
           node, // lookAt ({ x, y, z })
           3000 // ms transition duration
         );
@@ -43,7 +40,6 @@ const useGraphHandlers = (fgRef: React.MutableRefObject<any>) => {
   const onEngineStop = useCallback(() => {
     if (fgRef.current) {
       // (fgRef.current as any).zoomToFit(400);
-      (fgRef.current as any).zoomToFit(400);
     }
   }, [fgRef]);
   //
@@ -80,19 +76,19 @@ const FeaturesOverview = (props: CourseOverviewProps) => {
           enableNodeDrag={false}
           onNodeClick={(node) => {
             console.log("node click", node);
-            onNodeClick(node);
-            const typeId = parseInt(String(node.id ?? -1));
-            setSelectedTypeId(typeId);
             //
             if (fgRef.current) {
-              // (fgRef.current as any).zoomToFit(400);
+              const typeId = parseInt(String(node.id ?? -1));
+              setSelectedTypeId(typeId);
+              //
+              onNodeClick(node);
             }
           }}
           linkDirectionalParticles={(d: any) =>
             d.value ? Math.min(200, Math.max(1, Math.round(d.value * 0.2))) : 0
           }
           linkDirectionalParticleSpeed={(d: any) => d.value * 0.00025}
-          linkDirectionalParticleWidth={(d: any) => 2.5}
+          linkDirectionalParticleWidth={(d: any) => 3.5}
           linkDirectionalArrowLength={(d: any) => (d.value === 0 ? 0.1 : 10)}
           linkLabel={(d: any) => (d.value === 0 ? "" : d.label)}
           onEngineStop={onEngineStop}

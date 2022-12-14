@@ -44,7 +44,12 @@ const AdminOneList = (props: AdminOneListProps) => {
               background: code === myCode ? "rgba(255,255,255,0.3)" : "none",
             }}
           >
-            <small>
+            <small
+              style={{
+                fontSize: size > 99 ? "10px" : "13px",
+                textAlign: "center",
+              }}
+            >
               {size} <span>🏠</span>
             </small>
             <label>{name}</label>

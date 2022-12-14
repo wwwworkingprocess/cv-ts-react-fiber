@@ -1,8 +1,8 @@
 import { useMemo } from "react";
+import { TypeMemo } from "../../../fiber-apps/demography-game/hooks/useTypeMemo";
 import useGameAppStore from "../../../fiber-apps/demography-game/stores/useGameAppStore";
 
 import useWikiLabels from "../../../hooks/wiki/useWikiLabels";
-import { TypeMemo } from "../../../routes/map/useMapMemos";
 
 import TreeHelper from "../../../utils/tree-helper";
 // import { } from "./features-summary.styles";
@@ -14,26 +14,41 @@ type FeaturesSummaryProps = {
   typeTree: TreeHelper | undefined;
   //
   typeMemo: TypeMemo;
+  //
+  selectedTypeId: number | undefined;
+  setSelectedTypeId: any;
 };
 
 const FeaturesSummary = (props: FeaturesSummaryProps) => {
-  const { countryCode, tree, typeTree, typeMemo } = props;
+  const {
+    countryCode,
+    tree,
+    typeTree,
+    typeMemo,
+    selectedTypeId,
+    setSelectedTypeId,
+  } = props;
   //
   const setSelectedCode = useGameAppStore((s) => s.setSelectedCode);
 
   const sortedEntries = useMemo(
     () =>
-      (tree
-        ? Object.entries(tree.list_by_type()).sort(
-            ([atype, ainstances]: any, [btype, binstances]: any) =>
-              binstances.length - ainstances.length
-          )
+      (tree && typeMemo
+        ? Object.entries(tree.list_by_type())
+            .filter(
+              ([type, instances]) =>
+                !typeMemo.hiddenTypes.includes(Number(type))
+            )
+            .sort(
+              ([atype, ainstances]: any, [btype, binstances]: any) =>
+                binstances.length - ainstances.length
+            )
         : []) as Array<[string, Array<number>]>,
-    [tree]
+    [tree, typeMemo]
   );
 
   const topFeatures = useMemo(
-    () => sortedEntries.slice(0, 10),
+    () => sortedEntries.slice(0, 20),
     [sortedEntries]
   );
 
@@ -106,8 +121,6 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
         ? treeValuesByTypeTops[code]
         : [];
     //
-    // console.log("preview", size, preview);
-    //
     return (
       <>
         {label} <small>({size})</small>
@@ -138,18 +151,18 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
     () => (typeMemo ? typeMemo.unknown.map(({ t }) => `Q${t}`) : []),
     [typeMemo]
   );
-
-  //   console.log("jsx", idsMissingLabels);
-
   const { loading: missingLabelLoading, labels: missingLabels } =
     useWikiLabels(idsMissingLabels);
-  // //
+
+  //
+  //
+  //
   const jsxUnidentifiedFeatures = useMemo(() => {
     if (missingLabelLoading) return "Loading...";
     if (!missingLabels) return null;
     if (!typeMemo) return null;
     //
-    console.log("jsx", idsMissingLabels);
+    console.log("resolved ", idsMissingLabels.length, "missing labels");
     //
     const renderUnidenfiedFeatureRow = (
       [code, parents, label]: Array<any>,
@@ -169,7 +182,8 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
       //
       return (
         <div key={idx}>
-          {label} <small>({size})</small>
+          {label}
+          <small>({size})</small>
           <span style={{ float: "right" }}>
             {preview.map((p, pidx) =>
               p ? (
@@ -191,7 +205,9 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
     };
 
     //
-    return typeMemo.unknown.length ? (
+    return typeMemo.unknown.filter(
+      ({ t, label, count, pns }: any) => !typeMemo.hiddenTypes.includes(t)
+    ).length ? (
       <div
         style={{
           position: "relative",
@@ -200,7 +216,16 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
           overflow: "hidden",
         }}
       >
-        <h4>Unidentified Features ({typeMemo.unknown.length})</h4>
+        <h4>
+          Unidentified Features (
+          {
+            typeMemo.unknown.filter(
+              ({ t, label, count, pns }: any) =>
+                !typeMemo.hiddenTypes.includes(t)
+            ).length
+          }
+          )
+        </h4>
         <div
           style={{
             maxHeight: "320px",
@@ -209,11 +234,16 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
           }}
         >
           {typeMemo.unknown
+            .filter(
+              ({ t, label, count, pns }: any) =>
+                !typeMemo.hiddenTypes.includes(t)
+            )
             .map(({ t, label, count, pns }: any) => [
               t,
               [3],
               missingLabels[`Q${t}`],
             ])
+
             .map(renderUnidenfiedFeatureRow)}
         </div>
       </div>
@@ -233,11 +263,22 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
     <>
       {/* Features by occurance */}
       <>
-        <h4>Top 10 Features in Country</h4>
+        <h4>Top 20 Features in Country</h4>
         <div style={{ float: "left", width: "40vw" }}>
           {topFeaturesWithLabels.map(([type, instances, label], idx) => (
-            <div key={idx}>
-              {idx + 1} - {type} - {label} - {instances.length} feature
+            <div
+              key={idx}
+              onClick={(e) => {
+                setSelectedTypeId(parseInt(String(type)));
+              }}
+              style={{
+                color: String(selectedTypeId ?? 0) === type ? "gold" : "white",
+              }}
+            >
+              {instances.length} - {label}
+              {String(selectedTypeId ?? 0) === type ? (
+                <small> - {type}</small>
+              ) : null}
             </div>
           ))}
         </div>
@@ -250,9 +291,7 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
       {/* Features by type groups */}
       {tree && typeTree && typeMemo ? (
         <>
-          {/* {jsxUnidentifiedFeatures} */}
           {missingLabelLoading ? "Loading..." : ""}
-          {/* {idsMissingLabels.join(" - ")} */}
           <h4>Identified Features ({typeMemo.coverage})</h4>
           {typeMemo.reducedMemo.countries.length ? (
             <>
@@ -304,26 +343,6 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
           <hr />
         </>
       ) : null}
-
-      {/* Features by occurance */}
-      {/* 
-      <>
-        <h4>Single Features</h4>
-        {singleFeatures.map(([type, instances], idx) => (
-          <div key={idx}>
-            {idx + 1} - {type} - {instances.length} feature
-          </div>
-        ))}
-      </>
-      <>
-        <h4>Common Features</h4>
-        {commonFeatures.map(([type, instances], idx) => (
-          <div key={idx}>
-            {idx + 1} - {type} - {instances.length} feature
-          </div>
-        ))}
-      </>
-       */}
     </>
   );
 };

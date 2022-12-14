@@ -19,7 +19,7 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
   const isReady = tree && selectedCode;
   const node = isReady ? tree._n(selectedCode) : undefined;
   //
-  const [range, setRange] = useState<number>(3);
+  const [range, setRange] = useState<number>(6);
   //
   const top10 = useMemo(() => {
     const data = node ? node.data : {};
@@ -54,20 +54,21 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
   const { screenSizeName } = useWindowSize();
   //
   const repeatColumns = useMemo(() => {
+    const scale = 2;
     switch (screenSizeName) {
       case "mini":
-        return 2;
+        return 2 * scale - 1;
       case "small":
-        return 3;
+        return 3 * scale - 2;
       case "normal":
-        return 4;
+        return 4 * scale - 1;
       case "large":
-        return 5;
+        return 5 * scale - 1;
       case "extra":
-        return 7;
+        return 7 * scale - 1;
     }
     //
-    return 1;
+    return 1 * scale;
   }, [screenSizeName]);
   //
   return tree && selectedCode ? (
