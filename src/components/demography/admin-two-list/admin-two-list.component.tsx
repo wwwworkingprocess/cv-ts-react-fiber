@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import { formatPopulation } from "../../../utils/wiki";
 
@@ -16,11 +16,24 @@ type AdminTwoListProps = {
 const AdminTwoList = (props: AdminTwoListProps) => {
   const { items, setSelectedCode } = props;
   //
+  const maxItems = 100;
+  const topItems = useMemo(
+    () => (items.length > maxItems ? items.slice(0, maxItems) : items),
+    [items]
+  );
+  //
+  const moreItems = useMemo(
+    () => (items.length > maxItems ? items.slice(maxItems) : []),
+    [items]
+  );
+  const hasMore = useMemo(() => moreItems.length > 0, [moreItems]);
+  //
   const [myCode, setMyCode] = useState<string>();
+  const [showMore, setShowMore] = useState<boolean>();
   //
   return (
     <AdminTwoListContainer>
-      {items.map((item) => {
+      {(hasMore && showMore ? moreItems : topItems).map((item) => {
         //
         const [code, name /*parentCode*/, , size, data] = item;
         //
@@ -48,6 +61,16 @@ const AdminTwoList = (props: AdminTwoListProps) => {
           </AdminTwoListItem>
         );
       })}
+      {moreItems.length ? (
+        <AdminTwoListItem
+          style={{ display: "block", clear: "both", color: "yellow" }}
+          onClick={() => {
+            setShowMore(!showMore);
+          }}
+        >
+          {!showMore ? moreItems.length : topItems.length} more items
+        </AdminTwoListItem>
+      ) : null}
     </AdminTwoListContainer>
   );
 };

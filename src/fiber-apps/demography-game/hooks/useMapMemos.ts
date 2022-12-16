@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 
 import { useTreeHelper } from "../../../hooks/useTreeHelper";
+import { beautifyAdminOneName } from "../../../utils/country-helper";
 
 import type { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
 
@@ -47,35 +48,10 @@ const useMapMemos = (
     //
     const arr = tree._children_of(tree._qq(selectedCountry.code));
     //
-    const beautifyName = (countryCode: number, s: string) => {
-      if (!s) {
-        console.log("INVALID NAME", s);
-      }
-      switch (countryCode) {
-        case 28:
-          return (s ?? "")
-            .replaceAll(" County", "")
-            .replaceAll(" District", "");
-        case 77:
-          return (s ?? "").replaceAll(" Department", "");
-        case 191:
-          return (s ?? "").replaceAll(" County", "");
-        case 211:
-          return (s ?? "").replaceAll(" Municipality", "");
-        case 224:
-          return (s ?? "").replaceAll(" County", "");
-
-        case 241:
-          return (s ?? "").replaceAll(" Province", "");
-        default:
-          return s ? s : "";
-      }
-    };
-    //
     return arr
       .map(([code, name, countryCode]) => ({
         code,
-        name: beautifyName(countryCode, name),
+        name: beautifyAdminOneName(countryCode, name),
         countryCode,
         size: tree?._children_of(tree._qq(code)).length ?? 0,
         data: tree?._n(code).data,

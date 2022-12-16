@@ -7,13 +7,23 @@ const availableCountryCodes = [
   "Q20",
   "Q27",
   "Q28",
+  "Q30",
   "Q31",
   "Q32",
   "Q33",
+  "Q34",
+  "Q35",
+  "Q37",
+  "Q38",
+  "Q40",
   "Q41",
+  "Q43",
   "Q45",
   "Q55",
   "Q77",
+  "Q115",
+  "Q117",
+  //
   "Q155",
   "Q184",
   "Q189",
@@ -33,6 +43,7 @@ const availableCountryCodes = [
   "Q252",
   "Q258",
   "Q262",
+  "Q403",
 ];
 
 const availableCountryCodesOld = [
@@ -106,18 +117,23 @@ const zoomFixes = {
   Q27: 11,
   Q28: 10,
   Q29: 22.5,
-  // Q30: 21,
+  Q30: 21,
   Q31: 6,
   Q32: -16,
   Q33: 17,
   Q34: 20.5,
+  Q35: 21, // TODO: check bounds data for Denmark
   Q37: 0,
   Q38: 21,
+  Q40: 4,
   Q41: 18,
+  Q43: 18,
   Q45: 20,
   Q55: 23.5,
   Q77: 8,
   Q96: 21.6,
+  Q115: 21.1,
+  Q117: 18.5,
   Q142: 19,
   Q145: 19.8,
   Q148: 21.6,
@@ -241,4 +257,33 @@ export const getCountryZoomFixByCode = (code: string): number => {
   if (!zf) return 0;
   //
   return zf;
+};
+
+export const beautifyAdminOneName = (countryCode: number, s: string) => {
+  if (!s) {
+    console.log("INVALID NAME", s);
+  }
+  switch (countryCode) {
+    case 28:
+      return (s ?? "").replaceAll(" County", "").replaceAll(" District", "");
+    case 34:
+      return (s ?? "").replaceAll(" County", "");
+    case 43:
+      return (s ?? "").replaceAll(" Province", "");
+    case 77:
+      return (s ?? "").replaceAll(" Department", "");
+    case 117:
+      return (s ?? "").replaceAll(" Region", "");
+    case 191:
+      return (s ?? "").replaceAll(" County", "");
+    case 211:
+      return (s ?? "").replaceAll(" Municipality", "");
+    case 224:
+      return (s ?? "").replaceAll(" County", "");
+
+    case 241:
+      return (s ?? "").replaceAll(" Province", "");
+    default:
+      return s ? s : "";
+  }
 };

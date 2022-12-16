@@ -261,6 +261,123 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   );
   //
   //
+  const toExternalUrl = (url: string, title: string) => {
+    let s = url;
+    //
+    if (s.startsWith("http://")) s = s.replace("http://", "");
+    if (s.startsWith("https://")) s = s.replace("https://", "");
+    if (s.startsWith("www.")) s = s.replace("www.", "");
+    if (s.endsWith("/")) s = s.substring(0, s.length - 1);
+
+    return (
+      <a
+        href={url}
+        title={title}
+        target="_blank"
+        rel="noreferrer"
+        style={{ color: "gold", fontSize: "12px" }}
+      >
+        {s}
+      </a>
+    );
+  };
+  //
+  const toIconOrUnit = (propertyName: string) => {
+    //
+    // exact
+    //
+
+    if (propertyName === "motto text") return `✍`;
+    if (propertyName === "hashtag") return `#`;
+    if (propertyName === "inception") return `⌛`;
+    if (propertyName === "social media followers") return `🧍`;
+    if (propertyName === "number of households") return `🏠`;
+    if (propertyName === "geoshape") return `🗾`;
+    if (propertyName === "area") return `🗾`;
+    if (propertyName === "postal code") return `📫`;
+
+    if (propertyName === "official map URL") return `🧭`;
+    if (propertyName === "official website") return `🌐`;
+    if (propertyName === "described at URL") return `🌐`;
+
+    if (propertyName === "IATA airport code") return `🛬`;
+    if (propertyName === "phone number") return `📞`;
+    if (propertyName === "mobile country code") return `☎`;
+    if (propertyName === "minimum temperature record") return `❄`;
+    if (propertyName === "maximum temperature record") return `🔥`;
+    if (propertyName === "streaming media URL") return `📹`;
+    if (propertyName === "Commons gallery") return `📷`;
+    if (propertyName === "native label") return `📗`;
+    if (propertyName === "demonym") return `📓`;
+    if (propertyName === "mains voltage") return `⚡`;
+    if (propertyName === "catalog code") return `📑`;
+    if (propertyName === "time of earliest written record") return `📜`;
+    if (propertyName === "water as percent of area") return `🌊`;
+    if (propertyName === "water area") return `🌊`;
+    if (propertyName === "marriageable age") return `💒`;
+    if (propertyName === "retirement age") return `🧓`;
+    if (propertyName === "life expectancy") return `👴`;
+    if (propertyName === "email address") return `@`;
+    if (propertyName === "coastline") return `🗾`;
+
+    //
+    // match
+    //
+    if (propertyName.includes("elevation")) return `⛰`;
+
+    if (propertyName.includes("coordinate")) return `🌍`;
+    if (propertyName.startsWith("compulsory education")) return `🏫`;
+    if (propertyName.startsWith("oordinates of")) return `🌍`; // ???
+    if (propertyName.startsWith("licence plate")) return `🚗`;
+    if (propertyName.startsWith("vehicles per")) return `🚗`;
+    if (propertyName.endsWith("Index")) return `%`;
+    if (propertyName.endsWith("rate")) return `%`;
+    if (propertyName.endsWith("wage")) return `💴`;
+    if (propertyName.endsWith("income")) return `💴`;
+    if (propertyName.endsWith("name")) return `📘`;
+    if (propertyName.endsWith("population")) return `🧍`;
+    if (propertyName.endsWith("dialing code")) return `☎`;
+    if (propertyName.endsWith("country calling code")) return `☎`;
+
+    return "";
+  };
+  //
+  const toWikiMediaUrl = (s: string) =>
+    `https://commons.wikimedia.org/wiki/${s}`;
+  const toWikiMediaCategoryUrl = (s: string) =>
+    `https://commons.wikimedia.org/wiki/Category:${s}`;
+  //
+  const toClaimIcon = (property: any): JSX.Element | null => {
+    const image =
+      property.name === "Commons category"
+        ? "https://commons.wikimedia.org/static/images/project-logos/commonswiki.png"
+        : "";
+    const icon = toIconOrUnit(property.name);
+    //
+
+    return image || icon ? (
+      <span
+        style={{
+          float: "left",
+          fontSize: "22px",
+          padding: "2px",
+          paddingTop: "2px",
+          minWidth: "36px",
+          textAlign: "center",
+        }}
+      >
+        {image ? (
+          <img
+            src={image}
+            style={{ width: "32px", height: "32px" }}
+            alt={property.name}
+          />
+        ) : (
+          icon
+        )}
+      </span>
+    ) : null;
+  };
   //
   return (
     <div>
@@ -283,12 +400,52 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
           <FlexContainer>
             {groupedClaims.rest.map(
               ({ type, val, value, property, l }, idx) => (
-                <ClaimItem key={idx} height={40} minWidth={160} maxWidth={300}>
-                  <div style={{ height: "20px", fontSize: "14px" }}>
-                    {property.name}
-                    <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
+                <ClaimItem key={idx} height={40} minWidth={160} maxWidth={400}>
+                  {toClaimIcon(property)}
+                  <div style={{ textDecoration: "none" }}>
+                    <div
+                      style={{
+                        height: "20px",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {property.name}
+                      <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
+                    </div>
+                    <div style={{ marginTop: "-3px", textDecoration: "none" }}>
+                      {type === "url" ? (
+                        toExternalUrl(value, property.name)
+                      ) : property.name === "Commons category" ? (
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          title={`${property.name}`}
+                          href={toWikiMediaCategoryUrl(value)}
+                          style={{ color: "gold", fontSize: "12px" }}
+                        >
+                          {value}
+                        </a>
+                      ) : property.name === "Commons gallery" ? (
+                        <a
+                          target="_blank"
+                          rel="noreferrer"
+                          title={`${property.name}`}
+                          href={toWikiMediaUrl(value)}
+                          style={{ color: "gold", fontSize: "12px" }}
+                        >
+                          {value}
+                        </a>
+                      ) : (
+                        <label
+                          style={{
+                            fontSize: "12px",
+                          }}
+                        >
+                          {value}
+                        </label>
+                      )}
+                    </div>
                   </div>
-                  <label>{value}</label>
                 </ClaimItem>
               )
             )}
