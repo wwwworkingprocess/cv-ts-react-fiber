@@ -4,6 +4,7 @@ import TreeHelper from "./tree-helper";
 import countryBoundsRaw from "../assets/json/wiki/countries.bounds.json";
 
 const availableCountryCodes = [
+  "Q17",
   "Q20",
   "Q27",
   "Q28",
@@ -13,6 +14,7 @@ const availableCountryCodes = [
   "Q33",
   "Q34",
   "Q35",
+  "Q36",
   "Q37",
   "Q38",
   "Q40",
@@ -25,15 +27,27 @@ const availableCountryCodes = [
   "Q117",
   //
   "Q155",
+  "Q183",
   "Q184",
   "Q189",
   "Q191",
   "Q211",
+  "Q212",
+  "Q213",
+  "Q214",
+  "Q215",
+  "Q217",
+  "Q218",
+  "Q219",
   "Q221",
   "Q222",
   "Q224",
   "Q225",
+  "Q227",
   "Q228",
+  "Q229",
+  "Q230",
+  "Q232",
   "Q233",
   "Q236",
   "Q238",
@@ -43,71 +57,15 @@ const availableCountryCodes = [
   "Q252",
   "Q258",
   "Q262",
-  "Q403",
-];
-
-const availableCountryCodesOld = [
-  "Q16",
-  "Q17",
-  "Q20",
-  "Q27",
-  "Q28",
-  "Q29",
-  // "Q30", USA disabled, state level missing from hierarchy
-  "Q31",
-  "Q34",
-  "Q37",
-  "Q38",
-  "Q41",
-  "Q45",
-  "Q55",
-  "Q96",
-  "Q142",
-  "Q145",
-  "Q148",
-  "Q155",
-  "Q159",
-  "Q183",
-  "Q184",
-  "Q189", // Iceland, checking new parent-finder
-  "Q191",
-  "Q211",
-  "Q212",
-  "Q213",
-  // "Q215", // Slovenia removed, invalid hierarchy
-  "Q218",
-  "Q219",
-  "Q221",
-  "Q222",
-  "Q224",
-  "Q225",
-  // "Q225", // Bosnia and H. removed, invalid hierarchy
-  "Q227",
-  "Q228", // Andorra, best to debug hierarchy issue
-  "Q229",
-  "Q230",
-  "Q232",
-  "Q233",
-  "Q236",
-  "Q238", // Montenegro
-  "Q241",
-  "Q242",
-  "Q244",
-  "Q252",
-  "Q258",
-  "Q262",
+  "Q334",
+  "Q347",
+  "Q398",
+  "Q399",
   "Q403",
   "Q408",
   "Q668",
-  "Q794",
-  "Q805",
-  "Q1028",
-  "Q1032",
-  //
-  "Q191",
-  "Q217",
-  "Q399",
-  "Q1246",
+  "Q801",
+  "Q1016",
 ];
 
 const zoomFixes = {
@@ -123,6 +81,7 @@ const zoomFixes = {
   Q33: 17,
   Q34: 20.5,
   Q35: 21, // TODO: check bounds data for Denmark
+  Q36: 15,
   Q37: 0,
   Q38: 21,
   Q40: 4,
@@ -139,14 +98,17 @@ const zoomFixes = {
   Q148: 21.6,
   Q155: 23.9,
   Q159: 23,
-  Q183: 20,
+  Q183: 18,
   Q184: 14,
   Q189: 7.6,
   Q191: 1,
   Q211: 1,
   Q212: 17,
   Q213: 6,
+  Q214: 6,
+  Q215: -3,
   // Q215: -17,
+  Q217: 7.4,
   Q218: 17,
   Q219: 10,
   Q221: 0,
@@ -167,17 +129,21 @@ const zoomFixes = {
   Q252: 21.5,
   Q258: 20,
   Q262: 22.2,
+  Q334: -18,
+  Q347: -20,
+  Q398: 0,
+  Q399: 0,
   Q403: 13,
   Q408: 21.8,
   Q668: 22,
   Q794: 20.6,
+  Q801: 13.4,
   Q805: 17.6,
+  Q1016: 21.4,
   Q1028: 21.8,
   Q1032: 20.7,
   //
   //
-  Q217: 7.4,
-  Q399: 0,
   Q1246: 0,
 } as Record<string, number>;
 
@@ -278,11 +244,28 @@ export const beautifyAdminOneName = (countryCode: number, s: string) => {
       return (s ?? "").replaceAll(" County", "");
     case 211:
       return (s ?? "").replaceAll(" Municipality", "");
+    case 212:
+      return (s ?? "").replaceAll(" Oblast", "");
+    case 214:
+      return (s ?? "").replaceAll(" Region", "").replaceAll(" region", "");
     case 224:
       return (s ?? "").replaceAll(" County", "");
-
+    case 227:
+      return (s ?? "").replaceAll(" District", "");
+    case 229:
+      return (s ?? "").replaceAll(" District", "");
+    case 232:
+      return (s ?? "").replaceAll(" Region", "");
     case 241:
       return (s ?? "").replaceAll(" Province", "");
+    case 334:
+      return (s ?? "").replaceAll(" Region", "");
+    case 398:
+      return (s ?? "").replaceAll(" Governorate", "");
+    case 801:
+      return (s ?? "").replaceAll(" District", "");
+    case 1016:
+      return (s ?? "").replaceAll(" District", "");
     default:
       return s ? s : "";
   }

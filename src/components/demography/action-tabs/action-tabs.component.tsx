@@ -19,7 +19,7 @@ const ActionTabs = (props: ActionTabsProps) => {
   const { tabs, tabsIndex, setTabsIndex, selectedCode } = props;
   //
   const visibleTabs = tabs.filter(
-    (t, idx) => idx !== 3 || (selectedCode && idx === 3)
+    (t, idx) => idx !== 2 || (selectedCode && idx === 2)
   );
   //
   return (

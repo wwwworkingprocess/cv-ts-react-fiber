@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  ChangeEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +13,7 @@ import ActionTabs from "../../components/demography/action-tabs/action-tabs.comp
 import AdminOneList from "../../components/demography/admin-one-list/admin-one-list.component";
 import AdminTwoList from "../../components/demography/admin-two-list/admin-two-list.component";
 import NearbyTreeItems from "../../components/demography/nearby-tree-items/nearby-tree-items.component";
-import NearbyMultiplyTreeItems from "../../components/demography/nearby-multiple-tree-items/nearby-multiple-tree-items.component";
+// import NearbyMultiplyTreeItems from "../../components/demography/nearby-multiple-tree-items/nearby-multiple-tree-items.component";
 import SettlementSearch from "../../components/demography/settlement-search/settlement-search.component";
 import TreeBreadCrumb from "../../components/demography/tree-bread-crumb/tree-bread-crumb.component";
 import WikiItemDetails from "../../components/demography/wiki-item-details/wiki-item-details.component";
@@ -23,16 +30,13 @@ import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCou
 import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
-import {
-  HalfContentBlock,
-  BrowseSettlementContainer,
-  NearbyItemsContainer,
-} from "./map.styles";
+import { HalfContentBlock, BrowseSettlementContainer } from "./map.styles";
 import FeaturesSummary from "../../components/demography/features-summary/features-summary.component";
 import FeaturesOverview from "../../components/demography/features-overview/features-overview.component";
 import useWindowSize from "../../hooks/useWindowSize";
 
 import useTypeMemo from "../../fiber-apps/demography-game/hooks/useTypeMemo";
+import ActionTabMainInfo from "../../components/demography/action-tabs/main-info/main-info.component";
 
 //
 // Routing params by
@@ -52,7 +56,7 @@ const WikiDemographyGame = (props: {
   //
   // COMPONENT LEVEL STATE
   //
-  const tabs = ["Main Info", "Features", "Browse", "Nearby"]; // "Search",
+  const tabs = ["Main Info", "Browse", "Nearby", "Features"]; // + "Search",
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
   const [countryCode] = useState<string | undefined>(selectedCountry?.code);
@@ -109,19 +113,6 @@ const WikiDemographyGame = (props: {
     useTypeMemo(tree, typeTree, selectedTypeId, topTypeResultsLength);
 
   //
-  // enable or disable type based filtering
-  //
-  const resetTypeId = () => setSelectedTypeId(undefined);
-  const enableTypeId = useCallback(() => {
-    if (allTypesWithPath && !selectedTypeId) {
-      const first = allTypesWithPath[0];
-      //
-      if (first) setSelectedTypeId(first.code);
-    }
-  }, [allTypesWithPath, selectedTypeId]);
-
-  //
-  //
   // Updating (settlement) selection, when valid route params where provided
   //
   useEffect(() => {
@@ -148,9 +139,15 @@ const WikiDemographyGame = (props: {
     [navigate, relativePath]
   );
   //
-  const onCountryReset = () => {
-    gotoGameLandingPage();
-  };
+  const permalink = useMemo(
+    () =>
+      !selectedCountry
+        ? `${path}map`
+        : !selectedCode
+        ? `${path}map/${selectedCountry.code}`
+        : `${path}map/${selectedCountry.code}/${selectedCode}`,
+    [selectedCountry, selectedCode, path]
+  );
 
   //
   //
@@ -240,44 +237,6 @@ const WikiDemographyGame = (props: {
   ]);
 
   //
-  const topOptions = useMemo(() => {
-    // topResultsLength
-    const options = [5, 10, 16, 20, 50];
-    //
-    return (
-      <select
-        value={topResultsLength}
-        onChange={(e) => {
-          setTopResultsLength(parseInt(e.target.value));
-        }}
-      >
-        {options.map((o) => (
-          <option key={o}>{o}</option>
-        ))}
-      </select>
-    );
-  }, [topResultsLength, setTopResultsLength]);
-
-  //
-  const typeTopOptions = useMemo(() => {
-    // topResultsLength
-    const options = [5, 10, 16, 20, 50, 100, 200];
-    //
-    return (
-      <select
-        value={topTypeResultsLength}
-        onChange={(e) => {
-          setTopTypeResultsLength(parseInt(e.target.value));
-        }}
-      >
-        {options.map((o) => (
-          <option key={o}>{o}</option>
-        ))}
-      </select>
-    );
-  }, [topTypeResultsLength, setTopTypeResultsLength]);
-
-  //
   // Type related hooks below
   //
   const fgRef = useRef(); // features graph forward href
@@ -290,7 +249,41 @@ const WikiDemographyGame = (props: {
   }, [windowSize]);
 
   //
+  const onTypeReset = () => setSelectedTypeId(undefined);
+  const onTypeEnabled = useCallback(() => {
+    if (allTypesWithPath && !selectedTypeId) {
+      const first = allTypesWithPath[0];
+      //
+      if (first) setSelectedTypeId(first.code);
+    }
+  }, [allTypesWithPath, selectedTypeId]);
+  const onCountryReset = () => gotoGameLandingPage();
   //
+  const onChangeTopOptions = (e: ChangeEvent<HTMLSelectElement>) => {
+    setTopResultsLength(parseInt(e.target.value));
+  };
+  const onChangeTopTypeOptions = (e: ChangeEvent<HTMLSelectElement>) => {
+    setTopTypeResultsLength(parseInt(e.target.value));
+  };
+  const onChangeType = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedTypeId(parseInt(e.target.value));
+  };
+  //
+  const onPopulatedPlaceClicked = () => console.log("Populated Place Clicked");
+  const onFeatureOfTypeClicked = () => console.log("Feature of a Type Clicked");
+  const onGotoSearchButtonClicked = () => setTabsIndex(4);
+  //
+  const mainInfoEventHandlers = {
+    onTypeEnabled,
+    onTypeReset,
+    onCountryReset,
+    onGotoSearchButtonClicked,
+    onChangeTopOptions,
+    onChangeTopTypeOptions,
+    onChangeType,
+    onPopulatedPlaceClicked,
+    onFeatureOfTypeClicked,
+  };
   //
   return (
     <>
@@ -301,113 +294,31 @@ const WikiDemographyGame = (props: {
         selectedCode={selectedCode}
       />
 
+      {/* COUNTRY DETAILS */}
       {tabsIndex === 0 ? (
-        <>
-          {/* COUNTRY DETAILS */}
-          {selectedCountry && (
-            <>
-              <h3>Country Details</h3>
-              {!selectedCode ? (
-                <p>
-                  Please{" "}
-                  <span
-                    style={{ color: "gold" }}
-                    onClick={(e) => setTabsIndex(1)}
-                  >
-                    search
-                  </span>{" "}
-                  for a settlement to continue
-                  {selectedCountry ? (
-                    <>
-                      {" "}
-                      or{" "}
-                      <button onClick={onCountryReset}>
-                        select another country
-                      </button>
-                      .
-                    </>
-                  ) : null}
-                </p>
-              ) : null}
-            </>
-          )}
-          {tree && typeTree && isTreeReady ? (
-            <div>
-              {selectedTypeId !== undefined ? (
-                <button onClick={resetTypeId}>Clear type filter</button>
-              ) : (
-                <button onClick={() => enableTypeId()}>
-                  Enable type filter
-                </button>
-              )}
-              {selectedTypeId === undefined ? (
-                <>
-                  <h4 style={{ marginBottom: "5px" }}>
-                    Top {topOptions} Most Populated Places
-                  </h4>
-                  <CityList
-                    cities={topTenCities}
-                    onClicked={() => console.log("Populated Place Clicked")}
-                  />
-                </>
-              ) : (
-                <>
-                  <h4 style={{ marginBottom: "5px" }}>
-                    Top {typeTopOptions} Features matching type
-                    <select
-                      value={selectedTypeId}
-                      onChange={(e) =>
-                        setSelectedTypeId(parseInt(e.target.value))
-                      }
-                    >
-                      {allTypesWithPath.map((t) => (
-                        <option key={t.code} value={t.code}>
-                          {`[${t.count}] ${
-                            t.path.length > 50
-                              ? `${t.path.substring(0, 47)}...`
-                              : t.path
-                          }`}
-                        </option>
-                      ))}
-                    </select>
-                  </h4>
-                  <CityList
-                    cities={topTypeCities}
-                    onClicked={() => console.log("Feature of a Type Clicked")}
-                  />
-                </>
-              )}
-            </div>
-          ) : null}
-        </>
+        <ActionTabMainInfo
+          selectedCountry={selectedCountry}
+          selectedTypeId={selectedTypeId}
+          selectedCode={selectedCode}
+          //
+          isTreeReady={isTreeReady}
+          permalink={permalink}
+          //
+          topResultsLength={topResultsLength}
+          topTypeResultsLength={topTypeResultsLength}
+          //
+          allTypesWithPath={allTypesWithPath}
+          //
+          topTenCities={topTenCities}
+          topTypeCities={topTypeCities}
+          //
+          {...mainInfoEventHandlers}
+        />
       ) : null}
 
+      {/* ADMINISTRATIVE ZONES */}
       {tabsIndex === 1 ? (
         <>
-          {/* FEATURES SUMMARY */}
-          {tree && typeTree && typeMemo ? (
-            <div style={{ width: "100%" }}>
-              <h3>Feature summary</h3>
-              {countryCode ? (
-                <FeaturesSummary
-                  tree={tree}
-                  typeTree={typeTree}
-                  typeMemo={typeMemo}
-                  countryCode={countryCode}
-                  selectedTypeId={selectedTypeId}
-                  setSelectedTypeId={setSelectedTypeId}
-                />
-              ) : null}
-            </div>
-          ) : (
-            ""
-          )}
-        </>
-      ) : null}
-
-      {tabsIndex === 2 ? (
-        <>
-          {/* ADMINISTRATIVE ZONES */}
           {selectedCountry && (
             <>
               <h3>Browse for a Settlement</h3>
@@ -436,18 +347,9 @@ const WikiDemographyGame = (props: {
         </>
       ) : null}
 
-      {/* {tabsIndex === 3 ? (
+      {/* NEARBY ITEMS */}
+      {tabsIndex === 2 ? (
         <>
-          <h3>Search for a Settlement</h3>
-          {countryCode ? (
-            <SettlementSearch tree={tree} countryCode={countryCode} />
-          ) : null}
-        </>
-      ) : null} */}
-
-      {tabsIndex === 3 ? (
-        <>
-          {/* NEARBY ITEMS */}
           {tree && selectedCountry && selectedCode ? (
             <div style={{ width: "100%" }}>
               <h3>
@@ -459,16 +361,6 @@ const WikiDemographyGame = (props: {
                 selectedCode={selectedCode}
                 setSelectedCode={setSelectedCode}
               />
-              <NearbyItemsContainer>
-                {/* <HalfContentBlock minWidth={"300px"}>
-                </HalfContentBlock> */}
-                {/* <HalfContentBlock minWidth={"300px"}>
-                  <NearbyMultiplyTreeItems
-                    tree={tree}
-                    selectedCode={selectedCode}
-                  />
-                </HalfContentBlock> */}
-              </NearbyItemsContainer>
             </div>
           ) : (
             ""
@@ -476,12 +368,45 @@ const WikiDemographyGame = (props: {
         </>
       ) : null}
 
-      {/* MAP AND BREAD CRUMB NAVIGATION */}
+      {/* FEATURES SUMMARY */}
+      {tabsIndex === 3 ? (
+        <>
+          {tree && typeTree && typeMemo ? (
+            <div style={{ width: "100%" }}>
+              <h3>Feature summary</h3>
+              {countryCode ? (
+                <FeaturesSummary
+                  tree={tree}
+                  typeTree={typeTree}
+                  typeMemo={typeMemo}
+                  countryCode={countryCode}
+                  selectedTypeId={selectedTypeId}
+                  setSelectedTypeId={setSelectedTypeId}
+                />
+              ) : null}
+            </div>
+          ) : (
+            ""
+          )}
+        </>
+      ) : null}
+
+      {/* SETTLEMENT SEARCH */}
+      {tabsIndex === 4 ? (
+        <>
+          <h3>Search for a Settlement</h3>
+          {countryCode ? (
+            <SettlementSearch tree={tree} countryCode={countryCode} />
+          ) : null}
+        </>
+      ) : null}
+
+      {/* MAP-OR-GRAPH AND BREAD CRUMB */}
       {!selectedCountry ? null : !tree || !isTreeReady ? (
         <Spinner />
       ) : (
         <div>
-          {tabsIndex === 1 ? (
+          {tabsIndex === 3 ? (
             typeGraphData ? (
               <>
                 <FeaturesOverview

@@ -3,6 +3,12 @@ import externalMap from "../assets/json/wiki/properties.formatterurls.json";
 
 const formatterUrls = externalMap as Record<string, any>;
 
+export const toWikiEntryUrl = (code: string) =>
+  `https://www.wikidata.org/wiki/${code}`;
+
+export const toWikiCategoryEntryUrl = (s: string) =>
+  `https://commons.wikimedia.org/wiki/Category:${s}`;
+
 export const toWikiCommonsMediaUrl = (
   mediaName: string,
   width?: number
@@ -22,9 +28,6 @@ export const toExternalSourceUrl = (propertyCode: string, value: string) => {
     ? formatterUrl.replaceAll(idPlaceholder, value)
     : `${formatterUrl}${value}`;
 };
-
-export const toWikiEntryUrl = (code: string) =>
-  `https://www.wikidata.org/wiki/${code}`;
 
 const colorByPop = (node: any) => {
   const toValue = (node: any): number =>

@@ -19,8 +19,8 @@ export const HalfContentBlock = styled.div<HalfContentBlockProps>`
   border: solid 1px silver;
 `;
 
-export const NearbyItemsContainer = styled.div`
-  display: flex;
-  max-height: 250px;
-  overflow: hidden;
-`;
+// export const NearbyItemsContainer = styled.div`
+//   display: flex;
+//   max-height: 250px;
+//   overflow: hidden;
+// `;
