@@ -5,8 +5,11 @@ import { useWikidata } from "../../../hooks/useWikidata";
 import { Spinner } from "../../spinner/spinner.component";
 import GroupedClaims from "../grouped-claims/grouped-claims.component";
 
-const WikiItemDetails = (props: { selectedCode: string | undefined }) => {
-  const { selectedCode } = props;
+const WikiItemDetails = (props: {
+  selectedCode: string | undefined;
+  isVisible: boolean;
+}) => {
+  const { selectedCode, isVisible } = props;
   //
   const { loading: wikiLoading, data } = useWikidata(selectedCode);
   //
@@ -23,7 +26,7 @@ const WikiItemDetails = (props: { selectedCode: string | undefined }) => {
       {wikiLoading || !data ? (
         <Spinner />
       ) : (
-        <GroupedClaims wikiEntry={wikiEntry} />
+        <GroupedClaims wikiEntry={wikiEntry} isVisible={isVisible} />
       )}
     </>
   ) : null;

@@ -19,7 +19,7 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
   const isReady = tree && selectedCode;
   const node = isReady ? tree._n(selectedCode) : undefined;
   //
-  const [range, setRange] = useState<number>(6);
+  const [range, setRange] = useState<number>(5);
   //
   const top10 = useMemo(() => {
     const data = node ? node.data : {};
@@ -73,14 +73,15 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
   //
   return tree && selectedCode ? (
     <div>
-      {tree._n(selectedCode)?.name}, range
-      <input
-        type="number"
-        value={range}
-        style={{ width: "50px", margin: "0px 5px 0px 5px" }}
-        onChange={(e) => setRange(parseInt(e.target.value))}
-      />{" "}
-      km
+      {tree._n(selectedCode)?.name}, range {range} km, (Change:{" "}
+      {[2, 5, 10, 20, 50].map((km) =>
+        km !== range ? (
+          <button key={km} onClick={() => setRange(km)}>
+            {km}
+          </button>
+        ) : null
+      )}
+      )
       <br />
       {top10.length === 0 ? "No matches." : ""}
       <div
@@ -95,7 +96,6 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
             onClick={(e) => setSelectedCode(`Q${n.code}`)}
             style={{
               textAlign: "center",
-              // border: "solid 1px orange",
               maxWidth: "100px",
               marginBottom: "4px",
             }}
@@ -103,7 +103,6 @@ const NearbyTreeItems = (props: NearbyTreeItemProps) => {
             <div
               style={{
                 width: "100px",
-                // border: "solid 1px red",
                 textAlign: "center",
                 margin: "auto",
               }}

@@ -13,7 +13,10 @@ const useMapMemos = (
   topResultsLength: number,
   path?: string
 ) => {
-  const { loading, tree, keys, typeTree } = useTreeHelper(countryCode, path);
+  const { loading, loadStep, loadCount, tree, keys, typeTree } = useTreeHelper(
+    countryCode,
+    path
+  );
   //
   const selectedCountryCode = useMemo(
     () => (selectedCountry ? selectedCountry.code : undefined),
@@ -164,6 +167,8 @@ const useMapMemos = (
   //
   return useMemo(
     () => ({
+      loadStep,
+      loadCount,
       isTreeReady,
       //
       tree,
@@ -177,6 +182,8 @@ const useMapMemos = (
       topTenCities,
     }),
     [
+      loadStep,
+      loadCount,
       isTreeReady,
       //
       tree,

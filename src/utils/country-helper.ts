@@ -26,6 +26,7 @@ const availableCountryCodes = [
   "Q115",
   "Q117",
   //
+  "Q145",
   "Q155",
   "Q183",
   "Q184",
@@ -65,6 +66,9 @@ const availableCountryCodes = [
   "Q408",
   "Q668",
   "Q801",
+  "Q902",
+  "Q912",
+  "Q916",
   "Q1016",
 ];
 
@@ -138,7 +142,10 @@ const zoomFixes = {
   Q668: 22,
   Q794: 20.6,
   Q801: 13.4,
+  Q902: 7,
   Q805: 17.6,
+  Q912: 21.9,
+  Q916: 21.4,
   Q1016: 21.4,
   Q1028: 21.8,
   Q1032: 20.7,
@@ -262,8 +269,14 @@ export const beautifyAdminOneName = (countryCode: number, s: string) => {
       return (s ?? "").replaceAll(" Region", "");
     case 398:
       return (s ?? "").replaceAll(" Governorate", "");
+    case 399:
+      return (s ?? "").replaceAll(" Region", "").replaceAll(" Province", "");
     case 801:
       return (s ?? "").replaceAll(" District", "");
+    case 902:
+      return (s ?? "").replaceAll(" Division", "");
+    case 916:
+      return (s ?? "").replaceAll(" Province", "");
     case 1016:
       return (s ?? "").replaceAll(" District", "");
     default:

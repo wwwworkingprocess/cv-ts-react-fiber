@@ -63,7 +63,9 @@ const renderClaim = (type: string, property: any, value: string) =>
   ) : property.name === "Commons gallery" ? (
     renderLink(toWikiEntryUrl(value), property.name, value)
   ) : (
-    <label>{type === "time" ? shortenTime(value) : value}</label>
+    <label style={{ textDecoration: "none" }}>
+      {type === "time" ? shortenTime(value) : value}
+    </label>
   );
 
 const WikiClaimItem = (props: WikiClaimIconProps) => {

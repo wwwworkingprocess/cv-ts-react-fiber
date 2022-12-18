@@ -59,6 +59,8 @@ export const useTreeHelper = (
   // COUNTRY CODE >> URLS >> PROMISES >> LOADERRESULT >> VALUE
   //
   const [loading, setLoading] = useState<boolean>(false);
+  const [loadStep, setLoadStep] = useState<number>(0);
+  const [loadCount, setLoadCount] = useState<number>(0);
   const [dataLoading, setDataLoading] = useState<boolean>(false);
   const [dataResult, setDataResult] = useState<TreeRawData>();
   const [tree, setTree] = useState<TreeHelper>();
@@ -72,7 +74,12 @@ export const useTreeHelper = (
     setKeys([]);
     setValue(undefined);
     setTypeTree(undefined);
+    setLoadStep(0);
   };
+
+  const increaseLoadStep = useCallback(() => {
+    setTimeout(() => setLoadStep((step) => step + 1), 10);
+  }, []);
 
   //
   // STEP 1 Creating tree instance
@@ -125,6 +132,7 @@ export const useTreeHelper = (
     const [hierarchy, types, labels, nodedata] = r;
     //
     console.log("in updateDataResult", r);
+    setLoadStep(1);
     //
     setDataResult({ hierarchy, types, labels, nodedata } as TreeRawData);
   };
@@ -148,7 +156,9 @@ export const useTreeHelper = (
           console.error("ERROR", ex, "in tree");
           setDataResult(undefined);
         })
-        .finally(() => setDataLoading(false));
+        .finally(() => {
+          setDataLoading(false);
+        });
     };
     //
     //
@@ -157,6 +167,7 @@ export const useTreeHelper = (
     return () => {
       setDataResult(undefined);
       setDataLoading(false);
+      setLoadStep(0);
     };
   }, [tree, urls]);
 
@@ -187,20 +198,55 @@ export const useTreeHelper = (
     if (isReady) {
       const { hierarchy, types, labels, nodedata } = dataResult;
       //
+      switch (loadStep) {
+        case 1:
+          {
+            const nodeCount = tree._build_from_flatmap_typed(hierarchy); // creating tree hieararcy (nodes & edges)
+            tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
+            setLoadCount(nodeCount);
+          }
+          break;
+        case 2:
+          tree._build_labels(labels as any); // decorating nodes (localizable)
+          break;
+        case 3:
+          tree._build_nodedata(nodedata); // decorating nodes (numeric data)
+          break;
+        case 4:
+          setKeys(tree._keys_cache); // passing reference of helper-result
+          setValue(tree);
+          // setLoading(false);
+          //
+          // updateTypeTree(types);
+          break;
+        case 5:
+          updateTypeTree(types);
+          break;
+        case 6:
+          setLoading(false);
+          break;
+      }
+
       //tree._build_from_flatmap(hierarchy); // creating tree hieararcy (nodes & edges)
-      tree._build_from_flatmap_typed(hierarchy); // creating tree hieararcy (nodes & edges)
-      tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
+
+      if (loadStep < 6) {
+        console.log("in load step", loadStep);
+        increaseLoadStep();
+      } else {
+        setLoading(false);
+      }
+      //setLoadStep(nodeCount);
       //
-      tree._build_labels(labels as any); // decorating nodes (localizable)
-      tree._build_nodedata(nodedata); // decorating nodes (numeric data)
-      //
-      setKeys(tree._keys_cache); // passing reference of helper-result
-      setValue(tree);
-      setLoading(false);
-      //
-      updateTypeTree(types);
     }
-  }, [tree, dataLoading, dataResult, updateTypeTree]);
+  }, [
+    tree,
+    dataLoading,
+    dataResult,
+    updateTypeTree,
+    increaseLoadStep,
+    loadStep,
+    setLoadStep,
+  ]);
 
   //
   // Returning memoized result
@@ -217,11 +263,13 @@ export const useTreeHelper = (
   return useMemo(
     () => ({
       loading,
+      loadStep,
+      loadCount,
       keys,
       tree: value,
       nodes: value?.NODES,
       typeTree: typeTree,
     }),
-    [loading, keys, value, typeTree]
+    [loading, loadStep, loadCount, keys, value, typeTree]
   );
 };

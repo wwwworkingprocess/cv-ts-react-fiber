@@ -19,8 +19,9 @@ const RegionHeader = (props: {
     <h3
       style={{
         marginBottom: "5px",
-        marginTop: "10px",
+        marginTop: "0px",
         marginRight: "10px",
+        fontSize: "14px",
         display: isMobile ? "block" : "inline-block",
       }}
     >
@@ -60,7 +61,7 @@ const TreeBreadCrumb = (props: {
   return (
     <>
       <RegionHeader parents={parents} />
-
+      <br />
       {parents
         ? parents.map((p, level, arr) => (
             <Fragment key={`item_${level}`}>

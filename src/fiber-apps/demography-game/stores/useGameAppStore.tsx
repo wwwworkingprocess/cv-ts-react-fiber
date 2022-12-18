@@ -50,7 +50,7 @@ const useGameAppStore = create<GameAppStore>(
       //
       setSelectedCode: (c) =>
         set((prev) =>
-          prev.selectedCode !== c // has to code really changed?
+          prev.selectedCode !== c // has the code really changed?
             ? {
                 selectedCode: c,
                 lastSelectedCode: prev.selectedCode,

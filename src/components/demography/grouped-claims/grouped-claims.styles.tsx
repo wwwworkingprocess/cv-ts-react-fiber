@@ -47,7 +47,6 @@ export const ClaimItem = styled.div<ClaimItemProps>`
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    text-decoration: underline;
   }
 
   label {

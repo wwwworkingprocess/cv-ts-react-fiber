@@ -41,20 +41,16 @@ const CrossHair = (
       //
       if (moving && hasArrived && selectedCode) {
         setReachedCode(selectedCode);
+        const ok =
+          moving &&
+          reachedCode !== undefined &&
+          lastSelectedCode !== reachedCode;
         //
-        if (moving && reachedCode) {
-          if (reachedCode === selectedCode) {
-            if (lastSelectedCode !== selectedCode) {
-              console.log(
-                "UserPath:",
-                lastSelectedCode,
-                "->",
-                selectedCode,
-                `Arrived at: (${reachedCode})`
-              );
-              setMoving(false, reachedCode);
-            }
-          }
+        if (ok) {
+          setMoving(false, reachedCode);
+          console.log(
+            `Arrived at: (${reachedCode}) from (${lastSelectedCode})`
+          );
         }
       }
     }

@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import useGameAppStore from "../../stores/useGameAppStore";
 
-import DebugStorePanel from "../debug-store";
+// import DebugStorePanel from "../debug-store";
 import UserGui from "../user-gui";
 
 import {
@@ -13,17 +13,17 @@ import {
 } from "./game-controls.styles";
 
 const GameControls = (props: any) => {
-  const { focus, zoomToView, extra, setExtra, scrollToDetails } = props;
+  const { focus, extra, selectionName, zoomToView, setExtra, scrollToDetails } =
+    props;
   //
   const [showUI, setShowUI] = useState<boolean>(false);
   //
 
   const lastTakenPlaceImageUrl = useGameAppStore((s) => s.lastFeature.imageUrl);
-  const [zoom, moving, detectedFps, selectedCode] = useGameAppStore((s) => [
+  const [zoom, moving, detectedFps] = useGameAppStore((s) => [
     s.zoom,
     s.moving,
     s.detectedFps,
-    s.selectedCode,
   ]);
   //
 
@@ -34,8 +34,8 @@ const GameControls = (props: any) => {
         ? "Select a city"
         : moving
         ? "Moving..."
-        : `Arrived at ${selectedCode}.`,
-    [zoom, moving, selectedCode]
+        : `Arrived at ${selectionName}.`,
+    [zoom, moving, selectionName]
   );
   //
   const lastTakenPlaceImage = useMemo(() => {
@@ -77,7 +77,7 @@ const GameControls = (props: any) => {
         {displayedText}
         <small>{` ${detectedFps.toFixed(1)} fps`}</small>
       </WrapToBottomLeft>
-      <DebugStorePanel />
+      {/* <DebugStorePanel /> */}
       <CloseWrap />
     </div>
   );

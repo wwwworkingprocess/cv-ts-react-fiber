@@ -17,6 +17,7 @@ type FeaturesSummaryProps = {
   //
   selectedTypeId: number | undefined;
   setSelectedTypeId: any;
+  setTabsIndex: any;
 };
 
 const FeaturesSummary = (props: FeaturesSummaryProps) => {
@@ -26,7 +27,9 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
     typeTree,
     typeMemo,
     selectedTypeId,
+    //
     setSelectedTypeId,
+    setTabsIndex,
   } = props;
   //
   const setSelectedCode = useGameAppStore((s) => s.setSelectedCode);
@@ -277,10 +280,12 @@ const FeaturesSummary = (props: FeaturesSummaryProps) => {
             >
               {instances.length} - {label}
               {String(selectedTypeId ?? 0) === type ? (
-                <small> - {type}</small>
+                // <small> - {type}</small>
+                <small> - ACTIVE</small>
               ) : null}
             </div>
           ))}
+          <button onClick={() => setTabsIndex(0)}>Back to map</button>
         </div>
         <div style={{ float: "right", width: "40vw" }}>
           {jsxUnidentifiedFeatures}

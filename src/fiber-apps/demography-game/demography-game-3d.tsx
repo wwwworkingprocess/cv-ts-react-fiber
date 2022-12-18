@@ -131,7 +131,6 @@ const DemographyGame3D = (props: {
       //
       focus: v3(-1 * cp.x - 1, 0 + 1, lat(MIN_Y + 1)),
       //
-      // country: v3(0, 0, -2 * cp.y),
       country: v3(0, 0, cp.y),
       //
       defaultPanPosition: v3(
@@ -162,7 +161,6 @@ const DemographyGame3D = (props: {
   // zooming and panning
   //
   const [focus, setFocus] = useState(pos.focus);
-  // const [extra, setExtra] = useState(false);
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
     cities,
@@ -230,6 +228,11 @@ const DemographyGame3D = (props: {
     () => (selectedCountry ? selectedCountry.urls.geo : ""),
     [selectedCountry]
   );
+  const selectionName = useMemo(
+    () =>
+      selectedCode && tree ? tree._find(tree._qq(selectedCode))?.name : "",
+    [selectedCode, tree]
+  );
 
   const rawWikiJson = useWikiGeoJson(selectedWikiCountryUrl);
   const countryCoords = useMemo(() => {
@@ -282,6 +285,7 @@ const DemographyGame3D = (props: {
         <GameControls
           focus={focus}
           extra={extra}
+          selectionName={selectionName}
           setExtra={setExtra}
           zoomToView={zoomToView}
           scrollToDetails={scrollToDetails}

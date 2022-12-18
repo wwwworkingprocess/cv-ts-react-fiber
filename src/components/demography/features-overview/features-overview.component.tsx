@@ -1,15 +1,13 @@
 import { useCallback, useMemo } from "react";
 import ReactForceGraph3d from "react-force-graph-3d";
 
-import { FeaturesOverviewGraph, Footer } from "./features-overview.styles";
+import { FeaturesOverviewGraph, Header } from "./features-overview.styles";
 
 type CourseOverviewProps = {
   graphWidth: number;
   fgRef: any;
   data: any;
   setSelectedTypeId: any;
-  // onNodeClick: any;
-  // onEngineStop: any;
 };
 
 const useGraphHandlers = (fgRef: React.MutableRefObject<any>) => {
@@ -39,7 +37,7 @@ const useGraphHandlers = (fgRef: React.MutableRefObject<any>) => {
   //
   const onEngineStop = useCallback(() => {
     if (fgRef.current) {
-      // (fgRef.current as any).zoomToFit(400);
+      (fgRef.current as any).zoomToFit(400);
     }
   }, [fgRef]);
   //
@@ -50,19 +48,19 @@ const useGraphHandlers = (fgRef: React.MutableRefObject<any>) => {
 };
 
 const FeaturesOverview = (props: CourseOverviewProps) => {
-  const {
-    graphWidth,
-    fgRef,
-    data,
-    setSelectedTypeId,
-    //  , onNodeClick, onEngineStop
-  } = props;
+  const { graphWidth, fgRef, data, setSelectedTypeId } = props;
   //
   const { onNodeClick, onEngineStop } = useGraphHandlers(fgRef);
-
   //
   return (
     <div>
+      <Header>Active Feature Type Interpretation</Header>
+      <div>
+        Displaying type of represented feature layers and the number of features
+        on each layer. <br />
+        Click a node, to center selection and activate feature layer filter for
+        map.
+      </div>
       <FeaturesOverviewGraph width={graphWidth + 5}>
         <ReactForceGraph3d
           ref={fgRef}
@@ -94,9 +92,6 @@ const FeaturesOverview = (props: CourseOverviewProps) => {
           onEngineStop={onEngineStop}
         />
       </FeaturesOverviewGraph>
-      <Footer>
-        Displaying current type interpretation and number of instances.
-      </Footer>
     </div>
   );
 };

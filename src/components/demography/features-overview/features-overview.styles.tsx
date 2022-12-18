@@ -11,8 +11,6 @@ ${({ width }) =>
   width !== undefined ? { width: `${width}px` } : { width: `auto` }}
 `;
 
-export const Footer = styled.div`
-  text-align: center;
-  font-size: 12px;
-  padding: 20px;
+export const Header = styled.h3`
+  text-align: left;
 `;

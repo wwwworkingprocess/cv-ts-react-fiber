@@ -242,13 +242,18 @@ class TreeHelper {
         ? edges
         : edges.filter((v: number, i: number) => i >= offset);
     //
+    let c = 0;
     for (let i = offset; i < to_proc.length; i += 3) {
       const [id, pid, tid] = [to_proc[i], to_proc[i + 1], to_proc[i + 2]];
       //
       this._node(tid, id, def_name, { code: pid });
+      //
+      c++;
     }
     //
     this._rebuild();
+    //
+    return c;
   };
   //
   _build_labels = (labels: Array<any>) => {

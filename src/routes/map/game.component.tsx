@@ -59,6 +59,7 @@ const WikiDemographyGame = (props: {
   const tabs = ["Main Info", "Browse", "Nearby", "Features"]; // + "Search",
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
+  const [isDetailsVisible, setIsDetailsVisible] = useState<boolean>(false);
   const [countryCode] = useState<string | undefined>(selectedCountry?.code);
   const [selectedTypeId, setSelectedTypeId] = useState<number | undefined>();
   //
@@ -68,6 +69,7 @@ const WikiDemographyGame = (props: {
   //
   // MODULE LEVEL STATE
   //
+  const setZoom = useGameAppStore((state) => state.setZoom);
   const setMoving = useGameAppStore((state) => state.setMoving);
   const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
     s.selectedCode,
@@ -83,6 +85,8 @@ const WikiDemographyGame = (props: {
   // 4.topTenCities - Country's most populated settlements list
   //
   const {
+    loadStep,
+    loadCount,
     isTreeReady,
     //
     tree,
@@ -121,6 +125,8 @@ const WikiDemographyGame = (props: {
       //
       setSelectedCode(validCode ? selectedRouteCode : undefined);
       if (validCode) setMoving(true, selectedRouteCode);
+      //
+      setIsDetailsVisible(true); // always show details when opened via permalink
     }
   }, [selectedRouteCode, tree, setSelectedCode, setMoving]);
   //
@@ -202,14 +208,33 @@ const WikiDemographyGame = (props: {
   }, [tree, selectedCountry, selectedCode, setSelectedCode]);
 
   const itemDetailsRef = useRef<HTMLDivElement>(null!);
-  const scrollToDetails = useCallback(
-    () =>
-      itemDetailsRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      }),
-    []
-  );
+  const scrollToDetails = useCallback(() => {
+    setIsDetailsVisible(true);
+    //
+    // itemDetailsRef.current.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start",
+    // });
+  }, []);
+
+  useEffect(() => {
+    let t: NodeJS.Timeout;
+    //
+    if (isDetailsVisible) {
+      t = setTimeout(
+        () =>
+          itemDetailsRef.current.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          }),
+        100
+      );
+    }
+    //
+    return () => {
+      if (t) clearTimeout(t);
+    };
+  }, [isDetailsVisible]);
 
   //
   const gameInCountry = useMemo(() => {
@@ -249,6 +274,8 @@ const WikiDemographyGame = (props: {
   }, [windowSize]);
 
   //
+
+  const onZoomReset = () => setZoom(false);
   const onTypeReset = () => setSelectedTypeId(undefined);
   const onTypeEnabled = useCallback(() => {
     if (allTypesWithPath && !selectedTypeId) {
@@ -274,6 +301,7 @@ const WikiDemographyGame = (props: {
   const onGotoSearchButtonClicked = () => setTabsIndex(4);
   //
   const mainInfoEventHandlers = {
+    onZoomReset,
     onTypeEnabled,
     onTypeReset,
     onCountryReset,
@@ -302,6 +330,7 @@ const WikiDemographyGame = (props: {
           selectedCode={selectedCode}
           //
           isTreeReady={isTreeReady}
+          loadCount={loadCount}
           permalink={permalink}
           //
           topResultsLength={topResultsLength}
@@ -317,11 +346,10 @@ const WikiDemographyGame = (props: {
       ) : null}
 
       {/* ADMINISTRATIVE ZONES */}
-      {tabsIndex === 1 ? (
-        <>
-          {selectedCountry && (
+      {tabsIndex === 1
+        ? selectedCountry && (
             <>
-              <h3>Browse for a Settlement</h3>
+              <h3>Settlements of {selectedCountry.name}</h3>
               <BrowseSettlementContainer>
                 <HalfContentBlock minWidth={"30%"}>
                   <b>Administrative Areas</b>
@@ -343,67 +371,68 @@ const WikiDemographyGame = (props: {
                 </HalfContentBlock>
               </BrowseSettlementContainer>
             </>
-          )}
-        </>
-      ) : null}
+          )
+        : null}
 
       {/* NEARBY ITEMS */}
-      {tabsIndex === 2 ? (
-        <>
-          {tree && selectedCountry && selectedCode ? (
-            <div style={{ width: "100%" }}>
-              <h3>
-                Nearby {tree._n(selectedCode)?.name} ({selectedCode})
-              </h3>
+      {tabsIndex === 2 && tree && selectedCountry && selectedCode ? (
+        <div style={{ width: "100%" }}>
+          <h3>
+            Nearby {tree._n(selectedCode)?.name} in {selectedCountry.name}
+          </h3>
 
-              <NearbyTreeItems
-                tree={tree}
-                selectedCode={selectedCode}
-                setSelectedCode={setSelectedCode}
-              />
-            </div>
-          ) : (
-            ""
-          )}
-        </>
+          <NearbyTreeItems
+            tree={tree}
+            selectedCode={selectedCode}
+            setSelectedCode={setSelectedCode}
+          />
+        </div>
       ) : null}
 
       {/* FEATURES SUMMARY */}
-      {tabsIndex === 3 ? (
-        <>
-          {tree && typeTree && typeMemo ? (
-            <div style={{ width: "100%" }}>
-              <h3>Feature summary</h3>
-              {countryCode ? (
-                <FeaturesSummary
-                  tree={tree}
-                  typeTree={typeTree}
-                  typeMemo={typeMemo}
-                  countryCode={countryCode}
-                  selectedTypeId={selectedTypeId}
-                  setSelectedTypeId={setSelectedTypeId}
-                />
-              ) : null}
-            </div>
-          ) : (
-            ""
-          )}
-        </>
+      {tabsIndex === 3 && tree && typeTree && typeMemo ? (
+        <div style={{ width: "100%" }}>
+          <h3>Feature summary</h3>
+          {countryCode ? (
+            <FeaturesSummary
+              tree={tree}
+              typeTree={typeTree}
+              typeMemo={typeMemo}
+              countryCode={countryCode}
+              selectedTypeId={selectedTypeId}
+              setSelectedTypeId={setSelectedTypeId}
+              setTabsIndex={setTabsIndex}
+            />
+          ) : null}
+        </div>
       ) : null}
 
       {/* SETTLEMENT SEARCH */}
-      {tabsIndex === 4 ? (
+      {tabsIndex === 4 && countryCode ? (
         <>
           <h3>Search for a Settlement</h3>
-          {countryCode ? (
-            <SettlementSearch tree={tree} countryCode={countryCode} />
-          ) : null}
+          <SettlementSearch tree={tree} countryCode={countryCode} />
         </>
       ) : null}
 
       {/* MAP-OR-GRAPH AND BREAD CRUMB */}
       {!selectedCountry ? null : !tree || !isTreeReady ? (
-        <Spinner />
+        <>
+          {loadStep === 0
+            ? "Downloading data..."
+            : loadStep === 1
+            ? `Preparing ${loadCount} features...`
+            : loadStep === 2
+            ? `Preparing ${loadCount} labels...`
+            : loadStep === 3
+            ? `Preparing ${loadCount} feature details...`
+            : loadStep === 4
+            ? `Preparing content, ${loadCount} features...`
+            : loadStep === 5
+            ? "Preparing feature layers."
+            : "Something went wrong, please reload the page."}
+          <Spinner />
+        </>
       ) : (
         <div>
           {tabsIndex === 3 ? (
@@ -415,23 +444,43 @@ const WikiDemographyGame = (props: {
                   graphWidth={graphWidth}
                   setSelectedTypeId={setSelectedTypeId}
                 />
-                Type:{selectedTypeId}
+                {/* Type:{selectedTypeId} */}
               </>
             ) : null
           ) : (
             gameInCountry
           )}
+
           <TreeBreadCrumb
             tree={tree}
             selectedCode={selectedCode}
             setSelectedCode={setSelectedCode}
           />
+          {selectedCode ? (
+            <button
+              style={{ float: "right" }}
+              onClick={() => {
+                setIsDetailsVisible(!isDetailsVisible);
+              }}
+            >
+              {!isDetailsVisible ? "Show" : "Hide"} Details
+            </button>
+          ) : null}
         </div>
       )}
 
       {/* SELECTION DETAILS */}
-      <div ref={itemDetailsRef}>
-        <WikiItemDetails selectedCode={selectedCode} />
+      <div
+        ref={itemDetailsRef}
+        style={{
+          display: isDetailsVisible ? "block" : "none",
+          marginTop: "10px",
+        }}
+      >
+        <WikiItemDetails
+          selectedCode={selectedCode}
+          isVisible={isDetailsVisible}
+        />
       </div>
     </>
   );

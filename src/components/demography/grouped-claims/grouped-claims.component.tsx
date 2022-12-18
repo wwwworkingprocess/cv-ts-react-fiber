@@ -29,7 +29,7 @@ import useWikiClaimIcons from "../../../fiber-apps/demography-game/hooks/useWiki
 import WikiClaimIcon from "../wiki-claim-icon/wiki-claim-icon.component";
 import WikiClaimItem from "../wiki-claim-item/wiki-claim-item.component";
 
-type GroupedClaimsProps = { wikiEntry: any };
+type GroupedClaimsProps = { wikiEntry: any; isVisible: boolean };
 
 export type Claim = {
   // ...
@@ -49,7 +49,7 @@ export type Claim = {
 //
 //
 const GroupedClaims = (props: GroupedClaimsProps) => {
-  const { wikiEntry } = props;
+  const { wikiEntry, isVisible } = props;
   //
   const setLastTakenPlaceImageUrl = useGameAppStore(
     (s) => s.setLastTakenPlaceImageUrl
@@ -293,7 +293,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
   //
 
   //
-  return (
+  return isVisible ? (
     <div>
       {claimsMeta && claimsMeta.other.length ? (
         <>
@@ -511,7 +511,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
         </div>
       ) : null}
     </div>
-  );
+  ) : null;
 };
 
 export default GroupedClaims;

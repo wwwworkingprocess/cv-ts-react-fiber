@@ -1,6 +1,7 @@
 import { ChangeEvent, useMemo } from "react";
 
 import type { WikiCountry } from "../../../../utils/firebase/repo/wiki-country.types";
+import { formatPopulation } from "../../../../utils/wiki";
 
 import CityList from "../../city-list/city-list.component";
 
@@ -10,6 +11,7 @@ type ActionTabMainInfoProps = {
   selectedCode: string | undefined;
   //
   isTreeReady: string | boolean | undefined; // ???? -> boolean
+  loadCount: number;
   permalink: string;
   //
   topTenCities: Array<any>;
@@ -19,6 +21,7 @@ type ActionTabMainInfoProps = {
   topResultsLength: number;
   topTypeResultsLength: number;
   //
+  onZoomReset: any;
   onTypeEnabled: any;
   onTypeReset: any;
   onCountryReset: any;
@@ -40,6 +43,7 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
     selectedCode,
     //
     isTreeReady,
+    loadCount,
     permalink,
     //
     topResultsLength,
@@ -49,6 +53,7 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
     topTenCities,
     topTypeCities,
     //
+    onZoomReset,
     onTypeEnabled,
     onTypeReset,
     onCountryReset,
@@ -91,7 +96,13 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
     <>
       {selectedCountry && (
         <>
-          <h3>Country Details</h3>
+          <h3>
+            {selectedCountry.name}
+            <span style={{ fontSize: "12px", marginLeft: "10px" }}>
+              ({formatPopulation(selectedCountry.population)}{" "}
+              {`${loadCount} 📶`})
+            </span>
+          </h3>
           {!selectedCode ? (
             <p>
               Please{" "}
@@ -111,14 +122,26 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
       {isTreeReady ? (
         //{tree && typeTree && isTreeReady ? (
         <div>
+          <button onClick={onCountryReset}>Other Countries</button>{" "}
+          {selectedCode ? (
+            <>
+              <button onClick={onZoomReset}>Zoom out</button>{" "}
+            </>
+          ) : null}
           {selectedTypeId !== undefined ? (
-            <button onClick={onTypeReset}>Clear type filter</button>
+            <button onClick={onTypeReset}>Show all Features</button>
           ) : (
-            <button onClick={onTypeEnabled}>Enable feature filtering</button>
-          )}{" "}
+            <>
+              <button onClick={onTypeEnabled}>Enable Layer Filter</button>
+            </>
+          )}
           {permalink ? (
-            <a href={permalink} title={"Permalink to this page"}>
-              permalink
+            <a
+              href={permalink}
+              title={"Permalink to this page"}
+              style={{ float: "right" }}
+            >
+              permalink here
             </a>
           ) : null}
           {selectedTypeId === undefined ? (
