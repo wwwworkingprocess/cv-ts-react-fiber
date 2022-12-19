@@ -11,6 +11,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCountriesStart } from "../../store/countries/countries.action";
 import { isMobile } from "react-device-detect";
 import { NavLink } from "react-router-dom";
+import useWikiCountryQuery from "../../hooks/wiki/useWikiCountryQuery";
+import { Spinner } from "../../components/spinner/spinner.component";
 
 type TimerProps = {
   isActive: boolean;
@@ -76,7 +78,7 @@ const Home = () => {
   const [showGrid, setShowGrid] = useState<boolean>(false);
   const [isShadowEnabled, setIsShadowEnabled] = useState<boolean>(!isMobile);
   //
-  const countries = useSelector(selectCountries);
+  // const countries = useSelector(selectCountries);
   // const isLoading = useSelector(selectIsLoading);
   //
   const dispatch = useDispatch();
@@ -84,6 +86,10 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchCountriesStart());
   }, [dispatch]);
+  //
+  const { loading, countries: queryCountries } = useWikiCountryQuery();
+  //
+  // console.log("queryCountries", queryCountries, "store countries", countries);
   //
   return (
     <>
@@ -106,14 +112,19 @@ const Home = () => {
           Shadows: {isShadowEnabled ? "ON" : "OFF"}
         </button>
       </div>
-      {
+
+      {!loading ? (
         <AppHome3D
           isShadowEnabled={isShadowEnabled}
           showGrid={showGrid}
-          countries={countries}
+          // countries={countries}
+          countries={queryCountries}
           setIsOpen={setIsOpen}
         />
-      }
+      ) : (
+        <Spinner />
+      )}
+
       <Dialog isOpen={isOpen} onClose={(e: CloseEvent) => setIsOpen(false)}>
         <DataLoadTest />
       </Dialog>

@@ -1,4 +1,4 @@
-import { useRef, useMemo, Suspense } from "react";
+import { useRef, useMemo, Suspense, useState } from "react";
 
 import { Canvas, useFrame } from "@react-three/fiber";
 
@@ -20,6 +20,8 @@ import Boxes from "./fibers/boxes";
 import { Draggable } from "../../three-components/draggable/draggable.component";
 import { Spinner } from "../../components/spinner/spinner.component";
 import { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
+import { distanceFromCoords } from "../../utils/geo";
+import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 const MovingSpotLight = (props: JSX.IntrinsicElements["spotLight"]) => {
   const { castShadow } = props;
@@ -61,12 +63,18 @@ type AppHome3DProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+const availableCountryCodes = getAvailableCountryCodes();
+
 const AppHome3D = (props: AppHome3DProps) => {
-  const { showGrid, isShadowEnabled } = props;
+  const { showGrid, isShadowEnabled, countries } = props;
   //
   const refDrag = useRef<boolean>(false);
   const refDynamicText = useRef<string>("");
   const controlsRef = useRef<any>(null!);
+  //
+  const [boxGeoPosition, setBoxGeoPosition] = useState<
+    [number, number] | undefined
+  >([0, 0]);
   //
   const dragProps = {
     onDragStart: (event: any) => {
@@ -79,14 +87,52 @@ const AppHome3D = (props: AppHome3DProps) => {
       //
       refDrag.current = false;
       //
-      refDynamicText.current = JSON.stringify(
-        event.eventObject.position
-          .toArray()
-          .map((coord: number) => coord.toFixed(3))
-      );
+      const nextPosition = event.eventObject.position
+        .toArray()
+        .map((coord: number) => coord.toFixed(3));
+      //
+      const coordsFromPosition = (arr: Array<string>) => {
+        const [x, y, z] = arr.map(parseFloat);
+        //
+        //
+        const lat = ((z * 90) / 5) * -2; // vertical (from z)
+        const lng = (x * 180) / 5; // horizontal (from x)
+        // @47.3191809,19.1271184,
+        return [lat, lng] as [number, number];
+      };
+      //
+      const nextCoords = coordsFromPosition(nextPosition);
+      //
+      refDynamicText.current = nextCoords
+        ? `${nextCoords[0].toFixed(3)}, ${nextCoords[1].toFixed(3)}}`
+        : "";
+      //
+      setBoxGeoPosition(nextCoords);
     },
   };
 
+  const countriesFromPosition = useMemo(() => {
+    if (!countries) return [];
+    if (!boxGeoPosition) return countries.map((c) => ({ ...c, distance: 0 }));
+    //
+    // calculate position from selection
+    //
+    const [lat, lng] = boxGeoPosition;
+    //
+    const diffs = countries.map(
+      (c) =>
+        [c, distanceFromCoords(c, { x: lng, y: lat })] as [WikiCountry, number]
+    );
+    //
+    const countriesWithDistance = countries
+      .map((c, i) => ({
+        ...c,
+        distance: diffs[i][1],
+      }))
+      .sort((a, b) => a.distance - b.distance);
+    //
+    return countriesWithDistance;
+  }, [boxGeoPosition, countries]);
   //
   const boxesMemo = useMemo(
     () => (
@@ -97,8 +143,37 @@ const AppHome3D = (props: AppHome3DProps) => {
     []
   );
   //
+  const LAST_IDX = 5;
+  const renderCountry = (c: WikiCountry, idx: number) => (
+    <span key={`${c.code}_${idx}`}>
+      {availableCountryCodes.includes(c.code) ? (
+        <a href={`map/${c.code}`} title={c.name}>
+          <b key={c.code} style={{ color: "gold" }}>
+            {c.name}
+          </b>
+        </a>
+      ) : (
+        <small>{c.name}</small>
+      )}
+      {idx < LAST_IDX ? " - " : ""}
+    </span>
+  );
+  //
   return (
     <>
+      <div>
+        {countriesFromPosition[0] ? (
+          <>
+            Nearest is {renderCountry(countriesFromPosition[0], LAST_IDX)},{" "}
+            {countriesFromPosition[0]?.distance.toFixed(2)} km away.
+          </>
+        ) : null}
+        <br />
+        Nearby:{" "}
+        {countriesFromPosition
+          ? countriesFromPosition.slice(1, 1 + LAST_IDX + 1).map(renderCountry)
+          : null}
+      </div>
       <Suspense
         fallback={
           <div style={{ width: "100%", height: "100%" }}>
