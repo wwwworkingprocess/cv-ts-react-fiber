@@ -1,9 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 
-type ImageRawEntry = {
-  type: string;
-  value: string;
-};
+type ImageRawEntry = { type: string; value: string };
 
 const MAX_ID_PER_CALL = 50;
 
@@ -49,10 +46,14 @@ LIMIT ###LIMIT###`;
 
 const useWikiImages = (
   ids: Array<string>,
-  limit: number
+  limit: number,
+  explicitProperty?: string | undefined
 ): { loading: boolean; images: Record<string, string> | undefined } => {
   const [loading, setLoading] = useState<boolean>(false);
   const [images, setImages] = useState<Record<string, string> | undefined>();
+
+  //
+  // Creating the specific query based on the generic template
   //
   const currentQuery = useMemo(() => {
     const template = queryTemplateImages;
@@ -62,8 +63,12 @@ const useWikiImages = (
       .replace("###SELECTION###", selection)
       .replace("###LIMIT###", String(limit));
     //
-    return query;
-  }, [ids, limit]);
+    //
+    return explicitProperty ? query.replace("P18", explicitProperty) : query;
+  }, [ids, limit, explicitProperty]);
+
+  //
+  // Retrieving the associated (image) property values for the provided ids
   //
   useEffect(() => {
     if (ids.length === 0) setImages({});
@@ -82,10 +87,10 @@ const useWikiImages = (
       //
       const escapeQuery = (q: string): string =>
         q.replaceAll(" ", "%20").replaceAll("\n", "%20");
-      const escapedQuery = escapeQuery(query); // SELECT%20?dob%20WHERE%20{wd:Q42%20wdt:P569%20?dob.}
-
+      const escapedQuery = escapeQuery(query);
+      //
       const url = `https://query.wikidata.org/sparql?format=json&query=${escapedQuery}`;
-
+      //
       fetch(url, { method: "GET", signal: abortController.signal })
         .then((res) => res.json())
         .then(processImageQueryResult)
@@ -95,7 +100,7 @@ const useWikiImages = (
           }
         })
         .finally(() => setLoading(false));
-
+      //TODO: no catch on fail
       //
       return () => {
         abortController.abort();
@@ -106,6 +111,9 @@ const useWikiImages = (
     }
     //
   }, [ids, currentQuery]);
+
+  //
+  // Returning memoized result
   //
   return useMemo(
     () =>

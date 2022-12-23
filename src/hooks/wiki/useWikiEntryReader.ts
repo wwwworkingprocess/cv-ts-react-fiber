@@ -162,13 +162,3 @@ export const useWikiEntryReader = (wikiEntry: any) => {
     [loading, name, labels, claimsMeta]
   );
 };
-
-//
-//TODO: running a sparql query
-//
-// const query = "SELECT ?dob WHERE {wd:Q42 wdt:P569 ?dob.}";
-// const escapeQuery = (q: string): string => q.replaceAll(" ", "%20").replaceAll("\n", " ");
-// const escapedQuery = escapeQuery(query); // SELECT%20?dob%20WHERE%20{wd:Q42%20wdt:P569%20?dob.}
-// console.log("running effect escapedQuery", escapedQuery);
-// const url = `https://query.wikidata.org/sparql?format=json&query=${escapedQuery}`;
-//

@@ -1,6 +1,13 @@
-import { useRef, useMemo, Suspense, useState } from "react";
+import {
+  useRef,
+  useMemo,
+  Suspense,
+  useState,
+  useCallback,
+  useEffect,
+} from "react";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 
 import {
   Billboard,
@@ -11,8 +18,8 @@ import {
   useHelper,
 } from "@react-three/drei";
 
-import MyText from "../../three-components/text-3d/text-3d.component";
-import { Color, SpotLight, SpotLightHelper } from "three";
+import WelcomeText from "../../three-components/text-3d/text-3d.component";
+import { Color, SpotLight, SpotLightHelper, TextureLoader } from "three";
 
 import { ShaderPlaneMesh } from "../../three-components/image-plane/shader-material";
 import GridFloor from "../heightmap-random/fibers/grid/grid-floor";
@@ -22,6 +29,16 @@ import { Spinner } from "../../components/spinner/spinner.component";
 import { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import { distanceFromCoords } from "../../utils/geo";
 import { getAvailableCountryCodes } from "../../utils/country-helper";
+
+import hungarianBorder from "../hungary/border.28.json"; //"./border.28.json";
+import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
+import useWikiImages from "../../hooks/wiki/useWikiImages";
+
+import NearestCountry from "./fibers/nearest-country";
+import NearbyCountries from "./fibers/nearby-countries";
+import useDragAndDrop from "./hooks/useDragAndDrop";
+import useNearestCountries from "./hooks/useNearestCountries";
+import Nearby from "./components/nearby/nearby.component";
 
 const MovingSpotLight = (props: JSX.IntrinsicElements["spotLight"]) => {
   const { castShadow } = props;
@@ -63,8 +80,22 @@ type AppHome3DProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+const LAST_IDX = 5;
 const availableCountryCodes = getAvailableCountryCodes();
 
+const coordsFromPosition = (arr: Array<string>) => {
+  const [x, y, z] = arr.map(parseFloat);
+  //
+  //
+  const lat = ((z * 90) / 5) * -2; // vertical (from z)
+  const lng = (x * 180) / 5; // horizontal (from x)
+  // @47.3191809,19.1271184,
+  return [lat, lng] as [number, number];
+};
+
+//
+//
+//
 const AppHome3D = (props: AppHome3DProps) => {
   const { showGrid, isShadowEnabled, countries } = props;
   //
@@ -72,44 +103,25 @@ const AppHome3D = (props: AppHome3DProps) => {
   const refDynamicText = useRef<string>("");
   const controlsRef = useRef<any>(null!);
   //
+  const defaultBorderPoints = hungarianBorder.coordinates as Array<
+    [number, number]
+  >;
+  const [countryBorderPoints, setCountryBorderPoints] = useState<
+    Array<Array<[number, number]>>
+  >([defaultBorderPoints]);
+  //
   const [boxGeoPosition, setBoxGeoPosition] = useState<
     [number, number] | undefined
   >([0, 0]);
   //
-  const dragProps = {
-    onDragStart: (event: any) => {
-      refDrag.current = true;
-      //
-      if (controlsRef.current) controlsRef.current.enabled = false;
-    },
-    onDragEnd: (event: any) => {
-      if (controlsRef.current) controlsRef.current.enabled = true;
-      //
-      refDrag.current = false;
-      //
-      const nextPosition = event.eventObject.position
-        .toArray()
-        .map((coord: number) => coord.toFixed(3));
-      //
-      const coordsFromPosition = (arr: Array<string>) => {
-        const [x, y, z] = arr.map(parseFloat);
-        //
-        //
-        const lat = ((z * 90) / 5) * -2; // vertical (from z)
-        const lng = (x * 180) / 5; // horizontal (from x)
-        // @47.3191809,19.1271184,
-        return [lat, lng] as [number, number];
-      };
-      //
-      const nextCoords = coordsFromPosition(nextPosition);
-      //
-      refDynamicText.current = nextCoords
-        ? `${nextCoords[0].toFixed(3)}, ${nextCoords[1].toFixed(3)}}`
-        : "";
-      //
-      setBoxGeoPosition(nextCoords);
-    },
-  };
+
+  const dragProps = useDragAndDrop(
+    refDrag,
+    controlsRef,
+    refDynamicText,
+    coordsFromPosition,
+    setBoxGeoPosition
+  );
 
   const countriesFromPosition = useMemo(() => {
     if (!countries) return [];
@@ -133,17 +145,14 @@ const AppHome3D = (props: AppHome3DProps) => {
     //
     return countriesWithDistance;
   }, [boxGeoPosition, countries]);
-  //
-  const boxesMemo = useMemo(
-    () => (
-      <group scale={[10 / 36, 1, 10 / 36]} position={[0, -0.12, 0]}>
-        <Boxes i={36} j={18} baseColor={new Color(1, 1, 1)} />
-      </group>
-    ),
-    []
+
+  const { nearbyCountries, images, textures } = useNearestCountries(
+    countriesFromPosition,
+    LAST_IDX,
+    setCountryBorderPoints
   );
+
   //
-  const LAST_IDX = 5;
   const renderCountry = (c: WikiCountry, idx: number) => (
     <span key={`${c.code}_${idx}`}>
       {availableCountryCodes.includes(c.code) ? (
@@ -158,22 +167,27 @@ const AppHome3D = (props: AppHome3DProps) => {
       {idx < LAST_IDX ? " - " : ""}
     </span>
   );
+
+  //
+  const boxesMemo = useMemo(
+    () => (
+      <group scale={[10 / 36, 1, 10 / 36]} position={[0, -0.12, 0]}>
+        <Boxes i={36} j={18} baseColor={new Color(1, 1, 1)} />
+      </group>
+    ),
+    []
+  );
+  //
+  //
   //
   return (
     <>
-      <div>
-        {countriesFromPosition[0] ? (
-          <>
-            Nearest is {renderCountry(countriesFromPosition[0], LAST_IDX)},{" "}
-            {countriesFromPosition[0]?.distance.toFixed(2)} km away.
-          </>
-        ) : null}
-        <br />
-        Nearby:{" "}
-        {countriesFromPosition
-          ? countriesFromPosition.slice(1, 1 + LAST_IDX + 1).map(renderCountry)
-          : null}
-      </div>
+      <Nearby
+        availableCountryCodes={availableCountryCodes}
+        countriesFromPosition={countriesFromPosition}
+        LAST_IDX={LAST_IDX}
+      />
+
       <Suspense
         fallback={
           <div style={{ width: "100%", height: "100%" }}>
@@ -205,14 +219,23 @@ const AppHome3D = (props: AppHome3DProps) => {
             makeDefault
           />
 
+          <NearestCountry countryBorderPoints={countryBorderPoints} />
+
+          <NearbyCountries
+            nearbyCountries={nearbyCountries}
+            images={images}
+            textures={textures}
+            availableCountryCodes={availableCountryCodes}
+          />
+
           <Bounds fit clip observe damping={0.6} margin={5.19}>
             <group position={[0, 0.05, 0]}>
               <Draggable {...dragProps}>
                 <Billboard>
-                  <Text fontSize={0.01} position={[0, 0.051, 0]}>
+                  <Text fontSize={0.014} position={[0, 0.051, 0]}>
                     Drag me!
                   </Text>
-                  <Text fontSize={0.00521} position={[0, 0.041, 0]}>
+                  <Text fontSize={0.00721} position={[0, 0.041, 0]}>
                     {refDynamicText.current}
                   </Text>
                 </Billboard>
@@ -224,7 +247,7 @@ const AppHome3D = (props: AppHome3DProps) => {
             </group>
           </Bounds>
 
-          <MyText
+          <WelcomeText
             castShadow
             receiveShadow
             position={[0, 0.13, -2.8]}
@@ -233,7 +256,7 @@ const AppHome3D = (props: AppHome3DProps) => {
             fontColor={"#afafff"}
           >
             Welcome to Reactive 3D!
-          </MyText>
+          </WelcomeText>
 
           <Sky
             distance={450000}

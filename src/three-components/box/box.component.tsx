@@ -35,7 +35,6 @@ const Box = (
 
   return (
     <mesh
-      {...props}
       ref={ref}
       scale={clicked ? 1.5 : 1}
       onClick={(event) => {
@@ -47,6 +46,7 @@ const Box = (
       onPointerOver={(event) => hover(true)}
       onPointerOut={(event) => hover(false)}
       userData={{ tooltipText }}
+      {...props}
     >
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={hovered ? "green" : "blue"} />
