@@ -56,7 +56,7 @@ const GameControls = (props: any) => {
             ) : (
               <Button onClick={(e) => setExtra(true)}>+</Button>
             )}{" "}
-            {selectionName.length ? (
+            {selectionName?.length ? (
               <Button onClick={(e) => zoomToView(undefined)}>Zoom out</Button>
             ) : null}
             {lastTakenPlaceImage}
