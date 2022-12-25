@@ -9,9 +9,11 @@ const NearbyCountries = (
     textures: any;
     images: any;
     availableCountryCodes: Array<string>;
+    navigate: any;
   }
 ) => {
-  const { nearbyCountries, textures, images, availableCountryCodes } = props;
+  const { nearbyCountries, textures, images, availableCountryCodes, navigate } =
+    props;
   //
   const ref = useRef<Group>(null!);
   //
@@ -56,7 +58,7 @@ const NearbyCountries = (
   const s = 0.0278;
   //
   const scale = new Vector3(1, -1, 1);
-  const position = new Vector3(0, 0.0155, 0);
+  const position = new Vector3(0, 0.0255, 0);
   const groupToStageScale = new Vector3(-1 * s, -1 * s, s);
   const groupToStageRotation = new Euler(-Math.PI / 2, 0, 0);
   //
@@ -103,6 +105,7 @@ const NearbyCountries = (
                     label={label}
                     population={population}
                     image={image}
+                    navigate={navigate}
                   />
                 </mesh>
               )
@@ -120,30 +123,29 @@ const CountryTooltip = ({
   label,
   population,
   image,
+  navigate,
 }: any) => (
   <Html distanceFactor={0.525} position={[0, 0, -2]} center>
     <CountryListItem
       key={idx}
-      onClick={() => console.log("onTooltipClicked", code, label)}
+      onClick={() => navigate(`./map/${code}`)}
       style={{
         userSelect: "none",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        // backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundColor: available ? "rgba(255,200,0,0.22)" : "rgba(0,0,0,0.5)",
+
         paddingTop: "10px",
         //
         borderRadius: "10px",
         border: available ? "solid 3px gold" : "solid 1px white",
         zoom: available ? "100%" : "75%",
+        color: available ? "white" : "silver",
+        fontWeight: available ? "bold" : "normal",
+        cursor: available ? "pointer" : "default",
       }}
     >
       <img src={image} alt={label} />
       <br />
-      {available ? (
-        <a style={{ display: "block" }} href={`./map/${code}`}>
-          Enter
-        </a>
-      ) : (
-        ""
-      )}
       <div>{label}</div>
       <small>{((population ?? 0) * 0.000001).toFixed(2)}M</small>
     </CountryListItem>

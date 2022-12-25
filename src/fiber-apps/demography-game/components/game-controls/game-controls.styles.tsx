@@ -33,7 +33,7 @@ export const CloseWrap = styled.div`
 `;
 
 export const LastTakenPlace = styled.div`
-  width: 90px;
+  width: 120px;
   margin: auto;
   overflow: hidden;
   margin-top: 3px;

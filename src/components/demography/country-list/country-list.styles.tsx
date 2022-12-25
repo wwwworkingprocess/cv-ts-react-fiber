@@ -6,6 +6,11 @@ export const CountryListItem = styled.div`
   width: 60px;
   text-align: center;
   letter-spacing: 0.6px;
+  cursor: pointer;
+
+  :hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 
   img {
     width: 40px;

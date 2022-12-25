@@ -2,6 +2,7 @@ import { ChangeEvent, useMemo } from "react";
 
 import type { WikiCountry } from "../../../../utils/firebase/repo/wiki-country.types";
 import { formatPopulation } from "../../../../utils/wiki";
+import Button from "../../../button/button.component";
 
 import CityList from "../../city-list/city-list.component";
 
@@ -24,7 +25,8 @@ type ActionTabMainInfoProps = {
   onZoomReset: any;
   onTypeEnabled: any;
   onTypeReset: any;
-  onCountryReset: any;
+  onCountryReset: () => void;
+  onNavigateToMainPage: () => void;
   onGotoSearchButtonClicked: () => void;
   onChangeTopOptions: (e: ChangeEvent<HTMLSelectElement>) => void;
   onChangeTopTypeOptions: (e: ChangeEvent<HTMLSelectElement>) => void;
@@ -57,6 +59,7 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
     onTypeEnabled,
     onTypeReset,
     onCountryReset,
+    onNavigateToMainPage,
     onGotoSearchButtonClicked,
     onChangeTopOptions,
     onChangeTopTypeOptions,
@@ -105,15 +108,9 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
           </h3>
           {!selectedCode ? (
             <p>
-              Please{" "}
-              <span
-                style={{ color: "gold" }}
-                onClick={onGotoSearchButtonClicked}
-              >
-                search
-              </span>{" "}
+              Please <Button onClick={onGotoSearchButtonClicked}>Search</Button>{" "}
               for a settlement to continue or{" "}
-              <button onClick={onCountryReset}>select another country</button>.
+              <Button onClick={onCountryReset}>select another country</Button>.
             </p>
           ) : null}
         </>
@@ -122,24 +119,25 @@ const ActionTabMainInfo = (props: ActionTabMainInfoProps) => {
       {isTreeReady ? (
         //{tree && typeTree && isTreeReady ? (
         <div>
-          <button onClick={onCountryReset}>Other Countries</button>{" "}
+          <Button onClick={onNavigateToMainPage}>World</Button>{" "}
+          <Button onClick={onCountryReset}>Other Countries</Button>{" "}
           {selectedCode ? (
             <>
-              <button onClick={onZoomReset}>Zoom out</button>{" "}
+              <Button onClick={onZoomReset}>Zoom out</Button>{" "}
             </>
           ) : null}
           {selectedTypeId !== undefined ? (
-            <button onClick={onTypeReset}>Show all Features</button>
+            <Button onClick={onTypeReset}>Show all Features</Button>
           ) : (
             <>
-              <button onClick={onTypeEnabled}>Enable Layer Filter</button>
+              <Button onClick={onTypeEnabled}>Enable Layer Filter</Button>
             </>
           )}
           {permalink ? (
             <a
               href={permalink}
               title={"Permalink to this page"}
-              style={{ float: "right" }}
+              style={{ float: "right", lineHeight: "28px" }}
             >
               permalink here
             </a>

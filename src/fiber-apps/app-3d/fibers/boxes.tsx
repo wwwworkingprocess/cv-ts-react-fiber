@@ -1,5 +1,7 @@
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
+
+import { useFrame } from "@react-three/fiber";
+
 import {
   BoxBufferGeometry,
   BufferGeometry,
@@ -20,14 +22,18 @@ const updateInstanceAtIndex = (
   z: number,
   i: number,
   j: number,
-  baseColor: Color
+  baseColor: Color,
+  country: any
 ): void => {
   const [a, b] = [x / i, z / j]; // offset input
+  //
+  const newX = !country ? i / 2 - x : country.coords[0] * 0.1;
+  const newZ = !country ? j / 2 - z : country.coords[1] * -0.1;
   //
   const sinT = Math.sin((time / Math.PI) * a * b);
   //
   const diffByT = 0.01 + (sinT + 0.8) * 0.042;
-  o3d.position.set(i / 2 - x, -0.29 / 2 + 0.041 + diffByT * 1.41, j / 2 - z);
+  o3d.position.set(newX, -0.29 / 2 + 0.041 + diffByT * 1.41, newZ);
   o3d.rotation.y = time * 0.02;
   o3d.updateMatrix();
   //
@@ -48,17 +54,19 @@ const Boxes = (
     i: number;
     j: number;
     baseColor: Color;
-    //   i,
-    //   j,
-    //   baseColor,
+    countries?: Array<any>;
   }
 ) => {
-  const { i, j, baseColor } = props;
+  const { countries, i, j, baseColor } = props;
   //
+  const hasCountries = countries && countries.length > 0;
+  const count = hasCountries ? countries.length : i * j;
+
   const ref = useRef<InstancedMesh>(null!);
   //
   const material = new MeshStandardMaterial();
-  const boxesGeometry = new BoxBufferGeometry(0.05, 0.29, 0.05);
+  const boxesGeometry = new BoxBufferGeometry(0.05, 0.26, 0.05);
+  //const boxesGeometry = new BoxBufferGeometry(0.25, 0.29, 0.25);
   //
   useFrame(({ clock }) => {
     if (ref.current) {
@@ -67,9 +75,20 @@ const Boxes = (
       //
       for (let x = 0; x < i; x++) {
         for (let z = 0; z < j; z++) {
+          const country = hasCountries ? countries[counter] : undefined;
           const id = counter++; // first index is 1, not 0
           //
-          updateInstanceAtIndex(ref.current, id, t, x, z, i, j, baseColor);
+          updateInstanceAtIndex(
+            ref.current,
+            id,
+            t,
+            x,
+            z,
+            i,
+            j,
+            baseColor,
+            country
+          );
         }
       }
       //
@@ -81,7 +100,7 @@ const Boxes = (
     <instancedMesh
       castShadow
       ref={ref}
-      args={[boxesGeometry, material, i * j]}
+      args={[boxesGeometry, material, count]}
       {...props}
     />
   );

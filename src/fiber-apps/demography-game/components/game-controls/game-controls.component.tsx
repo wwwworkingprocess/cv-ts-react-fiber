@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import Button from "../../../../components/button/button.component";
 import useGameAppStore from "../../stores/useGameAppStore";
 
 // import DebugStorePanel from "../debug-store";
@@ -13,8 +14,7 @@ import {
 } from "./game-controls.styles";
 
 const GameControls = (props: any) => {
-  const { focus, extra, selectionName, zoomToView, setExtra, scrollToDetails } =
-    props;
+  const { extra, selectionName, zoomToView, setExtra, scrollToDetails } = props;
   //
   const [showUI, setShowUI] = useState<boolean>(false);
   //
@@ -52,13 +52,13 @@ const GameControls = (props: any) => {
         {zoom && (
           <>
             {extra ? (
-              <button onClick={(e) => setExtra(false)}>-</button>
+              <Button onClick={(e) => setExtra(false)}>-</Button>
             ) : (
-              <button onClick={(e) => setExtra(true)}>+</button>
-            )}
-            <button onClick={(e) => focus && zoomToView(undefined)}>
-              Zoom out
-            </button>
+              <Button onClick={(e) => setExtra(true)}>+</Button>
+            )}{" "}
+            {selectionName.length ? (
+              <Button onClick={(e) => zoomToView(undefined)}>Zoom out</Button>
+            ) : null}
             {lastTakenPlaceImage}
           </>
         )}
@@ -67,10 +67,15 @@ const GameControls = (props: any) => {
         {showUI ? (
           <>
             <UserGui />
-            <button onClick={(e) => setShowUI(false)}>Close</button>
+            <Button
+              onClick={(e) => setShowUI(false)}
+              style={{ marginTop: "5px" }}
+            >
+              Close
+            </Button>
           </>
         ) : (
-          <button onClick={(e) => setShowUI(true)}>Settings</button>
+          <Button onClick={(e) => setShowUI(true)}>Settings</Button>
         )}
       </WrapToLeft>
       <WrapToBottomLeft>

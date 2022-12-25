@@ -108,7 +108,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
       if (entry) {
         value = entry.value;
         //
-        const url = toWikiCommonsMediaUrl(value, 95);
+        const url = toWikiCommonsMediaUrl(value, 120);
         //
         setLastTakenPlaceImageUrl(url);
       } else setLastTakenPlaceImageUrl(undefined);

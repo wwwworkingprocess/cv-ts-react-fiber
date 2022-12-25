@@ -37,6 +37,9 @@ import useWindowSize from "../../hooks/useWindowSize";
 
 import useTypeMemo from "../../fiber-apps/demography-game/hooks/useTypeMemo";
 import ActionTabMainInfo from "../../components/demography/action-tabs/main-info/main-info.component";
+import Button, {
+  BUTTON_TYPE_CLASSES,
+} from "../../components/button/button.component";
 
 //
 // Routing params by
@@ -275,7 +278,9 @@ const WikiDemographyGame = (props: {
 
   //
 
-  const onZoomReset = () => setZoom(false);
+  const onZoomReset = () => {
+    setSelectedCode(undefined);
+  };
   const onTypeReset = () => setSelectedTypeId(undefined);
   const onTypeEnabled = useCallback(() => {
     if (allTypesWithPath && !selectedTypeId) {
@@ -299,12 +304,14 @@ const WikiDemographyGame = (props: {
   const onPopulatedPlaceClicked = () => console.log("Populated Place Clicked");
   const onFeatureOfTypeClicked = () => console.log("Feature of a Type Clicked");
   const onGotoSearchButtonClicked = () => setTabsIndex(4);
+  const onNavigateToMainPage = () => navigate("/");
   //
   const mainInfoEventHandlers = {
     onZoomReset,
     onTypeEnabled,
     onTypeReset,
     onCountryReset,
+    onNavigateToMainPage,
     onGotoSearchButtonClicked,
     onChangeTopOptions,
     onChangeTopTypeOptions,
@@ -457,14 +464,26 @@ const WikiDemographyGame = (props: {
             setSelectedCode={setSelectedCode}
           />
           {selectedCode ? (
-            <button
-              style={{ float: "right" }}
+            <Button
+              buttonType={
+                isDetailsVisible
+                  ? BUTTON_TYPE_CLASSES.inverted
+                  : BUTTON_TYPE_CLASSES.base
+              }
+              style={{
+                float: "right",
+              }}
               onClick={() => {
                 setIsDetailsVisible(!isDetailsVisible);
               }}
             >
-              {!isDetailsVisible ? "Show" : "Hide"} Details
-            </button>
+              {!isDetailsVisible ? "Show Details" : "Hide Details"}
+            </Button>
+          ) : null}
+          {selectedCode && !isDetailsVisible ? (
+            <div style={{ height: "50px", paddingTop: "20px" }}>
+              Click show details, to learn more about the location.
+            </div>
           ) : null}
         </div>
       )}

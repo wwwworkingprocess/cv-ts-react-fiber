@@ -34,8 +34,6 @@ const useWikiGeoJson = (geojsonUrl: string | undefined) => {
       );
       const url = `https://commons.wikimedia.org/w/api.php?action=query&prop=revisions&rvslots=*&rvprop=content&format=json&titles=${resource}&origin=*`;
       //
-      console.log("original", geojsonUrl);
-      console.log("fetching", url);
       if (url) {
         fetch(url)
           .then(toJson)

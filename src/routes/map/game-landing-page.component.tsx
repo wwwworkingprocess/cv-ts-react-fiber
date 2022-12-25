@@ -41,13 +41,24 @@ const GameLandingPage = () => {
   );
   const onCountryClicked = (c: WikiCountry) => gotoGameInCountry(c.code);
 
+  const gotoMainPage = useCallback(() => navigate(`./`), [navigate]);
+
   //
   //
   //
   return (
     <>
       <h3>Available Countries</h3>
-      <p>Please select a country to start.</p>
+      <p>
+        Please select a country from the list below to start or use the{" "}
+        <span
+          onClick={gotoMainPage}
+          style={{ color: "gold", cursor: "pointer" }}
+        >
+          map to select
+        </span>
+        .
+      </p>
       <CountryList countries={countries} onClicked={onCountryClicked} />
     </>
   );

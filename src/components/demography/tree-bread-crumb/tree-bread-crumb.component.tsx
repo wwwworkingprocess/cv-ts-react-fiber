@@ -2,6 +2,7 @@ import { Fragment, useMemo } from "react";
 import { isMobile } from "react-device-detect";
 
 import TreeHelper from "../../../utils/tree-helper";
+import Button from "../../button/button.component";
 
 //
 //
@@ -68,15 +69,15 @@ const TreeBreadCrumb = (props: {
               {/* Rendering item */}
               {level > 2 ? (
                 <span>
-                  <button
+                  <Button
                     onClick={() => p.code && setSelectedCode(`Q${p.code}`)}
                   >
                     {p.name}
-                  </button>
+                  </Button>
                 </span>
               ) : null}
               {/* Rendering separator */}
-              {level > 2 && level < arr.length - 1 && <span> &gt;&gt; </span>}
+              {level > 2 && level < arr.length - 1 && <span> ➡️ </span>}
             </Fragment>
           ))
         : null}

@@ -1,13 +1,6 @@
-import {
-  useRef,
-  useMemo,
-  Suspense,
-  useState,
-  useCallback,
-  useEffect,
-} from "react";
+import { useRef, useMemo, Suspense, useState } from "react";
 
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 
 import {
   Billboard,
@@ -19,7 +12,7 @@ import {
 } from "@react-three/drei";
 
 import WelcomeText from "../../three-components/text-3d/text-3d.component";
-import { Color, SpotLight, SpotLightHelper, TextureLoader } from "three";
+import { Color, SpotLight, SpotLightHelper } from "three";
 
 import { ShaderPlaneMesh } from "../../three-components/image-plane/shader-material";
 import GridFloor from "../heightmap-random/fibers/grid/grid-floor";
@@ -31,14 +24,13 @@ import { distanceFromCoords } from "../../utils/geo";
 import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 import hungarianBorder from "../hungary/border.28.json"; //"./border.28.json";
-import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
-import useWikiImages from "../../hooks/wiki/useWikiImages";
 
 import NearestCountry from "./fibers/nearest-country";
 import NearbyCountries from "./fibers/nearby-countries";
 import useDragAndDrop from "./hooks/useDragAndDrop";
 import useNearestCountries from "./hooks/useNearestCountries";
 import Nearby from "./components/nearby/nearby.component";
+import { useNavigate } from "react-router-dom";
 
 const MovingSpotLight = (props: JSX.IntrinsicElements["spotLight"]) => {
   const { castShadow } = props;
@@ -99,6 +91,8 @@ const coordsFromPosition = (arr: Array<string>) => {
 const AppHome3D = (props: AppHome3DProps) => {
   const { showGrid, isShadowEnabled, countries } = props;
   //
+  const navigate = useNavigate();
+  //
   const refDrag = useRef<boolean>(false);
   const refDynamicText = useRef<string>("");
   const controlsRef = useRef<any>(null!);
@@ -153,29 +147,19 @@ const AppHome3D = (props: AppHome3DProps) => {
   );
 
   //
-  const renderCountry = (c: WikiCountry, idx: number) => (
-    <span key={`${c.code}_${idx}`}>
-      {availableCountryCodes.includes(c.code) ? (
-        <a href={`map/${c.code}`} title={c.name}>
-          <b key={c.code} style={{ color: "gold" }}>
-            {c.name}
-          </b>
-        </a>
-      ) : (
-        <small>{c.name}</small>
-      )}
-      {idx < LAST_IDX ? " - " : ""}
-    </span>
-  );
-
-  //
-  const boxesMemo = useMemo(
-    () => (
-      <group scale={[10 / 36, 1, 10 / 36]} position={[0, -0.12, 0]}>
-        <Boxes i={36} j={18} baseColor={new Color(1, 1, 1)} />
-      </group>
-    ),
-    []
+  const countryInstancesMemo = useMemo(
+    () =>
+      countries ? (
+        <group scale={[10 / 36, 1, 10 / 36]} position={[0, -0.12, 0]}>
+          <Boxes
+            countries={countries}
+            i={36}
+            j={18}
+            baseColor={new Color(1, 1, 1)}
+          />
+        </group>
+      ) : null,
+    [countries]
   );
   //
   //
@@ -226,11 +210,12 @@ const AppHome3D = (props: AppHome3DProps) => {
             images={images}
             textures={textures}
             availableCountryCodes={availableCountryCodes}
+            navigate={navigate}
           />
 
           <Bounds fit clip observe damping={0.6} margin={5.19}>
             <group position={[0, 0.05, 0]}>
-              <Draggable {...dragProps}>
+              <Draggable minimumThresholdY={0} {...dragProps}>
                 <Billboard>
                   <Text fontSize={0.014} position={[0, 0.051, 0]}>
                     Drag me!
@@ -285,7 +270,7 @@ const AppHome3D = (props: AppHome3DProps) => {
             />
           )}
 
-          {boxesMemo}
+          {countryInstancesMemo}
         </Canvas>
       </Suspense>
     </>

@@ -10,9 +10,10 @@ export function Draggable(
   props: JSX.IntrinsicElements["group"] & {
     onDragStart: any;
     onDragEnd: any;
+    minimumThresholdY: number;
   }
 ) {
-  const { onDragStart, onDragEnd, children } = props;
+  const { onDragStart, onDragEnd, minimumThresholdY, children } = props;
   //
   const ref = useRef<Group>();
   //
@@ -54,8 +55,16 @@ export function Draggable(
       //
       // Update the object position with the original offset
       //
-      if (ref.current && ref.current.position)
+      if (ref.current && ref.current.position) {
+        //
+        // preventing dragging the object below the 'zero-level'
+        //
+        if (mouse3D.y < minimumThresholdY) mouse3D.setY(0);
+        //
+        // applying position update
+        //
         ref.current.position.copy(mouse3D).add(offset);
+      }
     },
 
     //

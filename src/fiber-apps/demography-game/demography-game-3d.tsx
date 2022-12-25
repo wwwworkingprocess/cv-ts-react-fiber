@@ -283,7 +283,6 @@ const DemographyGame3D = (props: {
 
         {/* Game UI (DOM) */}
         <GameControls
-          focus={focus}
           extra={extra}
           selectionName={selectionName}
           setExtra={setExtra}
