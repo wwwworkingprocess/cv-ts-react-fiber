@@ -1,8 +1,8 @@
 [
-{
+  {
     "country": "https://www.wikidata.org/entity/Q1246",
     "countryLabel": "Kosovo",
-	"capitalLabel": "Pristina",
+    "capitalLabel": "Pristina",
     "co_pop": "1883018",
     "c_pop": "0",
     "c_min_elevation": "0",
@@ -2310,48 +2310,7 @@
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Sri%20Lanka.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20Sri%20Lanka.svg"
   },
-  {
-    "country": "https://www.wikidata.org/entity/Q854",
-    "capital": "https://www.wikidata.org/entity/Q41963",
-    "countryLabel": "Sri Lanka",
-    "capitalLabel": "Sri Jayawardenepura Kotte",
-    "co_pop": "21444000",
-    "c_pop": "115826",
-    "c_min_elevation": "27",
-    "c_area": "17000000",
-    "c_ll": "Point(79.833333333 6.916666666)",
-    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Sri+Lanka.map",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Sri%20Lanka.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20Sri%20Lanka.svg"
-  },
-  {
-    "country": "https://www.wikidata.org/entity/Q854",
-    "capital": "https://www.wikidata.org/entity/Q35381",
-    "countryLabel": "Sri Lanka",
-    "capitalLabel": "Colombo",
-    "co_pop": "21444000",
-    "c_pop": "752993",
-    "c_min_elevation": "1",
-    "c_area": "37321728",
-    "c_ll": "Point(79.833333333 6.916666666)",
-    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Sri+Lanka.map",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Sri%20Lanka.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20Sri%20Lanka.svg"
-  },
-  {
-    "country": "https://www.wikidata.org/entity/Q854",
-    "capital": "https://www.wikidata.org/entity/Q35381",
-    "countryLabel": "Sri Lanka",
-    "capitalLabel": "Colombo",
-    "co_pop": "21444000",
-    "c_pop": "752993",
-    "c_min_elevation": "1",
-    "c_area": "37321728",
-    "c_ll": "Point(79.916388888 6.9)",
-    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Sri+Lanka.map",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Sri%20Lanka.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Emblem%20of%20Sri%20Lanka.svg"
-  },
+
   {
     "country": "https://www.wikidata.org/entity/Q1049",
     "capital": "https://www.wikidata.org/entity/Q1963",

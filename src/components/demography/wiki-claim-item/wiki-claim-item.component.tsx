@@ -1,10 +1,13 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { toWikiCategoryEntryUrl, toWikiEntryUrl } from "../../../utils/wiki";
 import {
   WikiClaimItemCaption,
   WikiClaimItemContainer,
   WikiClaimItemContent,
 } from "./wiki-claim-item.styles";
+import Dialog from "../../../components/dialog/dialog.component";
+import PopulationLineChart from "./wiki-claim-item.chart";
+import Button from "../../button/button.component";
 
 type WikiClaimIconProps = {
   property: any; // onClicked: (p: any) => void;
@@ -13,6 +16,7 @@ type WikiClaimIconProps = {
     val: any;
     value: string;
     l: number;
+    raw: any;
   };
 };
 
@@ -70,21 +74,71 @@ const renderClaim = (type: string, property: any, value: string) =>
 
 const WikiClaimItem = (props: WikiClaimIconProps) => {
   const { property, claimEnvelope } = props;
-  const { type, val, value, l } = claimEnvelope;
+  const { type, val, value, l, raw } = claimEnvelope;
   //
   const claim = useMemo(
     () => renderClaim(type, property, value),
     [type, property, value]
   );
   //
+  const [open, setOpen] = useState<boolean>(false);
+  //
+  const lineChartData = useMemo(
+    () =>
+      open && property.name === "population"
+        ? raw
+            .map((r: any) => ({
+              label: parseInt(
+                r?.qualifiers?.P585?.[0]?.datavalue?.value?.time.split(
+                  "-"
+                )[0] ?? 2000
+              ),
+              value: parseInt(r?.mainsnak?.datavalue?.value?.amount ?? 0),
+            }))
+            .sort((a: any, b: any) => a.label - b.label)
+        : [],
+    [raw, property, open]
+  );
+  //
   return (
-    <WikiClaimItemContainer>
-      <WikiClaimItemCaption>
-        {property.name}
-        <small>{l > 1 ? ` [+${l - 1}]` : ""}</small>
-      </WikiClaimItemCaption>
-      <WikiClaimItemContent>{claim}</WikiClaimItemContent>
-    </WikiClaimItemContainer>
+    <>
+      <WikiClaimItemContainer>
+        <WikiClaimItemCaption>
+          {property.name}
+
+          {l > 1 ? (
+            property.code === "P1082" ? (
+              <span
+                style={{ color: "gold", cursor: "pointer" }}
+                onClick={() => setOpen(true)}
+              >
+                (+{l - 1})
+              </span>
+            ) : (
+              <small>[+${l - 1}]</small>
+            )
+          ) : (
+            ""
+          )}
+
+          {/* {isOpen ? (
+        ) : null} */}
+        </WikiClaimItemCaption>
+        <WikiClaimItemContent>{claim}</WikiClaimItemContent>
+      </WikiClaimItemContainer>
+      {open ? (
+        <Dialog isOpen={open} onClose={() => setOpen(false)} width={800}>
+          <div
+            style={{
+              width: "100%",
+              //height: `${lineChartData.length * 20}px`
+            }}
+          >
+            <PopulationLineChart chartData={lineChartData} />
+          </div>
+        </Dialog>
+      ) : null}
+    </>
   );
 };
 

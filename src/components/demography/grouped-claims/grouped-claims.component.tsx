@@ -264,33 +264,6 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
     [wikiCategoryClaims, wikiEntryClaims]
   );
   //
-  //
-  // const toExternalUrl = (url: string, title: string) => {
-  //   let s = url;
-  //   //
-  //   if (s.startsWith("http://")) s = s.replace("http://", "");
-  //   if (s.startsWith("https://")) s = s.replace("https://", "");
-  //   if (s.startsWith("www.")) s = s.replace("www.", "");
-  //   if (s.endsWith("/")) s = s.substring(0, s.length - 1);
-
-  //   return (
-  //     <a
-  //       href={url}
-  //       title={title}
-  //       target="_blank"
-  //       rel="noreferrer"
-  //       style={{ color: "gold", fontSize: "12px" }}
-  //     >
-  //       {s}
-  //     </a>
-  //   );
-  // };
-  //
-  // const toWikiMediaUrl = (s: string) =>
-  //   `https://commons.wikimedia.org/wiki/${s}`;
-  // const toWikiMediaCategoryUrl = (s: string) =>
-  //   `https://commons.wikimedia.org/wiki/Category:${s}`;
-  //
 
   //
   return isVisible ? (
@@ -313,12 +286,12 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
           {/* <h3>Information about {name}</h3> */}
           <FlexContainer>
             {groupedClaims.rest.map(
-              ({ type, val, value, property, l }, idx) => (
+              ({ type, val, value, property, l, raw }, idx) => (
                 <ClaimItem key={idx} height={40} minWidth={160} maxWidth={400}>
                   <WikiClaimIcon property={property} />
                   <WikiClaimItem
                     property={property}
-                    claimEnvelope={{ type, val, value, l }}
+                    claimEnvelope={{ type, val, value, l, raw }}
                   />
                 </ClaimItem>
               )

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import { CloseButton, DialogOverlay, StyledDialog } from "./dialog.styles";
 
 type DialogProps = {
@@ -11,17 +11,21 @@ type DialogProps = {
 const Dialog: FC<DialogProps> = (props: DialogProps) => {
   const { isOpen, onClose, children, width } = props;
   //
-  let dialog = (
-    <>
-      <StyledDialog width={width}>
-        <CloseButton onClick={onClose}>x</CloseButton>
-        <div>{children}</div>
-      </StyledDialog>
-      <DialogOverlay onClick={onClose} />
-    </>
+  let dialog = useMemo(
+    () => (
+      <>
+        <StyledDialog width={width}>
+          <CloseButton onClick={onClose}>x</CloseButton>
+          <div>{children}</div>
+        </StyledDialog>
+        <DialogOverlay onClick={onClose} />
+      </>
+    ),
+    [children, width, onClose]
   );
 
-  return !isOpen ? null : dialog;
+  return isOpen ? dialog : null; // ), [isOpen, dialog]); // isOpen ? null : dialog;
+  ///return useMemo(() => (isOpen ? dialog : null), [isOpen, dialog]); // isOpen ? null : dialog;
 };
 
 export default Dialog;

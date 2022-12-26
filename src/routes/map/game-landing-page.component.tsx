@@ -2,6 +2,8 @@ import { useCallback, useMemo } from "react";
 
 import { useNavigate } from "react-router-dom";
 
+import { Chart, CategoryScale } from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 //TODO: fix usage
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 
@@ -16,6 +18,54 @@ const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
 const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
   a.name.localeCompare(b.name);
 
+Chart.register(CategoryScale); // chart.js/auto also needed (disable tree shaking for the module)
+
+const options = {
+  indexAxis: "y" as const,
+  elements: {
+    bar: {
+      borderWidth: 2,
+    },
+  },
+  responsive: true,
+  plugins: {
+    legend: { position: "bottom" as const, visible: false },
+    title: {
+      display: true,
+      text: "Top 25 Most Populated Countries",
+    },
+  },
+};
+
+const LineChart = (props: {
+  chartData: Array<{ label: string; value: number }>;
+}) => {
+  const { chartData } = props;
+  //
+  const data = useMemo(() => {
+    const labels = chartData.map((c) => c.label);
+    const values = chartData.map((c) => c.value);
+    //
+    return {
+      labels,
+      datasets: [
+        {
+          label: "Population",
+          data: values,
+          borderColor: "rgb(255, 99, 132)",
+          backgroundColor: "rgba(255, 99, 132, 0.5)",
+        },
+      ],
+    };
+  }, [chartData]);
+
+  //
+  return (
+    <div style={{ width: "100%" }}>
+      <Bar data={data} options={options} />
+    </div>
+  );
+};
 //
 // no country code selected
 //
@@ -42,7 +92,15 @@ const GameLandingPage = () => {
   const onCountryClicked = (c: WikiCountry) => gotoGameInCountry(c.code);
 
   const gotoMainPage = useCallback(() => navigate(`./`), [navigate]);
-
+  //
+  const chartData = useMemo(
+    () =>
+      countries
+        .map((c) => ({ label: c.name, value: c.population }))
+        .sort((a, b) => b.value - a.value)
+        .slice(0, 25),
+    [countries]
+  );
   //
   //
   //
@@ -60,6 +118,7 @@ const GameLandingPage = () => {
         .
       </p>
       <CountryList countries={countries} onClicked={onCountryClicked} />
+      <LineChart chartData={chartData} />
     </>
   );
 };

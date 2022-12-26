@@ -43,7 +43,7 @@ export const ClaimItem = styled.div<ClaimItemProps>`
   ${({ maxWidth }) => ({ maxWidth: `${maxWidth}px` })}
 
   div {
-    ${({ maxWidth }) => ({ maxWidth: `${maxWidth}px` })}
+    // ${({ maxWidth }) => ({ maxWidth: `${maxWidth}px` })}
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
