@@ -64,7 +64,34 @@ const availableCountryCodes = [
   "Q399",
   "Q403",
   "Q408",
-  "Q668",
+  //
+  "Q414",
+  "Q419",
+  "Q423",
+  "Q424",
+  "Q574",
+  "Q657",
+  "Q664",
+  "Q668", // india
+  "Q678",
+  "Q686",
+  "Q697",
+  "Q702",
+  "Q709",
+  "Q710",
+  "Q711",
+  "Q712",
+  "Q717",
+  "Q730",
+  "Q733",
+  "Q734",
+  "Q736",
+  "Q739",
+  "Q750",
+  "Q754",
+  "Q757",
+  "Q760",
+  "Q763",
   //
   "Q766",
   "Q769",
@@ -204,7 +231,34 @@ const zoomFixes = {
   Q399: 0,
   Q403: 13,
   Q408: 21.8,
-  Q668: 22,
+
+  Q414: 22.5,
+  Q419: 20.7,
+  Q423: 5,
+  Q424: 7,
+  Q574: -3,
+  Q657: 21.6,
+  Q664: 23.9, // invalid or missing bb
+  Q668: 22, // india
+  Q678: -8,
+  Q686: 0,
+  Q697: -18,
+  Q702: 17,
+  Q709: 5,
+  Q710: 17, // invalid bb
+  Q711: 17.5,
+  Q712: 23, // invalid bb or missing bb
+  Q717: 20,
+  Q730: 14.5,
+  Q733: 17,
+  Q734: 19,
+  Q736: 18.5,
+  Q739: 20.5,
+  Q750: 20.3,
+  Q754: -2,
+  Q757: -13,
+  Q760: -14,
+  Q763: -19, //TODO: only unlinked nodes in tree
   Q766: -2, // invalid bb
   Q769: -17,
   Q774: 6,
@@ -398,6 +452,10 @@ export const beautifyAdminOneName = (countryCode: number, s: string) => {
       return (s ?? "").replaceAll(" Governorate", "");
     case 399:
       return (s ?? "").replaceAll(" Region", "").replaceAll(" Province", "");
+    //
+    case 414:
+      return (s ?? "").replaceAll(" Province", "");
+    //
     case 796:
       return (s ?? "").replaceAll(" Governorate", "");
     case 800:

@@ -215,9 +215,6 @@ export const useTreeHelper = (
         case 4:
           setKeys(tree._keys_cache); // passing reference of helper-result
           setValue(tree);
-          // setLoading(false);
-          //
-          // updateTypeTree(types);
           break;
         case 5:
           updateTypeTree(types);
@@ -227,16 +224,8 @@ export const useTreeHelper = (
           break;
       }
 
-      //tree._build_from_flatmap(hierarchy); // creating tree hieararcy (nodes & edges)
-
-      if (loadStep < 6) {
-        console.log("in load step", loadStep);
-        increaseLoadStep();
-      } else {
-        setLoading(false);
-      }
-      //setLoadStep(nodeCount);
-      //
+      if (loadStep < 6) increaseLoadStep();
+      else setLoading(false);
     }
   }, [
     tree,

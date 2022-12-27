@@ -1,18 +1,19 @@
 import { useMemo, useState } from "react";
+
 import { toWikiCategoryEntryUrl, toWikiEntryUrl } from "../../../utils/wiki";
+import useWikiChartData from "../../../hooks/wiki/useWikiChartData";
+
+import Dialog from "../../../components/dialog/dialog.component";
+import PopulationDevelopmentChart from "../../charts/population-development-chart/population-development-chart.component";
+
 import {
   WikiClaimItemCaption,
   WikiClaimItemContainer,
   WikiClaimItemContent,
 } from "./wiki-claim-item.styles";
-import Dialog from "../../../components/dialog/dialog.component";
-import PopulationLineChart from "./wiki-claim-item.chart";
-import Button from "../../button/button.component";
-import PopulationDevelopmentChart from "../../charts/population-development-chart/population-development-chart.component";
-import useWikiChartData from "../../../hooks/wiki/useWikiChartData";
 
 type WikiClaimIconProps = {
-  property: any; // onClicked: (p: any) => void;
+  property: any;
   claimEnvelope: {
     type: string;
     val: any;
@@ -29,7 +30,7 @@ const toExternalUrl = (url: string, title: string) => {
   if (s.startsWith("https://")) s = s.replace("https://", "");
   if (s.startsWith("www.")) s = s.replace("www.", "");
   if (s.endsWith("/")) s = s.substring(0, s.length - 1);
-
+  //
   return (
     <a
       href={url}
@@ -84,7 +85,7 @@ const MoreButton = (props: { property: any; l: number; onClick: any }) => {
       (+{l - 1})
     </span>
   ) : (
-    <small>[+${l - 1}]</small>
+    <small>[+{l - 1}]</small>
   );
 };
 
@@ -103,7 +104,6 @@ const WikiClaimItem = (props: WikiClaimIconProps) => {
   const data = useWikiChartData(property, raw, skip);
   //
   const onMoreClick = () => setOpen(true);
-
   //
   return (
     <>

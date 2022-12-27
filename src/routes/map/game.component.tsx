@@ -381,23 +381,8 @@ const WikiDemographyGame = (props: {
           )
         : null}
 
-      {/* NEARBY ITEMS */}
-      {tabsIndex === 2 && tree && selectedCountry && selectedCode ? (
-        <div style={{ width: "100%" }}>
-          <h3>
-            Nearby {tree._n(selectedCode)?.name} in {selectedCountry.name}
-          </h3>
-
-          <NearbyTreeItems
-            tree={tree}
-            selectedCode={selectedCode}
-            setSelectedCode={setSelectedCode}
-          />
-        </div>
-      ) : null}
-
       {/* FEATURES SUMMARY */}
-      {tabsIndex === 3 && tree && typeTree && typeMemo ? (
+      {tabsIndex === 2 && tree && typeTree && typeMemo ? (
         <div style={{ width: "100%" }}>
           <h3>Feature summary</h3>
           {countryCode ? (
@@ -411,6 +396,21 @@ const WikiDemographyGame = (props: {
               setTabsIndex={setTabsIndex}
             />
           ) : null}
+        </div>
+      ) : null}
+
+      {/* NEARBY ITEMS */}
+      {tabsIndex === 3 && tree && selectedCountry && selectedCode ? (
+        <div style={{ width: "100%" }}>
+          <h3>
+            Nearby {tree._n(selectedCode)?.name} in {selectedCountry.name}
+          </h3>
+
+          <NearbyTreeItems
+            tree={tree}
+            selectedCode={selectedCode}
+            setSelectedCode={setSelectedCode}
+          />
         </div>
       ) : null}
 
@@ -442,7 +442,7 @@ const WikiDemographyGame = (props: {
         </>
       ) : (
         <div>
-          {tabsIndex === 3 ? (
+          {tabsIndex === 2 ? (
             typeGraphData ? (
               <>
                 <FeaturesOverview
@@ -451,7 +451,6 @@ const WikiDemographyGame = (props: {
                   graphWidth={graphWidth}
                   setSelectedTypeId={setSelectedTypeId}
                 />
-                {/* Type:{selectedTypeId} */}
               </>
             ) : null
           ) : (
