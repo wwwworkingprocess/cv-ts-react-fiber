@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { useWikidata } from "../../../hooks/useWikidata";
+import { useWikiEntity } from "../../../hooks/wiki/useWikiEntity";
 
 import { Spinner } from "../../spinner/spinner.component";
 import GroupedClaims from "../grouped-claims/grouped-claims.component";
@@ -11,9 +11,9 @@ const WikiItemDetails = (props: {
 }) => {
   const { selectedCode, isVisible } = props;
   //
-  const { loading: wikiLoading, data } = useWikidata(selectedCode);
+  const { loading, data } = useWikiEntity(selectedCode);
   //
-  const wikiEntry = useMemo(
+  const wikiEntity = useMemo(
     () => (selectedCode ? (data as any)?.entities[selectedCode] : undefined),
     [data, selectedCode]
   );
@@ -22,11 +22,11 @@ const WikiItemDetails = (props: {
   //
   return selectedCode ? (
     <>
-      {wikiLoading && <div>Loading...</div>}
-      {wikiLoading || !data ? (
+      {loading && <div>Loading...</div>}
+      {loading || !data ? (
         <Spinner />
       ) : (
-        <GroupedClaims wikiEntry={wikiEntry} isVisible={isVisible} />
+        <GroupedClaims wikiEntity={wikiEntity} isVisible={isVisible} />
       )}
     </>
   ) : null;

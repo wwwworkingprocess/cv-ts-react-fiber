@@ -7,10 +7,9 @@ import {
   hasFormatterUrl,
   toWikiCommonsMediaUrl,
   toWikiEntryUrl,
-  toWikiCategoryEntryUrl,
 } from "../../../utils/wiki";
 
-import { useWikiEntryReader } from "../../../hooks/wiki/useWikiEntryReader";
+import { useWikiEntityReader } from "../../../hooks/wiki/useWikiEntityReader";
 
 import Dialog from "../../dialog/dialog.component";
 
@@ -25,11 +24,11 @@ import {
   FlexContainer,
   FlexMediaContainer,
 } from "./grouped-claims.styles";
-import useWikiClaimIcons from "../../../fiber-apps/demography-game/hooks/useWikiClaimIcons";
+
 import WikiClaimIcon from "../wiki-claim-icon/wiki-claim-icon.component";
 import WikiClaimItem from "../wiki-claim-item/wiki-claim-item.component";
 
-type GroupedClaimsProps = { wikiEntry: any; isVisible: boolean };
+type GroupedClaimsProps = { wikiEntity: any; isVisible: boolean };
 
 export type Claim = {
   // ...
@@ -49,7 +48,7 @@ export type Claim = {
 //
 //
 const GroupedClaims = (props: GroupedClaimsProps) => {
-  const { wikiEntry, isVisible } = props;
+  const { wikiEntity, isVisible } = props;
   //
   const setLastTakenPlaceImageUrl = useGameAppStore(
     (s) => s.setLastTakenPlaceImageUrl
@@ -58,7 +57,7 @@ const GroupedClaims = (props: GroupedClaimsProps) => {
     (s) => s.setLastTakenPlaceGeoJsonUrl
   );
   //
-  const { name, labels, claimsMeta } = useWikiEntryReader(wikiEntry);
+  const { name, labels, claimsMeta } = useWikiEntityReader(wikiEntity);
   //
   const [imageFitWidth, setImageFitWidth] = useState<boolean>(true);
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);

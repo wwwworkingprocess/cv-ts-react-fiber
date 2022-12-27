@@ -1,9 +1,7 @@
-import { useCallback, useMemo } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { Chart, CategoryScale } from "chart.js/auto";
-import { Bar } from "react-chartjs-2";
 //TODO: fix usage
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 
@@ -12,60 +10,15 @@ import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 import CountryList from "../../components/demography/country-list/country-list.component";
+import PopulationCountriesChart from "../../components/charts/population-countries-chart/population-countries-chart.component";
+import Button from "../../components/button/button.component";
 
 const availableCountryCodes = getAvailableCountryCodes();
 const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
 const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
   a.name.localeCompare(b.name);
 
-Chart.register(CategoryScale); // chart.js/auto also needed (disable tree shaking for the module)
-
-const options = {
-  indexAxis: "y" as const,
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: { position: "bottom" as const, visible: false },
-    title: {
-      display: true,
-      text: "Top 25 Most Populated Countries",
-    },
-  },
-};
-
-const LineChart = (props: {
-  chartData: Array<{ label: string; value: number }>;
-}) => {
-  const { chartData } = props;
-  //
-  const data = useMemo(() => {
-    const labels = chartData.map((c) => c.label);
-    const values = chartData.map((c) => c.value);
-    //
-    return {
-      labels,
-      datasets: [
-        {
-          label: "Population",
-          data: values,
-          borderColor: "rgb(255, 99, 132)",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
-        },
-      ],
-    };
-  }, [chartData]);
-
-  //
-  return (
-    <div style={{ width: "100%" }}>
-      <Bar data={data} options={options} />
-    </div>
-  );
-};
+const pageSizeOptions = [3, 5, 10, 12, 15, 20, 25, 50, 100, 200];
 //
 // no country code selected
 //
@@ -91,15 +44,47 @@ const GameLandingPage = () => {
   );
   const onCountryClicked = (c: WikiCountry) => gotoGameInCountry(c.code);
 
-  const gotoMainPage = useCallback(() => navigate(`./`), [navigate]);
+  const gotoMainPage = useCallback(() => navigate(`../..`), [navigate]);
   //
+  const [pageSize, setPageSize] = useState<number>(pageSizeOptions[2]);
+  const onChangePagingOptions = useCallback((e: any) => {
+    setPageSize(e.target.value);
+    setPage(0);
+  }, []);
+  //
+  const pagingOptions = useMemo(() => {
+    return (
+      <select value={pageSize} onChange={onChangePagingOptions}>
+        {pageSizeOptions.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
+      </select>
+    );
+  }, [pageSize, onChangePagingOptions]);
+
+  const [page, setPage] = useState<number>(0);
+  const lastPage = useMemo(
+    () => Math.floor(countries.length / pageSize),
+    [countries, pageSize]
+  );
+
+  const title = useMemo(
+    () =>
+      page === 0
+        ? `Top ${pageSize} Most Populated Countries`
+        : `Most Populated Countries (${page * pageSize}...${
+            (page + 1) * pageSize
+          })`,
+    [page, pageSize]
+  );
+
   const chartData = useMemo(
     () =>
       countries
         .map((c) => ({ label: c.name, value: c.population }))
         .sort((a, b) => b.value - a.value)
-        .slice(0, 25),
-    [countries]
+        .slice(page * pageSize, (page + 1) * pageSize),
+    [countries, page, pageSize]
   );
   //
   //
@@ -118,7 +103,24 @@ const GameLandingPage = () => {
         .
       </p>
       <CountryList countries={countries} onClicked={onCountryClicked} />
-      <LineChart chartData={chartData} />
+      <div style={{ textAlign: "center" }}>
+        {page !== 0 ? (
+          <Button onClick={() => setPage((p) => Math.max(0, p - 1))}>
+            Prev
+          </Button>
+        ) : null}{" "}
+        {pagingOptions}{" "}
+        {page !== lastPage ? (
+          <Button onClick={() => setPage((p) => Math.min(lastPage, p + 1))}>
+            Next
+          </Button>
+        ) : null}
+        <PopulationCountriesChart
+          data={chartData}
+          title={title}
+          label={"Population"}
+        />
+      </div>
     </>
   );
 };

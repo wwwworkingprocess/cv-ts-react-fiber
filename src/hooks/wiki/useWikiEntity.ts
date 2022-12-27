@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 // Retrieves metadata from WikiData about the
 // entity specified by the qualifier. (e.g Q1003 or Q1186)
 //
-export const useWikidata = (qualifier: string | undefined) => {
+export const useWikiEntity = (qualifier: string | undefined) => {
   const [loading, setLoading] = useState<boolean>(false);
   const [data, setData] = useState<Array<any> | null>(null);
   //

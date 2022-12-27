@@ -97,7 +97,7 @@ const toRawResult = ([code, claim]: [string, any]) => ({
 //
 //
 //
-export const useWikiEntryReader = (wikiEntry: any) => {
+export const useWikiEntityReader = (wikiEntry: any) => {
   const name = useMemo(
     () => (wikiEntry ? String(wikiEntry.labels["en"]?.value ?? "") : undefined),
     [wikiEntry]
