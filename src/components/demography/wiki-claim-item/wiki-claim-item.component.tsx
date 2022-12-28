@@ -5,6 +5,8 @@ import useWikiChartData from "../../../hooks/wiki/useWikiChartData";
 
 import Dialog from "../../../components/dialog/dialog.component";
 import PopulationDevelopmentChart from "../../charts/population-development-chart/population-development-chart.component";
+import LifeExpectancyChart from "../../charts/life-expectancy-chart/life-expectancy-chart.component";
+import DemocracyIndexChart from "../../charts/democracy-index-chart/democracy-index-chart.component";
 
 import {
   WikiClaimItemCaption,
@@ -80,7 +82,11 @@ const MoreButton = (props: { property: any; l: number; onClick: any }) => {
   //
   if (l <= 1) return null;
   //
-  return property.code === "P1082" ? (
+  const isMoreButtonActive = ["P1082", "P2250", "P8328"].includes(
+    property.code
+  );
+  //
+  return isMoreButtonActive ? (
     <span style={{ color: "gold", cursor: "pointer" }} onClick={onClick}>
       (+{l - 1})
     </span>
@@ -105,6 +111,20 @@ const WikiClaimItem = (props: WikiClaimIconProps) => {
   //
   const onMoreClick = () => setOpen(true);
   //
+  const currentChart = useMemo(
+    () =>
+      data.length === 0 ? null : property.code === "P1082" ? (
+        <PopulationDevelopmentChart data={data} />
+      ) : property.code === "P2250" ? (
+        <LifeExpectancyChart data={data} />
+      ) : property.code === "P8328" ? (
+        <DemocracyIndexChart data={data} />
+      ) : null,
+    [property, data]
+  );
+  //
+  // console.log("chart data", data);
+  //
   return (
     <>
       <WikiClaimItemContainer>
@@ -118,7 +138,7 @@ const WikiClaimItem = (props: WikiClaimIconProps) => {
       {open ? (
         <Dialog isOpen={open} onClose={() => setOpen(false)} width={800}>
           <div style={{ margin: "10px", marginBottom: "0px" }}>
-            <PopulationDevelopmentChart data={data} />
+            {currentChart}
           </div>
         </Dialog>
       ) : null}

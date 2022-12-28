@@ -8,7 +8,7 @@ Chart.register(CategoryScale); // chart.js/auto also needed (disable tree shakin
 type PopulationCountriesChartProps = {
   title: string;
   label: string;
-  data: Array<{ label: string; value: number }>;
+  data: Array<{ label: string | number; value: number }>;
 };
 
 const chartOptions = {

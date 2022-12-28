@@ -1,27 +1,84 @@
 import { useMemo } from "react";
 
+// TODO: handledprops, charttypes enum
+const chartTypes = {
+  P1082: "population",
+  P2250: "life expectancy",
+  P8328: "democracy index",
+} as Record<string, string>;
+
 //
-// Retrieves metadata from WikiData about the
-// entity specified by the qualifier. (e.g Q1003 or Q1186)
+// Data accessor functions
+//
+const readInt = (r: any) =>
+  parseInt(r?.mainsnak?.datavalue?.value?.amount ?? 0);
+const readFloat = (r: any) =>
+  parseFloat(r?.mainsnak?.datavalue?.value?.amount ?? 0);
+const readYear = (r: any) =>
+  parseInt(
+    r?.qualifiers?.P585?.[0]?.datavalue?.value?.time.split("-")[0] ?? 2000
+  );
+
+const sortByNumericLabel = (a: any, b: any) => a.label - b.label;
+
+const readChartData = (raw: Array<any>, accessor?: (r: any) => any) =>
+  !accessor
+    ? raw
+        .map((r: any) => ({ label: readYear(r), value: readInt(r) }))
+        .sort(sortByNumericLabel)
+    : raw
+        .map((r: any) => ({ label: readYear(r), value: accessor(r) }))
+        .sort(sortByNumericLabel);
+
+//
+// Returns a chartable dataset based on the passed in property and raw data
+// Use 'skip' to disable the hook (dynamically)
 //
 const useWikiChartData = (property: any, raw: any, skip: boolean) => {
+  const chartType = useMemo(
+    () => (!skip ? String(chartTypes[property.code] ?? "") : ""),
+    [property, skip]
+  );
+
+  //
+  // Datasource for 'Population Development Chart' (P1082)
+  //
+  const dataPopulation = useMemo(
+    () => (chartType === "population" ? readChartData(raw) : []),
+    [raw, chartType]
+  );
+
+  //
+  // Datasource for 'Life Expectancy Chart' (P2250)
+  //
+  const dataLifeExpectancy = useMemo(
+    () => (chartType === "life expectancy" ? readChartData(raw) : []),
+    [raw, chartType]
+  );
+
+  //
+  // Datasource for 'Democracy Index Chart' (P8328)
+  //
+  const dataDemocracyIndex = useMemo(
+    () =>
+      chartType === "democracy index" ? readChartData(raw, readFloat) : [],
+    [raw, chartType]
+  );
+
+  //
+  // Returning appropriate dataset based on chart type
+  //
   const data = useMemo(
     () =>
-      !skip && property.code === "P1082" // "population"
-        ? raw
-            .map((r: any) => ({
-              label: parseInt(
-                r?.qualifiers?.P585?.[0]?.datavalue?.value?.time.split(
-                  "-"
-                )[0] ?? 2000
-              ),
-              value: parseInt(r?.mainsnak?.datavalue?.value?.amount ?? 0),
-            }))
-            .sort((a: any, b: any) => a.label - b.label)
+      chartType === "population"
+        ? dataPopulation
+        : chartType === "life expectancy"
+        ? dataLifeExpectancy
+        : chartType === "democracy index"
+        ? dataDemocracyIndex
         : [],
-    [raw, property, skip]
+    [chartType, dataPopulation, dataLifeExpectancy, dataDemocracyIndex]
   );
-  //
   return data;
 };
 

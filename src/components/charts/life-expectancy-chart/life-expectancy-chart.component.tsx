@@ -11,11 +11,11 @@ const options = {
   elements: { bar: { borderWidth: 2 } },
   plugins: {
     legend: { position: "bottom" as const, visible: false },
-    title: { display: true, text: "Population Development over time" },
+    title: { display: true, text: "Life Expectancy over time" },
   },
 };
 
-const PopulationDevelopmentChart = (props: {
+const LifeExpectancyChart = (props: {
   data: Array<{ label: string | number; value: number }>;
 }) => {
   const { data } = props;
@@ -28,7 +28,7 @@ const PopulationDevelopmentChart = (props: {
       labels,
       datasets: [
         {
-          label: "Population",
+          label: "Life Expectancy",
           data: values,
           borderColor: "rgb(255, 99, 132)",
           backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -40,4 +40,4 @@ const PopulationDevelopmentChart = (props: {
   return <Bar data={memo} options={options} />;
 };
 
-export default PopulationDevelopmentChart;
+export default LifeExpectancyChart;
