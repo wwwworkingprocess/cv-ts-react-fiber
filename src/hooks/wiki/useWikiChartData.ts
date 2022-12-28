@@ -52,7 +52,8 @@ const useWikiChartData = (property: any, raw: any, skip: boolean) => {
   // Datasource for 'Life Expectancy Chart' (P2250)
   //
   const dataLifeExpectancy = useMemo(
-    () => (chartType === "life expectancy" ? readChartData(raw) : []),
+    () =>
+      chartType === "life expectancy" ? readChartData(raw, readFloat) : [],
     [raw, chartType]
   );
 
