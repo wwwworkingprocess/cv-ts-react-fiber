@@ -2,6 +2,7 @@ import { useMemo } from "react";
 
 import type TreeHelper from "../../../utils/tree-helper";
 import { treeFromJson } from "../../../utils/tree-helper";
+import { TreeNodeEntry } from "../../../utils/tree-helper.types";
 
 export type ReducedTypeMemo = {
   admins: Array<any>;
@@ -101,12 +102,18 @@ const useTypeMemo = (
         // known: ids and count
         //
         const knownIdsWithCount = knownIds
-          .map((t) => ({
-            t,
-            label: typeTree._find(t).name,
-            count: tree.typeSize(t),
-            pns: typeTree.get_pnames(typeTree._find(t)),
-          }))
+          .map((id) => [id, typeTree._find(id)] as [number, TreeNodeEntry])
+          .filter(([id, n]) => n !== undefined)
+          .map(([id, n]) => {
+            if (n === undefined) return { t: id, label: "", count: 0, pns: "" };
+            //
+            return {
+              t: id,
+              label: n.name ?? "",
+              count: tree.typeSize(id),
+              pns: typeTree.get_pnames(n),
+            };
+          })
           .sort((a, b) => b.count - a.count);
         const knownInstanceCount = knownIdsWithCount
           .map((t) => t.count)
@@ -151,10 +158,14 @@ const useTypeMemo = (
           const getInstanceCount = (type: number) => tree.typeSize(type);
           const hasInstance = (type: number) => getInstanceCount(type) > 0;
           //
-          const countriesUsed = countries.filter(([t]) => hasInstance(t));
-          const adminsUsed = admins.filter(([t]) => hasInstance(t));
-          const settlementsUsed = settlements.filter(([t]) => hasInstance(t));
-          const restsUsed = rest.filter(([t]) => hasInstance(t));
+          const countriesUsed = countries.filter(([t]) =>
+            hasInstance(t as number)
+          );
+          const adminsUsed = admins.filter(([t]) => hasInstance(t as number));
+          const settlementsUsed = settlements.filter(([t]) =>
+            hasInstance(t as number)
+          );
+          const restsUsed = rest.filter(([t]) => hasInstance(t as number));
           //
           // sorting ids by number of instances descending
           //
@@ -223,11 +234,15 @@ const useTypeMemo = (
       // clone nodes of type tree
       //
       const clones = treeFromJson(typeTree.toJson());
-      const _nodes = Object.values(clones.NODES).map((c) => ({
-        id: String(c.code),
-        group: String(c.p),
-        ...c,
-      }));
+      const _nodes = [] as Array<any>;
+      //
+      clones.NODES.forEach((node) => {
+        _nodes.push({
+          id: String(node.code),
+          group: String(node.p),
+          ...node,
+        });
+      });
       //
       const _links = _nodes.filter(excludeRoot).map(renderRawLink);
       //
@@ -252,11 +267,11 @@ const useTypeMemo = (
         links: [...renderedLinks] as Array<{ source: string; target: string }>,
       };
       //
-      // console.log("nodes", _nodes, "links", _links);
-      // console.log("allTargets", allTargets);
-      // console.log("leafs", leafs);
-      // console.log("leafIds", leafIds);
-      // console.log("nodesWithCount", nodesWithCount);
+      console.log("nodes", _nodes, "links", _links);
+      console.log("allTargets", allTargets);
+      console.log("leafs", leafs);
+      console.log("leafIds", leafIds);
+      console.log("nodesWithCount", nodesWithCount);
       //
       console.log("Type Graph ready", graphData, leafIds.length, "leaf nodes");
       //
@@ -300,9 +315,14 @@ const useTypeMemo = (
 // Helper function to group feature types (country/admin/city/rest)
 //
 export const getTypeTreeGroups = (tree: TreeHelper, useAllNodes?: boolean) => {
+  //const all = tree.getLeafNodes();
+  //
   const leafNodes = useAllNodes
-    ? Object.keys(tree.NODES).map((code) => tree._n(String(code)))
-    : tree.getLeafNodes();
+    ? tree.list_all()
+    : // Object.keys(tree.NODES)
+      //     .map((code) => tree._n(String(code)))
+      //     .filter((n) => n !== undefined)
+      tree.getLeafNodes();
   const leafNodesWithPath = leafNodes.map((node) => [
     node.code,
     tree.get_pcodes(node),
@@ -311,23 +331,23 @@ export const getTypeTreeGroups = (tree: TreeHelper, useAllNodes?: boolean) => {
   //
   const countryTypeId = 183039; // root-country
   const countryTypes = leafNodesWithPath.filter(
-    ([c, chain, n]) => chain[1] === countryTypeId
+    ([c, chain, n]) => (chain as Array<number>)[1] === countryTypeId
   );
   //
   const admin = 56061; // any-admin
   const adminTypes = leafNodesWithPath.filter(
-    ([c, chain, n]) => chain[1] === admin
+    ([c, chain, n]) => (chain as Array<number>)[1] === admin
   );
   const settlement = 486972; // human settlement
   const settlementTypes = leafNodesWithPath.filter(
-    ([c, chain, n]) => chain[1] === settlement
+    ([c, chain, n]) => (chain as Array<number>)[1] === settlement
   );
   //
   const allIds = leafNodes.map((node) => node.code);
   const usedIds = [
-    ...countryTypes.map((t) => t[0]),
-    ...adminTypes.map((t) => t[0]),
-    ...settlementTypes.map((t) => t[0]),
+    ...countryTypes.map((t) => t[0] as number),
+    ...adminTypes.map((t) => t[0] as number),
+    ...settlementTypes.map((t) => t[0] as number),
   ].sort((a, b) => a - b);
   //
   const restIds = allIds
@@ -342,7 +362,7 @@ export const getTypeTreeGroups = (tree: TreeHelper, useAllNodes?: boolean) => {
   console.log("adminTypes", adminTypes);
   */
   const restTypes = leafNodesWithPath.filter(([code]) =>
-    restIds.includes(code)
+    restIds.includes(code as number)
   );
   //
   const envelope = {

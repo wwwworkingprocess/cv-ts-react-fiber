@@ -2,12 +2,13 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { getAvailableCountryCodes } from "../utils/country-helper";
 
+import type { TreeNodeNumericProps } from "../utils/tree-helper.types";
+
 import TreeHelper, {
   fn_from_ab,
   fn_blob_to_hierarchy,
   fn_blob_to_nodedata,
 } from "../utils/tree-helper";
-import type { TreeNodeNumericProps } from "../utils/tree-helper";
 
 import {
   load_hierarchy,
@@ -202,7 +203,10 @@ export const useTreeHelper = (
         case 1:
           {
             const nodeCount = tree._build_from_flatmap_typed(hierarchy); // creating tree hieararcy (nodes & edges)
-            tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
+            //tree.NODES["Q3"].p = undefined; // no better way ATM, consider using p === 0 instead of p === undefined as 'root classifier'
+            const root = tree.NODES.get(3);
+            if (root) root.p = undefined;
+            //
             setLoadCount(nodeCount);
           }
           break;
@@ -213,7 +217,17 @@ export const useTreeHelper = (
           tree._build_nodedata(nodedata); // decorating nodes (numeric data)
           break;
         case 4:
-          setKeys(tree._keys_cache); // passing reference of helper-result
+          const vals = tree.NODES;
+          const keys_cache = [] as Array<string>;
+          //
+          vals.forEach((val, key, map) => {
+            keys_cache.push(`Q${key}`);
+          });
+
+          //
+
+          //setKeys(tree._keys_cache); // passing reference of helper-result
+          setKeys(keys_cache); //  // passing reference of helper-result
           setValue(tree);
           break;
         case 5:

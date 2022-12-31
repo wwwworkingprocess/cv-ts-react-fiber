@@ -1,4 +1,4 @@
-import { TreeNodeNumericProps } from "./tree-helper";
+import { TreeNodeNumericProps } from "./tree-helper.types";
 
 export const responseAsJson = (response: Response) => {
   if (!response.ok) {

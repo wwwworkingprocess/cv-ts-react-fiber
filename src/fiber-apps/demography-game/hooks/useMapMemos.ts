@@ -45,10 +45,12 @@ const useMapMemos = (
   );
   //
   //
+  // console.log("MM-tree-ready", isTreeReady, keys);
   //
   const adminOneMemo = useMemo(() => {
     if (!tree || !selectedCountry || !isAdminOneReady) return [];
     //
+    //const arr = tree._children_of(tree._qq(selectedCountry.code));
     const arr = tree._children_of(tree._qq(selectedCountry.code));
     //
     return arr
@@ -57,7 +59,7 @@ const useMapMemos = (
         name: beautifyAdminOneName(countryCode, name),
         countryCode,
         size: tree?._children_of(tree._qq(code)).length ?? 0,
-        data: tree?._n(code).data,
+        data: tree?._n(code)?.data,
       }))
       .sort((a, b) => a.name.localeCompare(b.name));
   }, [tree, selectedCountry, isAdminOneReady]);
@@ -87,7 +89,7 @@ const useMapMemos = (
         arr = [] as Array<Array<any>>; // skip
       } else {
         if (isLeaf) {
-          const parentCode = parseInt(selectedNode.p || "3");
+          const parentCode = selectedNode.p || 3;
           //
           arr = isReady ? tree._children_of(parentCode) : [];
         } else {
@@ -105,7 +107,7 @@ const useMapMemos = (
         name,
         parentCode,
         tree?._children_of(tree._qq(code || "")).length ?? 0,
-        tree?._n(code).data,
+        tree?._n(code)?.data,
       ])
       .filter((arr) => arr[4] !== undefined);
 

@@ -23,6 +23,7 @@ const availableCountryCodes = [
   "Q45",
   "Q55",
   "Q77",
+  // "Q96", Mexico - dataset too large
   "Q115",
   "Q117",
   //

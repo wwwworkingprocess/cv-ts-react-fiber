@@ -59,7 +59,7 @@ const WikiDemographyGame = (props: {
   //
   // COMPONENT LEVEL STATE
   //
-  const tabs = ["Main Info", "Browse", "Nearby", "Features"]; // + "Search",
+  const tabs = ["Main Info", "Browse", "Features", "Nearby"]; // + "Search",
   const [tabsIndex, setTabsIndex] = useState<number>(0);
   //
   const [isDetailsVisible, setIsDetailsVisible] = useState<boolean>(false);
@@ -108,6 +108,7 @@ const WikiDemographyGame = (props: {
     path
   );
 
+  //console.log("mapmemo", adminOneMemo, adminTwoMemo);
   //
   // Type related memos created 'over' (tree+typetree)
   //
@@ -186,7 +187,7 @@ const WikiDemographyGame = (props: {
 
     const selectedGrandParent =
       isLeaf && selectedParent
-        ? tree._n(tree._qc(selectedParent.p))
+        ? tree._n(tree._qc(selectedParent.p ?? 0))
         : undefined;
     //
     const activeParent = isLeaf ? selectedGrandParent : selectedParent;
