@@ -2776,5 +2776,19 @@
     "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Nederland.map",
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Netherlands.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Netherlands.svg"
+  },
+  {
+    "country": "https://www.wikidata.org/entity/Q865",
+    "capital": "https://www.wikidata.org/entity/Q1867",
+    "countryLabel": "Taiwan",
+    "capitalLabel": "Taipei",
+    "co_pop": "23593794",
+    "c_pop": "2603150",
+    "c_min_elevation": "10",
+    "c_area": "36193",
+    "c_ll": "Point(25.2 121.31)",
+    "co_geoshape": "https://commons.wikimedia.org/data/main/Data:Taiwan.map",
+    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Republic%20of%20China.svg",
+    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Emblem%20of%20the%20Republic%20of%20China.svg"
   }
 ]

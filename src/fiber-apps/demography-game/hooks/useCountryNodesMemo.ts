@@ -3,7 +3,8 @@ import { useCallback, useMemo } from "react";
 import TreeHelper from "../../../utils/tree-helper";
 import { distance } from "../../../utils/geo";
 import { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
-import { getCountryNodesFromTree } from "../../../utils/country-helper";
+
+import { getCountryNodesFromTree } from "../../../config/country";
 
 const useCountryNodesMemo = (
   selectedCountry: WikiCountry | undefined,

@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
-import { useTreeHelper } from "../../../hooks/useTreeHelper";
-import { beautifyAdminOneName } from "../../../utils/country-helper";
-
 import type { WikiCountry } from "../../../utils/firebase/repo/wiki-country.types";
+
+import { useTreeHelper } from "../../../hooks/useTreeHelper";
+
+import { beautifyAdminOneName } from "../../../config/country";
 
 const useMapMemos = (
   countryCode: string | undefined /* e.g. "Q28" */,

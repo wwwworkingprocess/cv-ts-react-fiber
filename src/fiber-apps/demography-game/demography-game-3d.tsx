@@ -32,7 +32,8 @@ import useWikiGeoJson from "../../hooks/wiki/useWikiGeoJson";
 import {
   getCountryBoundsByCode,
   getCountryZoomFixByCode,
-} from "../../utils/country-helper";
+} from "../../config/country";
+
 import SelectedFeature from "./fibers/selected-feature";
 import Stars from "./fibers/stars";
 
@@ -154,7 +155,7 @@ const DemographyGame3D = (props: {
       pos.lat(node.data?.lat),
     ];
     //
-    return displayedNodes.map((n) => toDisplayNode(n, toWorldPosition));
+    return displayedNodes.map((n: any) => toDisplayNode(n, toWorldPosition));
   }, [displayedNodes, pos]);
 
   //

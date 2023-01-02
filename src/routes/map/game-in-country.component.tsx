@@ -5,7 +5,7 @@ import { Spinner } from "../../components/spinner/spinner.component";
 
 //TODO: fix usage
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
-import { getAvailableCountryCodes } from "../../utils/country-helper";
+import { getAvailableCountryCodes } from "../../config/country";
 
 import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";

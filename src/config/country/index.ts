@@ -1,7 +1,7 @@
-import { WikiCountry } from "./firebase/repo/wiki-country.types";
-import TreeHelper from "./tree-helper";
+import type TreeHelper from "../../utils/tree-helper";
+import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 
-import countryBoundsRaw from "../assets/json/wiki/countries.bounds.json";
+import countryBoundsRaw from "../../assets/json/wiki/countries.bounds.json";
 
 const availableCountryCodes = [
   "Q17",
@@ -75,7 +75,10 @@ const availableCountryCodes = [
   "Q664",
   "Q668", // india
   "Q678",
+  "Q683",
+  "Q685",
   "Q686",
+  "Q691",
   "Q697",
   "Q702",
   "Q709",
@@ -102,11 +105,13 @@ const availableCountryCodes = [
   "Q783",
   "Q784",
   "Q786",
+  "Q790",
   "Q792",
   "Q794",
   "Q796",
   "Q800",
   "Q801",
+  "Q804",
   "Q805",
   "Q810",
   "Q811",
@@ -124,7 +129,7 @@ const availableCountryCodes = [
   "Q854",
   "Q858",
   "Q863",
-  // "Q865", // ???????????????????????????? tree not loading
+  "Q865",
   "Q869",
   "Q874",
   "Q878",
@@ -135,15 +140,15 @@ const availableCountryCodes = [
   "Q912",
   "Q916",
   "Q917",
+  "Q921",
   //
   "Q924",
   "Q928",
   "Q929",
-  // "Q929",
-  // "Q945",
+  "Q945",
   "Q948",
-  // "Q953",
-  // "Q954",
+  "Q953",
+  "Q954",
   "Q958",
   "Q962",
   "Q963",
@@ -158,13 +163,15 @@ const availableCountryCodes = [
   "Q1000",
   "Q1005",
   "Q1006",
-  // "Q1007",
+  "Q1007",
   "Q1008",
   "Q1009",
-  //
+  "Q1011",
+  "Q1013",
+  "Q1014",
   "Q1016",
-  //
   "Q1019",
+  "Q1020",
   "Q1025",
   "Q1027",
   "Q1028",
@@ -178,6 +185,7 @@ const availableCountryCodes = [
   "Q1041",
   "Q1042",
   "Q1044",
+  "Q1045",
   "Q1049",
   "Q1050",
   "Q1246",
@@ -260,7 +268,10 @@ const zoomFixes = {
   Q664: 23.9, // invalid or missing bb
   Q668: 22, // india
   Q678: -8,
+  Q683: -16,
+  Q685: 11, //TODO: add P7704
   Q686: 0,
+  Q691: 16,
   Q697: -18,
   Q702: 17,
   Q709: 5,
@@ -286,11 +297,13 @@ const zoomFixes = {
   Q783: 3,
   Q784: -11,
   Q786: 8.6,
+  Q790: 6, //TODO: add P1370
   Q792: -2,
   Q794: 20.6,
   Q796: 19.2,
   Q800: 13, // invalid bb
   Q801: 13.4,
+  Q804: 12,
   Q805: 17.6,
   Q810: 14.9,
   Q811: 9,
@@ -308,7 +321,7 @@ const zoomFixes = {
   Q854: 9.5,
   Q858: 16.6,
   Q863: 12.9, // invalid bb
-  // Q865: 0,
+  Q865: 16.6, // invalid bb  TODO: add P5020
   Q869: 16.9,
   Q874: 15.2,
   Q878: 12,
@@ -320,14 +333,14 @@ const zoomFixes = {
   Q916: 21.4,
   Q917: 0,
   //
+  Q921: -17,
   Q924: 20.8,
   Q928: 14.4,
   Q929: 19.9,
-  // Q929: 0,
-  // Q945: 0,
+  Q945: 17,
   Q948: 18.8,
-  // Q953: 0,
-  // Q954: 0,
+  Q953: 20.4,
+  Q954: 18.6,
   Q958: 23.2, //TODO: invalid bb
   Q962: 18,
   Q963: 20,
@@ -342,15 +355,16 @@ const zoomFixes = {
   Q1000: 18,
   Q1005: -8,
   Q1006: 16.5,
-  // Q1007: 0,
+  Q1007: 5,
   Q1008: 17.6,
   Q1009: 20.7,
+  Q1011: 11, // TODO: add P868
+  Q1013: 5,
+  Q1014: 16,
   //
   Q1016: 21.4,
-
-  //
-  //
   Q1019: 21.4,
+  Q1020: 19.7,
   Q1025: 19,
   Q1027: 21, //TODO: add P2441
   Q1028: 21.8, // invalid bb
@@ -364,6 +378,7 @@ const zoomFixes = {
   Q1041: 16,
   Q1042: 18,
   Q1044: 12,
+  Q1045: 22,
   Q1049: 21.8,
   Q1050: 0,
   Q1246: 20, //TODO: missing bb
@@ -488,6 +503,8 @@ export const beautifyAdminOneName = (countryCode: number, s: string) => {
       return (s ?? "").replaceAll(" Region", "").replaceAll(" Province", "");
     //
     case 414:
+      return (s ?? "").replaceAll(" Province", "");
+    case 685:
       return (s ?? "").replaceAll(" Province", "");
     //
     case 796:

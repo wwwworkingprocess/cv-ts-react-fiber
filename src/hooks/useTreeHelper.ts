@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-import { getAvailableCountryCodes } from "../utils/country-helper";
-
 import type { TreeNodeNumericProps } from "../utils/tree-helper.types";
 
 import TreeHelper, {
@@ -16,6 +14,8 @@ import {
   load_nodedata,
   load_types,
 } from "../utils/networking";
+
+import { getAvailableCountryCodes } from "../config/country";
 
 type TreeRawData = {
   hierarchy: Int32Array;

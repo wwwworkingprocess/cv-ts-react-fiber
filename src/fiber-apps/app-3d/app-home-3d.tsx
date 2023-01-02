@@ -21,7 +21,6 @@ import { Draggable } from "../../three-components/draggable/draggable.component"
 import { Spinner } from "../../components/spinner/spinner.component";
 import { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import { distanceFromCoords } from "../../utils/geo";
-import { getAvailableCountryCodes } from "../../utils/country-helper";
 
 import hungarianBorder from "../hungary/border.28.json"; //"./border.28.json";
 
@@ -31,6 +30,8 @@ import useDragAndDrop from "./hooks/useDragAndDrop";
 import useNearestCountries from "./hooks/useNearestCountries";
 import Nearby from "./components/nearby/nearby.component";
 import { useNavigate } from "react-router-dom";
+
+import { getAvailableCountryCodes } from "../../config/country";
 
 const MovingSpotLight = (props: JSX.IntrinsicElements["spotLight"]) => {
   const { castShadow } = props;
@@ -76,7 +77,7 @@ const LAST_IDX = 5;
 const availableCountryCodes = getAvailableCountryCodes();
 
 const coordsFromPosition = (arr: Array<string>) => {
-  const [x, y, z] = arr.map(parseFloat);
+  const [x, , z] = arr.map(parseFloat);
   //
   //
   const lat = ((z * 90) / 5) * -2; // vertical (from z)

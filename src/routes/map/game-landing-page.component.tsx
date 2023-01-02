@@ -7,7 +7,8 @@ import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCou
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
 import { IS_CLOUD_ENABLED } from "../../utils/firebase/provider";
-import { getAvailableCountryCodes } from "../../utils/country-helper";
+
+import { getAvailableCountryCodes } from "../../config/country";
 
 import CountryList from "../../components/demography/country-list/country-list.component";
 import PopulationCountriesChart from "../../components/charts/population-countries-chart/population-countries-chart.component";
@@ -15,6 +16,7 @@ import Button from "../../components/button/button.component";
 
 const availableCountryCodes = getAvailableCountryCodes();
 const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
+const isExcluded = (c: WikiCountry) => !availableCountryCodes.includes(c.code);
 const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
   a.name.localeCompare(b.name);
 
@@ -32,6 +34,11 @@ const GameLandingPage = () => {
   //
   const countries = useMemo(
     () => wikiCountries?.filter(isAvailable).sort(sortByNameAsc) ?? [],
+    [wikiCountries]
+  );
+  //
+  const excludedCountries = useMemo(
+    () => wikiCountries?.filter(isExcluded).sort(sortByNameAsc) ?? [],
     [wikiCountries]
   );
 
@@ -121,6 +128,13 @@ const GameLandingPage = () => {
           label={"Population"}
         />
       </div>
+      <h3>Excluded Countries</h3>
+      <CountryList
+        countries={excludedCountries}
+        onClicked={() => console.log("skip, onCountryClicked")}
+      />
+      <br />
+      {excludedCountries.map((c) => c.code).join(" - ")}
     </>
   );
 };
