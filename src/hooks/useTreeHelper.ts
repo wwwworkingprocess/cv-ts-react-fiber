@@ -1,19 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 
+import { Buffer } from "buffer";
+
 import type { TreeNodeNumericProps } from "../utils/tree-helper.types";
+import { unzipBufferMulti } from "../utils/deflate";
 
-import TreeHelper, {
-  fn_from_ab,
-  fn_blob_to_hierarchy,
-  fn_blob_to_nodedata,
-} from "../utils/tree-helper";
+import TreeHelper, { fn_from_ab } from "../utils/tree-helper";
 
-import {
-  load_hierarchy,
-  load_labels,
-  load_nodedata,
-  load_types,
-} from "../utils/networking";
+import { load_zipfile } from "../utils/networking";
 
 import { getAvailableCountryCodes } from "../config/country";
 
@@ -23,31 +17,9 @@ type TreeRawData = {
     string,
     { code: number; name: string; p: number | undefined; type: number }
   >;
-  labels: Array<any>;
-  nodedata: Array<any>;
+  labels: Array<[number, string]>;
+  nodedata: Array<TreeNodeNumericProps>;
 };
-
-type LoaderResult = [
-  Int32Array,
-  Record<
-    string,
-    { code: number; name: string; p: number | undefined; type: number }
-  >,
-  Array<[number, string]>,
-  Array<TreeNodeNumericProps>
-];
-
-type LoaderResultPromises = [
-  Promise<Int32Array>,
-  Promise<
-    Record<
-      string,
-      { code: number; name: string; p: number | undefined; type: number }
-    >
-  >,
-  Promise<Array<[number, string]>>,
-  Promise<Array<TreeNodeNumericProps>>
-];
 
 //
 // Use hierarchical population & geodata for a specific country
@@ -67,6 +39,14 @@ export const useTreeHelper = (
   const [tree, setTree] = useState<TreeHelper>();
   const [keys, setKeys] = useState<Array<string>>([]);
   //
+  // URLS >> DOWNLOAD_RESULT >> INFLATED >> DATARESULT
+  //
+  const [downloadPath, setDownloadPath] = useState<string>(); // download compressed data from this url
+  const [downloadResult, setDownloadResult] = useState<ArrayBuffer>(); // target arraybuffer for downloading
+  const [inflatedResult, setInflatedResult] = useState<
+    Record<string, ArrayBuffer>
+  >({}); // storing decompressed data before deserializing ( Array<ArrayBuffer> -> TreeRawData )
+  //
   const resetTree = () => {
     setLoading(false);
     setDataLoading(false);
@@ -76,6 +56,10 @@ export const useTreeHelper = (
     setValue(undefined);
     setTypeTree(undefined);
     setLoadStep(0);
+    //
+    setDownloadPath("");
+    setDownloadResult(undefined);
+    setInflatedResult({});
   };
 
   const increaseLoadStep = useCallback(() => {
@@ -89,6 +73,7 @@ export const useTreeHelper = (
     //
     // STEP 0 Only allow valid countryCode -s to load
     //
+    const p = path ? `${path}` : "";
     const availableCountryCodes = getAvailableCountryCodes();
     const isAvailable =
       countryCode && availableCountryCodes.includes(countryCode);
@@ -100,6 +85,7 @@ export const useTreeHelper = (
         resetTree();
         //
         setLoading(true);
+        setDownloadPath(`${p}data/wikidata/zip/${countryCode}.tree.zip`);
         setTree(fn_create_tree);
       }
     } else {
@@ -107,71 +93,158 @@ export const useTreeHelper = (
     }
     //
     return () => resetTree();
-  }, [countryCode]); // reset state when countryCode changes
+  }, [path, countryCode]); // reset state when countryCode changes
 
   //
-  // STEP 2 Updating path for each file when countryCode is changing
-  //
-  const urls = useMemo(() => {
-    if (!countryCode) return [];
-    //
-    const p = path ? `${path}` : "";
-    //
-    const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.bin`; // using typed (v2)
-    const pathTypes = `${p}data/wikidata/${countryCode}.tree.types.json`; // using typed (v2)
-    //const pathHierarchy = `${p}data/wikidata/${countryCode}.tree.hierarchy.bin`;
-    const pathLabels = `${p}data/wikidata/${countryCode}.tree.labels.json`;
-    const pathNodeData = `${p}data/wikidata/${countryCode}.tree.nodedata.bin`;
-    //
-    return [pathHierarchy, pathTypes, pathLabels, pathNodeData];
-  }, [countryCode, path]);
-
-  //
-  // STEP 3 Loading tree data files, after path variables are ready
-  //
-  const updateDataResult = (r: LoaderResult) => {
-    const [hierarchy, types, labels, nodedata] = r;
-    //
-    console.log("in updateDataResult", r);
-    setLoadStep(1);
-    //
-    setDataResult({ hierarchy, types, labels, nodedata } as TreeRawData);
-  };
+  // STEP B-1 Download compressed document (async)
   //
   useEffect(() => {
+    if (downloadPath) {
+      load_zipfile(downloadPath).then((compressed: ArrayBuffer) => {
+        console.log("loaded compressed", compressed);
+        //
+        setDownloadResult(compressed);
+      });
+    }
     //
-    const loadTreeData = async (urls: Array<string>) => {
-      const [path_hierarchy, path_types, path_labels, path_nodedata] = urls;
-      const dataPromises = [
-        load_hierarchy(path_hierarchy, fn_blob_to_hierarchy),
-        load_types(path_types),
-        load_labels(path_labels),
-        load_nodedata(path_nodedata, fn_blob_to_nodedata, fn_from_ab),
-      ] as LoaderResultPromises;
+    //
+    //
+    return () => setDownloadResult(undefined);
+  }, [downloadPath]);
+
+  //
+  // STEP B-2 Inflate compressed document (async)
+  //
+  useEffect(() => {
+    if (downloadResult) {
+      const decompress = async (ab: ArrayBuffer) => {
+        const { files, results } = await unzipBufferMulti(ab); // opening archive
+        const inflated = await results; // unzipping every 'result' of every 'file'
+        const ok = inflated.length === 4;
+        //
+        //
+        const entries = ok ? files.map((f, idx) => [f, inflated[idx]]) : [];
+        const result = Object.fromEntries(entries);
+        //
+        console.log("RESULT", result);
+        //
+        setInflatedResult(result); //TODO:  consider undefined for not ok
+      };
       //
-      setDataLoading(true);
+      decompress(downloadResult); // async
+    }
+    //
+    //
+    return () => setInflatedResult({});
+  }, [downloadResult]);
+
+  //
+  // STEP B-3 Set Dataresult from inflated
+  //
+  useEffect(() => {
+    if (Object.keys(inflatedResult).length) {
+      const transform = (obj: Record<string, ArrayBuffer>) => {
+        //
+        // Reading arraybuffers from input
+        //
+        const ab_hierarchy = obj["index.bin"] ?? new ArrayBuffer(0);
+        const ab_types = obj["types.json"] ?? new ArrayBuffer(0);
+        const ab_labels = obj["labels.json"] ?? new ArrayBuffer(0);
+        const ab_nodedata = obj["data.bin"] ?? new ArrayBuffer(0);
+        //
+        // Transform arraybuffers to target types ({ hierarchy, types, labels, nodedata } as TreeRawData)
+        // Output types of entries:
+        //
+        // 1. hierarchy (index.bin) --> Int32Array
+        // 2. type tree (types.json) --> Record<string, { code: number; name: string; p: number | undefined; type: number }>
+        // 3. localization data (labels.json)  -->  Array<[number, string]>
+        // 4. Node numeric data properties (nodes.bin) -> Array<TreeNodeNumericProps>
+        //
+
+        //
+        // 1. hierarchy (index.bin)
+        //
+        const buffer_to_hierarchy = (buffer: Buffer): Int32Array => {
+          if (buffer.length === 0) return new Int32Array(0); //TODO: consider undefined
+          //
+          const view = new DataView(buffer.buffer);
+          //
+          const l = buffer.length / 4;
+          const int32 = new Int32Array(l);
+          let loaded = 0;
+          //
+          for (let i = 0; i < buffer.length; i += 4) {
+            int32[loaded] = view.getInt32(i, true);
+            //
+            loaded++;
+          }
+          //
+          return int32;
+        };
+        //
+        const hierarchy = buffer_to_hierarchy(Buffer.from(ab_hierarchy));
+        //
+        const decoder = new TextDecoder("utf-8");
+        //
+        // 2. type tree (types.json)
+        //
+        const typesString = decoder.decode(ab_types);
+        const types = (typesString ? JSON.parse(typesString) : {}) as Record<
+          string,
+          {
+            code: number;
+            name: string;
+            p: number;
+            type: number;
+          }
+        >;
+        //
+        // 3. localization data (labels.json)
+        //
+        const labelsString = decoder.decode(ab_labels);
+        const labels = (labelsString ? JSON.parse(labelsString) : []) as Array<
+          [number, string]
+        >;
+        //
+        // 4. Node numeric data properties (nodes.bin)
+        //
+        const blob_to_nodedata = (buffer: any): Array<Uint8Array> => {
+          const nodedata = [] as Array<Uint8Array>;
+          const byteArray = new Uint8Array(buffer);
+          //
+          for (let i = 0; i < byteArray.byteLength; i += 28) {
+            nodedata.push(byteArray.slice(i, i + 28));
+          }
+          //
+          return nodedata;
+        };
+        //
+        const nodedata = blob_to_nodedata(ab_nodedata).map(
+          (stripe: Uint8Array) =>
+            fn_from_ab(stripe.buffer) as TreeNodeNumericProps
+        );
+        //
+        // composing entries into a single object (TreeRawData)
+        //
+        return { hierarchy, types, labels, nodedata } as TreeRawData;
+      };
       //
-      return await Promise.all(dataPromises)
-        .then(updateDataResult)
-        .catch((ex) => {
-          console.error("ERROR", ex, "in tree");
-          setDataResult(undefined);
-        })
-        .finally(() => {
-          setDataLoading(false);
-        });
-    };
+      const result = transform(inflatedResult);
+      //
+      setLoadStep(1);
+      setDataResult(result);
+    }
     //
-    //
-    if (tree && urls.length) loadTreeData(urls);
     //
     return () => {
-      setDataResult(undefined);
-      setDataLoading(false);
       setLoadStep(0);
+      setDataResult(undefined);
     };
-  }, [tree, urls]);
+  }, [inflatedResult]);
 
+  //
+  // Creating type tree, once decompressed data is ready  (loadStep 5)
+  //
   const [typeTree, setTypeTree] = useState<TreeHelper>();
   const updateTypeTree = useCallback(
     (
@@ -182,8 +255,6 @@ export const useTreeHelper = (
     ) => {
       if (types) {
         const tt = new TreeHelper(types, true);
-        //
-        console.log("tt", tt);
         //
         setTypeTree(tt);
       }
@@ -225,8 +296,6 @@ export const useTreeHelper = (
           });
 
           //
-
-          //setKeys(tree._keys_cache); // passing reference of helper-result
           setKeys(keys_cache); //  // passing reference of helper-result
           setValue(tree);
           break;

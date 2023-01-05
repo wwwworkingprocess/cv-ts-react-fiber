@@ -267,6 +267,7 @@ const useTypeMemo = (
         links: [...renderedLinks] as Array<{ source: string; target: string }>,
       };
       //
+      /*
       console.log("nodes", _nodes, "links", _links);
       console.log("allTargets", allTargets);
       console.log("leafs", leafs);
@@ -274,6 +275,7 @@ const useTypeMemo = (
       console.log("nodesWithCount", nodesWithCount);
       //
       console.log("Type Graph ready", graphData, leafIds.length, "leaf nodes");
+      */
       //
       return graphData;
     }

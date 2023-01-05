@@ -22,6 +22,20 @@ export const onNetworkError = (reject: any, error: Error) => {
 //
 // Loading country data
 //
+export const load_zipfile = (fn: string): Promise<any> =>
+  new Promise((resolve, reject) => {
+    fetch(fn)
+      .then(responseAsBlob)
+      .then((blob) => {
+        const fileReader = new FileReader();
+        //
+        fileReader.onload = (event) =>
+          resolve((event.currentTarget as FileReader).result as ArrayBuffer);
+        //
+        fileReader.readAsArrayBuffer(blob);
+      })
+      .catch((error) => onNetworkError(reject, error));
+  });
 
 export const load_labels = (fn: string): Promise<Array<[number, string]>> =>
   new Promise((resolve, reject) => {
