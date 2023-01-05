@@ -1,5 +1,3 @@
-const availableCountryCodes = ["Q28", "Q96"];
-/*
 const availableCountryCodes = [
   "Q17",
   "Q20",
@@ -183,7 +181,6 @@ const availableCountryCodes = [
   "Q1050",
   "Q1246",
 ] as const;
-*/
 
 export type AvailableCountryCodes = typeof availableCountryCodes[number];
 
