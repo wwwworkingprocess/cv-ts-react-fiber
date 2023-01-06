@@ -27,6 +27,7 @@ export type GameState = {
   //
   player: PlayerStats;
   //
+  canvasHeightRatio: number;
   userColor: string;
   citiesMaxRangeKm: number;
   citiesMaxItems: number;
@@ -45,6 +46,8 @@ export type GameActions = {
   setExtraZoom: (b: boolean) => void;
   setProgressCompleted: (code: string, population: number) => void;
   //
+
+  setCanvasHeightRatio: (ratio: number) => void;
   setUserColor: (s: string) => void;
   setCitiesMaxRangeKm: (km: number) => void;
   setCitiesMaxItems: (n: number) => void;

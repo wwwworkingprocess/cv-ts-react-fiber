@@ -2,7 +2,6 @@ import { useCallback, useMemo, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-//TODO: fix usage
 import { useWikiCountries } from "../../fiber-apps/wiki-country/hooks/useWikiCountries";
 
 import type { WikiCountry } from "../../utils/firebase/repo/wiki-country.types";
@@ -16,7 +15,7 @@ import Button from "../../components/button/button.component";
 
 const availableCountryCodes = getAvailableCountryCodes();
 const isAvailable = (c: WikiCountry) => availableCountryCodes.includes(c.code);
-const isExcluded = (c: WikiCountry) => !availableCountryCodes.includes(c.code);
+// const isExcluded = (c: WikiCountry) => !availableCountryCodes.includes(c.code);
 const sortByNameAsc = (a: WikiCountry, b: WikiCountry) =>
   a.name.localeCompare(b.name);
 
@@ -36,17 +35,13 @@ const GameLandingPage = () => {
     () => wikiCountries?.filter(isAvailable).sort(sortByNameAsc) ?? [],
     [wikiCountries]
   );
-  //
-  const excludedCountries = useMemo(
-    () => wikiCountries?.filter(isExcluded).sort(sortByNameAsc) ?? [],
-    [wikiCountries]
-  );
 
   //
   // Navigating to a valid country
   //
   const gotoGameInCountry = useCallback(
-    (validCountryCode: string) => navigate(`./${validCountryCode}`),
+    (validCountryCode: string) =>
+      navigate(`./${validCountryCode}/${validCountryCode}`),
     [navigate]
   );
   const onCountryClicked = (c: WikiCountry) => gotoGameInCountry(c.code);
@@ -98,7 +93,9 @@ const GameLandingPage = () => {
   //
   return (
     <>
-      <h3>Available Countries</h3>
+      <h3>
+        Available Countries {countries.length ? `(${countries.length})` : ""}
+      </h3>
       <p>
         Please select a country from the list below to start or use the{" "}
         <span
@@ -128,13 +125,6 @@ const GameLandingPage = () => {
           label={"Population"}
         />
       </div>
-      <h3>Excluded Countries</h3>
-      <CountryList
-        countries={excludedCountries}
-        onClicked={() => console.log("skip, onCountryClicked")}
-      />
-      <br />
-      {excludedCountries.map((c) => c.code).join(" - ")}
     </>
   );
 };

@@ -4,6 +4,7 @@ import DatGui, { DatColor, DatNumber, DatSelect } from "react-dat-gui";
 import useGameAppStore from "../stores/useGameAppStore";
 
 const defaultOpts = {
+  heightRatio: 0.2,
   maxItems: 200,
   maxRange: 50,
   color: "#000055",
@@ -11,6 +12,7 @@ const defaultOpts = {
 };
 
 const UserGui = () => {
+  const canvasHeightRatio = useGameAppStore((state) => state.canvasHeightRatio);
   const userColor = useGameAppStore((state) => state.userColor);
   const citiesMaxRangeKm = useGameAppStore((state) => state.citiesMaxRangeKm);
   const citiesMaxItems = useGameAppStore((state) => state.citiesMaxItems);
@@ -19,6 +21,9 @@ const UserGui = () => {
   );
 
   //
+  const setCanvasHeightRatio = useGameAppStore(
+    (state) => state.setCanvasHeightRatio
+  );
   const setUserColor = useGameAppStore((state) => state.setUserColor);
   const setCitiesMaxRangeKm = useGameAppStore(
     (state) => state.setCitiesMaxRangeKm
@@ -31,6 +36,7 @@ const UserGui = () => {
   const getDefaultOptions = useMemo(
     () => ({
       ...defaultOpts,
+      heightRatio: Math.floor(canvasHeightRatio * 100),
       color: userColor,
       maxItems: citiesMaxItems,
       maxRange: citiesMaxRangeKm,
@@ -38,16 +44,24 @@ const UserGui = () => {
         ? "Most populated"
         : "Least populated.",
     }),
-    [userColor, citiesMaxItems, citiesMaxRangeKm, citiesShowPopulated]
+    [
+      canvasHeightRatio,
+      userColor,
+      citiesMaxItems,
+      citiesMaxRangeKm,
+      citiesShowPopulated,
+    ]
   );
   //
   const [opts, setOpts] = useState(getDefaultOptions);
 
   //
   const onOptionsChanged = (data: any) => {
+    if (data.heightRatio !== canvasHeightRatio * 0.01)
+      setCanvasHeightRatio(data.heightRatio * 0.01); // update state
     if (data.color !== userColor) setUserColor(data.color); // update state
-    if (data.maxItems !== userColor) setCitiesMaxItems(data.maxItems); // update state
-    if (data.maxRange !== userColor) setCitiesMaxRangeKm(data.maxRange); // update state
+    if (data.maxItems !== citiesMaxItems) setCitiesMaxItems(data.maxItems); // update state
+    if (data.maxRange !== citiesMaxRangeKm) setCitiesMaxRangeKm(data.maxRange); // update state
     //
     if (data.citiesSortType === "Most populated") {
       if (!citiesShowPopulated) setCitiesShowPopulated(true); // update state
@@ -74,6 +88,13 @@ const UserGui = () => {
         min={1}
         max={100}
         step={0.5}
+      />
+      <DatNumber
+        label="Screen height (%)"
+        path="heightRatio"
+        min={10}
+        max={100}
+        step={1}
       />
       <DatSelect
         path="citiesSortType"

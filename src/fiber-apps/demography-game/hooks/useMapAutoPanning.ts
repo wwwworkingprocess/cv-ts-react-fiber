@@ -6,6 +6,7 @@ import { Mesh, Vector3 } from "three";
 // auto zooming and panning, using the provided setters
 //
 const useMapAutoPanningActions = (
+  countryCode: string | undefined,
   cities: Array<{
     code: number;
     name: string;
@@ -41,11 +42,13 @@ const useMapAutoPanningActions = (
       if (node) {
         const { position } = node;
         //
-        setZoom(true);
+        const nextZoom = code !== undefined && countryCode !== code;
+        //
+        setZoom(nextZoom);
         setFocus(new Vector3(position[0], position[1], position[2]));
       }
     },
-    [cities, setZoom, setFocus]
+    [countryCode, cities, setZoom, setFocus]
   );
   //
   return useMemo(

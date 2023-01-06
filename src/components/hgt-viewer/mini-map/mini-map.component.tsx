@@ -46,21 +46,20 @@ const useCrossHairMemo = (xyMemo: any, downscale: number) => {
   return crossHairMemo;
 };
 
-const MiniMap = (props: { xyMemo: any }) => {
-  const { xyMemo } = props;
+const MiniMap = (props: { xyMemo: any; path?: string }) => {
+  const { xyMemo, path } = props;
   //
   const downscale = 0.5; // image is 180x90 not 360x180
   //
   const crossHairMemo = useCrossHairMemo(xyMemo, downscale);
+  const imageSrc = useMemo(
+    () => `${path ? path : ""}data/earth/diffuse.jpg`,
+    [path]
+  );
   //
   return (
     <MiniMapContainer>
-      <MiniMapImage
-        width={180}
-        height={90}
-        alt="minimap"
-        src="data/earth/diffuse.jpg"
-      />
+      <MiniMapImage width={180} height={90} alt="minimap" src={imageSrc} />
       {crossHairMemo && (
         <MiniMapCrosshair
           width={10}

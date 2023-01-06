@@ -67,6 +67,10 @@ const useGameAppStore = create<GameAppStore>(
       setZoom: (b) => set((prev) => ({ zoom: b })),
       setExtraZoom: (b) => set((prev) => ({ extraZoom: b })),
       //
+      setCanvasHeightRatio: (ratio: number) =>
+        set((prev) => ({
+          canvasHeightRatio: Math.max(0.1, Math.min(ratio, 1)),
+        })),
       setUserColor: (s: string) => set((prev) => ({ userColor: s })),
       setCitiesMaxRangeKm: (km: number) =>
         set((prev) => ({ citiesMaxRangeKm: km })),

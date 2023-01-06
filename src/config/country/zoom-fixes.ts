@@ -1,6 +1,7 @@
 import { AvailableCountryCodes } from "./available-countries";
 
 export const zoomFixes = {
+  //
   Q16: 23,
   Q17: 17,
   Q20: 19.5,
@@ -16,13 +17,16 @@ export const zoomFixes = {
   Q36: 15,
   Q37: 0,
   Q38: 21,
+  Q39: 2,
   Q40: 4,
   Q41: 18,
   Q43: 18,
   Q45: 20,
   Q55: 23.5,
   Q77: 8,
+  Q79: 20.6,
   Q96: 21.6,
+  Q114: 20.6,
   Q115: 21.1,
   Q117: 18.5,
   Q142: 19,
@@ -39,7 +43,6 @@ export const zoomFixes = {
   Q213: 6,
   Q214: 6,
   Q215: -3,
-  // Q215: -17,
   Q217: 7.4,
   Q218: 17,
   Q219: 10,
@@ -53,6 +56,7 @@ export const zoomFixes = {
   Q230: 3.6,
   Q232: 21.6,
   Q233: -20,
+  Q235: -20,
   Q236: 0,
   Q238: -17,
   Q241: 16.6,
@@ -61,6 +65,8 @@ export const zoomFixes = {
   Q252: 21.5,
   Q258: 20,
   Q262: 22.2,
+  Q265: 15,
+  Q298: 23.1, // TODO: fix bounding box
   Q334: -18,
   Q347: -20,
   Q398: 0,
@@ -76,11 +82,13 @@ export const zoomFixes = {
   Q657: 21.6,
   Q664: 23.9, // invalid or missing bb
   Q668: 22, // india
+  Q672: -14,
   Q678: -8,
   Q683: -16,
   Q685: 11, //TODO: add P7704
   Q686: 0,
   Q691: 16,
+  Q695: 5,
   Q697: -18,
   Q702: 17,
   Q709: 5,
@@ -122,6 +130,7 @@ export const zoomFixes = {
   Q822: 2,
   Q826: 18.7,
   Q833: 20.6, // invalid bb
+  Q836: 19.4,
   Q837: 4.7,
   Q842: 20.7,
   Q843: 20.9,
@@ -141,7 +150,6 @@ export const zoomFixes = {
   Q912: 21.9,
   Q916: 21.4,
   Q917: 0,
-  //
   Q921: -17,
   Q924: 20.8,
   Q928: 14.4,
@@ -170,7 +178,6 @@ export const zoomFixes = {
   Q1011: 11, // TODO: add P868
   Q1013: 5,
   Q1014: 16,
-  //
   Q1016: 21.4,
   Q1019: 21.4,
   Q1020: 19.7,

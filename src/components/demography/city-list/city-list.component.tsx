@@ -54,8 +54,8 @@ const CityList = (props: CityListProps) => {
           }}
           style={{
             color: selectedCode === `Q${c.code}` ? "gold" : "unset",
-            backgroundColor:
-              selectedCode === `Q${c.code}` ? "rgba(255,255,255,0.2)" : "unset",
+            border:
+              selectedCode === `Q${c.code}` ? "solid 1px yellow" : "unset",
           }}
         >
           {images ? (

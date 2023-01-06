@@ -1,8 +1,19 @@
 const availableCountryCodes = [
+  "Q16",
+  "Q39",
+  "Q79",
+  "Q114",
+  "Q235",
+  "Q298",
+  "Q672",
+  "Q695",
+  "Q836",
+  //
   "Q17",
   "Q20",
   "Q27",
   "Q28",
+  "Q29",
   "Q30",
   "Q31",
   "Q32",
@@ -21,8 +32,11 @@ const availableCountryCodes = [
   "Q96",
   "Q115",
   "Q117",
+  "Q142",
   "Q145",
+  "Q148",
   "Q155",
+  "Q159",
   "Q183",
   "Q184",
   "Q189",
@@ -53,6 +67,7 @@ const availableCountryCodes = [
   "Q252",
   "Q258",
   "Q262",
+  "Q265",
   "Q334",
   "Q347",
   "Q398",
@@ -185,13 +200,13 @@ const availableCountryCodes = [
 export type AvailableCountryCodes = typeof availableCountryCodes[number];
 
 /**
- * @returns Codes of countries, enabled for the 3D map
+ * @returns Codes of countries, enabled for the 3D map (195)
  */
 export const getAvailableCountryCodes = () =>
   availableCountryCodes.map((code) => String(code));
 
 /**
- * @returns Codes of countries, enabled for the 3D map
+ * @returns Check if a country is enabled for the 3D map
  */
 export const isAvailableCountryCode = (s: string) =>
   (s as AvailableCountryCodes) !== null;

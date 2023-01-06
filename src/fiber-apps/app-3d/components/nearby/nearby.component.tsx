@@ -12,7 +12,7 @@ const Nearby = (props: {
   const renderCountry = (c: WikiCountry, idx: number) => (
     <span key={`${c.code}_${idx}`}>
       {availableCountryCodes.includes(c.code) ? (
-        <a href={`map/${c.code}`} title={c.name}>
+        <a href={`map/${c.code}/${c.code}`} title={c.name}>
           <b key={c.code} style={{ color: "gold" }}>
             {c.name}
           </b>

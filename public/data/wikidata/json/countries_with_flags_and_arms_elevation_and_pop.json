@@ -590,19 +590,6 @@
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20the%20Czech%20Republic.svg"
   },
   {
-    "country": "https://www.wikidata.org/entity/Q756617",
-    "capital": "https://www.wikidata.org/entity/Q1748",
-    "countryLabel": "Danish Realm",
-    "capitalLabel": "Copenhagen",
-    "co_pop": "5930987",
-    "c_pop": "602481",
-    "c_min_elevation": "14",
-    "c_area": "86.2",
-    "c_ll": "Point(12.568888888 55.676111111)",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Denmark%20%28state%29.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/National%20Coat%20of%20arms%20of%20Denmark.svg"
-  },
-  {
     "country": "https://www.wikidata.org/entity/Q974",
     "capital": "https://www.wikidata.org/entity/Q3838",
     "countryLabel": "Democratic Republic of the Congo",
@@ -1235,32 +1222,7 @@
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Kenya.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Kenya%20%28Official%29.svg"
   },
-  {
-    "country": "https://www.wikidata.org/entity/Q29999",
-    "capital": "https://www.wikidata.org/entity/Q727",
-    "countryLabel": "Kingdom of the Netherlands",
-    "capitalLabel": "Amsterdam",
-    "co_pop": "17100715",
-    "c_pop": "860124",
-    "c_min_elevation": "-2",
-    "c_area": "219",
-    "c_ll": "Point(4.9 52.383333333)",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Netherlands.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/State%20coat%20of%20arms%20of%20the%20Netherlands.svg"
-  },
-  {
-    "country": "https://www.wikidata.org/entity/Q29999",
-    "capital": "https://www.wikidata.org/entity/Q727",
-    "countryLabel": "Kingdom of the Netherlands",
-    "capitalLabel": "Amsterdam",
-    "co_pop": "17100715",
-    "c_pop": "860124",
-    "c_min_elevation": "-2",
-    "c_area": "219",
-    "c_ll": "Point(4.9 52.383333333)",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20Netherlands.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20coat%20of%20arms%20of%20the%20Netherlands.svg"
-  },
+
   {
     "country": "https://www.wikidata.org/entity/Q710",
     "capital": "https://www.wikidata.org/entity/Q131233",
@@ -2173,16 +2135,7 @@
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20Singapore.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20Singapore.svg"
   },
-  {
-    "country": "https://www.wikidata.org/entity/Q488889",
-    "capital": "https://www.wikidata.org/entity/Q8684",
-    "countryLabel": "Sixth Republic of South Korea",
-    "capitalLabel": "Seoul",
-    "c_pop": "9806538",
-    "c_min_elevation": "38",
-    "c_area": "605.25",
-    "c_ll": "Point(126.99 37.56)"
-  },
+
   {
     "country": "https://www.wikidata.org/entity/Q214",
     "capital": "https://www.wikidata.org/entity/Q1780",
@@ -2615,18 +2568,6 @@
     "co_geoshape": "https://commons.wikimedia.org/data/main/Data:United+Kingdom.map",
     "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20United%20Kingdom.svg",
     "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Coat%20of%20Arms%20of%20the%20United%20Kingdom.svg"
-  },
-  {
-    "country": "https://www.wikidata.org/entity/Q903779",
-    "capital": "https://www.wikidata.org/entity/Q8678",
-    "countryLabel": "United Kingdom of Portugal, Brazil and the Algarves",
-    "capitalLabel": "Rio de Janeiro",
-    "c_pop": "6747815",
-    "c_min_elevation": "31",
-    "c_area": "1260.029215",
-    "c_ll": "Point(-43.196388888 -22.908333333)",
-    "co_flag": "https://commons.wikimedia.org/wiki/Special:FilePath/Flag%20of%20the%20United%20Kingdom%20of%20Portugal%2C%20Brazil%2C%20and%20the%20Algarves.svg",
-    "co_arms": "https://commons.wikimedia.org/wiki/Special:FilePath/Coat%20of%20arms%20of%20the%20United%20Kingdom%20of%20Portugal%2C%20Brazil%20and%20the%20Algarves.svg"
   },
   {
     "country": "https://www.wikidata.org/entity/Q30",

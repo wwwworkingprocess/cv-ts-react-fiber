@@ -40,6 +40,7 @@ import ActionTabMainInfo from "../../components/demography/action-tabs/main-info
 import Button, {
   BUTTON_TYPE_CLASSES,
 } from "../../components/button/button.component";
+import { isAvailableCountryCode } from "../../config/country/available-countries";
 
 //
 // Routing params by
@@ -72,6 +73,11 @@ const WikiDemographyGame = (props: {
   //
   // MODULE LEVEL STATE
   //
+  const [canvasHeightRatio, setCanvasHeightRatio] = useGameAppStore((s) => [
+    s.canvasHeightRatio,
+    s.setCanvasHeightRatio,
+  ]);
+
   const setZoom = useGameAppStore((state) => state.setZoom);
   const setMoving = useGameAppStore((state) => state.setMoving);
   const [selectedCode, setSelectedCode] = useGameAppStore((s) => [
@@ -124,15 +130,44 @@ const WikiDemographyGame = (props: {
   // Updating (settlement) selection, when valid route params where provided
   //
   useEffect(() => {
-    if (selectedRouteCode && tree) {
-      const validCode = tree._n(selectedRouteCode) !== undefined;
-      //
-      setSelectedCode(validCode ? selectedRouteCode : undefined);
-      if (validCode) setMoving(true, selectedRouteCode);
-      //
-      setIsDetailsVisible(true); // always show details when opened via permalink
+    if (tree) {
+      if (selectedRouteCode) {
+        const validCode = tree._n(selectedRouteCode) !== undefined;
+        //
+        setSelectedCode(validCode ? selectedRouteCode : undefined);
+        if (validCode) setMoving(true, selectedRouteCode);
+        //
+        setIsDetailsVisible(true); // always show details when opened via permalink
+      } else {
+        //
+        // only country is provided, when countrycode is valid, updating selection
+        //
+        /*
+        if (isAvailableCountryCode(countryCode ?? "")) {
+          if (selectedCode === undefined) {
+            setSelectedCode(countryCode);
+          } else {
+            //
+            // auto reset selection to current country, when previous selection
+            // - was from another country
+            // - or is a country, but not the current one
+            //
+            const type_country = 6256;
+            const code = tree._qq(selectedCode);
+            const isValidCode = code !== -1;
+            const isValidNode = isValidCode && tree._find(code);
+            const isCountry =
+              isValidNode && tree._find(code)?.type === type_country;
+            const isAnotherCountry =
+              isValidCode && isCountry && selectedCode !== countryCode;
+            //
+            if (!isValidNode || !isAnotherCountry) setSelectedCode(countryCode);
+          }
+        }
+        */
+      }
     }
-  }, [selectedRouteCode, tree, setSelectedCode, setMoving]);
+  }, [selectedRouteCode, tree, countryCode, setSelectedCode, setMoving]);
   //
   //
   //
@@ -154,7 +189,7 @@ const WikiDemographyGame = (props: {
       !selectedCountry
         ? `${path}map`
         : !selectedCode
-        ? `${path}map/${selectedCountry.code}`
+        ? `${path}map/${selectedCountry.code}/${selectedCountry.code}`
         : `${path}map/${selectedCountry.code}/${selectedCode}`,
     [selectedCountry, selectedCode, path]
   );
@@ -241,6 +276,12 @@ const WikiDemographyGame = (props: {
   }, [isDetailsVisible]);
 
   //
+  const { windowSize } = useWindowSize();
+  const [canvasHeight, setCanvasHeight] = useState<number>(350);
+  useEffect(() => {
+    if (windowSize) setCanvasHeight(windowSize.height * canvasHeightRatio);
+  }, [windowSize, canvasHeightRatio]);
+
   const gameInCountry = useMemo(() => {
     if (!selectedCountry) return null;
     if (!tree) return null;
@@ -249,19 +290,23 @@ const WikiDemographyGame = (props: {
     //
     return (
       <DemographyGame3D
+        path={path}
         tree={tree}
         typeTree={typeTree}
         selectedCountry={selectedCountry}
         selectedTypeId={selectedTypeId}
+        canvasHeight={canvasHeight}
         scrollToDetails={scrollToDetails}
       />
     );
   }, [
+    path,
     selectedCountry,
     selectedTypeId,
     tree,
     typeTree,
     isTreeReady,
+    canvasHeight,
     scrollToDetails,
   ]);
 
@@ -270,7 +315,7 @@ const WikiDemographyGame = (props: {
   //
   const fgRef = useRef(); // features graph forward href
 
-  const { windowSize } = useWindowSize();
+  // const { windowSize } = useWindowSize();
   const [graphWidth, setGraphWidth] = useState(400);
   //
   useEffect(() => {
@@ -467,8 +512,8 @@ const WikiDemographyGame = (props: {
             <Button
               buttonType={
                 isDetailsVisible
-                  ? BUTTON_TYPE_CLASSES.inverted
-                  : BUTTON_TYPE_CLASSES.base
+                  ? BUTTON_TYPE_CLASSES.base
+                  : BUTTON_TYPE_CLASSES.inverted
               }
               style={{
                 float: "right",

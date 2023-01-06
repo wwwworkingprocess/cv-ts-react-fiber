@@ -128,7 +128,7 @@ const CountryTooltip = ({
   <Html distanceFactor={0.525} position={[0, 0, -2]} center>
     <CountryListItem
       key={idx}
-      onClick={() => navigate(`./map/${code}`)}
+      onClick={() => navigate(`./map/${code}/${code}`)}
       style={{
         userSelect: "none",
         // backgroundColor: "rgba(0,0,0,0.5)",

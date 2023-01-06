@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import Button from "../../../../components/button/button.component";
+import MiniMap from "../../../../components/hgt-viewer/mini-map/mini-map.component";
 import useGameAppStore from "../../stores/useGameAppStore";
 
 // import DebugStorePanel from "../debug-store";
@@ -14,7 +15,15 @@ import {
 } from "./game-controls.styles";
 
 const GameControls = (props: any) => {
-  const { extra, selectionName, zoomToView, setExtra, scrollToDetails } = props;
+  const {
+    path,
+    extra,
+    selectionName,
+    canvasHeight,
+    zoomToView,
+    setExtra,
+    scrollToDetails,
+  } = props;
   //
   const [showUI, setShowUI] = useState<boolean>(false);
   //
@@ -46,9 +55,23 @@ const GameControls = (props: any) => {
     ) : null;
   }, [lastTakenPlaceImageUrl, scrollToDetails]);
   //
+  const bounds = useGameAppStore((state) => state.bounds);
+  //
+  const [MIN_X, MAX_X, MIN_Y, MAX_Y] = bounds;
+  const currentBounds = useMemo(() => {
+    return {
+      b: {
+        min_x: MIN_Y, // ??? flipped x-y ???
+        max_x: MAX_Y, // ??? flipped x-y ???
+        min_y: MIN_X, // ??? flipped x-y ???
+        max_y: MAX_X, // ??? flipped x-y ???
+      },
+    };
+  }, [MIN_X, MAX_X, MIN_Y, MAX_Y]);
+  //
   return (
     <div style={{ userSelect: "none" }}>
-      <WrapToRight>
+      <WrapToRight shiftTop={canvasHeight}>
         {zoom && (
           <>
             {extra ? (
@@ -63,7 +86,7 @@ const GameControls = (props: any) => {
           </>
         )}
       </WrapToRight>
-      <WrapToLeft width={showUI ? 282 : 75}>
+      <WrapToLeft shiftTop={canvasHeight} width={showUI ? 282 : 75}>
         {showUI ? (
           <>
             <UserGui />
@@ -78,10 +101,17 @@ const GameControls = (props: any) => {
           <Button onClick={(e) => setShowUI(true)}>Settings</Button>
         )}
       </WrapToLeft>
-      <WrapToBottomLeft>
-        {displayedText}
-        <small>{` ${detectedFps.toFixed(1)} fps`}</small>
-      </WrapToBottomLeft>
+      {canvasHeight > 300 ? (
+        <WrapToBottomLeft>
+          {displayedText}
+          <small>{` ${detectedFps.toFixed(1)} fps`}</small>
+          {!zoom && (
+            <div style={{ top: "-96px", position: "absolute" }}>
+              <MiniMap xyMemo={currentBounds} path={path} />
+            </div>
+          )}
+        </WrapToBottomLeft>
+      ) : null}
       {/* <DebugStorePanel /> */}
       <CloseWrap />
     </div>

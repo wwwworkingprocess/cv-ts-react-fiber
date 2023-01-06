@@ -40,13 +40,23 @@ import Stars from "./fibers/stars";
 const DemographyGame3D = (props: {
   selectedCountry: WikiCountry | undefined;
   //
+  path: string;
   tree: TreeHelper;
   typeTree: TreeHelper;
   selectedTypeId: number | undefined;
+  canvasHeight: number;
   scrollToDetails: () => void;
+  //
 }) => {
-  const { tree, typeTree, selectedCountry, selectedTypeId, scrollToDetails } =
-    props;
+  const {
+    tree,
+    path,
+    typeTree,
+    selectedCountry,
+    selectedTypeId,
+    canvasHeight,
+    scrollToDetails,
+  } = props;
   //
   const extra = useGameAppStore((state) => state.extraZoom);
   //
@@ -62,6 +72,11 @@ const DemographyGame3D = (props: {
   const setSelectedCode = useGameAppStore((state) => state.setSelectedCode);
   const setZoom = useGameAppStore((state) => state.setZoom);
   const setExtra = useGameAppStore((state) => state.setExtraZoom);
+
+  const heightPixels = useMemo(
+    () => (canvasHeight ? `${canvasHeight}px` : "350px"),
+    [canvasHeight]
+  );
 
   //
   useKeyboardNavigation();
@@ -109,6 +124,12 @@ const DemographyGame3D = (props: {
       }
     }
   }, [selectedCountry, setBounds, setZoom]);
+
+  // useEffect(() => {
+  //   if (selectedCountry && selectedCountry.code === selectedCode) {
+  //     setZoom(false);
+  //   }
+  // }, [selectedCountry, selectedCode, setZoom]);
 
   //
   // Placement helper memo, some of the components are 'flipped', kind of hacky ATM
@@ -164,6 +185,7 @@ const DemographyGame3D = (props: {
   const [focus, setFocus] = useState(pos.focus);
   //
   const { zoomToView, zoomToViewByCode } = useMapAutoPanningActions(
+    selectedCountry?.code,
     cities,
     setZoom,
     setFocus,
@@ -174,8 +196,15 @@ const DemographyGame3D = (props: {
   // fire appropriate callback as selectedCode is changing
   //
   useEffect(() => {
-    selectedCode ? zoomToViewByCode(selectedCode) : zoomToView(undefined);
-  }, [selectedCode, zoomToViewByCode, zoomToView]);
+    if (selectedCountry && selectedCountry.code === selectedCode) {
+      //zoomToView(undefined);
+      zoomToViewByCode(selectedCountry.code);
+    } else if (selectedCode) {
+      zoomToViewByCode(selectedCode);
+    } else {
+      zoomToView(undefined);
+    }
+  }, [selectedCountry, selectedCode, zoomToViewByCode, zoomToView]);
 
   //
   // temporary solution, until 'moving' can be set
@@ -252,7 +281,7 @@ const DemographyGame3D = (props: {
     <>
       <Suspense fallback={<Spinner />}>
         <Canvas
-          style={{ height: "350px", border: "solid 1px white" }}
+          style={{ height: heightPixels, border: "solid 1px white" }}
           dpr={[1, 2]}
           // frameloop="demand"
           camera={{ position: pos.camera, zoom: 30, near: 1, far: 200 }}
@@ -284,8 +313,10 @@ const DemographyGame3D = (props: {
 
         {/* Game UI (DOM) */}
         <GameControls
+          path={path}
           extra={extra}
           selectionName={selectionName}
+          canvasHeight={canvasHeight}
           setExtra={setExtra}
           zoomToView={zoomToView}
           scrollToDetails={scrollToDetails}

@@ -95,8 +95,8 @@ const Home = () => {
     <>
       <h2>Good to see You here!</h2>
       <p>
-        This site is a collection of micro applications, created during
-        September 2022, written in TypeScript using React and 3D.
+        This site is a collection of micro applications, created in late 2022,
+        written in TypeScript using React and 3D.
       </p>
       <p>
         Please have a look around, check my{" "}

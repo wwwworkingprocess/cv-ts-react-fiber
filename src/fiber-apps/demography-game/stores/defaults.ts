@@ -44,6 +44,7 @@ export const initialGameState: GameState = {
     takenPopulation: 0,
   } as PlayerStats,
   //
+  canvasHeightRatio: 0.4,
   userColor: "#000055",
   citiesMaxRangeKm: MAX_RANGE_TO_SHOW,
   citiesMaxItems: MAX_ITEMS_TO_SHOW,
