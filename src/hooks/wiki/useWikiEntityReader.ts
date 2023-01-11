@@ -115,14 +115,29 @@ export const useWikiEntityReader = (wikiEntry: any) => {
       .filter((entry) => !knownCodes.includes(entry.code))
       .map((kvp) => ({ code: kvp.code, value: kvp.raw }));
     //
+    // Selecting the prefered claim from the claims,
+    // or the last entry when there is no prefered claim
+    //
+    const findPreferedClaim = (raw: Array<any>) => {
+      if (!raw.length) return undefined;
+      //
+      const prefered = raw.find((claim) => claim.rank === "prefered");
+      const claim = prefered ?? raw[raw.length - 1];
+      //
+      return claim;
+    };
+
+    //
+    // Reading the prefered value for every claim
+    //
     const values = known.map((entry) => {
       const l = entry.raw.length;
-      const first = entry.raw[0];
+      const preferedValue = findPreferedClaim(entry.raw);
       //
-      // only first statement used at the moment ( l = 1)
+      // reading a single statement (preferedValue)
       //
-      const type = findType(first);
-      const val = readValue(first);
+      const type = findType(preferedValue);
+      const val = readValue(preferedValue);
       //
       const accessor = accessors[type];
       const value = accessor ? accessor(val) : undefined;
