@@ -78,6 +78,17 @@ const Home = () => {
   const [showGrid, setShowGrid] = useState<boolean>(false);
   const [isShadowEnabled, setIsShadowEnabled] = useState<boolean>(!isMobile);
   //
+  const favicon = document.getElementById("favicon");
+
+  if (favicon) {
+    if (showGrid) {
+      (favicon as any).href = "./favicon.ico";
+    } else {
+      (favicon as any).href = "./img/favicon.svg";
+    }
+  }
+
+  console.log("favicon", favicon, (favicon as any).href);
   // const countries = useSelector(selectCountries);
   // const isLoading = useSelector(selectIsLoading);
   //

@@ -19,6 +19,7 @@ export const ClaimItemMedia = styled.div`
   max-width: 320px;
   max-height: 320px;
   margin: auto;
+  cursor: pointer;
 
   img {
     width: 200px;

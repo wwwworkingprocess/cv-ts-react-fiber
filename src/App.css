@@ -42,3 +42,26 @@
   src: local("RobotoSlab"),
     url("./assets/font/Roboto_Slab.ttf") format("truetype");
 }
+
+@media (prefers-color-scheme: dark) {
+  .favicon-smiley {
+    fill: #ffff00;
+  }
+  body {
+    background: rgb(22, 22, 22);
+    color: white;
+  }
+  .notification-background,
+  .notification-background1 {
+    fill: #ffc300;
+  }
+}
+.favicon-smiley {
+  width: 240px;
+  padding: 12px;
+  margin-top: 40px;
+}
+.notification-background0,
+.notification-number0 {
+  display: none;
+}

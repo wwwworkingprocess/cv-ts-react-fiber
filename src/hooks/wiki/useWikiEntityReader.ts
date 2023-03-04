@@ -57,7 +57,22 @@ const accessors = {
     //TODO: ignoring unit atm
     //
     try {
+      // const isUnitLess = v.value.unit === "1";
+      // const hasPunctuation = v.value.amount.indexOf(".") > -1;
+      //
+
       const a = v.value.amount;
+      //
+      // console.log(
+      //   "in quantity",
+      //   isUnitLess,
+      //   hasPunctuation,
+      //   a,
+      //   v.value.unit,
+      //   "->",
+      //   parseFloat(a)
+      // );
+      //
       q = parseFloat(a);
     } catch (ex) {
       console.error("unable to parse property value");
